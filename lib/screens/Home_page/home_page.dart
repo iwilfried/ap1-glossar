@@ -1,25 +1,16 @@
 import 'package:flutter/material.dart';
 import 'package:ap1_glossar/constants/colors.dart';
 import 'package:ap1_glossar/data/data.dart';
+import 'package:ap1_glossar/data/related.dart';
 import 'package:ap1_glossar/screens/Home_page/widgets/drawer.dart';
 
-// ── Filterwerte ───────────────────────────────────────────────────────────────
+// ── Aspekt-Enum (intern für Farben/Icons, kein Filter mehr) ──────────────────
 enum Aspekt { alle, funktional, oekonomisch, oekologisch, sozial }
 
 extension AspektExt on Aspekt {
   String get label {
     switch (this) {
       case Aspekt.alle:        return 'Alle';
-      case Aspekt.funktional:  return 'Funktional';
-      case Aspekt.oekonomisch: return 'Ökonomisch';
-      case Aspekt.oekologisch: return 'Ökologisch';
-      case Aspekt.sozial:      return 'Sozial';
-    }
-  }
-
-  String get dataKey {
-    switch (this) {
-      case Aspekt.alle:        return '';
       case Aspekt.funktional:  return 'Funktional';
       case Aspekt.oekonomisch: return 'Ökonomisch';
       case Aspekt.oekologisch: return 'Ökologisch';
@@ -67,10 +58,10 @@ class HomePage extends StatefulWidget {
 }
 
 class HomePageState extends State<HomePage> {
-  // Alle Schlüssel der gewählten Ansicht
   List<String> _visibleKeys = [];
   final _searchController = TextEditingController();
-  Aspekt _activeAspekt = Aspekt.alle;
+  // ScrollController für programmatischen Scroll zu einem Begriff
+  final _scrollController = ScrollController();
 
   @override
   void initState() {
@@ -81,34 +72,39 @@ class HomePageState extends State<HomePage> {
   @override
   void dispose() {
     _searchController.dispose();
+    _scrollController.dispose();
     super.dispose();
   }
 
-  // Filtert nach Aspekt + Suchtext
   void _applyFilter({String search = ''}) {
     final allKeys = abbreviations.keys.toList();
     final s = search.toLowerCase().trim();
-
     setState(() {
       _visibleKeys = allKeys.where((key) {
-        // Aspekt-Filter
-        final matchesAspekt = _activeAspekt == Aspekt.alle ||
-            (termAspect[key] ?? '') == _activeAspekt.dataKey;
-
-        // Suchtext-Filter (Begriff ODER Definition)
-        final matchesSearch = s.isEmpty ||
+        return s.isEmpty ||
             key.toLowerCase().contains(s) ||
             (abbreviations[key] ?? '').toLowerCase().contains(s);
-
-        return matchesAspekt && matchesSearch;
       }).toList();
     });
   }
 
-  // Anzahl Begriffe je Aspekt
-  int _countFor(Aspekt a) {
-    if (a == Aspekt.alle) return abbreviations.length;
-    return termAspect.values.where((v) => v == a.dataKey).length;
+  /// Springt zu einem Begriff und öffnet ihn
+  void navigateToTerm(String term) {
+    // Suche zurücksetzen, alle Begriffe zeigen
+    _searchController.clear();
+    _applyFilter();
+
+    // Nach kurzer Verzögerung scrollen
+    Future.delayed(const Duration(milliseconds: 100), () {
+      final idx = _visibleKeys.indexOf(term);
+      if (idx >= 0 && _scrollController.hasClients) {
+        _scrollController.animateTo(
+          idx * 82.0, // geschätzte Kartenhöhe
+          duration: const Duration(milliseconds: 400),
+          curve: Curves.easeInOut,
+        );
+      }
+    });
   }
 
   @override
@@ -131,10 +127,7 @@ class HomePageState extends State<HomePage> {
             child: Center(
               child: Text(
                 '${_visibleKeys.length} Begriffe',
-                style: const TextStyle(
-                  color: Colors.white70,
-                  fontSize: 13,
-                ),
+                style: const TextStyle(color: Colors.white70, fontSize: 13),
               ),
             ),
           ),
@@ -144,9 +137,9 @@ class HomePageState extends State<HomePage> {
       body: Column(
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
-          // ── Suchfeld ────────────────────────────────────────────────────
+          // ── Suchfeld ──────────────────────────────────────────────────────
           Padding(
-            padding: const EdgeInsets.fromLTRB(16, 14, 16, 6),
+            padding: const EdgeInsets.fromLTRB(16, 14, 16, 10),
             child: TextField(
               controller: _searchController,
               onChanged: (t) => _applyFilter(search: t),
@@ -175,91 +168,34 @@ class HomePageState extends State<HomePage> {
                 ),
                 focusedBorder: OutlineInputBorder(
                   borderRadius: BorderRadius.circular(12),
-                  borderSide: BorderSide(
-                    color: _activeAspekt.bgColor,
-                    width: 1.5,
-                  ),
+                  borderSide: BorderSide(color: AppColors.color, width: 1.5),
                 ),
                 isDense: true,
-                contentPadding: const EdgeInsets.symmetric(
-                    vertical: 12, horizontal: 16),
+                contentPadding:
+                    const EdgeInsets.symmetric(vertical: 12, horizontal: 16),
               ),
             ),
           ),
 
-          // ── Filter-Chips ─────────────────────────────────────────────────
-          SizedBox(
-            height: 48,
-            child: ListView(
-              scrollDirection: Axis.horizontal,
-              padding: const EdgeInsets.symmetric(horizontal: 12, vertical: 6),
-              children: Aspekt.values.map((a) {
-                final isSelected = _activeAspekt == a;
-                return Padding(
-                  padding: const EdgeInsets.only(right: 8),
-                  child: FilterChip(
-                    selected: isSelected,
-                    label: Row(
-                      mainAxisSize: MainAxisSize.min,
-                      children: [
-                        Icon(
-                          a.icon,
-                          size: 15,
-                          color: isSelected ? Colors.white : a.bgColor,
-                        ),
-                        const SizedBox(width: 5),
-                        Text(
-                          '${a.label} (${_countFor(a)})',
-                          style: TextStyle(
-                            fontSize: 12.5,
-                            fontWeight: FontWeight.w600,
-                            color: isSelected ? Colors.white : a.bgColor,
-                          ),
-                        ),
-                      ],
-                    ),
-                    backgroundColor: a.lightColor,
-                    selectedColor: a.bgColor,
-                    checkmarkColor: Colors.white,
-                    showCheckmark: false,
-                    side: BorderSide(
-                      color: isSelected ? a.bgColor : a.bgColor.withOpacity(0.3),
-                      width: 1.2,
-                    ),
-                    shape: RoundedRectangleBorder(
-                      borderRadius: BorderRadius.circular(20),
-                    ),
-                    padding: const EdgeInsets.symmetric(
-                        horizontal: 10, vertical: 2),
-                    onSelected: (_) {
-                      _activeAspekt = a;
-                      _applyFilter(search: _searchController.text);
-                    },
-                  ),
-                );
-              }).toList(),
-            ),
-          ),
-
-          // ── Trennlinie ───────────────────────────────────────────────────
           const Divider(height: 1, thickness: 1, color: Color(0xFFE8ECF1)),
 
-          // ── Begriffe-Liste ────────────────────────────────────────────────
+          // ── Begriffe-Liste ─────────────────────────────────────────────────
           Expanded(
             child: _visibleKeys.isEmpty
                 ? _buildEmptyState()
                 : ListView.builder(
+                    controller: _scrollController,
                     padding: const EdgeInsets.fromLTRB(16, 10, 16, 24),
                     itemCount: _visibleKeys.length,
                     physics: const BouncingScrollPhysics(),
                     itemBuilder: (context, i) {
                       final key = _visibleKeys[i];
                       final aspect = termAspect[key] ?? 'Funktional';
-                      final aspektEnum = _aspektFromString(aspect);
                       return _GlossarCard(
                         term: key,
                         definition: abbreviations[key] ?? '',
-                        aspekt: aspektEnum,
+                        aspekt: _aspektFromString(aspect),
+                        onRelatedTap: navigateToTerm,
                       );
                     },
                   ),
@@ -274,8 +210,7 @@ class HomePageState extends State<HomePage> {
       child: Column(
         mainAxisSize: MainAxisSize.min,
         children: [
-          Icon(Icons.search_off_rounded,
-              size: 56, color: Colors.grey.shade300),
+          Icon(Icons.search_off_rounded, size: 56, color: Colors.grey.shade300),
           const SizedBox(height: 12),
           Text(
             'Kein Begriff gefunden',
@@ -287,7 +222,7 @@ class HomePageState extends State<HomePage> {
           ),
           const SizedBox(height: 4),
           Text(
-            'Suchbegriff anpassen oder Filter wechseln',
+            'Suchbegriff anpassen',
             style: TextStyle(fontSize: 13, color: Colors.grey.shade400),
           ),
         ],
@@ -305,24 +240,38 @@ class HomePageState extends State<HomePage> {
   }
 }
 
-// ── Glossar-Karte ─────────────────────────────────────────────────────────────
+// ── Glossar-Karte ──────────────────────────────────────────────────────────────
 class _GlossarCard extends StatefulWidget {
   final String term;
   final String definition;
   final Aspekt aspekt;
+  final void Function(String) onRelatedTap;
 
   const _GlossarCard({
     required this.term,
     required this.definition,
     required this.aspekt,
+    required this.onRelatedTap,
   });
 
   @override
   State<_GlossarCard> createState() => _GlossarCardState();
 }
 
-class _GlossarCardState extends State<_GlossarCard> {
+class _GlossarCardState extends State<_GlossarCard>
+    with SingleTickerProviderStateMixin {
   bool _expanded = false;
+  List<String>? _related;
+
+  void _toggleExpand() {
+    setState(() {
+      _expanded = !_expanded;
+      if (_expanded && _related == null) {
+        // Lazy load verwandte Begriffe
+        _related = getRelatedTerms(widget.term);
+      }
+    });
+  }
 
   @override
   Widget build(BuildContext context) {
@@ -330,14 +279,12 @@ class _GlossarCardState extends State<_GlossarCard> {
     final lightColor = widget.aspekt.lightColor;
 
     return AnimatedContainer(
-      duration: const Duration(milliseconds: 200),
+      duration: const Duration(milliseconds: 220),
       margin: const EdgeInsets.only(bottom: 10),
       decoration: BoxDecoration(
         color: Colors.white,
         borderRadius: BorderRadius.circular(14),
-        border: Border(
-          left: BorderSide(color: color, width: 4),
-        ),
+        border: Border(left: BorderSide(color: color, width: 4)),
         boxShadow: [
           BoxShadow(
             color: Colors.black.withOpacity(0.06),
@@ -351,17 +298,17 @@ class _GlossarCardState extends State<_GlossarCard> {
         borderRadius: BorderRadius.circular(14),
         child: InkWell(
           borderRadius: BorderRadius.circular(14),
-          onTap: () => setState(() => _expanded = !_expanded),
+          onTap: _toggleExpand,
           child: Padding(
             padding: const EdgeInsets.fromLTRB(14, 12, 12, 12),
             child: Column(
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
-                // ── Kopfzeile ─────────────────────────────────────────────
+                // ── Kopfzeile ────────────────────────────────────────────
                 Row(
                   crossAxisAlignment: CrossAxisAlignment.start,
                   children: [
-                    // Avatar mit Anfangsbuchstabe
+                    // Avatar
                     Container(
                       width: 36,
                       height: 36,
@@ -381,7 +328,6 @@ class _GlossarCardState extends State<_GlossarCard> {
                       ),
                     ),
                     const SizedBox(width: 10),
-                    // Begriff + Aspekt-Badge
                     Expanded(
                       child: Column(
                         crossAxisAlignment: CrossAxisAlignment.start,
@@ -399,7 +345,6 @@ class _GlossarCardState extends State<_GlossarCard> {
                         ],
                       ),
                     ),
-                    // Expand-Icon
                     Icon(
                       _expanded
                           ? Icons.keyboard_arrow_up_rounded
@@ -410,7 +355,7 @@ class _GlossarCardState extends State<_GlossarCard> {
                   ],
                 ),
 
-                // ── Kurzdefinition (erste 100 Zeichen) ────────────────────
+                // ── Kurzdefinition (eingeklappt) ──────────────────────────
                 if (!_expanded) ...[
                   const SizedBox(height: 8),
                   Text(
@@ -425,9 +370,10 @@ class _GlossarCardState extends State<_GlossarCard> {
                   ),
                 ],
 
-                // ── Vollständige Definition ───────────────────────────────
+                // ── Vollständige Definition + Verwandte Begriffe (aufgeklappt)
                 if (_expanded) ...[
                   const SizedBox(height: 10),
+                  // Definition
                   Container(
                     padding: const EdgeInsets.all(12),
                     decoration: BoxDecoration(
@@ -443,6 +389,75 @@ class _GlossarCardState extends State<_GlossarCard> {
                       ),
                     ),
                   ),
+
+                  // ── Verwandte Begriffe ──────────────────────────────────
+                  if (_related != null && _related!.isNotEmpty) ...[
+                    const SizedBox(height: 12),
+                    Row(
+                      children: [
+                        Icon(Icons.hub_outlined,
+                            size: 13, color: Colors.grey.shade500),
+                        const SizedBox(width: 5),
+                        Text(
+                          'Verwandte Begriffe',
+                          style: TextStyle(
+                            fontSize: 11.5,
+                            fontWeight: FontWeight.w600,
+                            color: Colors.grey.shade500,
+                            letterSpacing: 0.3,
+                          ),
+                        ),
+                      ],
+                    ),
+                    const SizedBox(height: 8),
+                    Wrap(
+                      spacing: 8,
+                      runSpacing: 6,
+                      children: _related!.map((related) {
+                        final relAspekt = _aspektFromString(
+                            termAspect[related] ?? 'Funktional');
+                        return GestureDetector(
+                          onTap: () => widget.onRelatedTap(related),
+                          child: Container(
+                            padding: const EdgeInsets.symmetric(
+                                horizontal: 10, vertical: 5),
+                            decoration: BoxDecoration(
+                              color: Colors.white,
+                              borderRadius: BorderRadius.circular(20),
+                              border: Border.all(
+                                color: relAspekt.bgColor.withOpacity(0.5),
+                                width: 1.2,
+                              ),
+                              boxShadow: [
+                                BoxShadow(
+                                  color: relAspekt.bgColor.withOpacity(0.08),
+                                  blurRadius: 4,
+                                  offset: const Offset(0, 1),
+                                ),
+                              ],
+                            ),
+                            child: Row(
+                              mainAxisSize: MainAxisSize.min,
+                              children: [
+                                Icon(Icons.arrow_forward_rounded,
+                                    size: 11,
+                                    color: relAspekt.bgColor),
+                                const SizedBox(width: 5),
+                                Text(
+                                  related,
+                                  style: TextStyle(
+                                    fontSize: 12.5,
+                                    fontWeight: FontWeight.w600,
+                                    color: relAspekt.bgColor,
+                                  ),
+                                ),
+                              ],
+                            ),
+                          ),
+                        );
+                      }).toList(),
+                    ),
+                  ],
                 ],
               ],
             ),
@@ -456,9 +471,18 @@ class _GlossarCardState extends State<_GlossarCard> {
     if (def.length <= 110) return def;
     return '${def.substring(0, 110)}…';
   }
+
+  Aspekt _aspektFromString(String s) {
+    switch (s) {
+      case 'Ökonomisch': return Aspekt.oekonomisch;
+      case 'Ökologisch': return Aspekt.oekologisch;
+      case 'Sozial':     return Aspekt.sozial;
+      default:           return Aspekt.funktional;
+    }
+  }
 }
 
-// ── Aspekt-Badge ──────────────────────────────────────────────────────────────
+// ── Aspekt-Badge ───────────────────────────────────────────────────────────────
 class _AspektBadge extends StatelessWidget {
   final Aspekt aspekt;
   const _AspektBadge({required this.aspekt});
