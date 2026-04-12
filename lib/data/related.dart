@@ -8,73 +8,116 @@ import 'package:ap1_glossar/data/data.dart';
 
 /// Thematische Gruppen – je mehr Überschneidungen, desto verwandter
 const Map<String, List<String>> termGroups = {
-  'Netzwerk': [
-    'ARP', 'APIPA', 'DHCP', 'DNS', 'IPv4', 'IPv6', 'MAC-Adresse',
-    'OSI-Modell', 'Router', 'RJ-45', 'SLAAC', 'Subnetting', 'Switch',
-    'TCP', 'UDP', 'WLAN-Standards', 'VPN', 'Firewall', 'Daisy Chaining',
-    'Monitoranschlüsse', 'Peripherieanschlüsse',
-  ],
   'Hardware': [
     'BIOS vs. UEFI', 'Bootvorgang', 'CPU', 'DDR4 vs. DDR5', 'HDD',
     'NVMe', 'RAM', 'SSD', 'Geräteklassen', 'Netzteil-Leistungsberechnung',
     'Netzteil-Wirkungsgrad', 'S.M.A.R.T.', 'Daisy Chaining',
     'Monitoranschlüsse', 'Peripherieanschlüsse', 'RGB-Farbraum',
     'Dateigrößen-Berechnung', 'Übertragungsdauer',
+    'RAID', 'RAID-Level', 'Cache', 'USB-Standards', 'Wärmeleitpaste',
+    'Mainboard', 'Chipsatz', 'JBOD', 'NAS', 'SAN',
+  ],
+  'Netzwerk': [
+    'ARP', 'APIPA', 'DHCP', 'DNS', 'IPv4', 'IPv6', 'MAC-Adresse',
+    'OSI-Modell', 'Router', 'RJ-45', 'SLAAC', 'Subnetting', 'Switch',
+    'TCP', 'UDP', 'WLAN-Standards', 'VPN', 'Firewall', 'Daisy Chaining',
+    'Monitoranschlüsse', 'Peripherieanschlüsse',
+    'VLAN', 'DMZ', 'Proxy-Server', 'HTTPS', 'TLS', 'Ping',
+    'Netzwerkdiagnose', 'Netzwerktopologien', 'NAT', 'Portweiterleitung',
+    'SNMP', 'QoS', 'CIDR', 'IDS / IPS',
   ],
   'IT-Sicherheit': [
     'BSI-Grundschutz', 'BYOD', 'Digitales Zertifikat', 'Endpoint-Security',
     'Firewall', 'Hashverfahren', 'Härtung', 'Passwortrichtlinie', 'Phishing',
     'Ransomware', 'Schutzziele (CIA)', 'Trojaner', 'Virus', 'VPN',
     'Verschlüsselung', 'Zwei-Faktor-Authentisierung', 'Zutrittskontrolle',
-    'TOM',
+    'TOM', 'Social Engineering', 'DKIM', 'SPF', 'DMARC',
+    'Schwachstellenmanagement', 'Penetrationstest', 'Zero Trust',
+    'IDS / IPS', 'AES', 'RSA', 'OAuth 2.0', 'DMZ',
   ],
   'Datenschutz': [
     'Anonymisierung vs. Pseudonymisierung', 'BDSG', 'Betroffenenrechte',
     'BYOD', 'DSGVO', 'Datensicherung (Backup)', 'TOM',
-    'Pseudocode',
+    'Datenschutzbeauftragter', 'Datenschutz-Folgenabschätzung',
+    'Logging', 'Arbeitsschutzgesetz', 'Lizenzmodelle',
   ],
   'Nachhaltigkeit': [
     '80-PLUS-Zertifikat', 'Blauer Engel', 'CO₂-Fußabdruck IT', 'EPEAT',
     'ElektroG', 'Green IT', 'Konfliktmineralien', 'LkSG',
     'Netzteil-Wirkungsgrad', 'PUE-Wert', 'RoHS-Richtlinie',
     'Ökodesign-Verordnung', 'Stromkosten-Berechnung',
+    'Energieeffizienz-Klassen',
   ],
   'Wirtschaft': [
     'Abschreibung (AfA)', 'Amortisationsrechnung', 'CAPEX vs. OPEX',
     'Handelskalkulation', 'Kaufvertrag', 'Kaufvertragsstörungen', 'Leasing',
     'Make-or-Buy', 'Nutzwertanalyse', 'Rabatt und Skonto', 'Ratendarlehen',
     'Stromkosten-Berechnung', 'Stundensatz-Kalkulation', 'TCO',
+    'Lieferantenauswahl', 'Angebotsvergleich', 'Marktformen',
+    'Kapitalwertmethode', 'Barwertmethode', 'Lizenzmodelle',
   ],
   'Projektmanagement': [
     'Gantt-Diagramm', 'Lastenheft vs. Pflichtenheft', 'Netzplan',
     'SMART-Kriterien', 'Schreibtischtest', 'Change Management',
     'Make-or-Buy', 'Nutzwertanalyse', 'BPMN', 'ERM',
     'UML Aktivitätsdiagramm', 'UML Use-Case-Diagramm',
+    'Scrum', 'Kanban', 'Agile Methoden', 'Stakeholder',
+    'Projektmanagement-Methoden',
   ],
   'Programmierung': [
     'Compiler vs. Interpreter', 'ERM', 'Pseudocode', 'Schreibtischtest',
     'BPMN', 'UML Aktivitätsdiagramm', 'UML Use-Case-Diagramm',
+    'Struktogramm', 'SQL Grundlagen', 'SQL SELECT', 'SQL JOIN',
+    'Datenbankmodelle', 'Normalisierung', 'KI / Künstliche Intelligenz',
+    'Machine Learning',
   ],
   'Ergonomie & Soziales': [
     '4-Ohren-Modell', 'Barrierefreiheit (IT)', 'Bildschirmarbeitsplatz',
     'Change Management', 'Homeoffice', 'SMART-Kriterien',
+    'Arbeitsschutzgesetz', 'Stakeholder',
   ],
   'Recht': [
     'BDSG', 'Betroffenenrechte', 'DSGVO', 'ElektroG', 'Kaufvertrag',
     'Kaufvertragsstörungen', 'Konfliktmineralien', 'LkSG', 'RoHS-Richtlinie',
-    'TOM', 'Ökodesign-Verordnung',
+    'TOM', 'Ökodesign-Verordnung', 'Datenschutzbeauftragter',
+    'Datenschutz-Folgenabschätzung', 'Lizenzmodelle', 'Arbeitsschutzgesetz',
   ],
   'Berechnung': [
     'Abschreibung (AfA)', 'Amortisationsrechnung', 'Dateigrößen-Berechnung',
     'Handelskalkulation', 'Netzteil-Leistungsberechnung', 'Rabatt und Skonto',
     'Ratendarlehen', 'Stromkosten-Berechnung', 'Stundensatz-Kalkulation',
     'Subnetting', 'TCO', 'Übertragungsdauer', 'Nutzwertanalyse',
+    'Angebotsvergleich', 'Kapitalwertmethode', 'Barwertmethode', 'CIDR',
+  ],
+  'Cloud & Virtualisierung': [
+    'Cloud-Modelle', 'IaaS', 'PaaS', 'SaaS', 'Virtualisierung', 'Hypervisor',
+    'Docker', 'Container', 'Kubernetes', 'CAPEX vs. OPEX', 'TCO',
+    'Datensicherung (Backup)', 'NAS', 'SAN',
+  ],
+  'IT-Service-Management': [
+    'ITIL', 'SLA', 'Incident Management', 'Problem Management',
+    'Change Management', 'CMDB', 'Verfügbarkeit', 'MTBF / MTTR',
+    'RTO / RPO', 'Datensicherung (Backup)', 'Schutzziele (CIA)',
+  ],
+  'Systemadministration': [
+    'Betriebssysteme', 'Gruppenrichtlinien', 'Active Directory', 'LDAP',
+    'Kerberos', 'Dateirechte (Linux)', 'CMDB', 'Logging',
+    'Passwortrichtlinie', 'Härtung', 'Endpoint-Security',
+    'Zwei-Faktor-Authentisierung', 'Zutrittskontrolle',
+  ],
+  'Datenspeicherung': [
+    'RAID', 'RAID-Level', 'JBOD', 'NAS', 'SAN', 'HDD', 'SSD', 'NVMe',
+    'Datensicherung (Backup)', 'RTO / RPO', 'S.M.A.R.T.',
+  ],
+  'Kommunikation': [
+    'RFID', 'NFC', 'USB-Standards', 'QoS', 'SNMP', 'WLAN-Standards',
+    'RJ-45', 'Monitoranschlüsse', 'Peripherieanschlüsse', 'Bluetooth',
   ],
 };
 
 /// Berechnet Ähnlichkeits-Score zwischen zwei Begriffen (0–100)
 int _similarityScore(String a, String b) {
-  if (a == b) return -1; // sich selbst ausschließen
+  if (a == b) return -1;
   int score = 0;
 
   // 1. Gleicher Aspekt → +20
@@ -89,7 +132,7 @@ int _similarityScore(String a, String b) {
     if (inA && inB) score += 40;
   }
 
-  // 3. Gemeinsame Schlüsselwörter in Definitionen → +5 pro Wort (max +20)
+  // 3. Gemeinsame Schlüsselwörter in Definitionen → max +20
   final defA = (abbreviations[a] ?? '').toLowerCase();
   final defB = (abbreviations[b] ?? '').toLowerCase();
   final wordsA = defA
