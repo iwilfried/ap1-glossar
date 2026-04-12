@@ -1,5 +1,5 @@
 // AP1 Glossar – IHK Abschlussprüfung Teil 1
-// 233 Begriffe | Kategorien: Funktional · Ökonomisch · Ökologisch · Sozial · Berechnung
+// 268 Begriffe | Kategorien: Funktional · Ökonomisch · Ökologisch · Sozial · Berechnung
 // Basiert auf 10 echten AP1-Prüfungen (2021–2026) und dem IHK-Prüfungskatalog
 
 /// Begriff → vollständige Definition
@@ -472,6 +472,76 @@ Map<String, String> abbreviations = <String, String>{
       "Arbeitsstättenverordnung Anhang 6: Bildschirmarbeitsplätze. Anforderungen: Sehabstand 50–80 cm, Oberkante Monitor auf Augenhöhe, einstellbare Bildschirmneigung, keine Reflexionen/Blendung, Beleuchtung 500 Lux, höhenverstellbarer Stuhl + Tisch, ausreichend Beinfreiheit. Tablet = nicht normkonform (Bildschirm zu klein, keine Ergonomie-Einstellung).",
   "IT-Grundschutz-Kompendium":
       "BSI-Nachschlagewerk mit modularen Bausteinen für alle IT-Komponenten: ISMS (Sicherheitsmanagement), ORP (Organisation/Personal), CON (Konzepte), OPS (Betrieb), APP (Anwendungen), SYS (IT-Systeme), NET (Netze), INF (Infrastruktur). Jeder Baustein enthält: Gefährdungen + Anforderungen (MUSS/SOLLTE/KANN). Grundlage für BSI-Grundschutz-Zertifizierung.",
+  "Ausbildungsvertrag":
+      "Schriftlicher Vertrag nach § 10 ff. BBiG zwischen Ausbildendem und Auszubildendem. Pflichtinhalte: Ausbildungsberuf, Ausbildungsdauer, tägliche Arbeitszeit, Vergütung (jährlich steigend), Urlaub, Probezeit (1–4 Monate). Rechte und Pflichten beider Seiten. Muss vor Beginn bei der zuständigen Kammer (IHK/HWK) eingetragen werden.",
+  "BBiG":
+      "Berufsbildungsgesetz – Rechtsgrundlage für die betriebliche Berufsausbildung. Regelt: Ausbildungsvertrag (§ 10 f.), Pflichten des Ausbildenden und Auszubildenden (§§ 13–14), Prüfungswesen. Kündigung (§ 22): in Probezeit jederzeit, danach nur aus wichtigem Grund (fristlos) oder mit 4 Wochen Frist (Berufsaufgabe). Zuständige Stellen: IHK, HWK.",
+  "Duales System":
+      "Berufsausbildungssystem in Deutschland: Lernorte Betrieb (praktische Ausbildung nach Ausbildungsrahmenplan) und Berufsschule (theoretische Ausbildung nach Rahmenlehrplan). Vorteile: praxisnahe Ausbildung, enge Vernetzung, Abstimmung zwischen Betrieb und Schule. Betrieb trägt Kosten; Auszubildende erhalten gesetzliche Vergütung.",
+  "Berufsschulpflicht":
+      "Gesetzliche Pflicht zur Teilnahme am Berufsschulunterricht für alle Auszubildenden. Arbeitgeber muss freistellen: Berufsschultage, Prüfungen, Unterricht am Vortag einer Abschlussprüfung vor 9 Uhr (§ 9 JArbSchG für Jugendliche). Berufsschulzeiten = Arbeitszeit, werden auf tägliche Arbeitszeit angerechnet.",
+  "Ausbildungsrahmenplan":
+      "Sachliche und zeitliche Gliederung der Berufsausbildung (§ 5 BBiG). Grundlage: Ausbildungsordnung (bundeseinheitlich). Der Betrieb erstellt daraus den betrieblichen Ausbildungsplan (Konkretisierung auf Betriebsbesonderheiten). Unterschied zum Rahmenlehrplan der Berufsschule: dieser regelt das schulische Curriculum.",
+  "Tarifvertrag":
+      "Schriftliche Vereinbarung zwischen Arbeitgeberverbänden und Gewerkschaften (Tarifautonomie, Art. 9 GG). Arten: Entgelttarif (Löhne/Gehälter), Rahmentarif (Arbeitszeit, Urlaub, Kündigung), Manteltarif. Gilt für Mitglieder beider Tarifparteien. Günstigkeitsprinzip: betriebliche Regelungen dürfen Tarif nur verbessern, nicht unterschreiten.",
+  "Tarifautonomie":
+      "Verfassungsrechtlich geschütztes Recht (Art. 9 Abs. 3 GG) der Gewerkschaften und Arbeitgeberverbände, Arbeitsbedingungen durch Tarifverträge selbst zu regeln – ohne staatliche Einmischung. Tarifkonflikt: Verhandlung → Schlichtung → Arbeitskampf (Streik/Aussperrung). Staatlicher Mindestlohn bildet absolute Untergrenze.",
+  "Betriebsrat":
+      "Mitbestimmungsorgan der Arbeitnehmer (§ 1 BetrVG: ab 5 wahlberechtigte Arbeitnehmer). Echte Mitbestimmung: Überstunden, Betriebsordnung. Mitwirkung: Personalplanung. Informationsrechte: Wirtschaftsausschuss. Betriebsversammlung: mind. einmal pro Quartal. Jugend- und Auszubildendenvertretung (JAV) bei mind. 5 Jugendlichen/Auszubildenden.",
+  "Sozialversicherung":
+      "Pflichtversicherungssystem – 5 Säulen: Krankenversicherung (KV, ca. 14,6%), Pflegeversicherung (PV, ca. 3,4%), Rentenversicherung (RV, 18,6%), Arbeitslosenversicherung (AV, 2,6%), Unfallversicherung (UV, nur AG). Finanzierung: KV/PV/RV/AV paritätisch je 50% AG+AN. Beitragsbemessungsgrenze: monatliche Höchstgrenze für Beitragsberechnung.",
+  "Lohnsteuer":
+      "Einkommensteuer auf Arbeitslohn – vom Arbeitgeber direkt an das Finanzamt abgeführt (Quellensteuer). Berechnung nach Steuerklassen I–VI. Kirchensteuer: 8–9% der Lohnsteuer (nur Kirchenmitglieder). Solidaritätszuschlag: weitgehend abgeschafft (ab 2021 nur noch Topverdiener). Nettolohn = Brutto – Lohnsteuer – SolZ – KiSt – Sozialversicherung.",
+  "Brutto-Netto-Abrechnung":
+      "Entgeltabrechnung: Bruttolohn − Arbeitnehmeranteil Sozialversicherung (KV+PV+RV+AV) − Lohnsteuer − Kirchensteuer = Nettolohn. Arbeitgeber trägt zusätzlich AG-Anteil Sozialversicherung + Unfallversicherung (Gesamtkosten > Brutto). Prüfung: einzelne Abzugspositionen benennen, Nettoentgelt berechnen, Kostenpositionen des Arbeitgebers nennen.",
+  "Kündigungsschutz":
+      "Schutz vor ordentlicher Kündigung (KSchG ab 10 Mitarbeiter, > 6 Monate Betriebszugehörigkeit). Soziale Rechtfertigung: personenbedingt (Krankheit), verhaltensbedingt (Abmahnung!), betriebsbedingt. Kündigungsfristen (§ 622 BGB): Grundfrist 4 Wochen; nach Betriebszugehörigkeit steigend (7 J. → 2 Mon., 20 J. → 7 Mon.). Sonderkündigungsschutz: Schwangere, BR-Mitglieder, Schwerbehinderte.",
+  "AGG (Gleichbehandlungsgesetz)":
+      "Allgemeines Gleichbehandlungsgesetz – Verbot der Benachteiligung wegen: Rasse/ethnische Herkunft, Geschlecht, Religion/Weltanschauung, Behinderung, Alter, sexuelle Identität (§ 1 AGG). Gilt bei Einstellung, Beförderung, Entgelt, Kündigung. Beweislast: Arbeitnehmer zeigt Indizien → Arbeitgeber muss Benachteiligung widerlegen.",
+  "Arbeitszeitgesetz (ArbZG)":
+      "Höchstarbeitszeiten: max. 8 Std./Tag (bis 10 Std. wenn Ausgleich innerhalb 6 Monate). Ruhezeiten: mind. 11 Std. zwischen Arbeitstagen. Pausen: ab 6 Std. → 30 min, ab 9 Std. → 45 min. Nachtarbeit: 22–6 Uhr. Sonn-/Feiertagsarbeit grundsätzlich verboten (Ausnahmen § 10). Jugendliche: Jugendarbeitsschutzgesetz (JArbSchG) gilt vorrangig.",
+  "Rechtsformen (Unternehmen)":
+      "Einzelunternehmen: volle persönliche Haftung, einfach zu gründen. OHG: alle Gesellschafter unbeschränkt haftbar. KG: Komplementär unbeschränkt, Kommanditist beschränkt auf Einlage. GmbH: Mindeststammkapital 25.000 €, Haftung auf Einlage begrenzt. AG: Mindestkapital 50.000 €, Aktionäre haften nur mit Einlage. Wahl nach: Haftung, Kapital, Steuer.",
+  "GmbH vs. AG":
+      "GmbH: Stammkapital 25.000 €, keine Börsenpflicht, Gesellschafterversammlung + Geschäftsführer (+ Aufsichtsrat ab 500 MA). AG: Mindestkapital 50.000 €, börsennotiert möglich, Hauptversammlung + Vorstand + Aufsichtsrat (Pflicht). Beide: Haftung begrenzt auf Gesellschaftsvermögen. GmbH & Co. KG: Hybridform – KG mit GmbH als Komplementär.",
+  "Wirtschaftssektoren":
+      "Primärer Sektor: Urproduktion (Landwirtschaft, Forstwirtschaft, Fischerei). Sekundärer Sektor: Verarbeitung (Industrie, Handwerk, Baugewerbe). Tertiärer Sektor: Dienstleistungen (Handel, Banken, IT, Gesundheit, Tourismus). Strukturwandel in DE: Verlagerung von sekundär zu tertiär. Quartärer Sektor (informationsbasiert) diskutiert.",
+  "Unternehmensorganisation":
+      "Einliniensystem: klare Hierarchie, ein Vorgesetzter. Mehrliniensystem: Fachprinzip, mehrere Vorgesetzte. Stabliniensystem: Linie + beratende Stabsstellen (keine Weisungsbefugnis). Matrixorganisation: Kombination Funktional + Projekt (Doppelunterstellung). Spartenorganisation: Gliederung nach Produkt/Region (Profit Center). Aufbau- vs. Ablauforganisation.",
+  "Konzern / Kartell / Fusion":
+      "Konzern: rechtlich selbständige Unternehmen unter einheitlicher Leitung (§ 18 AktG). Kartell: wettbewerbsbeschränkende Absprachen – verboten (GWB, Art. 101 AEUV), Bußgelder bis 10% des Umsatzes. Fusion: Zusammenschluss zweier Unternehmen zu einem. Kontrolle: Bundeskartellamt (national), EU-Kommission (europäisch). Erlaubte Kooperationen: F&E, Normung.",
+  "Produktivität / Wirtschaftlichkeit / Rentabilität":
+      "Produktivität = Ausbringungsmenge ÷ Einsatzmenge (z. B. Stück/Arbeitsstunde). Wirtschaftlichkeit = Ertrag ÷ Aufwand (> 1 = wirtschaftlich). Rentabilität = Gewinn ÷ eingesetztes Kapital × 100 % (Eigenkapitalrentabilität, Gesamtkapitalrentabilität). Zielkonflikte: max. Rentabilität vs. soziale/ökologische Ziele. Alle drei Kennzahlen prüfungsrelevant.",
+  "Soziale Marktwirtschaft":
+      "Wirtschaftsordnung der BRD: freie Marktwirtschaft + sozialer Ausgleich (Art. 20 GG: Sozialstaatsprinzip). Merkmale: Privateigentum, freier Wettbewerb, Preismechanismus + staatliche Rahmensetzung (Mindestlohn, Sozialversicherung, Wettbewerbsrecht, Umweltschutz). Globalisierung: internationale Marktöffnung – Chancen (Absatzmärkte) + Risiken (Standortverlagerung).",
+  "Gefährdungsbeurteilung":
+      "Pflicht des Arbeitgebers (§ 5 ArbSchG): systematische Erfassung und Bewertung aller Gefährdungen am Arbeitsplatz. Kategorien: mechanisch, elektrisch, thermisch, chemisch, biologisch, ergonomisch, psychisch. Maßnahmen: STOP-Prinzip (Substitution → Technisch → Organisatorisch → Persönlich). Dokumentationspflicht. Wiederholung bei Änderungen.",
+  "Brandschutz":
+      "Vorbeugender Brandschutz: Brandschutzordnung, Fluchtwege, Feuerlöscher (Klassen A/B/C/D), Sicherheitszeichen. Verhalten im Brandfall: Aufzug nicht benutzen, Türen schließen, Sammelplatz aufsuchen, Notruf 112. Brandmeldeanlage, Rauchwarnmelder. Löschmittelauswahl je Brandklasse: A=Wasser, B=Schaum/CO₂, C=Pulver, D=Spezialpulver.",
+  "Unfallverhütung":
+      "Unfallprävention: Unterweisung der Mitarbeiter (mind. jährlich, dokumentieren), PSA (persönliche Schutzausrüstung), technische Schutzmaßnahmen, Sicherheitskennzeichnung. Ersthelfer: Pflicht ab 2 Beschäftigten (5–10% der Belegschaft). Unfall melden: Verbandbuch, Meldepflicht bei Arbeitsunfällen mit > 3 Tagen Ausfallzeit an Berufsgenossenschaft.",
+  "CE-Zeichen":
+      "Europäisches Konformitätszeichen: Hersteller erklärt, Produkt erfüllt EU-Richtlinien (Sicherheit, Gesundheit, Umwelt). Kein externes Prüfsiegel, sondern Herstellerselbsterklärung. Pflicht für viele Produktkategorien (Maschinen, Elektronik). Unterschied: GS-Zeichen (Geprüfte Sicherheit) = externe Prüfung durch unabhängige Stelle (z. B. TÜV).",
+  "Umweltschutz (betrieblich)":
+      "Gesetzliche Grundlagen: BImSchG (Immissionsschutz), KrWG (Kreislaufwirtschaft), VerpackG. Abfallhierarchie: Vermeidung > Wiederverwendung > Recycling > Verwertung > Beseitigung. IT-Entsorgung: Datenträger nach DSGVO löschen + nach ElektroG entsorgen. Toner/Akkus: getrennte Sammlung (BattG). Ressourcenschonung: unnötige Geräteeinsätze vermeiden.",
+  "Nachhaltigkeit (3-Säulen-Modell)":
+      "Drei Dimensionen (Brundtland 1987): Ökologisch (Ressourcenschonung, Klimaschutz), Ökonomisch (langfristige Wirtschaftlichkeit), Sozial (faire Arbeit, Generationengerechtigkeit). CSR (Corporate Social Responsibility): freiwillige unternehmerische Verantwortung. UN SDGs (17 Ziele für nachhaltige Entwicklung). Zielkonflikte: Kostenoptimierung vs. Umweltschutz.",
+  "Regenerative Energien":
+      "Erneuerbare Energiequellen: Solar (PV, Solarthermie), Wind (on-/offshore), Wasser, Biomasse, Geothermie. IT-Relevanz: Rechenzentren mit 100% Ökostrom betreiben, PUE-Wert senken. EEG (Erneuerbare-Energien-Gesetz): Einspeisevergütung, Ausbauziele. Klimaneutralität DE bis 2045, EU Green Deal. CO₂-Zertifikatehandel (EU-ETS).",
+  "Netiquette":
+      "Verhaltensregeln für digitale Kommunikation (E-Mail, Chat, Social Media): höflich und respektvoll, kurze zielführende Nachrichten, korrekter Betreff, kein GROSSSCHREIBEN (= Schreien), BCC statt CC bei Massenversand (Datenschutz). Rechtliche Risiken: Beleidigungen, arbeitsrechtliche Konsequenzen bei negativen Äußerungen über Arbeitgeber in sozialen Netzwerken.",
+  "Diversity":
+      "Wertschätzung und Förderung von Vielfalt im Unternehmen: Geschlecht, Alter, Herkunft, Religion, Behinderung, sexuelle Identität (AGG-Merkmale). Gender-Neutralität: geschlechtsneutrale Sprache, Berücksichtigung des dritten Geschlechts (§ 45b PStG). Inklusion: gleichberechtigte Teilhabe von Menschen mit Behinderung. Interkulturalität: effektives Arbeiten in diversen Teams.",
+  "Compliance":
+      "Einhaltung aller gesetzlichen, regulatorischen und unternehmensinternen Regeln. Bereiche: Antikorruption, Datenschutz, Arbeitssicherheit, Wettbewerbsrecht, IT-Sicherheit. Compliance-Programm: Richtlinien, Schulungen, Hinweisgebersystem (Whistleblower-Schutz nach HinSchG), interne Revision. Konsequenzen bei Verstößen: Straf-/Zivilrecht, Bußgelder, Reputationsschaden.",
+  "Lebenslanges Lernen":
+      "Kontinuierliche Weiterqualifizierung nach der Erstausbildung. Formen: Erhaltungsfortbildung (Wissen aktuell halten), Anpassungsfortbildung (neue Technologien), Aufstiegsfortbildung (Meister, Techniker, Fachwirt). Staatliche Förderung: Aufstiegs-BAföG, Bildungsgutschein (AA), ESF-Programme. Digitale Lernformen: WBT (Web Based Training), CBT (Computer Based Training), Webinare.",
+  "Arbeitstechniken (WiSo)":
+      "Zeitmanagement: Eisenhower-Matrix (dringend/wichtig), ALPEN-Methode, Pomodoro. Präsentationstechniken: Struktur (Einleitung/Hauptteil/Schluss), Visualisierung, Medieneinsatz. Moderationstechniken: Kartenabfrage, Brainstorming, Fishbowl. Arbeitsplanung: Aufgaben priorisieren, Pufferzeiten einplanen. Informationsbeschaffung: Quellenkritik, Unterschied Wikipedia vs. Fachliteratur.",
+  "Betriebsverfassungsgesetz (BetrVG)":
+      "Regelt Mitbestimmung der Arbeitnehmer im Betrieb. Betriebsrat: ab 5 wahlberechtigten Arbeitnehmern. Echte Mitbestimmung (§ 87): Überstunden, Arbeitszeiten, Betriebsordnung → Zustimmungspflicht. Mitwirkung: Personalplanung, Einstellungen. Betriebsvereinbarung: normative Wirkung (wie Tarifvertrag). JAV (Jugend- und Auszubildendenvertretung): ab 5 Jugendlichen/Azubis.",
+  "Entgeltformen":
+      "Zeitlohn: Vergütung nach Arbeitszeit (Stunde/Monat) – planbar, leistungsunabhängig. Akkordlohn: nach Stückzahl (Geldakkord: Stücke × Geldsatz; Zeitakkord: Normalzeit × Zeitfaktor) – leistungsabhängig. Prämienlohn: Zeitlohn + Prämie für Mehrleistung (Qualität, Ersparnis). Tantieme: Gewinnbeteiligung (Führungskräfte). Vermögenswirksame Leistungen (VL): staatlich gefördert.",
 };
 
 Map<String, String> termAspect = <String, String>{
@@ -708,4 +778,39 @@ Map<String, String> termAspect = <String, String>{
   "Tilgungsplan": "Berechnung",
   "Verfügbarkeit (Berechnung)": "Berechnung",
   "Webentwicklung (Grundlagen)": "Funktional",
+  "Ausbildungsvertrag": "Sozial",
+  "BBiG": "Sozial",
+  "Duales System": "Sozial",
+  "Berufsschulpflicht": "Sozial",
+  "Ausbildungsrahmenplan": "Sozial",
+  "Tarifvertrag": "Sozial",
+  "Tarifautonomie": "Sozial",
+  "Betriebsrat": "Sozial",
+  "Sozialversicherung": "Sozial",
+  "Lohnsteuer": "Ökonomisch",
+  "Brutto-Netto-Abrechnung": "Berechnung",
+  "Kündigungsschutz": "Sozial",
+  "AGG (Gleichbehandlungsgesetz)": "Sozial",
+  "Arbeitszeitgesetz (ArbZG)": "Sozial",
+  "Rechtsformen (Unternehmen)": "Ökonomisch",
+  "GmbH vs. AG": "Ökonomisch",
+  "Wirtschaftssektoren": "Ökonomisch",
+  "Unternehmensorganisation": "Funktional",
+  "Konzern / Kartell / Fusion": "Ökonomisch",
+  "Produktivität / Wirtschaftlichkeit / Rentabilität": "Ökonomisch",
+  "Soziale Marktwirtschaft": "Ökonomisch",
+  "Gefährdungsbeurteilung": "Sozial",
+  "Brandschutz": "Sozial",
+  "Unfallverhütung": "Sozial",
+  "CE-Zeichen": "Funktional",
+  "Umweltschutz (betrieblich)": "Ökologisch",
+  "Nachhaltigkeit (3-Säulen-Modell)": "Ökologisch",
+  "Regenerative Energien": "Ökologisch",
+  "Netiquette": "Sozial",
+  "Diversity": "Sozial",
+  "Compliance": "Sozial",
+  "Lebenslanges Lernen": "Sozial",
+  "Arbeitstechniken (WiSo)": "Sozial",
+  "Betriebsverfassungsgesetz (BetrVG)": "Sozial",
+  "Entgeltformen": "Ökonomisch",
 };

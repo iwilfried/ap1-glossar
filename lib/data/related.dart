@@ -139,6 +139,34 @@ const Map<String, List<String>> termGroups = {
     'RFID', 'NFC', 'USB-Standards', 'QoS', 'SNMP', 'WLAN-Standards',
     'RJ-45', 'Monitoranschlüsse', 'Peripherieanschlüsse', 'Bluetooth',
   ],
+  'WiSo Ausbildung & Arbeitsrecht': [
+    'Ausbildungsvertrag', 'BBiG', 'Duales System', 'Berufsschulpflicht',
+    'Ausbildungsrahmenplan', 'Tarifvertrag', 'Tarifautonomie',
+    'Betriebsrat', 'Kündigungsschutz', 'AGG (Gleichbehandlungsgesetz)',
+    'Arbeitszeitgesetz (ArbZG)', 'Betriebsverfassungsgesetz (BetrVG)',
+    'Entgeltformen', 'Sozialversicherung', 'Lohnsteuer',
+    'Brutto-Netto-Abrechnung', 'Arbeitsschutzgesetz',
+  ],
+  'WiSo Unternehmen & Wirtschaft': [
+    'Rechtsformen (Unternehmen)', 'GmbH vs. AG', 'Wirtschaftssektoren',
+    'Unternehmensorganisation', 'Konzern / Kartell / Fusion',
+    'Produktivität / Wirtschaftlichkeit / Rentabilität',
+    'Soziale Marktwirtschaft', 'Marktformen',
+    'Make-or-Buy', 'Lieferantenauswahl',
+  ],
+  'WiSo Sicherheit & Umwelt': [
+    'Gefährdungsbeurteilung', 'Brandschutz', 'Unfallverhütung',
+    'CE-Zeichen', 'Umweltschutz (betrieblich)',
+    'Nachhaltigkeit (3-Säulen-Modell)', 'Regenerative Energien',
+    'Green IT', 'Arbeitsschutzgesetz', 'CO₂-Fußabdruck IT',
+    'ElektroG', 'LkSG',
+  ],
+  'WiSo Digitale Zusammenarbeit': [
+    'Netiquette', 'Diversity', 'Compliance', 'Lebenslanges Lernen',
+    'Arbeitstechniken (WiSo)', '4-Ohren-Modell', 'Change Management',
+    'Social Engineering', 'BYOD', 'Homeoffice', 'Telearbeitsplatz',
+    'KI / Künstliche Intelligenz',
+  ],
 };
 
 /// Berechnet Ähnlichkeits-Score zwischen zwei Begriffen (0–100)
