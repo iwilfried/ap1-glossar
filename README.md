@@ -1,32 +1,129 @@
-# IHK AP1 Glossar – Flutter App
+# AP1 Glossar – IHK Fachinformatiker Prüfungsvorbereitung
 
-Ein vollständiges Glossar mit **92 Fachbegriffen** für die IHK-Abschlussprüfung Teil 1 (AP1) der IT-Berufe (Fachinformatiker Systemintegration / Anwendungsentwicklung).
+> Flutter-App mit 98 zentralen Fachbegriffen der AP1-Abschlussprüfung –  
+> gefiltert nach IHK-Bewertungsaspekten, optimiert für Fachinformatiker (Anwendungsentwicklung & Systemintegration)
 
-## Inhalte
+**Live-Demo:** https://iwilfried.github.io/ap1-glossar/
 
-Kategorien mit Definitionen aus echten AP1-Prüfungen (2021–2026):
+---
 
-| Kategorie | Begriffe |
-|---|---|
-| 🌐 Netzwerk | IPv4, IPv6, DHCP, DNS, OSI-Modell, TCP, UDP, Subnetting, APIPA, MAC, ARP, VPN, Switch, Router, Firewall, WLAN |
-| 🔒 IT-Sicherheit | Schutzziele (CIA), Virus, Trojaner, Ransomware, Phishing, Endpoint-Security, Verschlüsselung, Hashverfahren, 2FA, TOM, BYOD, Härtung |
-| 🖥️ Hardware | CPU, RAM, DDR4/DDR5, SSD, HDD, NVMe, SMART, Monitoranschlüsse, Netzteil, Geräteklassen, BIOS/UEFI, Bootvorgang |
-| 🔢 Berechnungen | Dateigrößen, Übertragungsdauer, Stromkosten, Amortisation, AfA, Netzteil-Leistung, RGB-Farbraum |
-| 📊 Projektplanung | Netzplan, Gantt, ERM, UML Use-Case, Aktivitätsdiagramm, BPMN, Schreibtischtest, Lastenheft, SMART-Kriterien |
-| ⚙️ Programmierung | Compiler vs. Interpreter, Pseudocode, Barrierefreiheit |
-| 💶 Wirtschaft & Recht | Nutzwertanalyse, TCO, Leasing, Handelskalkulation, Ratendarlehen, Stundensatz, Rabatt/Skonto |
-| 🔐 Datenschutz | DSGVO, BDSG, Betroffenenrechte, Anonymisierung, Pseudonymisierung |
-| 🌿 Ökologie | 80-PLUS, ElektroG, RoHS, EPEAT, Blauer Engel, PUE, LkSG, Green IT |
+## Inhalt
+
+- **98 Fachbegriffe** aus allen relevanten AP1-Themengebieten
+- **Filter nach Bewertungsaspekt** (Funktional / Ökonomisch / Ökologisch / Sozial)
+- **IHK-Farbkodierung** passend zur offiziellen Bewertungsstruktur
+- **Volltextsuche** über alle Begriffe und Definitionen
+- **Offline-fähig** – kein Server, keine Datenbank nötig
+
+---
+
+## Bewertungsaspekte
+
+| Aspekt | Farbe | Bedeutung |
+|---|---|---|
+| Funktional | 🔵 Blau | Technische Eignung, Leistung, Funktionserfüllung |
+| Ökonomisch | 🟢 Grün | Kosten, Wirtschaftlichkeit, TCO, ROI |
+| Ökologisch | 🟤 Braun | Energieverbrauch, CO₂, Ressourcenschonung |
+| Sozial | 🟠 Orange | Ergonomie, Barrierefreiheit, Arbeitsbedingungen |
+
+---
+
+## Screenshots
+
+| Startseite | Aspekt-Filter | Begriff-Detail |
+|---|---|---|
+| Alle Begriffe mit Suchleiste | Filter-Chips für die 4 Aspekte | Vollständige Definition |
+
+---
 
 ## Technologie
 
-- Flutter (Dart) – läuft auf Android, iOS und Web
-- Ursprung: Fork von `nasa-earth-dictionary-final`
-- Datenquelle: Analyse von 10 echten IHK AP1-Prüfungen (2021–2026)
+| Komponente | Technologie |
+|---|---|
+| Framework | Flutter 3.29 |
+| Sprache | Dart 3 |
+| Plattformen | Android · iOS · Web |
+| Daten | Hardcoded `data.dart` (offline-first) |
+| Schriftart | Google Fonts (Poppins) |
+| Deployment | GitHub Pages |
 
-## Starten
+---
+
+## Lokale Entwicklung
+
+### Voraussetzungen
+- Flutter SDK ≥ 3.0 ([flutter.dev](https://flutter.dev))
+- Dart SDK ≥ 3.0
+
+### Setup
 
 ```bash
+git clone https://github.com/iwilfried/ap1-glossar.git
+cd ap1-glossar
 flutter pub get
-flutter run
+flutter run                    # Android/iOS
+flutter run -d chrome          # Web (lokal)
+flutter build web --release    # Production Build
 ```
+
+---
+
+## Begriffe hinzufügen / bearbeiten
+
+Alle Begriffe und Aspekt-Zuordnungen liegen in einer einzigen Datei:
+
+```
+lib/data/data.dart
+```
+
+**Begriff hinzufügen:**
+```dart
+// In glossaryTerms Map:
+'Neuer Begriff': 'Definition des Begriffs...',
+
+// In termAspect Map:
+'Neuer Begriff': 'Funktional',  // oder Ökonomisch | Ökologisch | Sozial
+```
+
+---
+
+## Roadmap / Geplante Erweiterungen
+
+### Version 1.1 – AP2-Erweiterung
+- [ ] AP2-Begriffe ergänzen (Projektmanagement, Datenschutz, Betriebssysteme)
+- [ ] Filter: AP1 / AP2 / Alle
+- [ ] Favoritenliste (lokaler Speicher)
+
+### Version 1.2 – Lernmodus
+- [ ] Karteikarten-Modus (Begriff → Definition aufdecken)
+- [ ] Fortschritts-Tracking
+- [ ] Zufalls-Quiz aus gefilterten Begriffen
+
+### Version 2.0 – Cloud-Sync (optional)
+- [ ] Firestore-Backend für dynamische Inhalte
+- [ ] Nutzerverwaltung für Kurs-Teilnehmer
+- [ ] Dozenten-Dashboard zum Hinzufügen neuer Begriffe
+
+---
+
+## Verwandte Repositories
+
+- **Notion 5-DB-Lernkartei**: [iwilfried/ap1-notion-export](https://github.com/iwilfried/ap1-notion-export)  
+  → 100 Lernkarten mit Bewertungsaspekten, schema.json, AP2-ready
+
+---
+
+## Datenquellen
+
+- IHK-Prüfungen AP1, 2021–2026 (Herbst & Frühjahr)
+- IHK-Prüfungskatalog für gestreckte Abschlussprüfungen IT-Berufe
+- BSI-Grundschutz-Kompendium: https://www.bsi.bund.de/grundschutz
+- DSGVO – EUR-Lex: https://eur-lex.europa.eu/legal-content/DE/TXT/?uri=CELEX:32016R0679
+- it-berufe-podcast.de (Stefan Macke) – Prüfungsstatistiken
+
+---
+
+## Lizenz
+
+Lernmaterialien für den persönlichen Prüfungsgebrauch.  
+IHK-Prüfungsinhalte unterliegen dem Urheberrecht der zuständigen IHK-Gremien.
