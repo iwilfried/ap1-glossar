@@ -1,5 +1,22 @@
 import 'package:flutter/material.dart';
 
 class AppColors {
-  static const color = Colors.deepPurple;
+  // App-Primärfarbe
+  static const color = Color(0xFF1B3A5C); // Dunkelblau IHK-Stil
+
+  // Bewertungsaspekt-Farben (passend zur Notion-Struktur)
+  static const funktional  = Color(0xFF1B3A5C); // Dunkelblau
+  static const oekonomisch = Color(0xFF1A5C3A); // Dunkelgrün
+  static const oekologisch = Color(0xFF5C4A1A); // Dunkelbraun/Olive
+  static const sozial      = Color(0xFF8B2500); // Dunkelorange/Rot
+
+  // Helle Varianten für Chip-Hintergrund
+  static const funktionalLight  = Color(0xFFE3EDF7);
+  static const oekonomischLight = Color(0xFFE3F5EC);
+  static const oekologischLight = Color(0xFFF2EFE3);
+  static const sozialLight      = Color(0xFFFDF0E6);
+
+  // Neutral
+  static const allFilter = Color(0xFF424242);
+  static const allFilterLight = Color(0xFFF5F5F5);
 }
