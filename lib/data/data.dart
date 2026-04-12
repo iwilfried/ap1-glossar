@@ -200,7 +200,6 @@ Map<String, String> abbreviations = <String, String>{
       "EU-Verordnung legt Mindestanforderungen an Energieeffizienz und Reparierbarkeit von Elektronikprodukten fest. Hersteller müssen Ersatzteile bereitstellen, Reparierbarkeit sicherstellen und Energieverbrauch deklarieren.",
   "Übertragungsdauer":
       "Dauer = Dateigröße (Bit) ÷ Bandbreite (Bit/s). Achtung: Groß-B = Byte, klein-b = Bit, 1 Byte = 8 Bit. Beispiel: 2,5 GiB über 100 Mbit/s = 2,5 × 1024 × 8 MBit ÷ 100 Mbit/s = 204,8 Sekunden.",
-};
 
 /// Begriff → Bewertungsaspekt (Funktional | Ökonomisch | Ökologisch | Sozial)
   "RAID":
@@ -389,6 +388,7 @@ Map<String, String> abbreviations = <String, String>{
       "Classless Inter-Domain Routing: flexible Subnetzaufteilung durch Präfixnotation (z. B. 192.168.1.0/24). /24 = 256 Adressen (254 nutzbar). /25 = 128 Adressen. Formel: Hostanzahl = 2^(32−Präfix) − 2. Ersetzt klassenbasiertes Routing (Class A/B/C). Grundlage des Subnetting.",
   "Grundschutz-Maßnahmen":
       "BSI IT-Grundschutz: Bausteine für sichere IT (technisch, organisatorisch, infrastrukturell, personell). ISMS-Rahmenwerk nach ISO 27001. Schutzbedarfsfeststellung: normal/hoch/sehr hoch. Maßnahmen: Basis-Absicherung, Standard-Absicherung, Kern-Absicherung.",
+};
 
 Map<String, String> termAspect = <String, String>{
   "4-Ohren-Modell": "Sozial",

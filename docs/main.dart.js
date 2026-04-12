@@ -349,7 +349,7 @@ aFq(){var s,r=A.dZ().b
 if(r==null)s=null
 else{r=r.canvasKitVariant
 if(r==null)r=null
-s=r}r=A.aHZ(A.aA_(B.Fj,s==null?"auto":s))
+s=r}r=A.aHZ(A.aA_(B.Fl,s==null?"auto":s))
 return new A.ah(r,new A.ajC(),A.a0(r).i("ah<1,q>"))},
 aHh(a,b){return b+a},
 UP(){var s=0,r=A.S(t.e),q,p,o,n,m
@@ -417,7 +417,7 @@ r.b!==$&&A.bp()
 r.b=q
 return r},
 aFx(){var s,r=new Float32Array(20)
-for(s=0;s<4;++s)r[B.E9[s]]=1
+for(s=0;s<4;++s)r[B.E8[s]]=1
 return $.aG5=r},
 aHC(a,b){var s=$.b9.b2().ColorFilter.MakeBlend(A.ak6($.V7(),a),$.aoq()[b.a])
 if(s==null)return $.b9.b2().ColorFilter.MakeMatrix($.awT())
@@ -427,7 +427,7 @@ aHw(a){switch(0){case 0:return new A.FK(a.a,a.b)}},
 apx(a,b){var s=b.i("B<0>")
 return new A.GD(a,A.b([],s),A.b([],s),b.i("GD<0>"))},
 amA(a){var s=null
-return new A.hX(B.I_,s,s,s,a,s)},
+return new A.hX(B.I4,s,s,s,a,s)},
 amL(a,b,c){var s=new self.window.flutterCanvasKit.Font(c),r=A.op(A.b([0],t.t))
 s.getGlyphBounds(r,null,null)
 return new A.oH(b,a,c)},
@@ -596,7 +596,7 @@ a=!0
 break}}b=a0}}if(!a)if(b!=null)b.a.push(e)
 else l.push(e)}}if(a6.a.length!==0)a4.push(a6)
 return new A.ry(a4)},
-q5(){return new A.q4(B.cM,B.cu,B.Mx,B.My,B.fr)},
+q5(){return new A.q4(B.cM,B.cu,B.MC,B.MD,B.fr)},
 ayK(){var s=new self.window.flutterCanvasKit.Path()
 s.setFillType($.ali()[0])
 return A.ap6(s,B.t_)},
@@ -867,7 +867,7 @@ return new s([],r)},
 aHE(){var s,r
 if(self.Intl.v8BreakIterator==null)throw A.e(A.id("v8BreakIterator is not supported."))
 s=self.Intl.v8BreakIterator
-r=A.aB(B.HF)
+r=A.aB(B.HK)
 if(r==null)r=t.K.a(r)
 return new s([],r)},
 al3(){var s=0,r=A.S(t.H)
@@ -947,7 +947,7 @@ n.l()
 a.l()
 return m},
 aHI(a){var s,r,q,p,o,n,m
-$label0$0:for(s=a.length,r=0;r<6;++r){q=B.EA[r]
+$label0$0:for(s=a.length,r=0;r<6;++r){q=B.Ez[r]
 p=q.c
 o=p.length
 if(s<o)continue $label0$0
@@ -1057,7 +1057,7 @@ case 3:return new A.xs(A.ao8(';b1{bc1&cf1[fg1]gm2<m?mn1}nq3/q@q\\qv1@vw3"w?w|wx2
 case 1:case 2:case 5:return new A.xs(A.ao8("8a2@q\u03a9qk1&kq3@q\xc6a\xe6aw2<z\xabzx1>xy2\xa5\xff\u2190\xffz5<z\xbby\u0141w\u0142w\u203ay;2\xb5m\xbam"))}},
 aAF(a){var s
 if(a.length===0)return 98784247808
-s=B.Hz.h(0,a)
+s=B.HE.h(0,a)
 return s==null?B.d.gA(a)+98784247808:s},
 anP(a){var s
 if(a!=null){s=a.FW(0)
@@ -1167,9 +1167,9 @@ if(q==null)q=t.K.a(q)
 r.setAttribute("aria-live",q)
 return r},
 aFs(a){var s=a.a
-if((s&256)!==0)return B.Tm
-else if((s&65536)!==0)return B.Tn
-else return B.Tl},
+if((s&256)!==0)return B.Tr
+else if((s&65536)!==0)return B.Ts
+else return B.Tq},
 aCH(a){var s=new A.a8W(A.bz(self.document,"input"),new A.n1(a.k4,B.cK),B.lT,a),r=A.zf(s.c4(0),a)
 s.a!==$&&A.bp()
 s.a=r
@@ -1263,7 +1263,7 @@ c.adoptText(b)
 c.first()
 for(s=a.length,r=0;c.next()!==-1;r=q){q=B.c.ag(c.current())
 for(p=r,o=0,n=0;p<q;++p){m=a.charCodeAt(p)
-if(B.L0.n(0,m)){++o;++n}else if(B.L7.n(0,m))++n
+if(B.L5.n(0,m)){++o;++n}else if(B.Lc.n(0,m))++n
 else if(n>0){k.push(new A.o4(B.mz,o,n,r,p))
 r=p
 o=0
@@ -1574,7 +1574,7 @@ s=B.d.n(s,"OS 15_")}else s=!1
 if(s)return"BlinkMacSystemFont"
 if($.bc().gd_()===B.aT||$.bc().gd_()===B.bK)return"-apple-system, BlinkMacSystemFont"
 return"Arial"},
-aHg(a){if(B.L1.n(0,a))return a
+aHg(a){if(B.L6.n(0,a))return a
 if($.bc().gd_()===B.aT||$.bc().gd_()===B.bK)if(a===".SF Pro Text"||a===".SF Pro Display"||a===".SF UI Text"||a===".SF UI Display")return A.atV()
 return'"'+A.p(a)+'", '+A.atV()+", sans-serif"},
 aHi(a,b,c){if(a<b)return b
@@ -1603,7 +1603,7 @@ r.b=r
 return new A.Ie(a,new A.we(r,s.i("we<+key,value(1,2)>")),A.z(b,s.i("apY<+key,value(1,2)>")),s.i("Ie<1,2>"))},
 aIU(a){switch(a){case B.dm:return"clamp"
 case B.jS:return"mirror"
-case B.RM:return"repeated"
+case B.RR:return"repeated"
 case B.jT:return"decal"
 case null:case void 0:return"unspecified"}},
 r7(){var s=new Float32Array(16)
@@ -7101,7 +7101,7 @@ k.aG()
 k.Y9(j,j,r)
 s.ay$!==$&&A.ak()
 s.ay$=k
-l=k}s.Tm(new A.Ar(p,B.I1,o,l,j))
+l=k}s.Tm(new A.Ar(p,B.I6,o,l,j))
 s.G4()
 return j},
 Iz:function Iz(a){this.a=a},
@@ -7343,8 +7343,8 @@ return s},
 an6(a,b,c){var s,r,q=new A.pc(a,b,c,new A.b3(A.b([],t.O),t.T),new A.dA(A.dc(null,null,t.M,t.S),t.PD))
 if(b!=null)if(J.f(a.gD(a),b.gD(b))){q.a=b
 q.b=null
-s=b}else{if(a.gD(a)>b.gD(b))q.c=B.Uw
-else q.c=B.Uv
+s=b}else{if(a.gD(a)>b.gD(b))q.c=B.UB
+else q.c=B.UA
 s=a}else s=a
 s.fe(q.gnV())
 s=q.gBY()
@@ -7807,7 +7807,7 @@ apn(a,b){return new A.lg(a,b,null,null,null)},
 az2(a){return new A.lg(null,a.a,a,null,null)},
 apo(a,b){var s,r=b.c
 if(r!=null)return r
-A.iW(a,B.S2,t.ho).toString
+A.iW(a,B.S7,t.ho).toString
 s=b.b
 $label0$0:{if(B.f2===s){r="Cut"
 break $label0$0}if(B.f3===s){r="Copy"
@@ -8095,8 +8095,8 @@ s=A.b(p.b[1].split("."),t.s)
 r=s.length>1?B.b.gM(s):q
 return new A.i8(a,-1,q,q,q,-1,-1,r,s.length>1?A.i9(s,1,null,t.N).bR(0,"."):B.b.gaD(s))},
 aCY(a){var s,r,q,p,o,n,m,l,k,j,i=null,h="<unknown>"
-if(a==="<asynchronous suspension>")return B.Ms
-else if(a==="...")return B.Mt
+if(a==="<asynchronous suspension>")return B.Mx
+else if(a==="...")return B.My
 if(!B.d.c_(a,"#"))return A.aCW(a)
 s=A.j7("^#(\\d+) +(.+) \\((.+?):?(\\d+){0,1}:?(\\d+){0,1}\\)$",!0,!1).DJ(a).b
 r=s[2]
@@ -10298,7 +10298,7 @@ q=A.be(l.a,16)
 p=A.be(A.xE(l.a+60),24)
 o=A.be(l.a,6)
 n=A.be(l.a,8)
-n=new A.K7(A.eZ(s),B.T3,m,d,r,q,p,o,n,A.be(25,84))
+n=new A.K7(A.eZ(s),B.T8,m,d,r,q,p,o,n,A.be(25,84))
 s=n
 break
 case 1:s=l.d
@@ -10354,7 +10354,7 @@ q=A.be(l.a,8)
 p=A.be(l.a,16)
 o=A.be(l.a,2)
 n=A.be(l.a,2)
-n=new A.K5(A.eZ(s),B.T2,m,d,r,q,p,o,n,A.be(25,84))
+n=new A.K5(A.eZ(s),B.T7,m,d,r,q,p,o,n,A.be(25,84))
 s=n
 break
 case 4:s=l.d
@@ -10366,7 +10366,7 @@ q=A.be(A.Yp(l,$.arM,$.aCs),24)
 p=A.be(A.Yp(l,$.arM,$.aCt),32)
 o=A.be(l.a,10)
 n=A.be(l.a,12)
-n=new A.K8(A.eZ(s),B.T4,m,d,r,q,p,o,n,A.be(25,84))
+n=new A.K8(A.eZ(s),B.T9,m,d,r,q,p,o,n,A.be(25,84))
 s=n
 break
 case 5:s=l.d
@@ -10378,7 +10378,7 @@ q=A.be(A.Yp(l,$.arL,$.aCq),24)
 p=A.be(A.Yp(l,$.arL,$.aCr),32)
 o=A.be(l.a+15,8)
 n=A.be(l.a+15,12)
-n=new A.K1(A.eZ(s),B.T5,m,d,r,q,p,o,n,A.be(25,84))
+n=new A.K1(A.eZ(s),B.Ta,m,d,r,q,p,o,n,A.be(25,84))
 s=n
 break
 case 7:s=l.d
@@ -10390,7 +10390,7 @@ q=A.be(l.a,16)
 p=A.be(A.xE(l.a+60),24)
 o=A.be(l.a,0)
 n=A.be(l.a,0)
-n=new A.K6(A.eZ(s),B.T6,m,d,r,q,p,o,n,A.be(25,84))
+n=new A.K6(A.eZ(s),B.Tb,m,d,r,q,p,o,n,A.be(25,84))
 s=n
 break
 case 8:s=l.d
@@ -10402,7 +10402,7 @@ q=A.be(A.xE(l.a-50),36)
 p=A.be(l.a,36)
 o=A.be(l.a,10)
 n=A.be(l.a,16)
-n=new A.K3(A.eZ(s),B.T7,m,d,r,q,p,o,n,A.be(25,84))
+n=new A.K3(A.eZ(s),B.Tc,m,d,r,q,p,o,n,A.be(25,84))
 s=n
 break
 default:s=null}return s},
@@ -12054,7 +12054,7 @@ aBq(a,b,c){if(a===b)return a
 return new A.y6(A.iz(a.a,b.a,c))},
 y6:function y6(a){this.a=a},
 PK:function PK(){},
-a4z(a,b,c){var s=null,r=A.b([],t.Zt),q=$.am,p=A.yh(B.dF),o=A.b([],t.wi),n=$.ax(),m=$.am,l=c.i("aD<0?>"),k=c.i("bS<0?>"),j=b==null?B.Kg:b
+a4z(a,b,c){var s=null,r=A.b([],t.Zt),q=$.am,p=A.yh(B.dF),o=A.b([],t.wi),n=$.ax(),m=$.am,l=c.i("aD<0?>"),k=c.i("bS<0?>"),j=b==null?B.Kl:b
 return new A.iX(a,!1,!0,!1,r,A.az(t.f9),new A.bB(s,c.i("bB<pu<0>>")),new A.bB(s,t.C),new A.a5L(),s,0,new A.bS(new A.aD(q,c.i("aD<0?>")),c.i("bS<0?>")),p,o,s,j,new A.c6(s,n),new A.bS(new A.aD(m,l),k),new A.bS(new A.aD(m,l),k),c.i("iX<0>"))},
 iX:function iX(a,b,c,d,e,f,g,h,i,j,k,l,m,n,o,p,q,r,s,a0){var _=this
 _.dH=a
@@ -13076,7 +13076,7 @@ aDs(a){if(a===B.yA||a===B.kn)return 14.5
 return 9.5},
 aDr(a,b){if(a===0)return b===1?B.kn:B.yz
 if(a===b-1)return B.yA
-return B.Ut},
+return B.Uy},
 aDp(a){var s,r=null,q=a.a.a
 switch(q){case 1:s=A.t8(r,r,r,r,r,r,r,r,r,r,r,r).ax.k3===a.k3
 break
@@ -13165,9 +13165,9 @@ _.bN$=b
 _.c=_.a=null},
 acq:function acq(){},
 t8(c1,c2,c3,c4,c5,c6,c7,c8,c9,d0,d1,d2){var s,r,q,p,o,n,m,l,k,j,i,h,g,f,e,d,c,b,a,a0,a1,a2,a3,a4,a5,a6,a7,a8,a9,b0,b1,b2,b3,b4,b5,b6,b7=null,b8=A.b([],t.FO),b9=A.b([],t.lY),c0=A.aU()
-switch(c0.a){case 0:case 1:case 2:s=B.HO
+switch(c0.a){case 0:case 1:case 2:s=B.HT
 break
-case 3:case 4:case 5:s=B.HP
+case 3:case 4:case 5:s=B.HU
 break
 default:s=b7}r=A.aDQ(c0)
 d2=d2!==!1
@@ -13215,7 +13215,7 @@ a4=new A.FD(n?B.lk:B.i4,b7,g,f,b7,b7,c5,s)
 a5=n?B.B5:B.B_
 a6=n?B.li:B.i5
 a7=n?B.li:B.Aw
-if(d2){a8=A.asy(c0,b7,b7,B.Rp,B.Ru,B.Rw)
+if(d2){a8=A.asy(c0,b7,b7,B.Ru,B.Rz,B.RB)
 p=c5.a===B.a3
 a9=p?c5.k3:c5.k2
 b0=p?c5.k2:c5.k3
@@ -13229,7 +13229,7 @@ b4=b3.bn(b7)
 b5=n?new A.cG(b7,b7,b7,b7,b7,$.aov(),b7,b7,b7):new A.cG(b7,b7,b7,b7,b7,$.aou(),b7,b7,b7)
 b6=h?B.Dl:B.Dm
 if(c6==null)c6=n?B.bC:B.k
-return A.an2(b7,A.aDv(b9),B.yJ,c1===!0,B.yN,B.HN,B.z2,B.z3,B.z4,B.zf,a4,c3,c4,B.Ai,B.Aj,B.Ak,c5,b7,B.BA,B.BB,c6,B.BO,a5,c7,B.BP,B.BT,B.BU,B.CG,B.CK,A.aDx(b8),B.CR,B.CU,g,a6,a3,f,B.D6,b5,c8,B.zw,B.E3,s,B.HS,B.HT,B.HU,B.I5,B.I6,B.I8,B.J_,B.zN,c0,B.JO,c9,i,j,b6,b4,B.JP,B.JQ,d0,B.Kq,B.Kr,B.Ks,a2,B.Kt,B.l,B.Mg,B.Mk,a7,q,B.MC,B.MP,B.MQ,B.N9,d1,B.RN,B.RO,B.RS,b1,a1,d2,r)},
+return A.an2(b7,A.aDv(b9),B.yJ,c1===!0,B.yN,B.HS,B.z2,B.z3,B.z4,B.zf,a4,c3,c4,B.Ai,B.Aj,B.Ak,c5,b7,B.BA,B.BB,c6,B.BO,a5,c7,B.BP,B.BT,B.BU,B.CG,B.CK,A.aDx(b8),B.CR,B.CU,g,a6,a3,f,B.D6,b5,c8,B.zw,B.E3,s,B.HX,B.HY,B.HZ,B.Ia,B.Ib,B.Id,B.J4,B.zN,c0,B.JT,c9,i,j,b6,b4,B.JU,B.JV,d0,B.Kv,B.Kw,B.Kx,a2,B.Ky,B.l,B.Ml,B.Mp,a7,q,B.MH,B.MU,B.MV,B.Ne,d1,B.RS,B.RT,B.RX,b1,a1,d2,r)},
 an2(a,b,c,d,e,f,g,h,i,j,k,l,m,n,o,p,q,r,s,a0,a1,a2,a3,a4,a5,a6,a7,a8,a9,b0,b1,b2,b3,b4,b5,b6,b7,b8,b9,c0,c1,c2,c3,c4,c5,c6,c7,c8,c9,d0,d1,d2,d3,d4,d5,d6,d7,d8,d9,e0,e1,e2,e3,e4,e5,e6,e7,e8,e9,f0,f1,f2,f3,f4,f5,f6,f7,f8,f9,g0,g1,g2){return new A.hl(d,r,b0,b,c0,c2,d0,d1,e1,f0,!0,g2,l,m,q,a3,a4,b3,b4,b5,b6,b9,d3,d4,d5,e0,e4,e6,e9,g0,b8,d6,d7,f5,f9,a,c,e,f,g,h,i,k,n,o,p,s,a0,a2,a5,a6,a7,a8,a9,b1,b2,b7,c1,c3,c4,c5,c6,c7,c8,c9,d2,d8,d9,e2,e3,e5,e7,e8,f1,f2,f3,f4,f6,f7,f8,j,a1)},
 aso(a,b){var s=a.a,r=s===B.a2,q=r?a.k2:a.b,p=r?a.k3:a.c,o=a.k2,n=a.k3
 return A.t8(r,s,o,o,a,o,A.ay(31,n.B()>>>16&255,n.B()>>>8&255,n.B()&255),p,q,o,null,!0)},
@@ -13365,7 +13365,7 @@ return A.an2(b6,r,b7,q,b8,new A.xC(c1,c2,c3,c4,c5,c6,c7,b9),c0,c8,c9,g7,s,g,f,d0
 aqT(a,b){return new A.Ii(a,b,B.k7,b.a,b.b,b.c,b.d,b.e,b.f,b.r)},
 aDQ(a){var s
 $label0$0:{if(B.a0===a||B.O===a||B.b8===a){s=B.eF
-break $label0$0}if(B.b9===a||B.aM===a||B.ba===a){s=B.Tb
+break $label0$0}if(B.b9===a||B.aM===a||B.ba===a){s=B.Tg
 break $label0$0}s=null}return s},
 aDR(a,b,c){var s,r
 if(a===b)return a
@@ -13686,21 +13686,21 @@ _.r=g
 _.w=h
 _.x=i},
 SQ:function SQ(){},
-aDJ(a){return A.asy(a,null,null,B.Rn,B.Rj,B.Rq)},
-asy(a,b,c,d,e,f){switch(a){case B.O:b=B.Rk
+aDJ(a){return A.asy(a,null,null,B.Rs,B.Ro,B.Rv)},
+asy(a,b,c,d,e,f){switch(a){case B.O:b=B.Rp
+c=B.Rw
+break
+case B.a0:case B.b8:b=B.RC
+c=B.Rt
+break
+case B.ba:b=B.RA
 c=B.Rr
 break
-case B.a0:case B.b8:b=B.Rx
-c=B.Ro
+case B.aM:b=B.RD
+c=B.Rq
 break
-case B.ba:b=B.Rv
-c=B.Rm
-break
-case B.aM:b=B.Ry
-c=B.Rl
-break
-case B.b9:b=B.Rt
-c=B.Rs
+case B.b9:b=B.Ry
+c=B.Rx
 break
 case null:case void 0:break}b.toString
 c.toString
@@ -15264,11 +15264,11 @@ p.e=!0
 q.gab7(q)
 s=q.gab7(q)
 p.ba(B.x_,!0)
-p.ba(B.KS,s)
+p.ba(B.KX,s)
 q.gagj()
 s=q.gagj()
 p.ba(B.x_,!0)
-p.ba(B.KT,s)
+p.ba(B.KY,s)
 q.gTv(q)
 s=q.gTv(q)
 p.ba(B.x2,!0)
@@ -15277,18 +15277,18 @@ q.gaaZ(q)
 p.ba(B.x9,q.gaaZ(q))
 q.gadm(q)
 s=q.gadm(q)
-p.ba(B.KW,!0)
-p.ba(B.KO,s)
+p.ba(B.L0,!0)
+p.ba(B.KT,s)
 q.gmH()
-p.ba(B.KU,q.gmH())
+p.ba(B.KZ,q.gmH())
 q.gEx()
 p.sEx(q.gEx())
 q.gaiz()
 p.ba(B.wZ,q.gaiz())
 q.gU5()
-p.ba(B.KX,q.gU5())
+p.ba(B.L1,q.gU5())
 q.gafG()
-p.ba(B.KP,q.gafG())
+p.ba(B.KU,q.gafG())
 q.gF1(q)
 p.ba(B.wW,q.gF1(q))
 q.gadM()
@@ -15300,7 +15300,7 @@ s=q.gl3(q)
 p.ba(B.x8,!0)
 p.ba(B.wX,s)
 q.gaf7()
-p.ba(B.KQ,q.gaf7())
+p.ba(B.KV,q.gaf7())
 q.grP()
 p.ba(B.wV,q.grP())
 q.gagn(q)
@@ -15323,8 +15323,8 @@ q.gw4()
 p.sw4(q.gw4())
 q.gaiI()
 s=q.gaiI()
-p.ba(B.KV,!0)
-p.ba(B.KN,s)
+p.ba(B.L_,!0)
+p.ba(B.KS,s)
 q.ghq(q)
 p.ba(B.wY,q.ghq(q))
 q.gEv(q)
@@ -16178,7 +16178,7 @@ R0:function R0(){},
 aCb(a,b,c,d){var s,r,q,p,o=a.b
 o.toString
 s=t.l.a(o).b
-if(s==null)o=B.JI
+if(s==null)o=B.JN
 else{o=c.$2(a,b)
 r=s.b
 q=s.c
@@ -16890,7 +16890,7 @@ else s=!0
 if(s)return c===B.a6?new A.j(a.a,r):new A.j(a.c,r)
 else{s=a.d
 return c===B.a6?new A.j(a.c,s):new A.j(a.a,s)}},
-a8J(a,b){return new A.zb(a,b==null?B.jO:b,B.Ku)},
+a8J(a,b){return new A.zb(a,b==null?B.jO:b,B.Kz)},
 a8I(a,b){return new A.zb(a,b==null?B.jO:b,B.c1)},
 m7:function m7(a,b){this.a=a
 this.b=b},
@@ -17739,10 +17739,10 @@ a_z:function a_z(a){this.a=a},
 a_y:function a_y(a){this.a=a},
 aqE(a,b,c,d,e){return new A.o2(c,b,null,e,d)},
 aqD(a,b,c,d,e){return new A.qW(d,c,a,e,!1)},
-aAD(a){var s,r,q=a.d,p=B.HM.h(0,q)
+aAD(a){var s,r,q=a.d,p=B.HR.h(0,q)
 if(p==null)p=new A.m(q)
 q=a.e
-s=B.Hx.h(0,q)
+s=B.HC.h(0,q)
 if(s==null)s=new A.h(q)
 r=a.a
 switch(a.b.a){case 0:return new A.k4(p,s,a.f,r,a.r)
@@ -17853,7 +17853,7 @@ r.toString
 A.eK(r)
 q=a.h(0,"swipeEdge")
 q.toString
-return new A.J9(s,r,B.Fd[A.cn(q)])},
+return new A.J9(s,r,B.Fe[A.cn(q)])},
 zL:function zL(a,b){this.a=a
 this.b=b},
 J9:function J9(a,b,c){this.a=a
@@ -18084,17 +18084,17 @@ ash(a){var s=A.b([],t.u1),r=$.asi
 $.asi=r+1
 return new A.aaO(s,r,a)},
 aGU(a){var s
-$label0$0:{if("TextInputAction.none"===a){s=B.MW
-break $label0$0}if("TextInputAction.unspecified"===a){s=B.MX
-break $label0$0}if("TextInputAction.go"===a){s=B.N_
-break $label0$0}if("TextInputAction.search"===a){s=B.N0
-break $label0$0}if("TextInputAction.send"===a){s=B.N1
-break $label0$0}if("TextInputAction.next"===a){s=B.N2
-break $label0$0}if("TextInputAction.previous"===a){s=B.N3
-break $label0$0}if("TextInputAction.continueAction"===a){s=B.N4
-break $label0$0}if("TextInputAction.join"===a){s=B.N5
-break $label0$0}if("TextInputAction.route"===a){s=B.MY
-break $label0$0}if("TextInputAction.emergencyCall"===a){s=B.MZ
+$label0$0:{if("TextInputAction.none"===a){s=B.N0
+break $label0$0}if("TextInputAction.unspecified"===a){s=B.N1
+break $label0$0}if("TextInputAction.go"===a){s=B.N4
+break $label0$0}if("TextInputAction.search"===a){s=B.N5
+break $label0$0}if("TextInputAction.send"===a){s=B.N6
+break $label0$0}if("TextInputAction.next"===a){s=B.N7
+break $label0$0}if("TextInputAction.previous"===a){s=B.N8
+break $label0$0}if("TextInputAction.continueAction"===a){s=B.N9
+break $label0$0}if("TextInputAction.join"===a){s=B.Na
+break $label0$0}if("TextInputAction.route"===a){s=B.N2
+break $label0$0}if("TextInputAction.emergencyCall"===a){s=B.N3
 break $label0$0}if("TextInputAction.done"===a){s=B.y0
 break $label0$0}if("TextInputAction.newline"===a){s=B.y_
 break $label0$0}s=A.an(A.lp(A.b([A.iI("Unknown text input action: "+a)],t.p)))}return s},
@@ -18422,7 +18422,7 @@ if(s){s=B.bJ.h(0,j)
 d=m.h(0,s==null?j:s)
 if(d!=null)h=d}}c=g==null?h:g
 return c==null?B.b.gM(a0):c},
-aDT(){return B.Hy},
+aDT(){return B.HD},
 Aw:function Aw(a,b,c,d,e,f,g,h,i,j,k,l,m,n,o,p,q,r,s,a0,a1,a2,a3,a4,a5,a6,a7,a8,a9,b0,b1){var _=this
 _.c=a
 _.d=b
@@ -19041,7 +19041,7 @@ _.e=a
 _.f=b
 _.c=_.a=null},
 azM(){var s,r,q,p=null,o=$.ax(),n=t.C,m=new A.XG()
-m.a=B.IV
+m.a=B.J_
 s=A.b([],t.RW)
 r=A.aU()
 $label0$0:{if(B.a0===r||B.O===r){q=!0
@@ -19051,7 +19051,7 @@ azN(a){var s=a.a,r=a.j(0,B.eA),q=s==null
 if(q){$.a3.toString
 $.aG()}if(r||q)return B.eA
 if(q){q=new A.XJ()
-q.b=B.IT}else q=s
+q.b=B.IY}else q=s
 return a.abP(q)},
 mG(a,b,c,d,e,f,g){return new A.DK(a,e,f,d,b,c,new A.b3(A.b([],t.g),t.c),g.i("DK<0>"))},
 MW:function MW(a,b,c,d){var _=this
@@ -19380,7 +19380,7 @@ case 1:break}return r?B.fA:B.e3},
 am2(a,b,c,d,e,f,g){return new A.ck(g,a,c,!0,e,f,A.b([],t.bp),$.ax())},
 aAc(a){return a.geX()},
 Hj(a,b,c){var s=t.bp
-return new A.lr(B.RT,A.b([],s),c,a,!0,!0,null,null,A.b([],s),$.ax())},
+return new A.lr(B.RY,A.b([],s),c,a,!0,!0,null,null,A.b([],s),$.ax())},
 tN(){switch(A.aU().a){case 0:case 1:case 2:if($.a3.at$.c.a!==0)return B.fu
 return B.iG
 case 3:case 4:case 5:return B.fu}},
@@ -20573,7 +20573,7 @@ t.Dn.a(a)
 s=J.aE(a)
 r=s.h(a,0)
 r.toString
-switch(B.EJ[A.cn(r)].a){case 0:s=s.fF(a,1)
+switch(B.EI[A.cn(r)].a){case 0:s=s.fF(a,1)
 r=s[0]
 r.toString
 A.cn(r)
@@ -20755,7 +20755,7 @@ aEv(a){return a.ab(0)},
 aEu(a,b){var s,r=a.ao(t.Ak)
 if(r!=null)return r
 s=A.b([A.iI("No Overlay widget found."),A.bd(A.u(a.gaj4()).k(0)+" widgets require an Overlay widget ancestor.\nAn overlay lets widgets float on top of other widget children."),A.ws("To introduce an Overlay widget, you can either directly include one, or use a widget that contains an Overlay itself, such as a Navigator, WidgetApp, MaterialApp, or CupertinoApp.")],t.p)
-B.b.T(s,a.acA(B.Sk))
+B.b.T(s,a.acA(B.Sp))
 throw A.e(A.lp(s))},
 kb:function kb(a,b,c,d,e){var _=this
 _.a=a
@@ -21183,7 +21183,7 @@ uq:function uq(){},
 xJ(a,b,c){var s=A.bG(a,b,t.Fe)
 s=s==null?null:s.z
 return c.i("ha<0>?").a(s)},
-ar1(a){var s=A.xJ(a,B.TU,t.X)
+ar1(a){var s=A.xJ(a,B.TZ,t.X)
 return s==null?null:s.gk9()},
 rg:function rg(){},
 ep:function ep(){},
@@ -22514,7 +22514,7 @@ MU:function MU(){},
 Ei:function Ei(){},
 Ej:function Ej(){},
 aDm(a,b,c,d){var s,r,q,p,o=A.aDn(b,d,a,c)
-if(o.j(0,B.R))return B.Na
+if(o.j(0,B.R))return B.Nf
 s=A.asm(b)
 r=o.a
 r+=(o.c-r)/2
@@ -24018,7 +24018,7 @@ case 2:case 3:case 4:case 5:q=A.cq(null,t.H)
 s=1
 break $async$outer}case 1:return A.Q(q,r)}})
 return A.R($async$ZX,r)},
-am0(a){a.gV().ty(B.Hs)
+am0(a){a.gV().ty(B.Hx)
 switch(A.aU().a){case 0:case 1:return A.a0b()
 case 2:return A.nJ(A.b([A.zO(B.xN),A.a09()],t.mo),t.H)
 case 3:case 4:case 5:return A.cq(null,t.H)}},
@@ -24415,7 +24415,7 @@ return!1},
 k(a){return"ColorFilter.mode("+A.p(this.a)+", "+this.b.k(0)+")"}}
 A.vy.prototype={
 ga5o(){var s,r,q=new Float32Array(20)
-for(s=this.a,r=0;r<20;++r)if(B.b.n(B.Ey,r))q[r]=s[r]/255
+for(s=this.a,r=0;r<20;++r)if(B.b.n(B.Ex,r))q[r]=s[r]/255
 else q[r]=s[r]
 return q},
 ux(){return $.b9.b2().ColorFilter.MakeMatrix(this.ga5o())},
@@ -25093,7 +25093,7 @@ if(!(o.a>=o.c||o.b>=o.d))q=q.hW(o)}}return q},
 lE(a){a.b=this.lp(a)},
 Fu(a){a.b=this.lp(a).hW(this.gacp())},
 Fv(a){var s,r,q=null,p=a.f,o=this.a.a
-o.push(new A.hX(B.HZ,q,q,p,q,q))
+o.push(new A.hX(B.I3,q,q,p,q,q))
 s=this.lp(a)
 p=p.a
 p===$&&A.a()
@@ -25101,7 +25101,7 @@ r=A.aky(p.a.getBounds())
 if(s.xy(r))a.b=s.cQ(r)
 o.pop()},
 Fw(a){var s,r,q,p,o=null,n=a.f,m=this.a.a
-m.push(new A.hX(B.HY,o,n,o,o,o))
+m.push(new A.hX(B.I2,o,n,o,o,o))
 s=this.lp(a)
 r=n.a
 q=n.b
@@ -25110,7 +25110,7 @@ n=n.d
 if(s.xy(new A.x(r,q,p,n)))a.b=s.cQ(new A.x(r,q,p,n))
 m.pop()},
 Fx(a){var s,r=null,q=a.f,p=this.a.a
-p.push(new A.hX(B.HX,q,r,r,r,r))
+p.push(new A.hX(B.I1,q,r,r,r,r))
 s=this.lp(a)
 if(s.xy(q))a.b=s.cQ(q)
 p.pop()},
@@ -25133,7 +25133,7 @@ s=A.r7()
 s.pp(o,p,0)
 r=this.a.a
 r.push(A.amA(s))
-r.push(new A.hX(B.I0,q,q,q,q,a.f))
+r.push(new A.hX(B.I5,q,q,q,q,a.f))
 a.b=this.lp(a)
 r.pop()
 r.pop()
@@ -25448,10 +25448,10 @@ k(a){return A.lD(this.a,"[","]")}}
 A.m3.prototype={}
 A.de.prototype={
 mn(a){return a instanceof A.de},
-k(a){return B.Sr.k(0)+"("+this.a.length+" pictures)"}}
+k(a){return B.Sw.k(0)+"("+this.a.length+" pictures)"}}
 A.kn.prototype={
 mn(a){return a instanceof A.kn&&a.a===this.a},
-k(a){return B.Sq.k(0)+"("+this.a+")"}}
+k(a){return B.Sv.k(0)+"("+this.a+")"}}
 A.q4.prototype={
 Su(a){var s,r,q,p,o,n,m=this,l=new self.window.flutterCanvasKit.Paint()
 l.setAntiAlias(m.f)
@@ -26192,7 +26192,7 @@ l.push(new A.em(n[0],n[1],n[2],n[3],B.iN[m]))}return l},
 cT(a){var s,r=this.a
 r===$&&A.a()
 r=r.a.getGlyphPositionAtCoordinate(a.a,a.b)
-s=B.Fe[B.c.ag(r.affinity.value)]
+s=B.Fg[B.c.ag(r.affinity.value)]
 return new A.a9(B.c.ag(r.pos),s)},
 SZ(a){var s=this.a
 s===$&&A.a()
@@ -26622,7 +26622,7 @@ $2(a,b){this.a.$2(B.b.e_(a,t.e),b)},
 $S:323}
 A.akf.prototype={
 $1(a){var s=A.kA(a,0,null)
-if(B.L2.n(0,B.b.gaf(s.gxC())))return s.k(0)
+if(B.L7.n(0,B.b.gaf(s.gxC())))return s.k(0)
 self.window.console.error("URL rejected by TrustedTypes policy flutter-engine: "+a+"(download prevented)")
 return null},
 $S:326}
@@ -27346,7 +27346,7 @@ A.a1A.prototype={
 $0(){this.a.f.E(0,this.b)},
 $S:0}
 A.a1t.prototype={
-$0(){var s,r,q,p,o,n=this,m=n.b,l=B.HD.h(0,m)
+$0(){var s,r,q,p,o,n=this,m=n.b,l=B.HI.h(0,m)
 if(l!=null)return l
 s=n.c.a
 if(B.rL.am(0,A.h4(s))){m=A.h4(s)
@@ -27494,7 +27494,7 @@ EL(a,b){var s,r=this,q="flutter/navigation"
 if(A.arV(b)){s=r.d
 s.toString
 r.a8n(s)
-$.aG().i3(q,B.aP.iv(B.HV),new A.a9S())}else if(A.amT(b)){s=r.f
+$.aG().i3(q,B.aP.iv(B.I_),new A.a9S())}else if(A.amT(b)){s=r.f
 s.toString
 r.f=null
 $.aG().i3(q,B.aP.iv(new A.h9("pushRoute",s)),new A.a9T())}else{r.f=r.gjT()
@@ -27694,7 +27694,7 @@ switch(s.a){case"activateSystemCursor":q=c.gcw().b
 q=A.aqv(new A.bb(q,A.o(q).i("bb<2>")))
 if(q!=null){if(q.w===$){q.gdv()
 q.w!==$&&A.ak()
-q.w=new A.a4Z()}j=B.HE.h(0,A.ct(J.bq(o,"kind")))
+q.w=new A.a4Z()}j=B.HJ.h(0,A.ct(J.bq(o,"kind")))
 if(j==null)j="default"
 if(j==="default")self.document.body.style.removeProperty("cursor")
 else A.O(self.document.body.style,"cursor",j)}break}return
@@ -27944,7 +27944,7 @@ q=s}return q},
 JZ(a){var s,r=this,q=r.NW(a),p=r.c
 if(q==p)return
 if(q==null){p.toString
-s=new A.tn(p,B.Ta,B.T8)}else s=new A.tn(q,B.k2,r.d)
+s=new A.tn(p,B.Tf,B.Td)}else s=new A.tn(q,B.k2,r.d)
 r.BW(p,!0)
 r.BW(q,!1)
 r.c=q
@@ -27973,7 +27973,7 @@ $S:2}
 A.abR.prototype={
 $1(a){var s=A.GK(a)
 s=s===!0
-if(s)this.a.d=B.T9},
+if(s)this.a.d=B.Te},
 $S:2}
 A.abS.prototype={
 $1(a){this.a.d=B.ye},
@@ -28173,7 +28173,7 @@ if(e===0)e=1}g=g.d
 if(g==null){g=self.window.devicePixelRatio
 if(g===0)g=1}d=A.wa(a)
 d.toString
-o.abE(k,B.c.ag(d),B.cw,r,s,h*e,j.b*g,1,1,Math.exp(-p/200),B.JM,i,l)}else{i=A.h3(a)
+o.abE(k,B.c.ag(d),B.cw,r,s,h*e,j.b*g,1,1,Math.exp(-p/200),B.JR,i,l)}else{i=A.h3(a)
 i.toString
 i=A.tv(i)
 g=$.cS()
@@ -28183,7 +28183,7 @@ if(e===0)e=1}g=g.d
 if(g==null){g=self.window.devicePixelRatio
 if(g===0)g=1}d=A.wa(a)
 d.toString
-o.abG(k,B.c.ag(d),B.cw,r,s,new A.ajh(c),h*e,j.b*g,1,1,q,p,B.JL,i,l)}c.c=a
+o.abG(k,B.c.ag(d),B.cw,r,s,new A.ajh(c),h*e,j.b*g,1,1,q,p,B.JQ,i,l)}c.c=a
 c.d=s===B.aL
 return k}}
 A.ajh.prototype={
@@ -28198,7 +28198,7 @@ Ti(a,b){var s
 if(this.a!==0)return this.G2(b)
 s=(b===0&&a>-1?A.aHr(a):b)&1073741823
 this.a=s
-return new A.js(B.JK,s)},
+return new A.js(B.JP,s)},
 G2(a){var s=a&1073741823,r=this.a
 if(r===0&&s!==0)return new A.js(B.cw,r)
 this.a=s
@@ -28411,7 +28411,7 @@ p.toString
 if(c===B.wy){g=p.b
 h=p.c}if(n.AH(d,g,h))a.push(n.kQ(s.b,B.fU,d,0,0,e,!1,0,g,h,0,i,j,0,0,0,0,0,k,l,m,0,a1,a2,a3))
 a.push(n.nC(b,c,d,0,0,e,!1,0,g,h,0,i,j,0,0,0,0,0,k,l,m,a0,0,a1,a2,a3))
-if(e===B.aq){a.push(n.kQ(0,B.JJ,d,0,0,e,!1,0,g,h,0,0,j,0,0,0,0,0,k,l,m,0,a1,a2,a3))
+if(e===B.aq){a.push(n.kQ(0,B.JO,d,0,0,e,!1,0,g,h,0,0,j,0,0,0,0,0,k,l,m,0,a1,a2,a3))
 q.E(0,d)}break
 case 2:s=$.jB().a
 o=s.h(0,d)
@@ -29482,14 +29482,14 @@ a12(){var s=this,r=s.r
 if(r==null){r=s.r=new A.uQ(s.c)
 r.d=new A.ZL(s)}return r},
 RS(a){var s,r=this
-if(B.b.n(B.Fm,a.type)){s=r.a12()
+if(B.b.n(B.Fo,a.type)){s=r.a12()
 s.toString
 s.sD0(r.c.$0().zb(5e5))
 if(r.f!==B.mh){r.f=B.mh
 r.KY()}}return r.d.a.TU(a)},
 KY(){var s,r
 for(s=this.w,r=0;r<s.length;++r)s[r].$1(this.f)},
-TT(a){if(B.b.n(B.Fv,a))return this.f===B.fw
+TT(a){if(B.b.n(B.Fw,a))return this.f===B.fw
 return!1}}
 A.ZM.prototype={
 $0(){return new A.fs(Date.now(),0,!1)},
@@ -29640,7 +29640,7 @@ y4(a){var s
 if(this.a==null)return!0
 s=$.bA
 if((s==null?$.bA=A.dz():s).b)return!0
-if(!B.L4.n(0,a.type))return!0
+if(!B.L9.n(0,a.type))return!0
 if(!J.f(a.target,this.a))return!0
 s=$.bA;(s==null?$.bA=A.dz():s).syx(!0)
 this.l()
@@ -29680,7 +29680,7 @@ if(i.d){if($.bc().gds()!==B.b3||a.type==="touchend"||a.type==="pointerup"||a.typ
 return!0}s=$.bA
 if((s==null?$.bA=A.dz():s).b)return!0
 if(++i.c>=20)return i.d=!0
-if(!B.L9.n(0,a.type))return!0
+if(!B.Le.n(0,a.type))return!0
 if(i.a!=null)return!1
 r=A.bs("activationPoint")
 switch(a.type){case"click":r.sde(new A.wb(a.offsetX,a.offsetY))
@@ -31450,7 +31450,7 @@ $ibi:1}
 J.d.prototype={$ia8:1}
 J.lH.prototype={
 gA(a){return 0},
-gdk(a){return B.Sg},
+gdk(a){return B.Sl},
 k(a){return String(a)}}
 J.J3.prototype={}
 J.jl.prototype={}
@@ -32769,7 +32769,7 @@ if(r.b!==r)throw A.e(new A.fz("Local '"+r.a+u.N))
 r.b=s
 q=s}return q}}
 A.om.prototype={
-gdk(a){return B.S_},
+gdk(a){return B.S4},
 vF(a,b,c){A.kV(a,b,c)
 return c==null?new Uint8Array(a,b):new Uint8Array(a,b,c)},
 Cl(a){return this.vF(a,0,null)},
@@ -32814,7 +32814,7 @@ return s},
 Oh(a){return this.vE(0,0,null)},
 $ind:1}
 A.xO.prototype={
-gdk(a){return B.S0},
+gdk(a){return B.S5},
 gPG(a){return 1},
 FK(a,b,c){throw A.e(A.ai("Int64 accessor not supported by dart2js."))},
 Gg(a,b,c,d){throw A.e(A.ai("Int64 accessor not supported by dart2js."))},
@@ -32854,19 +32854,19 @@ $iW:1,
 $ik:1,
 $iF:1}
 A.xP.prototype={
-gdk(a){return B.S9},
+gdk(a){return B.Se},
 cA(a,b,c){return new Float32Array(a.subarray(b,A.mN(b,c,a.length)))},
 fF(a,b){return this.cA(a,b,null)},
 $ic3:1,
 $ia_1:1}
 A.xQ.prototype={
-gdk(a){return B.Sa},
+gdk(a){return B.Sf},
 cA(a,b,c){return new Float64Array(a.subarray(b,A.mN(b,c,a.length)))},
 fF(a,b){return this.cA(a,b,null)},
 $ic3:1,
 $ia_2:1}
 A.IA.prototype={
-gdk(a){return B.Sc},
+gdk(a){return B.Sh},
 h(a,b){A.kU(b,a,a.length)
 return a[b]},
 cA(a,b,c){return new Int16Array(a.subarray(b,A.mN(b,c,a.length)))},
@@ -32874,7 +32874,7 @@ fF(a,b){return this.cA(a,b,null)},
 $ic3:1,
 $ia17:1}
 A.xR.prototype={
-gdk(a){return B.Sd},
+gdk(a){return B.Si},
 h(a,b){A.kU(b,a,a.length)
 return a[b]},
 cA(a,b,c){return new Int32Array(a.subarray(b,A.mN(b,c,a.length)))},
@@ -32882,7 +32882,7 @@ fF(a,b){return this.cA(a,b,null)},
 $ic3:1,
 $ia18:1}
 A.IB.prototype={
-gdk(a){return B.Se},
+gdk(a){return B.Sj},
 h(a,b){A.kU(b,a,a.length)
 return a[b]},
 cA(a,b,c){return new Int8Array(a.subarray(b,A.mN(b,c,a.length)))},
@@ -32890,7 +32890,7 @@ fF(a,b){return this.cA(a,b,null)},
 $ic3:1,
 $ia19:1}
 A.xU.prototype={
-gdk(a){return B.SC},
+gdk(a){return B.SH},
 h(a,b){A.kU(b,a,a.length)
 return a[b]},
 cA(a,b,c){return new Uint16Array(a.subarray(b,A.mN(b,c,a.length)))},
@@ -32898,7 +32898,7 @@ fF(a,b){return this.cA(a,b,null)},
 $ic3:1,
 $iabv:1}
 A.xV.prototype={
-gdk(a){return B.SD},
+gdk(a){return B.SI},
 h(a,b){A.kU(b,a,a.length)
 return a[b]},
 cA(a,b,c){return new Uint32Array(a.subarray(b,A.mN(b,c,a.length)))},
@@ -32906,7 +32906,7 @@ fF(a,b){return this.cA(a,b,null)},
 $ic3:1,
 $itg:1}
 A.xW.prototype={
-gdk(a){return B.SE},
+gdk(a){return B.SJ},
 gu(a){return a.length},
 h(a,b){A.kU(b,a,a.length)
 return a[b]},
@@ -32915,7 +32915,7 @@ fF(a,b){return this.cA(a,b,null)},
 $ic3:1,
 $iabw:1}
 A.k8.prototype={
-gdk(a){return B.SF},
+gdk(a){return B.SK},
 gu(a){return a.length},
 h(a,b){A.kU(b,a,a.length)
 return a[b]},
@@ -37125,8 +37125,8 @@ return A.J(s.a,s.b,s.c,s.d,B.a,B.a,B.a,B.a,B.a,B.a,B.a,B.a,B.a,B.a,B.a,B.a,B.a,B
 k(a){var s=this
 return"Rect.fromLTRB("+B.c.a9(s.a,1)+", "+B.c.a9(s.b,1)+", "+B.c.a9(s.c,1)+", "+B.c.a9(s.d,1)+")"}}
 A.aF.prototype={
-OK(a,b,c){if(c==null)c=B.JR
-if(b==null)b=B.JT
+OK(a,b,c){if(c==null)c=B.JW
+if(b==null)b=B.JY
 return new A.aF(A.D(this.a,c.a,b.a),A.D(this.b,c.b,b.b))},
 hS(a,b){return this.OK(0,null,b)},
 OJ(a,b){return this.OK(0,b,null)},
@@ -37352,7 +37352,7 @@ G(){return"FontStyle."+this.b}}
 A.lT.prototype={
 G(){return"PlaceholderAlignment."+this.b}}
 A.ey.prototype={
-k(a){var s=B.HB.h(0,this.a)
+k(a){var s=B.HG.h(0,this.a)
 s.toString
 return s}}
 A.iM.prototype={
@@ -37504,7 +37504,7 @@ else{p=this.gqs()
 if(B.d.n(p,"Android"))return B.fR
 else if(B.d.c_(s,"Linux"))return B.je
 else if(B.d.c_(s,"Win"))return B.rW
-else return B.IQ}}}
+else return B.IV}}}
 A.akj.prototype={
 $1(a){return this.SU(a)},
 $0(){return this.$1(null)},
@@ -37640,7 +37640,7 @@ A.akD.prototype={
 $1(a){return a.a},
 $S:255}
 A.Iz.prototype={
-L(a){return new A.xB(B.Tc,"AP1 Glossar \u2013 IHK Pr\xfcfungsvorbereitung",$.ava(),$.av9(),B.b4,null)}}
+L(a){return new A.xB(B.Th,"AP1 Glossar \u2013 IHK Pr\xfcfungsvorbereitung",$.ava(),$.av9(),B.b4,null)}}
 A.pU.prototype={
 G(){return"Aspekt."+this.b}}
 A.nR.prototype={
@@ -37660,12 +37660,12 @@ zl(){return this.HF("")},
 ags(a){this.e.np(0,B.xW)
 this.zl()
 A.qG(B.aZ,new A.a0x(this,a),t.P)},
-L(a){var s,r=this,q=null,p=t.D,o=A.alt(A.b([new A.cY(B.Cl,A.fZ(A.cR(""+r.d.length+" Begriffe",q,q,q,B.Pb,q,q),q,q),q)],p),B.b4,!0,2,B.k,0,B.RD),n=r.e,m=n.a.a.length===0?q:A.amh(q,q,B.Dn,q,q,new A.a0u(r),q,q,q)
-m=A.aqs(q,new A.fI(4,A.eb(12),B.q),q,B.Cs,q,q,q,q,!0,new A.fI(4,A.eb(12),new A.b2(B.lg,1,B.v,-1)),q,q,q,q,q,B.k,!0,q,q,q,q,new A.fI(4,A.eb(12),new A.b2(B.b4,1.5,B.v,-1)),q,q,q,q,q,q,q,B.OF,"Begriff oder Definition suchen \u2026",q,q,q,q,q,!0,q,q,q,!0,q,B.Ds,q,q,q,q,q,q,m,q,q,q,q)
+L(a){var s,r=this,q=null,p=t.D,o=A.alt(A.b([new A.cY(B.Cl,A.fZ(A.cR(""+r.d.length+" Begriffe",q,q,q,B.Pg,q,q),q,q),q)],p),B.b4,!0,2,B.k,0,B.RI),n=r.e,m=n.a.a.length===0?q:A.amh(q,q,B.Dn,q,q,new A.a0u(r),q,q,q)
+m=A.aqs(q,new A.fI(4,A.eb(12),B.q),q,B.Cs,q,q,q,q,!0,new A.fI(4,A.eb(12),new A.b2(B.lg,1,B.v,-1)),q,q,q,q,q,B.k,!0,q,q,q,q,new A.fI(4,A.eb(12),new A.b2(B.b4,1.5,B.v,-1)),q,q,q,q,q,q,q,B.OK,"Begriff oder Definition suchen \u2026",q,q,q,q,q,!0,q,q,q,!0,q,B.Ds,q,q,q,q,q,q,m,q,q,q,q)
 s=r.d.length
 if(s===0)s=A.fZ(A.eO(A.b([A.nU(B.Di,B.i4,q,56),B.hh,A.cR("Kein Begriff gefunden",q,q,q,A.dW(q,q,B.dQ,q,q,q,q,q,q,q,q,16,q,q,B.Q,q,q,!0,q,q,q,q,q,q,q,q),q,q),B.jJ,A.cR("Suchbegriff anpassen",q,q,q,A.dW(q,q,B.hX,q,q,q,q,q,q,q,q,13,q,q,q,q,q,!0,q,q,q,q,q,q,q,q),q,q)],p),B.ao,B.X,B.cs),q,q)
 else s=new A.xq(new A.KI(new A.a0v(r),s,!0,!0,!0,A.aIG(),q),B.Cr,B.b2,!1,r.f,q,B.z6,!1,q,s,B.aa,B.wL,q,B.a4,B.au,q)
-return A.a86(o,B.AO,A.eO(A.b([new A.cY(B.Ct,new A.A_(n,m,B.N6,B.Mh,B.Mi,new A.a0w(r),!0,q),q),B.BR,A.ZR(s,1)],p),B.aX,B.X,B.aw),B.yK)},
+return A.a86(o,B.AO,A.eO(A.b([new A.cY(B.Ct,new A.A_(n,m,B.Nb,B.Mm,B.Mn,new A.a0w(r),!0,q),q),B.BR,A.ZR(s,1)],p),B.aX,B.X,B.aw),B.yK)},
 zm(a){switch(a){case"\xd6konomisch":return B.ks
 case"\xd6kologisch":return B.kt
 case"Sozial":return B.ku
@@ -37715,11 +37715,11 @@ p=A.eb(8)
 p=A.iC(i,A.fZ(A.cR(j.a.c[0].toUpperCase(),i,i,i,A.dW(i,i,g,i,i,i,i,i,i,i,i,16,i,i,B.ap,i,i,!0,i,i,i,i,i,i,i,i),i,i),i,i),B.y,i,i,new A.cM(f,i,i,p,i,i,B.ag),i,36,i,i,i,i,36)
 o=j.a
 n=t.D
-o=A.ZR(A.eO(A.b([A.cR(o.c,i,i,i,B.R0,i,i),B.Md,new A.Mu(o.e,i)],n),B.aX,B.X,B.aw),1)
+o=A.ZR(A.eO(A.b([A.cR(o.c,i,i,i,B.R5,i,i),B.Mi,new A.Mu(o.e,i)],n),B.aX,B.X,B.aw),1)
 p=A.b([A.rA(A.b([p,B.xD,o,A.nU(j.d?B.Dg:B.Df,B.hX,i,22)],n),B.aX,B.X,B.aw)],n)
 if(!j.d)B.b.T(p,A.b([B.jK,A.cR(j.a8r(j.a.d),2,B.aD,i,A.dW(i,i,B.cS,i,i,i,i,i,i,i,i,13,i,i,i,i,1.4,!0,i,i,i,i,i,i,i,i),i,i)],n))
 if(j.d){o=A.eb(10)
-o=A.b([B.xF,A.iC(i,A.cR(j.a.d,i,i,i,B.R7,i,i),B.y,i,i,new A.cM(f,i,i,o,i,i,B.ag),i,i,i,B.Co,i,i,i)],n)
+o=A.b([B.xF,A.iC(i,A.cR(j.a.d,i,i,i,B.Rc,i,i),B.y,i,i,new A.cM(f,i,i,o,i,i,B.ag),i,i,i,B.Co,i,i,i)],n)
 m=j.e
 if(m!=null&&m.length!==0){m=A.rA(A.b([A.nU(B.Dk,B.dQ,i,13),B.xE,A.cR("Verwandte Begriffe",i,i,i,A.dW(i,i,B.dQ,i,i,i,i,i,i,i,i,11.5,i,i,B.d_,i,i,!0,i,0.3,i,i,i,i,i,i),i,i)],n),B.ao,B.X,B.aw)
 l=j.e
@@ -37752,7 +37752,7 @@ $S:0}
 A.Mu.prototype={
 L(a){var s=null,r=this.c,q=A.aoO(r),p=A.eb(6),o=A.n3(r)
 o=A.alx(A.ay(102,o.B()>>>16&255,o.B()>>>8&255,o.B()&255),0.8)
-return A.iC(s,A.rA(A.b([A.nU(A.ayi(r),A.n3(r),s,11),B.Ma,A.cR(A.ayj(r),s,s,s,A.dW(s,s,A.n3(r),s,s,s,s,s,s,s,s,10.5,s,s,B.d_,s,s,!0,s,s,s,s,s,s,s,s),s,s)],t.D),B.ao,B.X,B.cs),B.y,s,s,new A.cM(q,s,o,p,s,s,B.ag),s,s,s,B.CB,s,s,s)}}
+return A.iC(s,A.rA(A.b([A.nU(A.ayi(r),A.n3(r),s,11),B.Mf,A.cR(A.ayj(r),s,s,s,A.dW(s,s,A.n3(r),s,s,s,s,s,s,s,s,10.5,s,s,B.d_,s,s,!0,s,s,s,s,s,s,s,s),s,s)],t.D),B.ao,B.X,B.cs),B.y,s,s,new A.cM(q,s,o,p,s,s,B.ag),s,s,s,B.CB,s,s,s)}}
 A.TM.prototype={
 l(){var s=this,r=s.bN$
 if(r!=null)r.I(0,s.ghI())
@@ -37763,7 +37763,7 @@ this.cs()
 this.hJ()}}
 A.F9.prototype={
 L(a){var s=null
-return new A.GP(A.eO(A.b([new A.GT(B.z8,A.eO(B.Fa,B.aX,B.rC,B.aw),s),B.J0,new A.pq(B.b4,B.l5,B.mp,"Funktional","Netzwerk \xb7 Hardware \xb7 Berechnungen \xb7 Sicherheit",s),new A.pq(B.lp,B.ly,B.mn,"\xd6konomisch","Kosten \xb7 NWA \xb7 Leasing \xb7 Kalkulation",s),new A.pq(B.l1,B.lv,B.mm,"\xd6kologisch","Energieeffizienz \xb7 Recycling \xb7 Green IT",s),new A.pq(B.l3,B.lw,B.mo,"Sozial","DSGVO \xb7 Ergonomie \xb7 Change Management",s),B.BQ,A.ams(B.Dt,new A.VG(a),B.RF),A.ams(B.Do,new A.VH(a),B.y5),B.Mn,B.lJ,A.ams(B.Dq,s,B.RE),B.jK],t.D),B.dU,B.X,B.aw),s)}}
+return new A.GP(A.eO(A.b([new A.GT(B.z8,A.eO(B.Fa,B.aX,B.rC,B.aw),s),B.J5,new A.pq(B.b4,B.l5,B.mp,"Funktional","Netzwerk \xb7 Hardware \xb7 Berechnungen \xb7 Sicherheit",s),new A.pq(B.lp,B.ly,B.mn,"\xd6konomisch","Kosten \xb7 NWA \xb7 Leasing \xb7 Kalkulation",s),new A.pq(B.l1,B.lv,B.mm,"\xd6kologisch","Energieeffizienz \xb7 Recycling \xb7 Green IT",s),new A.pq(B.l3,B.lw,B.mo,"Sozial","DSGVO \xb7 Ergonomie \xb7 Change Management",s),B.BQ,A.ams(B.Dt,new A.VG(a),B.RK),A.ams(B.Do,new A.VH(a),B.y5),B.Ms,B.lJ,A.ams(B.Dq,s,B.RJ),B.jK],t.D),B.dU,B.X,B.aw),s)}}
 A.VG.prototype={
 $0(){return A.y0(this.a).lr(A.a4z(new A.VF(),null,t.z))},
 $S:0}
@@ -37775,28 +37775,28 @@ $0(){return A.y0(this.a).lr(A.a4z(new A.VE(),null,t.z))},
 $S:0}
 A.VE.prototype={
 $1(a){var s=null
-return A.a86(A.alt(s,B.b4,s,s,B.k,s,B.y5),s,B.J1,s)},
+return A.a86(A.alt(s,B.b4,s,s,B.k,s,B.y5),s,B.J6,s)},
 $S:271}
 A.pq.prototype={
 L(a){var s=this,r=null,q=A.eb(10),p=s.c,o=t.D
 return new A.cY(B.lQ,A.iC(r,A.rA(A.b([A.nU(s.e,p,r,18),B.xD,A.ZR(A.eO(A.b([A.cR(s.f,r,r,r,A.dW(r,r,p,r,r,r,r,r,r,r,r,13,r,r,B.ap,r,r,!0,r,r,r,r,r,r,r,r),r,r),A.cR(s.r,r,r,r,A.dW(r,r,A.ay(B.c.aA(178.5),p.B()>>>16&255,p.B()>>>8&255,p.B()&255),r,r,r,r,r,r,r,r,11,r,r,r,r,r,!0,r,r,r,r,r,r,r,r),r,r)],o),B.aX,B.X,B.aw),1)],o),B.ao,B.X,B.aw),B.y,r,r,new A.cM(s.d,r,new A.cD(B.q,B.q,B.q,new A.b2(p,3,B.v,-1)),q,r,r,B.ag),r,r,r,B.lP,r,r,r),r)}}
 A.S4.prototype={
-L(a){return A.aAM(new A.ai8(A.b([B.JY,B.JW,B.JX,B.Ka,B.JZ],t.Wy)),5,new A.ai9())}}
+L(a){return A.aAM(new A.ai8(A.b([B.K2,B.K0,B.K1,B.Kf,B.K3],t.Wy)),5,new A.ai9())}}
 A.ai9.prototype={
 $2(a,b){return B.lJ},
 $S:273}
 A.ai8.prototype={
 $2(a,b){var s=null,r=this.a[b]
-return A.eO(A.b([A.cR(r.a,s,s,s,B.Q3,s,s),B.jJ,A.cR(r.b,s,s,s,B.PB,s,s)],t.D),B.aX,B.X,B.aw)},
+return A.eO(A.b([A.cR(r.a,s,s,s,B.Q8,s,s),B.jJ,A.cR(r.b,s,s,s,B.PG,s,s)],t.D),B.aX,B.X,B.aw)},
 $S:274}
 A.pK.prototype={
 L(a){var s=null
-return A.a86(A.alt(s,s,s,s,s,s,B.RG),s,A.fZ(A.eO(B.EY,B.ao,B.X,B.aw),s,s),s)}}
+return A.a86(A.alt(s,s,s,s,s,s,B.RL),s,A.fZ(A.eO(B.EZ,B.ao,B.X,B.aw),s,s),s)}}
 A.Av.prototype={
 an(){return new A.Tt()}}
 A.Tt.prototype={
 L(a){var s=null,r=A.bG(a,s,t.w).w.a,q=A.a_(a),p=t.D
-return A.a86(s,s,A.iC(s,A.amP(!0,new A.cY(B.Cy,A.eO(A.b([A.eO(A.b([B.Me,new A.wU(A.aCj(s,s,new A.v9("assets/images/smallview.png",s,s)),90,s),B.hh,B.RI],p),B.ao,B.X,B.aw),A.eO(A.b([A.cR("IHK\nAP1",s,s,s,A.auT().$5$color$fontSize$fontWeight$height$letterSpacing(B.k,52,B.ap,1.15,2),B.cz,s),B.hh,A.cR("GLOSSAR",s,s,s,A.auT().$4$color$fontSize$fontWeight$letterSpacing(B.rO,44,B.ap,4),B.cz,s)],p),B.ao,B.X,B.aw),A.eO(A.b([A.cR("Alle wichtigen Begriffe und Definitionen\nf\xfcr die IHK-Abschlusspr\xfcfung Teil 1 \u2013\nFachinformatiker und IT-Berufe.",s,s,s,B.Pg,B.cz,s),B.xG,A.kt(new A.GW(new A.ajf(a),s,s,s,A.azT(s,s,B.rO,s,s,s,4,s,s,s,s,s,B.Cm,s,new A.cI(A.eb(30),B.q),s,s,s,s),s,s,!1,s,!0,s,A.rA(B.F3,B.ao,B.rD,B.aw),s),s,1/0),B.xG],p),B.ao,B.X,B.aw)],p),B.ao,B.rE,B.aw),s),B.bg,!0),B.y,q.dy,s,s,s,r.b,s,s,s,s,r.a),s)}}
+return A.a86(s,s,A.iC(s,A.amP(!0,new A.cY(B.Cy,A.eO(A.b([A.eO(A.b([B.Mj,new A.wU(A.aCj(s,s,new A.v9("assets/images/smallview.png",s,s)),90,s),B.hh,B.RN],p),B.ao,B.X,B.aw),A.eO(A.b([A.cR("IHK\nAP1",s,s,s,A.auT().$5$color$fontSize$fontWeight$height$letterSpacing(B.k,52,B.ap,1.15,2),B.cz,s),B.hh,A.cR("GLOSSAR",s,s,s,A.auT().$4$color$fontSize$fontWeight$letterSpacing(B.rO,44,B.ap,4),B.cz,s)],p),B.ao,B.X,B.aw),A.eO(A.b([A.cR("Alle wichtigen Begriffe und Definitionen\nf\xfcr die IHK-Abschlusspr\xfcfung Teil 1 \u2013\nFachinformatiker und IT-Berufe.",s,s,s,B.Pl,B.cz,s),B.xG,A.kt(new A.GW(new A.ajf(a),s,s,s,A.azT(s,s,B.rO,s,s,s,4,s,s,s,s,s,B.Cm,s,new A.cI(A.eb(30),B.q),s,s,s,s),s,s,!1,s,!0,s,A.rA(B.F3,B.ao,B.rD,B.aw),s),s,1/0),B.xG],p),B.ao,B.X,B.aw)],p),B.ao,B.rE,B.aw),s),B.bg,!0),B.y,q.dy,s,s,s,r.b,s,s,s,s,r.a),s)}}
 A.ajf.prototype={
 $0(){var s=A.a4z(new A.aje(),null,t.z)
 A.y0(this.a).lr(s)},
@@ -38072,7 +38072,7 @@ s=r.a
 s.F(0,new A.Gz(r.Zl()))
 s.aW(0)},
 Zl(){var s,r,q,p,o,n,m
-if(B.kL===$.d9())return J.pH(B.I4.gbD(this.w))
+if(B.kL===$.d9())return J.pH(B.I9.gbD(this.w))
 s=this.w
 r=s.byteLength
 q=new Uint8Array(r)
@@ -38120,7 +38120,7 @@ h=r[4]
 g=r[5]
 f=r[6]
 e=r[7]
-for(d=l,q=0;q<64;++q,e=f,f=g,g=h,h=b,i=j,j=k,k=d,d=a){c=(e+(((h>>>6|h<<26)^(h>>>11|h<<21)^(h>>>25|h<<7))>>>0)>>>0)+(((h&g^~h&f)>>>0)+(B.EZ[q]+s[q]>>>0)>>>0)>>>0
+for(d=l,q=0;q<64;++q,e=f,f=g,g=h,h=b,i=j,j=k,k=d,d=a){c=(e+(((h>>>6|h<<26)^(h>>>11|h<<21)^(h>>>25|h<<7))>>>0)>>>0)+(((h&g^~h&f)>>>0)+(B.F0[q]+s[q]>>>0)>>>0)>>>0
 b=i+c>>>0
 a=c+((((d>>>2|d<<30)^(d>>>13|d<<19)^(d>>>22|d<<10))>>>0)+((d&k^d&j^k&j)>>>0)>>>0)>>>0}r.$flags&2&&A.ae(r)
 r[0]=d+l>>>0
@@ -38236,7 +38236,7 @@ break $label0$0}if(q||B.hM===r){k=1
 break $label0$0}k=null}o=m.x
 o===$&&A.a()
 n=new A.zB(s,A.Df(l,o-s,a*k),B.bO)
-n.a=B.RP
+n.a=B.RU
 m.eT(0)
 return m.Bv(n)},
 adI(){return this.DK(1)},
@@ -38668,7 +38668,7 @@ s=p.r
 if(s!=null&&s.a!=null)return
 r=this.w
 if(r){p.z=B.aE
-q=p.iU(1,B.RK,B.BV)}else{p.z=B.aE
+q=p.iU(1,B.RP,B.BV)}else{p.z=B.aE
 q=p.iU(0,B.Bj,B.C0)}q.bP(new A.adC(this,r),t.H)},
 a5O(a){this.aw(new A.adD(this,a))},
 L(b4){var s,r,q,p,o,n,m,l,k,j,i,h,g,f,e,d,c,b,a,a0,a1,a2,a3,a4,a5,a6,a7=this,a8=null,a9=a7.a.r==null,b0=!a9,b1=A.qn(b4),b2=b1.gen(),b3=a7.a.e
@@ -39028,11 +39028,11 @@ p=p.a
 o.ad(0,p.gD(p))
 s=new A.j(0,49.75).S(0,this.x)
 r=o.ad(0,p.gD(p))
-r=A.rd(B.In,B.h,r==null?1:r)
+r=A.rd(B.Is,B.h,r==null?1:r)
 r.toString
 p=o.ad(0,p.gD(p))
 if(p==null)p=1
-p=A.arx(q,B.y,new A.r3(p,B.Fc,new A.cI(B.yY,this.e)),s,1,B.M7)
+p=A.arx(q,B.y,new A.r3(p,B.Fc,new A.cI(B.yY,this.e)),s,1,B.Mc)
 return new A.tb(A.oi(r.a,r.b,0),q,!0,q,p,q)}}
 A.E6.prototype={
 l(){var s=this,r=s.bN$
@@ -39149,7 +39149,7 @@ switch(a.ao(t.I).w.a){case 0:s=A.bG(a,B.aA,t.w).w.r.c
 break
 case 1:s=A.bG(a,B.aA,t.w).w.r.a
 break
-default:s=r}return A.rU(B.dy,A.b([this.a.c,new A.J8(0,0,0,Math.max(s,20),A.xr(B.bH,r,r,this.ga7A(),r,r,r),r)],t.D),B.a4,B.Mr)}}
+default:s=r}return A.rU(B.dy,A.b([this.a.c,new A.J8(0,0,0,Math.max(s,20),A.xr(B.bH,r,r,this.ga7A(),r,r,r),r)],t.D),B.a4,B.Mw)}}
 A.adB.prototype={
 $1(a){var s=this.a,r=s.d,q=r==null,p=q?null:r.b.c!=null
 if(p===!0)if(!q)r.b.r3()
@@ -39326,8 +39326,8 @@ $S:324}
 A.Nn.prototype={
 aB(a,b){var s,r,q,p=$.a4(),o=p.bj()
 o.saE(0,this.b)
-s=A.m_(B.Iw,6)
-r=A.oG(B.IB,new A.j(7,b.b))
+s=A.m_(B.IB,6)
+r=A.oG(B.IG,new A.j(7,b.b))
 q=p.c5()
 q.o_(s)
 q.jL(r)
@@ -39786,7 +39786,7 @@ p=q.f
 if(p==null){q=q.e
 q.toString
 q=A.apo(a,q)}else q=p
-s=A.cR(q,r,B.aD,r,B.Pp.c1(this.a.d!=null?B.f9.cj(a):B.dV),r,r)
+s=A.cR(q,r,B.aD,r,B.Pu.c1(this.a.d!=null?B.f9.cj(a):B.dV),r,r)
 q=this.a.e
 switch(q==null?r:q.b){case B.f2:case B.f3:case B.f4:case B.f5:case B.lz:case B.ia:case B.ib:case B.f6:case B.id:case null:case void 0:return s
 case B.ic:q=B.f9.cj(a)
@@ -39824,13 +39824,13 @@ p=new A.b0(s)
 p.d7()
 p.Sk(1.5707963267948966)
 for(o=0;o<4;++o){a.hV(q,n)
-a.ad(0,s)}a.l1(B.IK,B.Iv,n)
-a.l1(B.II,B.Iu,n)
-a.l1(B.IJ,B.Is,n)
+a.ad(0,s)}a.l1(B.IP,B.IA,n)
+a.l1(B.IN,B.Iz,n)
+a.l1(B.IO,B.Ix,n)
 a.cr(0)},
 er(a){return!a.b.j(0,this.b)}}
 A.vS.prototype={
-gaa5(){var s=B.NK.c1(this.b)
+gaa5(){var s=B.NP.c1(this.b)
 return s},
 cj(a){var s,r=this,q=r.a,p=q.a,o=p instanceof A.c4?p.cj(a):p,n=q.b
 if(n instanceof A.c4)n=n.cj(a)
@@ -39868,7 +39868,7 @@ glq(){var s=this.c
 return s==null?this.w.c:s},
 goZ(){var s=null,r=this.d
 if(r==null){r=this.w.r
-r=new A.ae0(r.a,r.b,B.Uu,this.gen(),s,s,s,s,s,s,s,s,s)}return r},
+r=new A.ae0(r.a,r.b,B.Uz,this.gen(),s,s,s,s,s,s,s,s,s)}return r},
 gqD(){var s=this.e
 return s==null?this.w.d:s},
 gn8(){var s=this.f
@@ -40103,7 +40103,7 @@ j(a,b){if(b==null)return!1
 if(J.N(b)!==A.u(this))return!1
 return A.o(this).i("dK<dK.T>").b(b)&&J.f(b.a,this.a)},
 gA(a){return A.J(A.u(this),this.a,B.a,B.a,B.a,B.a,B.a,B.a,B.a,B.a,B.a,B.a,B.a,B.a,B.a,B.a,B.a,B.a,B.a,B.a)},
-k(a){var s=A.o(this),r=s.i("dK.T"),q=this.a,p=A.bM(r)===B.Sx?"<'"+A.p(q)+"'>":"<"+A.p(q)+">"
+k(a){var s=A.o(this),r=s.i("dK.T"),q=this.a,p=A.bM(r)===B.SC?"<'"+A.p(q)+"'>":"<"+A.p(q)+">"
 if(A.u(this)===A.bM(s.i("dK<dK.T>")))return"["+p+"]"
 return"["+A.bM(r).k(0)+" "+p+"]"}}
 A.anq.prototype={}
@@ -40473,7 +40473,7 @@ return A.b([A.iG("Event",this.a,!0,B.bf,s,s,s,B.aI,!1,!0,!0,B.bD,s),A.iG("Target
 $S:22}
 A.wD.prototype={}
 A.a6a.prototype={
-$1(a){return a.f!==B.JN},
+$1(a){return a.f!==B.JS},
 $S:379}
 A.a6b.prototype={
 $1(a){var s,r,q,p,o,n,m,l,k,j=a.a,i=this.a.$1(j)
@@ -40811,7 +40811,7 @@ if(r.at!=null)r.cq("onStart",new A.a_C(r,s))}}r.yM(a)},
 hd(a){var s=this,r=s.dy
 if(r===B.hr)r=s.dy=B.yo
 if(s.at!=null&&r===B.hs)s.cq("onStart",new A.a_A(s))},
-r2(a){var s=this,r=s.dy,q=r===B.hs||r===B.TC
+r2(a){var s=this,r=s.dy,q=r===B.hs||r===B.TH
 if(r===B.hr){s.a5(B.ab)
 return}if(q&&s.ch!=null)if(s.ch!=null)s.cq("onEnd",new A.a_B(s))
 s.dy=B.k9},
@@ -42216,7 +42216,7 @@ Zi(a){var s,r=this,q=null,p=r.a,o=p.id,n=p.e
 p=p.cx
 s=r.ga4Q()
 r.a.toString
-return new A.Aw(q,q,q,new A.afY(),q,q,q,q,q,n,B.HH,q,q,q,B.FL,r.ga4W(),p,q,B.OK,o,q,s,q,q,B.mF,!1,!1,q,q,q,new A.nN(r,t.bT))},
+return new A.Aw(q,q,q,new A.afY(),q,q,q,q,q,n,B.HM,q,q,q,B.FL,r.ga4W(),p,q,B.OP,o,q,s,q,q,B.mF,!1,!1,q,q,q,new A.nN(r,t.bT))},
 L(a){var s,r=null,q=A.qC(!1,!1,this.Zi(a),r,r,r,r,!0,r,r,r,new A.afZ(),r,r)
 this.a.toString
 s=this.d
@@ -42333,7 +42333,7 @@ if(a1==null){s=b9.gia()
 a1=s==null?b5:s.c1(h)}b4.a.toString
 a2=b5
 if(q===!0){s=d.a
-a2=new A.GR(B.Mw,b5,b5,B.BS,b5,b5,b5,b5,A.qK(b5,b5,b5,b5,b5,b5,b5,b5,b5,s==null?24:s,b5,b5,b5,b5),b5)}else{if(c1==null)s=b5
+a2=new A.GR(B.MB,b5,b5,B.BS,b5,b5,b5,b5,A.qK(b5,b5,b5,b5,b5,b5,b5,b5,b5,s==null?24:s,b5,b5,b5,b5),b5)}else{if(c1==null)s=b5
 else s=c1.gE5()||c1.ow$>0
 if(s===!0)a2=B.yM}if(a2!=null){if(d.j(0,b9.goD()))a3=b7
 else{a4=A.qK(b5,b5,b5,b5,b5,b5,d.f,b5,b5,d.a,b5,b5,b5,b5)
@@ -42365,7 +42365,7 @@ a0.toString
 b1=A.ap9(new A.jJ(new A.aiX(o),A.wT(A.nr(new A.ID(a2,a5,a8,s,r,b5),b5,b5,B.cA,!0,a0,b5,b5,B.aW),d),b5),B.a4)
 b1=A.amP(!1,b1,B.bg,!0)
 s=A.abg(i)
-b2=s===B.a2?B.MO:B.MN
+b2=s===B.a2?B.MT:B.MS
 b3=new A.jg(b5,b5,b5,b5,B.B,b2.f,b2.r,b2.w)
 b4.a.toString
 s=b8.e
@@ -42523,7 +42523,7 @@ A.tB.prototype={
 G(){return"_CornerId."+this.b}}
 A.kG.prototype={}
 A.r6.prototype={
-jI(){var s,r,q=this,p=A.aGz(B.Fp,new A.a4B(q,q.b.gaZ().U(0,q.a.gaZ()))),o=q.a
+jI(){var s,r,q=this,p=A.aGz(B.Fr,new A.a4B(q,q.b.gaZ().U(0,q.a.gaZ()))),o=q.a
 o.toString
 s=p.a
 o=q.nx(o,s)
@@ -42812,7 +42812,7 @@ c1=a7.b
 if(isFinite(c1))a6=a6.ac0(c1,c1)}a8=a1.b
 c1=a1.a
 a9=Math.max(0,c1)
-b0=l.F(0,new A.aC(a9,a8,a9,a8)).fK(0,B.bg,B.TT)
+b0=l.F(0,new A.aC(a9,a8,a9,a8)).fK(0,B.bg,B.TY)
 q=!1
 if(b.a>0){b1=b9.e
 if(b1!=null){b2=b9.f
@@ -43358,7 +43358,7 @@ L(a){var s=null,r=A.bG(a,B.aA,t.w).w.r.b+8
 return new A.cY(new A.aC(8,r,8,8),new A.jJ(new A.Gw(this.c.U(0,new A.j(8,r))),A.kt(A.ob(B.W,B.z0,A.eO(this.d,B.ao,B.X,B.cs),B.cf,s,1,s,s,s,s,s,B.eh),s,222),s),s)}}
 A.qp.prototype={
 L(a){var s=null
-return A.kt(A.asd(this.d,this.c,A.ase(B.hK,s,s,s,s,B.aV,s,s,B.aV,A.a_(a).ax.a===B.a2?B.k:B.H,s,B.M4,B.Cx,s,B.eo,s,s,s,s)),s,1/0)}}
+return A.kt(A.asd(this.d,this.c,A.ase(B.hK,s,s,s,s,B.aV,s,s,B.aV,A.a_(a).ax.a===B.a2?B.k:B.H,s,B.M9,B.Cx,s,B.eo,s,s,s,s)),s,1/0)}}
 A.w4.prototype={
 gA(a){var s=this
 return A.bI([s.a,s.b,s.c,s.d,s.e,s.f,s.y,s.r,s.w,s.x,s.z,s.Q,s.as])},
@@ -43864,7 +43864,7 @@ p=r?m:new A.E(s.b,s.d)
 o=A.qK(m,m,m,m,m,m,n.z,m,m,n.c,p,q,n.e,m)
 s=n.fr
 if(s!=null)o=s.bn(o)
-return new A.CX(m,o,m,B.TE,!1,n.ax,n.db,n.w,m,m,m)}}
+return new A.CX(m,o,m,B.TJ,!1,n.ax,n.db,n.w,m,m,m)}}
 A.CX.prototype={
 an(){return new A.RC()}}
 A.RC.prototype={
@@ -43919,7 +43919,7 @@ gaO(){var s,r=this,q=r.id
 if(q===$){s=A.a_(r.fy)
 r.id!==$&&A.ak()
 q=r.id=s.ax}return q},
-gbX(a){return B.Td},
+gbX(a){return B.Ti},
 gco(){return new A.bx(new A.afd(this),t.b)},
 gfq(){return new A.bx(new A.aff(this),t.b)},
 gdF(a){return B.eG},
@@ -44779,7 +44779,7 @@ break $label0$0}q=null}return q},
 L(a0){var s,r,q,p,o,n,m,l,k,j,i,h,g,f,e,d,c,b=this,a=null
 b.yR(a0)
 s=A.a_(a0)
-r=b.gcl().a.eY(B.L8)
+r=b.gcl().a.eY(B.Ld)
 q=t.R
 p=A.dT(r,q)
 p.F(0,B.U)
@@ -44797,13 +44797,13 @@ else{o=b.gcl().a
 o=p.a.$1(o)
 p=o}if(p==null)p=b.a.fy
 q.saE(0,p==null?A.a_(a0).k1:p)}q=b.a.ay
-if(q==null)q=B.Ux
+if(q==null)q=B.UC
 l=A.c7(q,b.gcl().a,t.Pb)
 k=b.w
 if(k===$){q=b.gaa7()
 p=t.g
 o=t.c
-j=A.au([B.ya,new A.ch(q,new A.b3(A.b([],p),o),t.wY),B.RZ,new A.ch(q,new A.b3(A.b([],p),o),t.nz)],t.u,t.od)
+j=A.au([B.ya,new A.ch(q,new A.b3(A.b([],p),o),t.wY),B.S3,new A.ch(q,new A.b3(A.b([],p),o),t.nz)],t.u,t.od)
 b.w!==$&&A.ak()
 b.w=j
 k=j}q=b.a.k4
@@ -45145,7 +45145,7 @@ p=A.cR(r,s.r,B.aD,o,q,p,o)
 return A.ce(o,new A.eU(new A.aW(m,new A.ar(1,0,n),n.i("aW<ap.T>")),!1,p,o),!0,o,o,!1,o,o,o,o,o,o,o,o,o,o,o,o,o,o,o,o,o,o,o,o,o,o,o,o)},
 pK(){var s,r,q,p,o,n=null,m=this.d
 m===$&&A.a()
-s=new A.ar(B.IG,B.h,t.Ni).ad(0,m.gD(0))
+s=new A.ar(B.IL,B.h,t.Ni).ad(0,m.gD(0))
 r=this.a
 q=r.x
 q.toString
@@ -45258,7 +45258,7 @@ r.toString
 a.$1(r)}},
 a_4(a,b,c){var s,r,q,p,o,n,m,l,k,j,i=null,h=this.cJ$,g=h.h(0,B.bx)
 $label0$0:{if(g instanceof A.y){g=new A.as(c.$2(g,a),b.$2(g,a))
-break $label0$0}if(g==null){g=B.K_
+break $label0$0}if(g==null){g=B.K4
 break $label0$0}g=i}s=g.a
 r=i
 q=g.b
@@ -45644,10 +45644,10 @@ if(a.j1(new A.ah1(o),q.a(n).a,b))return!0}return!1},
 ZG(a){var s,r,q,p,o,n,m=null,l=t.q1,k=A.b([],l),j=new A.FH(k,A.b([],t.X_))
 for(s=a.length,r=m,q=r,p=0;p<a.length;a.length===s||(0,A.G)(a),++p){o=a[p]
 n=o.au
-n=n==null?m:n.n(0,B.L_)
+n=n==null?m:n.n(0,B.L4)
 if(n===!0){if(q==null)q=A.b([],l)
 q.push(o)}else{n=o.au
-n=n==null?m:n.n(0,B.KZ)
+n=n==null?m:n.n(0,B.L3)
 if(n===!0){if(r==null)r=A.b([],l)
 r.push(o)}else k.push(o)}}if(q!=null)j.b.push(q)
 if(r!=null)j.b.push(r)
@@ -45816,7 +45816,7 @@ if(s)q.F(0,B.E)
 if(r.gkI())q.F(0,B.c8)
 return q},
 a0W(a,b){var s,r,q=this,p=A.c7(q.gar().R,q.gdh(),t.Ef)
-if(p==null)p=B.SY
+if(p==null)p=B.T2
 q.gar()
 if(p.a.j(0,B.q))return p
 s=q.gar().ry
@@ -46280,7 +46280,7 @@ return s.b}}
 A.io.prototype={
 G(){return"_ListTileSlot."+this.b}}
 A.P4.prototype={
-gGq(){return B.Fl},
+gGq(){return B.Fn},
 OH(a){var s,r=this
 switch(a.a){case 0:s=r.d
 break
@@ -46601,7 +46601,7 @@ r.e=s.a.a
 r.f=s.d},
 $S:0}
 A.If.prototype={
-L(a){return A.arx(new A.lf(B.B9,null,null),B.a4,new A.r3(1,B.FP,new A.cI(B.yX,B.q)),this.c.S(0,new A.j(0,40.95)),1.25,B.M8)}}
+L(a){return A.arx(new A.lf(B.B9,null,null),B.a4,new A.r3(1,B.FS,new A.cI(B.yX,B.q)),this.c.S(0,new A.j(0,40.95)),1.25,B.Md)}}
 A.oe.prototype={
 G(){return"MaterialType."+this.b}}
 A.xA.prototype={
@@ -46937,7 +46937,7 @@ A.Gd.prototype={
 Ow(a,b,c,d,e,f){return A.az_(a,b,c,d,e,f)}}
 A.IU.prototype={
 YN(a){var s=t.Tr
-return A.a5(new A.ah(B.Fo,new A.a5N(a),s),!0,s.i("aI.E"))},
+return A.a5(new A.ah(B.Fq,new A.a5N(a),s),!0,s.i("aI.E"))},
 j(a,b){if(b==null)return!1
 if(this===b)return!0
 if(J.N(b)!==A.u(this))return!1
@@ -47118,7 +47118,7 @@ r=!1
 if(p===!0)if(!s){p=q.x
 p=p!=null&&p.b==null}else p=r
 else p=r
-if(p)q.aeY(B.Mj)
+if(p)q.aeY(B.Mo)
 q.y=s
 q.d1()},
 aeY(a){var s,r=this,q=r.r
@@ -47354,7 +47354,7 @@ aF(){var s,r=this,q=null
 r.aX()
 s=r.c
 s.toString
-r.dx=new A.Rr(s,B.Kh,$.ax())
+r.dx=new A.Rr(s,B.Km,$.ax())
 r.a.toString
 r.cy=B.hU
 r.CW=B.Ac
@@ -47460,7 +47460,7 @@ f=A.bG(a,B.aA,g).w
 m.gnO()
 q=A.bG(a,B.kc,g).w
 o=f.r.vU(q.f.d)
-f=A.bG(a,B.TS,g).w
+f=A.bG(a,B.TX,g).w
 m.gnO()
 g=A.bG(a,B.kc,g).w
 g=g.f.d!==0?0:l
@@ -47562,7 +47562,7 @@ s.aY$=null
 s.aI()}}
 A.Ki.prototype={
 L(a){var s=this,r=null
-if(A.a_(a).w===B.O)return new A.ql(8,B.cx,s.c,s.d,!1,B.JS,3,r,B.lK,B.BW,A.EB(),r,r,3,r)
+if(A.a_(a).w===B.O)return new A.ql(8,B.cx,s.c,s.d,!1,B.JX,3,r,B.lK,B.BW,A.EB(),r,r,3,r)
 return new A.tX(s.c,s.d,r,r,r,r,B.bE,B.dY,A.EB(),r,r,0,r)}}
 A.tX.prototype={
 an(){var s=null
@@ -47951,7 +47951,7 @@ ga0b(){this.a.toString
 var s=this.c
 s.toString
 A.a_(s)
-return B.HR},
+return B.HW},
 gdD(){this.a.toString
 return!0},
 ga4h(){this.a.toString
@@ -48193,16 +48193,16 @@ a7=a6?d:b3
 a5=a5.k4
 a8=$.aw7()
 if(t.qY.b(a7))a9=B.y6
-else a9=B.RR
+else a9=B.RW
 q=A.b([$.avk()],q)
 B.b.T(q,p)
-r=A.LH(b,new A.qv(m,l,"\u2022",!1,!1,a9,a1,!0,!0,a3,a0,!0,n,b3,b3,B.b0,b3,B.MR,c,g,B.dV,1,b3,!1,!1,a4,a7,a2,b3,a5,b3,b3,b3,b2.ga3h(),b2.ga3n(),B.eD,b3,b3,q,B.bz,!0,2,b3,f,i,h,j,B.dB,B.cO,r.a,B.lR,a6,B.aa,b3,b3,!0,!0,b2,B.a4,"editable",!0,b3,A.aIQ(),k,a8,b2.y))
+r=A.LH(b,new A.qv(m,l,"\u2022",!1,!1,a9,a1,!0,!0,a3,a0,!0,n,b3,b3,B.b0,b3,B.MW,c,g,B.dV,1,b3,!1,!1,a4,a7,a2,b3,a5,b3,b3,b3,b2.ga3h(),b2.ga3n(),B.eD,b3,b3,q,B.bz,!0,2,b3,f,i,h,j,B.dB,B.cO,r.a,B.lR,a6,B.aa,b3,b3,!0,!0,b2,B.a4,"editable",!0,b3,A.aIQ(),k,a8,b2.y))
 b2.a.toString
 b0=A.pP(new A.pr(A.b([l,m],t.Eo)),new A.aiz(b2,l,m),new A.fL(r,b3))
 b2.a.toString
-b1=A.c7(B.Uy,b2.geW().a,t.Pb)
+b1=A.c7(B.UD,b2.geW().a,t.Pb)
 b4.c=null
-if(b2.ga0b()!==B.HQ)b2.a.toString
+if(b2.ga0b()!==B.HV)b2.a.toString
 b2.a.toString
 b2.gdD()
 r=b2.w
@@ -48321,7 +48321,7 @@ r.bB$=null
 r.aI()}}
 A.Ik.prototype={}
 A.a4D.prototype={
-pe(a){return B.M2},
+pe(a){return B.M7},
 vK(a,b,c,d){var s,r,q,p=null,o=A.a_(a)
 a.ao(t.bZ)
 s=A.a_(a)
@@ -48336,9 +48336,9 @@ case 2:s=A.asu(0.7853981633974483,q)
 break
 default:s=p}return s},
 pd(a,b){var s
-switch(a.a){case 2:s=B.Ir
+switch(a.a){case 2:s=B.Iw
 break
-case 0:s=B.It
+case 0:s=B.Iy
 break
 case 1:s=B.h
 break
@@ -48364,7 +48364,7 @@ if(J.N(b)!==A.u(s))return!1
 return b instanceof A.A7&&J.f(b.a,s.a)&&J.f(b.b,s.b)&&J.f(b.c,s.c)}}
 A.Sy.prototype={}
 A.Lm.prototype={
-L(a){var s=this.c.U(0,B.Ip),r=this.d.S(0,B.Im),q=A.bG(a,B.aA,t.w).w.r.b+8,p=44<=s.b-8-q,o=new A.j(8,q)
+L(a){var s=this.c.U(0,B.Iu),r=this.d.S(0,B.Ir),q=A.bG(a,B.aA,t.w).w.r.b+8,p=44<=s.b-8-q,o=new A.j(8,q)
 return new A.cY(new A.aC(8,q,8,8),new A.jJ(new A.Ln(s.U(0,o),r.U(0,o),p),new A.Du(this.e,p,A.aIS(),null),null),null)}}
 A.Du.prototype={
 an(){return new A.SD(new A.mj(),null,null)},
@@ -48383,7 +48383,7 @@ p=j.a
 o=p.d
 n=j.d
 m=t.A9
-m=n?new A.dK(B.xJ,m):new A.dK(B.Mv,m)
+m=n?new A.dK(B.xJ,m):new A.dK(B.MA,m)
 l=A.nU(n?B.mk:B.Db,i,i,i)
 k=n?"Back":"More"
 m=A.b([new A.SC(l,new A.aiT(j),k,m)],t.D)
@@ -48617,7 +48617,7 @@ A.uj.prototype={
 G(){return"_TextSelectionToolbarItemPosition."+this.b}}
 A.Lo.prototype={
 L(a){var s=this,r=null
-return A.asd(s.c,s.d,A.ase(s.f,r,B.B,r,r,r,r,r,r,A.aDp(A.a_(a).ax),r,B.M5,s.e,r,B.eo,r,r,B.Ov,r))}}
+return A.asd(s.c,s.d,A.ase(s.f,r,B.B,r,r,r,r,r,r,A.aDp(A.a_(a).ax),r,B.Ma,s.e,r,B.eo,r,r,B.OA,r))}}
 A.df.prototype={
 bn(b3){var s,r,q,p,o,n,m,l,k,j,i,h,g,f,e,d,c,b,a,a0,a1,a2,a3,a4,a5,a6,a7,a8,a9,b0,b1=this,b2=null
 if(b3==null)return b1
@@ -49104,7 +49104,7 @@ a2Q(a){var s,r=this
 r.a.toString
 r.f===$&&A.a()
 switch(1){case 1:s=r.y
-if(s==null)s=r.y=A.a1X(r,B.L3)
+if(s==null)s=r.y=A.a1X(r,B.L8)
 s.p1=r.ga3S()
 s.p2=r.ga2m()
 s.R8=r.ga2Y()
@@ -51144,7 +51144,7 @@ ghy(){var s,r,q=this.d
 if(q===0)return B.h
 s=this.a
 r=s.c
-if(!isFinite(r.gcS(r)))return B.IC
+if(!isFinite(r.gcS(r)))return B.IH
 r=this.c
 s=s.c
 return new A.j(q*(r-s.gcS(s)),0)},
@@ -51245,7 +51245,7 @@ else{p=p.a
 r=p==null?null:p.tp(q.x)}if(r!=null)s.rX(r)
 s.vz(" ")
 p=s.ir()
-p.i5(B.J2)
+p.i5(B.J7)
 q.ch=p}return p},
 IA(a){var s=this,r=s.a_l(),q=$.a4().CU(r)
 r=s.x
@@ -51311,7 +51311,7 @@ if(r){l=n?m:s.a
 r=new A.j(l.a-(b.c-b.a),l.b)
 break $label0$0}r=null}return new A.j(A.D(r.a+j.ghy().a,0,j.c),r.b+j.ghy().b)},
 FI(a,b){var s,r,q=this,p=q.as,o=!0
-if(p!=null)if(!p.j(0,B.Mz)){p=q.as
+if(p!=null)if(!p.j(0,B.ME)){p=q.as
 p=(p==null?null:p.d)===0}else p=o
 else p=o
 if(p){p=q.u6(a)
@@ -51321,7 +51321,7 @@ return r.d-r.b},
 u6(a3){var s,r,q,p,o,n,m,l,k,j,i,h,g,f,e,d,c,b,a=this,a0=null,a1=a.b,a2=a1.a
 if(a2.c.gRm()<1||a.gke().length===0)return a0
 $label0$0:{s=a3.a
-if(0===s){r=B.JU
+if(0===s){r=B.JZ
 break $label0$0}q=a0
 r=!1
 q=a3.b
@@ -51628,7 +51628,7 @@ if(r===b)return B.bL
 s=!0
 if(r.a===b.a)if(r.d==b.d)if(r.r==b.r)if(r.w==b.w)if(r.y==b.y)if(r.z==b.z)if(r.Q==b.Q)if(r.as==b.as)if(r.at==b.at)if(r.ay==b.ay)if(r.ch==b.ch)if(A.cu(r.dy,b.dy))if(A.cu(r.fr,b.fr))if(A.cu(r.fx,b.fx)){s=A.cu(r.gk6(),b.gk6())
 s=!s}if(s)return B.aU
-if(!J.f(r.b,b.b)||!J.f(r.c,b.c)||!J.f(r.CW,b.CW)||!J.f(r.cx,b.cx)||r.cy!=b.cy||r.db!=b.db)return B.Kf
+if(!J.f(r.b,b.b)||!J.f(r.c,b.c)||!J.f(r.CW,b.CW)||!J.f(r.cx,b.cx)||r.cy!=b.cy||r.db!=b.db)return B.Kk
 return B.bL},
 j(a,b){var s,r=this
 if(b==null)return!1
@@ -51692,13 +51692,13 @@ A.adz.prototype={
 ea(a,b){return(this.b+this.c*b)*Math.pow(2.718281828459045,this.a*b)},
 eZ(a,b){var s=this.a,r=Math.pow(2.718281828459045,s*b),q=this.c
 return s*(this.b+q*b)*r+q*r},
-gtd(a){return B.Mo}}
+gtd(a){return B.Mt}}
 A.agw.prototype={
 ea(a,b){var s=this
 return s.c*Math.pow(2.718281828459045,s.a*b)+s.d*Math.pow(2.718281828459045,s.b*b)},
 eZ(a,b){var s=this,r=s.a,q=s.b
 return s.c*r*Math.pow(2.718281828459045,r*b)+s.d*q*Math.pow(2.718281828459045,q*b)},
-gtd(a){return B.Mq}}
+gtd(a){return B.Mv}}
 A.aj2.prototype={
 ea(a,b){var s=this,r=s.a*b
 return Math.pow(2.718281828459045,s.b*b)*(s.c*Math.cos(r)+s.d*Math.sin(r))},
@@ -51706,7 +51706,7 @@ eZ(a,b){var s,r=this,q=r.b,p=Math.pow(2.718281828459045,q*b),o=r.a,n=o*b,m=Math.
 n=r.d
 s=r.c
 return p*(n*o*m-s*o*l)+q*p*(n*l+s*m)},
-gtd(a){return B.Mp}}
+gtd(a){return B.Mu}}
 A.Af.prototype={
 k(a){return"Tolerance(distance: \xb1"+A.p(this.a)+", time: \xb10.001, velocity: \xb1"+A.p(this.c)+")"}}
 A.ru.prototype={
@@ -51791,7 +51791,7 @@ if(!J.f(s.b,p.C$.gt(0))){s.a=p.gt(0)
 s.b=p.C$.gt(0)
 p.b4=0
 o.iy(0,0)
-p.ae=B.Kd}else{q=o.x
+p.ae=B.Ki}else{q=o.x
 q===$&&A.a()
 if(q===o.b)s.a=s.b=p.C$.gt(0)
 else{s=o.r
@@ -51800,7 +51800,7 @@ case 2:s=p.O
 if(!J.f(s.b,p.C$.gt(0))){s.a=s.b=p.C$.gt(0)
 p.b4=0
 o.iy(0,0)
-p.ae=B.Ke}else{p.ae=B.jk
+p.ae=B.Kj}else{p.ae=B.jk
 s=o.r
 if(!(s!=null&&s.a!=null))o.ca(0)}break
 case 3:s=p.O
@@ -51890,7 +51890,7 @@ if(r!=null){r.P$=$.ax()
 r.y2$=0}r=t.S
 s=$.ax()
 this.at$=new A.Iw(new A.a7G(this),new A.a5_(B.aV,A.z(r,t.ZA)),A.z(r,t.xg),s)},
-a4f(a){B.HW.nF("first-frame",null,!1,t.H)},
+a4f(a){B.I0.nF("first-frame",null,!1,t.H)},
 a2K(a){this.Dq()
 this.a7I()},
 a7I(){$.bo.k3$.push(new A.a7F(this))},
@@ -53286,7 +53286,7 @@ bi(a){return 1e5},
 bh(a){return 1e5},
 gjE(){return!0},
 iz(a){return!0},
-cI(a){return a.b3(B.M0)},
+cI(a){return a.b3(B.M5)},
 aB(a,b){var s,r,q,p,o,n,m,l,k,j=this
 try{p=a.gbY(0)
 o=j.gt(0)
@@ -53320,13 +53320,13 @@ $label0$0:{if(B.X===p){s=c?new A.as(a,d):new A.as(0,d)
 break $label0$0}if(B.rC===p){s=B.X.pS(a,b,!c,d)
 break $label0$0}r=B.rE===p
 if(r&&b<2){s=B.X.pS(a,b,c,d)
-break $label0$0}q=B.Hv===p
+break $label0$0}q=B.HA===p
 if(q&&b===0){s=B.X.pS(a,b,c,d)
 break $label0$0}if(B.rD===p){s=new A.as(a/2,d)
 break $label0$0}if(r){s=new A.as(0,a/(b-1)+d)
 break $label0$0}if(q){s=a/b
 s=new A.as(s/2,s+d)
-break $label0$0}if(B.Hw===p){s=a/(b+1)
+break $label0$0}if(B.HB===p){s=a/(b+1)
 s=new A.as(s,s+d)
 break $label0$0}s=null}return s}}
 A.no.prototype={
@@ -55038,7 +55038,7 @@ A.R0.prototype={}
 A.kf.prototype={
 j(a,b){if(b==null)return!1
 return b instanceof A.kf&&b.b===this.b},
-gA(a){return A.J(B.SR,this.b,B.a,B.a,B.a,B.a,B.a,B.a,B.a,B.a,B.a,B.a,B.a,B.a,B.a,B.a,B.a,B.a,B.a,B.a)}}
+gA(a){return A.J(B.SW,this.b,B.a,B.a,B.a,B.a,B.a,B.a,B.a,B.a,B.a,B.a,B.a,B.a,B.a,B.a,B.a,B.a,B.a,B.a)}}
 A.hk.prototype={
 ab(a){this.a=this.b=null
 this.Xm(0)},
@@ -55511,15 +55511,15 @@ l=s>r!==(B.ax===m)
 k=A.bR(B.j,s,r,!1)
 j=A.b([],t.AO)
 for(a1=a1.jw(k),m=a1.length,i=0;i<a1.length;a1.length===m||(0,A.G)(a1),++i){h=a1[i]
-j.push(new A.x(h.a,h.b,h.c,h.d))}$label0$0:{if(p){a1=B.JV
+j.push(new A.x(h.a,h.b,h.c,h.d))}$label0$0:{if(p){a1=B.K_
 break $label0$0}g=!0
 a1=!0
 if(a1){m=l
 f=m}else{f=a0
-m=!1}if(m){a1=B.Kb
+m=!1}if(m){a1=B.Kg
 break $label0$0}if(g){m=!1===(a1?f:l)
 a1=m}else a1=!1
-if(a1){a1=B.K0
+if(a1){a1=B.K5
 break $label0$0}a1=a0}e=a1.a
 d=a0
 c=a1.b
@@ -55529,7 +55529,7 @@ a1=n.cg()
 a1=a1.gaJ(a1)
 n=n.cg()
 n=n.gaJ(n)
-m=p?B.Ky:B.jr
+m=p?B.KD:B.jr
 return new A.m6(new A.oX(q,a1,b),new A.oX(o,n,d),m,j,!0)},
 l_(a){var s=this,r=A.bs("result"),q=s.d,p=s.e,o=a.a
 switch(o.a){case 0:case 1:t.mb.a(a)
@@ -56048,7 +56048,7 @@ switch(c){case B.jO:l=m.a
 q=m.uL(s,a,new A.q1(B.d.a6(m.c,l.a,l.b)))
 p=B.D
 break
-case B.MT:l=m.b.p
+case B.MY:l=m.b.p
 o=l.e
 o.toString
 q=m.uL(s,a,new A.ts(o,l.b.a.c).gRi())
@@ -56058,10 +56058,10 @@ case B.xY:l=m.a
 q=m.uL(s,a,new A.lP(B.d.a6(m.c,l.a,l.b)))
 p=B.D
 break
-case B.MU:q=m.a5e(s,a,new A.qY(m))
+case B.MZ:q=m.a5e(s,a,new A.qY(m))
 p=B.D
 break
-case B.MV:o=m.a
+case B.N_:o=m.a
 n=o.a
 o=o.b
 q=m.uL(s,a,new A.w8(B.d.a6(m.c,n,o)))
@@ -56369,7 +56369,7 @@ I(a,b){return null},
 k(a){return"CustomClipper"}}
 A.m9.prototype={
 yh(a){return this.b.ec(new A.x(0,0,0+a.a,0+a.b),this.c)},
-yE(a){if(A.u(a)!==B.Sv)return!0
+yE(a){if(A.u(a)!==B.SA)return!0
 t.jH.a(a)
 return!a.b.j(0,this.b)||a.c!=this.c}}
 A.u8.prototype={
@@ -56987,7 +56987,7 @@ s.k4=!1
 s.p1=p
 s.ok=b}}o=o.a(A.v.prototype.gap.call(r,0))
 o.toString
-a.oT(o,A.e5.prototype.ge6.call(r),B.h,B.Kc)},
+a.oT(o,A.e5.prototype.ge6.call(r),B.h,B.Kh)},
 cH(a,b){b.di(0,this.FG())}}
 A.a73.prototype={
 $2(a,b){return this.a.tP(a,b)},
@@ -57642,7 +57642,7 @@ if(d.O$==null)return
 s=t.r
 r=!0
 switch(A.mQ(s.a(A.v.prototype.ga0.call(d)).a,s.a(A.v.prototype.ga0.call(d)).b).a){case 0:q=b.S(0,new A.j(0,d.fx.c))
-p=B.Iq
+p=B.Iv
 o=B.ej
 break
 case 1:q=b
@@ -57656,7 +57656,7 @@ o=B.ej
 r=!1
 break
 case 3:q=b.S(0,new A.j(d.fx.c,0))
-p=B.IH
+p=B.IM
 o=B.ei
 break
 default:r=c
@@ -58554,23 +58554,23 @@ A.ml.prototype={
 G(){return"WrapAlignment."+this.b},
 ud(a,b,c,d){var s,r,q=this
 $label0$0:{if(B.cF===q){s=new A.as(d?a:0,b)
-break $label0$0}if(B.Te===q){s=B.cF.ud(a,b,c,!d)
-break $label0$0}r=B.Tg===q
+break $label0$0}if(B.Tj===q){s=B.cF.ud(a,b,c,!d)
+break $label0$0}r=B.Tl===q
 if(r&&c<2){s=B.cF.ud(a,b,c,d)
-break $label0$0}if(B.Tf===q){s=new A.as(a/2,b)
+break $label0$0}if(B.Tk===q){s=new A.as(a/2,b)
 break $label0$0}if(r){s=new A.as(0,a/(c-1)+b)
-break $label0$0}if(B.Th===q){s=a/c
+break $label0$0}if(B.Tm===q){s=a/c
 s=new A.as(s/2,s+b)
-break $label0$0}if(B.Ti===q){s=a/(c+1)
+break $label0$0}if(B.Tn===q){s=a/(c+1)
 s=new A.as(s,s+b)
 break $label0$0}s=null}return s}}
 A.Ay.prototype={
 G(){return"WrapCrossAlignment."+this.b},
-ga0A(){switch(this.a){case 0:var s=B.Tj
+ga0A(){switch(this.a){case 0:var s=B.To
 break
 case 1:s=B.k4
 break
-case 2:s=B.Tk
+case 2:s=B.Tp
 break
 default:s=null}return s},
 gYM(){switch(this.a){case 0:var s=0
@@ -58949,11 +58949,11 @@ r=a==null
 q.rx$=q.Ht(r?q.RG$:a)
 if(!r)q.RG$=a
 q.ok$=!1
-try{q.p1$=B.Ki
+try{q.p1$=B.Kn
 s=q.id$
 q.id$=A.z(t.S,t.h1)
 J.mY(s,new A.a8f(q))
-q.k1$.Z(0)}finally{q.p1$=B.Kj}},
+q.k1$.Z(0)}finally{q.p1$=B.Ko}},
 aih(a){var s=this,r=s.xr$,q=r==null
 if(!q&&r!==a)return null
 if(r===a)++s.y1$
@@ -59081,7 +59081,7 @@ aj3(a){var s,r,q=this,p=new A.abj(a)
 if(q.b==null){s=q.b=new A.bS(new A.aD($.am,t.W),t.Q)
 r=q.c
 if(r!=null)if(r)s.fg(0)
-else s.oa(B.RL)}q.b.a.fw(p,p,t.H)},
+else s.oa(B.RQ)}q.b.a.fw(p,p,t.H)},
 o7(a,b){return this.a.a.o7(a,b)},
 m6(a){return this.o7(a,null)},
 fw(a,b,c){return this.a.a.fw(a,b,c)},
@@ -59556,7 +59556,7 @@ if(s==null||!s.cy.am(0,b))return null
 return r.a.cy.h(0,b)},
 aht(a,b,c){var s,r=this.a1i(a,b)
 if(r!=null){r.$1(c)
-return}if(b===B.KE){s=this.c.h(0,a)
+return}if(b===B.KJ){s=this.c.h(0,a)
 s=(s==null?null:s.c)!=null}else s=!1
 if(s)this.c.h(0,a).c.$0()},
 k(a){return"<optimized out>#"+A.bm(this)}}
@@ -59584,24 +59584,24 @@ this.f9(B.js,a)},
 sll(a){a.toString
 this.f9(B.wT,a)},
 sxs(a){this.f9(B.ew,a)},
-sxi(a){this.f9(B.KF,a)},
+sxi(a){this.f9(B.KK,a)},
 sxt(a){this.f9(B.ex,a)},
 sxu(a){this.f9(B.eu,a)},
 sxq(a){this.f9(B.ev,a)},
-sagS(a){this.ky(B.KM,new A.a9k(a))},
+sagS(a){this.ky(B.KR,new A.a9k(a))},
 sEI(a){this.f9(B.wU,a)},
 sEH(a){this.f9(B.wS,a)},
-sxe(a,b){this.f9(B.KH,b)},
-sxf(a,b){this.f9(B.KL,b)},
-sxp(a,b){this.f9(B.KA,b)},
-sxn(a){this.ky(B.KI,new A.a9i(a))},
-sxl(a){this.ky(B.KB,new A.a9g(a))},
-sxo(a){this.ky(B.KJ,new A.a9j(a))},
-sxm(a){this.ky(B.Kz,new A.a9h(a))},
-sxv(a){this.ky(B.KC,new A.a9l(a))},
-sxw(a){this.ky(B.KD,new A.a9m(a))},
-sxg(a){this.f9(B.KG,a)},
-sxh(a){this.f9(B.KK,a)},
+sxe(a,b){this.f9(B.KM,b)},
+sxf(a,b){this.f9(B.KQ,b)},
+sxp(a,b){this.f9(B.KF,b)},
+sxn(a){this.ky(B.KN,new A.a9i(a))},
+sxl(a){this.ky(B.KG,new A.a9g(a))},
+sxo(a){this.ky(B.KO,new A.a9j(a))},
+sxm(a){this.ky(B.KE,new A.a9h(a))},
+sxv(a){this.ky(B.KH,new A.a9l(a))},
+sxw(a){this.ky(B.KI,new A.a9m(a))},
+sxg(a){this.f9(B.KL,a)},
+sxh(a){this.f9(B.KP,a)},
 sxj(a,b){this.f9(B.jt,b)},
 sTq(a){if(a==this.p1)return
 this.p1=a
@@ -60094,7 +60094,7 @@ tT(){var s=0,r=A.S(t.H),q=this,p,o,n,m,l,k
 var $async$tT=A.T(function(a,b){if(a===1)return A.P(b,r)
 while(true)switch(s){case 0:l=t.S
 s=2
-return A.V(B.IW.wT("getKeyboardState",l,l),$async$tT)
+return A.V(B.J0.wT("getKeyboardState",l,l),$async$tT)
 case 2:k=b
 if(k!=null)for(l=J.d8(k),p=J.aY(l.gbG(k)),o=q.a;p.q();){n=p.gK(p)
 m=l.h(k,n)
@@ -60318,7 +60318,7 @@ b.lQ(J.iv(B.bj.gbD(c),c.byteOffset,4*s))}else if(t.s4.b(c)){b.ew(0,14)
 s=c.length
 l.fB(b,s)
 b.iX(4)
-b.lQ(J.iv(B.I2.gbD(c),c.byteOffset,4*s))}else if(t.OE.b(c)){b.ew(0,11)
+b.lQ(J.iv(B.I7.gbD(c),c.byteOffset,4*s))}else if(t.OE.b(c)){b.ew(0,11)
 s=c.length
 l.fB(b,s)
 b.iX(8)
@@ -60475,7 +60475,7 @@ w3(a){throw A.e(A.id(null))},
 gw7(){return"defer"}}
 A.Sl.prototype={
 gqV(a){return t.ZC.a(this.a)},
-bJ(){return B.IU.cb("activateSystemCursor",A.au(["device",this.b,"kind",t.ZC.a(this.a).a],t.N,t.z),t.H)},
+bJ(){return B.IZ.cb("activateSystemCursor",A.au(["device",this.b,"kind",t.ZC.a(this.a).a],t.N,t.z),t.H)},
 l(){}}
 A.jf.prototype={
 gw7(){return"SystemMouseCursor("+this.a+")"},
@@ -60745,9 +60745,9 @@ A.Qx.prototype={}
 A.Jg.prototype={
 giI(){var s=this.a,r=B.rN.h(0,s)
 return r==null?new A.m(98784247808+B.d.gA(s)):r},
-gEz(){var s,r=this.b,q=B.HI.h(0,r),p=q==null?null:q[this.c]
+gEz(){var s,r=this.b,q=B.HN.h(0,r),p=q==null?null:q[this.c]
 if(p!=null)return p
-s=B.HC.h(0,r)
+s=B.HH.h(0,r)
 if(s!=null)return s
 if(r.length===1)return new A.h(r.toLowerCase().charCodeAt(0))
 return new A.h(B.d.gA(this.a)+98784247808)},
@@ -61498,7 +61498,7 @@ $S:0}
 A.A1.prototype={}
 A.PS.prototype={
 Iq(a){var s,r=a.ki()
-if($.bT().a!==$.ale()){s=B.N7.ki()
+if($.bT().a!==$.ale()){s=B.Nc.ki()
 s.m(0,"isMultiline",a.b.j(0,B.y1))
 r.m(0,"inputType",s)}return r},
 TN(a){var s,r=$.bT().c
@@ -61528,8 +61528,8 @@ break}throw A.e(A.a4R(null))
 case 1:return A.Q(q,r)}})
 return A.R($async$At,r)},
 a97(a){var s
-$label0$0:{if("undo"===a){s=B.SZ
-break $label0$0}if("redo"===a){s=B.T_
+$label0$0:{if("undo"===a){s=B.T3
+break $label0$0}if("redo"===a){s=B.T4
 break $label0$0}s=A.an(A.lp(A.b([A.iI("Unknown undo direction: "+a)],t.p)))}return s}}
 A.abz.prototype={}
 A.ajQ.prototype={
@@ -61566,7 +61566,7 @@ df(a){return this.c.$1(a)}}
 A.Vl.prototype={
 QM(a,b,c){return a.pX(b,c)},
 afm(a,b,c){if(a.pF(b,c))return new A.as(!0,a.pX(b,c))
-return B.K4}}
+return B.K9}}
 A.jD.prototype={
 an(){return new A.AA(A.az(t.od),new A.I())}}
 A.Vn.prototype={
@@ -61737,7 +61737,7 @@ A.kk.prototype={}
 A.Jd.prototype={
 kb(a,b,c){var s,r,q,p,o,n=$.a3.ac$.d.c
 if(n==null||n.e==null)return!1
-for(s=t.F,r=0;r<2;++r){q=B.Fw[r]
+for(s=t.F,r=0;r<2;++r){q=B.Fx[r]
 p=n.e
 p.toString
 o=A.alo(p,q,s)
@@ -61947,7 +61947,7 @@ r=j.ga4r()
 q=j.a
 p=q.ch
 p.toString
-h.a=A.aq8(!0,new A.y_(r,j.ga5z(),j.ga5Z(),p,"nav",B.RU,A.aIw(),!0,B.y,s),"Navigator Scope",!0,i,i,i,i)
+h.a=A.aq8(!0,new A.y_(r,j.ga5z(),j.ga5Z(),p,"nav",B.RZ,A.aIw(),!0,B.y,s),"Navigator Scope",!0,i,i,i,i)
 s=q}else{s=j.a
 s.toString}h.b=null
 o=new A.ec(new A.ajk(h,j),i)
@@ -62081,7 +62081,7 @@ if(s!=null){s.az()
 s.d0()
 r.eG$=null}}},
 L(a){if(this.gtj()&&this.eG$==null)this.pP()
-return B.Ue}}
+return B.Uj}}
 A.PD.prototype={
 L(a){throw A.e(A.iJ("Widgets that mix AutomaticKeepAliveClientMixin into their State must call super.build() but must ignore the return value of the superclass."))}}
 A.Tf.prototype={
@@ -62880,7 +62880,7 @@ s=$.aG()
 s.k2=l.gae7()
 s.k3=$.am
 B.jf.kr(l.ga2E())
-B.IS.kr(l.ga1x())
+B.IX.kr(l.ga1x())
 s=new A.Gr(A.z(p,t.qa),B.rX)
 B.rX.kr(s.ga54())
 l.ej$=s},
@@ -63424,7 +63424,7 @@ s=s.gkh()
 $.bT().Np(s)}}if(A.aU()!==B.O&&A.aU()!==B.a0)return
 s=o.c
 s.toString
-p=A.bG(s,B.TQ,t.w).w.gmN(0)
+p=A.bG(s,B.TV,t.w).w.gmN(0)
 s=o.k1
 if(s==null){o.k1=p
 return}if(p!==s){o.k1=p
@@ -63805,7 +63805,7 @@ h.BV()
 r=h.ga1r()
 q=q.op
 h.e!==$&&A.bp()
-h.e=new A.Km(s,new A.c6(B.Hu,l),new A.o9(),p,B.bN,0,k,h.ga3p(),h.ga3r(),r,B.bN,0,j,h.ga3j(),h.ga3l(),r,i,B.FK,f,g.CW,g.cx,g.cy,o,g,n,m,g.x,q,new A.G5(),new A.G5())
+h.e=new A.Km(s,new A.c6(B.Hz,l),new A.o9(),p,B.bN,0,k,h.ga3p(),h.ga3r(),r,B.bN,0,j,h.ga3j(),h.ga3l(),r,i,B.FK,f,g.CW,g.cx,g.cy,o,g,n,m,g.x,q,new A.G5(),new A.G5())
 return h},
 ue(a,b){var s,r,q,p=this,o=p.a.c,n=o.a.a.length
 if(n<a.b||n<a.a)return
@@ -64142,7 +64142,7 @@ r.gve()
 s=r.a8
 if(s===-1)return
 r.aw(new A.Z8(r))},
-ahv(a){var s,r,q=B.HL.h(0,a)
+ahv(a){var s,r,q=B.HQ.h(0,a)
 if(q!=null){s=$.a3.ac$.d.c
 r=s==null?null:s.e
 if(r!=null)A.l2(r,q,t.F)}},
@@ -64402,7 +64402,7 @@ g=a8.cV(g)
 s=A.b([],s)
 a9=b1.c
 a9.toString
-b0=A.au([B.RY,new A.w6(!1,new A.b3(r,q)),B.Ss,b2,B.SH,o,B.yb,new A.w5(!0,new A.b3(p,q)),B.jU,new A.ch(b1.ga4k(),new A.b3(n,q),t.OX),B.S3,j,B.SO,h,B.S4,e,B.Sf,f,B.S8,d,B.SP,c,B.SW,a,B.SV,a0,B.SA,a1,B.SB,a2,B.So,b,B.SQ,a4,B.SU,k,B.SS,a3,B.jX,new A.ch(b1.ga09(),new A.b3(l,q),t.fn),B.RW,a5,B.RX,m,B.Su,i,B.S1,a6,B.Sl,a7,B.Sz,g,B.S7,new A.O2(new A.b3(s,q)).cV(a9)],t.u,t.od)
+b0=A.au([B.S2,new A.w6(!1,new A.b3(r,q)),B.Sx,b2,B.SM,o,B.yb,new A.w5(!0,new A.b3(p,q)),B.jU,new A.ch(b1.ga4k(),new A.b3(n,q),t.OX),B.S8,j,B.ST,h,B.S9,e,B.Sk,f,B.Sd,d,B.SU,c,B.T0,a,B.T_,a0,B.SF,a1,B.SG,a2,B.St,b,B.SV,a4,B.SZ,k,B.SX,a3,B.jX,new A.ch(b1.ga09(),new A.b3(l,q),t.fn),B.S0,a5,B.S1,m,B.Sz,i,B.S6,a6,B.Sq,a7,B.SE,g,B.Sc,new A.O2(new A.b3(s,q)).cV(a9)],t.u,t.od)
 b1.a2!==$&&A.ak()
 b1.a2=b0
 b2=b0}return b2},
@@ -64419,8 +64419,8 @@ s=l.a8
 if(s>=0&&s<=j.c.a.a.length){r=A.b([],t.s6)
 j=l.a
 q=j.c.a.a.length-l.a8
-if(j.k2!==1){r.push(B.Uq)
-r.push(new A.kN(new A.E(l.gN().gt(0).a,0),B.ar,B.dg,k,k))}else r.push(B.Up)
+if(j.k2!==1){r.push(B.Uv)
+r.push(new A.kN(new A.E(l.gN().gt(0).a,0),B.ar,B.dg,k,k))}else r.push(B.Uu)
 j=l.fr
 j===$&&A.a()
 s=A.b([A.cz(k,k,B.d.a6(l.a.c.a.a,0,q))],t.VO)
@@ -65080,7 +65080,7 @@ q=s==null?o:s.ghu()
 r.ay=q}if(q==null){s=p.w
 r=s==null?o:s.b}else r=q}r.iW(!0)
 break}},
-hC(){return this.y5(B.T1)},
+hC(){return this.y5(B.T6)},
 aby(){if(!this.z)return!1
 this.z=!1
 return!0},
@@ -65550,13 +65550,13 @@ A.tE.prototype={}
 A.NM.prototype={}
 A.XT.prototype={
 ady(a,b){var s,r,q={},p=a.ghu().gtc().e8(0),o=q.a=q.b=null
-switch(b){case B.c4:o=B.K8
+switch(b){case B.c4:o=B.Kd
 break
-case B.c6:o=B.K9
+case B.c6:o=B.Ke
 break
-case B.c7:o=B.K3
+case B.c7:o=B.K8
 break
-case B.c5:o=B.K5
+case B.c5:o=B.Ka
 break}s=o.a
 q.b=s
 r=o.b
@@ -65870,7 +65870,7 @@ A.bB.prototype={
 k(a){var s,r=this,q=r.a
 if(q!=null)s=" "+q
 else s=""
-if(A.u(r)===B.Sh)return"[GlobalKey#"+A.bm(r)+s+"]"
+if(A.u(r)===B.Sm)return"[GlobalKey#"+A.bm(r)+s+"]"
 return"["+("<optimized out>#"+A.bm(r))+s+"]"}}
 A.nN.prototype={
 j(a,b){if(b==null)return!1
@@ -66142,7 +66142,7 @@ if(s.as)s.f.G3(s)
 if(o)s.bk()},
 d9(){var s,r=this,q=r.z,p=q==null?null:q.a!==0
 if(p===!0)for(p=A.o(q),q=new A.fh(q,q.nv(),p.i("fh<1>")),p=p.c;q.q();){s=q.d;(s==null?p.a(s):s).R.E(0,r)}r.y=null
-r.w=B.Tv},
+r.w=B.TA},
 mZ(){var s=this,r=s.e,q=r==null?null:r.a
 if(q instanceof A.hO){r=s.f.x
 if(J.f(r.h(0,q),s))r.E(0,q)}s.z=s.e=null
@@ -66344,7 +66344,7 @@ this.$1(s)}},
 $S:10}
 A.f_.prototype={
 BO(){var s=this,r=s.a,q=r==null?null:r.y
-if(q==null)q=B.J4
+if(q==null)q=B.J9
 r=s.e
 r.toString
 s.y=q.ahQ(0,A.u(r),s)},
@@ -66504,7 +66504,7 @@ L(a){var s=this,r=A.z(t.u,t.xR),q=A.cc(a,B.yt),p=q==null?null:q.CW,o=A.rD(a)
 q=!0
 if(s.d==null)if(s.e==null)if(s.f==null)if(s.r==null)if(s.w==null)if(s.x==null)if(s.y==null)q=s.z!=null
 if(q)r.m(0,B.jY,new A.c0(new A.a_W(s),new A.a_X(s,p),t.UN))
-if(s.ay!=null)r.m(0,B.S6,new A.c0(new A.a_Y(s),new A.a_Z(s,p),t.uA))
+if(s.ay!=null)r.m(0,B.Sb,new A.c0(new A.a_Y(s),new A.a_Z(s,p),t.uA))
 q=!0
 q=s.cy==null
 q
@@ -66583,7 +66583,7 @@ a.b=r.d
 a.c=null},
 $S:156}
 A.j5.prototype={
-an(){return new A.rq(B.HG)}}
+an(){return new A.rq(B.HL)}}
 A.rq.prototype={
 aF(){var s,r=this
 r.aX()
@@ -66677,7 +66677,7 @@ if(s!=null)s.$0()},
 $S:0}
 A.ae5.prototype={
 $0(){var s=this.a,r=s.p3
-if(r!=null)r.$1(B.Ht)
+if(r!=null)r.$1(B.Hy)
 r=s.p2
 if(r!=null)r.$0()
 r=s.RG
@@ -67086,7 +67086,7 @@ if(r!=null)f.push(new A.iM("FILL",r))
 if(q!=null)f.push(new A.iM("wght",q))
 if(p!=null)f.push(new A.iM("GRAD",p))
 if(o!=null)f.push(new A.iM("opsz",o))
-k=A.amN(i,i,i,B.N8,i,i,!0,i,A.cz(i,A.dW(i,i,l,i,i,i,i,i,"MaterialIcons",i,i,s,i,f,i,i,1,!1,B.t,i,i,i,i,g.w,i,i),A.dD(n.a)),B.b0,h,i,B.al,B.aW)
+k=A.amN(i,i,i,B.Nd,i,i,!0,i,A.cz(i,A.dW(i,i,l,i,i,i,i,i,"MaterialIcons",i,i,s,i,f,i,i,1,!1,B.t,i,i,i,i,g.w,i,i),A.dD(n.a)),B.b0,h,i,B.al,B.aW)
 if(n.d)switch(h.a){case 0:f=new A.b0(new Float64Array(16))
 f.d7()
 f.ts(0,-1,1,1)
@@ -67157,7 +67157,7 @@ if(s.r)s.a.toString
 if(!s.a.c.j(0,a.c))s.LQ()},
 a9A(){var s=this.c
 s.toString
-s=A.cc(s,B.TR)
+s=A.cc(s,B.TW)
 s=s==null?null:s.Q
 if(s==null){s=$.Kr.wt$
 s===$&&A.a()
@@ -67673,7 +67673,7 @@ q=q.a
 if(q!=null){r.e=q
 r.f=b}else{++$.j8.cy$
 s.bP(new A.afX(r,b),t.H)}},
-gKJ(){t.Uh.a(J.bq(this.e,B.SK))
+gKJ(){t.Uh.a(J.bq(this.e,B.SP))
 return B.a6},
 L(a){var s,r,q,p=this,o=null
 if(p.f==null)return B.ar
@@ -67796,7 +67796,7 @@ L(a){var s=this,r=null,q=s.d,p=q.c,o=q.a,n=s.w
 return A.rU(B.ad,A.b([A.ayM(A.arb(new A.P8(s.f,s.r,A.KC(s.c,n),r),o),p),A.nW(A.arb(A.X_(A.w_(A.KC(r,n),new A.ks(r,r,r,q.b,p),B.cT),s.e,new A.Pz(p)),o),!0,r)],t.D),B.y,B.dl)}}
 A.Pz.prototype={
 yh(a){var s=$.a4().c5()
-s.sadv(B.J3)
+s.sadv(B.J8)
 s.jL(B.cy)
 s.aai(0,this.b.T2(new A.x(0,0,0+a.a,0+a.b)),B.h)
 return s},
@@ -67838,7 +67838,7 @@ G(){return"_MediaQueryAspect."+this.b}}
 A.xG.prototype={
 gcN(){return this.d},
 gmN(a){var s=this.a
-return s.a>s.b?B.IZ:B.IY},
+return s.a>s.b?B.J3:B.J2},
 vX(a,b,c,d){var s=this,r=b==null?s.gcN():b,q=a==null?s.r:a,p=d==null?s.w:d,o=c==null?s.f:c
 return new A.xG(s.a,s.b,r,s.e,o,q,p,s.x,!1,s.z,s.Q,s.as,s.at,s.ax,s.ay,s.ch,s.CW,s.cx,!1)},
 ac4(a,b){return this.vX(a,null,null,b)},
@@ -68004,7 +68004,7 @@ case 0:case 2:case 4:break}s=this.c
 r=A.ce(q,A.j_(new A.eP(B.kB,s==null?q:new A.lf(s,q,q),q),B.aV,q,q,q,q),!1,q,q,!1,q,q,q,q,q,q,q,q,q,q,q,q,q,q,q,q,q,this.x,q,q,q,q,q,q)
 return A.aoT(new A.jP(!0,new A.Po(r,new A.a4V(this,a),q),q))}}
 A.a4V.prototype={
-$0(){A.zO(B.MM)},
+$0(){A.zO(B.MR)},
 $S:0}
 A.tu.prototype={
 fT(a){if(this.R==null)return!1
@@ -68018,7 +68018,7 @@ OV(){var s=t.S
 return new A.tu(B.aZ,18,B.cj,A.z(s,t.E),A.cE(s),null,null,A.EA(),A.z(s,t.A))},
 Qz(a){a.R=this.a}}
 A.Po.prototype={
-L(a){return new A.j5(this.c,A.au([B.SL,new A.Mn(this.d)],t.u,t.xR),B.au,!1,null)}}
+L(a){return new A.j5(this.c,A.au([B.SQ,new A.Mn(this.d)],t.u,t.xR),B.au,!1,null)}}
 A.ID.prototype={
 L(a){var s=this,r=a.ao(t.I).w,q=A.b([],t.D),p=s.c
 if(p!=null)q.push(A.a1K(p,B.hF))
@@ -68170,7 +68170,7 @@ q=c.CW.x
 q===$&&A.a()
 s.sD(0,q)}n.W4(c)
 p.d=B.eK}if(a)n.mf(null)
-s=o===B.Un||o===B.yv
+s=o===B.Us||o===B.yv
 q=b.w
 if(s)q.fa(0,new A.C5(n,d))
 else q.fa(0,new A.u_(n,d))},
@@ -68179,7 +68179,7 @@ s.a.ol(a)
 s.f=new A.pC(new ($.V3())(a))
 if(s.w!=null)a.f.a.bP(new A.ahy(s),t.P)},
 aem(a,b){var s,r=this
-r.d=B.Uj
+r.d=B.Uo
 s=r.a
 if((s.e.a.a&30)!==0)return!0
 if(!s.jU(r.x)){r.d=B.eK
@@ -68188,7 +68188,7 @@ if(r.c){t.sd.a(s.c)
 a.a.toString}r.x=null
 return!0},
 l(){var s,r,q,p,o,n,m,l=this,k={}
-l.d=B.Ul
+l.d=B.Uq
 s=l.a
 r=s.r
 q=new A.ahw()
@@ -68421,7 +68421,7 @@ a=!0
 switch(p.d.a){case 1:a0=b1.kF(r-1,A.jz())
 a1=a0>=0?q[a0]:b2
 a1=a1==null?b2:a1.a
-p.d=B.Um
+p.d=B.Ur
 g.fa(0,new A.u_(p.a,a1))
 continue $label0$1
 case 2:if(d||e==null){a1=p.a
@@ -68480,13 +68480,13 @@ a1=a1.e.a
 if((a1.a&30)!==0)A.an(A.M("Future already completed"))
 a1.kA(b2)
 p.x=null
-p.d=B.Ui
+p.d=B.Un
 continue $label0$1
 case 10:if(!c){if(f!=null)p.a.ol(f)
 f=b2}a0=b1.kF(r,A.Ex())
 a1=a0>=0?q[a0]:b2
 a1=a1==null?b2:a1.a
-p.d=B.Uk
+p.d=B.Up
 if(p.y)m.fa(0,new A.C4(p.a,a1))
 continue $label0$1
 case 12:if(!d&&e!=null)break
@@ -68605,7 +68605,7 @@ Rb(){return this.rJ(null,t.X)},
 RA(a){var s=this,r=s.e.afK(0,A.jz())
 if(r.c)s.a.toString
 r.x=a
-r.d=B.Uo
+r.d=B.Ut
 s.A7(!1)
 s.HP()},
 eJ(){return this.RA(null,t.X)},
@@ -68682,7 +68682,7 @@ if(s!=null)s.sO2(!0)},
 $S:0}
 A.a5s.prototype={
 $1(a){if(a.a||!this.a.OB())return!1
-this.b.d2(B.I7)
+this.b.d2(B.Ic)
 return!0},
 $S:138}
 A.CJ.prototype={
@@ -69547,7 +69547,7 @@ r===$&&A.a()
 r.e=A.dm(0,B.c.aA(0.15+l*0.02))
 r.iy(0,0)
 n.at=0.5
-n.a=B.TD}else{q=a.d
+n.a=B.TI}else{q=a.d
 if(q!=null){p=a.b.gV()
 p.toString
 t.x.a(p)
@@ -69771,7 +69771,7 @@ q=s.a
 q===$&&A.a()
 q.e=A.dm(0,B.c.aA(Math.max(p*0.02,50)))
 q.iy(0,0)
-s.e=B.Us
+s.e=B.Ux
 s.r=r>0?B.kj:B.yy}else if(a.d!=null){s=s.d
 s.toString
 m=A.D(Math.abs(r)/s,0,1)
@@ -70470,7 +70470,7 @@ break
 default:s=null}return s},
 $S:422}
 A.tY.prototype={
-an(){return new A.pu(A.Hj(!0,B.SM.k(0)+" Focus Scope",!1),A.Kb(),this.$ti.i("pu<1>"))}}
+an(){return new A.pu(A.Hj(!0,B.SR.k(0)+" Focus Scope",!1),A.Kb(),this.$ti.i("pu<1>"))}}
 A.pu.prototype={
 aF(){var s,r,q=this
 q.aX()
@@ -70522,7 +70522,7 @@ $1(a){var s,r=null,q=A.au([B.jU,new A.NO(a,new A.b3(A.b([],t.g),t.c))],t.u,t.od)
 o===$&&A.a()
 s=p.d
 if(s==null)s=p.d=new A.fL(new A.ec(new A.agi(p),r),p.a.c.rx)
-return A.pN(q,new A.rn(p.r,B.b2,B.L5,A.asU(new A.fL(new A.o8(new A.agj(p),s,o,r),r),p.f,!0),r))},
+return A.pN(q,new A.rn(p.r,B.b2,B.La,A.asU(new A.fL(new A.o8(new A.agj(p),s,o,r),r),p.f,!0),r))},
 $S:424}
 A.agj.prototype={
 $2(a,b){var s,r,q=this.a,p=q.a.c,o=p.p2
@@ -70639,7 +70639,7 @@ Z8(a){var s=null,r=A.ar0(!0,s,s,!1,s,s,s)
 r=A.nW(r,!this.p2.gaQ(0).goG(),s)
 return r},
 Za(a){var s=this,r=null,q=s.x1
-return q==null?s.x1=A.ce(r,new A.tY(s,s.RG,s.$ti.i("tY<1>")),!1,r,r,!1,r,r,r,r,r,r,r,r,r,r,r,r,r,r,r,r,r,r,r,r,B.IX,r,r,r):q},
+return q==null?s.x1=A.ce(r,new A.tY(s,s.RG,s.$ti.i("tY<1>")),!1,r,r,!1,r,r,r,r,r,r,r,r,r,r,r,r,r,r,r,r,r,r,r,r,B.J1,r,r,r):q},
 k(a){return"ModalRoute("+this.c.k(0)+", animation: "+A.p(this.ch)+")"}}
 A.a4Y.prototype={
 $0(){this.a.p1=this.b},
@@ -71442,13 +71442,13 @@ return!1}return!0},
 qA(){this.fr.qA()
 this.BU()},
 BU(){var s,r,q,p,o,n,m=this,l=m.w
-switch(l.a.c.a){case 0:s=B.K7
+switch(l.a.c.a){case 0:s=B.Kc
 break
-case 2:s=B.K6
+case 2:s=B.Kb
 break
-case 3:s=B.K2
+case 3:s=B.K7
 break
-case 1:s=B.K1
+case 1:s=B.K6
 break
 default:s=null}r=s.a
 q=null
@@ -71756,8 +71756,8 @@ m=i.f
 m=i.e==null&&A.aBN(a,r)
 l=m?A.a6m(a):i.e
 k=A.arP(n,i.ch,l,i.at,!1,i.CW,h,i.r,i.ay,h,i.as,new A.a8y(i,n,o))
-j=m&&l!=null?new A.rn(h,h,B.L6,k,h):k
-if(i.ax===B.Ko)return new A.cW(new A.a8z(a),j,h,t.kj)
+j=m&&l!=null?new A.rn(h,h,B.Lb,k,h):k
+if(i.ax===B.Kt)return new A.cW(new A.a8z(a),j,h,t.kj)
 else return j}}
 A.a8y.prototype={
 $2(a,b){return this.a.aaX(a,b,this.b,this.c)},
@@ -72172,7 +72172,7 @@ t.x.a(o)
 s=o.dM(a)
 if(!this.go){r=s.b
 if(r<0||s.a<0)return A.bn(o.aK(0,null),B.h)
-if(r>o.gt(0).b||s.a>o.gt(0).a)return B.IP}q=A.UJ(p)
+if(r>o.gt(0).b||s.a>o.gt(0).a)return B.IU}q=A.UJ(p)
 return A.bn(o.aK(0,null),new A.j(s.a+q.a,s.b+q.b))},
 BL(a,b){var s,r,q,p=this,o=p.dx,n=A.UJ(o)
 o=o.c.gV()
@@ -72369,7 +72369,7 @@ default:s=null}this.v.dW(s)},
 eF(a){var s,r,q=this
 q.hE(a)
 a.a=!0
-if(q.v.ay){a.ba(B.KR,!0)
+if(q.v.ay){a.ba(B.KW,!0)
 s=q.v
 r=s.at
 r.toString
@@ -72403,7 +72403,7 @@ q=A.b([s],r)
 p=A.b([],r)
 for(s=c.length,o=null,n=0;n<c.length;c.length===s||(0,A.G)(c),++n){m=c[n]
 r=m.dy
-if(r!=null&&r.n(0,B.KY))q.push(m)
+if(r!=null&&r.n(0,B.L2))q.push(m)
 else{if((m.fr&8192)===0)o=o==null?m.x:o
 p.push(m)}}b.sTr(o)
 a.kk(0,q,null)
@@ -72638,7 +72638,7 @@ this.ay=a
 this.az()},
 gq2(){var s,r=this.gBe()
 $label0$0:{if(B.wM===r||B.wN===r){s=this.Q.b
-break $label0$0}if(B.Kp===r||B.wO===r){s=this.Q.a
+break $label0$0}if(B.Ku===r||B.wO===r){s=this.Q.a
 break $label0$0}s=null}return s},
 gBe(){var s=this.dx
 if(s===B.L||s===B.P)return this.e===B.a6?B.wN:B.wM
@@ -73279,10 +73279,10 @@ if(r.gmk())if(r.gio()!=null)if(r.gio().f.length===1){s=B.b.gaD(r.gio().f)
 if(s.z!=null&&s.Q!=null){p=B.b.gaD(r.gio().f).Q
 p.toString
 p=p>0}}if(!p)return q
-switch(A.ba(B.b.gaD(r.gio().f).ghO()).a){case 0:q.m(0,B.ST,new A.c0(new A.a6y(r),r.gKu(),t.lh))
+switch(A.ba(B.b.gaD(r.gio().f).ghO()).a){case 0:q.m(0,B.SY,new A.c0(new A.a6y(r),r.gKu(),t.lh))
 break
-case 1:q.m(0,B.SI,new A.c0(new A.a6z(r),r.gKu(),t.Pw))
-break}q.m(0,B.SN,new A.c0(new A.a6A(r),new A.a6B(r),t.Bk))
+case 1:q.m(0,B.SN,new A.c0(new A.a6z(r),r.gKu(),t.Pw))
+break}q.m(0,B.SS,new A.c0(new A.a6A(r),new A.a6B(r),t.Bk))
 return q},
 QS(a,b,c){var s,r=this.z
 if($.a3.ac$.x.h(0,r)==null)return!1
@@ -73632,8 +73632,8 @@ p.d=0
 p.c=p.b.length-1
 return B.et},
 Kc(a){var s,r,q,p,o,n,m,l,k,j,i=this,h=A.bs("effectiveGlobalPosition"),g=a.a
-if(g===B.Kw)h.sde(t.hI.a(a).gFZ())
-else if(g===B.Kx)h.sde(a.b)
+if(g===B.KB)h.sde(t.hI.a(a).gFZ())
+else if(g===B.KC)h.sde(a.b)
 for(g=h.a,s=null,r=0;q=i.b,r<q.length;++r){p=!1
 if(q[r].gjN().length!==0)for(q=i.b[r].gjN(),o=q.length,n=0;n<q.length;q.length===o||(0,A.G)(q),++n){m=q[n]
 l=A.dn(i.b[r].aK(0,null),m)
@@ -74087,7 +74087,7 @@ if(r==null)return B.e3
 s=this.a.c
 if(s==null){s=this.d
 s.toString}return s.ae6(r,b)},
-L(a){var s=null,r=B.Sw.k(0)
+L(a){var s=null,r=B.SB.k(0)
 return A.qC(!1,!1,this.a.e,r,s,s,s,!0,s,s,s,this.ga2H(),s,s)}}
 A.zl.prototype={
 l(){this.d0()},
@@ -74401,8 +74401,8 @@ r.aq()},
 a6a(){var s,r=this,q=A.ara(B.h),p=r.gt(0),o=new A.os(q,new A.x(0,0,0+p.a,0+p.b))
 r.hF(o,B.h)
 o.py()
-if(r.bQ!==B.Mm&&!q.z7()){q.l()
-if(r.bQ===B.Ml)throw A.e(A.iJ("SnapshotWidget used with a child that contains a PlatformView."))
+if(r.bQ!==B.Mr&&!q.z7()){q.l()
+if(r.bQ===B.Mq)throw A.e(A.iJ("SnapshotWidget used with a child that contains a PlatformView."))
 r.f0=!0
 return null}p=r.gt(0)
 s=q.aiE(new A.x(0,0,0+p.a,0+p.b),r.v)
@@ -74431,15 +74431,15 @@ p.toString
 r.Rw(a,b,s,q,p,o.v)}}}
 A.KO.prototype={}
 A.B7.prototype={
-gdq(a){return A.an(A.j1(this,A.lF(B.MG,"gajs",1,[],[],0)))},
-sdq(a,b){A.an(A.j1(this,A.lF(B.MD,"sajm",2,[b],[],0)))},
-gcB(){return A.an(A.j1(this,A.lF(B.MH,"gajt",1,[],[],0)))},
-scB(a){A.an(A.j1(this,A.lF(B.ML,"sajo",2,[a],[],0)))},
-gjJ(){return A.an(A.j1(this,A.lF(B.MI,"gaju",1,[],[],0)))},
-sjJ(a){A.an(A.j1(this,A.lF(B.MF,"sajp",2,[a],[],0)))},
-gkL(){return A.an(A.j1(this,A.lF(B.MJ,"gajv",1,[],[],0)))},
-skL(a){A.an(A.j1(this,A.lF(B.ME,"sajr",2,[a],[],0)))},
-LD(a){return A.an(A.j1(this,A.lF(B.MK,"ajw",0,[a],[],0)))},
+gdq(a){return A.an(A.j1(this,A.lF(B.ML,"gajs",1,[],[],0)))},
+sdq(a,b){A.an(A.j1(this,A.lF(B.MI,"sajm",2,[b],[],0)))},
+gcB(){return A.an(A.j1(this,A.lF(B.MM,"gajt",1,[],[],0)))},
+scB(a){A.an(A.j1(this,A.lF(B.MQ,"sajo",2,[a],[],0)))},
+gjJ(){return A.an(A.j1(this,A.lF(B.MN,"gaju",1,[],[],0)))},
+sjJ(a){A.an(A.j1(this,A.lF(B.MK,"sajp",2,[a],[],0)))},
+gkL(){return A.an(A.j1(this,A.lF(B.MO,"gajv",1,[],[],0)))},
+skL(a){A.an(A.j1(this,A.lF(B.MJ,"sajr",2,[a],[],0)))},
+LD(a){return A.an(A.j1(this,A.lF(B.MP,"ajw",0,[a],[],0)))},
 X(a,b){},
 l(){},
 I(a,b){},
@@ -75972,11 +75972,11 @@ p.m(0,B.jY,new A.c0(new A.aiI(q),new A.aiJ(q),t.UN))
 q.a.toString
 p.m(0,B.jV,new A.c0(new A.aiK(q),new A.aiL(q),t.jn))
 q.a.toString
-switch(A.aU().a){case 0:case 1:case 2:p.m(0,B.SX,new A.c0(new A.aiM(q),new A.aiN(q),t.hg))
+switch(A.aU().a){case 0:case 1:case 2:p.m(0,B.T1,new A.c0(new A.aiM(q),new A.aiN(q),t.hg))
 break
-case 3:case 4:case 5:p.m(0,B.Sy,new A.c0(new A.aiO(q),new A.aiP(q),t.Qm))
+case 3:case 4:case 5:p.m(0,B.SD,new A.c0(new A.aiO(q),new A.aiP(q),t.Qm))
 break}s=q.a
-if(s.f!=null||s.r!=null)p.m(0,B.Sb,new A.c0(new A.aiQ(q),new A.aiR(q),t.C1))
+if(s.f!=null||s.r!=null)p.m(0,B.Sg,new A.c0(new A.aiQ(q),new A.aiR(q),t.C1))
 s=q.a
 r=s.dx
 return new A.j5(s.dy,p,r,!0,null)}}
@@ -76222,7 +76222,7 @@ s===$&&A.a()
 return s},
 gqo(){var s=this.a.w,r=this.x
 if(r==null){s=$.ax()
-s=new A.An(new A.ew(s),new A.ew(s),B.T0,s)
+s=new A.An(new A.ew(s),new A.ew(s),B.T5,s)
 this.x=s}else s=r
 return s},
 te(){var s,r,q,p=this,o=p.d
@@ -76308,7 +76308,7 @@ r=s.f
 if(r!=null)r.aT(0)
 s.aI()},
 L(a){var s=t.g,r=t.c
-return A.pN(A.au([B.SG,new A.ch(this.ga9g(),new A.b3(A.b([],s),r),t._n).cV(a),B.Sp,new A.ch(this.ga75(),new A.b3(A.b([],s),r),t.fN).cV(a)],t.u,t.od),this.a.x)},
+return A.pN(A.au([B.SL,new A.ch(this.ga9g(),new A.b3(A.b([],s),r),t._n).cV(a),B.Su,new A.ch(this.ga75(),new A.b3(A.b([],s),r),t.fN).cV(a)],t.u,t.od),this.a.x)},
 a91(a){return this.ga90().$1(a)}}
 A.aby.prototype={
 $1(a){var s=this.a
@@ -77026,7 +77026,7 @@ o=s.d
 n=s.e
 m=a8.e.$1(b1).pi(b1)
 l=!0
-if(o!==B.bP)if(!(o===B.cC&&!b1.d)){b0=o===B.RQ&&b1.d
+if(o!==B.bP)if(!(o===B.cC&&!b1.d)){b0=o===B.RV&&b1.d
 l=b0}k=l?r:q
 j=l?q:r
 i=b1.d?1:-1
@@ -80650,11 +80650,11 @@ B.DU=J.f1.prototype
 B.DV=J.d.prototype
 B.rR=A.om.prototype
 B.ac=A.xO.prototype
-B.I2=A.xP.prototype
+B.I7=A.xP.prototype
 B.rS=A.xQ.prototype
 B.bj=A.xR.prototype
-B.I3=A.xU.prototype
-B.I4=A.xV.prototype
+B.I8=A.xU.prototype
+B.I9=A.xV.prototype
 B.z=A.k8.prototype
 B.wx=J.J3.prototype
 B.k0=J.jl.prototype
@@ -80663,7 +80663,7 @@ B.cK=new A.pL(0,"nothing")
 B.hI=new A.pL(1,"requestedFocus")
 B.yC=new A.pL(2,"receivedDomFocus")
 B.yD=new A.pL(3,"receivedDomBlur")
-B.Uz=new A.Vk(0,"unknown")
+B.UE=new A.Vk(0,"unknown")
 B.yE=new A.eM(0,1)
 B.yF=new A.eM(0,-1)
 B.ko=new A.eM(1,0)
@@ -80711,7 +80711,7 @@ B.be=new A.Fk(0,"horizontal")
 B.b2=new A.Fk(1,"vertical")
 B.xJ=new A.rV(0,"backButton")
 B.yL=new A.Fm(null)
-B.TE=new A.afg(0,"standard")
+B.TJ=new A.afg(0,"standard")
 B.yM=new A.Fl(B.xJ,null,null,B.yL,null,null,null,null,null,null)
 B.yN=new A.vd(null,null,null,null,null,null,null,null)
 B.cd=new A.a1b()
@@ -80766,10 +80766,10 @@ B.b4=new A.w(1,0.10588235294117647,0.22745098039215686,0.3607843137254902,B.f)
 B.ag=new A.FA(0,"rectangle")
 B.z8=new A.cM(B.b4,null,null,null,null,null,B.ag)
 B.B2=new A.w(0.23529411764705882,0,0,0,B.f)
-B.Io=new A.j(0,4)
-B.ze=new A.da(0.5,B.cN,B.B2,B.Io,10)
-B.Fu=A.b(s([B.ze]),t.sq)
-B.z9=new A.cM(null,null,null,B.kx,B.Fu,null,B.ag)
+B.It=new A.j(0,4)
+B.ze=new A.da(0.5,B.cN,B.B2,B.It,10)
+B.Fv=A.b(s([B.ze]),t.sq)
+B.z9=new A.cM(null,null,null,B.kx,B.Fv,null,B.ag)
 B.za=new A.Wf(6,"scaleDown")
 B.dB=new A.vm(0,"tight")
 B.zb=new A.vm(1,"max")
@@ -80787,17 +80787,17 @@ B.A8=new A.Bo(A.aw("Bo<F<n>>"))
 B.zh=new A.q_(B.A8)
 B.kE=new A.qP(A.aIu(),A.aw("qP<L>"))
 B.zi=new A.Vl()
-B.UA=new A.VX()
+B.UF=new A.VX()
 B.zk=new A.VV()
 B.zl=new A.VW()
 B.kF=new A.Wp()
 B.hS=new A.Gd()
 B.zm=new A.XE()
 B.kH=new A.Gp()
-B.UB=new A.Gn()
+B.UG=new A.Gn()
 B.zn=new A.Go()
 B.zo=new A.Gq()
-B.UC=new A.Gt()
+B.UH=new A.Gt()
 B.zp=new A.Gu()
 B.p=new A.w7()
 B.zq=new A.Yb()
@@ -80809,7 +80809,7 @@ B.kL=new A.H_()
 B.am=new A.H_()
 B.zt=new A.ZN()
 B.eN=new A.Hh()
-B.UD=new A.Hu()
+B.UI=new A.Hu()
 B.zu=new A.a06()
 B.zv=new A.a0f()
 B.md=new A.wC(1,"auto")
@@ -80963,7 +80963,7 @@ B.zN=new A.IU()
 B.Y=new A.hh(4,"keyboard")
 B.kP=new A.lS()
 B.zO=new A.a5U()
-B.UE=new A.a6h()
+B.UJ=new A.a6h()
 B.zP=new A.a6k()
 B.kR=new A.m0()
 B.zR=new A.a8k()
@@ -80992,7 +80992,7 @@ B.a9=new A.abF()
 B.ce=new A.abH()
 B.dq=new A.LP(0,0,0,0)
 B.FD=A.b(s([]),A.aw("B<aJJ>"))
-B.UF=new A.abN()
+B.UK=new A.abN()
 B.dE=new A.M8()
 B.dF=new A.M9()
 B.dG=new A.Mo()
@@ -81001,7 +81001,7 @@ B.A5=new A.AV()
 B.A6=new A.Nk()
 B.dH=new A.Nz()
 B.A7=new A.adY()
-B.UG=new A.B7()
+B.UL=new A.B7()
 B.bz=new A.NH()
 B.eP=new A.aea()
 B.M=new A.aef()
@@ -81023,8 +81023,8 @@ B.Aj=new A.vs(null,null,null,null,null,null,null,null,null)
 B.Ak=new A.vt(null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null)
 B.kX=new A.dl(0,B.q)
 B.Al=new A.FR(B.jj)
-B.Kv=new A.oW(2,"clear")
-B.dJ=new A.vD(B.Kv)
+B.KA=new A.oW(2,"clear")
+B.dJ=new A.vD(B.KA)
 B.kY=new A.WZ(1,"intersect")
 B.y=new A.q7(0,"none")
 B.a4=new A.q7(1,"hardEdge")
@@ -81196,8 +81196,8 @@ B.Ay=new A.w(1,0.10980392156862745,0.10980392156862745,0.11764705882352941,B.f)
 B.Bb=new A.w(1,0.1411764705882353,0.1411764705882353,0.14901960784313725,B.f)
 B.Bs=new A.c4(B.k,"systemBackground",null,B.k,B.l,B.k,B.l,B.k,B.Ay,B.k,B.Bb)
 B.lF=new A.c4(B.l,"label",null,B.l,B.k,B.l,B.k,B.l,B.k,B.l,B.k)
-B.Tq=new A.Nr(B.lF,B.dV)
-B.k7=new A.Nt(null,B.ig,B.k,B.Bp,B.Bs,!1,B.Tq)
+B.Tv=new A.Nr(B.lF,B.dV)
+B.k7=new A.Nt(null,B.ig,B.k,B.Bp,B.Bs,!1,B.Tv)
 B.bY=new A.qm(B.k7,null,null,null,null,null,null,null)
 B.aY=new A.Gg(0,"base")
 B.ih=new A.Gg(1,"elevated")
@@ -81209,16 +81209,16 @@ B.BC=new A.nq(1,"initializingServices")
 B.lH=new A.nq(2,"initializedServices")
 B.BD=new A.nq(3,"initializingUi")
 B.BE=new A.nq(4,"initialized")
-B.UH=new A.XD(1,"traversalOrder")
+B.UM=new A.XD(1,"traversalOrder")
 B.cT=new A.Gm(0,"background")
 B.lI=new A.Gm(1,"foreground")
-B.Ug=new A.PE(null)
-B.cU=new A.lj(null,null,null,B.Ug,null)
+B.Ul=new A.PE(null)
+B.cU=new A.lj(null,null,null,B.Ul,null)
 B.cB=new A.l(!0,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null)
 B.cA=new A.A3(0,"clip")
 B.aW=new A.abd(0,"parent")
-B.Uh=new A.PG(null)
-B.BF=new A.qo(B.cB,null,!0,B.cA,null,B.aW,null,B.Uh,null)
+B.Um=new A.PG(null)
+B.BF=new A.qo(B.cB,null,!0,B.cA,null,B.aW,null,B.Um,null)
 B.ii=new A.ns(!1)
 B.dW=new A.ns(!0)
 B.ij=new A.nt(!1)
@@ -81230,7 +81230,7 @@ B.BH=new A.qq(1)
 B.aI=new A.w1(3,"info")
 B.BI=new A.w1(5,"hint")
 B.BJ=new A.w1(6,"summary")
-B.UI=new A.jL(1,"sparse")
+B.UN=new A.jL(1,"sparse")
 B.BK=new A.jL(10,"shallow")
 B.BL=new A.jL(11,"truncateChildren")
 B.BM=new A.jL(5,"error")
@@ -81313,7 +81313,7 @@ B.Cx=new A.aC(20,0,20,3)
 B.lR=new A.aC(20,20,20,20)
 B.Cy=new A.aC(32,0,32,0)
 B.Cz=new A.aC(4,0,4,0)
-B.UJ=new A.aC(4,4,4,5)
+B.UO=new A.aC(4,4,4,5)
 B.CA=new A.aC(6,6,6,6)
 B.CB=new A.aC(7,2,7,2)
 B.CC=new A.aC(8,0,8,0)
@@ -81397,7 +81397,7 @@ B.mc=new A.wC(0,"never")
 B.CV=new A.wC(2,"always")
 B.iG=new A.lq(0,"touch")
 B.fu=new A.lq(1,"traditional")
-B.UK=new A.a_i(0,"automatic")
+B.UP=new A.a_i(0,"automatic")
 B.me=new A.a_l("focus")
 B.ci=new A.qE(0,"normal")
 B.CW=new A.qE(1,"italic")
@@ -81453,8 +81453,8 @@ B.mq=new A.cG(24,0,400,0,48,B.l,1,null,!1)
 B.Dl=new A.cG(null,null,null,null,null,B.k,null,null,null)
 B.Dm=new A.cG(null,null,null,null,null,B.l,null,null,null)
 B.D8=new A.cF(57706,!1)
-B.HA=new A.cT([50,B.ll,100,B.ln,200,B.lg,300,B.i4,350,B.cR,400,B.hX,500,B.dQ,600,B.cS,700,B.cQ,800,B.bC,850,B.i2,900,B.l0],t.pl)
-B.d4=new A.r5(B.HA,1,0.6196078431372549,0.6196078431372549,0.6196078431372549,B.f)
+B.HF=new A.cT([50,B.ll,100,B.ln,200,B.lg,300,B.i4,350,B.cR,400,B.hX,500,B.dQ,600,B.cS,700,B.cQ,800,B.bC,850,B.i2,900,B.l0],t.pl)
+B.d4=new A.r5(B.HF,1,0.6196078431372549,0.6196078431372549,0.6196078431372549,B.f)
 B.Dn=new A.hQ(B.D8,null,B.d4,null,null)
 B.Dj=new A.cF(983465,!1)
 B.Do=new A.hQ(B.Dj,null,B.b4,null,null)
@@ -81509,8 +81509,8 @@ B.bI=new A.o3(3,"all")
 B.bq=new A.xi(0,"ariaLabel")
 B.fD=new A.xi(1,"domText")
 B.fE=new A.xi(2,"sizedSpan")
-B.Mc=new A.dH(1/0,1/0,null,null)
-B.my=new A.xn(0,0,B.Mc,null)
+B.Mh=new A.dH(1/0,1/0,null,null)
+B.my=new A.xn(0,0,B.Mh,null)
 B.mz=new A.xo(0,"opportunity")
 B.iM=new A.xo(2,"mandatory")
 B.mA=new A.xo(3,"endOfText")
@@ -81521,44 +81521,44 @@ B.E4=new A.o7(1,"titleHeight")
 B.E5=new A.o7(2,"top")
 B.mC=new A.o7(3,"center")
 B.E6=new A.o7(4,"bottom")
-B.E9=A.b(s([0,6,12,18]),t.t)
+B.E8=A.b(s([0,6,12,18]),t.t)
 B.mD=A.b(s(["text","multiline","number","phone","datetime","emailAddress","url","visiblePassword","name","address","none","webSearch","twitter"]),t.s)
-B.Ey=A.b(s([4,9,14,19]),t.t)
-B.FU=A.b(s([137,80,78,71,13,10,26,10]),t.Z)
+B.Ex=A.b(s([4,9,14,19]),t.t)
+B.FX=A.b(s([137,80,78,71,13,10,26,10]),t.Z)
 B.DA=new A.lw(0,"png")
 B.DI=new A.iO(B.DA,!1,0,"png")
-B.Dy=new A.k1(B.FU,B.DI,0,"png")
-B.FV=A.b(s([71,73,70,56,55,97]),t.Z)
-B.Dx=new A.k1(B.FV,B.fy,1,"gif87a")
-B.Fn=A.b(s([71,73,70,56,57,97]),t.Z)
-B.Dw=new A.k1(B.Fn,B.fy,2,"gif89a")
-B.Eb=A.b(s([255,216,255]),t.Z)
+B.Dy=new A.k1(B.FX,B.DI,0,"png")
+B.FZ=A.b(s([71,73,70,56,55,97]),t.Z)
+B.Dx=new A.k1(B.FZ,B.fy,1,"gif87a")
+B.Fp=A.b(s([71,73,70,56,57,97]),t.Z)
+B.Dw=new A.k1(B.Fp,B.fy,2,"gif89a")
+B.Ea=A.b(s([255,216,255]),t.Z)
 B.DB=new A.lw(2,"jpeg")
 B.DM=new A.iO(B.DB,!1,3,"jpeg")
-B.Dz=new A.k1(B.Eb,B.DM,3,"jpeg")
+B.Dz=new A.k1(B.Ea,B.DM,3,"jpeg")
 B.ET=A.b(s([82,73,70,70,null,null,null,null,87,69,66,80]),t.Z)
 B.Dv=new A.k1(B.ET,B.mt,4,"webp")
 B.EM=A.b(s([66,77]),t.Z)
 B.DC=new A.lw(4,"bmp")
 B.DK=new A.iO(B.DC,!1,6,"bmp")
 B.Du=new A.k1(B.EM,B.DK,5,"bmp")
-B.EA=A.b(s([B.Dy,B.Dx,B.Dw,B.Dz,B.Dv,B.Du]),A.aw("B<k1>"))
+B.Ez=A.b(s([B.Dy,B.Dx,B.Dw,B.Dz,B.Dv,B.Du]),A.aw("B<k1>"))
 B.kf=new A.CJ(0,"named")
 B.yx=new A.CJ(1,"anonymous")
-B.EJ=A.b(s([B.kf,B.yx]),A.aw("B<CJ>"))
+B.EI=A.b(s([B.kf,B.yx]),A.aw("B<CJ>"))
 B.mE=A.b(s([0,4,12,1,5,13,3,7,15]),t.t)
-B.TF=new A.fi(0,1)
-B.TK=new A.fi(0.5,1)
-B.TN=new A.fi(0.5375,0.75)
-B.TP=new A.fi(0.575,0.5)
-B.TL=new A.fi(0.6125,0.25)
-B.TJ=new A.fi(0.65,0)
-B.TI=new A.fi(0.85,0)
-B.TO=new A.fi(0.8875,0.25)
-B.TM=new A.fi(0.925,0.5)
-B.TG=new A.fi(0.9625,0.75)
-B.TH=new A.fi(1,1)
-B.EU=A.b(s([B.TF,B.TK,B.TN,B.TP,B.TL,B.TJ,B.TI,B.TO,B.TM,B.TG,B.TH]),A.aw("B<fi>"))
+B.TK=new A.fi(0,1)
+B.TP=new A.fi(0.5,1)
+B.TS=new A.fi(0.5375,0.75)
+B.TU=new A.fi(0.575,0.5)
+B.TQ=new A.fi(0.6125,0.25)
+B.TO=new A.fi(0.65,0)
+B.TN=new A.fi(0.85,0)
+B.TT=new A.fi(0.8875,0.25)
+B.TR=new A.fi(0.925,0.5)
+B.TL=new A.fi(0.9625,0.75)
+B.TM=new A.fi(1,1)
+B.EU=A.b(s([B.TK,B.TP,B.TS,B.TU,B.TQ,B.TO,B.TN,B.TT,B.TR,B.TL,B.TM]),A.aw("B<fi>"))
 B.eB=new A.kw(0,"left")
 B.jL=new A.kw(1,"right")
 B.cz=new A.kw(2,"center")
@@ -81567,13 +81567,13 @@ B.b0=new A.kw(4,"start")
 B.jM=new A.kw(5,"end")
 B.EV=A.b(s([B.eB,B.jL,B.cz,B.hi,B.b0,B.jM]),A.aw("B<kw>"))
 B.EX=A.b(s([B.hP,B.hQ]),A.aw("B<v8>"))
-B.QB=new A.l(!0,null,null,null,null,null,60,B.ap,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null)
-B.RH=new A.e8("Made By",null,B.QB,null,null,null,null,null,null)
-B.Mf=new A.dH(null,50,null,null)
-B.R3=new A.l(!0,null,null,null,null,null,20,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null)
-B.RJ=new A.e8("Raunak Agarwal\nRohit Kapoor\nUtkarsh Raj\nBiswajit Behera",null,B.R3,null,null,null,null,null,null)
-B.EY=A.b(s([B.RH,B.Mf,B.RJ]),t.D)
-B.EZ=A.b(s([1116352408,1899447441,3049323471,3921009573,961987163,1508970993,2453635748,2870763221,3624381080,310598401,607225278,1426881987,1925078388,2162078206,2614888103,3248222580,3835390401,4022224774,264347078,604807628,770255983,1249150122,1555081692,1996064986,2554220882,2821834349,2952996808,3210313671,3336571891,3584528711,113926993,338241895,666307205,773529912,1294757372,1396182291,1695183700,1986661051,2177026350,2456956037,2730485921,2820302411,3259730800,3345764771,3516065817,3600352804,4094571909,275423344,430227734,506948616,659060556,883997877,958139571,1322822218,1537002063,1747873779,1955562222,2024104815,2227730452,2361852424,2428436474,2756734187,3204031479,3329325298]),t.t)
+B.QG=new A.l(!0,null,null,null,null,null,60,B.ap,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null)
+B.RM=new A.e8("Made By",null,B.QG,null,null,null,null,null,null)
+B.Mk=new A.dH(null,50,null,null)
+B.R8=new A.l(!0,null,null,null,null,null,20,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null)
+B.RO=new A.e8("Raunak Agarwal\nRohit Kapoor\nUtkarsh Raj\nBiswajit Behera",null,B.R8,null,null,null,null,null,null)
+B.EZ=A.b(s([B.RM,B.Mk,B.RO]),t.D)
+B.F0=A.b(s([1116352408,1899447441,3049323471,3921009573,961987163,1508970993,2453635748,2870763221,3624381080,310598401,607225278,1426881987,1925078388,2162078206,2614888103,3248222580,3835390401,4022224774,264347078,604807628,770255983,1249150122,1555081692,1996064986,2554220882,2821834349,2952996808,3210313671,3336571891,3584528711,113926993,338241895,666307205,773529912,1294757372,1396182291,1695183700,1986661051,2177026350,2456956037,2730485921,2820302411,3259730800,3345764771,3516065817,3600352804,4094571909,275423344,430227734,506948616,659060556,883997877,958139571,1322822218,1537002063,1747873779,1955562222,2024104815,2227730452,2361852424,2428436474,2756734187,3204031479,3329325298]),t.t)
 B.ak=new A.dY(0,"icon")
 B.az=new A.dY(1,"input")
 B.V=new A.dY(2,"label")
@@ -81586,71 +81586,71 @@ B.bn=new A.dY(8,"helperError")
 B.bx=new A.dY(9,"counter")
 B.bQ=new A.dY(10,"container")
 B.F2=A.b(s([B.ak,B.az,B.V,B.aF,B.aG,B.aH,B.T,B.as,B.bn,B.bx,B.bQ]),A.aw("B<dY>"))
-B.Pw=new A.l(!0,B.k,null,null,null,null,16,B.ap,null,2,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null)
-B.RC=new A.e8("WEITER",null,B.Pw,null,null,null,null,null,null)
-B.Mb=new A.dH(8,null,null,null)
+B.PB=new A.l(!0,B.k,null,null,null,null,16,B.ap,null,2,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null)
+B.RH=new A.e8("WEITER",null,B.PB,null,null,null,null,null,null)
+B.Mg=new A.dH(8,null,null,null)
 B.D7=new A.cF(57500,!0)
 B.Dp=new A.hQ(B.D7,16,B.k,null,null)
-B.F3=A.b(s([B.RC,B.Mb,B.Dp]),t.D)
-B.G1=new A.iV("en","US")
-B.mF=A.b(s([B.G1]),t.ss)
-B.Tw=new A.kH(0,0)
-B.TB=new A.kH(1,0.05)
-B.Tz=new A.kH(3,0.08)
-B.TA=new A.kH(6,0.11)
-B.Ty=new A.kH(8,0.12)
-B.Tx=new A.kH(12,0.14)
-B.mG=A.b(s([B.Tw,B.TB,B.Tz,B.TA,B.Ty,B.Tx]),A.aw("B<kH>"))
+B.F3=A.b(s([B.RH,B.Mg,B.Dp]),t.D)
+B.G6=new A.iV("en","US")
+B.mF=A.b(s([B.G6]),t.ss)
+B.TB=new A.kH(0,0)
+B.TG=new A.kH(1,0.05)
+B.TE=new A.kH(3,0.08)
+B.TF=new A.kH(6,0.11)
+B.TD=new A.kH(8,0.12)
+B.TC=new A.kH(12,0.14)
+B.mG=A.b(s([B.TB,B.TG,B.TE,B.TF,B.TD,B.TC]),A.aw("B<kH>"))
 B.Dh=new A.cF(63668,!1)
 B.Dr=new A.hQ(B.Dh,36,B.k,null,null)
 B.xF=new A.dH(null,10,null,null)
-B.OV=new A.l(!0,B.k,null,null,null,null,18,B.ap,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null)
-B.Rz=new A.e8("IHK AP1 \u2013 Glossar",null,B.OV,null,null,null,null,null,null)
+B.P_=new A.l(!0,B.k,null,null,null,null,18,B.ap,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null)
+B.RE=new A.e8("IHK AP1 \u2013 Glossar",null,B.P_,null,null,null,null,null,null)
 B.jJ=new A.dH(null,4,null,null)
-B.Qj=new A.l(!0,B.F,null,null,null,null,12,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null)
-B.RA=new A.e8("98 Fachbegriffe \xb7 4 Bewertungsaspekte",null,B.Qj,null,null,null,null,null,null)
-B.Fa=A.b(s([B.Dr,B.xF,B.Rz,B.jJ,B.RA]),t.D)
+B.Qo=new A.l(!0,B.F,null,null,null,null,12,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null)
+B.RF=new A.e8("98 Fachbegriffe \xb7 4 Bewertungsaspekte",null,B.Qo,null,null,null,null,null,null)
+B.Fa=A.b(s([B.Dr,B.xF,B.RE,B.jJ,B.RF]),t.D)
 B.Fb=A.b(s([-1,0,0,1,0,0,-1,0,1,0,0,0,-1,1,0,1,1,1,1,0]),t.n)
 B.yU=new A.Fu(2,"outer")
 B.lb=new A.w(0.09803921568627451,0,0,0,B.f)
 B.zd=new A.da(0.2,B.yU,B.lb,B.h,11)
 B.Fc=A.b(s([B.zd]),t.sq)
-B.MA=new A.zL(0,"left")
-B.MB=new A.zL(1,"right")
-B.Fd=A.b(s([B.MA,B.MB]),A.aw("B<zL>"))
+B.MF=new A.zL(0,"left")
+B.MG=new A.zL(1,"right")
+B.Fe=A.b(s([B.MF,B.MG]),A.aw("B<zL>"))
 B.a5=new A.zV(0,"upstream")
-B.Fe=A.b(s([B.a5,B.j]),A.aw("B<zV>"))
+B.Fg=A.b(s([B.a5,B.j]),A.aw("B<zV>"))
 B.ax=new A.zZ(0,"rtl")
 B.a6=new A.zZ(1,"ltr")
 B.iN=A.b(s([B.ax,B.a6]),A.aw("B<zZ>"))
 B.Af=new A.q0(0,"auto")
 B.Ag=new A.q0(1,"full")
 B.Ah=new A.q0(2,"chromium")
-B.Fj=A.b(s([B.Af,B.Ag,B.Ah]),A.aw("B<q0>"))
+B.Fl=A.b(s([B.Af,B.Ag,B.Ah]),A.aw("B<q0>"))
 B.bS=new A.io(0,"leading")
 B.bd=new A.io(1,"title")
 B.bT=new A.io(2,"subtitle")
 B.cI=new A.io(3,"trailing")
-B.Fl=A.b(s([B.bS,B.bd,B.bT,B.cI]),A.aw("B<io>"))
-B.Fm=A.b(s(["pointerdown","pointermove","pointerleave","pointerup","pointercancel","touchstart","touchend","touchmove","touchcancel","mousedown","mousemove","mouseleave","mouseup"]),t.s)
+B.Fn=A.b(s([B.bS,B.bd,B.bT,B.cI]),A.aw("B<io>"))
+B.Fo=A.b(s(["pointerdown","pointermove","pointerleave","pointerup","pointercancel","touchstart","touchend","touchmove","touchcancel","mousedown","mousemove","mouseleave","mouseup"]),t.s)
 B.b8=new A.el(1,"fuchsia")
 B.b9=new A.el(3,"linux")
 B.ba=new A.el(5,"windows")
-B.Fo=A.b(s([B.a0,B.b8,B.O,B.b9,B.aM,B.ba]),A.aw("B<el>"))
+B.Fq=A.b(s([B.a0,B.b8,B.O,B.b9,B.aM,B.ba]),A.aw("B<el>"))
 B.yi=new A.tB(0,"topLeft")
 B.yl=new A.tB(3,"bottomRight")
-B.Tr=new A.kG(B.yi,B.yl)
-B.Tu=new A.kG(B.yl,B.yi)
+B.Tw=new A.kG(B.yi,B.yl)
+B.Tz=new A.kG(B.yl,B.yi)
 B.yj=new A.tB(1,"topRight")
 B.yk=new A.tB(2,"bottomLeft")
-B.Ts=new A.kG(B.yj,B.yk)
-B.Tt=new A.kG(B.yk,B.yj)
-B.Fp=A.b(s([B.Tr,B.Tu,B.Ts,B.Tt]),A.aw("B<kG>"))
-B.Fv=A.b(s(["click","scroll"]),t.s)
+B.Tx=new A.kG(B.yj,B.yk)
+B.Ty=new A.kG(B.yk,B.yj)
+B.Fr=A.b(s([B.Tw,B.Tz,B.Tx,B.Ty]),A.aw("B<kG>"))
+B.Fw=A.b(s(["click","scroll"]),t.s)
 B.zj=new A.pO()
 B.eq=new A.Kd(1,"page")
 B.h3=new A.dE(B.L,B.eq)
-B.Fw=A.b(s([B.zj,B.h3]),A.aw("B<aN>"))
+B.Fx=A.b(s([B.zj,B.h3]),A.aw("B<aN>"))
 B.FF=A.b(s([]),t.QP)
 B.mI=A.b(s([]),A.aw("B<aJt>"))
 B.FH=A.b(s([]),t.p)
@@ -81665,14 +81665,14 @@ B.FE=A.b(s([]),t.D1)
 B.iO=A.b(s([]),t.QF)
 B.FG=A.b(s([]),t.Lx)
 B.FK=A.b(s([]),t.fm)
-B.UL=A.b(s([]),t.D)
+B.UQ=A.b(s([]),t.D)
 B.Fz=A.b(s([]),t.t)
 B.mH=A.b(s([]),t.ee)
 B.FA=A.b(s([]),t.XS)
 B.mJ=A.b(s([B.fv,B.iH,B.iI,B.n,B.Q,B.d_,B.ap,B.mf,B.iJ]),A.aw("B<ey>"))
 B.rV=new A.j(0,2)
 B.zc=new A.da(0.75,B.cN,B.lb,B.rV,1.5)
-B.FP=A.b(s([B.zc]),t.sq)
+B.FS=A.b(s([B.zc]),t.sq)
 B.e4=A.b(s([B.ca,B.bV,B.eL,B.eM,B.hO]),t.QP)
 B.d5=new A.fE(0,"controlModifier")
 B.d6=new A.fE(1,"shiftModifier")
@@ -81702,22 +81702,22 @@ B.iW=new A.h(8589935088)
 B.iX=new A.h(8589935090)
 B.iY=new A.h(8589935092)
 B.iZ=new A.h(8589935094)
-B.Hs=new A.a20("longPress")
-B.Ht=new A.r1(B.h)
+B.Hx=new A.a20("longPress")
+B.Hy=new A.r1(B.h)
 B.eo=new A.cI(B.ae,B.q)
-B.UM=new A.r3(1,null,B.eo)
+B.UR=new A.r3(1,null,B.eo)
 B.R=new A.x(0,0,0,0)
-B.Hu=new A.k7(B.h,B.R,B.R,B.R)
+B.Hz=new A.k7(B.h,B.R,B.R,B.R)
 B.X=new A.lM(0,"start")
 B.rC=new A.lM(1,"end")
 B.rD=new A.lM(2,"center")
 B.rE=new A.lM(3,"spaceBetween")
-B.Hv=new A.lM(4,"spaceAround")
-B.Hw=new A.lM(5,"spaceEvenly")
+B.HA=new A.lM(4,"spaceAround")
+B.HB=new A.lM(5,"spaceEvenly")
 B.cs=new A.Ig(0,"min")
 B.aw=new A.Ig(1,"max")
-B.If={in:0,iw:1,ji:2,jw:3,mo:4,aam:5,adp:6,aue:7,ayx:8,bgm:9,bjd:10,ccq:11,cjr:12,cka:13,cmk:14,coy:15,cqu:16,drh:17,drw:18,gav:19,gfx:20,ggn:21,gti:22,guv:23,hrr:24,ibi:25,ilw:26,jeg:27,kgc:28,kgh:29,koj:30,krm:31,ktr:32,kvs:33,kwq:34,kxe:35,kzj:36,kzt:37,lii:38,lmm:39,meg:40,mst:41,mwj:42,myt:43,nad:44,ncp:45,nnx:46,nts:47,oun:48,pcr:49,pmc:50,pmu:51,ppa:52,ppr:53,pry:54,puz:55,sca:56,skk:57,tdu:58,thc:59,thx:60,tie:61,tkk:62,tlw:63,tmp:64,tne:65,tnf:66,tsf:67,uok:68,xba:69,xia:70,xkh:71,xsj:72,ybd:73,yma:74,ymt:75,yos:76,yuu:77}
-B.bt=new A.bF(B.If,["id","he","yi","jv","ro","aas","dz","ktz","nun","bcg","drl","rki","mom","cmr","xch","pij","quh","khk","prs","dev","vaj","gvr","nyc","duz","jal","opa","gal","oyb","tdf","kml","kwv","bmf","dtp","gdj","yam","tvd","dtp","dtp","raq","rmx","cir","mry","vaj","mry","xny","kdz","ngv","pij","vaj","adx","huw","phr","bfy","lcq","prt","pub","hle","oyb","dtp","tpo","oyb","ras","twm","weo","tyj","kak","prs","taj","ema","cax","acn","waw","suj","rki","lrr","mtm","zom","yug"],t.li)
+B.Ij={in:0,iw:1,ji:2,jw:3,mo:4,aam:5,adp:6,aue:7,ayx:8,bgm:9,bjd:10,ccq:11,cjr:12,cka:13,cmk:14,coy:15,cqu:16,drh:17,drw:18,gav:19,gfx:20,ggn:21,gti:22,guv:23,hrr:24,ibi:25,ilw:26,jeg:27,kgc:28,kgh:29,koj:30,krm:31,ktr:32,kvs:33,kwq:34,kxe:35,kzj:36,kzt:37,lii:38,lmm:39,meg:40,mst:41,mwj:42,myt:43,nad:44,ncp:45,nnx:46,nts:47,oun:48,pcr:49,pmc:50,pmu:51,ppa:52,ppr:53,pry:54,puz:55,sca:56,skk:57,tdu:58,thc:59,thx:60,tie:61,tkk:62,tlw:63,tmp:64,tne:65,tnf:66,tsf:67,uok:68,xba:69,xia:70,xkh:71,xsj:72,ybd:73,yma:74,ymt:75,yos:76,yuu:77}
+B.bt=new A.bF(B.Ij,["id","he","yi","jv","ro","aas","dz","ktz","nun","bcg","drl","rki","mom","cmr","xch","pij","quh","khk","prs","dev","vaj","gvr","nyc","duz","jal","opa","gal","oyb","tdf","kml","kwv","bmf","dtp","gdj","yam","tvd","dtp","dtp","raq","rmx","cir","mry","vaj","mry","xny","kdz","ngv","pij","vaj","adx","huw","phr","bfy","lcq","prt","pub","hle","oyb","dtp","tpo","oyb","ras","twm","weo","tyj","kak","prs","taj","ema","cax","acn","waw","suj","rki","lrr","mtm","zom","yug"],t.li)
 B.br=new A.h(4294968065)
 B.jz=new A.a2(B.br,!1,!1,!0,!1,B.m)
 B.bh=new A.h(4294968066)
@@ -81743,18 +81743,18 @@ B.h7=new A.a2(B.mQ,!1,!1,!1,!1,B.m)
 B.fH=new A.h(4294967309)
 B.h8=new A.a2(B.fH,!1,!1,!1,!1,B.m)
 B.rF=new A.cT([B.jz,B.p,B.jw,B.p,B.jx,B.p,B.jy,B.p,B.xo,B.p,B.xl,B.p,B.xm,B.p,B.xn,B.p,B.hg,B.p,B.hd,B.p,B.he,B.p,B.hf,B.p,B.xr,B.p,B.xs,B.p,B.xv,B.p,B.xw,B.p,B.h7,B.p,B.h8,B.p],t.Fp)
-B.Gl=new A.h(33)
-B.Gm=new A.h(34)
-B.Gn=new A.h(35)
-B.Go=new A.h(36)
-B.Gp=new A.h(37)
-B.Gq=new A.h(38)
-B.Gr=new A.h(39)
-B.Gs=new A.h(40)
-B.Gt=new A.h(41)
+B.Gq=new A.h(33)
+B.Gr=new A.h(34)
+B.Gs=new A.h(35)
+B.Gt=new A.h(36)
+B.Gu=new A.h(37)
+B.Gv=new A.h(38)
+B.Gw=new A.h(39)
+B.Gx=new A.h(40)
+B.Gy=new A.h(41)
 B.mR=new A.h(42)
 B.rj=new A.h(43)
-B.Gu=new A.h(44)
+B.Gz=new A.h(44)
 B.rk=new A.h(45)
 B.rl=new A.h(46)
 B.rm=new A.h(47)
@@ -81768,49 +81768,49 @@ B.rt=new A.h(54)
 B.ru=new A.h(55)
 B.rv=new A.h(56)
 B.rw=new A.h(57)
-B.Gv=new A.h(58)
-B.Gw=new A.h(59)
-B.Gx=new A.h(60)
-B.Gy=new A.h(61)
-B.Gz=new A.h(62)
-B.GA=new A.h(63)
-B.GB=new A.h(64)
-B.Hm=new A.h(91)
-B.Hn=new A.h(92)
-B.Ho=new A.h(93)
-B.Hp=new A.h(94)
-B.Hq=new A.h(95)
-B.Hr=new A.h(96)
+B.GA=new A.h(58)
+B.GB=new A.h(59)
+B.GC=new A.h(60)
+B.GD=new A.h(61)
+B.GE=new A.h(62)
+B.GF=new A.h(63)
+B.GG=new A.h(64)
+B.Hr=new A.h(91)
+B.Hs=new A.h(92)
+B.Ht=new A.h(93)
+B.Hu=new A.h(94)
+B.Hv=new A.h(95)
+B.Hw=new A.h(96)
 B.j2=new A.h(97)
 B.rB=new A.h(98)
 B.j3=new A.h(99)
-B.G2=new A.h(100)
+B.G7=new A.h(100)
 B.mL=new A.h(101)
 B.mM=new A.h(102)
-B.G3=new A.h(103)
-B.G4=new A.h(104)
-B.G5=new A.h(105)
-B.G6=new A.h(106)
-B.G7=new A.h(107)
-B.G8=new A.h(108)
-B.G9=new A.h(109)
+B.G8=new A.h(103)
+B.G9=new A.h(104)
+B.Ga=new A.h(105)
+B.Gb=new A.h(106)
+B.Gc=new A.h(107)
+B.Gd=new A.h(108)
+B.Ge=new A.h(109)
 B.mN=new A.h(110)
-B.Ga=new A.h(111)
+B.Gf=new A.h(111)
 B.mO=new A.h(112)
-B.Gb=new A.h(113)
-B.Gc=new A.h(114)
-B.Gd=new A.h(115)
+B.Gg=new A.h(113)
+B.Gh=new A.h(114)
+B.Gi=new A.h(115)
 B.mP=new A.h(116)
-B.Ge=new A.h(117)
+B.Gj=new A.h(117)
 B.iR=new A.h(118)
-B.Gf=new A.h(119)
+B.Gk=new A.h(119)
 B.iS=new A.h(120)
-B.Gg=new A.h(121)
+B.Gl=new A.h(121)
 B.e5=new A.h(122)
-B.Gh=new A.h(123)
-B.Gi=new A.h(124)
-B.Gj=new A.h(125)
-B.Gk=new A.h(126)
+B.Gm=new A.h(123)
+B.Gn=new A.h(124)
+B.Go=new A.h(125)
+B.Gp=new A.h(126)
 B.mS=new A.h(4294967297)
 B.fG=new A.h(4294967305)
 B.mT=new A.h(4294967553)
@@ -82099,24 +82099,24 @@ B.rf=new A.h(4294971674)
 B.rg=new A.h(4294971675)
 B.rh=new A.h(4294971905)
 B.ri=new A.h(4294971906)
-B.GC=new A.h(8589934592)
-B.GD=new A.h(8589934593)
-B.GE=new A.h(8589934594)
-B.GF=new A.h(8589934595)
-B.GG=new A.h(8589934608)
-B.GH=new A.h(8589934609)
-B.GI=new A.h(8589934610)
-B.GJ=new A.h(8589934611)
-B.GK=new A.h(8589934612)
-B.GL=new A.h(8589934624)
-B.GM=new A.h(8589934625)
-B.GN=new A.h(8589934626)
+B.GH=new A.h(8589934592)
+B.GI=new A.h(8589934593)
+B.GJ=new A.h(8589934594)
+B.GK=new A.h(8589934595)
+B.GL=new A.h(8589934608)
+B.GM=new A.h(8589934609)
+B.GN=new A.h(8589934610)
+B.GO=new A.h(8589934611)
+B.GP=new A.h(8589934612)
+B.GQ=new A.h(8589934624)
+B.GR=new A.h(8589934625)
+B.GS=new A.h(8589934626)
 B.j_=new A.h(8589935117)
-B.GO=new A.h(8589935144)
-B.GP=new A.h(8589935145)
+B.GT=new A.h(8589935144)
+B.GU=new A.h(8589935145)
 B.rx=new A.h(8589935146)
 B.ry=new A.h(8589935147)
-B.GQ=new A.h(8589935148)
+B.GV=new A.h(8589935148)
 B.rz=new A.h(8589935149)
 B.cn=new A.h(8589935150)
 B.rA=new A.h(8589935151)
@@ -82130,40 +82130,40 @@ B.cq=new A.h(8589935158)
 B.ef=new A.h(8589935159)
 B.cr=new A.h(8589935160)
 B.eg=new A.h(8589935161)
-B.GR=new A.h(8589935165)
-B.GS=new A.h(8589935361)
-B.GT=new A.h(8589935362)
-B.GU=new A.h(8589935363)
-B.GV=new A.h(8589935364)
-B.GW=new A.h(8589935365)
-B.GX=new A.h(8589935366)
-B.GY=new A.h(8589935367)
-B.GZ=new A.h(8589935368)
-B.H_=new A.h(8589935369)
-B.H0=new A.h(8589935370)
-B.H1=new A.h(8589935371)
-B.H2=new A.h(8589935372)
-B.H3=new A.h(8589935373)
-B.H4=new A.h(8589935374)
-B.H5=new A.h(8589935375)
-B.H6=new A.h(8589935376)
-B.H7=new A.h(8589935377)
-B.H8=new A.h(8589935378)
-B.H9=new A.h(8589935379)
-B.Ha=new A.h(8589935380)
-B.Hb=new A.h(8589935381)
-B.Hc=new A.h(8589935382)
-B.Hd=new A.h(8589935383)
-B.He=new A.h(8589935384)
-B.Hf=new A.h(8589935385)
-B.Hg=new A.h(8589935386)
-B.Hh=new A.h(8589935387)
-B.Hi=new A.h(8589935388)
-B.Hj=new A.h(8589935389)
-B.Hk=new A.h(8589935390)
-B.Hl=new A.h(8589935391)
-B.Hx=new A.cT([32,B.mQ,33,B.Gl,34,B.Gm,35,B.Gn,36,B.Go,37,B.Gp,38,B.Gq,39,B.Gr,40,B.Gs,41,B.Gt,42,B.mR,43,B.rj,44,B.Gu,45,B.rk,46,B.rl,47,B.rm,48,B.rn,49,B.ro,50,B.rp,51,B.rq,52,B.rr,53,B.rs,54,B.rt,55,B.ru,56,B.rv,57,B.rw,58,B.Gv,59,B.Gw,60,B.Gx,61,B.Gy,62,B.Gz,63,B.GA,64,B.GB,91,B.Hm,92,B.Hn,93,B.Ho,94,B.Hp,95,B.Hq,96,B.Hr,97,B.j2,98,B.rB,99,B.j3,100,B.G2,101,B.mL,102,B.mM,103,B.G3,104,B.G4,105,B.G5,106,B.G6,107,B.G7,108,B.G8,109,B.G9,110,B.mN,111,B.Ga,112,B.mO,113,B.Gb,114,B.Gc,115,B.Gd,116,B.mP,117,B.Ge,118,B.iR,119,B.Gf,120,B.iS,121,B.Gg,122,B.e5,123,B.Gh,124,B.Gi,125,B.Gj,126,B.Gk,4294967297,B.mS,4294967304,B.aC,4294967305,B.fG,4294967309,B.fH,4294967323,B.e6,4294967423,B.av,4294967553,B.mT,4294967555,B.fI,4294967556,B.e7,4294967558,B.iT,4294967559,B.mU,4294967560,B.mV,4294967562,B.fJ,4294967564,B.fK,4294967566,B.mW,4294967567,B.mX,4294967568,B.mY,4294967569,B.mZ,4294968065,B.br,4294968066,B.bh,4294968067,B.bi,4294968068,B.bs,4294968069,B.ck,4294968070,B.cl,4294968071,B.e8,4294968072,B.e9,4294968321,B.iU,4294968322,B.n_,4294968323,B.n0,4294968324,B.n1,4294968325,B.n2,4294968326,B.n3,4294968327,B.iV,4294968328,B.n4,4294968329,B.n5,4294968330,B.n6,4294968577,B.n7,4294968578,B.n8,4294968579,B.n9,4294968580,B.na,4294968581,B.nb,4294968582,B.nc,4294968583,B.nd,4294968584,B.ne,4294968585,B.nf,4294968586,B.ng,4294968587,B.nh,4294968588,B.ni,4294968589,B.nj,4294968590,B.nk,4294968833,B.nl,4294968834,B.nm,4294968835,B.nn,4294968836,B.no,4294968837,B.np,4294968838,B.nq,4294968839,B.nr,4294968840,B.ns,4294968841,B.nt,4294968842,B.nu,4294968843,B.nv,4294969089,B.nw,4294969090,B.nx,4294969091,B.ny,4294969092,B.nz,4294969093,B.nA,4294969094,B.nB,4294969095,B.nC,4294969096,B.nD,4294969097,B.nE,4294969098,B.nF,4294969099,B.nG,4294969100,B.nH,4294969101,B.nI,4294969102,B.nJ,4294969103,B.nK,4294969104,B.nL,4294969105,B.nM,4294969106,B.nN,4294969107,B.nO,4294969108,B.nP,4294969109,B.nQ,4294969110,B.nR,4294969111,B.nS,4294969112,B.nT,4294969113,B.nU,4294969114,B.nV,4294969115,B.nW,4294969116,B.nX,4294969117,B.nY,4294969345,B.nZ,4294969346,B.o_,4294969347,B.o0,4294969348,B.o1,4294969349,B.o2,4294969350,B.o3,4294969351,B.o4,4294969352,B.o5,4294969353,B.o6,4294969354,B.o7,4294969355,B.o8,4294969356,B.o9,4294969357,B.oa,4294969358,B.ob,4294969359,B.oc,4294969360,B.od,4294969361,B.oe,4294969362,B.of,4294969363,B.og,4294969364,B.oh,4294969365,B.oi,4294969366,B.oj,4294969367,B.ok,4294969368,B.ol,4294969601,B.om,4294969602,B.on,4294969603,B.oo,4294969604,B.op,4294969605,B.oq,4294969606,B.or,4294969607,B.os,4294969608,B.ot,4294969857,B.ou,4294969858,B.ov,4294969859,B.ow,4294969860,B.ox,4294969861,B.oy,4294969863,B.oz,4294969864,B.oA,4294969865,B.oB,4294969866,B.oC,4294969867,B.oD,4294969868,B.oE,4294969869,B.oF,4294969870,B.oG,4294969871,B.oH,4294969872,B.oI,4294969873,B.oJ,4294970113,B.oK,4294970114,B.oL,4294970115,B.oM,4294970116,B.oN,4294970117,B.oO,4294970118,B.oP,4294970119,B.oQ,4294970120,B.oR,4294970121,B.oS,4294970122,B.oT,4294970123,B.oU,4294970124,B.oV,4294970125,B.oW,4294970126,B.oX,4294970127,B.oY,4294970369,B.oZ,4294970370,B.p_,4294970371,B.p0,4294970372,B.p1,4294970373,B.p2,4294970374,B.p3,4294970375,B.p4,4294970625,B.p5,4294970626,B.p6,4294970627,B.p7,4294970628,B.p8,4294970629,B.p9,4294970630,B.pa,4294970631,B.pb,4294970632,B.pc,4294970633,B.pd,4294970634,B.pe,4294970635,B.pf,4294970636,B.pg,4294970637,B.ph,4294970638,B.pi,4294970639,B.pj,4294970640,B.pk,4294970641,B.pl,4294970642,B.pm,4294970643,B.pn,4294970644,B.po,4294970645,B.pp,4294970646,B.pq,4294970647,B.pr,4294970648,B.ps,4294970649,B.pt,4294970650,B.pu,4294970651,B.pv,4294970652,B.pw,4294970653,B.px,4294970654,B.py,4294970655,B.pz,4294970656,B.pA,4294970657,B.pB,4294970658,B.pC,4294970659,B.pD,4294970660,B.pE,4294970661,B.pF,4294970662,B.pG,4294970663,B.pH,4294970664,B.pI,4294970665,B.pJ,4294970666,B.pK,4294970667,B.pL,4294970668,B.pM,4294970669,B.pN,4294970670,B.pO,4294970671,B.pP,4294970672,B.pQ,4294970673,B.pR,4294970674,B.pS,4294970675,B.pT,4294970676,B.pU,4294970677,B.pV,4294970678,B.pW,4294970679,B.pX,4294970680,B.pY,4294970681,B.pZ,4294970682,B.q_,4294970683,B.q0,4294970684,B.q1,4294970685,B.q2,4294970686,B.q3,4294970687,B.q4,4294970688,B.q5,4294970689,B.q6,4294970690,B.q7,4294970691,B.q8,4294970692,B.q9,4294970693,B.qa,4294970694,B.qb,4294970695,B.qc,4294970696,B.qd,4294970697,B.qe,4294970698,B.qf,4294970699,B.qg,4294970700,B.qh,4294970701,B.qi,4294970702,B.qj,4294970703,B.qk,4294970704,B.ql,4294970705,B.qm,4294970706,B.qn,4294970707,B.qo,4294970708,B.qp,4294970709,B.qq,4294970710,B.qr,4294970711,B.qs,4294970712,B.qt,4294970713,B.qu,4294970714,B.qv,4294970715,B.qw,4294970882,B.qx,4294970884,B.qy,4294970885,B.qz,4294970886,B.qA,4294970887,B.qB,4294970888,B.qC,4294970889,B.qD,4294971137,B.qE,4294971138,B.qF,4294971393,B.qG,4294971394,B.qH,4294971395,B.qI,4294971396,B.qJ,4294971397,B.qK,4294971398,B.qL,4294971399,B.qM,4294971400,B.qN,4294971401,B.qO,4294971402,B.qP,4294971403,B.qQ,4294971649,B.qR,4294971650,B.qS,4294971651,B.qT,4294971652,B.qU,4294971653,B.qV,4294971654,B.qW,4294971655,B.qX,4294971656,B.qY,4294971657,B.qZ,4294971658,B.r_,4294971659,B.r0,4294971660,B.r1,4294971661,B.r2,4294971662,B.r3,4294971663,B.r4,4294971664,B.r5,4294971665,B.r6,4294971666,B.r7,4294971667,B.r8,4294971668,B.r9,4294971669,B.ra,4294971670,B.rb,4294971671,B.rc,4294971672,B.rd,4294971673,B.re,4294971674,B.rf,4294971675,B.rg,4294971905,B.rh,4294971906,B.ri,8589934592,B.GC,8589934593,B.GD,8589934594,B.GE,8589934595,B.GF,8589934608,B.GG,8589934609,B.GH,8589934610,B.GI,8589934611,B.GJ,8589934612,B.GK,8589934624,B.GL,8589934625,B.GM,8589934626,B.GN,8589934848,B.ea,8589934849,B.fL,8589934850,B.bZ,8589934851,B.cm,8589934852,B.eb,8589934853,B.fM,8589934854,B.ec,8589934855,B.fN,8589935088,B.iW,8589935090,B.iX,8589935092,B.iY,8589935094,B.iZ,8589935117,B.j_,8589935144,B.GO,8589935145,B.GP,8589935146,B.rx,8589935147,B.ry,8589935148,B.GQ,8589935149,B.rz,8589935150,B.cn,8589935151,B.rA,8589935152,B.j0,8589935153,B.ed,8589935154,B.co,8589935155,B.ee,8589935156,B.cp,8589935157,B.j1,8589935158,B.cq,8589935159,B.ef,8589935160,B.cr,8589935161,B.eg,8589935165,B.GR,8589935361,B.GS,8589935362,B.GT,8589935363,B.GU,8589935364,B.GV,8589935365,B.GW,8589935366,B.GX,8589935367,B.GY,8589935368,B.GZ,8589935369,B.H_,8589935370,B.H0,8589935371,B.H1,8589935372,B.H2,8589935373,B.H3,8589935374,B.H4,8589935375,B.H5,8589935376,B.H6,8589935377,B.H7,8589935378,B.H8,8589935379,B.H9,8589935380,B.Ha,8589935381,B.Hb,8589935382,B.Hc,8589935383,B.Hd,8589935384,B.He,8589935385,B.Hf,8589935386,B.Hg,8589935387,B.Hh,8589935388,B.Hi,8589935389,B.Hj,8589935390,B.Hk,8589935391,B.Hl],A.aw("cT<n,h>"))
-B.LB=new A.a2(B.j_,!1,!1,!1,!1,B.m)
+B.GW=new A.h(8589935165)
+B.GX=new A.h(8589935361)
+B.GY=new A.h(8589935362)
+B.GZ=new A.h(8589935363)
+B.H_=new A.h(8589935364)
+B.H0=new A.h(8589935365)
+B.H1=new A.h(8589935366)
+B.H2=new A.h(8589935367)
+B.H3=new A.h(8589935368)
+B.H4=new A.h(8589935369)
+B.H5=new A.h(8589935370)
+B.H6=new A.h(8589935371)
+B.H7=new A.h(8589935372)
+B.H8=new A.h(8589935373)
+B.H9=new A.h(8589935374)
+B.Ha=new A.h(8589935375)
+B.Hb=new A.h(8589935376)
+B.Hc=new A.h(8589935377)
+B.Hd=new A.h(8589935378)
+B.He=new A.h(8589935379)
+B.Hf=new A.h(8589935380)
+B.Hg=new A.h(8589935381)
+B.Hh=new A.h(8589935382)
+B.Hi=new A.h(8589935383)
+B.Hj=new A.h(8589935384)
+B.Hk=new A.h(8589935385)
+B.Hl=new A.h(8589935386)
+B.Hm=new A.h(8589935387)
+B.Hn=new A.h(8589935388)
+B.Ho=new A.h(8589935389)
+B.Hp=new A.h(8589935390)
+B.Hq=new A.h(8589935391)
+B.HC=new A.cT([32,B.mQ,33,B.Gq,34,B.Gr,35,B.Gs,36,B.Gt,37,B.Gu,38,B.Gv,39,B.Gw,40,B.Gx,41,B.Gy,42,B.mR,43,B.rj,44,B.Gz,45,B.rk,46,B.rl,47,B.rm,48,B.rn,49,B.ro,50,B.rp,51,B.rq,52,B.rr,53,B.rs,54,B.rt,55,B.ru,56,B.rv,57,B.rw,58,B.GA,59,B.GB,60,B.GC,61,B.GD,62,B.GE,63,B.GF,64,B.GG,91,B.Hr,92,B.Hs,93,B.Ht,94,B.Hu,95,B.Hv,96,B.Hw,97,B.j2,98,B.rB,99,B.j3,100,B.G7,101,B.mL,102,B.mM,103,B.G8,104,B.G9,105,B.Ga,106,B.Gb,107,B.Gc,108,B.Gd,109,B.Ge,110,B.mN,111,B.Gf,112,B.mO,113,B.Gg,114,B.Gh,115,B.Gi,116,B.mP,117,B.Gj,118,B.iR,119,B.Gk,120,B.iS,121,B.Gl,122,B.e5,123,B.Gm,124,B.Gn,125,B.Go,126,B.Gp,4294967297,B.mS,4294967304,B.aC,4294967305,B.fG,4294967309,B.fH,4294967323,B.e6,4294967423,B.av,4294967553,B.mT,4294967555,B.fI,4294967556,B.e7,4294967558,B.iT,4294967559,B.mU,4294967560,B.mV,4294967562,B.fJ,4294967564,B.fK,4294967566,B.mW,4294967567,B.mX,4294967568,B.mY,4294967569,B.mZ,4294968065,B.br,4294968066,B.bh,4294968067,B.bi,4294968068,B.bs,4294968069,B.ck,4294968070,B.cl,4294968071,B.e8,4294968072,B.e9,4294968321,B.iU,4294968322,B.n_,4294968323,B.n0,4294968324,B.n1,4294968325,B.n2,4294968326,B.n3,4294968327,B.iV,4294968328,B.n4,4294968329,B.n5,4294968330,B.n6,4294968577,B.n7,4294968578,B.n8,4294968579,B.n9,4294968580,B.na,4294968581,B.nb,4294968582,B.nc,4294968583,B.nd,4294968584,B.ne,4294968585,B.nf,4294968586,B.ng,4294968587,B.nh,4294968588,B.ni,4294968589,B.nj,4294968590,B.nk,4294968833,B.nl,4294968834,B.nm,4294968835,B.nn,4294968836,B.no,4294968837,B.np,4294968838,B.nq,4294968839,B.nr,4294968840,B.ns,4294968841,B.nt,4294968842,B.nu,4294968843,B.nv,4294969089,B.nw,4294969090,B.nx,4294969091,B.ny,4294969092,B.nz,4294969093,B.nA,4294969094,B.nB,4294969095,B.nC,4294969096,B.nD,4294969097,B.nE,4294969098,B.nF,4294969099,B.nG,4294969100,B.nH,4294969101,B.nI,4294969102,B.nJ,4294969103,B.nK,4294969104,B.nL,4294969105,B.nM,4294969106,B.nN,4294969107,B.nO,4294969108,B.nP,4294969109,B.nQ,4294969110,B.nR,4294969111,B.nS,4294969112,B.nT,4294969113,B.nU,4294969114,B.nV,4294969115,B.nW,4294969116,B.nX,4294969117,B.nY,4294969345,B.nZ,4294969346,B.o_,4294969347,B.o0,4294969348,B.o1,4294969349,B.o2,4294969350,B.o3,4294969351,B.o4,4294969352,B.o5,4294969353,B.o6,4294969354,B.o7,4294969355,B.o8,4294969356,B.o9,4294969357,B.oa,4294969358,B.ob,4294969359,B.oc,4294969360,B.od,4294969361,B.oe,4294969362,B.of,4294969363,B.og,4294969364,B.oh,4294969365,B.oi,4294969366,B.oj,4294969367,B.ok,4294969368,B.ol,4294969601,B.om,4294969602,B.on,4294969603,B.oo,4294969604,B.op,4294969605,B.oq,4294969606,B.or,4294969607,B.os,4294969608,B.ot,4294969857,B.ou,4294969858,B.ov,4294969859,B.ow,4294969860,B.ox,4294969861,B.oy,4294969863,B.oz,4294969864,B.oA,4294969865,B.oB,4294969866,B.oC,4294969867,B.oD,4294969868,B.oE,4294969869,B.oF,4294969870,B.oG,4294969871,B.oH,4294969872,B.oI,4294969873,B.oJ,4294970113,B.oK,4294970114,B.oL,4294970115,B.oM,4294970116,B.oN,4294970117,B.oO,4294970118,B.oP,4294970119,B.oQ,4294970120,B.oR,4294970121,B.oS,4294970122,B.oT,4294970123,B.oU,4294970124,B.oV,4294970125,B.oW,4294970126,B.oX,4294970127,B.oY,4294970369,B.oZ,4294970370,B.p_,4294970371,B.p0,4294970372,B.p1,4294970373,B.p2,4294970374,B.p3,4294970375,B.p4,4294970625,B.p5,4294970626,B.p6,4294970627,B.p7,4294970628,B.p8,4294970629,B.p9,4294970630,B.pa,4294970631,B.pb,4294970632,B.pc,4294970633,B.pd,4294970634,B.pe,4294970635,B.pf,4294970636,B.pg,4294970637,B.ph,4294970638,B.pi,4294970639,B.pj,4294970640,B.pk,4294970641,B.pl,4294970642,B.pm,4294970643,B.pn,4294970644,B.po,4294970645,B.pp,4294970646,B.pq,4294970647,B.pr,4294970648,B.ps,4294970649,B.pt,4294970650,B.pu,4294970651,B.pv,4294970652,B.pw,4294970653,B.px,4294970654,B.py,4294970655,B.pz,4294970656,B.pA,4294970657,B.pB,4294970658,B.pC,4294970659,B.pD,4294970660,B.pE,4294970661,B.pF,4294970662,B.pG,4294970663,B.pH,4294970664,B.pI,4294970665,B.pJ,4294970666,B.pK,4294970667,B.pL,4294970668,B.pM,4294970669,B.pN,4294970670,B.pO,4294970671,B.pP,4294970672,B.pQ,4294970673,B.pR,4294970674,B.pS,4294970675,B.pT,4294970676,B.pU,4294970677,B.pV,4294970678,B.pW,4294970679,B.pX,4294970680,B.pY,4294970681,B.pZ,4294970682,B.q_,4294970683,B.q0,4294970684,B.q1,4294970685,B.q2,4294970686,B.q3,4294970687,B.q4,4294970688,B.q5,4294970689,B.q6,4294970690,B.q7,4294970691,B.q8,4294970692,B.q9,4294970693,B.qa,4294970694,B.qb,4294970695,B.qc,4294970696,B.qd,4294970697,B.qe,4294970698,B.qf,4294970699,B.qg,4294970700,B.qh,4294970701,B.qi,4294970702,B.qj,4294970703,B.qk,4294970704,B.ql,4294970705,B.qm,4294970706,B.qn,4294970707,B.qo,4294970708,B.qp,4294970709,B.qq,4294970710,B.qr,4294970711,B.qs,4294970712,B.qt,4294970713,B.qu,4294970714,B.qv,4294970715,B.qw,4294970882,B.qx,4294970884,B.qy,4294970885,B.qz,4294970886,B.qA,4294970887,B.qB,4294970888,B.qC,4294970889,B.qD,4294971137,B.qE,4294971138,B.qF,4294971393,B.qG,4294971394,B.qH,4294971395,B.qI,4294971396,B.qJ,4294971397,B.qK,4294971398,B.qL,4294971399,B.qM,4294971400,B.qN,4294971401,B.qO,4294971402,B.qP,4294971403,B.qQ,4294971649,B.qR,4294971650,B.qS,4294971651,B.qT,4294971652,B.qU,4294971653,B.qV,4294971654,B.qW,4294971655,B.qX,4294971656,B.qY,4294971657,B.qZ,4294971658,B.r_,4294971659,B.r0,4294971660,B.r1,4294971661,B.r2,4294971662,B.r3,4294971663,B.r4,4294971664,B.r5,4294971665,B.r6,4294971666,B.r7,4294971667,B.r8,4294971668,B.r9,4294971669,B.ra,4294971670,B.rb,4294971671,B.rc,4294971672,B.rd,4294971673,B.re,4294971674,B.rf,4294971675,B.rg,4294971905,B.rh,4294971906,B.ri,8589934592,B.GH,8589934593,B.GI,8589934594,B.GJ,8589934595,B.GK,8589934608,B.GL,8589934609,B.GM,8589934610,B.GN,8589934611,B.GO,8589934612,B.GP,8589934624,B.GQ,8589934625,B.GR,8589934626,B.GS,8589934848,B.ea,8589934849,B.fL,8589934850,B.bZ,8589934851,B.cm,8589934852,B.eb,8589934853,B.fM,8589934854,B.ec,8589934855,B.fN,8589935088,B.iW,8589935090,B.iX,8589935092,B.iY,8589935094,B.iZ,8589935117,B.j_,8589935144,B.GT,8589935145,B.GU,8589935146,B.rx,8589935147,B.ry,8589935148,B.GV,8589935149,B.rz,8589935150,B.cn,8589935151,B.rA,8589935152,B.j0,8589935153,B.ed,8589935154,B.co,8589935155,B.ee,8589935156,B.cp,8589935157,B.j1,8589935158,B.cq,8589935159,B.ef,8589935160,B.cr,8589935161,B.eg,8589935165,B.GW,8589935361,B.GX,8589935362,B.GY,8589935363,B.GZ,8589935364,B.H_,8589935365,B.H0,8589935366,B.H1,8589935367,B.H2,8589935368,B.H3,8589935369,B.H4,8589935370,B.H5,8589935371,B.H6,8589935372,B.H7,8589935373,B.H8,8589935374,B.H9,8589935375,B.Ha,8589935376,B.Hb,8589935377,B.Hc,8589935378,B.Hd,8589935379,B.He,8589935380,B.Hf,8589935381,B.Hg,8589935382,B.Hh,8589935383,B.Hi,8589935384,B.Hj,8589935385,B.Hk,8589935386,B.Hl,8589935387,B.Hm,8589935388,B.Hn,8589935389,B.Ho,8589935390,B.Hp,8589935391,B.Hq],A.aw("cT<n,h>"))
+B.LG=new A.a2(B.j_,!1,!1,!1,!1,B.m)
 B.xx=new A.a2(B.e6,!1,!1,!1,!1,B.m)
 B.xy=new A.a2(B.fG,!1,!1,!1,!1,B.m)
 B.xj=new A.a2(B.fG,!1,!0,!1,!1,B.m)
@@ -82175,123 +82175,128 @@ B.kI=new A.eS()
 B.kO=new A.oo()
 B.kQ=new A.oE()
 B.h2=new A.Kd(0,"line")
-B.Kl=new A.dE(B.P,B.h2)
-B.Kk=new A.dE(B.L,B.h2)
-B.Kn=new A.dE(B.b1,B.h2)
-B.Km=new A.dE(B.bW,B.h2)
+B.Kq=new A.dE(B.P,B.h2)
+B.Kp=new A.dE(B.L,B.h2)
+B.Ks=new A.dE(B.b1,B.h2)
+B.Kr=new A.dE(B.bW,B.h2)
 B.jn=new A.dE(B.P,B.eq)
-B.Hy=new A.cT([B.h7,B.zQ,B.h8,B.kG,B.LB,B.kG,B.xx,B.kI,B.xy,B.kO,B.xj,B.kQ,B.hf,B.Kl,B.hg,B.Kk,B.hd,B.Kn,B.he,B.Km,B.ey,B.jn,B.ez,B.h3],t.Fp)
-B.Ie={Abort:0,Again:1,AltLeft:2,AltRight:3,ArrowDown:4,ArrowLeft:5,ArrowRight:6,ArrowUp:7,AudioVolumeDown:8,AudioVolumeMute:9,AudioVolumeUp:10,Backquote:11,Backslash:12,Backspace:13,BracketLeft:14,BracketRight:15,BrightnessDown:16,BrightnessUp:17,BrowserBack:18,BrowserFavorites:19,BrowserForward:20,BrowserHome:21,BrowserRefresh:22,BrowserSearch:23,BrowserStop:24,CapsLock:25,Comma:26,ContextMenu:27,ControlLeft:28,ControlRight:29,Convert:30,Copy:31,Cut:32,Delete:33,Digit0:34,Digit1:35,Digit2:36,Digit3:37,Digit4:38,Digit5:39,Digit6:40,Digit7:41,Digit8:42,Digit9:43,DisplayToggleIntExt:44,Eject:45,End:46,Enter:47,Equal:48,Esc:49,Escape:50,F1:51,F10:52,F11:53,F12:54,F13:55,F14:56,F15:57,F16:58,F17:59,F18:60,F19:61,F2:62,F20:63,F21:64,F22:65,F23:66,F24:67,F3:68,F4:69,F5:70,F6:71,F7:72,F8:73,F9:74,Find:75,Fn:76,FnLock:77,GameButton1:78,GameButton10:79,GameButton11:80,GameButton12:81,GameButton13:82,GameButton14:83,GameButton15:84,GameButton16:85,GameButton2:86,GameButton3:87,GameButton4:88,GameButton5:89,GameButton6:90,GameButton7:91,GameButton8:92,GameButton9:93,GameButtonA:94,GameButtonB:95,GameButtonC:96,GameButtonLeft1:97,GameButtonLeft2:98,GameButtonMode:99,GameButtonRight1:100,GameButtonRight2:101,GameButtonSelect:102,GameButtonStart:103,GameButtonThumbLeft:104,GameButtonThumbRight:105,GameButtonX:106,GameButtonY:107,GameButtonZ:108,Help:109,Home:110,Hyper:111,Insert:112,IntlBackslash:113,IntlRo:114,IntlYen:115,KanaMode:116,KeyA:117,KeyB:118,KeyC:119,KeyD:120,KeyE:121,KeyF:122,KeyG:123,KeyH:124,KeyI:125,KeyJ:126,KeyK:127,KeyL:128,KeyM:129,KeyN:130,KeyO:131,KeyP:132,KeyQ:133,KeyR:134,KeyS:135,KeyT:136,KeyU:137,KeyV:138,KeyW:139,KeyX:140,KeyY:141,KeyZ:142,KeyboardLayoutSelect:143,Lang1:144,Lang2:145,Lang3:146,Lang4:147,Lang5:148,LaunchApp1:149,LaunchApp2:150,LaunchAssistant:151,LaunchControlPanel:152,LaunchMail:153,LaunchScreenSaver:154,MailForward:155,MailReply:156,MailSend:157,MediaFastForward:158,MediaPause:159,MediaPlay:160,MediaPlayPause:161,MediaRecord:162,MediaRewind:163,MediaSelect:164,MediaStop:165,MediaTrackNext:166,MediaTrackPrevious:167,MetaLeft:168,MetaRight:169,MicrophoneMuteToggle:170,Minus:171,NonConvert:172,NumLock:173,Numpad0:174,Numpad1:175,Numpad2:176,Numpad3:177,Numpad4:178,Numpad5:179,Numpad6:180,Numpad7:181,Numpad8:182,Numpad9:183,NumpadAdd:184,NumpadBackspace:185,NumpadClear:186,NumpadClearEntry:187,NumpadComma:188,NumpadDecimal:189,NumpadDivide:190,NumpadEnter:191,NumpadEqual:192,NumpadMemoryAdd:193,NumpadMemoryClear:194,NumpadMemoryRecall:195,NumpadMemoryStore:196,NumpadMemorySubtract:197,NumpadMultiply:198,NumpadParenLeft:199,NumpadParenRight:200,NumpadSubtract:201,Open:202,PageDown:203,PageUp:204,Paste:205,Pause:206,Period:207,Power:208,PrintScreen:209,PrivacyScreenToggle:210,Props:211,Quote:212,Resume:213,ScrollLock:214,Select:215,SelectTask:216,Semicolon:217,ShiftLeft:218,ShiftRight:219,ShowAllWindows:220,Slash:221,Sleep:222,Space:223,Super:224,Suspend:225,Tab:226,Turbo:227,Undo:228,WakeUp:229,ZoomToggle:230}
-B.Hz=new A.bF(B.Ie,[458907,458873,458978,458982,458833,458832,458831,458834,458881,458879,458880,458805,458801,458794,458799,458800,786544,786543,786980,786986,786981,786979,786983,786977,786982,458809,458806,458853,458976,458980,458890,458876,458875,458828,458791,458782,458783,458784,458785,458786,458787,458788,458789,458790,65717,786616,458829,458792,458798,458793,458793,458810,458819,458820,458821,458856,458857,458858,458859,458860,458861,458862,458811,458863,458864,458865,458866,458867,458812,458813,458814,458815,458816,458817,458818,458878,18,19,392961,392970,392971,392972,392973,392974,392975,392976,392962,392963,392964,392965,392966,392967,392968,392969,392977,392978,392979,392980,392981,392982,392983,392984,392985,392986,392987,392988,392989,392990,392991,458869,458826,16,458825,458852,458887,458889,458888,458756,458757,458758,458759,458760,458761,458762,458763,458764,458765,458766,458767,458768,458769,458770,458771,458772,458773,458774,458775,458776,458777,458778,458779,458780,458781,787101,458896,458897,458898,458899,458900,786836,786834,786891,786847,786826,786865,787083,787081,787084,786611,786609,786608,786637,786610,786612,786819,786615,786613,786614,458979,458983,24,458797,458891,458835,458850,458841,458842,458843,458844,458845,458846,458847,458848,458849,458839,458939,458968,458969,458885,458851,458836,458840,458855,458963,458962,458961,458960,458964,458837,458934,458935,458838,458868,458830,458827,458877,458824,458807,458854,458822,23,458915,458804,21,458823,458871,786850,458803,458977,458981,787103,458808,65666,458796,17,20,458795,22,458874,65667,786994],t.eL)
-B.HB=new A.cT([0,"FontWeight.w100",1,"FontWeight.w200",2,"FontWeight.w300",3,"FontWeight.w400",4,"FontWeight.w500",5,"FontWeight.w600",6,"FontWeight.w700",7,"FontWeight.w800",8,"FontWeight.w900"],A.aw("cT<n,q>"))
+B.HD=new A.cT([B.h7,B.zQ,B.h8,B.kG,B.LG,B.kG,B.xx,B.kI,B.xy,B.kO,B.xj,B.kQ,B.hf,B.Kq,B.hg,B.Kp,B.hd,B.Ks,B.he,B.Kr,B.ey,B.jn,B.ez,B.h3],t.Fp)
+B.Ii={Abort:0,Again:1,AltLeft:2,AltRight:3,ArrowDown:4,ArrowLeft:5,ArrowRight:6,ArrowUp:7,AudioVolumeDown:8,AudioVolumeMute:9,AudioVolumeUp:10,Backquote:11,Backslash:12,Backspace:13,BracketLeft:14,BracketRight:15,BrightnessDown:16,BrightnessUp:17,BrowserBack:18,BrowserFavorites:19,BrowserForward:20,BrowserHome:21,BrowserRefresh:22,BrowserSearch:23,BrowserStop:24,CapsLock:25,Comma:26,ContextMenu:27,ControlLeft:28,ControlRight:29,Convert:30,Copy:31,Cut:32,Delete:33,Digit0:34,Digit1:35,Digit2:36,Digit3:37,Digit4:38,Digit5:39,Digit6:40,Digit7:41,Digit8:42,Digit9:43,DisplayToggleIntExt:44,Eject:45,End:46,Enter:47,Equal:48,Esc:49,Escape:50,F1:51,F10:52,F11:53,F12:54,F13:55,F14:56,F15:57,F16:58,F17:59,F18:60,F19:61,F2:62,F20:63,F21:64,F22:65,F23:66,F24:67,F3:68,F4:69,F5:70,F6:71,F7:72,F8:73,F9:74,Find:75,Fn:76,FnLock:77,GameButton1:78,GameButton10:79,GameButton11:80,GameButton12:81,GameButton13:82,GameButton14:83,GameButton15:84,GameButton16:85,GameButton2:86,GameButton3:87,GameButton4:88,GameButton5:89,GameButton6:90,GameButton7:91,GameButton8:92,GameButton9:93,GameButtonA:94,GameButtonB:95,GameButtonC:96,GameButtonLeft1:97,GameButtonLeft2:98,GameButtonMode:99,GameButtonRight1:100,GameButtonRight2:101,GameButtonSelect:102,GameButtonStart:103,GameButtonThumbLeft:104,GameButtonThumbRight:105,GameButtonX:106,GameButtonY:107,GameButtonZ:108,Help:109,Home:110,Hyper:111,Insert:112,IntlBackslash:113,IntlRo:114,IntlYen:115,KanaMode:116,KeyA:117,KeyB:118,KeyC:119,KeyD:120,KeyE:121,KeyF:122,KeyG:123,KeyH:124,KeyI:125,KeyJ:126,KeyK:127,KeyL:128,KeyM:129,KeyN:130,KeyO:131,KeyP:132,KeyQ:133,KeyR:134,KeyS:135,KeyT:136,KeyU:137,KeyV:138,KeyW:139,KeyX:140,KeyY:141,KeyZ:142,KeyboardLayoutSelect:143,Lang1:144,Lang2:145,Lang3:146,Lang4:147,Lang5:148,LaunchApp1:149,LaunchApp2:150,LaunchAssistant:151,LaunchControlPanel:152,LaunchMail:153,LaunchScreenSaver:154,MailForward:155,MailReply:156,MailSend:157,MediaFastForward:158,MediaPause:159,MediaPlay:160,MediaPlayPause:161,MediaRecord:162,MediaRewind:163,MediaSelect:164,MediaStop:165,MediaTrackNext:166,MediaTrackPrevious:167,MetaLeft:168,MetaRight:169,MicrophoneMuteToggle:170,Minus:171,NonConvert:172,NumLock:173,Numpad0:174,Numpad1:175,Numpad2:176,Numpad3:177,Numpad4:178,Numpad5:179,Numpad6:180,Numpad7:181,Numpad8:182,Numpad9:183,NumpadAdd:184,NumpadBackspace:185,NumpadClear:186,NumpadClearEntry:187,NumpadComma:188,NumpadDecimal:189,NumpadDivide:190,NumpadEnter:191,NumpadEqual:192,NumpadMemoryAdd:193,NumpadMemoryClear:194,NumpadMemoryRecall:195,NumpadMemoryStore:196,NumpadMemorySubtract:197,NumpadMultiply:198,NumpadParenLeft:199,NumpadParenRight:200,NumpadSubtract:201,Open:202,PageDown:203,PageUp:204,Paste:205,Pause:206,Period:207,Power:208,PrintScreen:209,PrivacyScreenToggle:210,Props:211,Quote:212,Resume:213,ScrollLock:214,Select:215,SelectTask:216,Semicolon:217,ShiftLeft:218,ShiftRight:219,ShowAllWindows:220,Slash:221,Sleep:222,Space:223,Super:224,Suspend:225,Tab:226,Turbo:227,Undo:228,WakeUp:229,ZoomToggle:230}
+B.HE=new A.bF(B.Ii,[458907,458873,458978,458982,458833,458832,458831,458834,458881,458879,458880,458805,458801,458794,458799,458800,786544,786543,786980,786986,786981,786979,786983,786977,786982,458809,458806,458853,458976,458980,458890,458876,458875,458828,458791,458782,458783,458784,458785,458786,458787,458788,458789,458790,65717,786616,458829,458792,458798,458793,458793,458810,458819,458820,458821,458856,458857,458858,458859,458860,458861,458862,458811,458863,458864,458865,458866,458867,458812,458813,458814,458815,458816,458817,458818,458878,18,19,392961,392970,392971,392972,392973,392974,392975,392976,392962,392963,392964,392965,392966,392967,392968,392969,392977,392978,392979,392980,392981,392982,392983,392984,392985,392986,392987,392988,392989,392990,392991,458869,458826,16,458825,458852,458887,458889,458888,458756,458757,458758,458759,458760,458761,458762,458763,458764,458765,458766,458767,458768,458769,458770,458771,458772,458773,458774,458775,458776,458777,458778,458779,458780,458781,787101,458896,458897,458898,458899,458900,786836,786834,786891,786847,786826,786865,787083,787081,787084,786611,786609,786608,786637,786610,786612,786819,786615,786613,786614,458979,458983,24,458797,458891,458835,458850,458841,458842,458843,458844,458845,458846,458847,458848,458849,458839,458939,458968,458969,458885,458851,458836,458840,458855,458963,458962,458961,458960,458964,458837,458934,458935,458838,458868,458830,458827,458877,458824,458807,458854,458822,23,458915,458804,21,458823,458871,786850,458803,458977,458981,787103,458808,65666,458796,17,20,458795,22,458874,65667,786994],t.eL)
+B.HG=new A.cT([0,"FontWeight.w100",1,"FontWeight.w200",2,"FontWeight.w300",3,"FontWeight.w400",4,"FontWeight.w500",5,"FontWeight.w600",6,"FontWeight.w700",7,"FontWeight.w800",8,"FontWeight.w900"],A.aw("cT<n,q>"))
 B.rT={AVRInput:0,AVRPower:1,Accel:2,Accept:3,Again:4,AllCandidates:5,Alphanumeric:6,AltGraph:7,AppSwitch:8,ArrowDown:9,ArrowLeft:10,ArrowRight:11,ArrowUp:12,Attn:13,AudioBalanceLeft:14,AudioBalanceRight:15,AudioBassBoostDown:16,AudioBassBoostToggle:17,AudioBassBoostUp:18,AudioFaderFront:19,AudioFaderRear:20,AudioSurroundModeNext:21,AudioTrebleDown:22,AudioTrebleUp:23,AudioVolumeDown:24,AudioVolumeMute:25,AudioVolumeUp:26,Backspace:27,BrightnessDown:28,BrightnessUp:29,BrowserBack:30,BrowserFavorites:31,BrowserForward:32,BrowserHome:33,BrowserRefresh:34,BrowserSearch:35,BrowserStop:36,Call:37,Camera:38,CameraFocus:39,Cancel:40,CapsLock:41,ChannelDown:42,ChannelUp:43,Clear:44,Close:45,ClosedCaptionToggle:46,CodeInput:47,ColorF0Red:48,ColorF1Green:49,ColorF2Yellow:50,ColorF3Blue:51,ColorF4Grey:52,ColorF5Brown:53,Compose:54,ContextMenu:55,Convert:56,Copy:57,CrSel:58,Cut:59,DVR:60,Delete:61,Dimmer:62,DisplaySwap:63,Eisu:64,Eject:65,End:66,EndCall:67,Enter:68,EraseEof:69,Esc:70,Escape:71,ExSel:72,Execute:73,Exit:74,F1:75,F10:76,F11:77,F12:78,F13:79,F14:80,F15:81,F16:82,F17:83,F18:84,F19:85,F2:86,F20:87,F21:88,F22:89,F23:90,F24:91,F3:92,F4:93,F5:94,F6:95,F7:96,F8:97,F9:98,FavoriteClear0:99,FavoriteClear1:100,FavoriteClear2:101,FavoriteClear3:102,FavoriteRecall0:103,FavoriteRecall1:104,FavoriteRecall2:105,FavoriteRecall3:106,FavoriteStore0:107,FavoriteStore1:108,FavoriteStore2:109,FavoriteStore3:110,FinalMode:111,Find:112,Fn:113,FnLock:114,GoBack:115,GoHome:116,GroupFirst:117,GroupLast:118,GroupNext:119,GroupPrevious:120,Guide:121,GuideNextDay:122,GuidePreviousDay:123,HangulMode:124,HanjaMode:125,Hankaku:126,HeadsetHook:127,Help:128,Hibernate:129,Hiragana:130,HiraganaKatakana:131,Home:132,Hyper:133,Info:134,Insert:135,InstantReplay:136,JunjaMode:137,KanaMode:138,KanjiMode:139,Katakana:140,Key11:141,Key12:142,LastNumberRedial:143,LaunchApplication1:144,LaunchApplication2:145,LaunchAssistant:146,LaunchCalendar:147,LaunchContacts:148,LaunchControlPanel:149,LaunchMail:150,LaunchMediaPlayer:151,LaunchMusicPlayer:152,LaunchPhone:153,LaunchScreenSaver:154,LaunchSpreadsheet:155,LaunchWebBrowser:156,LaunchWebCam:157,LaunchWordProcessor:158,Link:159,ListProgram:160,LiveContent:161,Lock:162,LogOff:163,MailForward:164,MailReply:165,MailSend:166,MannerMode:167,MediaApps:168,MediaAudioTrack:169,MediaClose:170,MediaFastForward:171,MediaLast:172,MediaPause:173,MediaPlay:174,MediaPlayPause:175,MediaRecord:176,MediaRewind:177,MediaSkip:178,MediaSkipBackward:179,MediaSkipForward:180,MediaStepBackward:181,MediaStepForward:182,MediaStop:183,MediaTopMenu:184,MediaTrackNext:185,MediaTrackPrevious:186,MicrophoneToggle:187,MicrophoneVolumeDown:188,MicrophoneVolumeMute:189,MicrophoneVolumeUp:190,ModeChange:191,NavigateIn:192,NavigateNext:193,NavigateOut:194,NavigatePrevious:195,New:196,NextCandidate:197,NextFavoriteChannel:198,NextUserProfile:199,NonConvert:200,Notification:201,NumLock:202,OnDemand:203,Open:204,PageDown:205,PageUp:206,Pairing:207,Paste:208,Pause:209,PinPDown:210,PinPMove:211,PinPToggle:212,PinPUp:213,Play:214,PlaySpeedDown:215,PlaySpeedReset:216,PlaySpeedUp:217,Power:218,PowerOff:219,PreviousCandidate:220,Print:221,PrintScreen:222,Process:223,Props:224,RandomToggle:225,RcLowBattery:226,RecordSpeedNext:227,Redo:228,RfBypass:229,Romaji:230,STBInput:231,STBPower:232,Save:233,ScanChannelsToggle:234,ScreenModeNext:235,ScrollLock:236,Select:237,Settings:238,ShiftLevel5:239,SingleCandidate:240,Soft1:241,Soft2:242,Soft3:243,Soft4:244,Soft5:245,Soft6:246,Soft7:247,Soft8:248,SpeechCorrectionList:249,SpeechInputToggle:250,SpellCheck:251,SplitScreenToggle:252,Standby:253,Subtitle:254,Super:255,Symbol:256,SymbolLock:257,TV:258,TV3DMode:259,TVAntennaCable:260,TVAudioDescription:261,TVAudioDescriptionMixDown:262,TVAudioDescriptionMixUp:263,TVContentsMenu:264,TVDataService:265,TVInput:266,TVInputComponent1:267,TVInputComponent2:268,TVInputComposite1:269,TVInputComposite2:270,TVInputHDMI1:271,TVInputHDMI2:272,TVInputHDMI3:273,TVInputHDMI4:274,TVInputVGA1:275,TVMediaContext:276,TVNetwork:277,TVNumberEntry:278,TVPower:279,TVRadioService:280,TVSatellite:281,TVSatelliteBS:282,TVSatelliteCS:283,TVSatelliteToggle:284,TVTerrestrialAnalog:285,TVTerrestrialDigital:286,TVTimer:287,Tab:288,Teletext:289,Undo:290,Unidentified:291,VideoModeNext:292,VoiceDial:293,WakeUp:294,Wink:295,Zenkaku:296,ZenkakuHankaku:297,ZoomIn:298,ZoomOut:299,ZoomToggle:300}
-B.HC=new A.bF(B.rT,[B.pc,B.pd,B.mT,B.n7,B.n8,B.nw,B.nx,B.fI,B.qG,B.br,B.bh,B.bi,B.bs,B.n9,B.p5,B.p6,B.p7,B.qx,B.p8,B.p9,B.pa,B.pb,B.qy,B.qz,B.oH,B.oJ,B.oI,B.aC,B.nl,B.nm,B.oZ,B.p_,B.p0,B.p1,B.p2,B.p3,B.p4,B.qH,B.nn,B.qI,B.na,B.e7,B.pe,B.pf,B.iU,B.ou,B.pm,B.ny,B.pg,B.ph,B.pi,B.pj,B.pk,B.pl,B.nz,B.nb,B.nA,B.n_,B.n0,B.n1,B.qk,B.av,B.pn,B.po,B.nP,B.no,B.ck,B.qJ,B.fH,B.n2,B.e6,B.e6,B.n3,B.nc,B.pp,B.nZ,B.o7,B.o8,B.o9,B.oa,B.ob,B.oc,B.od,B.oe,B.of,B.og,B.o_,B.oh,B.oi,B.oj,B.ok,B.ol,B.o0,B.o1,B.o2,B.o3,B.o4,B.o5,B.o6,B.pq,B.pr,B.ps,B.pt,B.pu,B.pv,B.pw,B.px,B.py,B.pz,B.pA,B.pB,B.nB,B.nd,B.iT,B.mU,B.qK,B.qL,B.nC,B.nD,B.nE,B.nF,B.pC,B.pD,B.pE,B.nM,B.nN,B.nQ,B.qM,B.ne,B.nt,B.nR,B.nS,B.cl,B.mV,B.pF,B.iV,B.pG,B.nO,B.nT,B.nU,B.nV,B.rh,B.ri,B.qN,B.oP,B.oK,B.oX,B.oL,B.oV,B.oY,B.oM,B.oN,B.oO,B.oW,B.oQ,B.oR,B.oS,B.oT,B.oU,B.pH,B.pI,B.pJ,B.pK,B.np,B.ov,B.ow,B.ox,B.qP,B.pL,B.ql,B.qw,B.pM,B.pN,B.pO,B.pP,B.oy,B.pQ,B.pR,B.pS,B.qm,B.qn,B.qo,B.qp,B.oz,B.qq,B.oA,B.oB,B.qA,B.qB,B.qD,B.qC,B.nG,B.qr,B.qs,B.qt,B.qu,B.oC,B.nH,B.pT,B.pU,B.nI,B.qO,B.fJ,B.pV,B.oD,B.e8,B.e9,B.qv,B.n4,B.nf,B.pW,B.pX,B.pY,B.pZ,B.ng,B.q_,B.q0,B.q1,B.nq,B.nr,B.nJ,B.oE,B.ns,B.nK,B.nh,B.q2,B.q3,B.q4,B.n5,B.q5,B.nW,B.qa,B.qb,B.oF,B.q6,B.q7,B.fK,B.ni,B.q8,B.mZ,B.nL,B.om,B.on,B.oo,B.op,B.oq,B.or,B.os,B.ot,B.qE,B.qF,B.oG,B.q9,B.nu,B.qc,B.mW,B.mX,B.mY,B.qe,B.qR,B.qS,B.qT,B.qU,B.qV,B.qW,B.qX,B.qf,B.qY,B.qZ,B.r_,B.r0,B.r1,B.r2,B.r3,B.r4,B.r5,B.r6,B.r7,B.r8,B.qg,B.r9,B.ra,B.rb,B.rc,B.rd,B.re,B.rf,B.rg,B.fG,B.qd,B.n6,B.mS,B.qh,B.qQ,B.nv,B.qi,B.nX,B.nY,B.nj,B.nk,B.qj],A.aw("bF<q,h>"))
-B.HD=new A.bF(B.rT,[4294970632,4294970633,4294967553,4294968577,4294968578,4294969089,4294969090,4294967555,4294971393,4294968065,4294968066,4294968067,4294968068,4294968579,4294970625,4294970626,4294970627,4294970882,4294970628,4294970629,4294970630,4294970631,4294970884,4294970885,4294969871,4294969873,4294969872,4294967304,4294968833,4294968834,4294970369,4294970370,4294970371,4294970372,4294970373,4294970374,4294970375,4294971394,4294968835,4294971395,4294968580,4294967556,4294970634,4294970635,4294968321,4294969857,4294970642,4294969091,4294970636,4294970637,4294970638,4294970639,4294970640,4294970641,4294969092,4294968581,4294969093,4294968322,4294968323,4294968324,4294970703,4294967423,4294970643,4294970644,4294969108,4294968836,4294968069,4294971396,4294967309,4294968325,4294967323,4294967323,4294968326,4294968582,4294970645,4294969345,4294969354,4294969355,4294969356,4294969357,4294969358,4294969359,4294969360,4294969361,4294969362,4294969363,4294969346,4294969364,4294969365,4294969366,4294969367,4294969368,4294969347,4294969348,4294969349,4294969350,4294969351,4294969352,4294969353,4294970646,4294970647,4294970648,4294970649,4294970650,4294970651,4294970652,4294970653,4294970654,4294970655,4294970656,4294970657,4294969094,4294968583,4294967558,4294967559,4294971397,4294971398,4294969095,4294969096,4294969097,4294969098,4294970658,4294970659,4294970660,4294969105,4294969106,4294969109,4294971399,4294968584,4294968841,4294969110,4294969111,4294968070,4294967560,4294970661,4294968327,4294970662,4294969107,4294969112,4294969113,4294969114,4294971905,4294971906,4294971400,4294970118,4294970113,4294970126,4294970114,4294970124,4294970127,4294970115,4294970116,4294970117,4294970125,4294970119,4294970120,4294970121,4294970122,4294970123,4294970663,4294970664,4294970665,4294970666,4294968837,4294969858,4294969859,4294969860,4294971402,4294970667,4294970704,4294970715,4294970668,4294970669,4294970670,4294970671,4294969861,4294970672,4294970673,4294970674,4294970705,4294970706,4294970707,4294970708,4294969863,4294970709,4294969864,4294969865,4294970886,4294970887,4294970889,4294970888,4294969099,4294970710,4294970711,4294970712,4294970713,4294969866,4294969100,4294970675,4294970676,4294969101,4294971401,4294967562,4294970677,4294969867,4294968071,4294968072,4294970714,4294968328,4294968585,4294970678,4294970679,4294970680,4294970681,4294968586,4294970682,4294970683,4294970684,4294968838,4294968839,4294969102,4294969868,4294968840,4294969103,4294968587,4294970685,4294970686,4294970687,4294968329,4294970688,4294969115,4294970693,4294970694,4294969869,4294970689,4294970690,4294967564,4294968588,4294970691,4294967569,4294969104,4294969601,4294969602,4294969603,4294969604,4294969605,4294969606,4294969607,4294969608,4294971137,4294971138,4294969870,4294970692,4294968842,4294970695,4294967566,4294967567,4294967568,4294970697,4294971649,4294971650,4294971651,4294971652,4294971653,4294971654,4294971655,4294970698,4294971656,4294971657,4294971658,4294971659,4294971660,4294971661,4294971662,4294971663,4294971664,4294971665,4294971666,4294971667,4294970699,4294971668,4294971669,4294971670,4294971671,4294971672,4294971673,4294971674,4294971675,4294967305,4294970696,4294968330,4294967297,4294970700,4294971403,4294968843,4294970701,4294969116,4294969117,4294968589,4294968590,4294970702],t.eL)
-B.Ii={alias:0,allScroll:1,basic:2,cell:3,click:4,contextMenu:5,copy:6,forbidden:7,grab:8,grabbing:9,help:10,move:11,none:12,noDrop:13,precise:14,progress:15,text:16,resizeColumn:17,resizeDown:18,resizeDownLeft:19,resizeDownRight:20,resizeLeft:21,resizeLeftRight:22,resizeRight:23,resizeRow:24,resizeUp:25,resizeUpDown:26,resizeUpLeft:27,resizeUpRight:28,resizeUpLeftDownRight:29,resizeUpRightDownLeft:30,verticalText:31,wait:32,zoomIn:33,zoomOut:34}
-B.HE=new A.bF(B.Ii,["alias","all-scroll","default","cell","pointer","context-menu","copy","not-allowed","grab","grabbing","help","move","none","no-drop","crosshair","progress","text","col-resize","s-resize","sw-resize","se-resize","w-resize","ew-resize","e-resize","row-resize","n-resize","ns-resize","nw-resize","ne-resize","nwse-resize","nesw-resize","vertical-text","wait","zoom-in","zoom-out"],t.li)
-B.LS=new A.a2(B.aC,!1,!1,!1,!1,B.m)
-B.Ln=new A.a2(B.aC,!1,!0,!1,!1,B.m)
-B.Lm=new A.a2(B.av,!1,!1,!1,!1,B.m)
-B.Lb=new A.a2(B.av,!1,!0,!1,!1,B.m)
-B.LH=new A.a2(B.aC,!1,!0,!0,!1,B.m)
-B.Ly=new A.a2(B.aC,!1,!1,!0,!1,B.m)
-B.LX=new A.a2(B.av,!1,!0,!0,!1,B.m)
-B.LL=new A.a2(B.av,!1,!1,!0,!1,B.m)
-B.rG=new A.cT([B.LS,B.p,B.Ln,B.p,B.Lm,B.p,B.Lb,B.p,B.LH,B.p,B.Ly,B.p,B.LX,B.p,B.LL,B.p],t.Fp)
-B.Ik={type:0}
-B.HF=new A.bF(B.Ik,["line"],t.li)
+B.HH=new A.bF(B.rT,[B.pc,B.pd,B.mT,B.n7,B.n8,B.nw,B.nx,B.fI,B.qG,B.br,B.bh,B.bi,B.bs,B.n9,B.p5,B.p6,B.p7,B.qx,B.p8,B.p9,B.pa,B.pb,B.qy,B.qz,B.oH,B.oJ,B.oI,B.aC,B.nl,B.nm,B.oZ,B.p_,B.p0,B.p1,B.p2,B.p3,B.p4,B.qH,B.nn,B.qI,B.na,B.e7,B.pe,B.pf,B.iU,B.ou,B.pm,B.ny,B.pg,B.ph,B.pi,B.pj,B.pk,B.pl,B.nz,B.nb,B.nA,B.n_,B.n0,B.n1,B.qk,B.av,B.pn,B.po,B.nP,B.no,B.ck,B.qJ,B.fH,B.n2,B.e6,B.e6,B.n3,B.nc,B.pp,B.nZ,B.o7,B.o8,B.o9,B.oa,B.ob,B.oc,B.od,B.oe,B.of,B.og,B.o_,B.oh,B.oi,B.oj,B.ok,B.ol,B.o0,B.o1,B.o2,B.o3,B.o4,B.o5,B.o6,B.pq,B.pr,B.ps,B.pt,B.pu,B.pv,B.pw,B.px,B.py,B.pz,B.pA,B.pB,B.nB,B.nd,B.iT,B.mU,B.qK,B.qL,B.nC,B.nD,B.nE,B.nF,B.pC,B.pD,B.pE,B.nM,B.nN,B.nQ,B.qM,B.ne,B.nt,B.nR,B.nS,B.cl,B.mV,B.pF,B.iV,B.pG,B.nO,B.nT,B.nU,B.nV,B.rh,B.ri,B.qN,B.oP,B.oK,B.oX,B.oL,B.oV,B.oY,B.oM,B.oN,B.oO,B.oW,B.oQ,B.oR,B.oS,B.oT,B.oU,B.pH,B.pI,B.pJ,B.pK,B.np,B.ov,B.ow,B.ox,B.qP,B.pL,B.ql,B.qw,B.pM,B.pN,B.pO,B.pP,B.oy,B.pQ,B.pR,B.pS,B.qm,B.qn,B.qo,B.qp,B.oz,B.qq,B.oA,B.oB,B.qA,B.qB,B.qD,B.qC,B.nG,B.qr,B.qs,B.qt,B.qu,B.oC,B.nH,B.pT,B.pU,B.nI,B.qO,B.fJ,B.pV,B.oD,B.e8,B.e9,B.qv,B.n4,B.nf,B.pW,B.pX,B.pY,B.pZ,B.ng,B.q_,B.q0,B.q1,B.nq,B.nr,B.nJ,B.oE,B.ns,B.nK,B.nh,B.q2,B.q3,B.q4,B.n5,B.q5,B.nW,B.qa,B.qb,B.oF,B.q6,B.q7,B.fK,B.ni,B.q8,B.mZ,B.nL,B.om,B.on,B.oo,B.op,B.oq,B.or,B.os,B.ot,B.qE,B.qF,B.oG,B.q9,B.nu,B.qc,B.mW,B.mX,B.mY,B.qe,B.qR,B.qS,B.qT,B.qU,B.qV,B.qW,B.qX,B.qf,B.qY,B.qZ,B.r_,B.r0,B.r1,B.r2,B.r3,B.r4,B.r5,B.r6,B.r7,B.r8,B.qg,B.r9,B.ra,B.rb,B.rc,B.rd,B.re,B.rf,B.rg,B.fG,B.qd,B.n6,B.mS,B.qh,B.qQ,B.nv,B.qi,B.nX,B.nY,B.nj,B.nk,B.qj],A.aw("bF<q,h>"))
+B.HI=new A.bF(B.rT,[4294970632,4294970633,4294967553,4294968577,4294968578,4294969089,4294969090,4294967555,4294971393,4294968065,4294968066,4294968067,4294968068,4294968579,4294970625,4294970626,4294970627,4294970882,4294970628,4294970629,4294970630,4294970631,4294970884,4294970885,4294969871,4294969873,4294969872,4294967304,4294968833,4294968834,4294970369,4294970370,4294970371,4294970372,4294970373,4294970374,4294970375,4294971394,4294968835,4294971395,4294968580,4294967556,4294970634,4294970635,4294968321,4294969857,4294970642,4294969091,4294970636,4294970637,4294970638,4294970639,4294970640,4294970641,4294969092,4294968581,4294969093,4294968322,4294968323,4294968324,4294970703,4294967423,4294970643,4294970644,4294969108,4294968836,4294968069,4294971396,4294967309,4294968325,4294967323,4294967323,4294968326,4294968582,4294970645,4294969345,4294969354,4294969355,4294969356,4294969357,4294969358,4294969359,4294969360,4294969361,4294969362,4294969363,4294969346,4294969364,4294969365,4294969366,4294969367,4294969368,4294969347,4294969348,4294969349,4294969350,4294969351,4294969352,4294969353,4294970646,4294970647,4294970648,4294970649,4294970650,4294970651,4294970652,4294970653,4294970654,4294970655,4294970656,4294970657,4294969094,4294968583,4294967558,4294967559,4294971397,4294971398,4294969095,4294969096,4294969097,4294969098,4294970658,4294970659,4294970660,4294969105,4294969106,4294969109,4294971399,4294968584,4294968841,4294969110,4294969111,4294968070,4294967560,4294970661,4294968327,4294970662,4294969107,4294969112,4294969113,4294969114,4294971905,4294971906,4294971400,4294970118,4294970113,4294970126,4294970114,4294970124,4294970127,4294970115,4294970116,4294970117,4294970125,4294970119,4294970120,4294970121,4294970122,4294970123,4294970663,4294970664,4294970665,4294970666,4294968837,4294969858,4294969859,4294969860,4294971402,4294970667,4294970704,4294970715,4294970668,4294970669,4294970670,4294970671,4294969861,4294970672,4294970673,4294970674,4294970705,4294970706,4294970707,4294970708,4294969863,4294970709,4294969864,4294969865,4294970886,4294970887,4294970889,4294970888,4294969099,4294970710,4294970711,4294970712,4294970713,4294969866,4294969100,4294970675,4294970676,4294969101,4294971401,4294967562,4294970677,4294969867,4294968071,4294968072,4294970714,4294968328,4294968585,4294970678,4294970679,4294970680,4294970681,4294968586,4294970682,4294970683,4294970684,4294968838,4294968839,4294969102,4294969868,4294968840,4294969103,4294968587,4294970685,4294970686,4294970687,4294968329,4294970688,4294969115,4294970693,4294970694,4294969869,4294970689,4294970690,4294967564,4294968588,4294970691,4294967569,4294969104,4294969601,4294969602,4294969603,4294969604,4294969605,4294969606,4294969607,4294969608,4294971137,4294971138,4294969870,4294970692,4294968842,4294970695,4294967566,4294967567,4294967568,4294970697,4294971649,4294971650,4294971651,4294971652,4294971653,4294971654,4294971655,4294970698,4294971656,4294971657,4294971658,4294971659,4294971660,4294971661,4294971662,4294971663,4294971664,4294971665,4294971666,4294971667,4294970699,4294971668,4294971669,4294971670,4294971671,4294971672,4294971673,4294971674,4294971675,4294967305,4294970696,4294968330,4294967297,4294970700,4294971403,4294968843,4294970701,4294969116,4294969117,4294968589,4294968590,4294970702],t.eL)
+B.In={alias:0,allScroll:1,basic:2,cell:3,click:4,contextMenu:5,copy:6,forbidden:7,grab:8,grabbing:9,help:10,move:11,none:12,noDrop:13,precise:14,progress:15,text:16,resizeColumn:17,resizeDown:18,resizeDownLeft:19,resizeDownRight:20,resizeLeft:21,resizeLeftRight:22,resizeRight:23,resizeRow:24,resizeUp:25,resizeUpDown:26,resizeUpLeft:27,resizeUpRight:28,resizeUpLeftDownRight:29,resizeUpRightDownLeft:30,verticalText:31,wait:32,zoomIn:33,zoomOut:34}
+B.HJ=new A.bF(B.In,["alias","all-scroll","default","cell","pointer","context-menu","copy","not-allowed","grab","grabbing","help","move","none","no-drop","crosshair","progress","text","col-resize","s-resize","sw-resize","se-resize","w-resize","ew-resize","e-resize","row-resize","n-resize","ns-resize","nw-resize","ne-resize","nwse-resize","nesw-resize","vertical-text","wait","zoom-in","zoom-out"],t.li)
+B.LX=new A.a2(B.aC,!1,!1,!1,!1,B.m)
+B.Ls=new A.a2(B.aC,!1,!0,!1,!1,B.m)
+B.Lr=new A.a2(B.av,!1,!1,!1,!1,B.m)
+B.Lg=new A.a2(B.av,!1,!0,!1,!1,B.m)
+B.LM=new A.a2(B.aC,!1,!0,!0,!1,B.m)
+B.LD=new A.a2(B.aC,!1,!1,!0,!1,B.m)
+B.M1=new A.a2(B.av,!1,!0,!0,!1,B.m)
+B.LQ=new A.a2(B.av,!1,!1,!0,!1,B.m)
+B.rG=new A.cT([B.LX,B.p,B.Ls,B.p,B.Lr,B.p,B.Lg,B.p,B.LM,B.p,B.LD,B.p,B.M1,B.p,B.LQ,B.p],t.Fp)
+B.Ip={type:0}
+B.HK=new A.bF(B.Ip,["line"],t.li)
 B.bk={}
 B.rJ=new A.bF(B.bk,[],A.aw("bF<I,asY>"))
 B.fO=new A.bF(B.bk,[],A.aw("bF<rO,aN>"))
-B.HH=new A.bF(B.bk,[],A.aw("bF<q,i(Z)>"))
+B.HM=new A.bF(B.bk,[],A.aw("bF<q,i(Z)>"))
 B.rH=new A.bF(B.bk,[],t.VJ)
-B.UN=new A.bF(B.bk,[],t.li)
+B.US=new A.bF(B.bk,[],t.li)
 B.j4=new A.bF(B.bk,[],A.aw("bF<q,@>"))
 B.rK=new A.bF(B.bk,[],A.aw("bF<zN,@>"))
-B.HG=new A.bF(B.bk,[],A.aw("bF<fR,cr>"))
+B.HL=new A.bF(B.bk,[],A.aw("bF<fR,cr>"))
 B.rI=new A.bF(B.bk,[],A.aw("bF<fR,nM<cr>>"))
-B.Er=A.b(s([42,null,null,8589935146]),t.Z)
-B.Es=A.b(s([43,null,null,8589935147]),t.Z)
-B.Et=A.b(s([45,null,null,8589935149]),t.Z)
-B.Eu=A.b(s([46,null,null,8589935150]),t.Z)
-B.Ev=A.b(s([47,null,null,8589935151]),t.Z)
-B.Ew=A.b(s([48,null,null,8589935152]),t.Z)
-B.Ex=A.b(s([49,null,null,8589935153]),t.Z)
-B.Ez=A.b(s([50,null,null,8589935154]),t.Z)
-B.EB=A.b(s([51,null,null,8589935155]),t.Z)
-B.EC=A.b(s([52,null,null,8589935156]),t.Z)
-B.ED=A.b(s([53,null,null,8589935157]),t.Z)
-B.EE=A.b(s([54,null,null,8589935158]),t.Z)
-B.EF=A.b(s([55,null,null,8589935159]),t.Z)
-B.EG=A.b(s([56,null,null,8589935160]),t.Z)
-B.EI=A.b(s([57,null,null,8589935161]),t.Z)
-B.Ff=A.b(s([8589934852,8589934852,8589934853,null]),t.Z)
-B.Eg=A.b(s([4294967555,null,4294967555,null]),t.Z)
-B.Eh=A.b(s([4294968065,null,null,8589935154]),t.Z)
-B.Ei=A.b(s([4294968066,null,null,8589935156]),t.Z)
-B.Ej=A.b(s([4294968067,null,null,8589935158]),t.Z)
-B.Ek=A.b(s([4294968068,null,null,8589935160]),t.Z)
-B.Ep=A.b(s([4294968321,null,null,8589935157]),t.Z)
-B.Fg=A.b(s([8589934848,8589934848,8589934849,null]),t.Z)
-B.Ef=A.b(s([4294967423,null,null,8589935150]),t.Z)
-B.El=A.b(s([4294968069,null,null,8589935153]),t.Z)
-B.Ee=A.b(s([4294967309,null,null,8589935117]),t.Z)
-B.Em=A.b(s([4294968070,null,null,8589935159]),t.Z)
-B.Eq=A.b(s([4294968327,null,null,8589935152]),t.Z)
-B.Fh=A.b(s([8589934854,8589934854,8589934855,null]),t.Z)
-B.En=A.b(s([4294968071,null,null,8589935155]),t.Z)
-B.Eo=A.b(s([4294968072,null,null,8589935161]),t.Z)
-B.Fi=A.b(s([8589934850,8589934850,8589934851,null]),t.Z)
-B.rL=new A.cT(["*",B.Er,"+",B.Es,"-",B.Et,".",B.Eu,"/",B.Ev,"0",B.Ew,"1",B.Ex,"2",B.Ez,"3",B.EB,"4",B.EC,"5",B.ED,"6",B.EE,"7",B.EF,"8",B.EG,"9",B.EI,"Alt",B.Ff,"AltGraph",B.Eg,"ArrowDown",B.Eh,"ArrowLeft",B.Ei,"ArrowRight",B.Ej,"ArrowUp",B.Ek,"Clear",B.Ep,"Control",B.Fg,"Delete",B.Ef,"End",B.El,"Enter",B.Ee,"Home",B.Em,"Insert",B.Eq,"Meta",B.Fh,"PageDown",B.En,"PageUp",B.Eo,"Shift",B.Fi],A.aw("cT<q,F<n?>>"))
-B.EH=A.b(s([B.mR,null,null,B.rx]),t.L)
-B.FM=A.b(s([B.rj,null,null,B.ry]),t.L)
+B.Eq=A.b(s([42,null,null,8589935146]),t.Z)
+B.Er=A.b(s([43,null,null,8589935147]),t.Z)
+B.Es=A.b(s([45,null,null,8589935149]),t.Z)
+B.Et=A.b(s([46,null,null,8589935150]),t.Z)
+B.Eu=A.b(s([47,null,null,8589935151]),t.Z)
+B.Ev=A.b(s([48,null,null,8589935152]),t.Z)
+B.Ew=A.b(s([49,null,null,8589935153]),t.Z)
+B.Ey=A.b(s([50,null,null,8589935154]),t.Z)
+B.EA=A.b(s([51,null,null,8589935155]),t.Z)
+B.EB=A.b(s([52,null,null,8589935156]),t.Z)
+B.EC=A.b(s([53,null,null,8589935157]),t.Z)
+B.ED=A.b(s([54,null,null,8589935158]),t.Z)
+B.EE=A.b(s([55,null,null,8589935159]),t.Z)
+B.EF=A.b(s([56,null,null,8589935160]),t.Z)
+B.EH=A.b(s([57,null,null,8589935161]),t.Z)
+B.Fh=A.b(s([8589934852,8589934852,8589934853,null]),t.Z)
+B.Ef=A.b(s([4294967555,null,4294967555,null]),t.Z)
+B.Eg=A.b(s([4294968065,null,null,8589935154]),t.Z)
+B.Eh=A.b(s([4294968066,null,null,8589935156]),t.Z)
+B.Ei=A.b(s([4294968067,null,null,8589935158]),t.Z)
+B.Ej=A.b(s([4294968068,null,null,8589935160]),t.Z)
+B.Eo=A.b(s([4294968321,null,null,8589935157]),t.Z)
+B.Fi=A.b(s([8589934848,8589934848,8589934849,null]),t.Z)
+B.Ee=A.b(s([4294967423,null,null,8589935150]),t.Z)
+B.Ek=A.b(s([4294968069,null,null,8589935153]),t.Z)
+B.Ed=A.b(s([4294967309,null,null,8589935117]),t.Z)
+B.El=A.b(s([4294968070,null,null,8589935159]),t.Z)
+B.Ep=A.b(s([4294968327,null,null,8589935152]),t.Z)
+B.Fj=A.b(s([8589934854,8589934854,8589934855,null]),t.Z)
+B.Em=A.b(s([4294968071,null,null,8589935155]),t.Z)
+B.En=A.b(s([4294968072,null,null,8589935161]),t.Z)
+B.Fk=A.b(s([8589934850,8589934850,8589934851,null]),t.Z)
+B.rL=new A.cT(["*",B.Eq,"+",B.Er,"-",B.Es,".",B.Et,"/",B.Eu,"0",B.Ev,"1",B.Ew,"2",B.Ey,"3",B.EA,"4",B.EB,"5",B.EC,"6",B.ED,"7",B.EE,"8",B.EF,"9",B.EH,"Alt",B.Fh,"AltGraph",B.Ef,"ArrowDown",B.Eg,"ArrowLeft",B.Eh,"ArrowRight",B.Ei,"ArrowUp",B.Ej,"Clear",B.Eo,"Control",B.Fi,"Delete",B.Ee,"End",B.Ek,"Enter",B.Ed,"Home",B.El,"Insert",B.Ep,"Meta",B.Fj,"PageDown",B.Em,"PageUp",B.En,"Shift",B.Fk],A.aw("cT<q,F<n?>>"))
+B.EG=A.b(s([B.mR,null,null,B.rx]),t.L)
+B.FO=A.b(s([B.rj,null,null,B.ry]),t.L)
 B.F1=A.b(s([B.rk,null,null,B.rz]),t.L)
-B.Fk=A.b(s([B.rl,null,null,B.cn]),t.L)
+B.Fm=A.b(s([B.rl,null,null,B.cn]),t.L)
 B.E7=A.b(s([B.rm,null,null,B.rA]),t.L)
-B.FW=A.b(s([B.rn,null,null,B.j0]),t.L)
-B.FT=A.b(s([B.ro,null,null,B.ed]),t.L)
+B.G0=A.b(s([B.rn,null,null,B.j0]),t.L)
+B.FW=A.b(s([B.ro,null,null,B.ed]),t.L)
 B.EN=A.b(s([B.rp,null,null,B.co]),t.L)
-B.G_=A.b(s([B.rq,null,null,B.ee]),t.L)
-B.FS=A.b(s([B.rr,null,null,B.cp]),t.L)
+B.G4=A.b(s([B.rq,null,null,B.ee]),t.L)
+B.FV=A.b(s([B.rr,null,null,B.cp]),t.L)
 B.EL=A.b(s([B.rs,null,null,B.j1]),t.L)
-B.Ec=A.b(s([B.rt,null,null,B.cq]),t.L)
+B.Eb=A.b(s([B.rt,null,null,B.cq]),t.L)
 B.EW=A.b(s([B.ru,null,null,B.ef]),t.L)
-B.FN=A.b(s([B.rv,null,null,B.cr]),t.L)
-B.FO=A.b(s([B.rw,null,null,B.eg]),t.L)
+B.FP=A.b(s([B.rv,null,null,B.cr]),t.L)
+B.FR=A.b(s([B.rw,null,null,B.eg]),t.L)
 B.EP=A.b(s([B.eb,B.eb,B.fM,null]),t.L)
-B.FX=A.b(s([B.fI,null,B.fI,null]),t.L)
+B.G1=A.b(s([B.fI,null,B.fI,null]),t.L)
 B.F4=A.b(s([B.br,null,null,B.co]),t.L)
 B.F5=A.b(s([B.bh,null,null,B.cp]),t.L)
 B.F6=A.b(s([B.bi,null,null,B.cq]),t.L)
-B.FY=A.b(s([B.bs,null,null,B.cr]),t.L)
-B.FQ=A.b(s([B.iU,null,null,B.j1]),t.L)
+B.G3=A.b(s([B.bs,null,null,B.cr]),t.L)
+B.FT=A.b(s([B.iU,null,null,B.j1]),t.L)
 B.EQ=A.b(s([B.ea,B.ea,B.fL,null]),t.L)
-B.Fr=A.b(s([B.av,null,null,B.cn]),t.L)
+B.Fu=A.b(s([B.av,null,null,B.cn]),t.L)
 B.F7=A.b(s([B.ck,null,null,B.ed]),t.L)
 B.EK=A.b(s([B.fH,null,null,B.j_]),t.L)
 B.F8=A.b(s([B.cl,null,null,B.ef]),t.L)
-B.FR=A.b(s([B.iV,null,null,B.j0]),t.L)
+B.FU=A.b(s([B.iV,null,null,B.j0]),t.L)
 B.ER=A.b(s([B.ec,B.ec,B.fN,null]),t.L)
 B.F9=A.b(s([B.e8,null,null,B.ee]),t.L)
 B.Fy=A.b(s([B.e9,null,null,B.eg]),t.L)
 B.ES=A.b(s([B.bZ,B.bZ,B.cm,null]),t.L)
-B.HI=new A.cT(["*",B.EH,"+",B.FM,"-",B.F1,".",B.Fk,"/",B.E7,"0",B.FW,"1",B.FT,"2",B.EN,"3",B.G_,"4",B.FS,"5",B.EL,"6",B.Ec,"7",B.EW,"8",B.FN,"9",B.FO,"Alt",B.EP,"AltGraph",B.FX,"ArrowDown",B.F4,"ArrowLeft",B.F5,"ArrowRight",B.F6,"ArrowUp",B.FY,"Clear",B.FQ,"Control",B.EQ,"Delete",B.Fr,"End",B.F7,"Enter",B.EK,"Home",B.F8,"Insert",B.FR,"Meta",B.ER,"PageDown",B.F9,"PageUp",B.Fy,"Shift",B.ES],A.aw("cT<q,F<h?>>"))
-B.Ig={KeyA:0,KeyB:1,KeyC:2,KeyD:3,KeyE:4,KeyF:5,KeyG:6,KeyH:7,KeyI:8,KeyJ:9,KeyK:10,KeyL:11,KeyM:12,KeyN:13,KeyO:14,KeyP:15,KeyQ:16,KeyR:17,KeyS:18,KeyT:19,KeyU:20,KeyV:21,KeyW:22,KeyX:23,KeyY:24,KeyZ:25,Digit1:26,Digit2:27,Digit3:28,Digit4:29,Digit5:30,Digit6:31,Digit7:32,Digit8:33,Digit9:34,Digit0:35,Minus:36,Equal:37,BracketLeft:38,BracketRight:39,Backslash:40,Semicolon:41,Quote:42,Backquote:43,Comma:44,Period:45,Slash:46}
-B.j6=new A.bF(B.Ig,["a","b","c","d","e","f","g","h","i","j","k","l","m","n","o","p","q","r","s","t","u","v","w","x","y","z","1","2","3","4","5","6","7","8","9","0","-","=","[","]","\\",";","'","`",",",".","/"],t.li)
-B.Ib={Netzwerk:0,Hardware:1,"IT-Sicherheit":2,Datenschutz:3,Nachhaltigkeit:4,Wirtschaft:5,Projektmanagement:6,Programmierung:7,"Ergonomie & Soziales":8,Recht:9,Berechnung:10}
-B.Fq=A.b(s(["ARP","APIPA","DHCP","DNS","IPv4","IPv6","MAC-Adresse","OSI-Modell","Router","RJ-45","SLAAC","Subnetting","Switch","TCP","UDP","WLAN-Standards","VPN","Firewall","Daisy Chaining","Monitoranschl\xfcsse","Peripherieanschl\xfcsse"]),t.s)
-B.G0=A.b(s(["BIOS vs. UEFI","Bootvorgang","CPU","DDR4 vs. DDR5","HDD","NVMe","RAM","SSD","Ger\xe4teklassen","Netzteil-Leistungsberechnung","Netzteil-Wirkungsgrad","S.M.A.R.T.","Daisy Chaining","Monitoranschl\xfcsse","Peripherieanschl\xfcsse","RGB-Farbraum","Dateigr\xf6\xdfen-Berechnung","\xdcbertragungsdauer"]),t.s)
-B.Fx=A.b(s(["BSI-Grundschutz","BYOD","Digitales Zertifikat","Endpoint-Security","Firewall","Hashverfahren","H\xe4rtung","Passwortrichtlinie","Phishing","Ransomware","Schutzziele (CIA)","Trojaner","Virus","VPN","Verschl\xfcsselung","Zwei-Faktor-Authentisierung","Zutrittskontrolle","TOM"]),t.s)
-B.Ed=A.b(s(["Anonymisierung vs. Pseudonymisierung","BDSG","Betroffenenrechte","BYOD","DSGVO","Datensicherung (Backup)","TOM","Pseudocode"]),t.s)
-B.Ft=A.b(s(["80-PLUS-Zertifikat","Blauer Engel","CO\u2082-Fu\xdfabdruck IT","EPEAT","ElektroG","Green IT","Konfliktmineralien","LkSG","Netzteil-Wirkungsgrad","PUE-Wert","RoHS-Richtlinie","\xd6kodesign-Verordnung","Stromkosten-Berechnung"]),t.s)
-B.E8=A.b(s(["Abschreibung (AfA)","Amortisationsrechnung","CAPEX vs. OPEX","Handelskalkulation","Kaufvertrag","Kaufvertragsst\xf6rungen","Leasing","Make-or-Buy","Nutzwertanalyse","Rabatt und Skonto","Ratendarlehen","Stromkosten-Berechnung","Stundensatz-Kalkulation","TCO"]),t.s)
-B.EO=A.b(s(["Gantt-Diagramm","Lastenheft vs. Pflichtenheft","Netzplan","SMART-Kriterien","Schreibtischtest","Change Management","Make-or-Buy","Nutzwertanalyse","BPMN","ERM","UML Aktivit\xe4tsdiagramm","UML Use-Case-Diagramm"]),t.s)
-B.F0=A.b(s(["Compiler vs. Interpreter","ERM","Pseudocode","Schreibtischtest","BPMN","UML Aktivit\xe4tsdiagramm","UML Use-Case-Diagramm"]),t.s)
-B.F_=A.b(s(["4-Ohren-Modell","Barrierefreiheit (IT)","Bildschirmarbeitsplatz","Change Management","Homeoffice","SMART-Kriterien"]),t.s)
-B.FZ=A.b(s(["BDSG","Betroffenenrechte","DSGVO","ElektroG","Kaufvertrag","Kaufvertragsst\xf6rungen","Konfliktmineralien","LkSG","RoHS-Richtlinie","TOM","\xd6kodesign-Verordnung"]),t.s)
-B.Fs=A.b(s(["Abschreibung (AfA)","Amortisationsrechnung","Dateigr\xf6\xdfen-Berechnung","Handelskalkulation","Netzteil-Leistungsberechnung","Rabatt und Skonto","Ratendarlehen","Stromkosten-Berechnung","Stundensatz-Kalkulation","Subnetting","TCO","\xdcbertragungsdauer","Nutzwertanalyse"]),t.s)
-B.rM=new A.bF(B.Ib,[B.Fq,B.G0,B.Fx,B.Ed,B.Ft,B.E8,B.EO,B.F0,B.F_,B.FZ,B.Fs],t.VJ)
-B.Id={Abort:0,Again:1,AltLeft:2,AltRight:3,ArrowDown:4,ArrowLeft:5,ArrowRight:6,ArrowUp:7,AudioVolumeDown:8,AudioVolumeMute:9,AudioVolumeUp:10,Backquote:11,Backslash:12,Backspace:13,BracketLeft:14,BracketRight:15,BrightnessDown:16,BrightnessUp:17,BrowserBack:18,BrowserFavorites:19,BrowserForward:20,BrowserHome:21,BrowserRefresh:22,BrowserSearch:23,BrowserStop:24,CapsLock:25,Comma:26,ContextMenu:27,ControlLeft:28,ControlRight:29,Convert:30,Copy:31,Cut:32,Delete:33,Digit0:34,Digit1:35,Digit2:36,Digit3:37,Digit4:38,Digit5:39,Digit6:40,Digit7:41,Digit8:42,Digit9:43,DisplayToggleIntExt:44,Eject:45,End:46,Enter:47,Equal:48,Escape:49,Esc:50,F1:51,F10:52,F11:53,F12:54,F13:55,F14:56,F15:57,F16:58,F17:59,F18:60,F19:61,F2:62,F20:63,F21:64,F22:65,F23:66,F24:67,F3:68,F4:69,F5:70,F6:71,F7:72,F8:73,F9:74,Find:75,Fn:76,FnLock:77,GameButton1:78,GameButton10:79,GameButton11:80,GameButton12:81,GameButton13:82,GameButton14:83,GameButton15:84,GameButton16:85,GameButton2:86,GameButton3:87,GameButton4:88,GameButton5:89,GameButton6:90,GameButton7:91,GameButton8:92,GameButton9:93,GameButtonA:94,GameButtonB:95,GameButtonC:96,GameButtonLeft1:97,GameButtonLeft2:98,GameButtonMode:99,GameButtonRight1:100,GameButtonRight2:101,GameButtonSelect:102,GameButtonStart:103,GameButtonThumbLeft:104,GameButtonThumbRight:105,GameButtonX:106,GameButtonY:107,GameButtonZ:108,Help:109,Home:110,Hyper:111,Insert:112,IntlBackslash:113,IntlRo:114,IntlYen:115,KanaMode:116,KeyA:117,KeyB:118,KeyC:119,KeyD:120,KeyE:121,KeyF:122,KeyG:123,KeyH:124,KeyI:125,KeyJ:126,KeyK:127,KeyL:128,KeyM:129,KeyN:130,KeyO:131,KeyP:132,KeyQ:133,KeyR:134,KeyS:135,KeyT:136,KeyU:137,KeyV:138,KeyW:139,KeyX:140,KeyY:141,KeyZ:142,KeyboardLayoutSelect:143,Lang1:144,Lang2:145,Lang3:146,Lang4:147,Lang5:148,LaunchApp1:149,LaunchApp2:150,LaunchAssistant:151,LaunchControlPanel:152,LaunchMail:153,LaunchScreenSaver:154,MailForward:155,MailReply:156,MailSend:157,MediaFastForward:158,MediaPause:159,MediaPlay:160,MediaPlayPause:161,MediaRecord:162,MediaRewind:163,MediaSelect:164,MediaStop:165,MediaTrackNext:166,MediaTrackPrevious:167,MetaLeft:168,MetaRight:169,MicrophoneMuteToggle:170,Minus:171,NonConvert:172,NumLock:173,Numpad0:174,Numpad1:175,Numpad2:176,Numpad3:177,Numpad4:178,Numpad5:179,Numpad6:180,Numpad7:181,Numpad8:182,Numpad9:183,NumpadAdd:184,NumpadBackspace:185,NumpadClear:186,NumpadClearEntry:187,NumpadComma:188,NumpadDecimal:189,NumpadDivide:190,NumpadEnter:191,NumpadEqual:192,NumpadMemoryAdd:193,NumpadMemoryClear:194,NumpadMemoryRecall:195,NumpadMemoryStore:196,NumpadMemorySubtract:197,NumpadMultiply:198,NumpadParenLeft:199,NumpadParenRight:200,NumpadSubtract:201,Open:202,PageDown:203,PageUp:204,Paste:205,Pause:206,Period:207,Power:208,PrintScreen:209,PrivacyScreenToggle:210,Props:211,Quote:212,Resume:213,ScrollLock:214,Select:215,SelectTask:216,Semicolon:217,ShiftLeft:218,ShiftRight:219,ShowAllWindows:220,Slash:221,Sleep:222,Space:223,Super:224,Suspend:225,Tab:226,Turbo:227,Undo:228,WakeUp:229,ZoomToggle:230}
+B.HN=new A.cT(["*",B.EG,"+",B.FO,"-",B.F1,".",B.Fm,"/",B.E7,"0",B.G0,"1",B.FW,"2",B.EN,"3",B.G4,"4",B.FV,"5",B.EL,"6",B.Eb,"7",B.EW,"8",B.FP,"9",B.FR,"Alt",B.EP,"AltGraph",B.G1,"ArrowDown",B.F4,"ArrowLeft",B.F5,"ArrowRight",B.F6,"ArrowUp",B.G3,"Clear",B.FT,"Control",B.EQ,"Delete",B.Fu,"End",B.F7,"Enter",B.EK,"Home",B.F8,"Insert",B.FU,"Meta",B.ER,"PageDown",B.F9,"PageUp",B.Fy,"Shift",B.ES],A.aw("cT<q,F<h?>>"))
+B.Im={Hardware:0,Netzwerk:1,"IT-Sicherheit":2,Datenschutz:3,Nachhaltigkeit:4,Wirtschaft:5,Projektmanagement:6,Programmierung:7,"Ergonomie & Soziales":8,Recht:9,Berechnung:10,"Cloud & Virtualisierung":11,"IT-Service-Management":12,Systemadministration:13,Datenspeicherung:14,Kommunikation:15}
+B.F_=A.b(s(["BIOS vs. UEFI","Bootvorgang","CPU","DDR4 vs. DDR5","HDD","NVMe","RAM","SSD","Ger\xe4teklassen","Netzteil-Leistungsberechnung","Netzteil-Wirkungsgrad","S.M.A.R.T.","Daisy Chaining","Monitoranschl\xfcsse","Peripherieanschl\xfcsse","RGB-Farbraum","Dateigr\xf6\xdfen-Berechnung","\xdcbertragungsdauer","RAID","RAID-Level","Cache","USB-Standards","W\xe4rmeleitpaste","Mainboard","Chipsatz","JBOD","NAS","SAN"]),t.s)
+B.G5=A.b(s(["ARP","APIPA","DHCP","DNS","IPv4","IPv6","MAC-Adresse","OSI-Modell","Router","RJ-45","SLAAC","Subnetting","Switch","TCP","UDP","WLAN-Standards","VPN","Firewall","Daisy Chaining","Monitoranschl\xfcsse","Peripherieanschl\xfcsse","VLAN","DMZ","Proxy-Server","HTTPS","TLS","Ping","Netzwerkdiagnose","Netzwerktopologien","NAT","Portweiterleitung","SNMP","QoS","CIDR","IDS / IPS"]),t.s)
+B.FM=A.b(s(["BSI-Grundschutz","BYOD","Digitales Zertifikat","Endpoint-Security","Firewall","Hashverfahren","H\xe4rtung","Passwortrichtlinie","Phishing","Ransomware","Schutzziele (CIA)","Trojaner","Virus","VPN","Verschl\xfcsselung","Zwei-Faktor-Authentisierung","Zutrittskontrolle","TOM","Social Engineering","DKIM","SPF","DMARC","Schwachstellenmanagement","Penetrationstest","Zero Trust","IDS / IPS","AES","RSA","OAuth 2.0","DMZ"]),t.s)
+B.FQ=A.b(s(["Anonymisierung vs. Pseudonymisierung","BDSG","Betroffenenrechte","BYOD","DSGVO","Datensicherung (Backup)","TOM","Datenschutzbeauftragter","Datenschutz-Folgenabsch\xe4tzung","Logging","Arbeitsschutzgesetz","Lizenzmodelle"]),t.s)
+B.Ft=A.b(s(["80-PLUS-Zertifikat","Blauer Engel","CO\u2082-Fu\xdfabdruck IT","EPEAT","ElektroG","Green IT","Konfliktmineralien","LkSG","Netzteil-Wirkungsgrad","PUE-Wert","RoHS-Richtlinie","\xd6kodesign-Verordnung","Stromkosten-Berechnung","Energieeffizienz-Klassen"]),t.s)
+B.Fs=A.b(s(["Abschreibung (AfA)","Amortisationsrechnung","CAPEX vs. OPEX","Handelskalkulation","Kaufvertrag","Kaufvertragsst\xf6rungen","Leasing","Make-or-Buy","Nutzwertanalyse","Rabatt und Skonto","Ratendarlehen","Stromkosten-Berechnung","Stundensatz-Kalkulation","TCO","Lieferantenauswahl","Angebotsvergleich","Marktformen","Kapitalwertmethode","Barwertmethode","Lizenzmodelle"]),t.s)
+B.FN=A.b(s(["Gantt-Diagramm","Lastenheft vs. Pflichtenheft","Netzplan","SMART-Kriterien","Schreibtischtest","Change Management","Make-or-Buy","Nutzwertanalyse","BPMN","ERM","UML Aktivit\xe4tsdiagramm","UML Use-Case-Diagramm","Scrum","Kanban","Agile Methoden","Stakeholder","Projektmanagement-Methoden"]),t.s)
+B.EO=A.b(s(["Compiler vs. Interpreter","ERM","Pseudocode","Schreibtischtest","BPMN","UML Aktivit\xe4tsdiagramm","UML Use-Case-Diagramm","Struktogramm","SQL Grundlagen","SQL SELECT","SQL JOIN","Datenbankmodelle","Normalisierung","KI / K\xfcnstliche Intelligenz","Machine Learning"]),t.s)
+B.Ec=A.b(s(["4-Ohren-Modell","Barrierefreiheit (IT)","Bildschirmarbeitsplatz","Change Management","Homeoffice","SMART-Kriterien","Arbeitsschutzgesetz","Stakeholder"]),t.s)
+B.Ff=A.b(s(["BDSG","Betroffenenrechte","DSGVO","ElektroG","Kaufvertrag","Kaufvertragsst\xf6rungen","Konfliktmineralien","LkSG","RoHS-Richtlinie","TOM","\xd6kodesign-Verordnung","Datenschutzbeauftragter","Datenschutz-Folgenabsch\xe4tzung","Lizenzmodelle","Arbeitsschutzgesetz"]),t.s)
+B.G_=A.b(s(["Abschreibung (AfA)","Amortisationsrechnung","Dateigr\xf6\xdfen-Berechnung","Handelskalkulation","Netzteil-Leistungsberechnung","Rabatt und Skonto","Ratendarlehen","Stromkosten-Berechnung","Stundensatz-Kalkulation","Subnetting","TCO","\xdcbertragungsdauer","Nutzwertanalyse","Angebotsvergleich","Kapitalwertmethode","Barwertmethode","CIDR"]),t.s)
+B.FY=A.b(s(["Cloud-Modelle","IaaS","PaaS","SaaS","Virtualisierung","Hypervisor","Docker","Container","Kubernetes","CAPEX vs. OPEX","TCO","Datensicherung (Backup)","NAS","SAN"]),t.s)
+B.G2=A.b(s(["ITIL","SLA","Incident Management","Problem Management","Change Management","CMDB","Verf\xfcgbarkeit","MTBF / MTTR","RTO / RPO","Datensicherung (Backup)","Schutzziele (CIA)"]),t.s)
+B.EY=A.b(s(["Betriebssysteme","Gruppenrichtlinien","Active Directory","LDAP","Kerberos","Dateirechte (Linux)","CMDB","Logging","Passwortrichtlinie","H\xe4rtung","Endpoint-Security","Zwei-Faktor-Authentisierung","Zutrittskontrolle"]),t.s)
+B.Fd=A.b(s(["RAID","RAID-Level","JBOD","NAS","SAN","HDD","SSD","NVMe","Datensicherung (Backup)","RTO / RPO","S.M.A.R.T."]),t.s)
+B.EJ=A.b(s(["RFID","NFC","USB-Standards","QoS","SNMP","WLAN-Standards","RJ-45","Monitoranschl\xfcsse","Peripherieanschl\xfcsse","Bluetooth"]),t.s)
+B.rM=new A.bF(B.Im,[B.F_,B.G5,B.FM,B.FQ,B.Ft,B.Fs,B.FN,B.EO,B.Ec,B.Ff,B.G_,B.FY,B.G2,B.EY,B.Fd,B.EJ],t.VJ)
+B.Ik={KeyA:0,KeyB:1,KeyC:2,KeyD:3,KeyE:4,KeyF:5,KeyG:6,KeyH:7,KeyI:8,KeyJ:9,KeyK:10,KeyL:11,KeyM:12,KeyN:13,KeyO:14,KeyP:15,KeyQ:16,KeyR:17,KeyS:18,KeyT:19,KeyU:20,KeyV:21,KeyW:22,KeyX:23,KeyY:24,KeyZ:25,Digit1:26,Digit2:27,Digit3:28,Digit4:29,Digit5:30,Digit6:31,Digit7:32,Digit8:33,Digit9:34,Digit0:35,Minus:36,Equal:37,BracketLeft:38,BracketRight:39,Backslash:40,Semicolon:41,Quote:42,Backquote:43,Comma:44,Period:45,Slash:46}
+B.j6=new A.bF(B.Ik,["a","b","c","d","e","f","g","h","i","j","k","l","m","n","o","p","q","r","s","t","u","v","w","x","y","z","1","2","3","4","5","6","7","8","9","0","-","=","[","]","\\",";","'","`",",",".","/"],t.li)
+B.Ih={Abort:0,Again:1,AltLeft:2,AltRight:3,ArrowDown:4,ArrowLeft:5,ArrowRight:6,ArrowUp:7,AudioVolumeDown:8,AudioVolumeMute:9,AudioVolumeUp:10,Backquote:11,Backslash:12,Backspace:13,BracketLeft:14,BracketRight:15,BrightnessDown:16,BrightnessUp:17,BrowserBack:18,BrowserFavorites:19,BrowserForward:20,BrowserHome:21,BrowserRefresh:22,BrowserSearch:23,BrowserStop:24,CapsLock:25,Comma:26,ContextMenu:27,ControlLeft:28,ControlRight:29,Convert:30,Copy:31,Cut:32,Delete:33,Digit0:34,Digit1:35,Digit2:36,Digit3:37,Digit4:38,Digit5:39,Digit6:40,Digit7:41,Digit8:42,Digit9:43,DisplayToggleIntExt:44,Eject:45,End:46,Enter:47,Equal:48,Escape:49,Esc:50,F1:51,F10:52,F11:53,F12:54,F13:55,F14:56,F15:57,F16:58,F17:59,F18:60,F19:61,F2:62,F20:63,F21:64,F22:65,F23:66,F24:67,F3:68,F4:69,F5:70,F6:71,F7:72,F8:73,F9:74,Find:75,Fn:76,FnLock:77,GameButton1:78,GameButton10:79,GameButton11:80,GameButton12:81,GameButton13:82,GameButton14:83,GameButton15:84,GameButton16:85,GameButton2:86,GameButton3:87,GameButton4:88,GameButton5:89,GameButton6:90,GameButton7:91,GameButton8:92,GameButton9:93,GameButtonA:94,GameButtonB:95,GameButtonC:96,GameButtonLeft1:97,GameButtonLeft2:98,GameButtonMode:99,GameButtonRight1:100,GameButtonRight2:101,GameButtonSelect:102,GameButtonStart:103,GameButtonThumbLeft:104,GameButtonThumbRight:105,GameButtonX:106,GameButtonY:107,GameButtonZ:108,Help:109,Home:110,Hyper:111,Insert:112,IntlBackslash:113,IntlRo:114,IntlYen:115,KanaMode:116,KeyA:117,KeyB:118,KeyC:119,KeyD:120,KeyE:121,KeyF:122,KeyG:123,KeyH:124,KeyI:125,KeyJ:126,KeyK:127,KeyL:128,KeyM:129,KeyN:130,KeyO:131,KeyP:132,KeyQ:133,KeyR:134,KeyS:135,KeyT:136,KeyU:137,KeyV:138,KeyW:139,KeyX:140,KeyY:141,KeyZ:142,KeyboardLayoutSelect:143,Lang1:144,Lang2:145,Lang3:146,Lang4:147,Lang5:148,LaunchApp1:149,LaunchApp2:150,LaunchAssistant:151,LaunchControlPanel:152,LaunchMail:153,LaunchScreenSaver:154,MailForward:155,MailReply:156,MailSend:157,MediaFastForward:158,MediaPause:159,MediaPlay:160,MediaPlayPause:161,MediaRecord:162,MediaRewind:163,MediaSelect:164,MediaStop:165,MediaTrackNext:166,MediaTrackPrevious:167,MetaLeft:168,MetaRight:169,MicrophoneMuteToggle:170,Minus:171,NonConvert:172,NumLock:173,Numpad0:174,Numpad1:175,Numpad2:176,Numpad3:177,Numpad4:178,Numpad5:179,Numpad6:180,Numpad7:181,Numpad8:182,Numpad9:183,NumpadAdd:184,NumpadBackspace:185,NumpadClear:186,NumpadClearEntry:187,NumpadComma:188,NumpadDecimal:189,NumpadDivide:190,NumpadEnter:191,NumpadEqual:192,NumpadMemoryAdd:193,NumpadMemoryClear:194,NumpadMemoryRecall:195,NumpadMemoryStore:196,NumpadMemorySubtract:197,NumpadMultiply:198,NumpadParenLeft:199,NumpadParenRight:200,NumpadSubtract:201,Open:202,PageDown:203,PageUp:204,Paste:205,Pause:206,Period:207,Power:208,PrintScreen:209,PrivacyScreenToggle:210,Props:211,Quote:212,Resume:213,ScrollLock:214,Select:215,SelectTask:216,Semicolon:217,ShiftLeft:218,ShiftRight:219,ShowAllWindows:220,Slash:221,Sleep:222,Space:223,Super:224,Suspend:225,Tab:226,Turbo:227,Undo:228,WakeUp:229,ZoomToggle:230}
 B.vH=new A.m(458907)
 B.vn=new A.m(458873)
 B.dd=new A.m(458978)
@@ -82522,60 +82527,60 @@ B.t5=new A.m(22)
 B.vo=new A.m(458874)
 B.vU=new A.m(65667)
 B.wm=new A.m(786994)
-B.rN=new A.bF(B.Id,[B.vH,B.vn,B.dd,B.df,B.uN,B.uM,B.uL,B.uO,B.vv,B.vt,B.vu,B.un,B.uk,B.ud,B.ui,B.uj,B.vX,B.vW,B.wh,B.wl,B.wi,B.wg,B.wk,B.wf,B.wj,B.cv,B.uo,B.v5,B.db,B.el,B.vA,B.vq,B.vp,B.uI,B.ub,B.u2,B.u3,B.u4,B.u5,B.u6,B.u7,B.u8,B.u9,B.ua,B.vV,B.w5,B.uJ,B.uc,B.uh,B.jh,B.jh,B.ur,B.uA,B.uB,B.uC,B.v8,B.v9,B.va,B.vb,B.vc,B.vd,B.ve,B.us,B.vf,B.vg,B.vh,B.vi,B.vj,B.ut,B.uu,B.uv,B.uw,B.ux,B.uy,B.uz,B.vs,B.ek,B.t2,B.t8,B.th,B.ti,B.tj,B.tk,B.tl,B.tm,B.tn,B.t9,B.ta,B.tb,B.tc,B.td,B.te,B.tf,B.tg,B.to,B.tp,B.tq,B.tr,B.ts,B.tt,B.tu,B.tv,B.tw,B.tx,B.ty,B.tz,B.tA,B.tB,B.tC,B.vl,B.uG,B.t0,B.uF,B.v4,B.vx,B.vz,B.vy,B.tD,B.tE,B.tF,B.tG,B.tH,B.tI,B.tJ,B.tK,B.tL,B.tM,B.tN,B.tO,B.tP,B.tQ,B.tR,B.tS,B.tT,B.tU,B.tV,B.tW,B.tX,B.tY,B.tZ,B.u_,B.u0,B.u1,B.wq,B.vC,B.vD,B.vE,B.vF,B.vG,B.wa,B.w9,B.we,B.wb,B.w8,B.wd,B.wo,B.wn,B.wp,B.w0,B.vZ,B.vY,B.w6,B.w_,B.w1,B.w7,B.w4,B.w2,B.w3,B.de,B.en,B.t7,B.ug,B.vB,B.fT,B.v2,B.uU,B.uV,B.uW,B.uX,B.uY,B.uZ,B.v_,B.v0,B.v1,B.uS,B.vL,B.vR,B.vS,B.vw,B.v3,B.uP,B.uT,B.v7,B.vP,B.vO,B.vN,B.vM,B.vQ,B.uQ,B.vJ,B.vK,B.uR,B.vk,B.uK,B.uH,B.vr,B.uE,B.up,B.v6,B.uD,B.t6,B.vI,B.um,B.t4,B.fS,B.vm,B.wc,B.ul,B.dc,B.em,B.wr,B.uq,B.vT,B.uf,B.t1,B.t3,B.ue,B.t5,B.vo,B.vU,B.wm],A.aw("bF<q,m>"))
-B.Il={"deleteBackward:":0,"deleteWordBackward:":1,"deleteToBeginningOfLine:":2,"deleteForward:":3,"deleteWordForward:":4,"deleteToEndOfLine:":5,"moveLeft:":6,"moveRight:":7,"moveForward:":8,"moveBackward:":9,"moveUp:":10,"moveDown:":11,"moveLeftAndModifySelection:":12,"moveRightAndModifySelection:":13,"moveUpAndModifySelection:":14,"moveDownAndModifySelection:":15,"moveWordLeft:":16,"moveWordRight:":17,"moveToBeginningOfParagraph:":18,"moveToEndOfParagraph:":19,"moveWordLeftAndModifySelection:":20,"moveWordRightAndModifySelection:":21,"moveParagraphBackwardAndModifySelection:":22,"moveParagraphForwardAndModifySelection:":23,"moveToLeftEndOfLine:":24,"moveToRightEndOfLine:":25,"moveToBeginningOfDocument:":26,"moveToEndOfDocument:":27,"moveToLeftEndOfLineAndModifySelection:":28,"moveToRightEndOfLineAndModifySelection:":29,"moveToBeginningOfDocumentAndModifySelection:":30,"moveToEndOfDocumentAndModifySelection:":31,"transpose:":32,"scrollToBeginningOfDocument:":33,"scrollToEndOfDocument:":34,"scrollPageUp:":35,"scrollPageDown:":36,"pageUpAndModifySelection:":37,"pageDownAndModifySelection:":38,"cancelOperation:":39,"insertTab:":40,"insertBacktab:":41}
+B.rN=new A.bF(B.Ih,[B.vH,B.vn,B.dd,B.df,B.uN,B.uM,B.uL,B.uO,B.vv,B.vt,B.vu,B.un,B.uk,B.ud,B.ui,B.uj,B.vX,B.vW,B.wh,B.wl,B.wi,B.wg,B.wk,B.wf,B.wj,B.cv,B.uo,B.v5,B.db,B.el,B.vA,B.vq,B.vp,B.uI,B.ub,B.u2,B.u3,B.u4,B.u5,B.u6,B.u7,B.u8,B.u9,B.ua,B.vV,B.w5,B.uJ,B.uc,B.uh,B.jh,B.jh,B.ur,B.uA,B.uB,B.uC,B.v8,B.v9,B.va,B.vb,B.vc,B.vd,B.ve,B.us,B.vf,B.vg,B.vh,B.vi,B.vj,B.ut,B.uu,B.uv,B.uw,B.ux,B.uy,B.uz,B.vs,B.ek,B.t2,B.t8,B.th,B.ti,B.tj,B.tk,B.tl,B.tm,B.tn,B.t9,B.ta,B.tb,B.tc,B.td,B.te,B.tf,B.tg,B.to,B.tp,B.tq,B.tr,B.ts,B.tt,B.tu,B.tv,B.tw,B.tx,B.ty,B.tz,B.tA,B.tB,B.tC,B.vl,B.uG,B.t0,B.uF,B.v4,B.vx,B.vz,B.vy,B.tD,B.tE,B.tF,B.tG,B.tH,B.tI,B.tJ,B.tK,B.tL,B.tM,B.tN,B.tO,B.tP,B.tQ,B.tR,B.tS,B.tT,B.tU,B.tV,B.tW,B.tX,B.tY,B.tZ,B.u_,B.u0,B.u1,B.wq,B.vC,B.vD,B.vE,B.vF,B.vG,B.wa,B.w9,B.we,B.wb,B.w8,B.wd,B.wo,B.wn,B.wp,B.w0,B.vZ,B.vY,B.w6,B.w_,B.w1,B.w7,B.w4,B.w2,B.w3,B.de,B.en,B.t7,B.ug,B.vB,B.fT,B.v2,B.uU,B.uV,B.uW,B.uX,B.uY,B.uZ,B.v_,B.v0,B.v1,B.uS,B.vL,B.vR,B.vS,B.vw,B.v3,B.uP,B.uT,B.v7,B.vP,B.vO,B.vN,B.vM,B.vQ,B.uQ,B.vJ,B.vK,B.uR,B.vk,B.uK,B.uH,B.vr,B.uE,B.up,B.v6,B.uD,B.t6,B.vI,B.um,B.t4,B.fS,B.vm,B.wc,B.ul,B.dc,B.em,B.wr,B.uq,B.vT,B.uf,B.t1,B.t3,B.ue,B.t5,B.vo,B.vU,B.wm],A.aw("bF<q,m>"))
+B.Iq={"deleteBackward:":0,"deleteWordBackward:":1,"deleteToBeginningOfLine:":2,"deleteForward:":3,"deleteWordForward:":4,"deleteToEndOfLine:":5,"moveLeft:":6,"moveRight:":7,"moveForward:":8,"moveBackward:":9,"moveUp:":10,"moveDown:":11,"moveLeftAndModifySelection:":12,"moveRightAndModifySelection:":13,"moveUpAndModifySelection:":14,"moveDownAndModifySelection:":15,"moveWordLeft:":16,"moveWordRight:":17,"moveToBeginningOfParagraph:":18,"moveToEndOfParagraph:":19,"moveWordLeftAndModifySelection:":20,"moveWordRightAndModifySelection:":21,"moveParagraphBackwardAndModifySelection:":22,"moveParagraphForwardAndModifySelection:":23,"moveToLeftEndOfLine:":24,"moveToRightEndOfLine:":25,"moveToBeginningOfDocument:":26,"moveToEndOfDocument:":27,"moveToLeftEndOfLineAndModifySelection:":28,"moveToRightEndOfLineAndModifySelection:":29,"moveToBeginningOfDocumentAndModifySelection:":30,"moveToEndOfDocumentAndModifySelection:":31,"transpose:":32,"scrollToBeginningOfDocument:":33,"scrollToEndOfDocument:":34,"scrollPageUp:":35,"scrollPageDown:":36,"pageUpAndModifySelection:":37,"pageDownAndModifySelection:":38,"cancelOperation:":39,"insertTab:":40,"insertBacktab:":41}
 B.wJ=new A.kq(!1)
 B.wK=new A.kq(!0)
-B.HL=new A.bF(B.Il,[B.ii,B.il,B.ij,B.dW,B.dX,B.ik,B.cW,B.cX,B.cX,B.cW,B.cY,B.cZ,B.fj,B.fk,B.dZ,B.e_,B.fn,B.fo,B.cg,B.ch,B.m8,B.m9,B.m4,B.m5,B.cg,B.ch,B.fl,B.fm,B.lX,B.lY,B.iB,B.iC,B.kT,B.wJ,B.wK,B.jn,B.h3,B.fp,B.fq,B.kI,B.kO,B.kQ],A.aw("bF<q,aN>"))
-B.Ih={BU:0,DD:1,FX:2,TP:3,YD:4,ZR:5}
-B.bJ=new A.bF(B.Ih,["MM","DE","FR","TL","YE","CD"],t.li)
-B.J5=new A.m(458752)
-B.J6=new A.m(458753)
-B.J7=new A.m(458754)
-B.J8=new A.m(458755)
-B.J9=new A.m(458967)
-B.Ja=new A.m(786528)
-B.Jb=new A.m(786529)
-B.Jc=new A.m(786546)
-B.Jd=new A.m(786547)
-B.Je=new A.m(786548)
-B.Jf=new A.m(786549)
-B.Jg=new A.m(786553)
-B.Jh=new A.m(786554)
-B.Ji=new A.m(786563)
-B.Jj=new A.m(786572)
-B.Jk=new A.m(786573)
-B.Jl=new A.m(786580)
-B.Jm=new A.m(786588)
-B.Jn=new A.m(786589)
-B.Jo=new A.m(786639)
-B.Jp=new A.m(786661)
-B.Jq=new A.m(786820)
-B.Jr=new A.m(786822)
-B.Js=new A.m(786829)
-B.Jt=new A.m(786830)
-B.Ju=new A.m(786838)
-B.Jv=new A.m(786844)
-B.Jw=new A.m(786846)
-B.Jx=new A.m(786855)
-B.Jy=new A.m(786859)
-B.Jz=new A.m(786862)
-B.JA=new A.m(786871)
-B.JB=new A.m(786945)
-B.JC=new A.m(786947)
-B.JD=new A.m(786951)
-B.JE=new A.m(786952)
-B.JF=new A.m(786989)
-B.JG=new A.m(786990)
-B.JH=new A.m(787065)
-B.HM=new A.cT([16,B.t0,17,B.t1,18,B.ek,19,B.t2,20,B.t3,21,B.t4,22,B.t5,23,B.t6,24,B.t7,65666,B.vT,65667,B.vU,65717,B.vV,392961,B.t8,392962,B.t9,392963,B.ta,392964,B.tb,392965,B.tc,392966,B.td,392967,B.te,392968,B.tf,392969,B.tg,392970,B.th,392971,B.ti,392972,B.tj,392973,B.tk,392974,B.tl,392975,B.tm,392976,B.tn,392977,B.to,392978,B.tp,392979,B.tq,392980,B.tr,392981,B.ts,392982,B.tt,392983,B.tu,392984,B.tv,392985,B.tw,392986,B.tx,392987,B.ty,392988,B.tz,392989,B.tA,392990,B.tB,392991,B.tC,458752,B.J5,458753,B.J6,458754,B.J7,458755,B.J8,458756,B.tD,458757,B.tE,458758,B.tF,458759,B.tG,458760,B.tH,458761,B.tI,458762,B.tJ,458763,B.tK,458764,B.tL,458765,B.tM,458766,B.tN,458767,B.tO,458768,B.tP,458769,B.tQ,458770,B.tR,458771,B.tS,458772,B.tT,458773,B.tU,458774,B.tV,458775,B.tW,458776,B.tX,458777,B.tY,458778,B.tZ,458779,B.u_,458780,B.u0,458781,B.u1,458782,B.u2,458783,B.u3,458784,B.u4,458785,B.u5,458786,B.u6,458787,B.u7,458788,B.u8,458789,B.u9,458790,B.ua,458791,B.ub,458792,B.uc,458793,B.jh,458794,B.ud,458795,B.ue,458796,B.uf,458797,B.ug,458798,B.uh,458799,B.ui,458800,B.uj,458801,B.uk,458803,B.ul,458804,B.um,458805,B.un,458806,B.uo,458807,B.up,458808,B.uq,458809,B.cv,458810,B.ur,458811,B.us,458812,B.ut,458813,B.uu,458814,B.uv,458815,B.uw,458816,B.ux,458817,B.uy,458818,B.uz,458819,B.uA,458820,B.uB,458821,B.uC,458822,B.uD,458823,B.fS,458824,B.uE,458825,B.uF,458826,B.uG,458827,B.uH,458828,B.uI,458829,B.uJ,458830,B.uK,458831,B.uL,458832,B.uM,458833,B.uN,458834,B.uO,458835,B.fT,458836,B.uP,458837,B.uQ,458838,B.uR,458839,B.uS,458840,B.uT,458841,B.uU,458842,B.uV,458843,B.uW,458844,B.uX,458845,B.uY,458846,B.uZ,458847,B.v_,458848,B.v0,458849,B.v1,458850,B.v2,458851,B.v3,458852,B.v4,458853,B.v5,458854,B.v6,458855,B.v7,458856,B.v8,458857,B.v9,458858,B.va,458859,B.vb,458860,B.vc,458861,B.vd,458862,B.ve,458863,B.vf,458864,B.vg,458865,B.vh,458866,B.vi,458867,B.vj,458868,B.vk,458869,B.vl,458871,B.vm,458873,B.vn,458874,B.vo,458875,B.vp,458876,B.vq,458877,B.vr,458878,B.vs,458879,B.vt,458880,B.vu,458881,B.vv,458885,B.vw,458887,B.vx,458888,B.vy,458889,B.vz,458890,B.vA,458891,B.vB,458896,B.vC,458897,B.vD,458898,B.vE,458899,B.vF,458900,B.vG,458907,B.vH,458915,B.vI,458934,B.vJ,458935,B.vK,458939,B.vL,458960,B.vM,458961,B.vN,458962,B.vO,458963,B.vP,458964,B.vQ,458967,B.J9,458968,B.vR,458969,B.vS,458976,B.db,458977,B.dc,458978,B.dd,458979,B.de,458980,B.el,458981,B.em,458982,B.df,458983,B.en,786528,B.Ja,786529,B.Jb,786543,B.vW,786544,B.vX,786546,B.Jc,786547,B.Jd,786548,B.Je,786549,B.Jf,786553,B.Jg,786554,B.Jh,786563,B.Ji,786572,B.Jj,786573,B.Jk,786580,B.Jl,786588,B.Jm,786589,B.Jn,786608,B.vY,786609,B.vZ,786610,B.w_,786611,B.w0,786612,B.w1,786613,B.w2,786614,B.w3,786615,B.w4,786616,B.w5,786637,B.w6,786639,B.Jo,786661,B.Jp,786819,B.w7,786820,B.Jq,786822,B.Jr,786826,B.w8,786829,B.Js,786830,B.Jt,786834,B.w9,786836,B.wa,786838,B.Ju,786844,B.Jv,786846,B.Jw,786847,B.wb,786850,B.wc,786855,B.Jx,786859,B.Jy,786862,B.Jz,786865,B.wd,786871,B.JA,786891,B.we,786945,B.JB,786947,B.JC,786951,B.JD,786952,B.JE,786977,B.wf,786979,B.wg,786980,B.wh,786981,B.wi,786982,B.wj,786983,B.wk,786986,B.wl,786989,B.JF,786990,B.JG,786994,B.wm,787065,B.JH,787081,B.wn,787083,B.wo,787084,B.wp,787101,B.wq,787103,B.wr],A.aw("cT<n,m>"))
-B.HN=new A.xC(null,null,null,null,null,null,null,null)
+B.HQ=new A.bF(B.Iq,[B.ii,B.il,B.ij,B.dW,B.dX,B.ik,B.cW,B.cX,B.cX,B.cW,B.cY,B.cZ,B.fj,B.fk,B.dZ,B.e_,B.fn,B.fo,B.cg,B.ch,B.m8,B.m9,B.m4,B.m5,B.cg,B.ch,B.fl,B.fm,B.lX,B.lY,B.iB,B.iC,B.kT,B.wJ,B.wK,B.jn,B.h3,B.fp,B.fq,B.kI,B.kO,B.kQ],A.aw("bF<q,aN>"))
+B.Il={BU:0,DD:1,FX:2,TP:3,YD:4,ZR:5}
+B.bJ=new A.bF(B.Il,["MM","DE","FR","TL","YE","CD"],t.li)
+B.Ja=new A.m(458752)
+B.Jb=new A.m(458753)
+B.Jc=new A.m(458754)
+B.Jd=new A.m(458755)
+B.Je=new A.m(458967)
+B.Jf=new A.m(786528)
+B.Jg=new A.m(786529)
+B.Jh=new A.m(786546)
+B.Ji=new A.m(786547)
+B.Jj=new A.m(786548)
+B.Jk=new A.m(786549)
+B.Jl=new A.m(786553)
+B.Jm=new A.m(786554)
+B.Jn=new A.m(786563)
+B.Jo=new A.m(786572)
+B.Jp=new A.m(786573)
+B.Jq=new A.m(786580)
+B.Jr=new A.m(786588)
+B.Js=new A.m(786589)
+B.Jt=new A.m(786639)
+B.Ju=new A.m(786661)
+B.Jv=new A.m(786820)
+B.Jw=new A.m(786822)
+B.Jx=new A.m(786829)
+B.Jy=new A.m(786830)
+B.Jz=new A.m(786838)
+B.JA=new A.m(786844)
+B.JB=new A.m(786846)
+B.JC=new A.m(786855)
+B.JD=new A.m(786859)
+B.JE=new A.m(786862)
+B.JF=new A.m(786871)
+B.JG=new A.m(786945)
+B.JH=new A.m(786947)
+B.JI=new A.m(786951)
+B.JJ=new A.m(786952)
+B.JK=new A.m(786989)
+B.JL=new A.m(786990)
+B.JM=new A.m(787065)
+B.HR=new A.cT([16,B.t0,17,B.t1,18,B.ek,19,B.t2,20,B.t3,21,B.t4,22,B.t5,23,B.t6,24,B.t7,65666,B.vT,65667,B.vU,65717,B.vV,392961,B.t8,392962,B.t9,392963,B.ta,392964,B.tb,392965,B.tc,392966,B.td,392967,B.te,392968,B.tf,392969,B.tg,392970,B.th,392971,B.ti,392972,B.tj,392973,B.tk,392974,B.tl,392975,B.tm,392976,B.tn,392977,B.to,392978,B.tp,392979,B.tq,392980,B.tr,392981,B.ts,392982,B.tt,392983,B.tu,392984,B.tv,392985,B.tw,392986,B.tx,392987,B.ty,392988,B.tz,392989,B.tA,392990,B.tB,392991,B.tC,458752,B.Ja,458753,B.Jb,458754,B.Jc,458755,B.Jd,458756,B.tD,458757,B.tE,458758,B.tF,458759,B.tG,458760,B.tH,458761,B.tI,458762,B.tJ,458763,B.tK,458764,B.tL,458765,B.tM,458766,B.tN,458767,B.tO,458768,B.tP,458769,B.tQ,458770,B.tR,458771,B.tS,458772,B.tT,458773,B.tU,458774,B.tV,458775,B.tW,458776,B.tX,458777,B.tY,458778,B.tZ,458779,B.u_,458780,B.u0,458781,B.u1,458782,B.u2,458783,B.u3,458784,B.u4,458785,B.u5,458786,B.u6,458787,B.u7,458788,B.u8,458789,B.u9,458790,B.ua,458791,B.ub,458792,B.uc,458793,B.jh,458794,B.ud,458795,B.ue,458796,B.uf,458797,B.ug,458798,B.uh,458799,B.ui,458800,B.uj,458801,B.uk,458803,B.ul,458804,B.um,458805,B.un,458806,B.uo,458807,B.up,458808,B.uq,458809,B.cv,458810,B.ur,458811,B.us,458812,B.ut,458813,B.uu,458814,B.uv,458815,B.uw,458816,B.ux,458817,B.uy,458818,B.uz,458819,B.uA,458820,B.uB,458821,B.uC,458822,B.uD,458823,B.fS,458824,B.uE,458825,B.uF,458826,B.uG,458827,B.uH,458828,B.uI,458829,B.uJ,458830,B.uK,458831,B.uL,458832,B.uM,458833,B.uN,458834,B.uO,458835,B.fT,458836,B.uP,458837,B.uQ,458838,B.uR,458839,B.uS,458840,B.uT,458841,B.uU,458842,B.uV,458843,B.uW,458844,B.uX,458845,B.uY,458846,B.uZ,458847,B.v_,458848,B.v0,458849,B.v1,458850,B.v2,458851,B.v3,458852,B.v4,458853,B.v5,458854,B.v6,458855,B.v7,458856,B.v8,458857,B.v9,458858,B.va,458859,B.vb,458860,B.vc,458861,B.vd,458862,B.ve,458863,B.vf,458864,B.vg,458865,B.vh,458866,B.vi,458867,B.vj,458868,B.vk,458869,B.vl,458871,B.vm,458873,B.vn,458874,B.vo,458875,B.vp,458876,B.vq,458877,B.vr,458878,B.vs,458879,B.vt,458880,B.vu,458881,B.vv,458885,B.vw,458887,B.vx,458888,B.vy,458889,B.vz,458890,B.vA,458891,B.vB,458896,B.vC,458897,B.vD,458898,B.vE,458899,B.vF,458900,B.vG,458907,B.vH,458915,B.vI,458934,B.vJ,458935,B.vK,458939,B.vL,458960,B.vM,458961,B.vN,458962,B.vO,458963,B.vP,458964,B.vQ,458967,B.Je,458968,B.vR,458969,B.vS,458976,B.db,458977,B.dc,458978,B.dd,458979,B.de,458980,B.el,458981,B.em,458982,B.df,458983,B.en,786528,B.Jf,786529,B.Jg,786543,B.vW,786544,B.vX,786546,B.Jh,786547,B.Ji,786548,B.Jj,786549,B.Jk,786553,B.Jl,786554,B.Jm,786563,B.Jn,786572,B.Jo,786573,B.Jp,786580,B.Jq,786588,B.Jr,786589,B.Js,786608,B.vY,786609,B.vZ,786610,B.w_,786611,B.w0,786612,B.w1,786613,B.w2,786614,B.w3,786615,B.w4,786616,B.w5,786637,B.w6,786639,B.Jt,786661,B.Ju,786819,B.w7,786820,B.Jv,786822,B.Jw,786826,B.w8,786829,B.Jx,786830,B.Jy,786834,B.w9,786836,B.wa,786838,B.Jz,786844,B.JA,786846,B.JB,786847,B.wb,786850,B.wc,786855,B.JC,786859,B.JD,786862,B.JE,786865,B.wd,786871,B.JF,786891,B.we,786945,B.JG,786947,B.JH,786951,B.JI,786952,B.JJ,786977,B.wf,786979,B.wg,786980,B.wh,786981,B.wi,786982,B.wj,786983,B.wk,786986,B.wl,786989,B.JK,786990,B.JL,786994,B.wm,787065,B.JM,787081,B.wn,787083,B.wo,787084,B.wp,787101,B.wq,787103,B.wr],A.aw("cT<n,m>"))
+B.HS=new A.xC(null,null,null,null,null,null,null,null)
 B.AE=new A.w(1,0.39215686274509803,0.7098039215686275,0.9647058823529412,B.f)
 B.AJ=new A.w(1,0.25882352941176473,0.6470588235294118,0.9607843137254902,B.f)
 B.Be=new A.w(1,0.08235294117647059,0.396078431372549,0.7529411764705882,B.f)
 B.AT=new A.w(1,0.050980392156862744,0.2784313725490196,0.6313725490196078,B.f)
-B.HJ=new A.cT([50,B.l_,100,B.lq,200,B.le,300,B.AE,400,B.AJ,500,B.l9,600,B.lk,700,B.lt,800,B.Be,900,B.AT],t.pl)
-B.j7=new A.r5(B.HJ,1,0.12941176470588237,0.5882352941176471,0.9529411764705882,B.f)
+B.HO=new A.cT([50,B.l_,100,B.lq,200,B.le,300,B.AE,400,B.AJ,500,B.l9,600,B.lk,700,B.lt,800,B.Be,900,B.AT],t.pl)
+B.j7=new A.r5(B.HO,1,0.12941176470588237,0.5882352941176471,0.9529411764705882,B.f)
 B.Bg=new A.w(1,0.984313725490196,0.9137254901960784,0.9058823529411765,B.f)
 B.AR=new A.w(1,1,0.8,0.7372549019607844,B.f)
 B.B1=new A.w(1,1,0.6705882352941176,0.5686274509803921,B.f)
@@ -82586,106 +82591,106 @@ B.AB=new A.w(1,0.9568627450980393,0.3176470588235294,0.11764705882352941,B.f)
 B.Bd=new A.w(1,0.9019607843137255,0.2901960784313726,0.09803921568627451,B.f)
 B.AM=new A.w(1,0.8470588235294118,0.2627450980392157,0.08235294117647059,B.f)
 B.Bc=new A.w(1,0.7490196078431373,0.21176470588235294,0.047058823529411764,B.f)
-B.HK=new A.cT([50,B.Bg,100,B.AR,200,B.B1,300,B.AW,400,B.AA,500,B.B7,600,B.AB,700,B.Bd,800,B.AM,900,B.Bc],t.pl)
-B.rO=new A.r5(B.HK,1,1,0.3411764705882353,0.13333333333333333,B.f)
-B.HO=new A.od(0,"padded")
-B.HP=new A.od(1,"shrinkWrap")
+B.HP=new A.cT([50,B.Bg,100,B.AR,200,B.B1,300,B.AW,400,B.AA,500,B.B7,600,B.AB,700,B.Bd,800,B.AM,900,B.Bc],t.pl)
+B.rO=new A.r5(B.HP,1,1,0.3411764705882353,0.13333333333333333,B.f)
+B.HT=new A.od(0,"padded")
+B.HU=new A.od(1,"shrinkWrap")
 B.ct=new A.oe(0,"canvas")
 B.eh=new A.oe(1,"card")
 B.rP=new A.oe(2,"circle")
 B.j8=new A.oe(3,"button")
 B.fP=new A.oe(4,"transparency")
-B.HQ=new A.In(0,"none")
-B.HR=new A.In(2,"truncateAfterCompositionEnds")
-B.HS=new A.Iq(null,null)
-B.HT=new A.xH(null)
-B.HU=new A.r8(null,null)
-B.HV=new A.h9("popRoute",null)
-B.HW=new A.r9("flutter/service_worker",B.by,null)
+B.HV=new A.In(0,"none")
+B.HW=new A.In(2,"truncateAfterCompositionEnds")
+B.HX=new A.Iq(null,null)
+B.HY=new A.xH(null)
+B.HZ=new A.r8(null,null)
+B.I_=new A.h9("popRoute",null)
+B.I0=new A.r9("flutter/service_worker",B.by,null)
 B.d9=new A.Iy(0,"latestPointer")
 B.jd=new A.Iy(1,"averageBoundaryPointers")
-B.HX=new A.ol(0,"clipRect")
-B.HY=new A.ol(1,"clipRRect")
-B.HZ=new A.ol(2,"clipPath")
-B.I_=new A.ol(3,"transform")
-B.I0=new A.ol(4,"opacity")
-B.I1=new A.Iz(null)
-B.I5=new A.xX(null,null,null,null,null,null,null,null,null,null,null,null)
-B.I6=new A.xY(null,null,null,null,null,null,null,null,null,null)
+B.I1=new A.ol(0,"clipRect")
+B.I2=new A.ol(1,"clipRRect")
+B.I3=new A.ol(2,"clipPath")
+B.I4=new A.ol(3,"transform")
+B.I5=new A.ol(4,"opacity")
+B.I6=new A.Iz(null)
+B.Ia=new A.xX(null,null,null,null,null,null,null,null,null,null,null,null)
+B.Ib=new A.xY(null,null,null,null,null,null,null,null,null,null)
 B.da=new A.IC(0,"traditional")
 B.fQ=new A.IC(1,"directional")
-B.I7=new A.lN(!0)
-B.I8=new A.xZ(null,null,null,null,null,null,null,null,null,null,null,null,null)
+B.Ic=new A.lN(!0)
+B.Id=new A.xZ(null,null,null,null,null,null,null,null,null,null,null,null,null)
 B.rU=new A.dC(B.h,B.h)
 B.ei=new A.j(0,1)
-B.Im=new A.j(0,20)
-B.In=new A.j(0,26)
-B.Ip=new A.j(0,8)
-B.Iq=new A.j(0,-1)
-B.Ir=new A.j(11,-4)
+B.Ir=new A.j(0,20)
+B.Is=new A.j(0,26)
+B.Iu=new A.j(0,8)
+B.Iv=new A.j(0,-1)
+B.Iw=new A.j(11,-4)
 B.ej=new A.j(1,0)
-B.Is=new A.j(1,3)
-B.It=new A.j(22,0)
-B.Iu=new A.j(3,0)
-B.Iv=new A.j(3,-3)
-B.Iw=new A.j(6,6)
-B.Iz=new A.j(-0.3333333333333333,0)
-B.IB=new A.j(5,10.5)
-B.IC=new A.j(1/0,0)
-B.IG=new A.j(0,-0.25)
-B.IH=new A.j(-1,0)
-B.II=new A.j(-3,0)
-B.IJ=new A.j(-3,3)
-B.IK=new A.j(-3,-3)
-B.UO=new A.j(0,-0.005)
-B.IP=new A.j(1/0,1/0)
+B.Ix=new A.j(1,3)
+B.Iy=new A.j(22,0)
+B.Iz=new A.j(3,0)
+B.IA=new A.j(3,-3)
+B.IB=new A.j(6,6)
+B.IE=new A.j(-0.3333333333333333,0)
+B.IG=new A.j(5,10.5)
+B.IH=new A.j(1/0,0)
+B.IL=new A.j(0,-0.25)
+B.IM=new A.j(-1,0)
+B.IN=new A.j(-3,0)
+B.IO=new A.j(-3,3)
+B.IP=new A.j(-3,-3)
+B.UT=new A.j(0,-0.005)
+B.IU=new A.j(1/0,1/0)
 B.aT=new A.ka(0,"iOs")
 B.fR=new A.ka(1,"android")
 B.je=new A.ka(2,"linux")
 B.rW=new A.ka(3,"windows")
 B.bK=new A.ka(4,"macOs")
-B.IQ=new A.ka(5,"unknown")
+B.IV=new A.ka(5,"unknown")
 B.dC=new A.a1d()
-B.IR=new A.f5("flutter/undomanager",B.dC,null)
+B.IW=new A.f5("flutter/undomanager",B.dC,null)
 B.aJ=new A.f5("flutter/platform",B.dC,null)
 B.jf=new A.f5("flutter/navigation",B.dC,null)
-B.IS=new A.f5("flutter/backgesture",B.by,null)
+B.IX=new A.f5("flutter/backgesture",B.by,null)
 B.rX=new A.f5("flutter/menu",B.by,null)
 B.jg=new A.f5("flutter/restoration",B.by,null)
-B.IT=new A.f5("flutter/spellcheck",B.by,null)
+B.IY=new A.f5("flutter/spellcheck",B.by,null)
 B.rY=new A.f5("flutter/textinput",B.dC,null)
-B.IU=new A.f5("flutter/mousecursor",B.by,null)
-B.IV=new A.f5("flutter/processtext",B.by,null)
+B.IZ=new A.f5("flutter/mousecursor",B.by,null)
+B.J_=new A.f5("flutter/processtext",B.by,null)
 B.rZ=new A.f5("flutter/scribe",B.dC,null)
-B.IW=new A.f5("flutter/keyboard",B.by,null)
-B.IX=new A.re(0,null)
-B.IY=new A.IS(0,"portrait")
-B.IZ=new A.IS(1,"landscape")
-B.J_=new A.y6(null)
+B.J0=new A.f5("flutter/keyboard",B.by,null)
+B.J1=new A.re(0,null)
+B.J2=new A.IS(0,"portrait")
+B.J3=new A.IS(1,"landscape")
+B.J4=new A.y6(null)
 B.Cu=new A.aC(16,14,16,6)
-B.QH=new A.l(!0,B.d4,null,null,null,null,11,B.ap,null,1.2,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null)
-B.RB=new A.e8("BEWERTUNGSASPEKTE",null,B.QH,null,null,null,null,null,null)
-B.J0=new A.cY(B.Cu,B.RB,null)
-B.Ur=new A.S4(null)
-B.J1=new A.cY(B.lR,B.Ur,null)
+B.QM=new A.l(!0,B.d4,null,null,null,null,11,B.ap,null,1.2,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null)
+B.RG=new A.e8("BEWERTUNGSASPEKTE",null,B.QM,null,null,null,null,null,null)
+B.J5=new A.cY(B.Cu,B.RG,null)
+B.Uw=new A.S4(null)
+B.J6=new A.cY(B.lR,B.Uw,null)
 B.cu=new A.IX(0,"fill")
 B.bu=new A.IX(1,"stroke")
-B.J2=new A.lQ(1/0)
+B.J7=new A.lQ(1/0)
 B.t_=new A.IZ(0,"nonZero")
-B.J3=new A.IZ(1,"evenOdd")
-B.J4=new A.yb(null)
+B.J8=new A.IZ(1,"evenOdd")
+B.J9=new A.yb(null)
 B.ws=new A.lT(0,"baseline")
 B.wt=new A.lT(1,"aboveBaseline")
 B.wu=new A.lT(2,"belowBaseline")
 B.wv=new A.lT(3,"top")
 B.dg=new A.lT(4,"bottom")
 B.ww=new A.lT(5,"middle")
-B.JI=new A.rj(B.C,B.dg,null,null)
+B.JN=new A.rj(B.C,B.dg,null,null)
 B.wy=new A.kg(0,"cancel")
 B.ji=new A.kg(1,"add")
-B.JJ=new A.kg(2,"remove")
+B.JO=new A.kg(2,"remove")
 B.cw=new A.kg(3,"hover")
-B.JK=new A.kg(4,"down")
+B.JP=new A.kg(4,"down")
 B.fU=new A.kg(5,"move")
 B.wz=new A.kg(6,"up")
 B.aq=new A.j4(0,"touch")
@@ -82695,51 +82700,51 @@ B.bv=new A.j4(3,"invertedStylus")
 B.aL=new A.j4(4,"trackpad")
 B.bl=new A.j4(5,"unknown")
 B.fV=new A.rl(0,"none")
-B.JL=new A.rl(1,"scroll")
-B.JM=new A.rl(3,"scale")
-B.JN=new A.rl(4,"unknown")
-B.JO=new A.yf(null,null,null,null,null,null,null,null,null,null,null,null,null)
-B.JP=new A.yg(null,null,null,null,null,null,null,null,null,null,null,null,null,null,null)
-B.JQ=new A.yj(null,null,null,null,null,null)
+B.JQ=new A.rl(1,"scroll")
+B.JR=new A.rl(3,"scale")
+B.JS=new A.rl(4,"unknown")
+B.JT=new A.yf(null,null,null,null,null,null,null,null,null,null,null,null,null)
+B.JU=new A.yg(null,null,null,null,null,null,null,null,null,null,null,null,null,null,null)
+B.JV=new A.yj(null,null,null,null,null,null)
 B.wA=new A.aF(1,1)
 B.dh=new A.aF(2,2)
-B.JR=new A.aF(-1/0,-1/0)
-B.JS=new A.aF(1.5,1.5)
-B.JT=new A.aF(1/0,1/0)
-B.JU=new A.as(0,!0)
+B.JW=new A.aF(-1/0,-1/0)
+B.JX=new A.aF(1.5,1.5)
+B.JY=new A.aF(1/0,1/0)
+B.JZ=new A.as(0,!0)
 B.bN=new A.A6(2,"collapsed")
-B.JV=new A.as(B.bN,B.bN)
-B.JW=new A.as("IHK-Pr\xfcfungskatalog AP1","Offizieller Pr\xfcfungskatalog f\xfcr die gestreckten Abschlusspr\xfcfungen IT-Berufe, inkl. \xc4nderungen ab 2025 (neue Themen: Schreibtischtest, BPMN, Barrierefreiheit).")
-B.JX=new A.as("BSI-Grundschutz-Kompendium","https://www.bsi.bund.de/grundschutz")
-B.JY=new A.as("IHK-Pr\xfcfungen 2021\u20132026","Vollst\xe4ndige Pr\xfcfungstexte (Herbst/Fr\xfchjahr), ausgewertet nach Themen und Punkteverteilung.")
-B.JZ=new A.as("it-berufe-podcast.de","Themen\xfcbersicht AP1 und Pr\xfcfungsstatistiken von Stefan Macke")
-B.K_=new A.as(B.C,0)
+B.K_=new A.as(B.bN,B.bN)
+B.K0=new A.as("IHK-Pr\xfcfungskatalog AP1","Offizieller Pr\xfcfungskatalog f\xfcr die gestreckten Abschlusspr\xfcfungen IT-Berufe, inkl. \xc4nderungen ab 2025 (neue Themen: Schreibtischtest, BPMN, Barrierefreiheit).")
+B.K1=new A.as("BSI-Grundschutz-Kompendium","https://www.bsi.bund.de/grundschutz")
+B.K2=new A.as("IHK-Pr\xfcfungen 2021\u20132026","Vollst\xe4ndige Pr\xfcfungstexte (Herbst/Fr\xfchjahr), ausgewertet nach Themen und Punkteverteilung.")
+B.K3=new A.as("it-berufe-podcast.de","Themen\xfcbersicht AP1 und Pr\xfcfungsstatistiken von Stefan Macke")
+B.K4=new A.as(B.C,0)
 B.hj=new A.A6(0,"left")
 B.hk=new A.A6(1,"right")
-B.K0=new A.as(B.hj,B.hk)
+B.K5=new A.as(B.hj,B.hk)
 B.ew=new A.cl(4,"scrollLeft")
 B.ex=new A.cl(8,"scrollRight")
-B.K1=new A.as(B.ew,B.ex)
-B.K2=new A.as(B.ex,B.ew)
-B.K3=new A.as(!1,!1)
-B.K4=new A.as(!1,null)
-B.K5=new A.as(!1,!0)
+B.K6=new A.as(B.ew,B.ex)
+B.K7=new A.as(B.ex,B.ew)
+B.K8=new A.as(!1,!1)
+B.K9=new A.as(!1,null)
+B.Ka=new A.as(!1,!0)
 B.eu=new A.cl(16,"scrollUp")
 B.ev=new A.cl(32,"scrollDown")
-B.K6=new A.as(B.eu,B.ev)
-B.K7=new A.as(B.ev,B.eu)
-B.K8=new A.as(!0,!1)
-B.K9=new A.as(!0,!0)
-B.Ka=new A.as("DSGVO \u2013 EUR-Lex","https://eur-lex.europa.eu/legal-content/DE/TXT/?uri=CELEX:32016R0679")
-B.Kb=new A.as(B.hk,B.hj)
-B.Kc=new A.x(-1/0,-1/0,1/0,1/0)
+B.Kb=new A.as(B.eu,B.ev)
+B.Kc=new A.as(B.ev,B.eu)
+B.Kd=new A.as(!0,!1)
+B.Ke=new A.as(!0,!0)
+B.Kf=new A.as("DSGVO \u2013 EUR-Lex","https://eur-lex.europa.eu/legal-content/DE/TXT/?uri=CELEX:32016R0679")
+B.Kg=new A.as(B.hk,B.hj)
+B.Kh=new A.x(-1/0,-1/0,1/0,1/0)
 B.cy=new A.x(-1e9,-1e9,1e9,1e9)
 B.wB=new A.ru(0,"start")
 B.jk=new A.ru(1,"stable")
-B.Kd=new A.ru(2,"changed")
-B.Ke=new A.ru(3,"unstable")
+B.Ki=new A.ru(2,"changed")
+B.Kj=new A.ru(3,"unstable")
 B.bL=new A.yt(0,"identical")
-B.Kf=new A.yt(2,"paint")
+B.Kk=new A.yt(2,"paint")
 B.aU=new A.yt(3,"layout")
 B.z_=new A.ca(B.dh,B.dh,B.dh,B.dh)
 B.wC=new A.cI(B.z_,B.q)
@@ -82747,30 +82752,30 @@ B.wD=new A.a7X(0,"none")
 B.h0=new A.rz(0,"pop")
 B.dj=new A.rz(1,"doNotPop")
 B.wE=new A.rz(2,"bubble")
-B.Kg=new A.i3(null,null)
-B.Kh=new A.JY(null,null)
+B.Kl=new A.i3(null,null)
+B.Km=new A.JY(null,null)
 B.dk=new A.oQ(0,"idle")
-B.Ki=new A.oQ(1,"transientCallbacks")
-B.Kj=new A.oQ(2,"midFrameMicrotasks")
+B.Kn=new A.oQ(1,"transientCallbacks")
+B.Ko=new A.oQ(2,"midFrameMicrotasks")
 B.ep=new A.oQ(3,"persistentCallbacks")
 B.wF=new A.oQ(4,"postFrameCallbacks")
 B.wG=new A.a8m(0,"englishLike")
 B.h1=new A.z2(0,"idle")
 B.jl=new A.z2(1,"forward")
 B.jm=new A.z2(2,"reverse")
-B.UP=new A.oS(0,"explicit")
+B.UU=new A.oS(0,"explicit")
 B.c_=new A.oS(1,"keepVisibleAtEnd")
 B.c0=new A.oS(2,"keepVisibleAtStart")
 B.wL=new A.Kg(0,"manual")
-B.Ko=new A.Kg(1,"onDrag")
+B.Kt=new A.Kg(1,"onDrag")
 B.wM=new A.rG(0,"left")
 B.wN=new A.rG(1,"right")
-B.Kp=new A.rG(2,"top")
+B.Ku=new A.rG(2,"top")
 B.wO=new A.rG(3,"bottom")
-B.Kq=new A.z6(null,null,null,null,null,null,null,null,null,null,null)
-B.Kr=new A.z7(null,null,null,null,null,null,null,null,null,null,null,null)
-B.Ks=new A.z8(null,null,null,null,null,null,null,null,null,null,null,null,null)
-B.Kt=new A.z9(null,null)
+B.Kv=new A.z6(null,null,null,null,null,null,null,null,null,null,null)
+B.Kw=new A.z7(null,null,null,null,null,null,null,null,null,null,null,null)
+B.Kx=new A.z8(null,null,null,null,null,null,null,null,null,null,null,null,null)
+B.Ky=new A.z9(null,null)
 B.aj=new A.hh(0,"tap")
 B.wP=new A.hh(1,"doubleTap")
 B.b_=new A.hh(2,"longPress")
@@ -82778,10 +82783,10 @@ B.er=new A.hh(3,"forcePress")
 B.Z=new A.hh(5,"toolbar")
 B.a_=new A.hh(6,"drag")
 B.es=new A.hh(7,"scribble")
-B.Ku=new A.oW(0,"startEdgeUpdate")
+B.Kz=new A.oW(0,"startEdgeUpdate")
 B.c1=new A.oW(1,"endEdgeUpdate")
-B.Kw=new A.oW(4,"selectWord")
-B.Kx=new A.oW(5,"selectParagraph")
+B.KB=new A.oW(4,"selectWord")
+B.KC=new A.oW(5,"selectParagraph")
 B.jo=new A.rI(0,"previousLine")
 B.jp=new A.rI(1,"nextLine")
 B.h4=new A.rI(2,"forward")
@@ -82795,134 +82800,134 @@ B.D=new A.m7(2,"end")
 B.jq=new A.m7(3,"pending")
 B.et=new A.m7(4,"none")
 B.jr=new A.zc(0,"uncollapsed")
-B.Ky=new A.zc(1,"collapsed")
-B.Kz=new A.cl(1048576,"moveCursorBackwardByWord")
+B.KD=new A.zc(1,"collapsed")
+B.KE=new A.cl(1048576,"moveCursorBackwardByWord")
 B.wS=new A.cl(128,"decrease")
-B.KA=new A.cl(16384,"paste")
+B.KF=new A.cl(16384,"paste")
 B.js=new A.cl(1,"tap")
-B.KB=new A.cl(1024,"moveCursorBackwardByCharacter")
-B.KC=new A.cl(2048,"setSelection")
-B.KD=new A.cl(2097152,"setText")
-B.KE=new A.cl(256,"showOnScreen")
-B.KF=new A.cl(262144,"dismiss")
+B.KG=new A.cl(1024,"moveCursorBackwardByCharacter")
+B.KH=new A.cl(2048,"setSelection")
+B.KI=new A.cl(2097152,"setText")
+B.KJ=new A.cl(256,"showOnScreen")
+B.KK=new A.cl(262144,"dismiss")
 B.wT=new A.cl(2,"longPress")
-B.KG=new A.cl(32768,"didGainAccessibilityFocus")
-B.KH=new A.cl(4096,"copy")
+B.KL=new A.cl(32768,"didGainAccessibilityFocus")
+B.KM=new A.cl(4096,"copy")
 B.jt=new A.cl(4194304,"focus")
-B.KI=new A.cl(512,"moveCursorForwardByCharacter")
-B.KJ=new A.cl(524288,"moveCursorForwardByWord")
+B.KN=new A.cl(512,"moveCursorForwardByCharacter")
+B.KO=new A.cl(524288,"moveCursorForwardByWord")
 B.wU=new A.cl(64,"increase")
-B.KK=new A.cl(65536,"didLoseAccessibilityFocus")
-B.KL=new A.cl(8192,"cut")
-B.KM=new A.cl(8388608,"scrollToOffset")
+B.KP=new A.cl(65536,"didLoseAccessibilityFocus")
+B.KQ=new A.cl(8192,"cut")
+B.KR=new A.cl(8388608,"scrollToOffset")
 B.wV=new A.c1(1024,"isObscured")
 B.wW=new A.c1(1048576,"isReadOnly")
 B.wX=new A.c1(128,"isEnabled")
-B.KN=new A.c1(131072,"isToggled")
-B.KO=new A.c1(134217728,"isExpanded")
+B.KS=new A.c1(131072,"isToggled")
+B.KT=new A.c1(134217728,"isExpanded")
 B.wY=new A.c1(16384,"isImage")
-B.KP=new A.c1(16777216,"isKeyboardKey")
+B.KU=new A.c1(16777216,"isKeyboardKey")
 B.wZ=new A.c1(16,"isTextField")
 B.x_=new A.c1(1,"hasCheckedState")
 B.x0=new A.c1(2048,"scopesRoute")
 B.x1=new A.c1(2097152,"isFocusable")
-B.KQ=new A.c1(256,"isInMutuallyExclusiveGroup")
-B.KR=new A.c1(262144,"hasImplicitScrolling")
+B.KV=new A.c1(256,"isInMutuallyExclusiveGroup")
+B.KW=new A.c1(262144,"hasImplicitScrolling")
 B.x2=new A.c1(268435456,"hasSelectedState")
-B.KS=new A.c1(2,"isChecked")
+B.KX=new A.c1(2,"isChecked")
 B.x3=new A.c1(32768,"isLiveRegion")
 B.ju=new A.c1(32,"isFocused")
-B.KT=new A.c1(33554432,"isCheckStateMixed")
+B.KY=new A.c1(33554432,"isCheckStateMixed")
 B.x4=new A.c1(4096,"namesRoute")
-B.KU=new A.c1(4194304,"isLink")
+B.KZ=new A.c1(4194304,"isLink")
 B.x5=new A.c1(4,"isSelected")
 B.x6=new A.c1(512,"isHeader")
 B.x7=new A.c1(524288,"isMultiline")
 B.x8=new A.c1(64,"hasEnabledState")
-B.KV=new A.c1(65536,"hasToggledState")
-B.KW=new A.c1(67108864,"hasExpandedState")
+B.L_=new A.c1(65536,"hasToggledState")
+B.L0=new A.c1(67108864,"hasExpandedState")
 B.h6=new A.c1(8192,"isHidden")
-B.KX=new A.c1(8388608,"isSlider")
+B.L1=new A.c1(8388608,"isSlider")
 B.x9=new A.c1(8,"isButton")
 B.jv=new A.a9B(0,"none")
 B.xa=new A.i7("RenderViewport.twoPane")
-B.KY=new A.i7("RenderViewport.excludeFromScrolling")
-B.KZ=new A.i7("_InputDecoratorState.suffix")
-B.L_=new A.i7("_InputDecoratorState.prefix")
+B.L2=new A.i7("RenderViewport.excludeFromScrolling")
+B.L3=new A.i7("_InputDecoratorState.suffix")
+B.L4=new A.i7("_InputDecoratorState.prefix")
 B.xb=new A.ef([B.bK,B.je,B.rW],A.aw("ef<ka>"))
-B.L0=new A.ef([10,11,12,13,133,8232,8233],t.Ih)
-B.Ia={serif:0,"sans-serif":1,monospace:2,cursive:3,fantasy:4,"system-ui":5,math:6,emoji:7,fangsong:8}
-B.L1=new A.fr(B.Ia,9,t.fF)
-B.I9={"canvaskit.js":0}
-B.L2=new A.fr(B.I9,1,t.fF)
-B.L3=new A.ef([B.bv,B.aK,B.aq,B.bl,B.aL],t.Lu)
-B.Ij={click:0,keyup:1,keydown:2,mouseup:3,mousedown:4,pointerdown:5,pointerup:6}
-B.L4=new A.fr(B.Ij,7,t.fF)
-B.L5=new A.ef([B.a0,B.O,B.b8],A.aw("ef<el>"))
-B.L6=new A.fr(B.bk,0,A.aw("fr<el>"))
+B.L5=new A.ef([10,11,12,13,133,8232,8233],t.Ih)
+B.If={serif:0,"sans-serif":1,monospace:2,cursive:3,fantasy:4,"system-ui":5,math:6,emoji:7,fangsong:8}
+B.L6=new A.fr(B.If,9,t.fF)
+B.Ie={"canvaskit.js":0}
+B.L7=new A.fr(B.Ie,1,t.fF)
+B.L8=new A.ef([B.bv,B.aK,B.aq,B.bl,B.aL],t.Lu)
+B.Io={click:0,keyup:1,keydown:2,mouseup:3,mousedown:4,pointerdown:5,pointerup:6}
+B.L9=new A.fr(B.Io,7,t.fF)
+B.La=new A.ef([B.a0,B.O,B.b8],A.aw("ef<el>"))
+B.Lb=new A.fr(B.bk,0,A.aw("fr<el>"))
 B.xc=new A.fr(B.bk,0,A.aw("fr<bJ>"))
-B.L7=new A.ef([32,8203],t.Ih)
+B.Lc=new A.ef([32,8203],t.Ih)
 B.G=new A.bJ(1,"focused")
 B.E=new A.bJ(0,"hovered")
 B.U=new A.bJ(2,"pressed")
-B.L8=new A.ef([B.G,B.E,B.U],A.aw("ef<bJ>"))
-B.Ic={click:0,touchstart:1,touchend:2,pointerdown:3,pointermove:4,pointerup:5}
-B.L9=new A.fr(B.Ic,6,t.fF)
+B.Ld=new A.ef([B.G,B.E,B.U],A.aw("ef<bJ>"))
+B.Ig={click:0,touchstart:1,touchend:2,pointerdown:3,pointermove:4,pointerup:5}
+B.Le=new A.fr(B.Ig,6,t.fF)
 B.xd=new A.ef([B.aq,B.aK,B.bv,B.aL,B.bl],t.Lu)
 B.xe=new A.a2(B.iS,!1,!1,!1,!0,B.m)
-B.La=new A.a2(B.mM,!0,!1,!1,!1,B.m)
+B.Lf=new A.a2(B.mM,!0,!1,!1,!1,B.m)
 B.aR=new A.xv(1,"locked")
-B.Lc=new A.a2(B.cr,!1,!0,!1,!1,B.aR)
-B.Ld=new A.a2(B.eg,!1,!0,!1,!1,B.aR)
+B.Lh=new A.a2(B.cr,!1,!0,!1,!1,B.aR)
+B.Li=new A.a2(B.eg,!1,!0,!1,!1,B.aR)
 B.xf=new A.a2(B.iR,!1,!1,!1,!0,B.m)
-B.Le=new A.a2(B.rB,!0,!1,!1,!1,B.m)
+B.Lj=new A.a2(B.rB,!0,!1,!1,!1,B.m)
 B.xg=new A.a2(B.j3,!0,!1,!1,!1,B.m)
 B.xh=new A.a2(B.iS,!0,!1,!1,!1,B.m)
-B.Lf=new A.a2(B.cn,!0,!0,!1,!1,B.aR)
+B.Lk=new A.a2(B.cn,!0,!0,!1,!1,B.aR)
 B.xi=new A.a2(B.j3,!1,!1,!1,!0,B.m)
 B.aS=new A.xv(2,"unlocked")
-B.Ll=new A.a2(B.ed,!1,!1,!1,!1,B.aS)
-B.Li=new A.a2(B.co,!1,!1,!1,!1,B.aS)
-B.Lj=new A.a2(B.ee,!1,!1,!1,!1,B.aS)
-B.Lh=new A.a2(B.cp,!1,!1,!1,!1,B.aS)
-B.Lg=new A.a2(B.cq,!1,!1,!1,!1,B.aS)
-B.Lk=new A.a2(B.ef,!1,!1,!1,!1,B.aS)
+B.Lq=new A.a2(B.ed,!1,!1,!1,!1,B.aS)
+B.Ln=new A.a2(B.co,!1,!1,!1,!1,B.aS)
+B.Lo=new A.a2(B.ee,!1,!1,!1,!1,B.aS)
+B.Lm=new A.a2(B.cp,!1,!1,!1,!1,B.aS)
+B.Ll=new A.a2(B.cq,!1,!1,!1,!1,B.aS)
+B.Lp=new A.a2(B.ef,!1,!1,!1,!1,B.aS)
 B.xk=new A.a2(B.iR,!0,!1,!1,!1,B.m)
-B.Lt=new A.a2(B.ed,!1,!0,!1,!1,B.aR)
-B.Lq=new A.a2(B.co,!1,!0,!1,!1,B.aR)
-B.Lr=new A.a2(B.ee,!1,!0,!1,!1,B.aR)
-B.Lp=new A.a2(B.cp,!1,!0,!1,!1,B.aR)
-B.Lo=new A.a2(B.cq,!1,!0,!1,!1,B.aR)
-B.Ls=new A.a2(B.ef,!1,!0,!1,!1,B.aR)
-B.Lu=new A.a2(B.cn,!1,!1,!1,!1,B.aS)
-B.Lx=new A.a2(B.co,!0,!1,!1,!1,B.aS)
-B.Lw=new A.a2(B.cp,!0,!1,!1,!1,B.aS)
-B.Lv=new A.a2(B.cq,!0,!1,!1,!1,B.aS)
-B.Lz=new A.a2(B.mN,!0,!1,!1,!1,B.m)
-B.LA=new A.a2(B.mP,!0,!1,!1,!1,B.m)
+B.Ly=new A.a2(B.ed,!1,!0,!1,!1,B.aR)
+B.Lv=new A.a2(B.co,!1,!0,!1,!1,B.aR)
+B.Lw=new A.a2(B.ee,!1,!0,!1,!1,B.aR)
+B.Lu=new A.a2(B.cp,!1,!0,!1,!1,B.aR)
+B.Lt=new A.a2(B.cq,!1,!0,!1,!1,B.aR)
+B.Lx=new A.a2(B.ef,!1,!0,!1,!1,B.aR)
+B.Lz=new A.a2(B.cn,!1,!1,!1,!1,B.aS)
+B.LC=new A.a2(B.co,!0,!1,!1,!1,B.aS)
+B.LB=new A.a2(B.cp,!0,!1,!1,!1,B.aS)
+B.LA=new A.a2(B.cq,!0,!1,!1,!1,B.aS)
+B.LE=new A.a2(B.mN,!0,!1,!1,!1,B.m)
+B.LF=new A.a2(B.mP,!0,!1,!1,!1,B.m)
 B.xq=new A.a2(B.ck,!0,!1,!1,!1,B.m)
 B.xp=new A.a2(B.cl,!0,!1,!1,!1,B.m)
-B.LC=new A.a2(B.e5,!0,!1,!1,!1,B.m)
-B.LD=new A.a2(B.e5,!1,!0,!1,!0,B.m)
-B.LF=new A.a2(B.br,!1,!0,!1,!0,B.m)
+B.LH=new A.a2(B.e5,!0,!1,!1,!1,B.m)
+B.LI=new A.a2(B.e5,!1,!0,!1,!0,B.m)
+B.LK=new A.a2(B.br,!1,!0,!1,!0,B.m)
 B.xt=new A.a2(B.bh,!1,!0,!1,!0,B.m)
 B.xu=new A.a2(B.bi,!1,!0,!1,!0,B.m)
-B.LE=new A.a2(B.bs,!1,!0,!1,!0,B.m)
-B.LG=new A.a2(B.cr,!0,!1,!1,!1,B.aS)
-B.LI=new A.a2(B.cr,!1,!1,!1,!1,B.aS)
-B.LJ=new A.a2(B.eg,!1,!1,!1,!1,B.aS)
-B.LK=new A.a2(B.mO,!0,!1,!1,!1,B.m)
-B.LM=new A.a2(B.cn,!1,!0,!1,!1,B.aR)
-B.LN=new A.a2(B.e5,!0,!0,!1,!1,B.m)
-B.LR=new A.a2(B.br,!0,!0,!1,!1,B.m)
-B.LQ=new A.a2(B.bs,!0,!0,!1,!1,B.m)
-B.LP=new A.a2(B.ck,!0,!0,!1,!1,B.m)
-B.LO=new A.a2(B.cl,!0,!0,!1,!1,B.m)
+B.LJ=new A.a2(B.bs,!1,!0,!1,!0,B.m)
+B.LL=new A.a2(B.cr,!0,!1,!1,!1,B.aS)
+B.LN=new A.a2(B.cr,!1,!1,!1,!1,B.aS)
+B.LO=new A.a2(B.eg,!1,!1,!1,!1,B.aS)
+B.LP=new A.a2(B.mO,!0,!1,!1,!1,B.m)
+B.LR=new A.a2(B.cn,!1,!0,!1,!1,B.aR)
+B.LS=new A.a2(B.e5,!0,!0,!1,!1,B.m)
+B.LW=new A.a2(B.br,!0,!0,!1,!1,B.m)
+B.LV=new A.a2(B.bs,!0,!0,!1,!1,B.m)
+B.LU=new A.a2(B.ck,!0,!0,!1,!1,B.m)
+B.LT=new A.a2(B.cl,!0,!0,!1,!1,B.m)
 B.jA=new A.a2(B.j2,!0,!1,!1,!1,B.m)
-B.LT=new A.a2(B.mL,!0,!1,!1,!1,B.m)
-B.LW=new A.a2(B.co,!0,!0,!1,!1,B.aR)
-B.LV=new A.a2(B.cp,!0,!0,!1,!1,B.aR)
-B.LU=new A.a2(B.cq,!0,!0,!1,!1,B.aR)
+B.LY=new A.a2(B.mL,!0,!1,!1,!1,B.m)
+B.M0=new A.a2(B.co,!0,!0,!1,!1,B.aR)
+B.M_=new A.a2(B.cp,!0,!0,!1,!1,B.aR)
+B.LZ=new A.a2(B.cq,!0,!0,!1,!1,B.aR)
 B.xA=new A.a2(B.br,!1,!0,!1,!1,B.m)
 B.jB=new A.a2(B.bh,!1,!0,!1,!1,B.m)
 B.jC=new A.a2(B.bi,!1,!0,!1,!1,B.m)
@@ -82938,428 +82943,428 @@ B.jE=new A.a2(B.bh,!1,!0,!0,!1,B.m)
 B.jF=new A.a2(B.bi,!1,!0,!0,!1,B.m)
 B.jG=new A.a2(B.bs,!1,!0,!0,!1,B.m)
 B.jI=new A.a2(B.e9,!1,!0,!1,!1,B.m)
-B.LY=new A.a2(B.cr,!0,!0,!1,!1,B.aR)
-B.LZ=new A.a2(B.e5,!1,!1,!1,!0,B.m)
-B.M_=new A.a2(B.cn,!0,!1,!1,!1,B.aS)
-B.M0=new A.E(1e5,1e5)
+B.M2=new A.a2(B.cr,!0,!0,!1,!1,B.aR)
+B.M3=new A.a2(B.e5,!1,!1,!1,!0,B.m)
+B.M4=new A.a2(B.cn,!0,!1,!1,!1,B.aS)
+B.M5=new A.E(1e5,1e5)
 B.xC=new A.E(10,10)
-B.M2=new A.E(22,22)
-B.M4=new A.E(48,36)
-B.M5=new A.E(48,48)
-B.M7=new A.E(80,47.5)
-B.M8=new A.E(77.37,37.9)
+B.M7=new A.E(22,22)
+B.M9=new A.E(48,36)
+B.Ma=new A.E(48,48)
+B.Mc=new A.E(80,47.5)
+B.Md=new A.E(77.37,37.9)
 B.ar=new A.dH(0,0,null,null)
 B.xD=new A.dH(10,null,null,null)
-B.Ma=new A.dH(3,null,null,null)
+B.Mf=new A.dH(3,null,null,null)
 B.xE=new A.dH(5,null,null,null)
 B.hh=new A.dH(null,12,null,null)
-B.Md=new A.dH(null,3,null,null)
+B.Mi=new A.dH(null,3,null,null)
 B.xG=new A.dH(null,40,null,null)
-B.Me=new A.dH(null,48,null,null)
+B.Mj=new A.dH(null,48,null,null)
 B.jK=new A.dH(null,8,null,null)
-B.Mg=new A.zq(null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null)
+B.Ml=new A.zq(null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null)
 B.xH=new A.KJ(0,0,0,0,0,0,!1,!1,null,0)
-B.Mh=new A.aa5(1,"enabled")
-B.Mi=new A.aa6(1,"enabled")
-B.UQ=new A.zu(3,"hide")
-B.Mj=new A.zu(5,"timeout")
-B.Mk=new A.zv(null,null,null,null,null,null,null,null,null,null,null,null,null,null)
+B.Mm=new A.aa5(1,"enabled")
+B.Mn=new A.aa6(1,"enabled")
+B.UV=new A.zu(3,"hide")
+B.Mo=new A.zu(5,"timeout")
+B.Mp=new A.zv(null,null,null,null,null,null,null,null,null,null,null,null,null,null)
 B.xI=new A.zx(0,"permissive")
-B.Ml=new A.zx(1,"normal")
-B.Mm=new A.zx(2,"forced")
-B.Mn=new A.KR(null)
+B.Mq=new A.zx(1,"normal")
+B.Mr=new A.zx(2,"forced")
+B.Ms=new A.KR(null)
 B.eA=new A.zy(null,null,null,null,!1)
-B.Mo=new A.zC(0,"criticallyDamped")
-B.Mp=new A.zC(1,"underDamped")
-B.Mq=new A.zC(2,"overDamped")
+B.Mt=new A.zC(0,"criticallyDamped")
+B.Mu=new A.zC(1,"underDamped")
+B.Mv=new A.zC(2,"overDamped")
 B.dl=new A.KU(0,"loose")
-B.Mr=new A.KU(2,"passthrough")
-B.Ms=new A.i8("<asynchronous suspension>",-1,"","","",-1,-1,"","asynchronous suspension")
-B.Mt=new A.i8("...",-1,"","","",-1,-1,"","...")
-B.Mv=new A.rV(2,"moreButton")
-B.Mw=new A.rV(3,"drawerButton")
+B.Mw=new A.KU(2,"passthrough")
+B.Mx=new A.i8("<asynchronous suspension>",-1,"","","",-1,-1,"","asynchronous suspension")
+B.My=new A.i8("...",-1,"","","",-1,-1,"","...")
+B.MA=new A.rV(2,"moreButton")
+B.MB=new A.rV(3,"drawerButton")
 B.bM=new A.e6("")
-B.Mx=new A.L1(0,"butt")
+B.MC=new A.L1(0,"butt")
 B.xK=new A.L1(1,"round")
-B.My=new A.L2(0,"miter")
+B.MD=new A.L2(0,"miter")
 B.xL=new A.L2(1,"round")
-B.Mz=new A.zK(null,null,null,0,null,null,null,0,null,null)
-B.MC=new A.zM(null,null,null,null,null,null,null,null,null,null)
-B.MD=new A.e7("_count=")
-B.ME=new A.e7("_reentrantlyRemovedListeners=")
-B.MF=new A.e7("_notificationCallStackDepth=")
-B.MG=new A.e7("_count")
-B.MH=new A.e7("_listeners")
-B.MI=new A.e7("_notificationCallStackDepth")
-B.MJ=new A.e7("_reentrantlyRemovedListeners")
-B.MK=new A.e7("_removeAt")
-B.ML=new A.e7("_listeners=")
+B.ME=new A.zK(null,null,null,0,null,null,null,0,null,null)
+B.MH=new A.zM(null,null,null,null,null,null,null,null,null,null)
+B.MI=new A.e7("_count=")
+B.MJ=new A.e7("_reentrantlyRemovedListeners=")
+B.MK=new A.e7("_notificationCallStackDepth=")
+B.ML=new A.e7("_count")
+B.MM=new A.e7("_listeners")
+B.MN=new A.e7("_notificationCallStackDepth")
+B.MO=new A.e7("_reentrantlyRemovedListeners")
+B.MP=new A.e7("_removeAt")
+B.MQ=new A.e7("_listeners=")
 B.aV=new A.jf("basic")
 B.c3=new A.jf("click")
 B.xM=new A.jf("text")
 B.xN=new A.L3(0,"click")
-B.MM=new A.L3(1,"alert")
-B.MN=new A.jg(B.l,null,B.a3,null,null,B.a3,B.a2,null)
-B.MO=new A.jg(B.l,null,B.a3,null,null,B.a2,B.a3,null)
-B.MP=new A.zP(null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null)
+B.MR=new A.L3(1,"alert")
+B.MS=new A.jg(B.l,null,B.a3,null,null,B.a3,B.a2,null)
+B.MT=new A.jg(B.l,null,B.a3,null,null,B.a2,B.a3,null)
+B.MU=new A.zP(null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null)
 B.xO=new A.aaB("tap")
 B.xP=new A.La(0)
 B.xQ=new A.La(-1)
 B.o=new A.jj(0,"alphabetic")
 B.J=new A.jj(1,"ideographic")
-B.MQ=new A.zW(null)
+B.MV=new A.zW(null)
 B.jN=new A.t1(3,"none")
 B.xR=new A.zX(B.jN)
 B.xS=new A.t1(0,"words")
 B.xT=new A.t1(1,"sentences")
 B.xU=new A.t1(2,"characters")
-B.MR=new A.aaF(3,"none")
+B.MW=new A.aaF(3,"none")
 B.jQ=new A.eE(0,0,B.j,!1,0,0)
 B.xW=new A.cm("",B.jQ,B.bm)
 B.jO=new A.p4(0,"character")
-B.MT=new A.p4(1,"word")
+B.MY=new A.p4(1,"word")
 B.xY=new A.p4(2,"paragraph")
-B.MU=new A.p4(3,"line")
-B.MV=new A.p4(4,"document")
+B.MZ=new A.p4(3,"line")
+B.N_=new A.p4(4,"document")
 B.jP=new A.Li(0,"proportional")
 B.xZ=new A.A0(B.jP)
-B.MW=new A.eD(0,"none")
-B.MX=new A.eD(1,"unspecified")
-B.MY=new A.eD(10,"route")
-B.MZ=new A.eD(11,"emergencyCall")
+B.N0=new A.eD(0,"none")
+B.N1=new A.eD(1,"unspecified")
+B.N2=new A.eD(10,"route")
+B.N3=new A.eD(11,"emergencyCall")
 B.y_=new A.eD(12,"newline")
 B.y0=new A.eD(2,"done")
-B.N_=new A.eD(3,"go")
-B.N0=new A.eD(4,"search")
-B.N1=new A.eD(5,"send")
-B.N2=new A.eD(6,"next")
-B.N3=new A.eD(7,"previous")
-B.N4=new A.eD(8,"continueAction")
-B.N5=new A.eD(9,"join")
-B.N6=new A.t5(0,null,null)
-B.N7=new A.t5(10,null,null)
+B.N4=new A.eD(3,"go")
+B.N5=new A.eD(4,"search")
+B.N6=new A.eD(5,"send")
+B.N7=new A.eD(6,"next")
+B.N8=new A.eD(7,"previous")
+B.N9=new A.eD(8,"continueAction")
+B.Na=new A.eD(9,"join")
+B.Nb=new A.t5(0,null,null)
+B.Nc=new A.t5(10,null,null)
 B.y1=new A.t5(1,null,null)
 B.t=new A.Li(1,"even")
 B.aD=new A.A3(2,"ellipsis")
-B.N8=new A.A3(3,"visible")
+B.Nd=new A.A3(3,"visible")
 B.eC=new A.a9(0,B.j)
-B.N9=new A.A7(null,null,null)
-B.Na=new A.A8(B.h,null)
+B.Ne=new A.A7(null,null,null)
+B.Nf=new A.A8(B.h,null)
 B.e=new A.p3(0)
-B.NK=new A.l(!1,B.ig,null,"CupertinoSystemText",null,null,17,null,null,-0.41,null,null,null,null,null,null,null,B.e,null,null,null,null,null,null,null,null)
+B.NP=new A.l(!1,B.ig,null,"CupertinoSystemText",null,null,17,null,null,-0.41,null,null,null,null,null,null,null,B.e,null,null,null,null,null,null,null,null)
 B.xV=new A.p3(1)
 B.y3=new A.l(!0,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,B.xV,null,null,null,null,null,null,null,null)
-B.Ov=new A.l(!0,null,null,null,null,null,null,B.n,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null)
+B.OA=new A.l(!0,null,null,null,null,null,null,B.n,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null)
 B.jR=new A.l(!0,null,null,null,null,null,null,B.ap,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null)
-B.OF=new A.l(!0,B.d4,null,null,null,null,14,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null)
+B.OK=new A.l(!0,B.d4,null,null,null,null,14,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null)
 B.B3=new A.w(0.8156862745098039,1,0,0,B.f)
 B.AS=new A.w(1,1,1,0,B.f)
-B.MS=new A.zY(1,"double")
-B.OK=new A.l(!0,B.B3,null,"monospace",null,null,48,B.iJ,null,null,null,null,null,null,null,null,null,B.xV,B.AS,B.MS,null,"fallback style; consider putting your text in a Material",null,null,null,null)
-B.Pb=new A.l(!0,B.F,null,null,null,null,13,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null)
-B.Pg=new A.l(!0,B.F,null,null,null,null,16,B.n,null,null,null,null,1.6,null,null,null,null,null,null,null,null,null,null,null,null,null)
-B.Pp=new A.l(!1,null,null,null,null,null,15,B.n,null,-0.15,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null)
-B.PB=new A.l(!0,B.H,null,null,null,null,13,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null)
+B.MX=new A.zY(1,"double")
+B.OP=new A.l(!0,B.B3,null,"monospace",null,null,48,B.iJ,null,null,null,null,null,null,null,null,null,B.xV,B.AS,B.MX,null,"fallback style; consider putting your text in a Material",null,null,null,null)
+B.Pg=new A.l(!0,B.F,null,null,null,null,13,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null)
+B.Pl=new A.l(!0,B.F,null,null,null,null,16,B.n,null,null,null,null,1.6,null,null,null,null,null,null,null,null,null,null,null,null,null)
+B.Pu=new A.l(!1,null,null,null,null,null,15,B.n,null,-0.15,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null)
+B.PG=new A.l(!0,B.H,null,null,null,null,13,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null)
 B.y4=new A.l(!1,null,null,null,null,null,14,B.n,null,-0.15,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null)
-B.Q3=new A.l(!0,null,null,null,null,null,15,B.ap,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null)
+B.Q8=new A.l(!0,null,null,null,null,null,15,B.ap,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null)
 B.Av=new A.w(1,0.10196078431372549,0.10196078431372549,0.1803921568627451,B.f)
-B.R0=new A.l(!0,B.Av,null,null,null,null,15.5,B.ap,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null)
+B.R5=new A.l(!0,B.Av,null,null,null,null,15.5,B.ap,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null)
 B.AU=new A.w(1,0.17254901960784313,0.17254901960784313,0.17254901960784313,B.f)
-B.R7=new A.l(!0,B.AU,null,null,null,null,14,null,null,null,null,null,1.6,null,null,null,null,null,null,null,null,null,null,null,null,null)
-B.NM=new A.l(!1,null,null,null,null,null,112,B.fv,null,null,null,B.J,null,null,null,null,null,null,null,null,null,"dense displayLarge 2014",null,null,null,null)
-B.Q5=new A.l(!1,null,null,null,null,null,56,B.n,null,null,null,B.J,null,null,null,null,null,null,null,null,null,"dense displayMedium 2014",null,null,null,null)
-B.Ne=new A.l(!1,null,null,null,null,null,45,B.n,null,null,null,B.J,null,null,null,null,null,null,null,null,null,"dense displaySmall 2014",null,null,null,null)
-B.O8=new A.l(!1,null,null,null,null,null,40,B.n,null,null,null,B.J,null,null,null,null,null,null,null,null,null,"dense headlineLarge 2014",null,null,null,null)
-B.QE=new A.l(!1,null,null,null,null,null,34,B.n,null,null,null,B.J,null,null,null,null,null,null,null,null,null,"dense headlineMedium 2014",null,null,null,null)
-B.PL=new A.l(!1,null,null,null,null,null,24,B.n,null,null,null,B.J,null,null,null,null,null,null,null,null,null,"dense headlineSmall 2014",null,null,null,null)
-B.NE=new A.l(!1,null,null,null,null,null,21,B.Q,null,null,null,B.J,null,null,null,null,null,null,null,null,null,"dense titleLarge 2014",null,null,null,null)
-B.PO=new A.l(!1,null,null,null,null,null,17,B.n,null,null,null,B.J,null,null,null,null,null,null,null,null,null,"dense titleMedium 2014",null,null,null,null)
-B.Oi=new A.l(!1,null,null,null,null,null,15,B.Q,null,null,null,B.J,null,null,null,null,null,null,null,null,null,"dense titleSmall 2014",null,null,null,null)
-B.Qo=new A.l(!1,null,null,null,null,null,15,B.Q,null,null,null,B.J,null,null,null,null,null,null,null,null,null,"dense bodyLarge 2014",null,null,null,null)
-B.PH=new A.l(!1,null,null,null,null,null,15,B.n,null,null,null,B.J,null,null,null,null,null,null,null,null,null,"dense bodyMedium 2014",null,null,null,null)
-B.Pt=new A.l(!1,null,null,null,null,null,13,B.n,null,null,null,B.J,null,null,null,null,null,null,null,null,null,"dense bodySmall 2014",null,null,null,null)
-B.Ok=new A.l(!1,null,null,null,null,null,15,B.Q,null,null,null,B.J,null,null,null,null,null,null,null,null,null,"dense labelLarge 2014",null,null,null,null)
-B.OL=new A.l(!1,null,null,null,null,null,12,B.n,null,null,null,B.J,null,null,null,null,null,null,null,null,null,"dense labelMedium 2014",null,null,null,null)
-B.OT=new A.l(!1,null,null,null,null,null,11,B.n,null,null,null,B.J,null,null,null,null,null,null,null,null,null,"dense labelSmall 2014",null,null,null,null)
-B.Rj=new A.df(B.NM,B.Q5,B.Ne,B.O8,B.QE,B.PL,B.NE,B.PO,B.Oi,B.Qo,B.PH,B.Pt,B.Ok,B.OL,B.OT)
-B.Nw=new A.l(!0,B.I,null,"CupertinoSystemDisplay",null,null,null,null,null,null,null,null,null,null,null,null,null,B.e,null,null,null,"blackCupertino displayLarge",null,null,null,null)
-B.Ph=new A.l(!0,B.I,null,"CupertinoSystemDisplay",null,null,null,null,null,null,null,null,null,null,null,null,null,B.e,null,null,null,"blackCupertino displayMedium",null,null,null,null)
-B.PI=new A.l(!0,B.I,null,"CupertinoSystemDisplay",null,null,null,null,null,null,null,null,null,null,null,null,null,B.e,null,null,null,"blackCupertino displaySmall",null,null,null,null)
-B.Ow=new A.l(!0,B.I,null,"CupertinoSystemDisplay",null,null,null,null,null,null,null,null,null,null,null,null,null,B.e,null,null,null,"blackCupertino headlineLarge",null,null,null,null)
-B.Ny=new A.l(!0,B.I,null,"CupertinoSystemDisplay",null,null,null,null,null,null,null,null,null,null,null,null,null,B.e,null,null,null,"blackCupertino headlineMedium",null,null,null,null)
-B.Ql=new A.l(!0,B.H,null,"CupertinoSystemDisplay",null,null,null,null,null,null,null,null,null,null,null,null,null,B.e,null,null,null,"blackCupertino headlineSmall",null,null,null,null)
-B.Nx=new A.l(!0,B.H,null,"CupertinoSystemDisplay",null,null,null,null,null,null,null,null,null,null,null,null,null,B.e,null,null,null,"blackCupertino titleLarge",null,null,null,null)
-B.QF=new A.l(!0,B.H,null,"CupertinoSystemText",null,null,null,null,null,null,null,null,null,null,null,null,null,B.e,null,null,null,"blackCupertino titleMedium",null,null,null,null)
-B.P9=new A.l(!0,B.l,null,"CupertinoSystemText",null,null,null,null,null,null,null,null,null,null,null,null,null,B.e,null,null,null,"blackCupertino titleSmall",null,null,null,null)
-B.Rh=new A.l(!0,B.H,null,"CupertinoSystemText",null,null,null,null,null,null,null,null,null,null,null,null,null,B.e,null,null,null,"blackCupertino bodyLarge",null,null,null,null)
-B.Nk=new A.l(!0,B.H,null,"CupertinoSystemText",null,null,null,null,null,null,null,null,null,null,null,null,null,B.e,null,null,null,"blackCupertino bodyMedium",null,null,null,null)
-B.Pe=new A.l(!0,B.I,null,"CupertinoSystemText",null,null,null,null,null,null,null,null,null,null,null,null,null,B.e,null,null,null,"blackCupertino bodySmall",null,null,null,null)
-B.P4=new A.l(!0,B.H,null,"CupertinoSystemText",null,null,null,null,null,null,null,null,null,null,null,null,null,B.e,null,null,null,"blackCupertino labelLarge",null,null,null,null)
-B.Pa=new A.l(!0,B.l,null,"CupertinoSystemText",null,null,null,null,null,null,null,null,null,null,null,null,null,B.e,null,null,null,"blackCupertino labelMedium",null,null,null,null)
-B.Nh=new A.l(!0,B.l,null,"CupertinoSystemText",null,null,null,null,null,null,null,null,null,null,null,null,null,B.e,null,null,null,"blackCupertino labelSmall",null,null,null,null)
-B.Rk=new A.df(B.Nw,B.Ph,B.PI,B.Ow,B.Ny,B.Ql,B.Nx,B.QF,B.P9,B.Rh,B.Nk,B.Pe,B.P4,B.Pa,B.Nh)
-B.QI=new A.l(!0,B.F,null,".AppleSystemUIFont",null,null,null,null,null,null,null,null,null,null,null,null,null,B.e,null,null,null,"whiteRedwoodCity displayLarge",null,null,null,null)
-B.NJ=new A.l(!0,B.F,null,".AppleSystemUIFont",null,null,null,null,null,null,null,null,null,null,null,null,null,B.e,null,null,null,"whiteRedwoodCity displayMedium",null,null,null,null)
-B.QJ=new A.l(!0,B.F,null,".AppleSystemUIFont",null,null,null,null,null,null,null,null,null,null,null,null,null,B.e,null,null,null,"whiteRedwoodCity displaySmall",null,null,null,null)
-B.QX=new A.l(!0,B.F,null,".AppleSystemUIFont",null,null,null,null,null,null,null,null,null,null,null,null,null,B.e,null,null,null,"whiteRedwoodCity headlineLarge",null,null,null,null)
-B.NQ=new A.l(!0,B.F,null,".AppleSystemUIFont",null,null,null,null,null,null,null,null,null,null,null,null,null,B.e,null,null,null,"whiteRedwoodCity headlineMedium",null,null,null,null)
-B.OO=new A.l(!0,B.k,null,".AppleSystemUIFont",null,null,null,null,null,null,null,null,null,null,null,null,null,B.e,null,null,null,"whiteRedwoodCity headlineSmall",null,null,null,null)
-B.O4=new A.l(!0,B.k,null,".AppleSystemUIFont",null,null,null,null,null,null,null,null,null,null,null,null,null,B.e,null,null,null,"whiteRedwoodCity titleLarge",null,null,null,null)
-B.PR=new A.l(!0,B.k,null,".AppleSystemUIFont",null,null,null,null,null,null,null,null,null,null,null,null,null,B.e,null,null,null,"whiteRedwoodCity titleMedium",null,null,null,null)
-B.PV=new A.l(!0,B.k,null,".AppleSystemUIFont",null,null,null,null,null,null,null,null,null,null,null,null,null,B.e,null,null,null,"whiteRedwoodCity titleSmall",null,null,null,null)
-B.Qg=new A.l(!0,B.k,null,".AppleSystemUIFont",null,null,null,null,null,null,null,null,null,null,null,null,null,B.e,null,null,null,"whiteRedwoodCity bodyLarge",null,null,null,null)
-B.Pu=new A.l(!0,B.k,null,".AppleSystemUIFont",null,null,null,null,null,null,null,null,null,null,null,null,null,B.e,null,null,null,"whiteRedwoodCity bodyMedium",null,null,null,null)
-B.Pm=new A.l(!0,B.F,null,".AppleSystemUIFont",null,null,null,null,null,null,null,null,null,null,null,null,null,B.e,null,null,null,"whiteRedwoodCity bodySmall",null,null,null,null)
-B.On=new A.l(!0,B.k,null,".AppleSystemUIFont",null,null,null,null,null,null,null,null,null,null,null,null,null,B.e,null,null,null,"whiteRedwoodCity labelLarge",null,null,null,null)
-B.Pq=new A.l(!0,B.k,null,".AppleSystemUIFont",null,null,null,null,null,null,null,null,null,null,null,null,null,B.e,null,null,null,"whiteRedwoodCity labelMedium",null,null,null,null)
-B.NX=new A.l(!0,B.k,null,".AppleSystemUIFont",null,null,null,null,null,null,null,null,null,null,null,null,null,B.e,null,null,null,"whiteRedwoodCity labelSmall",null,null,null,null)
-B.Rl=new A.df(B.QI,B.NJ,B.QJ,B.QX,B.NQ,B.OO,B.O4,B.PR,B.PV,B.Qg,B.Pu,B.Pm,B.On,B.Pq,B.NX)
-B.P7=new A.l(!0,B.F,null,"Segoe UI",null,null,null,null,null,null,null,null,null,null,null,null,null,B.e,null,null,null,"whiteRedmond displayLarge",null,null,null,null)
-B.Nu=new A.l(!0,B.F,null,"Segoe UI",null,null,null,null,null,null,null,null,null,null,null,null,null,B.e,null,null,null,"whiteRedmond displayMedium",null,null,null,null)
-B.QN=new A.l(!0,B.F,null,"Segoe UI",null,null,null,null,null,null,null,null,null,null,null,null,null,B.e,null,null,null,"whiteRedmond displaySmall",null,null,null,null)
-B.NH=new A.l(!0,B.F,null,"Segoe UI",null,null,null,null,null,null,null,null,null,null,null,null,null,B.e,null,null,null,"whiteRedmond headlineLarge",null,null,null,null)
-B.Qh=new A.l(!0,B.F,null,"Segoe UI",null,null,null,null,null,null,null,null,null,null,null,null,null,B.e,null,null,null,"whiteRedmond headlineMedium",null,null,null,null)
-B.Pk=new A.l(!0,B.k,null,"Segoe UI",null,null,null,null,null,null,null,null,null,null,null,null,null,B.e,null,null,null,"whiteRedmond headlineSmall",null,null,null,null)
-B.QL=new A.l(!0,B.k,null,"Segoe UI",null,null,null,null,null,null,null,null,null,null,null,null,null,B.e,null,null,null,"whiteRedmond titleLarge",null,null,null,null)
-B.O9=new A.l(!0,B.k,null,"Segoe UI",null,null,null,null,null,null,null,null,null,null,null,null,null,B.e,null,null,null,"whiteRedmond titleMedium",null,null,null,null)
-B.NW=new A.l(!0,B.k,null,"Segoe UI",null,null,null,null,null,null,null,null,null,null,null,null,null,B.e,null,null,null,"whiteRedmond titleSmall",null,null,null,null)
-B.R_=new A.l(!0,B.k,null,"Segoe UI",null,null,null,null,null,null,null,null,null,null,null,null,null,B.e,null,null,null,"whiteRedmond bodyLarge",null,null,null,null)
-B.Qx=new A.l(!0,B.k,null,"Segoe UI",null,null,null,null,null,null,null,null,null,null,null,null,null,B.e,null,null,null,"whiteRedmond bodyMedium",null,null,null,null)
-B.PU=new A.l(!0,B.F,null,"Segoe UI",null,null,null,null,null,null,null,null,null,null,null,null,null,B.e,null,null,null,"whiteRedmond bodySmall",null,null,null,null)
-B.NI=new A.l(!0,B.k,null,"Segoe UI",null,null,null,null,null,null,null,null,null,null,null,null,null,B.e,null,null,null,"whiteRedmond labelLarge",null,null,null,null)
-B.OI=new A.l(!0,B.k,null,"Segoe UI",null,null,null,null,null,null,null,null,null,null,null,null,null,B.e,null,null,null,"whiteRedmond labelMedium",null,null,null,null)
-B.Nb=new A.l(!0,B.k,null,"Segoe UI",null,null,null,null,null,null,null,null,null,null,null,null,null,B.e,null,null,null,"whiteRedmond labelSmall",null,null,null,null)
-B.Rm=new A.df(B.P7,B.Nu,B.QN,B.NH,B.Qh,B.Pk,B.QL,B.O9,B.NW,B.R_,B.Qx,B.PU,B.NI,B.OI,B.Nb)
-B.Q0=new A.l(!1,null,null,null,null,null,112,B.fv,null,null,null,B.o,null,null,null,null,null,null,null,null,null,"englishLike displayLarge 2014",null,null,null,null)
-B.Q9=new A.l(!1,null,null,null,null,null,56,B.n,null,null,null,B.o,null,null,null,null,null,null,null,null,null,"englishLike displayMedium 2014",null,null,null,null)
-B.PJ=new A.l(!1,null,null,null,null,null,45,B.n,null,null,null,B.o,null,null,null,null,null,null,null,null,null,"englishLike displaySmall 2014",null,null,null,null)
-B.Q2=new A.l(!1,null,null,null,null,null,40,B.n,null,null,null,B.o,null,null,null,null,null,null,null,null,null,"englishLike headlineLarge 2014",null,null,null,null)
-B.OG=new A.l(!1,null,null,null,null,null,34,B.n,null,null,null,B.o,null,null,null,null,null,null,null,null,null,"englishLike headlineMedium 2014",null,null,null,null)
-B.NA=new A.l(!1,null,null,null,null,null,24,B.n,null,null,null,B.o,null,null,null,null,null,null,null,null,null,"englishLike headlineSmall 2014",null,null,null,null)
-B.Oq=new A.l(!1,null,null,null,null,null,20,B.Q,null,null,null,B.o,null,null,null,null,null,null,null,null,null,"englishLike titleLarge 2014",null,null,null,null)
-B.Pj=new A.l(!1,null,null,null,null,null,16,B.n,null,null,null,B.o,null,null,null,null,null,null,null,null,null,"englishLike titleMedium 2014",null,null,null,null)
-B.Nq=new A.l(!1,null,null,null,null,null,14,B.Q,null,0.1,null,B.o,null,null,null,null,null,null,null,null,null,"englishLike titleSmall 2014",null,null,null,null)
-B.Nc=new A.l(!1,null,null,null,null,null,14,B.Q,null,null,null,B.o,null,null,null,null,null,null,null,null,null,"englishLike bodyLarge 2014",null,null,null,null)
-B.Nd=new A.l(!1,null,null,null,null,null,14,B.n,null,null,null,B.o,null,null,null,null,null,null,null,null,null,"englishLike bodyMedium 2014",null,null,null,null)
-B.ND=new A.l(!1,null,null,null,null,null,12,B.n,null,null,null,B.o,null,null,null,null,null,null,null,null,null,"englishLike bodySmall 2014",null,null,null,null)
-B.PW=new A.l(!1,null,null,null,null,null,14,B.Q,null,null,null,B.o,null,null,null,null,null,null,null,null,null,"englishLike labelLarge 2014",null,null,null,null)
-B.OQ=new A.l(!1,null,null,null,null,null,12,B.n,null,null,null,B.o,null,null,null,null,null,null,null,null,null,"englishLike labelMedium 2014",null,null,null,null)
-B.Qt=new A.l(!1,null,null,null,null,null,10,B.n,null,1.5,null,B.o,null,null,null,null,null,null,null,null,null,"englishLike labelSmall 2014",null,null,null,null)
-B.Rn=new A.df(B.Q0,B.Q9,B.PJ,B.Q2,B.OG,B.NA,B.Oq,B.Pj,B.Nq,B.Nc,B.Nd,B.ND,B.PW,B.OQ,B.Qt)
-B.Og=new A.l(!0,B.F,null,"Roboto",null,null,null,null,null,null,null,null,null,null,null,null,null,B.e,null,null,null,"whiteMountainView displayLarge",null,null,null,null)
-B.Ot=new A.l(!0,B.F,null,"Roboto",null,null,null,null,null,null,null,null,null,null,null,null,null,B.e,null,null,null,"whiteMountainView displayMedium",null,null,null,null)
-B.NV=new A.l(!0,B.F,null,"Roboto",null,null,null,null,null,null,null,null,null,null,null,null,null,B.e,null,null,null,"whiteMountainView displaySmall",null,null,null,null)
-B.Ng=new A.l(!0,B.F,null,"Roboto",null,null,null,null,null,null,null,null,null,null,null,null,null,B.e,null,null,null,"whiteMountainView headlineLarge",null,null,null,null)
-B.OZ=new A.l(!0,B.F,null,"Roboto",null,null,null,null,null,null,null,null,null,null,null,null,null,B.e,null,null,null,"whiteMountainView headlineMedium",null,null,null,null)
-B.QZ=new A.l(!0,B.k,null,"Roboto",null,null,null,null,null,null,null,null,null,null,null,null,null,B.e,null,null,null,"whiteMountainView headlineSmall",null,null,null,null)
-B.NT=new A.l(!0,B.k,null,"Roboto",null,null,null,null,null,null,null,null,null,null,null,null,null,B.e,null,null,null,"whiteMountainView titleLarge",null,null,null,null)
-B.Oc=new A.l(!0,B.k,null,"Roboto",null,null,null,null,null,null,null,null,null,null,null,null,null,B.e,null,null,null,"whiteMountainView titleMedium",null,null,null,null)
-B.PS=new A.l(!0,B.k,null,"Roboto",null,null,null,null,null,null,null,null,null,null,null,null,null,B.e,null,null,null,"whiteMountainView titleSmall",null,null,null,null)
-B.P0=new A.l(!0,B.k,null,"Roboto",null,null,null,null,null,null,null,null,null,null,null,null,null,B.e,null,null,null,"whiteMountainView bodyLarge",null,null,null,null)
-B.R5=new A.l(!0,B.k,null,"Roboto",null,null,null,null,null,null,null,null,null,null,null,null,null,B.e,null,null,null,"whiteMountainView bodyMedium",null,null,null,null)
-B.R4=new A.l(!0,B.F,null,"Roboto",null,null,null,null,null,null,null,null,null,null,null,null,null,B.e,null,null,null,"whiteMountainView bodySmall",null,null,null,null)
-B.Or=new A.l(!0,B.k,null,"Roboto",null,null,null,null,null,null,null,null,null,null,null,null,null,B.e,null,null,null,"whiteMountainView labelLarge",null,null,null,null)
-B.Q7=new A.l(!0,B.k,null,"Roboto",null,null,null,null,null,null,null,null,null,null,null,null,null,B.e,null,null,null,"whiteMountainView labelMedium",null,null,null,null)
-B.QP=new A.l(!0,B.k,null,"Roboto",null,null,null,null,null,null,null,null,null,null,null,null,null,B.e,null,null,null,"whiteMountainView labelSmall",null,null,null,null)
-B.Ro=new A.df(B.Og,B.Ot,B.NV,B.Ng,B.OZ,B.QZ,B.NT,B.Oc,B.PS,B.P0,B.R5,B.R4,B.Or,B.Q7,B.QP)
-B.QS=new A.l(!1,null,null,null,null,null,57,B.n,null,-0.25,null,B.o,1.12,B.t,null,null,null,null,null,null,null,"englishLike displayLarge 2021",null,null,null,null)
-B.Qb=new A.l(!1,null,null,null,null,null,45,B.n,null,0,null,B.o,1.16,B.t,null,null,null,null,null,null,null,"englishLike displayMedium 2021",null,null,null,null)
-B.PA=new A.l(!1,null,null,null,null,null,36,B.n,null,0,null,B.o,1.22,B.t,null,null,null,null,null,null,null,"englishLike displaySmall 2021",null,null,null,null)
-B.PD=new A.l(!1,null,null,null,null,null,32,B.n,null,0,null,B.o,1.25,B.t,null,null,null,null,null,null,null,"englishLike headlineLarge 2021",null,null,null,null)
-B.P8=new A.l(!1,null,null,null,null,null,28,B.n,null,0,null,B.o,1.29,B.t,null,null,null,null,null,null,null,"englishLike headlineMedium 2021",null,null,null,null)
-B.R9=new A.l(!1,null,null,null,null,null,24,B.n,null,0,null,B.o,1.33,B.t,null,null,null,null,null,null,null,"englishLike headlineSmall 2021",null,null,null,null)
-B.Nm=new A.l(!1,null,null,null,null,null,22,B.n,null,0,null,B.o,1.27,B.t,null,null,null,null,null,null,null,"englishLike titleLarge 2021",null,null,null,null)
-B.Oh=new A.l(!1,null,null,null,null,null,16,B.Q,null,0.15,null,B.o,1.5,B.t,null,null,null,null,null,null,null,"englishLike titleMedium 2021",null,null,null,null)
-B.Qy=new A.l(!1,null,null,null,null,null,14,B.Q,null,0.1,null,B.o,1.43,B.t,null,null,null,null,null,null,null,"englishLike titleSmall 2021",null,null,null,null)
-B.Nn=new A.l(!1,null,null,null,null,null,16,B.n,null,0.5,null,B.o,1.5,B.t,null,null,null,null,null,null,null,"englishLike bodyLarge 2021",null,null,null,null)
-B.Po=new A.l(!1,null,null,null,null,null,14,B.n,null,0.25,null,B.o,1.43,B.t,null,null,null,null,null,null,null,"englishLike bodyMedium 2021",null,null,null,null)
-B.Nf=new A.l(!1,null,null,null,null,null,12,B.n,null,0.4,null,B.o,1.33,B.t,null,null,null,null,null,null,null,"englishLike bodySmall 2021",null,null,null,null)
-B.OW=new A.l(!1,null,null,null,null,null,14,B.Q,null,0.1,null,B.o,1.43,B.t,null,null,null,null,null,null,null,"englishLike labelLarge 2021",null,null,null,null)
-B.Ol=new A.l(!1,null,null,null,null,null,12,B.Q,null,0.5,null,B.o,1.33,B.t,null,null,null,null,null,null,null,"englishLike labelMedium 2021",null,null,null,null)
-B.PX=new A.l(!1,null,null,null,null,null,11,B.Q,null,0.5,null,B.o,1.45,B.t,null,null,null,null,null,null,null,"englishLike labelSmall 2021",null,null,null,null)
-B.Rp=new A.df(B.QS,B.Qb,B.PA,B.PD,B.P8,B.R9,B.Nm,B.Oh,B.Qy,B.Nn,B.Po,B.Nf,B.OW,B.Ol,B.PX)
-B.Q4=new A.l(!1,null,null,null,null,null,112,B.n,null,null,null,B.o,null,null,null,null,null,null,null,null,null,"tall displayLarge 2014",null,null,null,null)
-B.QW=new A.l(!1,null,null,null,null,null,56,B.n,null,null,null,B.o,null,null,null,null,null,null,null,null,null,"tall displayMedium 2014",null,null,null,null)
-B.O6=new A.l(!1,null,null,null,null,null,45,B.n,null,null,null,B.o,null,null,null,null,null,null,null,null,null,"tall displaySmall 2014",null,null,null,null)
-B.Qq=new A.l(!1,null,null,null,null,null,40,B.n,null,null,null,B.o,null,null,null,null,null,null,null,null,null,"tall headlineLarge 2014",null,null,null,null)
-B.OE=new A.l(!1,null,null,null,null,null,34,B.n,null,null,null,B.o,null,null,null,null,null,null,null,null,null,"tall headlineMedium 2014",null,null,null,null)
-B.NF=new A.l(!1,null,null,null,null,null,24,B.n,null,null,null,B.o,null,null,null,null,null,null,null,null,null,"tall headlineSmall 2014",null,null,null,null)
-B.Ob=new A.l(!1,null,null,null,null,null,21,B.ap,null,null,null,B.o,null,null,null,null,null,null,null,null,null,"tall titleLarge 2014",null,null,null,null)
-B.OB=new A.l(!1,null,null,null,null,null,17,B.n,null,null,null,B.o,null,null,null,null,null,null,null,null,null,"tall titleMedium 2014",null,null,null,null)
-B.QG=new A.l(!1,null,null,null,null,null,15,B.Q,null,null,null,B.o,null,null,null,null,null,null,null,null,null,"tall titleSmall 2014",null,null,null,null)
-B.PP=new A.l(!1,null,null,null,null,null,15,B.ap,null,null,null,B.o,null,null,null,null,null,null,null,null,null,"tall bodyLarge 2014",null,null,null,null)
-B.Ri=new A.l(!1,null,null,null,null,null,15,B.n,null,null,null,B.o,null,null,null,null,null,null,null,null,null,"tall bodyMedium 2014",null,null,null,null)
-B.Ps=new A.l(!1,null,null,null,null,null,13,B.n,null,null,null,B.o,null,null,null,null,null,null,null,null,null,"tall bodySmall 2014",null,null,null,null)
-B.P5=new A.l(!1,null,null,null,null,null,15,B.ap,null,null,null,B.o,null,null,null,null,null,null,null,null,null,"tall labelLarge 2014",null,null,null,null)
-B.Rg=new A.l(!1,null,null,null,null,null,12,B.n,null,null,null,B.o,null,null,null,null,null,null,null,null,null,"tall labelMedium 2014",null,null,null,null)
-B.Q8=new A.l(!1,null,null,null,null,null,11,B.n,null,null,null,B.o,null,null,null,null,null,null,null,null,null,"tall labelSmall 2014",null,null,null,null)
-B.Rq=new A.df(B.Q4,B.QW,B.O6,B.Qq,B.OE,B.NF,B.Ob,B.OB,B.QG,B.PP,B.Ri,B.Ps,B.P5,B.Rg,B.Q8)
-B.Rd=new A.l(!0,B.F,null,"CupertinoSystemDisplay",null,null,null,null,null,null,null,null,null,null,null,null,null,B.e,null,null,null,"whiteCupertino displayLarge",null,null,null,null)
-B.QM=new A.l(!0,B.F,null,"CupertinoSystemDisplay",null,null,null,null,null,null,null,null,null,null,null,null,null,B.e,null,null,null,"whiteCupertino displayMedium",null,null,null,null)
-B.Qa=new A.l(!0,B.F,null,"CupertinoSystemDisplay",null,null,null,null,null,null,null,null,null,null,null,null,null,B.e,null,null,null,"whiteCupertino displaySmall",null,null,null,null)
-B.OP=new A.l(!0,B.F,null,"CupertinoSystemDisplay",null,null,null,null,null,null,null,null,null,null,null,null,null,B.e,null,null,null,"whiteCupertino headlineLarge",null,null,null,null)
-B.Qz=new A.l(!0,B.F,null,"CupertinoSystemDisplay",null,null,null,null,null,null,null,null,null,null,null,null,null,B.e,null,null,null,"whiteCupertino headlineMedium",null,null,null,null)
-B.OJ=new A.l(!0,B.k,null,"CupertinoSystemDisplay",null,null,null,null,null,null,null,null,null,null,null,null,null,B.e,null,null,null,"whiteCupertino headlineSmall",null,null,null,null)
-B.PM=new A.l(!0,B.k,null,"CupertinoSystemDisplay",null,null,null,null,null,null,null,null,null,null,null,null,null,B.e,null,null,null,"whiteCupertino titleLarge",null,null,null,null)
-B.Qv=new A.l(!0,B.k,null,"CupertinoSystemText",null,null,null,null,null,null,null,null,null,null,null,null,null,B.e,null,null,null,"whiteCupertino titleMedium",null,null,null,null)
-B.PE=new A.l(!0,B.k,null,"CupertinoSystemText",null,null,null,null,null,null,null,null,null,null,null,null,null,B.e,null,null,null,"whiteCupertino titleSmall",null,null,null,null)
-B.QR=new A.l(!0,B.k,null,"CupertinoSystemText",null,null,null,null,null,null,null,null,null,null,null,null,null,B.e,null,null,null,"whiteCupertino bodyLarge",null,null,null,null)
-B.Oz=new A.l(!0,B.k,null,"CupertinoSystemText",null,null,null,null,null,null,null,null,null,null,null,null,null,B.e,null,null,null,"whiteCupertino bodyMedium",null,null,null,null)
-B.P6=new A.l(!0,B.F,null,"CupertinoSystemText",null,null,null,null,null,null,null,null,null,null,null,null,null,B.e,null,null,null,"whiteCupertino bodySmall",null,null,null,null)
-B.ON=new A.l(!0,B.k,null,"CupertinoSystemText",null,null,null,null,null,null,null,null,null,null,null,null,null,B.e,null,null,null,"whiteCupertino labelLarge",null,null,null,null)
-B.Ns=new A.l(!0,B.k,null,"CupertinoSystemText",null,null,null,null,null,null,null,null,null,null,null,null,null,B.e,null,null,null,"whiteCupertino labelMedium",null,null,null,null)
-B.Nr=new A.l(!0,B.k,null,"CupertinoSystemText",null,null,null,null,null,null,null,null,null,null,null,null,null,B.e,null,null,null,"whiteCupertino labelSmall",null,null,null,null)
-B.Rr=new A.df(B.Rd,B.QM,B.Qa,B.OP,B.Qz,B.OJ,B.PM,B.Qv,B.PE,B.QR,B.Oz,B.P6,B.ON,B.Ns,B.Nr)
+B.Rc=new A.l(!0,B.AU,null,null,null,null,14,null,null,null,null,null,1.6,null,null,null,null,null,null,null,null,null,null,null,null,null)
+B.NR=new A.l(!1,null,null,null,null,null,112,B.fv,null,null,null,B.J,null,null,null,null,null,null,null,null,null,"dense displayLarge 2014",null,null,null,null)
+B.Qa=new A.l(!1,null,null,null,null,null,56,B.n,null,null,null,B.J,null,null,null,null,null,null,null,null,null,"dense displayMedium 2014",null,null,null,null)
+B.Nj=new A.l(!1,null,null,null,null,null,45,B.n,null,null,null,B.J,null,null,null,null,null,null,null,null,null,"dense displaySmall 2014",null,null,null,null)
+B.Od=new A.l(!1,null,null,null,null,null,40,B.n,null,null,null,B.J,null,null,null,null,null,null,null,null,null,"dense headlineLarge 2014",null,null,null,null)
+B.QJ=new A.l(!1,null,null,null,null,null,34,B.n,null,null,null,B.J,null,null,null,null,null,null,null,null,null,"dense headlineMedium 2014",null,null,null,null)
+B.PQ=new A.l(!1,null,null,null,null,null,24,B.n,null,null,null,B.J,null,null,null,null,null,null,null,null,null,"dense headlineSmall 2014",null,null,null,null)
+B.NJ=new A.l(!1,null,null,null,null,null,21,B.Q,null,null,null,B.J,null,null,null,null,null,null,null,null,null,"dense titleLarge 2014",null,null,null,null)
+B.PT=new A.l(!1,null,null,null,null,null,17,B.n,null,null,null,B.J,null,null,null,null,null,null,null,null,null,"dense titleMedium 2014",null,null,null,null)
+B.On=new A.l(!1,null,null,null,null,null,15,B.Q,null,null,null,B.J,null,null,null,null,null,null,null,null,null,"dense titleSmall 2014",null,null,null,null)
+B.Qt=new A.l(!1,null,null,null,null,null,15,B.Q,null,null,null,B.J,null,null,null,null,null,null,null,null,null,"dense bodyLarge 2014",null,null,null,null)
+B.PM=new A.l(!1,null,null,null,null,null,15,B.n,null,null,null,B.J,null,null,null,null,null,null,null,null,null,"dense bodyMedium 2014",null,null,null,null)
+B.Py=new A.l(!1,null,null,null,null,null,13,B.n,null,null,null,B.J,null,null,null,null,null,null,null,null,null,"dense bodySmall 2014",null,null,null,null)
+B.Op=new A.l(!1,null,null,null,null,null,15,B.Q,null,null,null,B.J,null,null,null,null,null,null,null,null,null,"dense labelLarge 2014",null,null,null,null)
+B.OQ=new A.l(!1,null,null,null,null,null,12,B.n,null,null,null,B.J,null,null,null,null,null,null,null,null,null,"dense labelMedium 2014",null,null,null,null)
+B.OY=new A.l(!1,null,null,null,null,null,11,B.n,null,null,null,B.J,null,null,null,null,null,null,null,null,null,"dense labelSmall 2014",null,null,null,null)
+B.Ro=new A.df(B.NR,B.Qa,B.Nj,B.Od,B.QJ,B.PQ,B.NJ,B.PT,B.On,B.Qt,B.PM,B.Py,B.Op,B.OQ,B.OY)
+B.NB=new A.l(!0,B.I,null,"CupertinoSystemDisplay",null,null,null,null,null,null,null,null,null,null,null,null,null,B.e,null,null,null,"blackCupertino displayLarge",null,null,null,null)
+B.Pm=new A.l(!0,B.I,null,"CupertinoSystemDisplay",null,null,null,null,null,null,null,null,null,null,null,null,null,B.e,null,null,null,"blackCupertino displayMedium",null,null,null,null)
+B.PN=new A.l(!0,B.I,null,"CupertinoSystemDisplay",null,null,null,null,null,null,null,null,null,null,null,null,null,B.e,null,null,null,"blackCupertino displaySmall",null,null,null,null)
+B.OB=new A.l(!0,B.I,null,"CupertinoSystemDisplay",null,null,null,null,null,null,null,null,null,null,null,null,null,B.e,null,null,null,"blackCupertino headlineLarge",null,null,null,null)
+B.ND=new A.l(!0,B.I,null,"CupertinoSystemDisplay",null,null,null,null,null,null,null,null,null,null,null,null,null,B.e,null,null,null,"blackCupertino headlineMedium",null,null,null,null)
+B.Qq=new A.l(!0,B.H,null,"CupertinoSystemDisplay",null,null,null,null,null,null,null,null,null,null,null,null,null,B.e,null,null,null,"blackCupertino headlineSmall",null,null,null,null)
+B.NC=new A.l(!0,B.H,null,"CupertinoSystemDisplay",null,null,null,null,null,null,null,null,null,null,null,null,null,B.e,null,null,null,"blackCupertino titleLarge",null,null,null,null)
+B.QK=new A.l(!0,B.H,null,"CupertinoSystemText",null,null,null,null,null,null,null,null,null,null,null,null,null,B.e,null,null,null,"blackCupertino titleMedium",null,null,null,null)
+B.Pe=new A.l(!0,B.l,null,"CupertinoSystemText",null,null,null,null,null,null,null,null,null,null,null,null,null,B.e,null,null,null,"blackCupertino titleSmall",null,null,null,null)
+B.Rm=new A.l(!0,B.H,null,"CupertinoSystemText",null,null,null,null,null,null,null,null,null,null,null,null,null,B.e,null,null,null,"blackCupertino bodyLarge",null,null,null,null)
+B.Np=new A.l(!0,B.H,null,"CupertinoSystemText",null,null,null,null,null,null,null,null,null,null,null,null,null,B.e,null,null,null,"blackCupertino bodyMedium",null,null,null,null)
+B.Pj=new A.l(!0,B.I,null,"CupertinoSystemText",null,null,null,null,null,null,null,null,null,null,null,null,null,B.e,null,null,null,"blackCupertino bodySmall",null,null,null,null)
+B.P9=new A.l(!0,B.H,null,"CupertinoSystemText",null,null,null,null,null,null,null,null,null,null,null,null,null,B.e,null,null,null,"blackCupertino labelLarge",null,null,null,null)
+B.Pf=new A.l(!0,B.l,null,"CupertinoSystemText",null,null,null,null,null,null,null,null,null,null,null,null,null,B.e,null,null,null,"blackCupertino labelMedium",null,null,null,null)
+B.Nm=new A.l(!0,B.l,null,"CupertinoSystemText",null,null,null,null,null,null,null,null,null,null,null,null,null,B.e,null,null,null,"blackCupertino labelSmall",null,null,null,null)
+B.Rp=new A.df(B.NB,B.Pm,B.PN,B.OB,B.ND,B.Qq,B.NC,B.QK,B.Pe,B.Rm,B.Np,B.Pj,B.P9,B.Pf,B.Nm)
+B.QN=new A.l(!0,B.F,null,".AppleSystemUIFont",null,null,null,null,null,null,null,null,null,null,null,null,null,B.e,null,null,null,"whiteRedwoodCity displayLarge",null,null,null,null)
+B.NO=new A.l(!0,B.F,null,".AppleSystemUIFont",null,null,null,null,null,null,null,null,null,null,null,null,null,B.e,null,null,null,"whiteRedwoodCity displayMedium",null,null,null,null)
+B.QO=new A.l(!0,B.F,null,".AppleSystemUIFont",null,null,null,null,null,null,null,null,null,null,null,null,null,B.e,null,null,null,"whiteRedwoodCity displaySmall",null,null,null,null)
+B.R1=new A.l(!0,B.F,null,".AppleSystemUIFont",null,null,null,null,null,null,null,null,null,null,null,null,null,B.e,null,null,null,"whiteRedwoodCity headlineLarge",null,null,null,null)
+B.NV=new A.l(!0,B.F,null,".AppleSystemUIFont",null,null,null,null,null,null,null,null,null,null,null,null,null,B.e,null,null,null,"whiteRedwoodCity headlineMedium",null,null,null,null)
+B.OT=new A.l(!0,B.k,null,".AppleSystemUIFont",null,null,null,null,null,null,null,null,null,null,null,null,null,B.e,null,null,null,"whiteRedwoodCity headlineSmall",null,null,null,null)
+B.O9=new A.l(!0,B.k,null,".AppleSystemUIFont",null,null,null,null,null,null,null,null,null,null,null,null,null,B.e,null,null,null,"whiteRedwoodCity titleLarge",null,null,null,null)
+B.PW=new A.l(!0,B.k,null,".AppleSystemUIFont",null,null,null,null,null,null,null,null,null,null,null,null,null,B.e,null,null,null,"whiteRedwoodCity titleMedium",null,null,null,null)
+B.Q_=new A.l(!0,B.k,null,".AppleSystemUIFont",null,null,null,null,null,null,null,null,null,null,null,null,null,B.e,null,null,null,"whiteRedwoodCity titleSmall",null,null,null,null)
+B.Ql=new A.l(!0,B.k,null,".AppleSystemUIFont",null,null,null,null,null,null,null,null,null,null,null,null,null,B.e,null,null,null,"whiteRedwoodCity bodyLarge",null,null,null,null)
+B.Pz=new A.l(!0,B.k,null,".AppleSystemUIFont",null,null,null,null,null,null,null,null,null,null,null,null,null,B.e,null,null,null,"whiteRedwoodCity bodyMedium",null,null,null,null)
+B.Pr=new A.l(!0,B.F,null,".AppleSystemUIFont",null,null,null,null,null,null,null,null,null,null,null,null,null,B.e,null,null,null,"whiteRedwoodCity bodySmall",null,null,null,null)
+B.Os=new A.l(!0,B.k,null,".AppleSystemUIFont",null,null,null,null,null,null,null,null,null,null,null,null,null,B.e,null,null,null,"whiteRedwoodCity labelLarge",null,null,null,null)
+B.Pv=new A.l(!0,B.k,null,".AppleSystemUIFont",null,null,null,null,null,null,null,null,null,null,null,null,null,B.e,null,null,null,"whiteRedwoodCity labelMedium",null,null,null,null)
+B.O1=new A.l(!0,B.k,null,".AppleSystemUIFont",null,null,null,null,null,null,null,null,null,null,null,null,null,B.e,null,null,null,"whiteRedwoodCity labelSmall",null,null,null,null)
+B.Rq=new A.df(B.QN,B.NO,B.QO,B.R1,B.NV,B.OT,B.O9,B.PW,B.Q_,B.Ql,B.Pz,B.Pr,B.Os,B.Pv,B.O1)
+B.Pc=new A.l(!0,B.F,null,"Segoe UI",null,null,null,null,null,null,null,null,null,null,null,null,null,B.e,null,null,null,"whiteRedmond displayLarge",null,null,null,null)
+B.Nz=new A.l(!0,B.F,null,"Segoe UI",null,null,null,null,null,null,null,null,null,null,null,null,null,B.e,null,null,null,"whiteRedmond displayMedium",null,null,null,null)
+B.QS=new A.l(!0,B.F,null,"Segoe UI",null,null,null,null,null,null,null,null,null,null,null,null,null,B.e,null,null,null,"whiteRedmond displaySmall",null,null,null,null)
+B.NM=new A.l(!0,B.F,null,"Segoe UI",null,null,null,null,null,null,null,null,null,null,null,null,null,B.e,null,null,null,"whiteRedmond headlineLarge",null,null,null,null)
+B.Qm=new A.l(!0,B.F,null,"Segoe UI",null,null,null,null,null,null,null,null,null,null,null,null,null,B.e,null,null,null,"whiteRedmond headlineMedium",null,null,null,null)
+B.Pp=new A.l(!0,B.k,null,"Segoe UI",null,null,null,null,null,null,null,null,null,null,null,null,null,B.e,null,null,null,"whiteRedmond headlineSmall",null,null,null,null)
+B.QQ=new A.l(!0,B.k,null,"Segoe UI",null,null,null,null,null,null,null,null,null,null,null,null,null,B.e,null,null,null,"whiteRedmond titleLarge",null,null,null,null)
+B.Oe=new A.l(!0,B.k,null,"Segoe UI",null,null,null,null,null,null,null,null,null,null,null,null,null,B.e,null,null,null,"whiteRedmond titleMedium",null,null,null,null)
+B.O0=new A.l(!0,B.k,null,"Segoe UI",null,null,null,null,null,null,null,null,null,null,null,null,null,B.e,null,null,null,"whiteRedmond titleSmall",null,null,null,null)
+B.R4=new A.l(!0,B.k,null,"Segoe UI",null,null,null,null,null,null,null,null,null,null,null,null,null,B.e,null,null,null,"whiteRedmond bodyLarge",null,null,null,null)
+B.QC=new A.l(!0,B.k,null,"Segoe UI",null,null,null,null,null,null,null,null,null,null,null,null,null,B.e,null,null,null,"whiteRedmond bodyMedium",null,null,null,null)
+B.PZ=new A.l(!0,B.F,null,"Segoe UI",null,null,null,null,null,null,null,null,null,null,null,null,null,B.e,null,null,null,"whiteRedmond bodySmall",null,null,null,null)
+B.NN=new A.l(!0,B.k,null,"Segoe UI",null,null,null,null,null,null,null,null,null,null,null,null,null,B.e,null,null,null,"whiteRedmond labelLarge",null,null,null,null)
+B.ON=new A.l(!0,B.k,null,"Segoe UI",null,null,null,null,null,null,null,null,null,null,null,null,null,B.e,null,null,null,"whiteRedmond labelMedium",null,null,null,null)
+B.Ng=new A.l(!0,B.k,null,"Segoe UI",null,null,null,null,null,null,null,null,null,null,null,null,null,B.e,null,null,null,"whiteRedmond labelSmall",null,null,null,null)
+B.Rr=new A.df(B.Pc,B.Nz,B.QS,B.NM,B.Qm,B.Pp,B.QQ,B.Oe,B.O0,B.R4,B.QC,B.PZ,B.NN,B.ON,B.Ng)
+B.Q5=new A.l(!1,null,null,null,null,null,112,B.fv,null,null,null,B.o,null,null,null,null,null,null,null,null,null,"englishLike displayLarge 2014",null,null,null,null)
+B.Qe=new A.l(!1,null,null,null,null,null,56,B.n,null,null,null,B.o,null,null,null,null,null,null,null,null,null,"englishLike displayMedium 2014",null,null,null,null)
+B.PO=new A.l(!1,null,null,null,null,null,45,B.n,null,null,null,B.o,null,null,null,null,null,null,null,null,null,"englishLike displaySmall 2014",null,null,null,null)
+B.Q7=new A.l(!1,null,null,null,null,null,40,B.n,null,null,null,B.o,null,null,null,null,null,null,null,null,null,"englishLike headlineLarge 2014",null,null,null,null)
+B.OL=new A.l(!1,null,null,null,null,null,34,B.n,null,null,null,B.o,null,null,null,null,null,null,null,null,null,"englishLike headlineMedium 2014",null,null,null,null)
+B.NF=new A.l(!1,null,null,null,null,null,24,B.n,null,null,null,B.o,null,null,null,null,null,null,null,null,null,"englishLike headlineSmall 2014",null,null,null,null)
+B.Ov=new A.l(!1,null,null,null,null,null,20,B.Q,null,null,null,B.o,null,null,null,null,null,null,null,null,null,"englishLike titleLarge 2014",null,null,null,null)
+B.Po=new A.l(!1,null,null,null,null,null,16,B.n,null,null,null,B.o,null,null,null,null,null,null,null,null,null,"englishLike titleMedium 2014",null,null,null,null)
+B.Nv=new A.l(!1,null,null,null,null,null,14,B.Q,null,0.1,null,B.o,null,null,null,null,null,null,null,null,null,"englishLike titleSmall 2014",null,null,null,null)
+B.Nh=new A.l(!1,null,null,null,null,null,14,B.Q,null,null,null,B.o,null,null,null,null,null,null,null,null,null,"englishLike bodyLarge 2014",null,null,null,null)
+B.Ni=new A.l(!1,null,null,null,null,null,14,B.n,null,null,null,B.o,null,null,null,null,null,null,null,null,null,"englishLike bodyMedium 2014",null,null,null,null)
+B.NI=new A.l(!1,null,null,null,null,null,12,B.n,null,null,null,B.o,null,null,null,null,null,null,null,null,null,"englishLike bodySmall 2014",null,null,null,null)
+B.Q0=new A.l(!1,null,null,null,null,null,14,B.Q,null,null,null,B.o,null,null,null,null,null,null,null,null,null,"englishLike labelLarge 2014",null,null,null,null)
+B.OV=new A.l(!1,null,null,null,null,null,12,B.n,null,null,null,B.o,null,null,null,null,null,null,null,null,null,"englishLike labelMedium 2014",null,null,null,null)
+B.Qy=new A.l(!1,null,null,null,null,null,10,B.n,null,1.5,null,B.o,null,null,null,null,null,null,null,null,null,"englishLike labelSmall 2014",null,null,null,null)
+B.Rs=new A.df(B.Q5,B.Qe,B.PO,B.Q7,B.OL,B.NF,B.Ov,B.Po,B.Nv,B.Nh,B.Ni,B.NI,B.Q0,B.OV,B.Qy)
+B.Ol=new A.l(!0,B.F,null,"Roboto",null,null,null,null,null,null,null,null,null,null,null,null,null,B.e,null,null,null,"whiteMountainView displayLarge",null,null,null,null)
+B.Oy=new A.l(!0,B.F,null,"Roboto",null,null,null,null,null,null,null,null,null,null,null,null,null,B.e,null,null,null,"whiteMountainView displayMedium",null,null,null,null)
+B.O_=new A.l(!0,B.F,null,"Roboto",null,null,null,null,null,null,null,null,null,null,null,null,null,B.e,null,null,null,"whiteMountainView displaySmall",null,null,null,null)
+B.Nl=new A.l(!0,B.F,null,"Roboto",null,null,null,null,null,null,null,null,null,null,null,null,null,B.e,null,null,null,"whiteMountainView headlineLarge",null,null,null,null)
+B.P3=new A.l(!0,B.F,null,"Roboto",null,null,null,null,null,null,null,null,null,null,null,null,null,B.e,null,null,null,"whiteMountainView headlineMedium",null,null,null,null)
+B.R3=new A.l(!0,B.k,null,"Roboto",null,null,null,null,null,null,null,null,null,null,null,null,null,B.e,null,null,null,"whiteMountainView headlineSmall",null,null,null,null)
+B.NY=new A.l(!0,B.k,null,"Roboto",null,null,null,null,null,null,null,null,null,null,null,null,null,B.e,null,null,null,"whiteMountainView titleLarge",null,null,null,null)
+B.Oh=new A.l(!0,B.k,null,"Roboto",null,null,null,null,null,null,null,null,null,null,null,null,null,B.e,null,null,null,"whiteMountainView titleMedium",null,null,null,null)
+B.PX=new A.l(!0,B.k,null,"Roboto",null,null,null,null,null,null,null,null,null,null,null,null,null,B.e,null,null,null,"whiteMountainView titleSmall",null,null,null,null)
+B.P5=new A.l(!0,B.k,null,"Roboto",null,null,null,null,null,null,null,null,null,null,null,null,null,B.e,null,null,null,"whiteMountainView bodyLarge",null,null,null,null)
+B.Ra=new A.l(!0,B.k,null,"Roboto",null,null,null,null,null,null,null,null,null,null,null,null,null,B.e,null,null,null,"whiteMountainView bodyMedium",null,null,null,null)
+B.R9=new A.l(!0,B.F,null,"Roboto",null,null,null,null,null,null,null,null,null,null,null,null,null,B.e,null,null,null,"whiteMountainView bodySmall",null,null,null,null)
+B.Ow=new A.l(!0,B.k,null,"Roboto",null,null,null,null,null,null,null,null,null,null,null,null,null,B.e,null,null,null,"whiteMountainView labelLarge",null,null,null,null)
+B.Qc=new A.l(!0,B.k,null,"Roboto",null,null,null,null,null,null,null,null,null,null,null,null,null,B.e,null,null,null,"whiteMountainView labelMedium",null,null,null,null)
+B.QU=new A.l(!0,B.k,null,"Roboto",null,null,null,null,null,null,null,null,null,null,null,null,null,B.e,null,null,null,"whiteMountainView labelSmall",null,null,null,null)
+B.Rt=new A.df(B.Ol,B.Oy,B.O_,B.Nl,B.P3,B.R3,B.NY,B.Oh,B.PX,B.P5,B.Ra,B.R9,B.Ow,B.Qc,B.QU)
+B.QX=new A.l(!1,null,null,null,null,null,57,B.n,null,-0.25,null,B.o,1.12,B.t,null,null,null,null,null,null,null,"englishLike displayLarge 2021",null,null,null,null)
+B.Qg=new A.l(!1,null,null,null,null,null,45,B.n,null,0,null,B.o,1.16,B.t,null,null,null,null,null,null,null,"englishLike displayMedium 2021",null,null,null,null)
+B.PF=new A.l(!1,null,null,null,null,null,36,B.n,null,0,null,B.o,1.22,B.t,null,null,null,null,null,null,null,"englishLike displaySmall 2021",null,null,null,null)
+B.PI=new A.l(!1,null,null,null,null,null,32,B.n,null,0,null,B.o,1.25,B.t,null,null,null,null,null,null,null,"englishLike headlineLarge 2021",null,null,null,null)
+B.Pd=new A.l(!1,null,null,null,null,null,28,B.n,null,0,null,B.o,1.29,B.t,null,null,null,null,null,null,null,"englishLike headlineMedium 2021",null,null,null,null)
+B.Re=new A.l(!1,null,null,null,null,null,24,B.n,null,0,null,B.o,1.33,B.t,null,null,null,null,null,null,null,"englishLike headlineSmall 2021",null,null,null,null)
+B.Nr=new A.l(!1,null,null,null,null,null,22,B.n,null,0,null,B.o,1.27,B.t,null,null,null,null,null,null,null,"englishLike titleLarge 2021",null,null,null,null)
+B.Om=new A.l(!1,null,null,null,null,null,16,B.Q,null,0.15,null,B.o,1.5,B.t,null,null,null,null,null,null,null,"englishLike titleMedium 2021",null,null,null,null)
+B.QD=new A.l(!1,null,null,null,null,null,14,B.Q,null,0.1,null,B.o,1.43,B.t,null,null,null,null,null,null,null,"englishLike titleSmall 2021",null,null,null,null)
+B.Ns=new A.l(!1,null,null,null,null,null,16,B.n,null,0.5,null,B.o,1.5,B.t,null,null,null,null,null,null,null,"englishLike bodyLarge 2021",null,null,null,null)
+B.Pt=new A.l(!1,null,null,null,null,null,14,B.n,null,0.25,null,B.o,1.43,B.t,null,null,null,null,null,null,null,"englishLike bodyMedium 2021",null,null,null,null)
+B.Nk=new A.l(!1,null,null,null,null,null,12,B.n,null,0.4,null,B.o,1.33,B.t,null,null,null,null,null,null,null,"englishLike bodySmall 2021",null,null,null,null)
+B.P0=new A.l(!1,null,null,null,null,null,14,B.Q,null,0.1,null,B.o,1.43,B.t,null,null,null,null,null,null,null,"englishLike labelLarge 2021",null,null,null,null)
+B.Oq=new A.l(!1,null,null,null,null,null,12,B.Q,null,0.5,null,B.o,1.33,B.t,null,null,null,null,null,null,null,"englishLike labelMedium 2021",null,null,null,null)
+B.Q1=new A.l(!1,null,null,null,null,null,11,B.Q,null,0.5,null,B.o,1.45,B.t,null,null,null,null,null,null,null,"englishLike labelSmall 2021",null,null,null,null)
+B.Ru=new A.df(B.QX,B.Qg,B.PF,B.PI,B.Pd,B.Re,B.Nr,B.Om,B.QD,B.Ns,B.Pt,B.Nk,B.P0,B.Oq,B.Q1)
+B.Q9=new A.l(!1,null,null,null,null,null,112,B.n,null,null,null,B.o,null,null,null,null,null,null,null,null,null,"tall displayLarge 2014",null,null,null,null)
+B.R0=new A.l(!1,null,null,null,null,null,56,B.n,null,null,null,B.o,null,null,null,null,null,null,null,null,null,"tall displayMedium 2014",null,null,null,null)
+B.Ob=new A.l(!1,null,null,null,null,null,45,B.n,null,null,null,B.o,null,null,null,null,null,null,null,null,null,"tall displaySmall 2014",null,null,null,null)
+B.Qv=new A.l(!1,null,null,null,null,null,40,B.n,null,null,null,B.o,null,null,null,null,null,null,null,null,null,"tall headlineLarge 2014",null,null,null,null)
+B.OJ=new A.l(!1,null,null,null,null,null,34,B.n,null,null,null,B.o,null,null,null,null,null,null,null,null,null,"tall headlineMedium 2014",null,null,null,null)
+B.NK=new A.l(!1,null,null,null,null,null,24,B.n,null,null,null,B.o,null,null,null,null,null,null,null,null,null,"tall headlineSmall 2014",null,null,null,null)
+B.Og=new A.l(!1,null,null,null,null,null,21,B.ap,null,null,null,B.o,null,null,null,null,null,null,null,null,null,"tall titleLarge 2014",null,null,null,null)
+B.OG=new A.l(!1,null,null,null,null,null,17,B.n,null,null,null,B.o,null,null,null,null,null,null,null,null,null,"tall titleMedium 2014",null,null,null,null)
+B.QL=new A.l(!1,null,null,null,null,null,15,B.Q,null,null,null,B.o,null,null,null,null,null,null,null,null,null,"tall titleSmall 2014",null,null,null,null)
+B.PU=new A.l(!1,null,null,null,null,null,15,B.ap,null,null,null,B.o,null,null,null,null,null,null,null,null,null,"tall bodyLarge 2014",null,null,null,null)
+B.Rn=new A.l(!1,null,null,null,null,null,15,B.n,null,null,null,B.o,null,null,null,null,null,null,null,null,null,"tall bodyMedium 2014",null,null,null,null)
+B.Px=new A.l(!1,null,null,null,null,null,13,B.n,null,null,null,B.o,null,null,null,null,null,null,null,null,null,"tall bodySmall 2014",null,null,null,null)
+B.Pa=new A.l(!1,null,null,null,null,null,15,B.ap,null,null,null,B.o,null,null,null,null,null,null,null,null,null,"tall labelLarge 2014",null,null,null,null)
+B.Rl=new A.l(!1,null,null,null,null,null,12,B.n,null,null,null,B.o,null,null,null,null,null,null,null,null,null,"tall labelMedium 2014",null,null,null,null)
+B.Qd=new A.l(!1,null,null,null,null,null,11,B.n,null,null,null,B.o,null,null,null,null,null,null,null,null,null,"tall labelSmall 2014",null,null,null,null)
+B.Rv=new A.df(B.Q9,B.R0,B.Ob,B.Qv,B.OJ,B.NK,B.Og,B.OG,B.QL,B.PU,B.Rn,B.Px,B.Pa,B.Rl,B.Qd)
+B.Ri=new A.l(!0,B.F,null,"CupertinoSystemDisplay",null,null,null,null,null,null,null,null,null,null,null,null,null,B.e,null,null,null,"whiteCupertino displayLarge",null,null,null,null)
+B.QR=new A.l(!0,B.F,null,"CupertinoSystemDisplay",null,null,null,null,null,null,null,null,null,null,null,null,null,B.e,null,null,null,"whiteCupertino displayMedium",null,null,null,null)
+B.Qf=new A.l(!0,B.F,null,"CupertinoSystemDisplay",null,null,null,null,null,null,null,null,null,null,null,null,null,B.e,null,null,null,"whiteCupertino displaySmall",null,null,null,null)
+B.OU=new A.l(!0,B.F,null,"CupertinoSystemDisplay",null,null,null,null,null,null,null,null,null,null,null,null,null,B.e,null,null,null,"whiteCupertino headlineLarge",null,null,null,null)
+B.QE=new A.l(!0,B.F,null,"CupertinoSystemDisplay",null,null,null,null,null,null,null,null,null,null,null,null,null,B.e,null,null,null,"whiteCupertino headlineMedium",null,null,null,null)
+B.OO=new A.l(!0,B.k,null,"CupertinoSystemDisplay",null,null,null,null,null,null,null,null,null,null,null,null,null,B.e,null,null,null,"whiteCupertino headlineSmall",null,null,null,null)
+B.PR=new A.l(!0,B.k,null,"CupertinoSystemDisplay",null,null,null,null,null,null,null,null,null,null,null,null,null,B.e,null,null,null,"whiteCupertino titleLarge",null,null,null,null)
+B.QA=new A.l(!0,B.k,null,"CupertinoSystemText",null,null,null,null,null,null,null,null,null,null,null,null,null,B.e,null,null,null,"whiteCupertino titleMedium",null,null,null,null)
+B.PJ=new A.l(!0,B.k,null,"CupertinoSystemText",null,null,null,null,null,null,null,null,null,null,null,null,null,B.e,null,null,null,"whiteCupertino titleSmall",null,null,null,null)
+B.QW=new A.l(!0,B.k,null,"CupertinoSystemText",null,null,null,null,null,null,null,null,null,null,null,null,null,B.e,null,null,null,"whiteCupertino bodyLarge",null,null,null,null)
+B.OE=new A.l(!0,B.k,null,"CupertinoSystemText",null,null,null,null,null,null,null,null,null,null,null,null,null,B.e,null,null,null,"whiteCupertino bodyMedium",null,null,null,null)
+B.Pb=new A.l(!0,B.F,null,"CupertinoSystemText",null,null,null,null,null,null,null,null,null,null,null,null,null,B.e,null,null,null,"whiteCupertino bodySmall",null,null,null,null)
+B.OS=new A.l(!0,B.k,null,"CupertinoSystemText",null,null,null,null,null,null,null,null,null,null,null,null,null,B.e,null,null,null,"whiteCupertino labelLarge",null,null,null,null)
+B.Nx=new A.l(!0,B.k,null,"CupertinoSystemText",null,null,null,null,null,null,null,null,null,null,null,null,null,B.e,null,null,null,"whiteCupertino labelMedium",null,null,null,null)
+B.Nw=new A.l(!0,B.k,null,"CupertinoSystemText",null,null,null,null,null,null,null,null,null,null,null,null,null,B.e,null,null,null,"whiteCupertino labelSmall",null,null,null,null)
+B.Rw=new A.df(B.Ri,B.QR,B.Qf,B.OU,B.QE,B.OO,B.PR,B.QA,B.PJ,B.QW,B.OE,B.Pb,B.OS,B.Nx,B.Nw)
 B.N=A.b(s(["Ubuntu","Cantarell","DejaVu Sans","Liberation Sans","Arial"]),t.s)
-B.Q_=new A.l(!0,B.F,null,"Roboto",B.N,null,null,null,null,null,null,null,null,null,null,null,null,B.e,null,null,null,"whiteHelsinki displayLarge",null,null,null,null)
-B.O5=new A.l(!0,B.F,null,"Roboto",B.N,null,null,null,null,null,null,null,null,null,null,null,null,B.e,null,null,null,"whiteHelsinki displayMedium",null,null,null,null)
-B.Oy=new A.l(!0,B.F,null,"Roboto",B.N,null,null,null,null,null,null,null,null,null,null,null,null,B.e,null,null,null,"whiteHelsinki displaySmall",null,null,null,null)
-B.PN=new A.l(!0,B.F,null,"Roboto",B.N,null,null,null,null,null,null,null,null,null,null,null,null,B.e,null,null,null,"whiteHelsinki headlineLarge",null,null,null,null)
-B.Pr=new A.l(!0,B.F,null,"Roboto",B.N,null,null,null,null,null,null,null,null,null,null,null,null,B.e,null,null,null,"whiteHelsinki headlineMedium",null,null,null,null)
-B.QK=new A.l(!0,B.k,null,"Roboto",B.N,null,null,null,null,null,null,null,null,null,null,null,null,B.e,null,null,null,"whiteHelsinki headlineSmall",null,null,null,null)
-B.Ou=new A.l(!0,B.k,null,"Roboto",B.N,null,null,null,null,null,null,null,null,null,null,null,null,B.e,null,null,null,"whiteHelsinki titleLarge",null,null,null,null)
-B.Qr=new A.l(!0,B.k,null,"Roboto",B.N,null,null,null,null,null,null,null,null,null,null,null,null,B.e,null,null,null,"whiteHelsinki titleMedium",null,null,null,null)
-B.OA=new A.l(!0,B.k,null,"Roboto",B.N,null,null,null,null,null,null,null,null,null,null,null,null,B.e,null,null,null,"whiteHelsinki titleSmall",null,null,null,null)
-B.PF=new A.l(!0,B.k,null,"Roboto",B.N,null,null,null,null,null,null,null,null,null,null,null,null,B.e,null,null,null,"whiteHelsinki bodyLarge",null,null,null,null)
-B.OC=new A.l(!0,B.k,null,"Roboto",B.N,null,null,null,null,null,null,null,null,null,null,null,null,B.e,null,null,null,"whiteHelsinki bodyMedium",null,null,null,null)
-B.NN=new A.l(!0,B.F,null,"Roboto",B.N,null,null,null,null,null,null,null,null,null,null,null,null,B.e,null,null,null,"whiteHelsinki bodySmall",null,null,null,null)
-B.NP=new A.l(!0,B.k,null,"Roboto",B.N,null,null,null,null,null,null,null,null,null,null,null,null,B.e,null,null,null,"whiteHelsinki labelLarge",null,null,null,null)
-B.Oj=new A.l(!0,B.k,null,"Roboto",B.N,null,null,null,null,null,null,null,null,null,null,null,null,B.e,null,null,null,"whiteHelsinki labelMedium",null,null,null,null)
-B.Py=new A.l(!0,B.k,null,"Roboto",B.N,null,null,null,null,null,null,null,null,null,null,null,null,B.e,null,null,null,"whiteHelsinki labelSmall",null,null,null,null)
-B.Rs=new A.df(B.Q_,B.O5,B.Oy,B.PN,B.Pr,B.QK,B.Ou,B.Qr,B.OA,B.PF,B.OC,B.NN,B.NP,B.Oj,B.Py)
-B.OX=new A.l(!0,B.I,null,"Roboto",B.N,null,null,null,null,null,null,null,null,null,null,null,null,B.e,null,null,null,"blackHelsinki displayLarge",null,null,null,null)
-B.Nt=new A.l(!0,B.I,null,"Roboto",B.N,null,null,null,null,null,null,null,null,null,null,null,null,B.e,null,null,null,"blackHelsinki displayMedium",null,null,null,null)
-B.OR=new A.l(!0,B.I,null,"Roboto",B.N,null,null,null,null,null,null,null,null,null,null,null,null,B.e,null,null,null,"blackHelsinki displaySmall",null,null,null,null)
-B.P2=new A.l(!0,B.I,null,"Roboto",B.N,null,null,null,null,null,null,null,null,null,null,null,null,B.e,null,null,null,"blackHelsinki headlineLarge",null,null,null,null)
-B.Qc=new A.l(!0,B.I,null,"Roboto",B.N,null,null,null,null,null,null,null,null,null,null,null,null,B.e,null,null,null,"blackHelsinki headlineMedium",null,null,null,null)
-B.QV=new A.l(!0,B.H,null,"Roboto",B.N,null,null,null,null,null,null,null,null,null,null,null,null,B.e,null,null,null,"blackHelsinki headlineSmall",null,null,null,null)
-B.NU=new A.l(!0,B.H,null,"Roboto",B.N,null,null,null,null,null,null,null,null,null,null,null,null,B.e,null,null,null,"blackHelsinki titleLarge",null,null,null,null)
-B.PZ=new A.l(!0,B.H,null,"Roboto",B.N,null,null,null,null,null,null,null,null,null,null,null,null,B.e,null,null,null,"blackHelsinki titleMedium",null,null,null,null)
-B.Q1=new A.l(!0,B.l,null,"Roboto",B.N,null,null,null,null,null,null,null,null,null,null,null,null,B.e,null,null,null,"blackHelsinki titleSmall",null,null,null,null)
-B.Pn=new A.l(!0,B.H,null,"Roboto",B.N,null,null,null,null,null,null,null,null,null,null,null,null,B.e,null,null,null,"blackHelsinki bodyLarge",null,null,null,null)
-B.NL=new A.l(!0,B.H,null,"Roboto",B.N,null,null,null,null,null,null,null,null,null,null,null,null,B.e,null,null,null,"blackHelsinki bodyMedium",null,null,null,null)
-B.Qm=new A.l(!0,B.I,null,"Roboto",B.N,null,null,null,null,null,null,null,null,null,null,null,null,B.e,null,null,null,"blackHelsinki bodySmall",null,null,null,null)
-B.Oo=new A.l(!0,B.H,null,"Roboto",B.N,null,null,null,null,null,null,null,null,null,null,null,null,B.e,null,null,null,"blackHelsinki labelLarge",null,null,null,null)
-B.QD=new A.l(!0,B.l,null,"Roboto",B.N,null,null,null,null,null,null,null,null,null,null,null,null,B.e,null,null,null,"blackHelsinki labelMedium",null,null,null,null)
-B.Qp=new A.l(!0,B.l,null,"Roboto",B.N,null,null,null,null,null,null,null,null,null,null,null,null,B.e,null,null,null,"blackHelsinki labelSmall",null,null,null,null)
-B.Rt=new A.df(B.OX,B.Nt,B.OR,B.P2,B.Qc,B.QV,B.NU,B.PZ,B.Q1,B.Pn,B.NL,B.Qm,B.Oo,B.QD,B.Qp)
-B.QU=new A.l(!1,null,null,null,null,null,57,B.n,null,-0.25,null,B.J,1.12,B.t,null,null,null,null,null,null,null,"dense displayLarge 2021",null,null,null,null)
-B.Os=new A.l(!1,null,null,null,null,null,45,B.n,null,0,null,B.J,1.16,B.t,null,null,null,null,null,null,null,"dense displayMedium 2021",null,null,null,null)
-B.OU=new A.l(!1,null,null,null,null,null,36,B.n,null,0,null,B.J,1.22,B.t,null,null,null,null,null,null,null,"dense displaySmall 2021",null,null,null,null)
-B.O3=new A.l(!1,null,null,null,null,null,32,B.n,null,0,null,B.J,1.25,B.t,null,null,null,null,null,null,null,"dense headlineLarge 2021",null,null,null,null)
-B.Px=new A.l(!1,null,null,null,null,null,28,B.n,null,0,null,B.J,1.29,B.t,null,null,null,null,null,null,null,"dense headlineMedium 2021",null,null,null,null)
-B.R1=new A.l(!1,null,null,null,null,null,24,B.n,null,0,null,B.J,1.33,B.t,null,null,null,null,null,null,null,"dense headlineSmall 2021",null,null,null,null)
-B.QY=new A.l(!1,null,null,null,null,null,22,B.n,null,0,null,B.J,1.27,B.t,null,null,null,null,null,null,null,"dense titleLarge 2021",null,null,null,null)
-B.Qd=new A.l(!1,null,null,null,null,null,16,B.Q,null,0.15,null,B.J,1.5,B.t,null,null,null,null,null,null,null,"dense titleMedium 2021",null,null,null,null)
-B.PT=new A.l(!1,null,null,null,null,null,14,B.Q,null,0.1,null,B.J,1.43,B.t,null,null,null,null,null,null,null,"dense titleSmall 2021",null,null,null,null)
-B.Q6=new A.l(!1,null,null,null,null,null,16,B.n,null,0.5,null,B.J,1.5,B.t,null,null,null,null,null,null,null,"dense bodyLarge 2021",null,null,null,null)
-B.PG=new A.l(!1,null,null,null,null,null,14,B.n,null,0.25,null,B.J,1.43,B.t,null,null,null,null,null,null,null,"dense bodyMedium 2021",null,null,null,null)
-B.Nz=new A.l(!1,null,null,null,null,null,12,B.n,null,0.4,null,B.J,1.33,B.t,null,null,null,null,null,null,null,"dense bodySmall 2021",null,null,null,null)
-B.Nj=new A.l(!1,null,null,null,null,null,14,B.Q,null,0.1,null,B.J,1.43,B.t,null,null,null,null,null,null,null,"dense labelLarge 2021",null,null,null,null)
-B.Pi=new A.l(!1,null,null,null,null,null,12,B.Q,null,0.5,null,B.J,1.33,B.t,null,null,null,null,null,null,null,"dense labelMedium 2021",null,null,null,null)
-B.O_=new A.l(!1,null,null,null,null,null,11,B.Q,null,0.5,null,B.J,1.45,B.t,null,null,null,null,null,null,null,"dense labelSmall 2021",null,null,null,null)
-B.Ru=new A.df(B.QU,B.Os,B.OU,B.O3,B.Px,B.R1,B.QY,B.Qd,B.PT,B.Q6,B.PG,B.Nz,B.Nj,B.Pi,B.O_)
-B.O0=new A.l(!0,B.I,null,"Segoe UI",null,null,null,null,null,null,null,null,null,null,null,null,null,B.e,null,null,null,"blackRedmond displayLarge",null,null,null,null)
-B.OY=new A.l(!0,B.I,null,"Segoe UI",null,null,null,null,null,null,null,null,null,null,null,null,null,B.e,null,null,null,"blackRedmond displayMedium",null,null,null,null)
-B.Rb=new A.l(!0,B.I,null,"Segoe UI",null,null,null,null,null,null,null,null,null,null,null,null,null,B.e,null,null,null,"blackRedmond displaySmall",null,null,null,null)
-B.OD=new A.l(!0,B.I,null,"Segoe UI",null,null,null,null,null,null,null,null,null,null,null,null,null,B.e,null,null,null,"blackRedmond headlineLarge",null,null,null,null)
-B.P1=new A.l(!0,B.I,null,"Segoe UI",null,null,null,null,null,null,null,null,null,null,null,null,null,B.e,null,null,null,"blackRedmond headlineMedium",null,null,null,null)
-B.QA=new A.l(!0,B.H,null,"Segoe UI",null,null,null,null,null,null,null,null,null,null,null,null,null,B.e,null,null,null,"blackRedmond headlineSmall",null,null,null,null)
-B.Pf=new A.l(!0,B.H,null,"Segoe UI",null,null,null,null,null,null,null,null,null,null,null,null,null,B.e,null,null,null,"blackRedmond titleLarge",null,null,null,null)
-B.Qe=new A.l(!0,B.H,null,"Segoe UI",null,null,null,null,null,null,null,null,null,null,null,null,null,B.e,null,null,null,"blackRedmond titleMedium",null,null,null,null)
-B.QQ=new A.l(!0,B.l,null,"Segoe UI",null,null,null,null,null,null,null,null,null,null,null,null,null,B.e,null,null,null,"blackRedmond titleSmall",null,null,null,null)
-B.OH=new A.l(!0,B.H,null,"Segoe UI",null,null,null,null,null,null,null,null,null,null,null,null,null,B.e,null,null,null,"blackRedmond bodyLarge",null,null,null,null)
-B.Of=new A.l(!0,B.H,null,"Segoe UI",null,null,null,null,null,null,null,null,null,null,null,null,null,B.e,null,null,null,"blackRedmond bodyMedium",null,null,null,null)
-B.Ni=new A.l(!0,B.I,null,"Segoe UI",null,null,null,null,null,null,null,null,null,null,null,null,null,B.e,null,null,null,"blackRedmond bodySmall",null,null,null,null)
-B.O7=new A.l(!0,B.H,null,"Segoe UI",null,null,null,null,null,null,null,null,null,null,null,null,null,B.e,null,null,null,"blackRedmond labelLarge",null,null,null,null)
-B.Rc=new A.l(!0,B.l,null,"Segoe UI",null,null,null,null,null,null,null,null,null,null,null,null,null,B.e,null,null,null,"blackRedmond labelMedium",null,null,null,null)
-B.R6=new A.l(!0,B.l,null,"Segoe UI",null,null,null,null,null,null,null,null,null,null,null,null,null,B.e,null,null,null,"blackRedmond labelSmall",null,null,null,null)
-B.Rv=new A.df(B.O0,B.OY,B.Rb,B.OD,B.P1,B.QA,B.Pf,B.Qe,B.QQ,B.OH,B.Of,B.Ni,B.O7,B.Rc,B.R6)
-B.PY=new A.l(!1,null,null,null,null,null,57,B.n,null,-0.25,null,B.o,1.12,B.t,null,null,null,null,null,null,null,"tall displayLarge 2021",null,null,null,null)
-B.O1=new A.l(!1,null,null,null,null,null,45,B.n,null,0,null,B.o,1.16,B.t,null,null,null,null,null,null,null,"tall displayMedium 2021",null,null,null,null)
-B.Rf=new A.l(!1,null,null,null,null,null,36,B.n,null,0,null,B.o,1.22,B.t,null,null,null,null,null,null,null,"tall displaySmall 2021",null,null,null,null)
-B.QO=new A.l(!1,null,null,null,null,null,32,B.n,null,0,null,B.o,1.25,B.t,null,null,null,null,null,null,null,"tall headlineLarge 2021",null,null,null,null)
-B.Oa=new A.l(!1,null,null,null,null,null,28,B.n,null,0,null,B.o,1.29,B.t,null,null,null,null,null,null,null,"tall headlineMedium 2021",null,null,null,null)
-B.Qu=new A.l(!1,null,null,null,null,null,24,B.n,null,0,null,B.o,1.33,B.t,null,null,null,null,null,null,null,"tall headlineSmall 2021",null,null,null,null)
-B.Ra=new A.l(!1,null,null,null,null,null,22,B.n,null,0,null,B.o,1.27,B.t,null,null,null,null,null,null,null,"tall titleLarge 2021",null,null,null,null)
-B.NS=new A.l(!1,null,null,null,null,null,16,B.Q,null,0.15,null,B.o,1.5,B.t,null,null,null,null,null,null,null,"tall titleMedium 2021",null,null,null,null)
-B.QT=new A.l(!1,null,null,null,null,null,14,B.Q,null,0.1,null,B.o,1.43,B.t,null,null,null,null,null,null,null,"tall titleSmall 2021",null,null,null,null)
-B.R2=new A.l(!1,null,null,null,null,null,16,B.n,null,0.5,null,B.o,1.5,B.t,null,null,null,null,null,null,null,"tall bodyLarge 2021",null,null,null,null)
-B.Qs=new A.l(!1,null,null,null,null,null,14,B.n,null,0.25,null,B.o,1.43,B.t,null,null,null,null,null,null,null,"tall bodyMedium 2021",null,null,null,null)
-B.NO=new A.l(!1,null,null,null,null,null,12,B.n,null,0.4,null,B.o,1.33,B.t,null,null,null,null,null,null,null,"tall bodySmall 2021",null,null,null,null)
-B.NC=new A.l(!1,null,null,null,null,null,14,B.Q,null,0.1,null,B.o,1.43,B.t,null,null,null,null,null,null,null,"tall labelLarge 2021",null,null,null,null)
-B.P3=new A.l(!1,null,null,null,null,null,12,B.Q,null,0.5,null,B.o,1.33,B.t,null,null,null,null,null,null,null,"tall labelMedium 2021",null,null,null,null)
-B.Op=new A.l(!1,null,null,null,null,null,11,B.Q,null,0.5,null,B.o,1.45,B.t,null,null,null,null,null,null,null,"tall labelSmall 2021",null,null,null,null)
-B.Rw=new A.df(B.PY,B.O1,B.Rf,B.QO,B.Oa,B.Qu,B.Ra,B.NS,B.QT,B.R2,B.Qs,B.NO,B.NC,B.P3,B.Op)
-B.Qk=new A.l(!0,B.I,null,"Roboto",null,null,null,null,null,null,null,null,null,null,null,null,null,B.e,null,null,null,"blackMountainView displayLarge",null,null,null,null)
-B.No=new A.l(!0,B.I,null,"Roboto",null,null,null,null,null,null,null,null,null,null,null,null,null,B.e,null,null,null,"blackMountainView displayMedium",null,null,null,null)
-B.Pv=new A.l(!0,B.I,null,"Roboto",null,null,null,null,null,null,null,null,null,null,null,null,null,B.e,null,null,null,"blackMountainView displaySmall",null,null,null,null)
-B.Pl=new A.l(!0,B.I,null,"Roboto",null,null,null,null,null,null,null,null,null,null,null,null,null,B.e,null,null,null,"blackMountainView headlineLarge",null,null,null,null)
-B.Om=new A.l(!0,B.I,null,"Roboto",null,null,null,null,null,null,null,null,null,null,null,null,null,B.e,null,null,null,"blackMountainView headlineMedium",null,null,null,null)
-B.Qf=new A.l(!0,B.H,null,"Roboto",null,null,null,null,null,null,null,null,null,null,null,null,null,B.e,null,null,null,"blackMountainView headlineSmall",null,null,null,null)
-B.Np=new A.l(!0,B.H,null,"Roboto",null,null,null,null,null,null,null,null,null,null,null,null,null,B.e,null,null,null,"blackMountainView titleLarge",null,null,null,null)
-B.Qw=new A.l(!0,B.H,null,"Roboto",null,null,null,null,null,null,null,null,null,null,null,null,null,B.e,null,null,null,"blackMountainView titleMedium",null,null,null,null)
-B.OS=new A.l(!0,B.l,null,"Roboto",null,null,null,null,null,null,null,null,null,null,null,null,null,B.e,null,null,null,"blackMountainView titleSmall",null,null,null,null)
-B.NB=new A.l(!0,B.H,null,"Roboto",null,null,null,null,null,null,null,null,null,null,null,null,null,B.e,null,null,null,"blackMountainView bodyLarge",null,null,null,null)
-B.Oe=new A.l(!0,B.H,null,"Roboto",null,null,null,null,null,null,null,null,null,null,null,null,null,B.e,null,null,null,"blackMountainView bodyMedium",null,null,null,null)
-B.Re=new A.l(!0,B.I,null,"Roboto",null,null,null,null,null,null,null,null,null,null,null,null,null,B.e,null,null,null,"blackMountainView bodySmall",null,null,null,null)
-B.Pz=new A.l(!0,B.H,null,"Roboto",null,null,null,null,null,null,null,null,null,null,null,null,null,B.e,null,null,null,"blackMountainView labelLarge",null,null,null,null)
-B.P_=new A.l(!0,B.l,null,"Roboto",null,null,null,null,null,null,null,null,null,null,null,null,null,B.e,null,null,null,"blackMountainView labelMedium",null,null,null,null)
-B.O2=new A.l(!0,B.l,null,"Roboto",null,null,null,null,null,null,null,null,null,null,null,null,null,B.e,null,null,null,"blackMountainView labelSmall",null,null,null,null)
-B.Rx=new A.df(B.Qk,B.No,B.Pv,B.Pl,B.Om,B.Qf,B.Np,B.Qw,B.OS,B.NB,B.Oe,B.Re,B.Pz,B.P_,B.O2)
-B.Pc=new A.l(!0,B.I,null,".AppleSystemUIFont",null,null,null,null,null,null,null,null,null,null,null,null,null,B.e,null,null,null,"blackRedwoodCity displayLarge",null,null,null,null)
-B.Od=new A.l(!0,B.I,null,".AppleSystemUIFont",null,null,null,null,null,null,null,null,null,null,null,null,null,B.e,null,null,null,"blackRedwoodCity displayMedium",null,null,null,null)
-B.Pd=new A.l(!0,B.I,null,".AppleSystemUIFont",null,null,null,null,null,null,null,null,null,null,null,null,null,B.e,null,null,null,"blackRedwoodCity displaySmall",null,null,null,null)
-B.PQ=new A.l(!0,B.I,null,".AppleSystemUIFont",null,null,null,null,null,null,null,null,null,null,null,null,null,B.e,null,null,null,"blackRedwoodCity headlineLarge",null,null,null,null)
-B.NR=new A.l(!0,B.I,null,".AppleSystemUIFont",null,null,null,null,null,null,null,null,null,null,null,null,null,B.e,null,null,null,"blackRedwoodCity headlineMedium",null,null,null,null)
-B.NZ=new A.l(!0,B.H,null,".AppleSystemUIFont",null,null,null,null,null,null,null,null,null,null,null,null,null,B.e,null,null,null,"blackRedwoodCity headlineSmall",null,null,null,null)
-B.Ox=new A.l(!0,B.H,null,".AppleSystemUIFont",null,null,null,null,null,null,null,null,null,null,null,null,null,B.e,null,null,null,"blackRedwoodCity titleLarge",null,null,null,null)
-B.PC=new A.l(!0,B.H,null,".AppleSystemUIFont",null,null,null,null,null,null,null,null,null,null,null,null,null,B.e,null,null,null,"blackRedwoodCity titleMedium",null,null,null,null)
-B.OM=new A.l(!0,B.l,null,".AppleSystemUIFont",null,null,null,null,null,null,null,null,null,null,null,null,null,B.e,null,null,null,"blackRedwoodCity titleSmall",null,null,null,null)
-B.Qn=new A.l(!0,B.H,null,".AppleSystemUIFont",null,null,null,null,null,null,null,null,null,null,null,null,null,B.e,null,null,null,"blackRedwoodCity bodyLarge",null,null,null,null)
-B.Nl=new A.l(!0,B.H,null,".AppleSystemUIFont",null,null,null,null,null,null,null,null,null,null,null,null,null,B.e,null,null,null,"blackRedwoodCity bodyMedium",null,null,null,null)
-B.NG=new A.l(!0,B.I,null,".AppleSystemUIFont",null,null,null,null,null,null,null,null,null,null,null,null,null,B.e,null,null,null,"blackRedwoodCity bodySmall",null,null,null,null)
-B.Qi=new A.l(!0,B.H,null,".AppleSystemUIFont",null,null,null,null,null,null,null,null,null,null,null,null,null,B.e,null,null,null,"blackRedwoodCity labelLarge",null,null,null,null)
-B.QC=new A.l(!0,B.l,null,".AppleSystemUIFont",null,null,null,null,null,null,null,null,null,null,null,null,null,B.e,null,null,null,"blackRedwoodCity labelMedium",null,null,null,null)
-B.Nv=new A.l(!0,B.l,null,".AppleSystemUIFont",null,null,null,null,null,null,null,null,null,null,null,null,null,B.e,null,null,null,"blackRedwoodCity labelSmall",null,null,null,null)
-B.Ry=new A.df(B.Pc,B.Od,B.Pd,B.PQ,B.NR,B.NZ,B.Ox,B.PC,B.OM,B.Qn,B.Nl,B.NG,B.Qi,B.QC,B.Nv)
-B.NY=new A.l(!0,null,null,null,null,null,18,B.ap,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null)
-B.RD=new A.e8("IHK AP1 \u2013 Glossar",null,B.NY,null,null,null,null,null,null)
+B.Q4=new A.l(!0,B.F,null,"Roboto",B.N,null,null,null,null,null,null,null,null,null,null,null,null,B.e,null,null,null,"whiteHelsinki displayLarge",null,null,null,null)
+B.Oa=new A.l(!0,B.F,null,"Roboto",B.N,null,null,null,null,null,null,null,null,null,null,null,null,B.e,null,null,null,"whiteHelsinki displayMedium",null,null,null,null)
+B.OD=new A.l(!0,B.F,null,"Roboto",B.N,null,null,null,null,null,null,null,null,null,null,null,null,B.e,null,null,null,"whiteHelsinki displaySmall",null,null,null,null)
+B.PS=new A.l(!0,B.F,null,"Roboto",B.N,null,null,null,null,null,null,null,null,null,null,null,null,B.e,null,null,null,"whiteHelsinki headlineLarge",null,null,null,null)
+B.Pw=new A.l(!0,B.F,null,"Roboto",B.N,null,null,null,null,null,null,null,null,null,null,null,null,B.e,null,null,null,"whiteHelsinki headlineMedium",null,null,null,null)
+B.QP=new A.l(!0,B.k,null,"Roboto",B.N,null,null,null,null,null,null,null,null,null,null,null,null,B.e,null,null,null,"whiteHelsinki headlineSmall",null,null,null,null)
+B.Oz=new A.l(!0,B.k,null,"Roboto",B.N,null,null,null,null,null,null,null,null,null,null,null,null,B.e,null,null,null,"whiteHelsinki titleLarge",null,null,null,null)
+B.Qw=new A.l(!0,B.k,null,"Roboto",B.N,null,null,null,null,null,null,null,null,null,null,null,null,B.e,null,null,null,"whiteHelsinki titleMedium",null,null,null,null)
+B.OF=new A.l(!0,B.k,null,"Roboto",B.N,null,null,null,null,null,null,null,null,null,null,null,null,B.e,null,null,null,"whiteHelsinki titleSmall",null,null,null,null)
+B.PK=new A.l(!0,B.k,null,"Roboto",B.N,null,null,null,null,null,null,null,null,null,null,null,null,B.e,null,null,null,"whiteHelsinki bodyLarge",null,null,null,null)
+B.OH=new A.l(!0,B.k,null,"Roboto",B.N,null,null,null,null,null,null,null,null,null,null,null,null,B.e,null,null,null,"whiteHelsinki bodyMedium",null,null,null,null)
+B.NS=new A.l(!0,B.F,null,"Roboto",B.N,null,null,null,null,null,null,null,null,null,null,null,null,B.e,null,null,null,"whiteHelsinki bodySmall",null,null,null,null)
+B.NU=new A.l(!0,B.k,null,"Roboto",B.N,null,null,null,null,null,null,null,null,null,null,null,null,B.e,null,null,null,"whiteHelsinki labelLarge",null,null,null,null)
+B.Oo=new A.l(!0,B.k,null,"Roboto",B.N,null,null,null,null,null,null,null,null,null,null,null,null,B.e,null,null,null,"whiteHelsinki labelMedium",null,null,null,null)
+B.PD=new A.l(!0,B.k,null,"Roboto",B.N,null,null,null,null,null,null,null,null,null,null,null,null,B.e,null,null,null,"whiteHelsinki labelSmall",null,null,null,null)
+B.Rx=new A.df(B.Q4,B.Oa,B.OD,B.PS,B.Pw,B.QP,B.Oz,B.Qw,B.OF,B.PK,B.OH,B.NS,B.NU,B.Oo,B.PD)
+B.P1=new A.l(!0,B.I,null,"Roboto",B.N,null,null,null,null,null,null,null,null,null,null,null,null,B.e,null,null,null,"blackHelsinki displayLarge",null,null,null,null)
+B.Ny=new A.l(!0,B.I,null,"Roboto",B.N,null,null,null,null,null,null,null,null,null,null,null,null,B.e,null,null,null,"blackHelsinki displayMedium",null,null,null,null)
+B.OW=new A.l(!0,B.I,null,"Roboto",B.N,null,null,null,null,null,null,null,null,null,null,null,null,B.e,null,null,null,"blackHelsinki displaySmall",null,null,null,null)
+B.P7=new A.l(!0,B.I,null,"Roboto",B.N,null,null,null,null,null,null,null,null,null,null,null,null,B.e,null,null,null,"blackHelsinki headlineLarge",null,null,null,null)
+B.Qh=new A.l(!0,B.I,null,"Roboto",B.N,null,null,null,null,null,null,null,null,null,null,null,null,B.e,null,null,null,"blackHelsinki headlineMedium",null,null,null,null)
+B.R_=new A.l(!0,B.H,null,"Roboto",B.N,null,null,null,null,null,null,null,null,null,null,null,null,B.e,null,null,null,"blackHelsinki headlineSmall",null,null,null,null)
+B.NZ=new A.l(!0,B.H,null,"Roboto",B.N,null,null,null,null,null,null,null,null,null,null,null,null,B.e,null,null,null,"blackHelsinki titleLarge",null,null,null,null)
+B.Q3=new A.l(!0,B.H,null,"Roboto",B.N,null,null,null,null,null,null,null,null,null,null,null,null,B.e,null,null,null,"blackHelsinki titleMedium",null,null,null,null)
+B.Q6=new A.l(!0,B.l,null,"Roboto",B.N,null,null,null,null,null,null,null,null,null,null,null,null,B.e,null,null,null,"blackHelsinki titleSmall",null,null,null,null)
+B.Ps=new A.l(!0,B.H,null,"Roboto",B.N,null,null,null,null,null,null,null,null,null,null,null,null,B.e,null,null,null,"blackHelsinki bodyLarge",null,null,null,null)
+B.NQ=new A.l(!0,B.H,null,"Roboto",B.N,null,null,null,null,null,null,null,null,null,null,null,null,B.e,null,null,null,"blackHelsinki bodyMedium",null,null,null,null)
+B.Qr=new A.l(!0,B.I,null,"Roboto",B.N,null,null,null,null,null,null,null,null,null,null,null,null,B.e,null,null,null,"blackHelsinki bodySmall",null,null,null,null)
+B.Ot=new A.l(!0,B.H,null,"Roboto",B.N,null,null,null,null,null,null,null,null,null,null,null,null,B.e,null,null,null,"blackHelsinki labelLarge",null,null,null,null)
+B.QI=new A.l(!0,B.l,null,"Roboto",B.N,null,null,null,null,null,null,null,null,null,null,null,null,B.e,null,null,null,"blackHelsinki labelMedium",null,null,null,null)
+B.Qu=new A.l(!0,B.l,null,"Roboto",B.N,null,null,null,null,null,null,null,null,null,null,null,null,B.e,null,null,null,"blackHelsinki labelSmall",null,null,null,null)
+B.Ry=new A.df(B.P1,B.Ny,B.OW,B.P7,B.Qh,B.R_,B.NZ,B.Q3,B.Q6,B.Ps,B.NQ,B.Qr,B.Ot,B.QI,B.Qu)
+B.QZ=new A.l(!1,null,null,null,null,null,57,B.n,null,-0.25,null,B.J,1.12,B.t,null,null,null,null,null,null,null,"dense displayLarge 2021",null,null,null,null)
+B.Ox=new A.l(!1,null,null,null,null,null,45,B.n,null,0,null,B.J,1.16,B.t,null,null,null,null,null,null,null,"dense displayMedium 2021",null,null,null,null)
+B.OZ=new A.l(!1,null,null,null,null,null,36,B.n,null,0,null,B.J,1.22,B.t,null,null,null,null,null,null,null,"dense displaySmall 2021",null,null,null,null)
+B.O8=new A.l(!1,null,null,null,null,null,32,B.n,null,0,null,B.J,1.25,B.t,null,null,null,null,null,null,null,"dense headlineLarge 2021",null,null,null,null)
+B.PC=new A.l(!1,null,null,null,null,null,28,B.n,null,0,null,B.J,1.29,B.t,null,null,null,null,null,null,null,"dense headlineMedium 2021",null,null,null,null)
+B.R6=new A.l(!1,null,null,null,null,null,24,B.n,null,0,null,B.J,1.33,B.t,null,null,null,null,null,null,null,"dense headlineSmall 2021",null,null,null,null)
+B.R2=new A.l(!1,null,null,null,null,null,22,B.n,null,0,null,B.J,1.27,B.t,null,null,null,null,null,null,null,"dense titleLarge 2021",null,null,null,null)
+B.Qi=new A.l(!1,null,null,null,null,null,16,B.Q,null,0.15,null,B.J,1.5,B.t,null,null,null,null,null,null,null,"dense titleMedium 2021",null,null,null,null)
+B.PY=new A.l(!1,null,null,null,null,null,14,B.Q,null,0.1,null,B.J,1.43,B.t,null,null,null,null,null,null,null,"dense titleSmall 2021",null,null,null,null)
+B.Qb=new A.l(!1,null,null,null,null,null,16,B.n,null,0.5,null,B.J,1.5,B.t,null,null,null,null,null,null,null,"dense bodyLarge 2021",null,null,null,null)
+B.PL=new A.l(!1,null,null,null,null,null,14,B.n,null,0.25,null,B.J,1.43,B.t,null,null,null,null,null,null,null,"dense bodyMedium 2021",null,null,null,null)
+B.NE=new A.l(!1,null,null,null,null,null,12,B.n,null,0.4,null,B.J,1.33,B.t,null,null,null,null,null,null,null,"dense bodySmall 2021",null,null,null,null)
+B.No=new A.l(!1,null,null,null,null,null,14,B.Q,null,0.1,null,B.J,1.43,B.t,null,null,null,null,null,null,null,"dense labelLarge 2021",null,null,null,null)
+B.Pn=new A.l(!1,null,null,null,null,null,12,B.Q,null,0.5,null,B.J,1.33,B.t,null,null,null,null,null,null,null,"dense labelMedium 2021",null,null,null,null)
+B.O4=new A.l(!1,null,null,null,null,null,11,B.Q,null,0.5,null,B.J,1.45,B.t,null,null,null,null,null,null,null,"dense labelSmall 2021",null,null,null,null)
+B.Rz=new A.df(B.QZ,B.Ox,B.OZ,B.O8,B.PC,B.R6,B.R2,B.Qi,B.PY,B.Qb,B.PL,B.NE,B.No,B.Pn,B.O4)
+B.O5=new A.l(!0,B.I,null,"Segoe UI",null,null,null,null,null,null,null,null,null,null,null,null,null,B.e,null,null,null,"blackRedmond displayLarge",null,null,null,null)
+B.P2=new A.l(!0,B.I,null,"Segoe UI",null,null,null,null,null,null,null,null,null,null,null,null,null,B.e,null,null,null,"blackRedmond displayMedium",null,null,null,null)
+B.Rg=new A.l(!0,B.I,null,"Segoe UI",null,null,null,null,null,null,null,null,null,null,null,null,null,B.e,null,null,null,"blackRedmond displaySmall",null,null,null,null)
+B.OI=new A.l(!0,B.I,null,"Segoe UI",null,null,null,null,null,null,null,null,null,null,null,null,null,B.e,null,null,null,"blackRedmond headlineLarge",null,null,null,null)
+B.P6=new A.l(!0,B.I,null,"Segoe UI",null,null,null,null,null,null,null,null,null,null,null,null,null,B.e,null,null,null,"blackRedmond headlineMedium",null,null,null,null)
+B.QF=new A.l(!0,B.H,null,"Segoe UI",null,null,null,null,null,null,null,null,null,null,null,null,null,B.e,null,null,null,"blackRedmond headlineSmall",null,null,null,null)
+B.Pk=new A.l(!0,B.H,null,"Segoe UI",null,null,null,null,null,null,null,null,null,null,null,null,null,B.e,null,null,null,"blackRedmond titleLarge",null,null,null,null)
+B.Qj=new A.l(!0,B.H,null,"Segoe UI",null,null,null,null,null,null,null,null,null,null,null,null,null,B.e,null,null,null,"blackRedmond titleMedium",null,null,null,null)
+B.QV=new A.l(!0,B.l,null,"Segoe UI",null,null,null,null,null,null,null,null,null,null,null,null,null,B.e,null,null,null,"blackRedmond titleSmall",null,null,null,null)
+B.OM=new A.l(!0,B.H,null,"Segoe UI",null,null,null,null,null,null,null,null,null,null,null,null,null,B.e,null,null,null,"blackRedmond bodyLarge",null,null,null,null)
+B.Ok=new A.l(!0,B.H,null,"Segoe UI",null,null,null,null,null,null,null,null,null,null,null,null,null,B.e,null,null,null,"blackRedmond bodyMedium",null,null,null,null)
+B.Nn=new A.l(!0,B.I,null,"Segoe UI",null,null,null,null,null,null,null,null,null,null,null,null,null,B.e,null,null,null,"blackRedmond bodySmall",null,null,null,null)
+B.Oc=new A.l(!0,B.H,null,"Segoe UI",null,null,null,null,null,null,null,null,null,null,null,null,null,B.e,null,null,null,"blackRedmond labelLarge",null,null,null,null)
+B.Rh=new A.l(!0,B.l,null,"Segoe UI",null,null,null,null,null,null,null,null,null,null,null,null,null,B.e,null,null,null,"blackRedmond labelMedium",null,null,null,null)
+B.Rb=new A.l(!0,B.l,null,"Segoe UI",null,null,null,null,null,null,null,null,null,null,null,null,null,B.e,null,null,null,"blackRedmond labelSmall",null,null,null,null)
+B.RA=new A.df(B.O5,B.P2,B.Rg,B.OI,B.P6,B.QF,B.Pk,B.Qj,B.QV,B.OM,B.Ok,B.Nn,B.Oc,B.Rh,B.Rb)
+B.Q2=new A.l(!1,null,null,null,null,null,57,B.n,null,-0.25,null,B.o,1.12,B.t,null,null,null,null,null,null,null,"tall displayLarge 2021",null,null,null,null)
+B.O6=new A.l(!1,null,null,null,null,null,45,B.n,null,0,null,B.o,1.16,B.t,null,null,null,null,null,null,null,"tall displayMedium 2021",null,null,null,null)
+B.Rk=new A.l(!1,null,null,null,null,null,36,B.n,null,0,null,B.o,1.22,B.t,null,null,null,null,null,null,null,"tall displaySmall 2021",null,null,null,null)
+B.QT=new A.l(!1,null,null,null,null,null,32,B.n,null,0,null,B.o,1.25,B.t,null,null,null,null,null,null,null,"tall headlineLarge 2021",null,null,null,null)
+B.Of=new A.l(!1,null,null,null,null,null,28,B.n,null,0,null,B.o,1.29,B.t,null,null,null,null,null,null,null,"tall headlineMedium 2021",null,null,null,null)
+B.Qz=new A.l(!1,null,null,null,null,null,24,B.n,null,0,null,B.o,1.33,B.t,null,null,null,null,null,null,null,"tall headlineSmall 2021",null,null,null,null)
+B.Rf=new A.l(!1,null,null,null,null,null,22,B.n,null,0,null,B.o,1.27,B.t,null,null,null,null,null,null,null,"tall titleLarge 2021",null,null,null,null)
+B.NX=new A.l(!1,null,null,null,null,null,16,B.Q,null,0.15,null,B.o,1.5,B.t,null,null,null,null,null,null,null,"tall titleMedium 2021",null,null,null,null)
+B.QY=new A.l(!1,null,null,null,null,null,14,B.Q,null,0.1,null,B.o,1.43,B.t,null,null,null,null,null,null,null,"tall titleSmall 2021",null,null,null,null)
+B.R7=new A.l(!1,null,null,null,null,null,16,B.n,null,0.5,null,B.o,1.5,B.t,null,null,null,null,null,null,null,"tall bodyLarge 2021",null,null,null,null)
+B.Qx=new A.l(!1,null,null,null,null,null,14,B.n,null,0.25,null,B.o,1.43,B.t,null,null,null,null,null,null,null,"tall bodyMedium 2021",null,null,null,null)
+B.NT=new A.l(!1,null,null,null,null,null,12,B.n,null,0.4,null,B.o,1.33,B.t,null,null,null,null,null,null,null,"tall bodySmall 2021",null,null,null,null)
+B.NH=new A.l(!1,null,null,null,null,null,14,B.Q,null,0.1,null,B.o,1.43,B.t,null,null,null,null,null,null,null,"tall labelLarge 2021",null,null,null,null)
+B.P8=new A.l(!1,null,null,null,null,null,12,B.Q,null,0.5,null,B.o,1.33,B.t,null,null,null,null,null,null,null,"tall labelMedium 2021",null,null,null,null)
+B.Ou=new A.l(!1,null,null,null,null,null,11,B.Q,null,0.5,null,B.o,1.45,B.t,null,null,null,null,null,null,null,"tall labelSmall 2021",null,null,null,null)
+B.RB=new A.df(B.Q2,B.O6,B.Rk,B.QT,B.Of,B.Qz,B.Rf,B.NX,B.QY,B.R7,B.Qx,B.NT,B.NH,B.P8,B.Ou)
+B.Qp=new A.l(!0,B.I,null,"Roboto",null,null,null,null,null,null,null,null,null,null,null,null,null,B.e,null,null,null,"blackMountainView displayLarge",null,null,null,null)
+B.Nt=new A.l(!0,B.I,null,"Roboto",null,null,null,null,null,null,null,null,null,null,null,null,null,B.e,null,null,null,"blackMountainView displayMedium",null,null,null,null)
+B.PA=new A.l(!0,B.I,null,"Roboto",null,null,null,null,null,null,null,null,null,null,null,null,null,B.e,null,null,null,"blackMountainView displaySmall",null,null,null,null)
+B.Pq=new A.l(!0,B.I,null,"Roboto",null,null,null,null,null,null,null,null,null,null,null,null,null,B.e,null,null,null,"blackMountainView headlineLarge",null,null,null,null)
+B.Or=new A.l(!0,B.I,null,"Roboto",null,null,null,null,null,null,null,null,null,null,null,null,null,B.e,null,null,null,"blackMountainView headlineMedium",null,null,null,null)
+B.Qk=new A.l(!0,B.H,null,"Roboto",null,null,null,null,null,null,null,null,null,null,null,null,null,B.e,null,null,null,"blackMountainView headlineSmall",null,null,null,null)
+B.Nu=new A.l(!0,B.H,null,"Roboto",null,null,null,null,null,null,null,null,null,null,null,null,null,B.e,null,null,null,"blackMountainView titleLarge",null,null,null,null)
+B.QB=new A.l(!0,B.H,null,"Roboto",null,null,null,null,null,null,null,null,null,null,null,null,null,B.e,null,null,null,"blackMountainView titleMedium",null,null,null,null)
+B.OX=new A.l(!0,B.l,null,"Roboto",null,null,null,null,null,null,null,null,null,null,null,null,null,B.e,null,null,null,"blackMountainView titleSmall",null,null,null,null)
+B.NG=new A.l(!0,B.H,null,"Roboto",null,null,null,null,null,null,null,null,null,null,null,null,null,B.e,null,null,null,"blackMountainView bodyLarge",null,null,null,null)
+B.Oj=new A.l(!0,B.H,null,"Roboto",null,null,null,null,null,null,null,null,null,null,null,null,null,B.e,null,null,null,"blackMountainView bodyMedium",null,null,null,null)
+B.Rj=new A.l(!0,B.I,null,"Roboto",null,null,null,null,null,null,null,null,null,null,null,null,null,B.e,null,null,null,"blackMountainView bodySmall",null,null,null,null)
+B.PE=new A.l(!0,B.H,null,"Roboto",null,null,null,null,null,null,null,null,null,null,null,null,null,B.e,null,null,null,"blackMountainView labelLarge",null,null,null,null)
+B.P4=new A.l(!0,B.l,null,"Roboto",null,null,null,null,null,null,null,null,null,null,null,null,null,B.e,null,null,null,"blackMountainView labelMedium",null,null,null,null)
+B.O7=new A.l(!0,B.l,null,"Roboto",null,null,null,null,null,null,null,null,null,null,null,null,null,B.e,null,null,null,"blackMountainView labelSmall",null,null,null,null)
+B.RC=new A.df(B.Qp,B.Nt,B.PA,B.Pq,B.Or,B.Qk,B.Nu,B.QB,B.OX,B.NG,B.Oj,B.Rj,B.PE,B.P4,B.O7)
+B.Ph=new A.l(!0,B.I,null,".AppleSystemUIFont",null,null,null,null,null,null,null,null,null,null,null,null,null,B.e,null,null,null,"blackRedwoodCity displayLarge",null,null,null,null)
+B.Oi=new A.l(!0,B.I,null,".AppleSystemUIFont",null,null,null,null,null,null,null,null,null,null,null,null,null,B.e,null,null,null,"blackRedwoodCity displayMedium",null,null,null,null)
+B.Pi=new A.l(!0,B.I,null,".AppleSystemUIFont",null,null,null,null,null,null,null,null,null,null,null,null,null,B.e,null,null,null,"blackRedwoodCity displaySmall",null,null,null,null)
+B.PV=new A.l(!0,B.I,null,".AppleSystemUIFont",null,null,null,null,null,null,null,null,null,null,null,null,null,B.e,null,null,null,"blackRedwoodCity headlineLarge",null,null,null,null)
+B.NW=new A.l(!0,B.I,null,".AppleSystemUIFont",null,null,null,null,null,null,null,null,null,null,null,null,null,B.e,null,null,null,"blackRedwoodCity headlineMedium",null,null,null,null)
+B.O3=new A.l(!0,B.H,null,".AppleSystemUIFont",null,null,null,null,null,null,null,null,null,null,null,null,null,B.e,null,null,null,"blackRedwoodCity headlineSmall",null,null,null,null)
+B.OC=new A.l(!0,B.H,null,".AppleSystemUIFont",null,null,null,null,null,null,null,null,null,null,null,null,null,B.e,null,null,null,"blackRedwoodCity titleLarge",null,null,null,null)
+B.PH=new A.l(!0,B.H,null,".AppleSystemUIFont",null,null,null,null,null,null,null,null,null,null,null,null,null,B.e,null,null,null,"blackRedwoodCity titleMedium",null,null,null,null)
+B.OR=new A.l(!0,B.l,null,".AppleSystemUIFont",null,null,null,null,null,null,null,null,null,null,null,null,null,B.e,null,null,null,"blackRedwoodCity titleSmall",null,null,null,null)
+B.Qs=new A.l(!0,B.H,null,".AppleSystemUIFont",null,null,null,null,null,null,null,null,null,null,null,null,null,B.e,null,null,null,"blackRedwoodCity bodyLarge",null,null,null,null)
+B.Nq=new A.l(!0,B.H,null,".AppleSystemUIFont",null,null,null,null,null,null,null,null,null,null,null,null,null,B.e,null,null,null,"blackRedwoodCity bodyMedium",null,null,null,null)
+B.NL=new A.l(!0,B.I,null,".AppleSystemUIFont",null,null,null,null,null,null,null,null,null,null,null,null,null,B.e,null,null,null,"blackRedwoodCity bodySmall",null,null,null,null)
+B.Qn=new A.l(!0,B.H,null,".AppleSystemUIFont",null,null,null,null,null,null,null,null,null,null,null,null,null,B.e,null,null,null,"blackRedwoodCity labelLarge",null,null,null,null)
+B.QH=new A.l(!0,B.l,null,".AppleSystemUIFont",null,null,null,null,null,null,null,null,null,null,null,null,null,B.e,null,null,null,"blackRedwoodCity labelMedium",null,null,null,null)
+B.NA=new A.l(!0,B.l,null,".AppleSystemUIFont",null,null,null,null,null,null,null,null,null,null,null,null,null,B.e,null,null,null,"blackRedwoodCity labelSmall",null,null,null,null)
+B.RD=new A.df(B.Ph,B.Oi,B.Pi,B.PV,B.NW,B.O3,B.OC,B.PH,B.OR,B.Qs,B.Nq,B.NL,B.Qn,B.QH,B.NA)
+B.O2=new A.l(!0,null,null,null,null,null,18,B.ap,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null)
+B.RI=new A.e8("IHK AP1 \u2013 Glossar",null,B.O2,null,null,null,null,null,null)
 B.y5=new A.e8("Quellen",null,null,null,null,null,null,null,null)
-B.PK=new A.l(!0,B.d4,null,null,null,null,13,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null)
-B.RE=new A.e8("Version 2.0.0 \u2013 AP1 Edition",null,B.PK,null,null,null,null,null,null)
-B.RF=new A.e8("\xdcber diese App",null,null,null,null,null,null,null,null)
-B.RG=new A.e8("About Us",null,null,null,null,null,null,null,null)
-B.R8=new A.l(!0,B.F,null,null,null,null,18,null,null,1.5,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null)
-B.RI=new A.e8("Welcome",null,B.R8,B.cz,null,null,null,null,null)
-B.UR=new A.abi(0,"system")
-B.IA=new A.j(0.056,0.024)
-B.IO=new A.j(0.108,0.3085)
-B.Ix=new A.j(0.198,0.541)
-B.IF=new A.j(0.3655,1)
-B.IN=new A.j(0.5465,0.989)
-B.hl=new A.Aa(B.IA,B.IO,B.Ix,B.IF,B.IN)
-B.ID=new A.j(0.05,0)
-B.IE=new A.j(0.133333,0.06)
-B.IL=new A.j(0.166666,0.4)
-B.Iy=new A.j(0.208333,0.82)
-B.IM=new A.j(0.25,1)
-B.RK=new A.Aa(B.ID,B.IE,B.IL,B.Iy,B.IM)
-B.RL=new A.Ab(null)
+B.PP=new A.l(!0,B.d4,null,null,null,null,13,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null)
+B.RJ=new A.e8("Version 2.0.0 \u2013 AP1 Edition",null,B.PP,null,null,null,null,null,null)
+B.RK=new A.e8("\xdcber diese App",null,null,null,null,null,null,null,null)
+B.RL=new A.e8("About Us",null,null,null,null,null,null,null,null)
+B.Rd=new A.l(!0,B.F,null,null,null,null,18,null,null,1.5,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null)
+B.RN=new A.e8("Welcome",null,B.Rd,B.cz,null,null,null,null,null)
+B.UW=new A.abi(0,"system")
+B.IF=new A.j(0.056,0.024)
+B.IT=new A.j(0.108,0.3085)
+B.IC=new A.j(0.198,0.541)
+B.IK=new A.j(0.3655,1)
+B.IS=new A.j(0.5465,0.989)
+B.hl=new A.Aa(B.IF,B.IT,B.IC,B.IK,B.IS)
+B.II=new A.j(0.05,0)
+B.IJ=new A.j(0.133333,0.06)
+B.IQ=new A.j(0.166666,0.4)
+B.ID=new A.j(0.208333,0.82)
+B.IR=new A.j(0.25,1)
+B.RP=new A.Aa(B.II,B.IJ,B.IQ,B.ID,B.IR)
+B.RQ=new A.Ab(null)
 B.dm=new A.ta(0,"clamp")
-B.RM=new A.ta(1,"repeated")
+B.RR=new A.ta(1,"repeated")
 B.jS=new A.ta(2,"mirror")
 B.jT=new A.ta(3,"decal")
-B.RN=new A.Ad(null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null)
-B.RO=new A.Ae(null,null,null,null,null,null,null,null,null,null,null,null,null,null,null)
-B.RP=new A.Af(0.01,1/0)
+B.RS=new A.Ad(null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null)
+B.RT=new A.Ae(null,null,null,null,null,null,null,null,null,null,null,null,null,null,null)
+B.RU=new A.Af(0.01,1/0)
 B.bO=new A.Af(0.001,0.001)
-B.RQ=new A.Ag(0,"darker")
+B.RV=new A.Ag(0,"darker")
 B.cC=new A.Ag(1,"lighter")
 B.bP=new A.Ag(2,"nearer")
 B.y6=new A.Lv(!1,!1,!1,!1)
-B.RR=new A.Lv(!0,!0,!0,!0)
-B.RS=new A.Ai(null,null,null,null,null,null,null,null,null)
+B.RW=new A.Lv(!0,!0,!0,!0)
+B.RX=new A.Ai(null,null,null,null,null,null,null,null,null)
 B.y7=new A.Ak(0,"identity")
 B.y8=new A.Ak(1,"transform2d")
 B.y9=new A.Ak(2,"complex")
@@ -83367,153 +83372,153 @@ B.c4=new A.mh(0,"up")
 B.c5=new A.mh(1,"right")
 B.c6=new A.mh(2,"down")
 B.c7=new A.mh(3,"left")
-B.RT=new A.LB(0,"closedLoop")
-B.RU=new A.LB(1,"leaveFlutterView")
-B.RV=A.av("azv")
-B.RW=A.av("ny")
-B.RX=A.av("nx")
-B.RY=A.av("w7")
+B.RY=new A.LB(0,"closedLoop")
+B.RZ=new A.LB(1,"leaveFlutterView")
+B.S_=A.av("azv")
+B.S0=A.av("ny")
+B.S1=A.av("nx")
+B.S2=A.av("w7")
 B.ya=A.av("pO")
-B.RZ=A.av("pY")
-B.S_=A.av("nd")
-B.S0=A.av("cg")
-B.S1=A.av("iD")
-B.S2=A.av("vP")
-B.S3=A.av("ns")
-B.S4=A.av("nt")
+B.S3=A.av("pY")
+B.S4=A.av("nd")
+B.S5=A.av("cg")
+B.S6=A.av("iD")
+B.S7=A.av("vP")
+B.S8=A.av("ns")
+B.S9=A.av("nt")
 B.yb=A.av("alO")
 B.jU=A.av("eS")
-B.S5=A.av("azw")
-B.S6=A.av("hJ")
-B.S7=A.av("iH")
+B.Sa=A.av("azw")
+B.Sb=A.av("hJ")
+B.Sc=A.av("iH")
 B.eD=A.av("qv")
-B.S8=A.av("ZT")
-B.S9=A.av("a_1")
-B.Sa=A.av("a_2")
-B.Sb=A.av("hN")
-B.Sc=A.av("a17")
-B.Sd=A.av("a18")
-B.Se=A.av("a19")
-B.Sf=A.av("jQ")
-B.Sg=A.av("a8")
-B.Sh=A.av("bB<ac<a1>>")
+B.Sd=A.av("ZT")
+B.Se=A.av("a_1")
+B.Sf=A.av("a_2")
+B.Sg=A.av("hN")
+B.Sh=A.av("a17")
+B.Si=A.av("a18")
+B.Sj=A.av("a19")
+B.Sk=A.av("jQ")
+B.Sl=A.av("a8")
+B.Sm=A.av("bB<ac<a1>>")
 B.jV=A.av("hU")
 B.jW=A.av("aqQ")
 B.bw=A.av("oc")
-B.Si=A.av("oo")
-B.Sj=A.av("I")
-B.Sk=A.av("rf")
+B.Sn=A.av("oo")
+B.So=A.av("I")
+B.Sp=A.av("rf")
 B.hm=A.av("i_")
-B.Sl=A.av("lS")
-B.Sm=A.av("oE")
-B.Sn=A.av("kk")
-B.So=A.av("nz")
-B.Sp=A.av("m0")
-B.Sq=A.av("kn")
-B.Sr=A.av("de")
-B.Ss=A.av("i0")
-B.St=A.av("amM")
+B.Sq=A.av("lS")
+B.Sr=A.av("oE")
+B.Ss=A.av("kk")
+B.St=A.av("nz")
+B.Su=A.av("m0")
+B.Sv=A.av("kn")
+B.Sw=A.av("de")
+B.Sx=A.av("i0")
+B.Sy=A.av("amM")
 B.jX=A.av("dE")
-B.Su=A.av("kr")
-B.Sv=A.av("m9")
-B.Sw=A.av("p0")
-B.Sx=A.av("q")
-B.Sy=A.av("ji")
+B.Sz=A.av("kr")
+B.SA=A.av("m9")
+B.SB=A.av("p0")
+B.SC=A.av("q")
+B.SD=A.av("ji")
 B.jY=A.av("fc")
-B.Sz=A.av("mg")
-B.SA=A.av("ln")
-B.SB=A.av("jU")
-B.SC=A.av("abv")
-B.SD=A.av("tg")
-B.SE=A.av("abw")
-B.SF=A.av("fS")
-B.SG=A.av("mi")
-B.SH=A.av("hn")
-B.SI=A.av("mH")
-B.SJ=A.av("an8")
-B.SK=A.av("Ax")
-B.SL=A.av("tu")
-B.SM=A.av("pu<@>")
-B.SN=A.av("jw")
-B.SO=A.av("nu")
-B.SQ=A.av("jR")
-B.SP=A.av("jT")
+B.SE=A.av("mg")
+B.SF=A.av("ln")
+B.SG=A.av("jU")
+B.SH=A.av("abv")
+B.SI=A.av("tg")
+B.SJ=A.av("abw")
+B.SK=A.av("fS")
+B.SL=A.av("mi")
+B.SM=A.av("hn")
+B.SN=A.av("mH")
+B.SO=A.av("an8")
+B.SP=A.av("Ax")
+B.SQ=A.av("tu")
+B.SR=A.av("pu<@>")
+B.SS=A.av("jw")
+B.ST=A.av("nu")
+B.SV=A.av("jR")
+B.SU=A.av("jT")
 B.jZ=A.av("fy")
-B.SR=A.av("kf")
-B.SS=A.av("kq")
-B.ST=A.av("ms")
-B.SU=A.av("nA")
-B.SV=A.av("fv")
-B.SW=A.av("jS")
-B.SX=A.av("jh")
+B.SW=A.av("kf")
+B.SX=A.av("kq")
+B.SY=A.av("ms")
+B.SZ=A.av("nA")
+B.T_=A.av("fv")
+B.T0=A.av("jS")
+B.T1=A.av("jh")
 B.yc=A.av("fT")
 B.z1=new A.b2(B.l,1,B.v,-1)
-B.SY=new A.ic(B.ky,B.z1)
-B.SZ=new A.LD(0,"undo")
-B.T_=new A.LD(1,"redo")
-B.T0=new A.tj(!1,!1)
-B.T1=new A.LF(0,"scope")
+B.T2=new A.ic(B.ky,B.z1)
+B.T3=new A.LD(0,"undo")
+B.T4=new A.LD(1,"redo")
+B.T5=new A.tj(!1,!1)
+B.T6=new A.LF(0,"scope")
 B.k_=new A.LF(1,"previouslyFocusedChild")
 B.dn=new A.abG(!1)
 B.a7=new A.ie(0,"monochrome")
-B.T2=new A.ie(1,"neutral")
-B.T3=new A.ie(2,"tonalSpot")
-B.T4=new A.ie(3,"vibrant")
-B.T5=new A.ie(4,"expressive")
+B.T7=new A.ie(1,"neutral")
+B.T8=new A.ie(2,"tonalSpot")
+B.T9=new A.ie(3,"vibrant")
+B.Ta=new A.ie(4,"expressive")
 B.cD=new A.ie(5,"content")
 B.cE=new A.ie(6,"fidelity")
-B.T6=new A.ie(7,"rainbow")
-B.T7=new A.ie(8,"fruitSalad")
+B.Tb=new A.ie(7,"rainbow")
+B.Tc=new A.ie(8,"fruitSalad")
 B.yd=new A.mk(B.h,0,B.u,B.h)
 B.k1=new A.mk(B.h,1,B.u,B.h)
 B.eE=new A.abL(1,"down")
-B.T8=new A.At(0,"undefined")
+B.Td=new A.At(0,"undefined")
 B.ye=new A.At(1,"forward")
-B.T9=new A.At(2,"backward")
-B.Ta=new A.LO(0,"unfocused")
+B.Te=new A.At(2,"backward")
+B.Tf=new A.LO(0,"unfocused")
 B.k2=new A.LO(1,"focused")
 B.eF=new A.kB(0,0)
-B.Tb=new A.kB(-2,-2)
-B.Tc=new A.Av(null)
+B.Tg=new A.kB(-2,-2)
+B.Th=new A.Av(null)
 B.eG=new A.bj(0,t.XR)
 B.yf=new A.bj(18,t.XR)
 B.hn=new A.bj(24,t.XR)
 B.bb=new A.bj(B.B,t.De)
-B.Td=new A.bj(B.B,t.rc)
-B.M9=new A.E(1/0,1/0)
-B.dr=new A.bj(B.M9,t.W7)
+B.Ti=new A.bj(B.B,t.rc)
+B.Me=new A.E(1/0,1/0)
+B.dr=new A.bj(B.Me,t.W7)
 B.CF=new A.aC(8,8,8,8)
 B.ho=new A.bj(B.CF,t.mD)
-B.M3=new A.E(40,40)
-B.hp=new A.bj(B.M3,t.W7)
-B.M6=new A.E(64,40)
-B.yg=new A.bj(B.M6,t.W7)
-B.Mu=new A.eC(B.q)
-B.ds=new A.bj(B.Mu,t.dy)
+B.M8=new A.E(40,40)
+B.hp=new A.bj(B.M8,t.W7)
+B.Mb=new A.E(64,40)
+B.yg=new A.bj(B.Mb,t.W7)
+B.Mz=new A.eC(B.q)
+B.ds=new A.bj(B.Mz,t.dy)
 B.yh=new A.bJ(3,"dragged")
 B.ay=new A.bJ(4,"selected")
 B.k3=new A.bJ(5,"scrolledUnder")
 B.w=new A.bJ(6,"disabled")
 B.c8=new A.bJ(7,"error")
 B.cF=new A.ml(0,"start")
-B.Te=new A.ml(1,"end")
-B.Tf=new A.ml(2,"center")
-B.Tg=new A.ml(3,"spaceBetween")
-B.Th=new A.ml(4,"spaceAround")
-B.Ti=new A.ml(5,"spaceEvenly")
+B.Tj=new A.ml(1,"end")
+B.Tk=new A.ml(2,"center")
+B.Tl=new A.ml(3,"spaceBetween")
+B.Tm=new A.ml(4,"spaceAround")
+B.Tn=new A.ml(5,"spaceEvenly")
 B.k4=new A.Ay(0,"start")
-B.Tj=new A.Ay(1,"end")
-B.Tk=new A.Ay(2,"center")
+B.To=new A.Ay(1,"end")
+B.Tp=new A.Ay(2,"center")
 B.aE=new A.Ml(0,"forward")
 B.hq=new A.Ml(1,"reverse")
-B.Tl=new A.AO(0,"checkbox")
-B.Tm=new A.AO(1,"radio")
-B.Tn=new A.AO(2,"toggle")
-B.US=new A.adE(0,"plain")
+B.Tq=new A.AO(0,"checkbox")
+B.Tr=new A.AO(1,"radio")
+B.Ts=new A.AO(2,"toggle")
+B.UX=new A.adE(0,"plain")
 B.Bf=new A.w(0.01568627450980392,0,0,0,B.f)
-B.Ea=A.b(s([B.Bf,B.B]),t.t_)
-B.To=new A.il(B.Ea)
-B.Tp=new A.il(null)
+B.E9=A.b(s([B.Bf,B.B]),t.t_)
+B.Tt=new A.il(B.E9)
+B.Tu=new A.il(null)
 B.k5=new A.pi(0,"backButton")
 B.k6=new A.pi(1,"nextButton")
 B.dt=new A.NX(0,"horizontal")
@@ -83526,15 +83531,15 @@ B.eI=new A.Be(2,"accepted")
 B.dv=new A.Bf(2,"accepted")
 B.a1=new A.tG(0,"initial")
 B.cG=new A.tG(1,"active")
-B.Tv=new A.tG(2,"inactive")
+B.TA=new A.tG(2,"inactive")
 B.yn=new A.tG(3,"defunct")
 B.k9=new A.pk(0,"ready")
 B.hr=new A.pk(1,"possible")
 B.yo=new A.pk(2,"accepted")
 B.hs=new A.pk(3,"started")
-B.TC=new A.pk(4,"peaked")
+B.TH=new A.pk(4,"peaked")
 B.ht=new A.tL(0,"idle")
-B.TD=new A.tL(1,"absorb")
+B.TI=new A.tL(1,"absorb")
 B.hu=new A.tL(2,"pull")
 B.yp=new A.tL(3,"recede")
 B.cH=new A.mr(0,"pressed")
@@ -83546,9 +83551,9 @@ B.aO=new A.po(2,"minHeight")
 B.bc=new A.po(3,"maxHeight")
 B.al=new A.im(1)
 B.hv=new A.dL(0,"size")
-B.TQ=new A.dL(1,"orientation")
+B.TV=new A.dL(1,"orientation")
 B.yr=new A.dL(11,"accessibleNavigation")
-B.TR=new A.dL(12,"invertColors")
+B.TW=new A.dL(12,"invertColors")
 B.ys=new A.dL(13,"highContrast")
 B.ka=new A.dL(16,"boldText")
 B.eJ=new A.dL(17,"navigationMode")
@@ -83558,47 +83563,47 @@ B.cJ=new A.dL(4,"textScaler")
 B.kb=new A.dL(5,"platformBrightness")
 B.aA=new A.dL(6,"padding")
 B.kc=new A.dL(7,"viewInsets")
-B.TS=new A.dL(9,"viewPadding")
-B.TT=new A.mw(1/0,1/0,1/0,1/0,1/0,1/0)
-B.TU=new A.ps(0,"isCurrent")
-B.TV=new A.cA(B.d5,B.d2)
+B.TX=new A.dL(9,"viewPadding")
+B.TY=new A.mw(1/0,1/0,1/0,1/0,1/0,1/0)
+B.TZ=new A.ps(0,"isCurrent")
+B.U_=new A.cA(B.d5,B.d2)
 B.fB=new A.o3(1,"left")
-B.TW=new A.cA(B.d5,B.fB)
+B.U0=new A.cA(B.d5,B.fB)
 B.fC=new A.o3(2,"right")
-B.TX=new A.cA(B.d5,B.fC)
-B.TY=new A.cA(B.d5,B.bI)
-B.TZ=new A.cA(B.d6,B.d2)
-B.U_=new A.cA(B.d6,B.fB)
-B.U0=new A.cA(B.d6,B.fC)
-B.U1=new A.cA(B.d6,B.bI)
-B.U2=new A.cA(B.d7,B.d2)
-B.U3=new A.cA(B.d7,B.fB)
-B.U4=new A.cA(B.d7,B.fC)
-B.U5=new A.cA(B.d7,B.bI)
-B.U6=new A.cA(B.d8,B.d2)
-B.U7=new A.cA(B.d8,B.fB)
-B.U8=new A.cA(B.d8,B.fC)
-B.U9=new A.cA(B.d8,B.bI)
-B.Ua=new A.cA(B.j9,B.bI)
-B.Ub=new A.cA(B.ja,B.bI)
-B.Uc=new A.cA(B.jb,B.bI)
-B.Ud=new A.cA(B.jc,B.bI)
-B.Ue=new A.PD(null)
-B.Uf=new A.PF(null)
+B.U1=new A.cA(B.d5,B.fC)
+B.U2=new A.cA(B.d5,B.bI)
+B.U3=new A.cA(B.d6,B.d2)
+B.U4=new A.cA(B.d6,B.fB)
+B.U5=new A.cA(B.d6,B.fC)
+B.U6=new A.cA(B.d6,B.bI)
+B.U7=new A.cA(B.d7,B.d2)
+B.U8=new A.cA(B.d7,B.fB)
+B.U9=new A.cA(B.d7,B.fC)
+B.Ua=new A.cA(B.d7,B.bI)
+B.Ub=new A.cA(B.d8,B.d2)
+B.Uc=new A.cA(B.d8,B.fB)
+B.Ud=new A.cA(B.d8,B.fC)
+B.Ue=new A.cA(B.d8,B.bI)
+B.Uf=new A.cA(B.j9,B.bI)
+B.Ug=new A.cA(B.ja,B.bI)
+B.Uh=new A.cA(B.jb,B.bI)
+B.Ui=new A.cA(B.jc,B.bI)
+B.Uj=new A.PD(null)
+B.Uk=new A.PF(null)
 B.kd=new A.er(1,"add")
-B.Ui=new A.er(10,"remove")
-B.Uj=new A.er(11,"popping")
-B.Uk=new A.er(12,"removing")
+B.Un=new A.er(10,"remove")
+B.Uo=new A.er(11,"popping")
+B.Up=new A.er(12,"removing")
 B.ke=new A.er(13,"dispose")
-B.Ul=new A.er(14,"disposing")
+B.Uq=new A.er(14,"disposing")
 B.hw=new A.er(15,"disposed")
-B.Um=new A.er(2,"adding")
+B.Ur=new A.er(2,"adding")
 B.yu=new A.er(3,"push")
 B.yv=new A.er(4,"pushReplace")
 B.yw=new A.er(5,"pushing")
-B.Un=new A.er(6,"replace")
+B.Us=new A.er(6,"replace")
 B.eK=new A.er(7,"idle")
-B.Uo=new A.er(8,"pop")
+B.Ut=new A.er(8,"pop")
 B.hx=new A.fk(0,"body")
 B.hy=new A.fk(1,"appBar")
 B.kg=new A.fk(10,"endDrawer")
@@ -83611,27 +83616,27 @@ B.kh=new A.fk(6,"persistentFooter")
 B.ki=new A.fk(7,"bottomNavigationBar")
 B.hD=new A.fk(8,"floatingActionButton")
 B.hE=new A.fk(9,"drawer")
-B.M1=new A.E(100,0)
-B.Up=new A.kN(B.M1,B.ar,B.dg,null,null)
-B.Uq=new A.kN(B.C,B.ar,B.dg,null,null)
+B.M6=new A.E(100,0)
+B.Uu=new A.kN(B.M6,B.ar,B.dg,null,null)
+B.Uv=new A.kN(B.C,B.ar,B.dg,null,null)
 B.kj=new A.Sb(0,"trailing")
 B.yy=new A.Sb(1,"leading")
 B.kk=new A.ug(0,"idle")
-B.Us=new A.ug(1,"absorb")
+B.Ux=new A.ug(1,"absorb")
 B.kl=new A.ug(2,"pull")
 B.km=new A.ug(3,"recede")
 B.yz=new A.uj(0,"first")
-B.Ut=new A.uj(1,"middle")
+B.Uy=new A.uj(1,"middle")
 B.yA=new A.uj(2,"last")
 B.kn=new A.uj(3,"only")
-B.Uu=new A.Dv(B.lF,B.dV)
+B.Uz=new A.Dv(B.lF,B.dV)
 B.hF=new A.DA(0,"leading")
 B.hG=new A.DA(1,"middle")
 B.hH=new A.DA(2,"trailing")
-B.Uv=new A.SW(0,"minimize")
-B.Uw=new A.SW(1,"maximize")
-B.Ux=new A.DQ(A.aJ4(),"WidgetStateMouseCursor(clickable)")
-B.Uy=new A.DQ(A.aJ5(),"WidgetStateMouseCursor(textable)")})();(function staticFields(){$.anw=null
+B.UA=new A.SW(0,"minimize")
+B.UB=new A.SW(1,"maximize")
+B.UC=new A.DQ(A.aJ4(),"WidgetStateMouseCursor(clickable)")
+B.UD=new A.DQ(A.aJ5(),"WidgetStateMouseCursor(textable)")})();(function staticFields(){$.anw=null
 $.mM=null
 $.b9=A.bs("canvasKit")
 $.WG=A.bs("_instance")
@@ -83878,10 +83883,10 @@ r($,"aLN","awo",()=>A.amC(0))
 s($,"aM9","V3",()=>A.aFa())
 s($,"aM4","awy",()=>A.j7("^[\\-\\.0-9A-Z_a-z~]*$",!0,!1))
 s($,"aM5","awz",()=>typeof URLSearchParams=="function")
-s($,"aMA","dt",()=>A.mV(B.Sj))
+s($,"aMA","dt",()=>A.mV(B.So))
 s($,"aLm","EQ",()=>{A.aBY()
 return $.a6q})
-s($,"aJN","d9",()=>A.ayv(B.I3.gbD(A.aBh(A.b([1],t.t)))).getInt8(0)===1?B.am:B.kL)
+s($,"aJN","d9",()=>A.ayv(B.I8.gbD(A.aBh(A.b([1],t.t)))).getInt8(0)===1?B.am:B.kL)
 s($,"aNB","EU",()=>new A.WM(A.z(t.N,A.aw("kE"))))
 s($,"aJi","avd",()=>new A.Wl())
 r($,"aNx","bc",()=>$.avd())
@@ -83889,16 +83894,16 @@ r($,"aN5","alh",()=>B.zv)
 s($,"aJc","ava",()=>A.aso(A.alE(B.a3,null,B.b4,B.b4),!0))
 s($,"aJb","av9",()=>A.aso(A.alE(B.a2,null,null,B.b4),!0))
 r($,"aNw","uK",()=>{var q=t.N
-return A.au(["4-Ohren-Modell","Kommunikationsmodell nach Schulz von Thun: Jede Nachricht hat vier Seiten: Sachinhalt (Fakten), Selbstoffenbarung (Befindlichkeit des Senders), Beziehung (wie stehe ich zum Empf\xe4nger?), Appell (was soll der Empf\xe4nger tun?).","80-PLUS-Zertifikat","Energieeffizienz-Zertifikat f\xfcr PC-Netzteile: mind. 80 % Wirkungsgrad bei 20%, 50% und 100% Last. Stufen: White (80%), Bronze (82/85/82%), Silver, Gold (87/90/87%), Platinum (90/92/89%), Titanium (92/94/90%).","APIPA","Automatic Private IP Addressing \u2013 Windows weist automatisch 169.254.x.x zu, wenn kein DHCP-Server erreichbar ist. Kein Internetrouting m\xf6glich \u2013 nur lokale Link-Kommunikation.","ARP","Address Resolution Protocol \u2013 ermittelt zu einer bekannten IPv4-Adresse die zugeh\xf6rige MAC-Adresse im lokalen Netz via Broadcast. Arbeitet zwischen OSI-Schicht 2 und 3.","Abschreibung (AfA)","Lineare Abschreibung: Anschaffungskosten \xf7 Nutzungsdauer = j\xe4hrlicher Abschreibungsbetrag. IT-Hardware: typisch 3 Jahre (GWG bis 800 \u20ac netto: Sofortabschreibung). Reduziert Buchwert und ist steuerlich absetzbar.","Amortisationsrechnung","Zeitraum, bis eine Investition durch Einsparungen gedeckt ist. Formel: Amortisationsdauer = Investitionskosten \xf7 j\xe4hrliche Einsparung. Entscheidungskriterium: Amortisationsdauer < Nutzungsdauer \u2192 wirtschaftlich sinnvoll.","Anonymisierung vs. Pseudonymisierung","Anonymisierung: Personenbezug vollst\xe4ndig und irreversibel entfernt \u2192 DSGVO nicht anwendbar. Pseudonymisierung: R\xfcckf\xfchrung mit separatem Schl\xfcssel m\xf6glich \u2192 weiterhin personenbezogen \u2192 DSGVO gilt.","BDSG","Bundesdatenschutzgesetz \u2013 deutsches Ausf\xfchrungsgesetz zur DSGVO. Nutzt \xd6ffnungsklauseln der DSGVO f\xfcr spezifische Regelungen (z. B. Besch\xe4ftigtendatenschutz). Gilt parallel zur DSGVO.","BIOS vs. UEFI","BIOS: 16-Bit, MBR-Partitionen (max. 2 TB), textbasiert, kein Secure Boot. UEFI: 32/64-Bit, GPT (> 2 TB, bis 128 Partitionen), grafische Oberfl\xe4che, Secure Boot, Netzwerkzugang vor OS-Start.","BPMN","Business Process Model and Notation \u2013 standardisierte Prozessnotation. Elemente: Events (Kreise), Tasks (Rechtecke), Gateways (Raute: XOR=exklusiv, AND=parallel). Ab 2025 in AP1 relevant, ersetzt PAP/Struktogramm.","BSI-Grundschutz","Methodik des Bundesamts f\xfcr Sicherheit in der Informationstechnik f\xfcr systematisches IT-Sicherheitsmanagement. Basis: IT-Grundschutz-Kompendium mit Standardma\xdfnahmen. Ziel: angemessenes Schutzniveau ohne aufwendige Risikoanalyse.","BYOD","Bring Your Own Device \u2013 Mitarbeiter nutzen private Ger\xe4te dienstlich. Risiken: fehlende Ger\xe4tekontrolle, Datenschutzkonflikte (DSGVO), Malware-Einschleppung. Gegenma\xdfnahme: Mobile Device Management (MDM), klare Richtlinien.","Barrierefreiheit (IT)","Gleichberechtigter Zugang zu IT-Systemen f\xfcr alle Menschen inkl. Behinderungen. Ma\xdfnahmen: Screenreader-Kompatibilit\xe4t, WCAG-Kontraste (\u2265 4,5:1 f\xfcr Text), Tastaturnavigation, alternative Texte, skalierbare Schriften. Ab 2025 im AP1-Katalog.","Betroffenenrechte","Rechte nach DSGVO: Auskunft (Art. 15), Berichtigung (Art. 16), L\xf6schung (Art. 17), Einschr\xe4nkung (Art. 18), Daten\xfcbertragbarkeit (Art. 20), Widerspruch (Art. 21). Frist f\xfcr Antwort: 1 Monat.","Bildschirmarbeitsplatz","Anforderungen nach ArbSt\xe4ttV/BildscharbV: Monitor auf Augenh\xf6he, Sehabstand 50\u201380 cm, keine Blendung/Reflexion, einstellbare Helligkeit, ergonomischer Stuhl (h\xf6henverstellbar, R\xfcckenlehne), ausreichend Beinfreiheit.","Blauer Engel","Deutsches Umweltzeichen (seit 1978) \u2013 f\xfcr besonders umweltfreundliche Produkte. Bei IT: pr\xfcft Energieeffizienz, Schadstofffreiheit, L\xe4rm, Recyclingf\xe4higkeit und soziale Aspekte. Strenger als Energy Star oder EPEAT.","Bootvorgang","POST (Power-On Self-Test) \u2192 UEFI/BIOS-Initialisierung \u2192 Bootloader-Auswahl (z. B. Windows Boot Manager, GRUB) \u2192 Kernel laden \u2192 Betriebssystem starten. Secure Boot pr\xfcft Signaturen des Bootloaders.","CAPEX vs. OPEX","CAPEX (Capital Expenditure): einmalige Investitionsausgaben (Kauf von Hardware, Lizenzen, Installation). OPEX (Operational Expenditure): laufende Betriebskosten (Strom, Wartung, Support, Abo-Lizenzen). Cloud = OPEX, On-Premise = CAPEX + OPEX.","CO\u2082-Fu\xdfabdruck IT","Summe aller Treibhausgasemissionen \xfcber den gesamten Lebenszyklus eines IT-Ger\xe4ts. Bei Laptops: ca. 70\u201380% in der Produktion (Rohstoffe, Fertigung), nur 20\u201330% im Betrieb. Lebensdauerverl\xe4ngerung ist wirkungsvoller als effizienter Betrieb allein.","CPU","Central Processing Unit \u2013 f\xfchrt Programmbefehle aus. Kenngr\xf6\xdfen: Taktfrequenz (GHz), Kerne/Threads, Cache (L1/L2/L3 in MB), TDP (Verlustleistung in Watt), Befehlssatzarchitektur (x86-64, ARM).","Change Management","Lewin-Modell (3 Phasen): 1. Auftauen (Dringlichkeit kommunizieren, Widerst\xe4nde abbauen), 2. Ver\xe4ndern (neue Prozesse einf\xfchren, Schulungen), 3. Einfrieren (neue Standards verankern, Erfolge sichern). Mitarbeiter fr\xfchzeitig einbeziehen.","Compiler vs. Interpreter","Compiler: \xfcbersetzt gesamten Quellcode vor der Ausf\xfchrung in Maschinencode (schnell, plattformspezifisch, z. B. C/C++). Interpreter: \xfcbersetzt und f\xfchrt Zeile f\xfcr Zeile aus (flexibler, langsamer, z. B. Python). Java: beides (Bytecode + JVM).","DDR4 vs. DDR5","DDR4: bew\xe4hrt, breite Kompatibilit\xe4t, bis 3200 MHz, 1,2 V. DDR5: h\xf6here Bandbreite (ab 4800 MHz), 1,1 V, On-Die-ECC, vier Kan\xe4le pro Modul. Nicht r\xfcckw\xe4rtskompatibel \u2013 unterschiedliche physische Kerbe im Sockel.","DHCP","Dynamic Host Configuration Protocol \u2013 weist Netzwerkger\xe4ten automatisch IP-Adresse, Subnetzmaske, Gateway und DNS-Server zu. Arbeitet auf OSI-Schicht 7, nutzt UDP-Ports 67/68.","DNS","Domain Name System \u2013 \xfcbersetzt Domainnamen (z. B. www.ihk.de) in IP-Adressen. Hierarchisch aufgebaut: Root \u2192 TLD \u2192 Domain. Standard-Port: 53 (UDP/TCP).","DSGVO","Datenschutz-Grundverordnung der EU (seit Mai 2018). Sch\xfctzt personenbezogene Daten nat\xfcrlicher Personen. Grundprinzipien: Zweckbindung, Datensparsamkeit, Rechtm\xe4\xdfigkeit, Transparenz. Bu\xdfgelder: bis 20 Mio. \u20ac oder 4 % des Jahresumsatzes.","Daisy Chaining","Kettenschaltung von Ger\xe4ten (z. B. Monitore via DisplayPort 1.2+). Mehrere Bildschirme hintereinandergeschaltet \u2013 nur ein Anschluss am Rechner n\xf6tig. Maximale Anzahl abh\xe4ngig von Bandbreite und Aufl\xf6sung.","Dateigr\xf6\xdfen-Berechnung","Einheiten: 1 Byte = 8 Bit. Bin\xe4r: 1 KiB = 1024 Byte, 1 MiB = 1024 KiB, 1 GiB = 1024 MiB. Bilddatei: Breite \xd7 H\xf6he \xd7 Farbtiefe (Bit) \xf7 8 = Byte. Beispiel RGB 24-Bit: 1920 \xd7 1080 \xd7 3 Byte = 6.220.800 Byte \u2248 5,93 MiB.","Datensicherung (Backup)","3-2-1-Regel: 3 Kopien der Daten, auf 2 verschiedenen Medientypen, davon 1 au\xdferhalb des Geb\xe4udes (Offsite/Cloud). Strategien: Voll-Backup (alles), differenziell (seit letztem Voll-Backup), inkrementell (seit letztem Backup).","Digitales Zertifikat","Elektronisches Dokument (X.509), das den \xf6ffentlichen Schl\xfcssel einer Person/Organisation best\xe4tigt. Ausgestellt von einer Zertifizierungsstelle (CA). Basis f\xfcr HTTPS, E-Mail-Signatur (S/MIME), VPN.","EPEAT","Electronic Product Environmental Assessment Tool \u2013 Umweltzertifikat f\xfcr IT-Hardware. Bewertet gesamten Produktlebenszyklus: Materialien, Energieverbrauch, Verpackung, Lebensdauer, Entsorgung. Stufen: Registered, Silver, Gold.","ERM","Entity-Relationship-Modell \u2013 grafische Darstellung von Datenstrukturen: Entit\xe4ten (Rechteck), Attribute (Ellipse), Beziehungen (Raute). Kardinalit\xe4ten: 1:1, 1:n, m:n. Grundlage f\xfcr relationales Datenbankdesign.","ElektroG","Elektro- und Elektronikger\xe4tegesetz \u2013 setzt EU-WEEE-Richtlinie um. Hersteller m\xfcssen Ger\xe4te kostenlos zur\xfccknehmen und fachgerecht entsorgen. Registrierung beim Stiftung EAR Pflicht. Endverbraucher: kostenlose R\xfcckgabe im Handel m\xf6glich.","Endpoint-Security","Schutz von Endger\xe4ten vor Schadsoftware und unbefugtem Zugriff. Ma\xdfnahmen: Antivirensoftware, Host-based Firewall, Ger\xe4teverschl\xfcsselung, Patch-Management, EDR (Endpoint Detection & Response).","Firewall","Sicherheitssystem, das Netzwerkverkehr nach Regeln (Ports, IP-Adressen, Protokolle) filtert. Typen: Paketfilter (Schicht 3/4), Stateful Inspection, Application-Layer-Firewall (WAF).","Gantt-Diagramm","Balkendiagramm zur Projektplanung: Zeilen = Aufgaben, Spalten = Zeit. Zeigt Start, Dauer und Abh\xe4ngigkeiten auf einen Blick. Einfacher zu lesen als Netzplan, kritischer Pfad nicht direkt sichtbar.","Ger\xe4teklassen","Desktop-PC (leistungsstark, erweiterbar, nicht mobil), Notebook (mobil, Kompromisse bei Leistung), Tablet (Touch, eingeschr\xe4nkte Ergonomie), Thin Client (ressourcenschonend, zentrales Computing), Workstation (Server-CPU, maximale Leistung).","Green IT","Nachhaltige Informationstechnologie: energieeffizienter Betrieb (80-PLUS, Virtualisierung, Serverkonsolidierung), schadstoffarme Ger\xe4te (RoHS), lange Nutzungsdauer, fachgerechtes Recycling (ElektroG), CO\u2082-Reduktion.","HDD","Hard Disk Drive \u2013 magnetisches Laufwerk mit rotierenden Scheiben. Vorteile: g\xfcnstiger Preis pro GB, hohe Kapazit\xe4ten (bis 20+ TB). Nachteile: mechanisch anf\xe4llig, langsam (Zugriffszeit ~5\u201310 ms), laut.","Handelskalkulation","Vorw\xe4rtskalkulation: Einstandspreis + Handlungskosten-Zuschlag (HKZ) = Nettoverkaufspreis + Gewinnaufschlag + MwSt 19% = Bruttoverkaufspreis. R\xfcckw\xe4rtskalkulation: vom Marktpreis r\xfcckrechnen auf max. Einstandspreis.","Hashverfahren","Einwegfunktion: beliebige Eingabe \u2192 fester Pr\xfcfwert (Hash). Gleiche Eingabe \u2192 immer gleicher Hash. Minimale \xc4nderung \u2192 v\xf6llig anderer Hash. Einsatz: Passwort-Speicherung, Dateiintegrit\xe4t. Algorithmen: SHA-256, SHA-3.","Homeoffice","Telearbeit von zu Hause. Vorteile: entfallende Pendelzeit, flexiblere Arbeitseinteilung. Nachteile: soziale Isolation, schlechtere Trennung Arbeit/Privat, Ergonomie-Risiken, technische Abh\xe4ngigkeit. VPN-Pflicht f\xfcr Datensicherheit.","H\xe4rtung","Systemh\xe4rtung (Hardening) \u2013 Reduzierung der Angriffsfl\xe4che: nicht ben\xf6tigte Dienste deaktivieren, Standardpassw\xf6rter \xe4ndern, Patches einspielen, Least-Privilege-Prinzip, Logging aktivieren.","IPv4","Internetprotokoll Version 4. 32-Bit-Adressierung (z. B. 192.168.1.1), aufgeteilt in Netzwerk- und Hostanteil. Maximal ca. 4,3 Mrd. Adressen. Darstellung: vier Dezimalzahlen, getrennt durch Punkte.","IPv6","Internetprotokoll Version 6. 128-Bit-Adressierung, dargestellt als acht Gruppen von je vier Hexadezimalziffern (z. B. 2001:0db8::1). Nahezu unbegrenzte Adressanzahl. Unterst\xfctzt SLAAC zur automatischen Adresskonfiguration.","Kaufvertrag","Gegenseitiger Vertrag: Verk\xe4ufer \xfcbereignet Sache, K\xe4ufer zahlt Kaufpreis (\xa7 433 BGB). Bestandteile: Vertragsparteien, Kaufgegenstand, Preis, Liefertermin, Gew\xe4hrleistung. Zeitpunkt des Vertragsschlusses: Angebot + Annahme.","Kaufvertragsst\xf6rungen","H\xe4ufige St\xf6rungen: Lieferverzug (\xa7 286 BGB \u2013 Mahnung n\xf6tig), Sachmangel/Schlechtlieferung (\xa7 434 BGB \u2013 2 Jahre Gew\xe4hrleistung), Nichtlieferung. Rechtsbehelfe: Nacherf\xfcllung, R\xfccktritt, Minderung, Schadensersatz.","Konfliktmineralien","Rohstoffe aus Krisenregionen, deren Abbau bewaffnete Konflikte finanziert. Relevant f\xfcr IT: Kobalt (Akkus), Tantal (Kondensatoren), Zinn, Wolfram. Herkunft muss nach LkSG und Dodd-Frank-Act gepr\xfcft werden.","Lastenheft vs. Pflichtenheft","Lastenheft (Auftraggeber): beschreibt WAS das System leisten soll (Anforderungen). Pflichtenheft (Auftragnehmer): beschreibt WIE umgesetzt wird (technische L\xf6sung). Reihenfolge: erst Lastenheft, dann Pflichtenheft.","Leasing","Nutzungs\xfcberlassung gegen monatliche Rate \u2013 Leasinggeber bleibt Eigent\xfcmer. Vorteile: Liquidit\xe4t schonen, keine Kapitalbindung, steuerlich absetzbar, immer aktuelle Technik. Optionen am Laufzeitende: R\xfcckgabe, Verl\xe4ngerung, Kauf zum Restwert.","LkSG","Lieferkettensorgfaltspflichtengesetz \u2013 gilt ab 1.000 Mitarbeitern. Verpflichtet Unternehmen, Menschenrechte und Umweltstandards in der Lieferkette zu pr\xfcfen und sicherzustellen. Relevant: Konfliktmineralien in IT-Hardware.","MAC-Adresse","48-Bit-Hardware-Adresse einer Netzwerkkarte, weltweit eindeutig (z. B. 00:1A:2B:3C:4D:5E). Die ersten 24 Bit = Hersteller (OUI), die letzten 24 Bit = Ger\xe4t. Arbeitet auf OSI-Schicht 2.","Make-or-Buy","Entscheidung: Eigenentwicklung/Eigenbetrieb (Make) vs. Fremdbezug/Outsourcing (Buy). Kriterien: Kosten, Kernkompetenz, Qualit\xe4t, Know-how-Schutz, Flexibilit\xe4t, Abh\xe4ngigkeit. Nutzwertanalyse als Entscheidungsinstrument.","Monitoranschl\xfcsse","HDMI (Audio+Video, weit verbreitet, bis 4K@120Hz bei HDMI 2.1), DisplayPort (hohe Bandbreite, Daisy-Chaining ab 1.2, bis 8K@60Hz), DVI (nur Video, veraltet, bis 1920\xd71200), USB-C/Thunderbolt (universell, Daten+Video+Laden).","NVMe","Non-Volatile Memory Express \u2013 PCIe-basiertes Protokoll f\xfcr SSDs. Deutlich h\xf6here Lese-/Schreibgeschwindigkeit als SATA (bis 7000 MB/s vs. 550 MB/s). Form-Faktor: M.2-Steckplatz auf dem Mainboard.","Netzplan","Visualisierung von Projektabl\xe4ufen mit Vorg\xe4nger-/Nachfolgerbeziehungen. Vorw\xe4rtsrechnung: fr\xfcheste Start-/Endtermine. R\xfcckw\xe4rtsrechnung: sp\xe4teste Termine. Kritischer Pfad: Sequenz ohne Puffer \u2192 bestimmt Projektdauer.","Netzteil-Leistungsberechnung","Systemlast = Summe der Maximalleistungen aller Komponenten (CPU + GPU + Mainboard + RAM + Laufwerke + L\xfcfter). Sicherheitspuffer: + 10 %. N\xe4chste verf\xfcgbare Netzteilgr\xf6\xdfe w\xe4hlen. Unterdimensioniertes Netzteil \u2192 Systeminstabilit\xe4t.","Netzteil-Wirkungsgrad","\u03b7 = P_Abgabe \xf7 P_Aufnahme \xd7 100 %. Ein 80-PLUS-Gold-Netzteil mit 600 W Abgabeleistung nimmt bei 50% Last max. 600 \xf7 0,90 = 667 W auf. Verlustleistung = W\xe4rme. H\xf6herer Wirkungsgrad \u2192 weniger Stromkosten + weniger Abw\xe4rme.","Nutzwertanalyse","Strukturiertes Bewertungsverfahren mit gewichteten Kriterien. Schritte: 1. Kriterien festlegen, 2. Gewichtungen vergeben (Summe 100%), 3. Optionen bewerten (z. B. 1\u201310), 4. Nutzwert = Bewertung \xd7 Gewichtung, 5. Summen vergleichen.","OSI-Modell","7-Schichten-Referenzmodell f\xfcr Netzwerkkommunikation. Schichten: 1 Bit\xfcbertragung, 2 Sicherung (MAC, Switch), 3 Vermittlung (IP, Router), 4 Transport (TCP/UDP), 5 Sitzung, 6 Darstellung, 7 Anwendung (HTTP, SMTP).","PUE-Wert","Power Usage Effectiveness \u2013 Effizienzma\xdf f\xfcr Rechenzentren. PUE = Gesamtleistung \xf7 IT-Leistung. Idealwert 1,0. Typisch: 1,4\u20132,0. Gute RZs: < 1,2. Niedrigerer PUE = effizienter. Overhead: K\xfchlung, USV, Beleuchtung.","Passwortrichtlinie","Unternehmensregel f\xfcr sichere Passw\xf6rter: Mindestl\xe4nge \u2265 12 Zeichen, Gro\xdf-/Kleinbuchstaben, Ziffern, Sonderzeichen, kein W\xf6rterbucheintrag, regelm\xe4\xdfiger Wechsel bei Verdacht. Basis: BSI-Empfehlungen.","Peripherieanschl\xfcsse","USB 2.0 (480 Mbit/s), USB 3.0/3.2 Gen1 (5 Gbit/s, blaue Buchse), USB 3.2 Gen2 (10 Gbit/s), USB4 (40 Gbit/s), USB-C (Steckerformat, abw\xe4rtskompatibel). Thunderbolt 4: 40 Gbit/s + PCIe-Tunneling.","Phishing","Social-Engineering-Angriff per gef\xe4lschter E-Mail oder Website, um Zugangsdaten zu stehlen. Erkennungsmerkmale: verd\xe4chtige Absenderadresse, Grammatikfehler, k\xfcnstliche Dringlichkeit, unbekannte Links.","Pseudocode","Informelle, sprachunabh\xe4ngige Beschreibung eines Algorithmus. Strukturelemente: WENN/DANN, SOLANGE, F\xdcR JEDES, AUSGABE. Dient als Zwischenschritt zwischen Idee und Implementierung in einer Programmiersprache.","RAM","Random Access Memory \u2013 fl\xfcchtiger Arbeitsspeicher. Aktuelle Standards: DDR4 (bis 3200 MHz, 1,2 V), DDR5 (ab 4800 MHz, 1,1 V, On-Die-ECC). Dual-Channel verdoppelt die Speicherbandbreite.","RGB-Farbraum","Farben aus Rot, Gr\xfcn, Blau gemischt. Bei 8 Bit pro Kanal: 256 Abstufungen, 256\xb3 = 16.777.216 Farben (True Color / 24 Bit). Bei 32 Bit: 3 \xd7 8 Bit Farbe + 8 Bit Alpha (Transparenz).","RJ-45","Genormter 8-poliger Stecker f\xfcr Ethernet-Netzwerkkabel (Twisted Pair, Cat 5e/6/6a/7). Standard-Anschluss f\xfcr kabelgebundene LAN-Verbindungen bis 10 Gbit/s.","Rabatt und Skonto","Rabatt: prozentualer Preisnachlass auf Listenpreis (sofort). Skonto: Nachlass bei schneller Zahlung (z. B. 2 % bei Zahlung binnen 10 Tagen). Nach Rabatt: Preis \xd7 (1 \u2013 Rabatt %). Nach Skonto: Betrag \xd7 (1 \u2013 Skonto %).","Ransomware","Erpressungstrojaner, der Dateien verschl\xfcsselt und L\xf6segeld fordert. Schutz: regelm\xe4\xdfige Backups nach 3-2-1-Regel (3 Kopien, 2 Medien, 1 Offsite). Verbreitung: Phishing-Mails, kompromittierte Websites.","Ratendarlehen","Kredit mit gleichbleibender Tilgung pro Periode. Berechnung: Tilgung/Periode = Darlehensbetrag \xf7 Laufzeit. Zinsen sinken mit Restschuld. Tabelle: Restschuld \u2192 Zinsen \u2192 Tilgung \u2192 Rate \u2192 neue Restschuld.","RoHS-Richtlinie","Restriction of Hazardous Substances \u2013 EU-Richtlinie schr\xe4nkt gef\xe4hrliche Stoffe in Elektronik ein: Blei, Quecksilber, Cadmium, Chrom(VI), polybromierte Biphenyle. Gilt f\xfcr Neuhersteller \u2013 erh\xf6ht Recyclingf\xe4higkeit.","Router","Netzwerkger\xe4t auf OSI-Schicht 3. Verbindet verschiedene Netzwerke und leitet Pakete anhand der IP-Adresse und Routing-Tabelle weiter. Dient als Standard-Gateway f\xfcr den Internetzugang.","S.M.A.R.T.","Self-Monitoring, Analysis and Reporting Technology \u2013 Selbstdiagnose von Festplatten/SSDs. \xdcberwacht Betriebsstunden, Fehlerrate, Temperatur, umgelagerte Sektoren. Warnt vor drohendem Ausfall \u2013 Basis f\xfcr pr\xe4ventiven Austausch.","SLAAC","Stateless Address Autoconfiguration \u2013 IPv6-Mechanismus zur automatischen Adresskonfiguration ohne DHCP-Server. Der Host leitet seine Adresse aus dem Router-Pr\xe4fix und seiner MAC-Adresse (EUI-64) ab.","SMART-Kriterien","Methode zur Zieldefinition: Spezifisch (konkret), Messbar (Kriterien definiert), Attraktiv/Akzeptiert, Realistisch (erreichbar), Terminiert (mit Deadline). Anwendung: Projektziele, KPIs, Vereinbarungen.","SSD","Solid State Drive \u2013 Flash-basiertes Laufwerk ohne bewegliche Teile. Vorteile: sehr kurze Zugriffszeit (< 0,1 ms), sto\xdffest, lautlos, geringerer Stromverbrauch. Schnittstellen: SATA III (550 MB/s), NVMe/PCIe (bis 7000 MB/s).","Schreibtischtest","Manuelles Nachverfolgen eines Algorithmus/Pseudocodes ohne Computer. Alle Variablenwerte in einer Trace-Tabelle notieren. Ziel: Ergebnis verstehen und Fehler finden. In AP1 ab 2025 Pflichtthema.","Schutzziele (CIA)","Drei Grundziele der Informationssicherheit: Confidentiality (Vertraulichkeit \u2013 nur Berechtigte lesen Daten), Integrity (Integrit\xe4t \u2013 Daten unver\xe4ndert), Availability (Verf\xfcgbarkeit \u2013 Systeme erreichbar). Grundlage des BSI-Grundschutzes.","Stromkosten-Berechnung","Verbrauch (kWh) = Leistung (kW) \xd7 Zeit (h) \xd7 Auslastung (%). Kosten = Verbrauch \xd7 Strompreis (\u20ac/kWh). Wirkungsgrad beachten: P_Aufnahme = P_Abgabe \xf7 \u03b7. Beispiel: 650 W \xd7 90 % WG \xd7 50 % Last \xd7 200 d \xd7 9 h \xd7 0,40 \u20ac/kWh.","Stundensatz-Kalkulation","Kosten je Arbeitsstunde: Stundensatz = Monatslohn (inkl. Lohnnebenkosten) \xf7 Arbeitsstunden/Monat. Minutensatz = Stundensatz \xf7 60. Basis f\xfcr Angebote und Dienstleistungspreise.","Subnetting","Aufteilung eines IP-Netzwerks in kleinere Teilnetze mittels Subnetzmaske. Formel nutzbare Hosts: 2^n \u2013 2 (n = Hostbits). CIDR-Notation: /24 = 255.255.255.0 = 254 nutzbare Hosts.","Switch","Aktives Netzwerkger\xe4t auf OSI-Schicht 2. Leitet Datenpakete gezielt anhand der MAC-Adresse an den richtigen Port weiter. Managed Switches erm\xf6glichen VLANs und Port-Monitoring.","TCO","Total Cost of Ownership \u2013 Gesamtkosten \xfcber die gesamte Nutzungsdauer: CAPEX (einmalig: Kauf, Installation) + OPEX (laufend: Strom, Wartung, Lizenzen, Support). TCO ist realistischer als reiner Preisvergleich.","TCP","Transmission Control Protocol \u2013 verbindungsorientiertes Protokoll auf OSI-Schicht 4. Garantiert Datenintegrit\xe4t und Reihenfolge durch Best\xe4tigungen (ACK). Einsatz: HTTP, E-Mail, FTP.","TOM","Technisch-Organisatorische Ma\xdfnahmen (Art. 32 DSGVO) \u2013 Sicherheitsma\xdfnahmen zum Schutz personenbezogener Daten. Technisch: Verschl\xfcsselung, Zugangskontrolle, Protokollierung. Organisatorisch: Schulungen, Vier-Augen-Prinzip, Datenschutzbeauftragter.","Trojaner","Malware, die als n\xfctzliche Software getarnt ist. Im Hintergrund \xf6ffnet sie Backdoors, stiehlt Daten oder l\xe4dt weitere Schadsoftware nach. Verbreitung: gef\xe4lschte Downloads, E-Mail-Anh\xe4nge.","UDP","User Datagram Protocol \u2013 verbindungsloses Protokoll auf OSI-Schicht 4. Kein Verbindungsaufbau, kein ACK, geringer Overhead. Einsatz: DNS, Streaming, VoIP, Online-Gaming.","UML Aktivit\xe4tsdiagramm","Ablaufdiagramm f\xfcr Prozesse und Algorithmen. Elemente: Startknoten (gef\xfcllter Kreis), Aktivit\xe4ten (abgerundete Rechtecke), Entscheidungen (Raute), Parallelverarbeitung (Balken), Endknoten. Ab 2025 in AP1 Pflichtthema.","UML Use-Case-Diagramm","Anwendungsfalldiagramm zeigt Akteure (Strichm\xe4nner) und ihre Interaktionen mit dem System (Ellipsen in Systemgrenze). Zeigt WAS das System tut, nicht WIE. Basis f\xfcr Anforderungsanalyse.","VPN","Virtual Private Network \u2013 verschl\xfcsselter Tunnel \xfcber ein \xf6ffentliches Netz (z. B. Internet). Sch\xfctzt Vertraulichkeit und Integrit\xe4t. Protokolle: IPSec, OpenVPN, WireGuard. Pflicht f\xfcr Homeoffice-Anbindungen.","Verschl\xfcsselung","Symmetrisch (ein Schl\xfcssel f\xfcr Ver-/Entschl\xfcsselung, z. B. AES-256, schnell) vs. asymmetrisch (\xf6ffentlicher/privater Schl\xfcssel, z. B. RSA, langsamer). HTTPS kombiniert beide: RSA f\xfcr Schl\xfcsselaustausch, AES f\xfcr Datenstrom.","Virus","Schadprogramm, das sich selbst reproduziert, indem es sich an legitime Dateien anh\xe4ngt. Ben\xf6tigt Aktivierung durch den Nutzer (\xd6ffnen der infizierten Datei). Verbreitung: E-Mail-Anh\xe4nge, Wechseldatentr\xe4ger.","WLAN-Standards","IEEE 802.11-Familie: Wi-Fi 4 (n, 600 Mbit/s, 2,4/5 GHz), Wi-Fi 5 (ac, 3,5 Gbit/s, 5 GHz), Wi-Fi 6 (ax, 9,6 Gbit/s, 2,4/5/6 GHz). H\xf6here Generation = mehr Durchsatz + weniger Latenz.","Zutrittskontrolle","Physische Ma\xdfnahmen zur Zugangsbeschr\xe4nkung zu R\xe4umen: Chipkarte/RFID, PIN-Code, Biometrie (Fingerabdruck, Iris), mechanische Schl\xf6sser. Protokollierung aller Zutrittsereignisse empfohlen.","Zwei-Faktor-Authentisierung","2FA \u2013 Anmeldung mit zwei unabh\xe4ngigen Faktoren: Wissen (Passwort), Besitz (Token/SMS-Code), Inh\xe4renz (Biometrie). Erh\xf6ht Sicherheit erheblich, da ein gestohlenes Passwort allein nicht ausreicht.","\xd6kodesign-Verordnung","EU-Verordnung legt Mindestanforderungen an Energieeffizienz und Reparierbarkeit von Elektronikprodukten fest. Hersteller m\xfcssen Ersatzteile bereitstellen, Reparierbarkeit sicherstellen und Energieverbrauch deklarieren.","\xdcbertragungsdauer","Dauer = Dateigr\xf6\xdfe (Bit) \xf7 Bandbreite (Bit/s). Achtung: Gro\xdf-B = Byte, klein-b = Bit, 1 Byte = 8 Bit. Beispiel: 2,5 GiB \xfcber 100 Mbit/s = 2,5 \xd7 1024 \xd7 8 MBit \xf7 100 Mbit/s = 204,8 Sekunden."],q,q)})
+return A.au(["4-Ohren-Modell","Kommunikationsmodell nach Schulz von Thun: Jede Nachricht hat vier Seiten: Sachinhalt (Fakten), Selbstoffenbarung (Befindlichkeit des Senders), Beziehung (wie stehe ich zum Empf\xe4nger?), Appell (was soll der Empf\xe4nger tun?).","80-PLUS-Zertifikat","Energieeffizienz-Zertifikat f\xfcr PC-Netzteile: mind. 80 % Wirkungsgrad bei 20%, 50% und 100% Last. Stufen: White (80%), Bronze (82/85/82%), Silver, Gold (87/90/87%), Platinum (90/92/89%), Titanium (92/94/90%).","APIPA","Automatic Private IP Addressing \u2013 Windows weist automatisch 169.254.x.x zu, wenn kein DHCP-Server erreichbar ist. Kein Internetrouting m\xf6glich \u2013 nur lokale Link-Kommunikation.","ARP","Address Resolution Protocol \u2013 ermittelt zu einer bekannten IPv4-Adresse die zugeh\xf6rige MAC-Adresse im lokalen Netz via Broadcast. Arbeitet zwischen OSI-Schicht 2 und 3.","Abschreibung (AfA)","Lineare Abschreibung: Anschaffungskosten \xf7 Nutzungsdauer = j\xe4hrlicher Abschreibungsbetrag. IT-Hardware: typisch 3 Jahre (GWG bis 800 \u20ac netto: Sofortabschreibung). Reduziert Buchwert und ist steuerlich absetzbar.","Amortisationsrechnung","Zeitraum, bis eine Investition durch Einsparungen gedeckt ist. Formel: Amortisationsdauer = Investitionskosten \xf7 j\xe4hrliche Einsparung. Entscheidungskriterium: Amortisationsdauer < Nutzungsdauer \u2192 wirtschaftlich sinnvoll.","Anonymisierung vs. Pseudonymisierung","Anonymisierung: Personenbezug vollst\xe4ndig und irreversibel entfernt \u2192 DSGVO nicht anwendbar. Pseudonymisierung: R\xfcckf\xfchrung mit separatem Schl\xfcssel m\xf6glich \u2192 weiterhin personenbezogen \u2192 DSGVO gilt.","BDSG","Bundesdatenschutzgesetz \u2013 deutsches Ausf\xfchrungsgesetz zur DSGVO. Nutzt \xd6ffnungsklauseln der DSGVO f\xfcr spezifische Regelungen (z. B. Besch\xe4ftigtendatenschutz). Gilt parallel zur DSGVO.","BIOS vs. UEFI","BIOS: 16-Bit, MBR-Partitionen (max. 2 TB), textbasiert, kein Secure Boot. UEFI: 32/64-Bit, GPT (> 2 TB, bis 128 Partitionen), grafische Oberfl\xe4che, Secure Boot, Netzwerkzugang vor OS-Start.","BPMN","Business Process Model and Notation \u2013 standardisierte Prozessnotation. Elemente: Events (Kreise), Tasks (Rechtecke), Gateways (Raute: XOR=exklusiv, AND=parallel). Ab 2025 in AP1 relevant, ersetzt PAP/Struktogramm.","BSI-Grundschutz","Methodik des Bundesamts f\xfcr Sicherheit in der Informationstechnik f\xfcr systematisches IT-Sicherheitsmanagement. Basis: IT-Grundschutz-Kompendium mit Standardma\xdfnahmen. Ziel: angemessenes Schutzniveau ohne aufwendige Risikoanalyse.","BYOD","Bring Your Own Device \u2013 Mitarbeiter nutzen private Ger\xe4te dienstlich. Risiken: fehlende Ger\xe4tekontrolle, Datenschutzkonflikte (DSGVO), Malware-Einschleppung. Gegenma\xdfnahme: Mobile Device Management (MDM), klare Richtlinien.","Barrierefreiheit (IT)","Gleichberechtigter Zugang zu IT-Systemen f\xfcr alle Menschen inkl. Behinderungen. Ma\xdfnahmen: Screenreader-Kompatibilit\xe4t, WCAG-Kontraste (\u2265 4,5:1 f\xfcr Text), Tastaturnavigation, alternative Texte, skalierbare Schriften. Ab 2025 im AP1-Katalog.","Betroffenenrechte","Rechte nach DSGVO: Auskunft (Art. 15), Berichtigung (Art. 16), L\xf6schung (Art. 17), Einschr\xe4nkung (Art. 18), Daten\xfcbertragbarkeit (Art. 20), Widerspruch (Art. 21). Frist f\xfcr Antwort: 1 Monat.","Bildschirmarbeitsplatz","Anforderungen nach ArbSt\xe4ttV/BildscharbV: Monitor auf Augenh\xf6he, Sehabstand 50\u201380 cm, keine Blendung/Reflexion, einstellbare Helligkeit, ergonomischer Stuhl (h\xf6henverstellbar, R\xfcckenlehne), ausreichend Beinfreiheit.","Blauer Engel","Deutsches Umweltzeichen (seit 1978) \u2013 f\xfcr besonders umweltfreundliche Produkte. Bei IT: pr\xfcft Energieeffizienz, Schadstofffreiheit, L\xe4rm, Recyclingf\xe4higkeit und soziale Aspekte. Strenger als Energy Star oder EPEAT.","Bootvorgang","POST (Power-On Self-Test) \u2192 UEFI/BIOS-Initialisierung \u2192 Bootloader-Auswahl (z. B. Windows Boot Manager, GRUB) \u2192 Kernel laden \u2192 Betriebssystem starten. Secure Boot pr\xfcft Signaturen des Bootloaders.","CAPEX vs. OPEX","CAPEX (Capital Expenditure): einmalige Investitionsausgaben (Kauf von Hardware, Lizenzen, Installation). OPEX (Operational Expenditure): laufende Betriebskosten (Strom, Wartung, Support, Abo-Lizenzen). Cloud = OPEX, On-Premise = CAPEX + OPEX.","CO\u2082-Fu\xdfabdruck IT","Summe aller Treibhausgasemissionen \xfcber den gesamten Lebenszyklus eines IT-Ger\xe4ts. Bei Laptops: ca. 70\u201380% in der Produktion (Rohstoffe, Fertigung), nur 20\u201330% im Betrieb. Lebensdauerverl\xe4ngerung ist wirkungsvoller als effizienter Betrieb allein.","CPU","Central Processing Unit \u2013 f\xfchrt Programmbefehle aus. Kenngr\xf6\xdfen: Taktfrequenz (GHz), Kerne/Threads, Cache (L1/L2/L3 in MB), TDP (Verlustleistung in Watt), Befehlssatzarchitektur (x86-64, ARM).","Change Management","Lewin-Modell (3 Phasen): 1. Auftauen (Dringlichkeit kommunizieren, Widerst\xe4nde abbauen), 2. Ver\xe4ndern (neue Prozesse einf\xfchren, Schulungen), 3. Einfrieren (neue Standards verankern, Erfolge sichern). Mitarbeiter fr\xfchzeitig einbeziehen.","Compiler vs. Interpreter","Compiler: \xfcbersetzt gesamten Quellcode vor der Ausf\xfchrung in Maschinencode (schnell, plattformspezifisch, z. B. C/C++). Interpreter: \xfcbersetzt und f\xfchrt Zeile f\xfcr Zeile aus (flexibler, langsamer, z. B. Python). Java: beides (Bytecode + JVM).","DDR4 vs. DDR5","DDR4: bew\xe4hrt, breite Kompatibilit\xe4t, bis 3200 MHz, 1,2 V. DDR5: h\xf6here Bandbreite (ab 4800 MHz), 1,1 V, On-Die-ECC, vier Kan\xe4le pro Modul. Nicht r\xfcckw\xe4rtskompatibel \u2013 unterschiedliche physische Kerbe im Sockel.","DHCP","Dynamic Host Configuration Protocol \u2013 weist Netzwerkger\xe4ten automatisch IP-Adresse, Subnetzmaske, Gateway und DNS-Server zu. Arbeitet auf OSI-Schicht 7, nutzt UDP-Ports 67/68.","DNS","Domain Name System \u2013 \xfcbersetzt Domainnamen (z. B. www.ihk.de) in IP-Adressen. Hierarchisch aufgebaut: Root \u2192 TLD \u2192 Domain. Standard-Port: 53 (UDP/TCP).","DSGVO","Datenschutz-Grundverordnung der EU (seit Mai 2018). Sch\xfctzt personenbezogene Daten nat\xfcrlicher Personen. Grundprinzipien: Zweckbindung, Datensparsamkeit, Rechtm\xe4\xdfigkeit, Transparenz. Bu\xdfgelder: bis 20 Mio. \u20ac oder 4 % des Jahresumsatzes.","Daisy Chaining","Kettenschaltung von Ger\xe4ten (z. B. Monitore via DisplayPort 1.2+). Mehrere Bildschirme hintereinandergeschaltet \u2013 nur ein Anschluss am Rechner n\xf6tig. Maximale Anzahl abh\xe4ngig von Bandbreite und Aufl\xf6sung.","Dateigr\xf6\xdfen-Berechnung","Einheiten: 1 Byte = 8 Bit. Bin\xe4r: 1 KiB = 1024 Byte, 1 MiB = 1024 KiB, 1 GiB = 1024 MiB. Bilddatei: Breite \xd7 H\xf6he \xd7 Farbtiefe (Bit) \xf7 8 = Byte. Beispiel RGB 24-Bit: 1920 \xd7 1080 \xd7 3 Byte = 6.220.800 Byte \u2248 5,93 MiB.","Datensicherung (Backup)","3-2-1-Regel: 3 Kopien der Daten, auf 2 verschiedenen Medientypen, davon 1 au\xdferhalb des Geb\xe4udes (Offsite/Cloud). Strategien: Voll-Backup (alles), differenziell (seit letztem Voll-Backup), inkrementell (seit letztem Backup).","Digitales Zertifikat","Elektronisches Dokument (X.509), das den \xf6ffentlichen Schl\xfcssel einer Person/Organisation best\xe4tigt. Ausgestellt von einer Zertifizierungsstelle (CA). Basis f\xfcr HTTPS, E-Mail-Signatur (S/MIME), VPN.","EPEAT","Electronic Product Environmental Assessment Tool \u2013 Umweltzertifikat f\xfcr IT-Hardware. Bewertet gesamten Produktlebenszyklus: Materialien, Energieverbrauch, Verpackung, Lebensdauer, Entsorgung. Stufen: Registered, Silver, Gold.","ERM","Entity-Relationship-Modell \u2013 grafische Darstellung von Datenstrukturen: Entit\xe4ten (Rechteck), Attribute (Ellipse), Beziehungen (Raute). Kardinalit\xe4ten: 1:1, 1:n, m:n. Grundlage f\xfcr relationales Datenbankdesign.","ElektroG","Elektro- und Elektronikger\xe4tegesetz \u2013 setzt EU-WEEE-Richtlinie um. Hersteller m\xfcssen Ger\xe4te kostenlos zur\xfccknehmen und fachgerecht entsorgen. Registrierung beim Stiftung EAR Pflicht. Endverbraucher: kostenlose R\xfcckgabe im Handel m\xf6glich.","Endpoint-Security","Schutz von Endger\xe4ten vor Schadsoftware und unbefugtem Zugriff. Ma\xdfnahmen: Antivirensoftware, Host-based Firewall, Ger\xe4teverschl\xfcsselung, Patch-Management, EDR (Endpoint Detection & Response).","Firewall","Sicherheitssystem, das Netzwerkverkehr nach Regeln (Ports, IP-Adressen, Protokolle) filtert. Typen: Paketfilter (Schicht 3/4), Stateful Inspection, Application-Layer-Firewall (WAF).","Gantt-Diagramm","Balkendiagramm zur Projektplanung: Zeilen = Aufgaben, Spalten = Zeit. Zeigt Start, Dauer und Abh\xe4ngigkeiten auf einen Blick. Einfacher zu lesen als Netzplan, kritischer Pfad nicht direkt sichtbar.","Ger\xe4teklassen","Desktop-PC (leistungsstark, erweiterbar, nicht mobil), Notebook (mobil, Kompromisse bei Leistung), Tablet (Touch, eingeschr\xe4nkte Ergonomie), Thin Client (ressourcenschonend, zentrales Computing), Workstation (Server-CPU, maximale Leistung).","Green IT","Nachhaltige Informationstechnologie: energieeffizienter Betrieb (80-PLUS, Virtualisierung, Serverkonsolidierung), schadstoffarme Ger\xe4te (RoHS), lange Nutzungsdauer, fachgerechtes Recycling (ElektroG), CO\u2082-Reduktion.","HDD","Hard Disk Drive \u2013 magnetisches Laufwerk mit rotierenden Scheiben. Vorteile: g\xfcnstiger Preis pro GB, hohe Kapazit\xe4ten (bis 20+ TB). Nachteile: mechanisch anf\xe4llig, langsam (Zugriffszeit ~5\u201310 ms), laut.","Handelskalkulation","Vorw\xe4rtskalkulation: Einstandspreis + Handlungskosten-Zuschlag (HKZ) = Nettoverkaufspreis + Gewinnaufschlag + MwSt 19% = Bruttoverkaufspreis. R\xfcckw\xe4rtskalkulation: vom Marktpreis r\xfcckrechnen auf max. Einstandspreis.","Hashverfahren","Einwegfunktion: beliebige Eingabe \u2192 fester Pr\xfcfwert (Hash). Gleiche Eingabe \u2192 immer gleicher Hash. Minimale \xc4nderung \u2192 v\xf6llig anderer Hash. Einsatz: Passwort-Speicherung, Dateiintegrit\xe4t. Algorithmen: SHA-256, SHA-3.","Homeoffice","Telearbeit von zu Hause. Vorteile: entfallende Pendelzeit, flexiblere Arbeitseinteilung. Nachteile: soziale Isolation, schlechtere Trennung Arbeit/Privat, Ergonomie-Risiken, technische Abh\xe4ngigkeit. VPN-Pflicht f\xfcr Datensicherheit.","H\xe4rtung","Systemh\xe4rtung (Hardening) \u2013 Reduzierung der Angriffsfl\xe4che: nicht ben\xf6tigte Dienste deaktivieren, Standardpassw\xf6rter \xe4ndern, Patches einspielen, Least-Privilege-Prinzip, Logging aktivieren.","IPv4","Internetprotokoll Version 4. 32-Bit-Adressierung (z. B. 192.168.1.1), aufgeteilt in Netzwerk- und Hostanteil. Maximal ca. 4,3 Mrd. Adressen. Darstellung: vier Dezimalzahlen, getrennt durch Punkte.","IPv6","Internetprotokoll Version 6. 128-Bit-Adressierung, dargestellt als acht Gruppen von je vier Hexadezimalziffern (z. B. 2001:0db8::1). Nahezu unbegrenzte Adressanzahl. Unterst\xfctzt SLAAC zur automatischen Adresskonfiguration.","Kaufvertrag","Gegenseitiger Vertrag: Verk\xe4ufer \xfcbereignet Sache, K\xe4ufer zahlt Kaufpreis (\xa7 433 BGB). Bestandteile: Vertragsparteien, Kaufgegenstand, Preis, Liefertermin, Gew\xe4hrleistung. Zeitpunkt des Vertragsschlusses: Angebot + Annahme.","Kaufvertragsst\xf6rungen","H\xe4ufige St\xf6rungen: Lieferverzug (\xa7 286 BGB \u2013 Mahnung n\xf6tig), Sachmangel/Schlechtlieferung (\xa7 434 BGB \u2013 2 Jahre Gew\xe4hrleistung), Nichtlieferung. Rechtsbehelfe: Nacherf\xfcllung, R\xfccktritt, Minderung, Schadensersatz.","Konfliktmineralien","Rohstoffe aus Krisenregionen, deren Abbau bewaffnete Konflikte finanziert. Relevant f\xfcr IT: Kobalt (Akkus), Tantal (Kondensatoren), Zinn, Wolfram. Herkunft muss nach LkSG und Dodd-Frank-Act gepr\xfcft werden.","Lastenheft vs. Pflichtenheft","Lastenheft (Auftraggeber): beschreibt WAS das System leisten soll (Anforderungen). Pflichtenheft (Auftragnehmer): beschreibt WIE umgesetzt wird (technische L\xf6sung). Reihenfolge: erst Lastenheft, dann Pflichtenheft.","Leasing","Nutzungs\xfcberlassung gegen monatliche Rate \u2013 Leasinggeber bleibt Eigent\xfcmer. Vorteile: Liquidit\xe4t schonen, keine Kapitalbindung, steuerlich absetzbar, immer aktuelle Technik. Optionen am Laufzeitende: R\xfcckgabe, Verl\xe4ngerung, Kauf zum Restwert.","LkSG","Lieferkettensorgfaltspflichtengesetz \u2013 gilt ab 1.000 Mitarbeitern. Verpflichtet Unternehmen, Menschenrechte und Umweltstandards in der Lieferkette zu pr\xfcfen und sicherzustellen. Relevant: Konfliktmineralien in IT-Hardware.","MAC-Adresse","48-Bit-Hardware-Adresse einer Netzwerkkarte, weltweit eindeutig (z. B. 00:1A:2B:3C:4D:5E). Die ersten 24 Bit = Hersteller (OUI), die letzten 24 Bit = Ger\xe4t. Arbeitet auf OSI-Schicht 2.","Make-or-Buy","Entscheidung: Eigenentwicklung/Eigenbetrieb (Make) vs. Fremdbezug/Outsourcing (Buy). Kriterien: Kosten, Kernkompetenz, Qualit\xe4t, Know-how-Schutz, Flexibilit\xe4t, Abh\xe4ngigkeit. Nutzwertanalyse als Entscheidungsinstrument.","Monitoranschl\xfcsse","HDMI (Audio+Video, weit verbreitet, bis 4K@120Hz bei HDMI 2.1), DisplayPort (hohe Bandbreite, Daisy-Chaining ab 1.2, bis 8K@60Hz), DVI (nur Video, veraltet, bis 1920\xd71200), USB-C/Thunderbolt (universell, Daten+Video+Laden).","NVMe","Non-Volatile Memory Express \u2013 PCIe-basiertes Protokoll f\xfcr SSDs. Deutlich h\xf6here Lese-/Schreibgeschwindigkeit als SATA (bis 7000 MB/s vs. 550 MB/s). Form-Faktor: M.2-Steckplatz auf dem Mainboard.","Netzplan","Visualisierung von Projektabl\xe4ufen mit Vorg\xe4nger-/Nachfolgerbeziehungen. Vorw\xe4rtsrechnung: fr\xfcheste Start-/Endtermine. R\xfcckw\xe4rtsrechnung: sp\xe4teste Termine. Kritischer Pfad: Sequenz ohne Puffer \u2192 bestimmt Projektdauer.","Netzteil-Leistungsberechnung","Systemlast = Summe der Maximalleistungen aller Komponenten (CPU + GPU + Mainboard + RAM + Laufwerke + L\xfcfter). Sicherheitspuffer: + 10 %. N\xe4chste verf\xfcgbare Netzteilgr\xf6\xdfe w\xe4hlen. Unterdimensioniertes Netzteil \u2192 Systeminstabilit\xe4t.","Netzteil-Wirkungsgrad","\u03b7 = P_Abgabe \xf7 P_Aufnahme \xd7 100 %. Ein 80-PLUS-Gold-Netzteil mit 600 W Abgabeleistung nimmt bei 50% Last max. 600 \xf7 0,90 = 667 W auf. Verlustleistung = W\xe4rme. H\xf6herer Wirkungsgrad \u2192 weniger Stromkosten + weniger Abw\xe4rme.","Nutzwertanalyse","Strukturiertes Bewertungsverfahren mit gewichteten Kriterien. Schritte: 1. Kriterien festlegen, 2. Gewichtungen vergeben (Summe 100%), 3. Optionen bewerten (z. B. 1\u201310), 4. Nutzwert = Bewertung \xd7 Gewichtung, 5. Summen vergleichen.","OSI-Modell","7-Schichten-Referenzmodell f\xfcr Netzwerkkommunikation. Schichten: 1 Bit\xfcbertragung, 2 Sicherung (MAC, Switch), 3 Vermittlung (IP, Router), 4 Transport (TCP/UDP), 5 Sitzung, 6 Darstellung, 7 Anwendung (HTTP, SMTP).","PUE-Wert","Power Usage Effectiveness \u2013 Effizienzma\xdf f\xfcr Rechenzentren. PUE = Gesamtleistung \xf7 IT-Leistung. Idealwert 1,0. Typisch: 1,4\u20132,0. Gute RZs: < 1,2. Niedrigerer PUE = effizienter. Overhead: K\xfchlung, USV, Beleuchtung.","Passwortrichtlinie","Unternehmensregel f\xfcr sichere Passw\xf6rter: Mindestl\xe4nge \u2265 12 Zeichen, Gro\xdf-/Kleinbuchstaben, Ziffern, Sonderzeichen, kein W\xf6rterbucheintrag, regelm\xe4\xdfiger Wechsel bei Verdacht. Basis: BSI-Empfehlungen.","Peripherieanschl\xfcsse","USB 2.0 (480 Mbit/s), USB 3.0/3.2 Gen1 (5 Gbit/s, blaue Buchse), USB 3.2 Gen2 (10 Gbit/s), USB4 (40 Gbit/s), USB-C (Steckerformat, abw\xe4rtskompatibel). Thunderbolt 4: 40 Gbit/s + PCIe-Tunneling.","Phishing","Social-Engineering-Angriff per gef\xe4lschter E-Mail oder Website, um Zugangsdaten zu stehlen. Erkennungsmerkmale: verd\xe4chtige Absenderadresse, Grammatikfehler, k\xfcnstliche Dringlichkeit, unbekannte Links.","Pseudocode","Informelle, sprachunabh\xe4ngige Beschreibung eines Algorithmus. Strukturelemente: WENN/DANN, SOLANGE, F\xdcR JEDES, AUSGABE. Dient als Zwischenschritt zwischen Idee und Implementierung in einer Programmiersprache.","RAM","Random Access Memory \u2013 fl\xfcchtiger Arbeitsspeicher. Aktuelle Standards: DDR4 (bis 3200 MHz, 1,2 V), DDR5 (ab 4800 MHz, 1,1 V, On-Die-ECC). Dual-Channel verdoppelt die Speicherbandbreite.","RGB-Farbraum","Farben aus Rot, Gr\xfcn, Blau gemischt. Bei 8 Bit pro Kanal: 256 Abstufungen, 256\xb3 = 16.777.216 Farben (True Color / 24 Bit). Bei 32 Bit: 3 \xd7 8 Bit Farbe + 8 Bit Alpha (Transparenz).","RJ-45","Genormter 8-poliger Stecker f\xfcr Ethernet-Netzwerkkabel (Twisted Pair, Cat 5e/6/6a/7). Standard-Anschluss f\xfcr kabelgebundene LAN-Verbindungen bis 10 Gbit/s.","Rabatt und Skonto","Rabatt: prozentualer Preisnachlass auf Listenpreis (sofort). Skonto: Nachlass bei schneller Zahlung (z. B. 2 % bei Zahlung binnen 10 Tagen). Nach Rabatt: Preis \xd7 (1 \u2013 Rabatt %). Nach Skonto: Betrag \xd7 (1 \u2013 Skonto %).","Ransomware","Erpressungstrojaner, der Dateien verschl\xfcsselt und L\xf6segeld fordert. Schutz: regelm\xe4\xdfige Backups nach 3-2-1-Regel (3 Kopien, 2 Medien, 1 Offsite). Verbreitung: Phishing-Mails, kompromittierte Websites.","Ratendarlehen","Kredit mit gleichbleibender Tilgung pro Periode. Berechnung: Tilgung/Periode = Darlehensbetrag \xf7 Laufzeit. Zinsen sinken mit Restschuld. Tabelle: Restschuld \u2192 Zinsen \u2192 Tilgung \u2192 Rate \u2192 neue Restschuld.","RoHS-Richtlinie","Restriction of Hazardous Substances \u2013 EU-Richtlinie schr\xe4nkt gef\xe4hrliche Stoffe in Elektronik ein: Blei, Quecksilber, Cadmium, Chrom(VI), polybromierte Biphenyle. Gilt f\xfcr Neuhersteller \u2013 erh\xf6ht Recyclingf\xe4higkeit.","Router","Netzwerkger\xe4t auf OSI-Schicht 3. Verbindet verschiedene Netzwerke und leitet Pakete anhand der IP-Adresse und Routing-Tabelle weiter. Dient als Standard-Gateway f\xfcr den Internetzugang.","S.M.A.R.T.","Self-Monitoring, Analysis and Reporting Technology \u2013 Selbstdiagnose von Festplatten/SSDs. \xdcberwacht Betriebsstunden, Fehlerrate, Temperatur, umgelagerte Sektoren. Warnt vor drohendem Ausfall \u2013 Basis f\xfcr pr\xe4ventiven Austausch.","SLAAC","Stateless Address Autoconfiguration \u2013 IPv6-Mechanismus zur automatischen Adresskonfiguration ohne DHCP-Server. Der Host leitet seine Adresse aus dem Router-Pr\xe4fix und seiner MAC-Adresse (EUI-64) ab.","SMART-Kriterien","Methode zur Zieldefinition: Spezifisch (konkret), Messbar (Kriterien definiert), Attraktiv/Akzeptiert, Realistisch (erreichbar), Terminiert (mit Deadline). Anwendung: Projektziele, KPIs, Vereinbarungen.","SSD","Solid State Drive \u2013 Flash-basiertes Laufwerk ohne bewegliche Teile. Vorteile: sehr kurze Zugriffszeit (< 0,1 ms), sto\xdffest, lautlos, geringerer Stromverbrauch. Schnittstellen: SATA III (550 MB/s), NVMe/PCIe (bis 7000 MB/s).","Schreibtischtest","Manuelles Nachverfolgen eines Algorithmus/Pseudocodes ohne Computer. Alle Variablenwerte in einer Trace-Tabelle notieren. Ziel: Ergebnis verstehen und Fehler finden. In AP1 ab 2025 Pflichtthema.","Schutzziele (CIA)","Drei Grundziele der Informationssicherheit: Confidentiality (Vertraulichkeit \u2013 nur Berechtigte lesen Daten), Integrity (Integrit\xe4t \u2013 Daten unver\xe4ndert), Availability (Verf\xfcgbarkeit \u2013 Systeme erreichbar). Grundlage des BSI-Grundschutzes.","Stromkosten-Berechnung","Verbrauch (kWh) = Leistung (kW) \xd7 Zeit (h) \xd7 Auslastung (%). Kosten = Verbrauch \xd7 Strompreis (\u20ac/kWh). Wirkungsgrad beachten: P_Aufnahme = P_Abgabe \xf7 \u03b7. Beispiel: 650 W \xd7 90 % WG \xd7 50 % Last \xd7 200 d \xd7 9 h \xd7 0,40 \u20ac/kWh.","Stundensatz-Kalkulation","Kosten je Arbeitsstunde: Stundensatz = Monatslohn (inkl. Lohnnebenkosten) \xf7 Arbeitsstunden/Monat. Minutensatz = Stundensatz \xf7 60. Basis f\xfcr Angebote und Dienstleistungspreise.","Subnetting","Aufteilung eines IP-Netzwerks in kleinere Teilnetze mittels Subnetzmaske. Formel nutzbare Hosts: 2^n \u2013 2 (n = Hostbits). CIDR-Notation: /24 = 255.255.255.0 = 254 nutzbare Hosts.","Switch","Aktives Netzwerkger\xe4t auf OSI-Schicht 2. Leitet Datenpakete gezielt anhand der MAC-Adresse an den richtigen Port weiter. Managed Switches erm\xf6glichen VLANs und Port-Monitoring.","TCO","Total Cost of Ownership \u2013 Gesamtkosten \xfcber die gesamte Nutzungsdauer: CAPEX (einmalig: Kauf, Installation) + OPEX (laufend: Strom, Wartung, Lizenzen, Support). TCO ist realistischer als reiner Preisvergleich.","TCP","Transmission Control Protocol \u2013 verbindungsorientiertes Protokoll auf OSI-Schicht 4. Garantiert Datenintegrit\xe4t und Reihenfolge durch Best\xe4tigungen (ACK). Einsatz: HTTP, E-Mail, FTP.","TOM","Technisch-Organisatorische Ma\xdfnahmen (Art. 32 DSGVO) \u2013 Sicherheitsma\xdfnahmen zum Schutz personenbezogener Daten. Technisch: Verschl\xfcsselung, Zugangskontrolle, Protokollierung. Organisatorisch: Schulungen, Vier-Augen-Prinzip, Datenschutzbeauftragter.","Trojaner","Malware, die als n\xfctzliche Software getarnt ist. Im Hintergrund \xf6ffnet sie Backdoors, stiehlt Daten oder l\xe4dt weitere Schadsoftware nach. Verbreitung: gef\xe4lschte Downloads, E-Mail-Anh\xe4nge.","UDP","User Datagram Protocol \u2013 verbindungsloses Protokoll auf OSI-Schicht 4. Kein Verbindungsaufbau, kein ACK, geringer Overhead. Einsatz: DNS, Streaming, VoIP, Online-Gaming.","UML Aktivit\xe4tsdiagramm","Ablaufdiagramm f\xfcr Prozesse und Algorithmen. Elemente: Startknoten (gef\xfcllter Kreis), Aktivit\xe4ten (abgerundete Rechtecke), Entscheidungen (Raute), Parallelverarbeitung (Balken), Endknoten. Ab 2025 in AP1 Pflichtthema.","UML Use-Case-Diagramm","Anwendungsfalldiagramm zeigt Akteure (Strichm\xe4nner) und ihre Interaktionen mit dem System (Ellipsen in Systemgrenze). Zeigt WAS das System tut, nicht WIE. Basis f\xfcr Anforderungsanalyse.","VPN","Virtual Private Network \u2013 verschl\xfcsselter Tunnel \xfcber ein \xf6ffentliches Netz (z. B. Internet). Sch\xfctzt Vertraulichkeit und Integrit\xe4t. Protokolle: IPSec, OpenVPN, WireGuard. Pflicht f\xfcr Homeoffice-Anbindungen.","Verschl\xfcsselung","Symmetrisch (ein Schl\xfcssel f\xfcr Ver-/Entschl\xfcsselung, z. B. AES-256, schnell) vs. asymmetrisch (\xf6ffentlicher/privater Schl\xfcssel, z. B. RSA, langsamer). HTTPS kombiniert beide: RSA f\xfcr Schl\xfcsselaustausch, AES f\xfcr Datenstrom.","Virus","Schadprogramm, das sich selbst reproduziert, indem es sich an legitime Dateien anh\xe4ngt. Ben\xf6tigt Aktivierung durch den Nutzer (\xd6ffnen der infizierten Datei). Verbreitung: E-Mail-Anh\xe4nge, Wechseldatentr\xe4ger.","WLAN-Standards","IEEE 802.11-Familie: Wi-Fi 4 (n, 600 Mbit/s, 2,4/5 GHz), Wi-Fi 5 (ac, 3,5 Gbit/s, 5 GHz), Wi-Fi 6 (ax, 9,6 Gbit/s, 2,4/5/6 GHz). H\xf6here Generation = mehr Durchsatz + weniger Latenz.","Zutrittskontrolle","Physische Ma\xdfnahmen zur Zugangsbeschr\xe4nkung zu R\xe4umen: Chipkarte/RFID, PIN-Code, Biometrie (Fingerabdruck, Iris), mechanische Schl\xf6sser. Protokollierung aller Zutrittsereignisse empfohlen.","Zwei-Faktor-Authentisierung","2FA \u2013 Anmeldung mit zwei unabh\xe4ngigen Faktoren: Wissen (Passwort), Besitz (Token/SMS-Code), Inh\xe4renz (Biometrie). Erh\xf6ht Sicherheit erheblich, da ein gestohlenes Passwort allein nicht ausreicht.","\xd6kodesign-Verordnung","EU-Verordnung legt Mindestanforderungen an Energieeffizienz und Reparierbarkeit von Elektronikprodukten fest. Hersteller m\xfcssen Ersatzteile bereitstellen, Reparierbarkeit sicherstellen und Energieverbrauch deklarieren.","\xdcbertragungsdauer","Dauer = Dateigr\xf6\xdfe (Bit) \xf7 Bandbreite (Bit/s). Achtung: Gro\xdf-B = Byte, klein-b = Bit, 1 Byte = 8 Bit. Beispiel: 2,5 GiB \xfcber 100 Mbit/s = 2,5 \xd7 1024 \xd7 8 MBit \xf7 100 Mbit/s = 204,8 Sekunden.","RAID","Redundant Array of Independent Disks. Verbund mehrerer Festplatten f\xfcr Redundanz und/oder Performance. RAID 0 = Striping (Speed, keine Redundanz), RAID 1 = Mirroring (Spiegelung), RAID 5 = Striping + Parit\xe4t (min. 3 Platten), RAID 6 = 2 Parit\xe4ten (min. 4 Platten), RAID 10 = RAID 1+0.","RAID-Level","RAID 0: Striping, volle Kapazit\xe4t, kein Schutz. RAID 1: Spiegelung, 50 % Kapazit\xe4t, 1 Ausfall toleriert. RAID 5: Parit\xe4t verteilt, 1/n Kapazit\xe4tsverlust, 1 Ausfall toleriert. RAID 6: 2 Parit\xe4ten, 2 Ausf\xe4lle toleriert. RAID 10: mind. 4 Platten, 1 Ausfall je Spiegelpaar.","Cache","Schneller Zwischenspeicher zwischen CPU und RAM (L1/L2/L3). L1: 32\u2013512 KB, schnellster, direkt in CPU-Kern. L2: 256 KB\u20134 MB je Kern. L3: 4\u201364 MB, kern\xfcbergreifend. Reduziert RAM-Zugriffe durch Vorhaltung h\xe4ufig genutzter Daten.","Cloud-Modelle","IaaS: Infrastruktur als Service (Server/Storage/Netz, z. B. AWS EC2). PaaS: Plattform als Service (Laufzeitumgebung, z. B. Heroku). SaaS: fertige Software via Browser (z. B. Microsoft 365). Kundenverwaltung und Verantwortung nehmen von IaaS \u2192 SaaS ab.","IaaS","Infrastructure as a Service: Anbieter stellt Virtualisierung, Server, Storage und Netzwerk bereit. Kunde verwaltet OS, Middleware und Anwendungen selbst. Abrechnung nach Verbrauch. Beispiele: AWS EC2, Azure VMs, Google Compute Engine.","PaaS","Platform as a Service: Anbieter stellt OS, Laufzeitumgebung und Middleware bereit. Kunde entwickelt und deployt eigene Anwendungen. Kein Servermanagement n\xf6tig. Beispiele: Heroku, Google App Engine, Azure App Service.","SaaS","Software as a Service: Fertige Anwendung wird \xfcber das Internet bereitgestellt. Kein lokales Setup, Abrechnung per Lizenz oder Nutzung. Anbieter verantwortet gesamten Stack. Beispiele: Microsoft 365, Salesforce, Google Workspace.","USB-Standards","USB 2.0: 480 Mbit/s. USB 3.2 Gen 1 (3.0): 5 Gbit/s, blauer Anschluss. USB 3.2 Gen 2: 10 Gbit/s. USB 3.2 Gen 2\xd72: 20 Gbit/s. USB4: 40 Gbit/s, kompatibel zu Thunderbolt 3. USB-C ist Steckertyp, unabh\xe4ngig vom Standard.","W\xe4rmeleitpaste","Thermisch leitf\xe4hige Paste (z. B. auf Silikonbasis) zwischen CPU/GPU und K\xfchler. F\xfcllt mikroskopische Unebenheiten, verbessert W\xe4rme\xfcbertragung. W\xe4rmeleitf\xe4higkeit: 4\u201312 W/(m\xb7K). Erneuern alle 3\u20135 Jahre oder bei K\xfchlertausch empfohlen.","Betriebssysteme","Software-Schicht zwischen Hardware und Anwendungen. Aufgaben: Prozess-, Speicher-, Dateisystem- und Ger\xe4teverwaltung. Typen: Desktop (Windows, macOS, Linux), Server (Windows Server, RHEL), Mobil (Android, iOS), Echtzeit-OS (RTOS). Kernel = Kern des BS.","Gruppenrichtlinien","Group Policy Objects (GPOs) in Windows-Dom\xe4nen (Active Directory). Zentrale Konfiguration von Benutzer- und Computereinstellungen (z. B. Passwortrichtlinien, Softwareinstallation, Desktopsperrung). Hierarchie: Lokal \u2192 Standort \u2192 Dom\xe4ne \u2192 OU.","Logging","Protokollierung von Systemereignissen, Fehlern und Zugriffen in Log-Dateien. Wichtig f\xfcr Fehleranalyse, Forensik und Compliance (DSGVO). Log-Level: DEBUG, INFO, WARNING, ERROR, CRITICAL. Zentrale Verwaltung via Syslog oder SIEM-Systeme.","KI / K\xfcnstliche Intelligenz","Systeme, die menschen\xe4hnliche kognitive Funktionen simulieren (Lernen, Probleml\xf6sen). Teilgebiete: ML (Machine Learning), Deep Learning, NLP. Anwendungen in IT: Anomalie-Erkennung, Chatbots, Bildverarbeitung. Risiken: Bias, Datenschutz, Nachvollziehbarkeit.","Machine Learning","Teilgebiet der KI: Algorithmen erkennen Muster aus Trainingsdaten ohne explizite Programmierung. Typen: \xfcberwacht (klassifizieren/regressieren), un\xfcberwacht (clustern), best\xe4rkendes Lernen. Einsatz: Spam-Filter, Empfehlungssysteme, Prognosen.","Lieferantenauswahl","Auswahl eines Lieferanten anhand objektiver Kriterien. Methoden: Angebotsvergleich (quantitativ), Nutzwertanalyse (qualitativ + quantitativ), Scoring-Modell. Kriterien: Preis, Lieferzeit, Qualit\xe4t, Zuverl\xe4ssigkeit, Zertifizierungen, Nachhaltigkeit.","Angebotsvergleich","Vergleich von Angeboten mehrerer Lieferanten. Bezugspreisberechnung: Listenpreis \u2212 Rabatt = Zieleinkaufspreis \u2212 Skonto = Bareinkaufspreis + Bezugskosten = Bezugspreis. Entscheidung nach niedrigstem Bezugspreis unter Ber\xfccksichtigung qualitativer Faktoren.","SQL Grundlagen","Structured Query Language f\xfcr relationale Datenbanken. SELECT col FROM table WHERE bedingung; JOIN verkn\xfcpft Tabellen. INSERT INTO, UPDATE, DELETE f\xfcr Datenmanipulation. DDL: CREATE TABLE, ALTER TABLE, DROP. Aggregatfunktionen: COUNT, SUM, AVG, MIN, MAX.","SQL SELECT","Grundlegende Abfragestruktur: SELECT [DISTINCT] spalten FROM tabelle [JOIN ...] [WHERE bedingung] [GROUP BY spalte] [HAVING bedingung] [ORDER BY spalte [ASC|DESC]] [LIMIT n]. Reihenfolge der Klauseln ist zwingend.","SQL JOIN","Verkn\xfcpfung von Tabellen: INNER JOIN (nur \xfcbereinstimmende Zeilen). LEFT JOIN (alle linken + passende rechte). RIGHT JOIN (alle rechten + passende linke). FULL OUTER JOIN (alle Zeilen beider Tabellen). ON-Klausel definiert Verkn\xfcpfungsbedingung.","JBOD","Just a Bunch of Disks: Mehrere Laufwerke ohne RAID-Verbund, sequenziell adressiert. Kein Performancegewinn, keine Redundanz. Jede Platte erscheint einzeln im OS oder wird zu einem gro\xdfen Volume verkettet (Spanning). G\xfcnstig, aber kein Ausfallschutz.","NAS","Network Attached Storage: Dateiserver im LAN, zugreifbar \xfcber SMB/NFS/FTP. Eigenes OS (z. B. Synology DSM), unterst\xfctzt RAID. Einsatz: Dateiablage, Backup, Media-Server. Vorteile: einfache Verwaltung, zentrale Speicherung. Nachteil: auf Dateiebene begrenzt.","SAN","Storage Area Network: Hochgeschwindigkeitsnetzwerk (Fibre Channel oder iSCSI) f\xfcr Block-Level-Storage. Server sehen SAN-LUNs wie lokale Festplatten. Einsatz: Datenbanken, Virtualisierung. Hohe Performance und Verf\xfcgbarkeit, aber hohe Kosten.","RFID","Radio Frequency Identification: kontaktlose Identifikation via Radiowellen. Frequenzen: LF (125 kHz, kurze Reichweite), HF (13,56 MHz, z. B. NFC), UHF (860\u2013960 MHz, bis 10 m). Einsatz: Zutrittskontrolle, Logistik, Warenwirtschaft, Bibliotheken.","NFC","Near Field Communication: RFID-Standard bei 13,56 MHz, max. 20 cm Reichweite. Betriebsmodi: Karte (passiv), Leseger\xe4t, Peer-to-Peer. ISO 14443 / ISO 18092. Einsatz: kontaktloses Bezahlen (Apple Pay, Google Pay), Zugangskontrolle, Datenaustausch.","Marktformen","Klassifizierung nach Anbieter-/Nachfrager-Anzahl. Monopol: 1 Anbieter, viele Nachfrager. Oligopol: wenige Anbieter (z. B. Mobilfunk). Polypol: viele Anbieter + viele Nachfrager (vollst\xe4ndiger Wettbewerb). Monopson: 1 Nachfrager. Oligopson: wenige Nachfrager.","Stakeholder","Alle Personen/Gruppen mit Interesse an einem Projekt oder Unternehmen. Intern: Mitarbeiter, Management, Eigent\xfcmer. Extern: Kunden, Lieferanten, Beh\xf6rden, Investoren. Stakeholder-Analyse: Einfluss vs. Interesse \u2192 Priorisierung der Kommunikation.","Struktogramm","Nassi-Shneiderman-Diagramm: grafische Darstellung von Programmabl\xe4ufen. Elemente: Sequenz (\xfcbereinander), Selektion (IF/ELSE, geteiltes Rechteck), Iteration (WHILE: Bedingung oben, DO-WHILE: Bedingung unten). Keine Spr\xfcnge m\xf6glich, strukturierter Entwurf.","Ping","Netzwerkdiagnose-Tool (ICMP Echo Request/Reply). Pr\xfcft Erreichbarkeit eines Hosts und misst Latenz (RTT = Round Trip Time) in ms. Syntax: ping <IP/Hostname>. TTL-Wert zeigt Netzwerkhops. Paketverlust deutet auf Verbindungsprobleme hin.","Netzwerkdiagnose","Tools: ping (Erreichbarkeit), tracert/traceroute (Pfad), ipconfig/ifconfig (Netzwerkkonfiguration), nslookup/dig (DNS), netstat (Verbindungen/Ports), nmap (Port-Scan), Wireshark (Paketanalyse), arp (ARP-Cache). Systematische Fehlersuche von Layer 1 aufw\xe4rts.","Social Engineering","Manipulation von Menschen zur Preisgabe vertraulicher Informationen oder Ausf\xfchrung gef\xe4hrlicher Handlungen. Methoden: Phishing, Pretexting (gef\xe4lschte Identit\xe4t), Vishing (Telefon), Tailgating (physischer Zutritt). Schutz: Mitarbeiterschulung, Awareness-Training.","VLAN","Virtual Local Area Network: logische Segmentierung eines physischen Netzwerks auf Layer 2. Trennung von Broadcast-Dom\xe4nen ohne separate Hardware. IEEE 802.1Q: VLAN-Tag (4 Byte) im Ethernet-Frame. Einsatz: Netzwerksegmentierung, Sicherheit, G\xe4ste-WLAN.","Energieeffizienz-Klassen","EU-Energielabel f\xfcr Elektroger\xe4te: Skala A\u2013G (seit 2021 neu skaliert, fr\xfcher A+++ bis D). Klasse A: h\xf6chste Effizienz. Pflichtangabe f\xfcr Haushaltsger\xe4te, Monitore, K\xfchlger\xe4te. Berechnung aus Jahresverbrauch (kWh/Jahr) relativ zur Ger\xe4tegr\xf6\xdfe/-leistung.","Arbeitsschutzgesetz","ArbSchG: verpflichtet Arbeitgeber zur Gef\xe4hrdungsbeurteilung, technischen/organisatorischen Schutzma\xdfnahmen (STOP-Prinzip), Unterweisung der Besch\xe4ftigten. Gilt auch f\xfcr Homeoffice und Bildschirmarbeitspl\xe4tze (ArbSt\xe4ttV, BildscharbV). Aufsicht durch Berufsgenossenschaften.","Datenschutzbeauftragter","DSB (Art. 37\u201339 DSGVO): Pflicht ab 20 Personen mit st\xe4ndiger DS-Verarbeitung oder bei sensiblen Daten. Aufgaben: Beratung, Kontrolle der DSGVO-Compliance, Anlaufstelle f\xfcr Betroffene und Aufsichtsbeh\xf6rden. Kann intern oder extern bestellt werden, unterliegt Weisungsfreiheit.","Netzwerktopologien","Bus: alle Ger\xe4te an einem Kabel, veraltet, SPOF. Ring: kreisf\xf6rmig, Token-Ring, SPOF. Stern: alle Ger\xe4te am zentralen Switch, dominant in LANs. Baum/Hierarchisch: Stern-Erweiterung. Vermascht: redundante Verbindungen, ausfallsicher (WAN). Hybrid: Kombination.","Mainboard","Hauptplatine: verbindet alle Komponenten (CPU, RAM, PCIe-Slots, SATA/M.2, USB). Formfaktoren: ATX (305\xd7244 mm), Micro-ATX, Mini-ITX. Chipsatz steuert Kommunikation zwischen CPU und Peripherie. Sockel bestimmt CPU-Kompatibilit\xe4t (z. B. LGA 1700 f\xfcr Intel, AM5 f\xfcr AMD).","Chipsatz","Chip(s) auf dem Mainboard, der die Kommunikation zwischen CPU, RAM, PCIe-Slots, USB, SATA regelt. Fr\xfcher: Northbridge (schnell: RAM, PCIe) + Southbridge (langsam: USB, SATA). Heute: in eine oder wenige ICs integriert. Bestimmt unterst\xfctzte Features (Overclocking, PCIe-Gen).","HTTPS","HTTP Secure: HTTP \xfcber TLS-Verschl\xfcsselung. Port 443. Sch\xfctzt Vertraulichkeit, Integrit\xe4t und Authentizit\xe4t der \xdcbertragung. TLS-Handshake: Zertifikat pr\xfcfen, Schl\xfcsselaustausch, symmetrische Sitzungsverschl\xfcsselung (AES). HSTS erzwingt HTTPS-Nutzung.","TLS","Transport Layer Security (Nachfolger SSL): kryptographisches Protokoll auf Layer 5\u20136. Aktuell TLS 1.3 (2018). Ablauf: ClientHello \u2192 ServerHello + Zertifikat \u2192 Schl\xfcsselaustausch (ECDHE) \u2192 symmetrische Verschl\xfcsselung. Einsatz: HTTPS, SMTP over TLS, VPN.","DMZ","Demilitarisierte Zone: Netzwerksegment zwischen externem (Internet) und internem Netz, durch zwei Firewalls abgeschirmt. \xd6ffentlich erreichbare Dienste (Webserver, Mailserver) stehen in der DMZ. Internes Netz bleibt bei Kompromittierung der DMZ gesch\xfctzt.","Proxy-Server","Vermittler zwischen Client und Zielserver. Forward-Proxy: leitet Client-Anfragen weiter, anonymisiert IP, erm\xf6glicht Caching und Filterung. Reverse-Proxy: sch\xfctzt Server, Load-Balancing, SSL-Terminierung. Transparenter Proxy: f\xfcr Client unsichtbar.","DKIM","DomainKeys Identified Mail: E-Mail-Authentifizierungsverfahren. Mailserver signiert ausgehende E-Mails mit privatem Schl\xfcssel; Empf\xe4nger pr\xfcft mit \xf6ffentlichem Schl\xfcssel aus DNS (TXT-Record). Sch\xfctzt vor E-Mail-Spoofing und Manipulation.","SPF","Sender Policy Framework: DNS-TXT-Record, der autorisierte Mailserver f\xfcr eine Domain definiert. Empf\xe4nger pr\xfcft, ob sendende IP in SPF-Record gelistet ist. Verhindert, dass Fremde im Namen der Domain E-Mails versenden. Erg\xe4nzt durch DKIM und DMARC.","DMARC","Domain-based Message Authentication, Reporting and Conformance: E-Mail-Richtlinie, kombiniert SPF und DKIM. Policy-Optionen: none (nur Monitoring), quarantine (in Spam), reject (ablehnen). Reporting: Aggregat- und forensische Berichte an Domaininhaber. Sch\xfctzt vor Phishing.","Virtualisierung","Abstraktion physischer Hardware in virtuelle Ressourcen mittels Hypervisor. Typ 1 (Bare-Metal): l\xe4uft direkt auf Hardware (VMware ESXi, Hyper-V, KVM). Typ 2 (Hosted): l\xe4uft auf Host-OS (VirtualBox, VMware Workstation). Vorteile: Konsolidierung, Isolation, Snapshots.","Hypervisor","Software zur Verwaltung virtueller Maschinen. Typ-1: direkt auf Hardware, effizient, produktionsreif (ESXi, Hyper-V, KVM). Typ-2: auf Host-OS (VirtualBox). Stellt VMs jeweils virtualisierte CPU, RAM, Netzwerk und Storage zur Verf\xfcgung.","Docker","Container-Plattform auf Basis von Linux-Namespaces und cgroups. Container teilen Host-Kernel, sind aber isoliert. Dockerfile definiert Image; docker run startet Container. Leichter als VMs, schneller Start. docker-compose orchestriert Mehrcontainer-Anwendungen.","Container","Leichtgewichtige Isolationseinheit: teilt Host-OS-Kernel, eigene Dateisystem-/Netzwerksicht via Namespaces, Ressourcenbegrenzung via cgroups. Schneller Start, portabel (Build once, run anywhere). Docker ist verbreitetste Implementierung. Kubernetes orchestriert Container-Cluster.","Kubernetes","Container-Orchestrierungsplattform (K8s). Verwaltet Deployment, Skalierung und Betrieb von Container-Anwendungen in Clustern. Konzepte: Pod (kleinste Einheit), Service, Deployment, Namespace, Ingress. Automatisches Failover, Rolling Updates, Auto-Scaling.","Scrum","Agiles Rahmenwerk f\xfcr iterative Produktentwicklung. Rollen: Product Owner (Backlog), Scrum Master (Prozess), Development Team. Artefakte: Product Backlog, Sprint Backlog, Increment. Events: Sprint (1\u20134 Wochen), Sprint Planning, Daily Scrum, Review, Retrospektive.","Kanban","Agile Methode zur Visualisierung und Steuerung des Arbeitsflusses. Kanban-Board mit Spalten (To Do, In Progress, Done). WIP-Limit (Work in Progress) begrenzt parallele Aufgaben. Kein fester Sprint-Rhythmus. Pull-Prinzip: Arbeit wird gezogen, nicht zugewiesen.","Agile Methoden","Iterative, inkrementelle Softwareentwicklung gem\xe4\xdf Agile Manifesto (2001). Werte: Individuen vor Prozessen, funktionierende Software vor Dokumentation, Kundenzusammenarbeit vor Vertragsverhandlung, Reagieren auf Ver\xe4nderung. Methoden: Scrum, Kanban, XP, SAFe.","ITIL","IT Infrastructure Library: Best-Practice-Rahmenwerk f\xfcr IT-Service-Management. Aktuelle Version: ITIL 4 (2019). Kernkonzept: Service Value System (SVS). Praktiken: Incident Management, Problem Management, Change Enablement, Service Desk, CMDB. Kein Standard, sondern Leitfaden.","SLA","Service Level Agreement: vertragliche Vereinbarung zwischen IT-Dienstleister und Kunden \xfcber Qualit\xe4t/Verf\xfcgbarkeit. Typische Parameter: Verf\xfcgbarkeit (z. B. 99,9 % = 8,76 h Ausfall/Jahr), Antwortzeit, Wiederherstellungszeit (MTTR), Reaktionszeit. Basis f\xfcr P\xf6nalen.","Incident Management","ITIL-Prozess: Wiederherstellung des normalen Servicebetriebs nach einer ungeplanten Unterbrechung. Schritte: Erkennung, Erfassung, Klassifizierung, Priorisierung, Diagnose, L\xf6sung, Abschluss. Ziel: Minimierung der Auswirkung auf das Business (MTTR-Senkung).","IT-Service-Management","ITSM: Gesamtheit der Aktivit\xe4ten zur Planung, Bereitstellung, Verwaltung und Verbesserung von IT-Services. Frameworks: ITIL, COBIT, ISO 20000. Kernprozesse: Incident, Problem, Change, Configuration, Release Management. Ausgerichtet an Gesch\xe4ftszielen.","Kapitalwertmethode","Investitionsrechnung: Barwert aller zuk\xfcnftigen Ein-/Auszahlungen abz\xfcglich Anschaffungskosten. Formel: KW = \u03a3 (Ct / (1+i)^t) \u2212 I\u2080. Ct = Cashflow in Periode t, i = Kalkulationszinssatz, I\u2080 = Investition. KW > 0 \u2192 Investition lohnt sich.","Barwertmethode","Abzinsung zuk\xfcnftiger Zahlungen auf den heutigen Zeitpunkt. Formel: BW = Z / (1+i)^n. Z = zuk\xfcnftige Zahlung, i = Zinssatz, n = Perioden. Grundlage der Kapitalwertmethode. Erm\xf6glicht Vergleich von Zahlungen zu unterschiedlichen Zeitpunkten.","Problem Management","ITIL-Prozess: Identifikation und Beseitigung der Ursache(n) von Incidents. Reaktiv: Analyse nach Incident-H\xe4ufung. Proaktiv: Trendanalyse zur Vermeidung. Workaround: tempor\xe4re L\xf6sung. Known Error: dokumentiertes Problem mit bekanntem Workaround (KEDB).","Change Management (ITIL)","ITIL-Prozess zur kontrollierten Durchf\xfchrung von \xc4nderungen an IT-Systemen. Typen: Standard Change (vorab genehmigt), Normal Change (CAB-Pr\xfcfung), Emergency Change (Notfall). Ziel: Minimierung von St\xf6rungen durch unkontrollierte \xc4nderungen.","CMDB","Configuration Management Database: Datenbank aller Configuration Items (CIs) einer IT-Infrastruktur mit ihren Beziehungen. CIs: Server, Software, Netzwerkger\xe4te, Dienste. Basis f\xfcr ITIL-Prozesse (Incident, Change, Problem). Teil des ITIL Configuration Management.","Verf\xfcgbarkeit","Kennzahl f\xfcr Systemzuverl\xe4ssigkeit. Formel: V = MTBF / (MTBF + MTTR) \xd7 100 %. MTBF = Mean Time Between Failures, MTTR = Mean Time To Repair. 99,9 % (3 Nines) = 8,76 h Ausfall/Jahr. 99,99 % (4 Nines) = 52,6 min/Jahr. Basis f\xfcr SLAs.","MTBF / MTTR","MTBF (Mean Time Between Failures): durchschnittliche Zeit zwischen zwei Ausf\xe4llen. MTTR (Mean Time To Repair): durchschnittliche Reparaturzeit. Formeln: MTBF = Betriebszeit / Anzahl Ausf\xe4lle; MTTR = Gesamtausfallzeit / Anzahl Ausf\xe4lle. Grundlage der Verf\xfcgbarkeitsberechnung.","Active Directory","Microsoft-Verzeichnisdienst f\xfcr Windows-Dom\xe4nen (AD DS). Verwaltet Benutzer, Computer, Gruppen und Richtlinien zentral. Authentifizierung via Kerberos, Autorisierung via LDAP. Struktur: Forest \u2192 Dom\xe4ne \u2192 OU \u2192 Objekt. Basis f\xfcr GPOs und SSO.","LDAP","Lightweight Directory Access Protocol: Protokoll zum Zugriff auf Verzeichnisdienste (Port 389, LDAPS 636). Hierarchische Baumstruktur: DC (Domain Component), OU (Organizational Unit), CN (Common Name). Einsatz: Active Directory, OpenLDAP, Authentifizierungsdienste.","Kerberos","Netzwerkauthentifizierungsprotokoll (RFC 4120). Ticket-basiert: KDC (Key Distribution Center) stellt Tickets aus. Ablauf: AS-Request \u2192 TGT \u2192 TGS-Request \u2192 Service-Ticket \u2192 Zugriff. Sch\xfctzt vor Replay-Angriffen, kein Passwort im Netz. Standard in Active-Directory-Dom\xe4nen.","OAuth 2.0","Autorisierungsprotokoll (kein Authentifizierungsprotokoll): erm\xf6glicht Drittanwendungen begrenzten Zugriff auf Ressourcen ohne Passweitergabe. Rollen: Resource Owner, Client, Authorization Server, Resource Server. Flows: Authorization Code, Client Credentials, Implicit. Basis f\xfcr OpenID Connect.","Netzwerksicherheit","Schutz von Netzwerkinfrastruktur vor unautorisiertem Zugriff und Angriffen. Ma\xdfnahmen: Firewall (Paketfilter, Stateful, NGFW), IDS/IPS, DMZ, VLAN-Segmentierung, VPN, NAC, Patch-Management, Monitoring (SIEM). Schichtenmodell: Defense in Depth.","IDS / IPS","Intrusion Detection System: \xfcberwacht Netzwerkverkehr auf Angriffsmuster (signaturbasiert oder anomaliebasiert), meldet Vorf\xe4lle. Intrusion Prevention System: wie IDS, zus\xe4tzlich aktives Blockieren. NIDS: netzwerkbasiert. HIDS: hostbasiert (z. B. Datei\xfcberwachung).","Verschl\xfcsselungsarten","Symmetrisch: gleicher Schl\xfcssel f\xfcr Ver-/Entschl\xfcsselung (AES, DES). Schnell, Schl\xfcsselverteilungsproblem. Asymmetrisch: \xf6ffentlicher Schl\xfcssel verschl\xfcsselt, privater entschl\xfcsselt (RSA, ECC). Langsam, l\xf6st Schl\xfcsselverteilung. Hybrid: asymmetrisch f\xfcr Schl\xfcsselaustausch, symmetrisch f\xfcr Daten.","AES","Advanced Encryption Standard: symmetrisches Blockchiffre-Verfahren, Blockgr\xf6\xdfe 128 Bit, Schl\xfcssel 128/192/256 Bit. Seit 2001 NIST-Standard. Gilt als sicher, in TLS, WLAN (WPA2/3), Datei-/Festplattenverschl\xfcsselung eingesetzt. Effizienter als RSA.","RSA","Rivest-Shamir-Adleman: asymmetrisches Verschl\xfcsselungsverfahren, basiert auf Schwierigkeit der Primfaktorzerlegung gro\xdfer Zahlen. Schl\xfcssell\xe4nge: mind. 2048 Bit (aktuell). Einsatz: TLS-Handshake, digitale Signaturen, Zertifikate. Langsamer als AES, daher nur f\xfcr Schl\xfcsselaustausch.","Datenbankmodelle","Relational (SQL): Tabellen mit Beziehungen, ACID-konform (MySQL, PostgreSQL, MSSQL). Dokumentenorientiert (NoSQL): JSON/BSON-Dokumente (MongoDB). Key-Value: schneller Zugriff (Redis). Graphdatenbank: Knoten + Kanten (Neo4j). Spaltenorientiert: Big Data (Cassandra).","Normalisierung","Datenbankentwurf zur Vermeidung von Redundanz und Anomalien. 1NF: atomare Attributwerte. 2NF: 1NF + volle funktionale Abh\xe4ngigkeit vom gesamten Prim\xe4rschl\xfcssel. 3NF: 2NF + keine transitiven Abh\xe4ngigkeiten. BCNF: versch\xe4rfte 3NF f\xfcr spezielle F\xe4lle.","ER-Diagramm","Entity-Relationship-Diagramm: konzeptionelles Datenmodell. Entit\xe4ten (Rechteck), Attribute (Ellipse), Beziehungen (Raute). Kardinalit\xe4ten: 1:1, 1:n, m:n. m:n-Beziehungen werden in der logischen Modellierung durch Zwischentabellen aufgel\xf6st. Grundlage des Datenbankdesigns.","Backup-Strategien","Vollbackup: alle Daten, hoher Speicher. Differenzielles Backup: \xc4nderungen seit letztem Vollbackup. Inkrementelles Backup: \xc4nderungen seit letztem Backup jeglicher Art. 3-2-1-Regel: 3 Kopien, 2 verschiedene Medien, 1 offsite. RTO und RPO definieren Wiederherstellungsziele.","RTO / RPO","RTO (Recovery Time Objective): maximal tolerierbare Ausfallzeit bis zur Wiederherstellung. RPO (Recovery Point Objective): maximal tolerierbarer Datenverlust (Zeitraum). Je kleiner RTO/RPO, desto h\xf6her Kosten f\xfcr Backup-/DR-L\xf6sungen. Beide Werte werden im SLA festgelegt.","Verschl\xfcsselung (Typen)","Ende-zu-Ende (E2E): nur Sender/Empf\xe4nger k\xf6nnen entschl\xfcsseln (z. B. Signal, PGP). Transport-Verschl\xfcsselung: nur auf dem \xdcbertragungsweg (TLS). Speicherverschl\xfcsselung: ruhende Daten (BitLocker, VeraCrypt, AES-256). Festplattenverschl\xfcsselung: FDE/SED.","Portweiterleitung","NAT/PAT-Funktion im Router: leitet eingehende Verbindungen von einer externen IP:Port an eine interne IP:Port weiter. Erm\xf6glicht externen Zugriff auf interne Dienste (z. B. Webserver, RDP). Sicherheitsrisiko: nur ben\xf6tigte Ports \xf6ffnen, Firewall-Regeln pr\xfcfen.","NAT","Network Address Translation: \xdcbersetzung privater IP-Adressen in \xf6ffentliche. PAT/Masquerading: viele interne IPs teilen eine externe IP (Port-basiert). Erm\xf6glicht Internetzugang privater Netze (RFC 1918). Verbindungsaufbau nur von innen nach au\xdfen (ohne Portweiterleitung).","SNMP","Simple Network Management Protocol (UDP 161/162): \xdcberwachung und Verwaltung von Netzwerkger\xe4ten. Versionen: SNMPv1/v2c (unsicher, Community-String im Klartext), SNMPv3 (Authentifizierung + Verschl\xfcsselung). MIB definiert verwaltbare Objekte. Traps: aktive Alarmmeldungen.","QoS","Quality of Service: Priorisierung von Netzwerkverkehr. Methoden: DiffServ (DSCP-Markierung), VLAN-Priorisierung (802.1p), Traffic-Shaping, Bandbreitenlimitierung. Wichtig f\xfcr VoIP (geringe Latenz/Jitter), Videokonferenzen, kritische Gesch\xe4ftsanwendungen.","IPv4 vs. IPv6","IPv4: 32-Bit-Adresse, ca. 4,3 Mrd. Adressen, NAT n\xf6tig. IPv6: 128-Bit-Adresse, 3,4 \xd7 10\xb3\u2078 Adressen, kein NAT n\xf6tig, eingebettete Sicherheit (IPsec), SLAAC f\xfcr Autokonfiguration, keine Broadcasts. Beide Protokolle koexistieren via Dual-Stack oder Tunneling.","Datenschutz-Folgenabsch\xe4tzung","DSFA (Art. 35 DSGVO): Pflicht bei hohem Risiko f\xfcr Rechte und Freiheiten nat\xfcrlicher Personen. Erforderlich bei: systematischer \xdcberwachung, Verarbeitung sensibler Daten im gro\xdfen Umfang, automatisierten Entscheidungen. Inhalt: Beschreibung, Notwendigkeit, Risikoabsch\xe4tzung, Ma\xdfnahmen.","Schwachstellenmanagement","Systematische Identifikation, Bewertung und Behebung von Sicherheitsl\xfccken. Prozess: Scan (Nessus, OpenVAS), CVSS-Scoring (0\u201310), Priorisierung, Patch/Mitigierung, Verifikation. CVE-Datenbank: standardisierte Schwachstellenkennung. Teil des ISMS nach ISO 27001.","Penetrationstest","Autorisierter, simulierter Angriff auf IT-Systeme zur Aufdeckung von Sicherheitsl\xfccken. Phasen: Reconnaissance, Scanning, Exploitation, Post-Exploitation, Reporting. Typen: Black-Box (kein Vorwissen), White-Box (volles Vorwissen), Grey-Box. Ergebnis: Bericht mit Findings und Empfehlungen.","Zero Trust","Sicherheitsmodell: kein Benutzer/Ger\xe4t wird implizit vertraut, auch nicht im internen Netz. Prinzipien: Verify explicitly (immer authentifizieren), Least Privilege, Assume Breach. Technisch: MFA, Identity Provider, Mikrosegmentierung, kontinuierliches Monitoring.","Projektmanagement-Methoden","Klassisch/Wasserfall: sequenziell, Phasen abgeschlossen vor Beginn der n\xe4chsten, feste Anforderungen. Agil (Scrum/Kanban): iterativ, flexible Anforderungen, schnelle Lieferung. Hybrid: Kombination. Auswahl nach Komplexit\xe4t, Anforderungsstabilit\xe4t und Teamgr\xf6\xdfe.","Netzwerkprotokoll-\xdcbersicht","Anwendungsschicht (L7): HTTP(S), FTP, SMTP, DNS, DHCP, SNMP. Transport (L4): TCP (verbindungsorientiert, zuverl\xe4ssig), UDP (verbindungslos, schnell). Netzwerk (L3): IP, ICMP, ARP. Sicherung (L2): Ethernet, WLAN (802.11). Physisch (L1): Kabel, Funk.","Lizenzmodelle","Propriet\xe4r: Nutzungsrecht, kein Quellcode (Microsoft, Adobe). Open Source: Quellcode frei (GPL: Copyleft, MIT/BSD: permissiv). Freeware: kostenlos, kein Quellcode. Shareware: Testversion. Subscription: zeitbasierte Lizenz (SaaS). OEM: an Hardware gebunden. EULA = Endnutzer-Lizenzvertrag.","Dateirechte (Linux)","Drei Berechtigungsstufen: Owner, Group, Others. Rechte: r (read=4), w (write=2), x (execute=1). Notation oktal: z. B. 755 = rwxr-xr-x. chmod \xe4ndert Rechte, chown \xe4ndert Eigent\xfcmer. Setuid/Setgid/Sticky-Bit f\xfcr spezielle Zwecke.","CIDR","Classless Inter-Domain Routing: flexible Subnetzaufteilung durch Pr\xe4fixnotation (z. B. 192.168.1.0/24). /24 = 256 Adressen (254 nutzbar). /25 = 128 Adressen. Formel: Hostanzahl = 2^(32\u2212Pr\xe4fix) \u2212 2. Ersetzt klassenbasiertes Routing (Class A/B/C). Grundlage des Subnetting.","Grundschutz-Ma\xdfnahmen","BSI IT-Grundschutz: Bausteine f\xfcr sichere IT (technisch, organisatorisch, infrastrukturell, personell). ISMS-Rahmenwerk nach ISO 27001. Schutzbedarfsfeststellung: normal/hoch/sehr hoch. Ma\xdfnahmen: Basis-Absicherung, Standard-Absicherung, Kern-Absicherung."],q,q)})
 r($,"aNV","V9",()=>{var q=t.N
-return A.au(["4-Ohren-Modell","Sozial","80-PLUS-Zertifikat","\xd6kologisch","APIPA","Funktional","ARP","Funktional","Abschreibung (AfA)","\xd6konomisch","Amortisationsrechnung","\xd6konomisch","Anonymisierung vs. Pseudonymisierung","Sozial","BDSG","Sozial","BIOS vs. UEFI","Funktional","BPMN","Funktional","BSI-Grundschutz","Funktional","BYOD","Sozial","Barrierefreiheit (IT)","Funktional","Betroffenenrechte","Sozial","Bildschirmarbeitsplatz","Sozial","Blauer Engel","\xd6kologisch","Bootvorgang","Funktional","CAPEX vs. OPEX","\xd6konomisch","CO\u2082-Fu\xdfabdruck IT","\xd6kologisch","CPU","Funktional","Change Management","Sozial","Compiler vs. Interpreter","Funktional","DDR4 vs. DDR5","Funktional","DHCP","Funktional","DNS","Funktional","DSGVO","Sozial","Daisy Chaining","Funktional","Dateigr\xf6\xdfen-Berechnung","Funktional","Datensicherung (Backup)","Sozial","Digitales Zertifikat","Funktional","EPEAT","\xd6kologisch","ERM","Funktional","ElektroG","\xd6kologisch","Endpoint-Security","Funktional","Firewall","Funktional","Gantt-Diagramm","Funktional","Ger\xe4teklassen","Funktional","Green IT","\xd6kologisch","HDD","Funktional","Handelskalkulation","\xd6konomisch","Hashverfahren","Funktional","Homeoffice","Sozial","H\xe4rtung","Funktional","IPv4","Funktional","IPv6","Funktional","Kaufvertrag","Sozial","Kaufvertragsst\xf6rungen","Sozial","Konfliktmineralien","\xd6kologisch","Lastenheft vs. Pflichtenheft","Funktional","Leasing","\xd6konomisch","LkSG","\xd6kologisch","MAC-Adresse","Funktional","Make-or-Buy","\xd6konomisch","Monitoranschl\xfcsse","Funktional","NVMe","Funktional","Netzplan","Funktional","Netzteil-Leistungsberechnung","Funktional","Netzteil-Wirkungsgrad","\xd6kologisch","Nutzwertanalyse","\xd6konomisch","OSI-Modell","Funktional","PUE-Wert","\xd6kologisch","Passwortrichtlinie","Funktional","Peripherieanschl\xfcsse","Funktional","Phishing","Funktional","Pseudocode","Funktional","RAM","Funktional","RGB-Farbraum","Funktional","RJ-45","Funktional","Rabatt und Skonto","\xd6konomisch","Ransomware","Funktional","Ratendarlehen","\xd6konomisch","RoHS-Richtlinie","\xd6kologisch","Router","Funktional","S.M.A.R.T.","Funktional","SLAAC","Funktional","SMART-Kriterien","Funktional","SSD","Funktional","Schreibtischtest","Funktional","Schutzziele (CIA)","Funktional","Stromkosten-Berechnung","\xd6konomisch","Stundensatz-Kalkulation","\xd6konomisch","Subnetting","Funktional","Switch","Funktional","TCO","\xd6konomisch","TCP","Funktional","TOM","Sozial","Trojaner","Funktional","UDP","Funktional","UML Aktivit\xe4tsdiagramm","Funktional","UML Use-Case-Diagramm","Funktional","VPN","Funktional","Verschl\xfcsselung","Funktional","Virus","Funktional","WLAN-Standards","Funktional","Zutrittskontrolle","Funktional","Zwei-Faktor-Authentisierung","Funktional","\xd6kodesign-Verordnung","\xd6kologisch","\xdcbertragungsdauer","Funktional"],q,q)})
+return A.au(["4-Ohren-Modell","Sozial","80-PLUS-Zertifikat","\xd6kologisch","APIPA","Funktional","ARP","Funktional","Abschreibung (AfA)","\xd6konomisch","Amortisationsrechnung","\xd6konomisch","Anonymisierung vs. Pseudonymisierung","Sozial","BDSG","Sozial","BIOS vs. UEFI","Funktional","BPMN","Funktional","BSI-Grundschutz","Funktional","BYOD","Sozial","Barrierefreiheit (IT)","Funktional","Betroffenenrechte","Sozial","Bildschirmarbeitsplatz","Sozial","Blauer Engel","\xd6kologisch","Bootvorgang","Funktional","CAPEX vs. OPEX","\xd6konomisch","CO\u2082-Fu\xdfabdruck IT","\xd6kologisch","CPU","Funktional","Change Management","Sozial","Compiler vs. Interpreter","Funktional","DDR4 vs. DDR5","Funktional","DHCP","Funktional","DNS","Funktional","DSGVO","Sozial","Daisy Chaining","Funktional","Dateigr\xf6\xdfen-Berechnung","Funktional","Datensicherung (Backup)","Sozial","Digitales Zertifikat","Funktional","EPEAT","\xd6kologisch","ERM","Funktional","ElektroG","\xd6kologisch","Endpoint-Security","Funktional","Firewall","Funktional","Gantt-Diagramm","Funktional","Ger\xe4teklassen","Funktional","Green IT","\xd6kologisch","HDD","Funktional","Handelskalkulation","\xd6konomisch","Hashverfahren","Funktional","Homeoffice","Sozial","H\xe4rtung","Funktional","IPv4","Funktional","IPv6","Funktional","Kaufvertrag","Sozial","Kaufvertragsst\xf6rungen","Sozial","Konfliktmineralien","\xd6kologisch","Lastenheft vs. Pflichtenheft","Funktional","Leasing","\xd6konomisch","LkSG","\xd6kologisch","MAC-Adresse","Funktional","Make-or-Buy","\xd6konomisch","Monitoranschl\xfcsse","Funktional","NVMe","Funktional","Netzplan","Funktional","Netzteil-Leistungsberechnung","Funktional","Netzteil-Wirkungsgrad","\xd6kologisch","Nutzwertanalyse","\xd6konomisch","OSI-Modell","Funktional","PUE-Wert","\xd6kologisch","Passwortrichtlinie","Funktional","Peripherieanschl\xfcsse","Funktional","Phishing","Funktional","Pseudocode","Funktional","RAM","Funktional","RGB-Farbraum","Funktional","RJ-45","Funktional","Rabatt und Skonto","\xd6konomisch","Ransomware","Funktional","Ratendarlehen","\xd6konomisch","RoHS-Richtlinie","\xd6kologisch","Router","Funktional","S.M.A.R.T.","Funktional","SLAAC","Funktional","SMART-Kriterien","Funktional","SSD","Funktional","Schreibtischtest","Funktional","Schutzziele (CIA)","Funktional","Stromkosten-Berechnung","\xd6konomisch","Stundensatz-Kalkulation","\xd6konomisch","Subnetting","Funktional","Switch","Funktional","TCO","\xd6konomisch","TCP","Funktional","TOM","Sozial","Trojaner","Funktional","UDP","Funktional","UML Aktivit\xe4tsdiagramm","Funktional","UML Use-Case-Diagramm","Funktional","VPN","Funktional","Verschl\xfcsselung","Funktional","Virus","Funktional","WLAN-Standards","Funktional","Zutrittskontrolle","Funktional","Zwei-Faktor-Authentisierung","Funktional","\xd6kodesign-Verordnung","\xd6kologisch","\xdcbertragungsdauer","Funktional","RAID","Funktional","RAID-Level","Funktional","Cache","Funktional","Cloud-Modelle","Funktional","IaaS","Funktional","PaaS","Funktional","SaaS","Funktional","USB-Standards","Funktional","W\xe4rmeleitpaste","Funktional","Betriebssysteme","Funktional","Gruppenrichtlinien","Funktional","Logging","Funktional","KI / K\xfcnstliche Intelligenz","Funktional","Machine Learning","Funktional","Lieferantenauswahl","\xd6konomisch","Angebotsvergleich","\xd6konomisch","SQL Grundlagen","Funktional","SQL SELECT","Funktional","SQL JOIN","Funktional","JBOD","Funktional","NAS","Funktional","SAN","Funktional","RFID","Funktional","NFC","Funktional","Marktformen","\xd6konomisch","Stakeholder","Sozial","Struktogramm","Funktional","Ping","Funktional","Netzwerkdiagnose","Funktional","Social Engineering","Sozial","VLAN","Funktional","Energieeffizienz-Klassen","\xd6kologisch","Arbeitsschutzgesetz","Sozial","Datenschutzbeauftragter","Sozial","Netzwerktopologien","Funktional","Mainboard","Funktional","Chipsatz","Funktional","HTTPS","Funktional","TLS","Funktional","DMZ","Funktional","Proxy-Server","Funktional","DKIM","Funktional","SPF","Funktional","DMARC","Funktional","Virtualisierung","Funktional","Hypervisor","Funktional","Docker","Funktional","Container","Funktional","Kubernetes","Funktional","Scrum","Funktional","Kanban","Funktional","Agile Methoden","Funktional","ITIL","Funktional","SLA","\xd6konomisch","Incident Management","Funktional","IT-Service-Management","Funktional","Kapitalwertmethode","\xd6konomisch","Barwertmethode","\xd6konomisch","Problem Management","Funktional","Change Management (ITIL)","Funktional","CMDB","Funktional","Verf\xfcgbarkeit","Funktional","MTBF / MTTR","Funktional","Active Directory","Funktional","LDAP","Funktional","Kerberos","Funktional","OAuth 2.0","Funktional","Netzwerksicherheit","Funktional","IDS / IPS","Funktional","Verschl\xfcsselungsarten","Funktional","AES","Funktional","RSA","Funktional","Datenbankmodelle","Funktional","Normalisierung","Funktional","ER-Diagramm","Funktional","Backup-Strategien","Funktional","RTO / RPO","Funktional","Verschl\xfcsselung (Typen)","Funktional","Portweiterleitung","Funktional","NAT","Funktional","SNMP","Funktional","QoS","Funktional","IPv4 vs. IPv6","Funktional","Datenschutz-Folgenabsch\xe4tzung","Sozial","Schwachstellenmanagement","Funktional","Penetrationstest","Funktional","Zero Trust","Funktional","Projektmanagement-Methoden","Funktional","Netzwerkprotokoll-\xdcbersicht","Funktional","Lizenzmodelle","\xd6konomisch","Dateirechte (Linux)","Funktional","CIDR","Funktional","Grundschutz-Ma\xdfnahmen","Funktional"],q,q)})
 s($,"aMG","awX",()=>A.amW(1,1,500))
 r($,"aJa","av8",()=>new A.F7(B.u,B.u))
 s($,"aNJ","axF",()=>A.au([B.Bn,A.eb(40),B.Bo,A.eb(40),B.lE,A.eb(12)],A.aw("qk"),t.m_))
 s($,"aND","axC",()=>new A.Nh())
 s($,"aN_","axc",()=>A.fQ(B.ej,B.h,t.o))
-s($,"aMT","ax5",()=>A.fQ(B.h,B.Iz,t.o))
-r($,"aLS","awq",()=>A.azd(B.Tp,B.To))
+s($,"aMT","ax5",()=>A.fQ(B.h,B.IE,t.o))
+r($,"aLS","awq",()=>A.azd(B.Tu,B.Tt))
 s($,"aNE","axD",()=>new A.Ge())
 s($,"aMq","awN",()=>A.aGF($.bc().gd_()))
 s($,"aJk","ax",()=>A.bt(0,null,!1,t.Nw))
@@ -83955,7 +83960,7 @@ s($,"aK2","avq",()=>{var q=t.v
 return A.au([B.iX,A.bV([B.bZ,B.cm],q),B.iZ,A.bV([B.ec,B.fN],q),B.iY,A.bV([B.eb,B.fM],q),B.iW,A.bV([B.ea,B.fL],q)],q,A.aw("bf<h>"))})
 s($,"aL4","aog",()=>new A.a6v(A.b([],A.aw("B<~(kl)>")),A.z(t.v3,t.v)))
 s($,"aL3","avY",()=>{var q=t.v3
-return A.au([B.U3,A.bV([B.dd],q),B.U4,A.bV([B.df],q),B.U5,A.bV([B.dd,B.df],q),B.U2,A.bV([B.dd],q),B.U_,A.bV([B.dc],q),B.U0,A.bV([B.em],q),B.U1,A.bV([B.dc,B.em],q),B.TZ,A.bV([B.dc],q),B.TW,A.bV([B.db],q),B.TX,A.bV([B.el],q),B.TY,A.bV([B.db,B.el],q),B.TV,A.bV([B.db],q),B.U7,A.bV([B.de],q),B.U8,A.bV([B.en],q),B.U9,A.bV([B.de,B.en],q),B.U6,A.bV([B.de],q),B.Ua,A.bV([B.cv],q),B.Ub,A.bV([B.fT],q),B.Uc,A.bV([B.fS],q),B.Ud,A.bV([B.ek],q)],A.aw("cA"),A.aw("bf<m>"))})
+return A.au([B.U8,A.bV([B.dd],q),B.U9,A.bV([B.df],q),B.Ua,A.bV([B.dd,B.df],q),B.U7,A.bV([B.dd],q),B.U4,A.bV([B.dc],q),B.U5,A.bV([B.em],q),B.U6,A.bV([B.dc,B.em],q),B.U3,A.bV([B.dc],q),B.U0,A.bV([B.db],q),B.U1,A.bV([B.el],q),B.U2,A.bV([B.db,B.el],q),B.U_,A.bV([B.db],q),B.Uc,A.bV([B.de],q),B.Ud,A.bV([B.en],q),B.Ue,A.bV([B.de,B.en],q),B.Ub,A.bV([B.de],q),B.Uf,A.bV([B.cv],q),B.Ug,A.bV([B.fT],q),B.Uh,A.bV([B.fS],q),B.Ui,A.bV([B.ek],q)],A.aw("cA"),A.aw("bf<m>"))})
 s($,"aL2","aof",()=>A.au([B.dd,B.eb,B.df,B.fM,B.dc,B.bZ,B.em,B.cm,B.db,B.ea,B.el,B.fL,B.de,B.ec,B.en,B.fN,B.cv,B.e7,B.fT,B.fJ,B.fS,B.fK],t.v3,t.v))
 s($,"aL1","avX",()=>{var q=A.z(t.v3,t.v)
 q.m(0,B.ek,B.iT)
@@ -83969,11 +83974,11 @@ q.gZq().kr(q.ga4T())
 return q})
 s($,"aLX","ale",()=>new A.PS())
 s($,"aLE","V2",()=>{var q=new A.LE()
-q.a=B.IR
+q.a=B.IW
 q.ga9i().kr(q.ga47())
 return q})
 r($,"aLJ","awl",()=>{var q=A.aw("~(aZ<aN>)")
-return A.au([B.S5,A.apA(!0),B.RV,A.apA(!1),B.St,new A.JN(A.y4(q)),B.Si,new A.IE(A.y4(q)),B.Sm,new A.Jb(A.y4(q)),B.yb,new A.w5(!1,A.y4(q)),B.jX,A.aCv(),B.Sn,new A.Jd(A.y4(q)),B.SJ,new A.LQ(A.y4(q))],t.u,t.od)})
+return A.au([B.Sa,A.apA(!0),B.S_,A.apA(!1),B.Sy,new A.JN(A.y4(q)),B.Sn,new A.IE(A.y4(q)),B.Sr,new A.Jb(A.y4(q)),B.yb,new A.w5(!1,A.y4(q)),B.jX,A.aCv(),B.Ss,new A.Jd(A.y4(q)),B.SO,new A.LQ(A.y4(q))],t.u,t.od)})
 s($,"aJx","al8",()=>{var q,p,o,n=t.F,m=A.z(t.Vz,n)
 for(q=A.aw("a2"),p=0;p<2;++p){o=B.iQ[p]
 m.T(0,A.au([A.dG(B.aC,!1,!1,!1,o),B.ii,A.dG(B.aC,!1,!0,!1,o),B.il,A.dG(B.aC,!0,!1,!1,o),B.ij,A.dG(B.av,!1,!1,!1,o),B.dW,A.dG(B.av,!1,!0,!1,o),B.dX,A.dG(B.av,!0,!1,!1,o),B.ik],q,n))}m.m(0,B.hd,B.cW)
@@ -83996,8 +84001,8 @@ m.m(0,B.xr,B.fn)
 m.m(0,B.xs,B.fo)
 m.m(0,B.xv,B.m6)
 m.m(0,B.xw,B.m7)
-m.m(0,B.LQ,B.m2)
-m.m(0,B.LR,B.m3)
+m.m(0,B.LV,B.m2)
+m.m(0,B.LW,B.m3)
 m.m(0,B.ey,B.iD)
 m.m(0,B.ez,B.iE)
 m.m(0,B.jI,B.fp)
@@ -84006,14 +84011,14 @@ m.m(0,B.xh,B.lB)
 m.m(0,B.xg,B.lA)
 m.m(0,B.xk,B.kP)
 m.m(0,B.jA,B.kS)
-m.m(0,B.LC,B.kU)
-m.m(0,B.LN,B.kR)
+m.m(0,B.LH,B.kU)
+m.m(0,B.LS,B.kR)
 m.m(0,B.h7,B.p)
 m.m(0,B.h8,B.p)
 return m})
 s($,"aJw","ao9",()=>$.al8())
 s($,"aJy","ave",()=>$.ao9())
-s($,"aJA","aoa",()=>A.au([B.Lo,B.fk,B.Lp,B.fj,B.Lc,B.dZ,B.Lq,B.e_,B.LU,B.m7,B.LV,B.m6,B.LY,B.m2,B.LW,B.m3,B.Ld,B.fp,B.Lr,B.fq,B.Ls,B.dZ,B.Lt,B.e_,B.LM,B.dW,B.Lf,B.dX,B.Lg,B.cX,B.Lh,B.cW,B.LI,B.cY,B.Li,B.cZ,B.Lv,B.fo,B.Lw,B.fn,B.LG,B.CP,B.Lx,B.CQ,B.LJ,B.iD,B.Lj,B.iE,B.Lk,B.cY,B.Ll,B.cZ,B.Lu,B.dW,B.M_,B.dX],t.Vz,t.F))
+s($,"aJA","aoa",()=>A.au([B.Lt,B.fk,B.Lu,B.fj,B.Lh,B.dZ,B.Lv,B.e_,B.LZ,B.m7,B.M_,B.m6,B.M2,B.m2,B.M0,B.m3,B.Li,B.fp,B.Lw,B.fq,B.Lx,B.dZ,B.Ly,B.e_,B.LR,B.dW,B.Lk,B.dX,B.Ll,B.cX,B.Lm,B.cW,B.LN,B.cY,B.Ln,B.cZ,B.LA,B.fo,B.LB,B.fn,B.LL,B.CP,B.LC,B.CQ,B.LO,B.iD,B.Lo,B.iE,B.Lp,B.cY,B.Lq,B.cZ,B.Lz,B.dW,B.M4,B.dX],t.Vz,t.F))
 s($,"aJB","avg",()=>{var q=A.lJ($.al8(),t.Vz,t.F)
 q.T(0,$.aoa())
 q.m(0,B.hb,B.cg)
@@ -84045,9 +84050,9 @@ m.m(0,B.xn,B.fl)
 m.m(0,B.xo,B.fm)
 m.m(0,B.xt,B.lX)
 m.m(0,B.xu,B.lY)
-m.m(0,B.LE,B.iB)
-m.m(0,B.LF,B.iC)
-m.m(0,B.LA,B.kT)
+m.m(0,B.LJ,B.iB)
+m.m(0,B.LK,B.iC)
+m.m(0,B.LF,B.kT)
 m.m(0,B.hb,B.wJ)
 m.m(0,B.hc,B.wK)
 m.m(0,B.h9,B.iB)
@@ -84060,14 +84065,14 @@ m.m(0,B.xe,B.lB)
 m.m(0,B.xi,B.lA)
 m.m(0,B.xf,B.kP)
 m.m(0,B.xB,B.kS)
-m.m(0,B.LZ,B.kU)
-m.m(0,B.LD,B.kR)
-m.m(0,B.LT,B.ch)
+m.m(0,B.M3,B.kU)
+m.m(0,B.LI,B.kR)
+m.m(0,B.LY,B.ch)
 m.m(0,B.jA,B.cg)
-m.m(0,B.La,B.cX)
-m.m(0,B.Le,B.cW)
-m.m(0,B.Lz,B.cZ)
-m.m(0,B.LK,B.cY)
+m.m(0,B.Lf,B.cX)
+m.m(0,B.Lj,B.cW)
+m.m(0,B.LE,B.cZ)
+m.m(0,B.LP,B.cY)
 m.m(0,B.h7,B.p)
 m.m(0,B.h8,B.p)
 return m})
@@ -84081,8 +84086,8 @@ q.m(0,B.h9,B.CL)
 q.m(0,B.ha,B.CM)
 q.m(0,B.xp,B.fl)
 q.m(0,B.xq,B.fm)
-q.m(0,B.LO,B.lZ)
-q.m(0,B.LP,B.m_)
+q.m(0,B.LT,B.lZ)
+q.m(0,B.LU,B.m_)
 return q})
 s($,"aJE","aoc",()=>{var q,p,o,n=t.F,m=A.z(t.Vz,n)
 for(q=A.aw("a2"),p=0;p<2;++p){o=B.iQ[p]
@@ -84120,7 +84125,7 @@ q.m(0,B.h9,B.p)
 q.m(0,B.xq,B.p)
 q.m(0,B.xp,B.p)
 return q})
-r($,"aLW","aoj",()=>new A.PC(B.Uf,B.a1))
+r($,"aLW","aoj",()=>new A.PC(B.Uk,B.a1))
 s($,"aLV","awt",()=>A.fQ(1,0,t.i))
 s($,"aKT","iu",()=>A.aA1())
 s($,"aLU","aws",()=>A.dm(16667,0))
