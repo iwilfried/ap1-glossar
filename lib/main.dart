@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
-import 'package:nasa/constants/colors.dart';
-import 'package:nasa/constants/theme.dart';
-import 'package:nasa/screens/Home_page/home_page.dart';
-import 'package:nasa/screens/welcome_page/main_screen.dart';
+import 'package:ap1_glossar/constants/colors.dart';
+import 'package:ap1_glossar/constants/theme.dart';
+import 'package:ap1_glossar/screens/Home_page/home_page.dart';
+import 'package:ap1_glossar/screens/welcome_page/main_screen.dart';
 
 void main() => runApp(const MyApp());
 

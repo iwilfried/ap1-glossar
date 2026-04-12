@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:nasa/constants/colors.dart';
+import 'package:ap1_glossar/constants/colors.dart';
 
 class AppTheme {
   static const color = AppColors.color;

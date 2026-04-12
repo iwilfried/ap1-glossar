@@ -1,11 +1,11 @@
 {
-    "name": "nasa",
-    "short_name": "nasa",
+    "name": "AP1 Glossar – IHK Prüfungsvorbereitung",
+    "short_name": "AP1 Glossar",
     "start_url": ".",
     "display": "standalone",
-    "background_color": "#0175C2",
-    "theme_color": "#0175C2",
-    "description": "A new Flutter project.",
+    "background_color": "#1B3A5C",
+    "theme_color": "#1B3A5C",
+    "description": "98 Fachbegriffe für die AP1-Abschlussprüfung Fachinformatiker – mit Bewertungsaspekt-Filter",
     "orientation": "portrait-primary",
     "prefer_related_applications": false,
     "icons": [

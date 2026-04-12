@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
-import 'package:nasa/constants/colors.dart';
-import 'package:nasa/data/data.dart';
-import 'package:nasa/screens/Home_page/widgets/drawer.dart';
+import 'package:ap1_glossar/constants/colors.dart';
+import 'package:ap1_glossar/data/data.dart';
+import 'package:ap1_glossar/screens/Home_page/widgets/drawer.dart';
 
 // ── Filterwerte ───────────────────────────────────────────────────────────────
 enum Aspekt { alle, funktional, oekonomisch, oekologisch, sozial }

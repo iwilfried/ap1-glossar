@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:nasa/constants/colors.dart';
+import 'package:ap1_glossar/constants/colors.dart';
 import '../../about_page/about_screen.dart';
 
 class AppDrawer extends StatelessWidget {
