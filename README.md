@@ -1,15 +1,32 @@
-# nasa
-A nasa earth dictonary. abbriviations used in NASA and its details.
+# IHK AP1 Glossar – Flutter App
 
-## Getting Started
+Ein vollständiges Glossar mit **92 Fachbegriffen** für die IHK-Abschlussprüfung Teil 1 (AP1) der IT-Berufe (Fachinformatiker Systemintegration / Anwendungsentwicklung).
 
-This project is a starting point for a Flutter application.
+## Inhalte
 
-A few resources to get you started if this is your first Flutter project:
+Kategorien mit Definitionen aus echten AP1-Prüfungen (2021–2026):
 
-- [Lab: Write your first Flutter app](https://flutter.dev/docs/get-started/codelab)
-- [Cookbook: Useful Flutter samples](https://flutter.dev/docs/cookbook)
+| Kategorie | Begriffe |
+|---|---|
+| 🌐 Netzwerk | IPv4, IPv6, DHCP, DNS, OSI-Modell, TCP, UDP, Subnetting, APIPA, MAC, ARP, VPN, Switch, Router, Firewall, WLAN |
+| 🔒 IT-Sicherheit | Schutzziele (CIA), Virus, Trojaner, Ransomware, Phishing, Endpoint-Security, Verschlüsselung, Hashverfahren, 2FA, TOM, BYOD, Härtung |
+| 🖥️ Hardware | CPU, RAM, DDR4/DDR5, SSD, HDD, NVMe, SMART, Monitoranschlüsse, Netzteil, Geräteklassen, BIOS/UEFI, Bootvorgang |
+| 🔢 Berechnungen | Dateigrößen, Übertragungsdauer, Stromkosten, Amortisation, AfA, Netzteil-Leistung, RGB-Farbraum |
+| 📊 Projektplanung | Netzplan, Gantt, ERM, UML Use-Case, Aktivitätsdiagramm, BPMN, Schreibtischtest, Lastenheft, SMART-Kriterien |
+| ⚙️ Programmierung | Compiler vs. Interpreter, Pseudocode, Barrierefreiheit |
+| 💶 Wirtschaft & Recht | Nutzwertanalyse, TCO, Leasing, Handelskalkulation, Ratendarlehen, Stundensatz, Rabatt/Skonto |
+| 🔐 Datenschutz | DSGVO, BDSG, Betroffenenrechte, Anonymisierung, Pseudonymisierung |
+| 🌿 Ökologie | 80-PLUS, ElektroG, RoHS, EPEAT, Blauer Engel, PUE, LkSG, Green IT |
 
-For help getting started with Flutter, view our
-[online documentation](https://flutter.dev/docs), which offers tutorials,
-samples, guidance on mobile development, and a full API reference.
+## Technologie
+
+- Flutter (Dart) – läuft auf Android, iOS und Web
+- Ursprung: Fork von `nasa-earth-dictionary-final`
+- Datenquelle: Analyse von 10 echten IHK AP1-Prüfungen (2021–2026)
+
+## Starten
+
+```bash
+flutter pub get
+flutter run
+```

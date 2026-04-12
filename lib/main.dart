@@ -12,7 +12,7 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-      title: 'NASA Abbreviation',
+      title: 'AP1 Glossar – IHK Prüfungsvorbereitung',
       theme: AppTheme.lightTheme,
       darkTheme: AppTheme.darkTheme,
       // To Navigate to the first page

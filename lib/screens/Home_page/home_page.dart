@@ -22,7 +22,7 @@ class HomePageState extends State<HomePage> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: const Text("ECOMMERCE Definitionen"),
+        title: const Text("IHK AP1 – Glossar"),
         centerTitle: true,
         scrolledUnderElevation: 0,
       ),
@@ -41,7 +41,7 @@ class HomePageState extends State<HomePage> {
               },
               decoration: InputDecoration(
                 border: const OutlineInputBorder(),
-                hintText: 'Type Something',
+                hintText: 'Begriff suchen ...',
                 prefixIcon: const Icon(Icons.search),
                 isDense: true,
                 suffixIcon: IconButton(

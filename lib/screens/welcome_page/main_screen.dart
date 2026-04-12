@@ -39,7 +39,7 @@ class _WelcomeScreenState extends State<WelcomeScreen> {
                     padding: const EdgeInsets.symmetric(vertical: 0, horizontal: 0),
                     child: RichText(
                       text: TextSpan(
-                        text: " Kaufleute im \n E-COMMERCE\n\n",
+                        text: " IHK\n AP1\n\n",
                         //textAlign: TextAlign.center,
                         style: GoogleFonts.oswald(
                           textStyle: const TextStyle(
@@ -49,7 +49,7 @@ class _WelcomeScreenState extends State<WelcomeScreen> {
                         ),
                         children: [
                       TextSpan(
-                      text: "   GLOSSARY",
+                      text: "   GLOSSAR",
                      // textAlign: TextAlign.center,
                       style: GoogleFonts.oswald(
                         textStyle: const TextStyle(
@@ -68,7 +68,7 @@ class _WelcomeScreenState extends State<WelcomeScreen> {
                   const Padding(
                     padding: EdgeInsets.all(30.0),
                     child: Text(
-                      'Use this glossary to learn and understand vocabulary, terms and\n  definitions.',
+                      'Alle wichtigen Begriffe und Definitionen für die IHK-Abschlussprüfung Teil 1 (AP1) – Fachinformatiker und IT-Berufe.',
                       maxLines: 5,
                       textAlign: TextAlign.center,
                       style: TextStyle(
