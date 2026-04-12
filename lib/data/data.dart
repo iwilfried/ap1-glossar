@@ -1,5 +1,5 @@
 // AP1 Glossar – IHK Abschlussprüfung Teil 1
-// 98 Begriffe | Kategorien: Funktional · Ökonomisch · Ökologisch · Sozial
+// 233 Begriffe | Kategorien: Funktional · Ökonomisch · Ökologisch · Sozial · Berechnung
 // Basiert auf 10 echten AP1-Prüfungen (2021–2026) und dem IHK-Prüfungskatalog
 
 /// Begriff → vollständige Definition
@@ -388,6 +388,90 @@ Map<String, String> abbreviations = <String, String>{
       "Classless Inter-Domain Routing: flexible Subnetzaufteilung durch Präfixnotation (z. B. 192.168.1.0/24). /24 = 256 Adressen (254 nutzbar). /25 = 128 Adressen. Formel: Hostanzahl = 2^(32−Präfix) − 2. Ersetzt klassenbasiertes Routing (Class A/B/C). Grundlage des Subnetting.",
   "Grundschutz-Maßnahmen":
       "BSI IT-Grundschutz: Bausteine für sichere IT (technisch, organisatorisch, infrastrukturell, personell). ISMS-Rahmenwerk nach ISO 27001. Schutzbedarfsfeststellung: normal/hoch/sehr hoch. Maßnahmen: Basis-Absicherung, Standard-Absicherung, Kern-Absicherung.",
+  "ASCII vs. Binärformat":
+      "ASCII: Textbasiertes Dateiformat – jedes Zeichen wird als lesbare Zeichenkette gespeichert (z. B. \"172.5\" = 5 Bytes). Binärformat: Wert direkt als Bitmuster gespeichert (172.5 als 32-Bit-Float = 4 Bytes). Binär: kompakter, schneller; ASCII: lesbar, portabler.",
+  "Biometrie":
+      "Authentifizierung anhand körperlicher Merkmale: Fingerabdruck, Iris-Scan, Gesichtserkennung, Handvenenmuster. Merkmale: fälschungsresistenter als Passwort, komfortabler, aber: nicht rücksetzbar bei Kompromittierung. Kombination mit PIN = Zwei-Faktor-Authentisierung.",
+  "Blickschutzfolie":
+      "Sichtschutzfolie auf Displays: verhindert Schulterblicken (Side-Channel-Angriff) – Displayinhalt nur im engen Blickwinkel (z. B. 60°) sichtbar. Maßnahme zum Schutz vertraulicher Daten im öffentlichen Raum oder im Außendienst. Kategorie: physische Sicherheitsmaßnahme.",
+  "Dockingstation":
+      "Verbindungseinheit für Notebooks: ein Steckanschluss (USB-C/Thunderbolt) ersetzt alle Peripherieanschlüsse (Monitor, Tastatur, Maus, LAN, Drucker). Ermöglicht ergonomischen Festarbeitsplatz bei mobilen Geräten. Wichtig: Thunderbolt 4 = bis 40 Gbit/s, USB-C DP-Alt-Modus für Videoausgabe.",
+  "Dual Channel":
+      "Speicherarchitektur: Zwei RAM-Riegel im Dual-Channel-Betrieb verdoppeln die Speicherbandbreite gegenüber Single-Channel. Voraussetzung: passende Steckplätze (meist farblich markiert), gleiche Kapazität und Typ (z. B. 2× DDR4-3200 16 GB). Vorteil besonders bei integrierten Grafikeinheiten.",
+  "Fremdvergabe (Outsourcing)":
+      "Auslagerung von IT-Leistungen an externe Anbieter. Vorteile: Kostensenkung, Fokus auf Kernkompetenz, Skalierbarkeit. Nachteile: Abhängigkeit vom Anbieter, Know-how-Verlust, Datenschutzrisiken (DSGVO: Auftragsverarbeitungsvertrag erforderlich), eingeschränkte Kontrolle. Entscheidung: Make-or-Buy-Analyse.",
+  "Grafikkarte":
+      "GPU (Graphics Processing Unit): berechnet Bildinhalte für den Monitor. Kenngrößen: VRAM (für hochauflösende Texturen, z. B. 8–16 GB), CUDA-Kerne/Shader, TDP (Verlustleistung, relevant für Netzteilauswahl). Anschlüsse: DisplayPort, HDMI, USB-C (Alt-Mode). Bei CAD/3D: professionelle Workstation-GPUs (NVIDIA Quadro/RTX) bevorzugt.",
+  "Klassendiagramm (UML)":
+      "UML-Strukturdiagramm: zeigt Klassen (Attributname: Typ, +Methode(): Rückgabetyp), Beziehungen (Assoziation, Vererbung [Pfeil mit leerem Dreieck], Aggregation [Raute], Komposition [gefüllte Raute]) und Multiplizitäten (1, *, 0..1). Unterschied zum ER-Diagramm: Klassendiagramm modelliert objektorientierte Softwarestruktur, ER-Diagramm Datenbankstruktur.",
+  "Kritischer Pfad":
+      "Im Netzplan: längster Weg vom Start- zum Endknoten ohne Puffer (Gesamtpuffer = 0). Bestimmt die Mindestprojektdauer. Methode: Vorwärtsrechnung (früheste Zeitpunkte) → Rückwärtsrechnung (späteste Zeitpunkte) → Puffer = spätester - frühester Zeitpunkt. Kritische Vorgänge: keinerlei Verzögerung zulässig.",
+  "MwSt.-Berechnung":
+      "Netto + 19% USt = Brutto (Standardsatz DE). Brutto ÷ 1,19 = Netto. Berechnung: Netto × 0,19 = USt-Betrag. Sonderfall: 7% für bestimmte Güter. Im B2B: Vorsteuerabzug möglich. Prüfungsrelevant: Gesamtkostenberechnung (z. B. H2024: Nettobetrag + 19% → Brutto). Nettobetrag immer zuerst vollständig berechnen.",
+  "Preisnachlass (Rabatt / Skonto)":
+      "Rabatt: prozentualer Preisnachlass auf den Listenpreis (z. B. Mengenrabatt 5%). Skonto: Zahlungsanreiz bei frühzeitiger Zahlung (z. B. 2% bei Zahlung innerhalb 14 Tagen). Berechnung: Listenpreis × (1 – Rabatt) = Zieleinkaufspreis; × (1 – Skonto) = Bareinkaufspreis. Kalkulation: Rabatt vor Skonto abziehen.",
+  "QR-Code":
+      "Quick Response Code – 2D-Barcode (Matrix-Code): codiert bis zu 4.296 alphanumerische Zeichen oder URLs. Aufbau: 3 Positionsquadrate (Ecken), Timing-Muster, Datenmodule. Fehlerkorrektur: Level L (7%), M (15%), Q (25%), H (30%) – je höher, desto mehr Daten beschädigt tolerierbar. Anwendung: Links, Kontakte, WLAN-Zugangsdaten, Produktnummern.",
+  "Rollout":
+      "Auslieferung und Inbetriebnahme neuer IT-Systeme/Software in der Breite. Phasen: Pilotinstallation → Tests → Rollout-Plan (Zeitplan, Verantwortliche) → Deployment (automatisiert via MDM/SCCM/Ansible) → Schulung → Go-live. Gegenstrategie bei Problemen: Rollback. Risikominimierung durch stufenweises Vorgehen (Pilotgruppe → alle).",
+  "SaaS vs. On-Premise":
+      "SaaS (Software as a Service): Software läuft beim Anbieter, Zugriff per Browser/API, monatliche Abo-Kosten (OPEX), automatische Updates, kein Infrastrukturaufwand. On-Premise: Software auf eigenen Servern, einmalige Lizenz (CAPEX), volle Datenkontrolle, selbst verantwortlich für Updates/Betrieb. Entscheidungskriterien: Datenschutzvorgaben, Customizierungsbedarf, TCO.",
+  "Telearbeitsplatz":
+      "Vom Arbeitgeber eingerichteter häuslicher Arbeitsplatz (§ 2 ArbStättV). Anforderungen: feste zeitliche Vereinbarung, Einhaltung ArbStättV (Ergonomie, Beleuchtung), Bereitstellung von Arbeitsmitteln. Unterschied zu mobiler Arbeit: fester Ort, vertragliche Regelung, Arbeitgeber trägt Einrichtungskosten. DSGVO: sichere Datenübertragung (VPN), Bildschirmsperre.",
+  "TPM":
+      "Trusted Platform Module – Sicherheitschip auf dem Mainboard (TPM 2.0 = Windows-11-Voraussetzung). Funktionen: sichere Schlüsselgenerierung/-speicherung, Plattformintegrität (Secure Boot), Festplattenverschlüsselung (BitLocker). Arbeitet mit UEFI zusammen: Systemzustand wird gemessen (PCR-Register) – Manipulationen am Boot-Prozess werden erkannt.",
+  "Webentwicklung (Grundlagen)":
+      "Frontend: HTML (Struktur), CSS (Gestaltung), JavaScript (Interaktion). Backend: serverseitige Logik (PHP, Python, Node.js), Datenbankanbindung. HTTP/HTTPS: Kommunikationsprotokoll (GET, POST, PUT, DELETE). Responsive Design: CSS Media Queries, Viewport. Barrierefreiheit: WCAG, semantisches HTML (alt-Attribute, aria-label, Kontrast ≥ 4,5:1).",
+  "Redundanz (IT)":
+      "Mehrfache Auslegung kritischer Komponenten zur Ausfallsicherheit. Beispiele: RAID (Datenspeicherung), USV (Stromversorgung), Clustering (Server), Dual WAN (Internetanbindung). Kennzahlen: MTBF (mittlere Zeit zwischen Ausfällen), Verfügbarkeit in % (99,9% = 8,76h Ausfall/Jahr). Ziel: Hochverfügbarkeit kritischer Systeme gemäß SLA.",
+  "Programmiersprachen (Auswahl)":
+      "Kriterien zur Auswahl: Anwendungsbereich (Web: JS/TypeScript; System: C/C++/Rust; KI: Python; Mobile: Kotlin/Swift; Enterprise: Java/C#), Plattformunabhängigkeit (Java/Python vs. C), Typisierung (statisch: Java/C# vs. dynamisch: Python/JS), Teamkenntnisse. Unterschied: kompiliert (C, Java → Bytecode) vs. interpretiert (Python, JS).",
+  "Schutzbedarf":
+      "Einstufung von IT-Systemen und Daten nach dem potenziellen Schaden bei Verlust der Schutzziele (CIA). BSI-Schutzbedarfskategorien: normal (begrenzte Auswirkungen), hoch (erhebliche Auswirkungen), sehr hoch (existenzbedrohende Auswirkungen). Grundlage für Auswahl angemessener Schutzmaßnahmen im BSI-Grundschutz-Prozess.",
+  "Gesamtkosten-Berechnung":
+      "Prüfungsaufgabe: Gesamtkosten über mehrere Jahre ermitteln. Schema: (Stückzahl × Einheitspreis) + (Jahreskosten × Laufzeit) + Einmalkosten = Netto; + 19% MwSt. = Brutto. Beispiel H2024: 65 × 512 € + 80 × 39 € + 2.300 € + 5 × 349 € = 39.405 € netto; × 1,19 = 46.891,95 € brutto. Rechenweg schrittweise darstellen.",
+  "Tilgungsplan":
+      "Tabellarische Kreditrückzahlung: Spalten: Jahr, Restschuld (Beginn), Zinsen (Restschuld × Zinssatz), Tilgung (gleichmäßige Rate), Annuität (Zinsen + Tilgung), Restschuld (Ende). Beispiel H2024: 12.000 € Kredit, 6% p.a., 3 Jahre → Tilgung je 4.000 €, Zinsen fallend: Jahr 1: 720 € / Jahr 2: 480 € / Jahr 3: 240 €.",
+  "Auftragsverarbeitung (AVV)":
+      "Vertrag nach Art. 28 DSGVO: Pflicht bei Weitergabe personenbezogener Daten an externe Dienstleister (z. B. Cloud-Anbieter, IT-Dienstleister). Inhalt: Gegenstand und Dauer, Weisungsrecht des Auftraggebers, Sicherheitsmaßnahmen (TOM), Subauftragsverarbeitung, Rückgabe/Löschung nach Auftragsende. Fehlt AVV: Datenschutzverstoß.",
+  "Einheiten-Umrechnung (IT)":
+      "Bit/Byte: 1 Byte = 8 Bit. Dezimal (SI): 1 KB = 1.000 B, 1 MB = 1.000.000 B. Binär (IEC): 1 KiB = 1.024 B, 1 MiB = 1.048.576 B. Prüfungsrelevant: Dateigrößen in KiB berechnen. Übertragungsraten: in Bit/s (bps) – ÷ 8 für Byte/s bei Download-Dauerberechnung. Präfixe: Kilo/Kibi, Mega/Mebi, Giga/Gibi.",
+  "Datenformate":
+      "Verbreitete Formate: Bild (JPEG=verlustbehaftet, PNG=verlustlos+Transparenz, SVG=vektorbasiert), Dokument (PDF=plattformunabhängig, DOCX, ODF), Daten (CSV=tabellarisch, JSON=strukturiert, XML=hierarchisch). CAD: STL (3D-Druck), OBJ, PLY. Auswahl nach Anwendungsfall: Kompatibilität, Dateigröße, Editierbarkeit, Offenheit des Formats.",
+  "Backup-Typen":
+      "Vollsicherung: alle Daten, hoher Speicherbedarf, schnelle Wiederherstellung. Differenzielle Sicherung: Änderungen seit letzter Vollsicherung, mittlerer Aufwand. Inkrementelle Sicherung: Änderungen seit letztem Backup, geringster Speicherbedarf, aber längste Wiederherstellung. 3-2-1-Regel: 3 Kopien, 2 verschiedene Medien, 1 offsite (außerhalb Gebäude).",
+  "Verfügbarkeit (Berechnung)":
+      "Verfügbarkeit = (Gesamtzeit − Ausfallzeit) ÷ Gesamtzeit × 100 %. Beispiel: 365 Tage × 24h = 8.760h; 8h Ausfall → 99,91% Verfügbarkeit. SLA-Klassen: 99% = 87,6h/Jahr, 99,9% = 8,76h, 99,99% = 52,6 min (\"Vierneun\"). Relevant bei Hochverfügbarkeitsanforderungen und SLA-Verhandlungen mit Dienstleistern.",
+  "IPv4-Adressklassen":
+      "Klasse A: 0.0.0.0–127.255.255.255 (/8). Klasse B: 128.0.0.0–191.255.255.255 (/16). Klasse C: 192.0.0.0–223.255.255.255 (/24). Private Bereiche: 10.0.0.0/8, 172.16.0.0/12, 192.168.0.0/16 → kein Routing im Internet. Loopback: 127.0.0.1. Heute: klassenlos (CIDR) statt fester Adressklassen. Klasse D: Multicast, Klasse E: reserviert.",
+  "Netzmaske":
+      "Bestimmt Netzwerk- und Hostteil einer IPv4-Adresse. CIDR-Notation: /24 = 255.255.255.0 (256 Adressen, 254 nutzbar). Subnetting: /25 → 2 Subnetze à 126 Hosts. Broadcast: letzte Adresse. Netzadresse: erste (nicht nutzbar). Berechnung Hostanzahl: 2^(32−Präfix) − 2. Wildcard-Maske = invertierte Subnetzmaske (für ACLs).",
+  "Energieeffizienz-Berechnung":
+      "Wirkungsgrad η = Nutzleistung / Eingangsleistung × 100 %. Netzteil 80 PLUS Gold: 90% bei 50% Last → 500W Systemlast → 556W aus Steckdose. Verlustleistung = Eingangsleistung − Nutzleistung. Stromkosten = Leistungsaufnahme [kW] × Zeit [h] × Strompreis [€/kWh]. Prüfungsformel immer schrittweise aufschreiben.",
+  "Dateirechte (Windows)":
+      "NTFS-Berechtigungen: Vollzugriff, Ändern, Lesen & Ausführen, Ordner auflisten, Lesen, Schreiben. Vererbung: Unterordner erben von übergeordneten Ordnern. Explizite Verweigerung überschreibt Erlaubnis. ACL (Access Control List) = Liste aller Zugriffsberechtigungen. Unterschied Linux: Windows feinere Granularität (keine einfache rwx-Oktalnotation).",
+  "Laufende vs. einmalige Kosten":
+      "Einmalige Kosten (CAPEX): Anschaffung Hardware, Installationskosten, Lizenzkauf (perpetual). Laufende Kosten (OPEX): Strom, Wartung, Support, Abo-Lizenzen (SaaS), Personal. Monatliche Gesamtkosten = (einmalige Kosten ÷ Nutzungsdauer in Monaten) + monatliche OPEX. Relevanz: Make-or-Buy-Analyse, TCO, Leasingentscheidung.",
+  "Kaufvertrag (Inhalte)":
+      "Wesentliche Bestandteile: Vertragsparteien, Kaufgegenstand (Menge, Qualität), Kaufpreis, Zahlungsbedingungen (Zahlungsziel, Skonto), Lieferbedingungen (Ort, Termin), Eigentumsübergang (bei Zahlung), Gewährleistung (24 Monate, § 438 BGB). Formvorschrift: i.d.R. keine (Ausnahme: Grundstücke, Bürgschaften). Angebot + Annahme = Vertrag.",
+  "Protokolltypen (Überblick)":
+      "Übertragungsprotokolle: TCP (verbindungsorientiert, zuverlässig, 3-Way-Handshake), UDP (verbindungslos, schnell, keine Fehlerkorrektur). Anwendungsprotokolle: HTTP/HTTPS (Web, Port 80/443), FTP/SFTP (Dateiübertragung, 21/22), SMTP/IMAP/POP3 (E-Mail), SSH (Fernwartung, Port 22), DNS (Port 53), SNMP (161). OSI-Schicht-Zuordnung prüfungsrelevant.",
+  "Netzplan (Methodik)":
+      "Projektplanungsmethode: Knoten = Vorgänge (FAZ, FEZ, SAZ, SEZ, GP), Pfeile = Abhängigkeiten. Vorwärtsrechnung: FAZ + Dauer = FEZ. Rückwärtsrechnung: SEZ − Dauer = SAZ. Gesamtpuffer GP = SAZ − FAZ. Kritischer Pfad: GP = 0. Unterschied Gantt-Diagramm: Netzplan zeigt Abhängigkeiten, Gantt zeigt zeitlichen Verlauf (Balkendiagramm).",
+  "Beschaffungsprozess":
+      "Phasen: Bedarfsermittlung → Marktanalyse/Lieferantenauswahl → Anfrage → Angebotsvergleich (Nutzwertanalyse) → Bestellung (Kaufvertrag) → Wareneingang/-prüfung → Rechnungsprüfung/Zahlung. Quantitative Kriterien: Preis, Lieferzeit. Qualitative Kriterien: Service, Zertifizierungen, Referenzen. Dokumentation für Revision und Revision.",
+  "Netzwerkkonfiguration (Praxis)":
+      "Statische IP: manuelle Vergabe (IP-Adresse, Subnetzmaske, Standardgateway, DNS). Dynamisch: DHCP-Server vergibt automatisch. APIPA-Fallback: 169.254.x.x. Windows: ipconfig /all (Anzeige), netsh (CLI-Konfiguration). Linux: ip addr, ip route. Diagnosebefehle: ping (Erreichbarkeit), tracert/traceroute (Pfad), nslookup/dig (DNS).",
+  "Cloud-Deployment-Modelle":
+      "Public Cloud: Ressourcen beim Anbieter (AWS, Azure, GCP), mandantenfähig, kein Eigenaufwand. Private Cloud: eigene Infrastruktur oder dediziert beim Anbieter, höhere Kontrolle. Hybrid Cloud: Kombination aus Public + Private (Sensitive Daten privat, Skalierung public). Multi-Cloud: mehrere Anbieter parallel für Unabhängigkeit.",
+  "Angriffsvektoren":
+      "Technisch: Phishing (gefälschte E-Mails/Sites), Ransomware (Verschlüsselung + Erpressung), DDoS (Überlastung durch Massenzugriffe), Man-in-the-Middle (Datenstrom abfangen), SQL-Injection (Datenbankmanipulation). Social Engineering: Vishing (Telefon), Pretexting (falsche Identität). Schutz: Awareness-Training, Technische Maßnahmen (IDS/IPS, WAF).",
+  "Rechnung prüfen":
+      "Prüfungsaufgabe: Rechnung auf Rechenfehler kontrollieren. Schritte: Einzelpositionen (Menge × Preis) prüfen, Rabatt korrekt abziehen, Nettobetrag summieren, MwSt. (19%) berechnen, Bruttobetrag vergleichen. Skonto: nur wenn Zahlung innerhalb Skontofrist. Häufige Fehler: falscher MwSt.-Satz, Skonto auf Brutto statt Netto, falsche Multiplikation.",
+  "Ergonomierichtlinien (ArbStättV)":
+      "Arbeitsstättenverordnung Anhang 6: Bildschirmarbeitsplätze. Anforderungen: Sehabstand 50–80 cm, Oberkante Monitor auf Augenhöhe, einstellbare Bildschirmneigung, keine Reflexionen/Blendung, Beleuchtung 500 Lux, höhenverstellbarer Stuhl + Tisch, ausreichend Beinfreiheit. Tablet = nicht normkonform (Bildschirm zu klein, keine Ergonomie-Einstellung).",
+  "IT-Grundschutz-Kompendium":
+      "BSI-Nachschlagewerk mit modularen Bausteinen für alle IT-Komponenten: ISMS (Sicherheitsmanagement), ORP (Organisation/Personal), CON (Konzepte), OPS (Betrieb), APP (Anwendungen), SYS (IT-Systeme), NET (Netze), INF (Infrastruktur). Jeder Baustein enthält: Gefährdungen + Anforderungen (MUSS/SOLLTE/KANN). Grundlage für BSI-Grundschutz-Zertifizierung.",
 };
 
 Map<String, String> termAspect = <String, String>{
@@ -582,4 +666,46 @@ Map<String, String> termAspect = <String, String>{
   "Dateirechte (Linux)": "Funktional",
   "CIDR": "Funktional",
   "Grundschutz-Maßnahmen": "Funktional",
+  "ASCII vs. Binärformat": "Funktional",
+  "Angriffsvektoren": "Funktional",
+  "Auftragsverarbeitung (AVV)": "Sozial",
+  "Backup-Typen": "Funktional",
+  "Beschaffungsprozess": "Ökonomisch",
+  "Biometrie": "Funktional",
+  "Blickschutzfolie": "Funktional",
+  "Cloud-Deployment-Modelle": "Funktional",
+  "Dateirechte (Windows)": "Funktional",
+  "Datenformate": "Funktional",
+  "Dockingstation": "Funktional",
+  "Dual Channel": "Funktional",
+  "Einheiten-Umrechnung (IT)": "Berechnung",
+  "Energieeffizienz-Berechnung": "Berechnung",
+  "Ergonomierichtlinien (ArbStättV)": "Sozial",
+  "Fremdvergabe (Outsourcing)": "Ökonomisch",
+  "Gesamtkosten-Berechnung": "Berechnung",
+  "Grafikkarte": "Funktional",
+  "IPv4-Adressklassen": "Funktional",
+  "IT-Grundschutz-Kompendium": "Funktional",
+  "Kaufvertrag (Inhalte)": "Ökonomisch",
+  "Klassendiagramm (UML)": "Funktional",
+  "Kritischer Pfad": "Funktional",
+  "Laufende vs. einmalige Kosten": "Ökonomisch",
+  "MwSt.-Berechnung": "Berechnung",
+  "Netzmaske": "Funktional",
+  "Netzplan (Methodik)": "Funktional",
+  "Netzwerkkonfiguration (Praxis)": "Funktional",
+  "Preisnachlass (Rabatt / Skonto)": "Ökonomisch",
+  "Programmiersprachen (Auswahl)": "Funktional",
+  "Protokolltypen (Überblick)": "Funktional",
+  "QR-Code": "Funktional",
+  "Rechnung prüfen": "Berechnung",
+  "Redundanz (IT)": "Funktional",
+  "Rollout": "Funktional",
+  "SaaS vs. On-Premise": "Ökonomisch",
+  "Schutzbedarf": "Funktional",
+  "TPM": "Funktional",
+  "Telearbeitsplatz": "Sozial",
+  "Tilgungsplan": "Berechnung",
+  "Verfügbarkeit (Berechnung)": "Berechnung",
+  "Webentwicklung (Grundlagen)": "Funktional",
 };
