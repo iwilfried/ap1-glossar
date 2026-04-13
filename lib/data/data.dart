@@ -1,5 +1,5 @@
 // AP1 Glossar – IHK Abschlussprüfung Teil 1
-// 268 Begriffe | Kategorien: Funktional · Ökonomisch · Ökologisch · Sozial · Berechnung
+// 299 Begriffe | Kategorien: Funktional · Ökonomisch · Ökologisch · Sozial · Berechnung
 // Basiert auf 10 echten AP1-Prüfungen (2021–2026) und dem IHK-Prüfungskatalog
 
 /// Begriff → vollständige Definition
@@ -542,6 +542,68 @@ Map<String, String> abbreviations = <String, String>{
       "Regelt Mitbestimmung der Arbeitnehmer im Betrieb. Betriebsrat: ab 5 wahlberechtigten Arbeitnehmern. Echte Mitbestimmung (§ 87): Überstunden, Arbeitszeiten, Betriebsordnung → Zustimmungspflicht. Mitwirkung: Personalplanung, Einstellungen. Betriebsvereinbarung: normative Wirkung (wie Tarifvertrag). JAV (Jugend- und Auszubildendenvertretung): ab 5 Jugendlichen/Azubis.",
   "Entgeltformen":
       "Zeitlohn: Vergütung nach Arbeitszeit (Stunde/Monat) – planbar, leistungsunabhängig. Akkordlohn: nach Stückzahl (Geldakkord: Stücke × Geldsatz; Zeitakkord: Normalzeit × Zeitfaktor) – leistungsabhängig. Prämienlohn: Zeitlohn + Prämie für Mehrleistung (Qualität, Ersparnis). Tantieme: Gewinnbeteiligung (Führungskräfte). Vermögenswirksame Leistungen (VL): staatlich gefördert.",
+  "Personenbezogene Daten":
+      "Alle Informationen, die sich auf eine identifizierte oder identifizierbare natürliche Person beziehen (Art. 4 Nr. 1 DSGVO). Beispiele: Name, IP-Adresse, E-Mail, Standortdaten, Cookie-ID, Foto. Besonders schützenswert (Art. 9): Gesundheit, Biometrie, Religion, politische Meinung, Gewerkschaftszugehörigkeit. Juristische Personen (GmbH, AG) sind NICHT erfasst.",
+  "Einwilligung (DSGVO)":
+      "Freiwillige, informierte, eindeutige Zustimmung zur Datenverarbeitung (Art. 6 Abs. 1 lit. a DSGVO). Anforderungen: aktive Handlung (kein vorangekreuztes Kästchen), granular (je Zweck), widerrufbar (jederzeit, ohne Nachteile). Kinder unter 16 Jahren: Einwilligung der Erziehungsberechtigten erforderlich. Dokumentationspflicht des Verantwortlichen.",
+  "Datenschutzprinzipien":
+      "Sieben Grundsätze Art. 5 DSGVO: (1) Rechtmäßigkeit, Verarbeitung nach Treu und Glauben, Transparenz. (2) Zweckbindung (nur für festgelegte Zwecke). (3) Datenminimierung (nur das Notwendige). (4) Richtigkeit. (5) Speicherbegrenzung (nicht länger als nötig). (6) Integrität und Vertraulichkeit (TOM). (7) Rechenschaftspflicht (Nachweispflicht des Verantwortlichen).",
+  "Verarbeitungsverzeichnis":
+      "Verzeichnis aller Verarbeitungstätigkeiten (Art. 30 DSGVO): Pflicht für Unternehmen ab 250 Mitarbeiter (oder bei regelmäßiger/risikovoller Verarbeitung). Inhalt: Name/Kontakt des Verantwortlichen, Zweck der Verarbeitung, betroffene Personen und Datenkategorien, Empfänger, Löschfristen, TOM. Auf Anfrage der Aufsichtsbehörde vorzulegen.",
+  "Datenpanne (Art. 33 DSGVO)":
+      "Verletzung des Schutzes personenbezogener Daten (unbefugter Zugang, Verlust, Veränderung). Meldepflicht an Aufsichtsbehörde (z. B. LDA/BayLDA): innerhalb 72 Stunden nach Kenntnisnahme. Inhalt der Meldung: Art des Vorfalls, Kategorien/Anzahl betroffener Personen, wahrscheinliche Folgen, Abhilfemaßnahmen. Benachrichtigung Betroffener: wenn hohes Risiko.",
+  "Recht auf Vergessenwerden":
+      "Art. 17 DSGVO (Löschungsrecht): Betroffene können Löschung ihrer Daten verlangen, wenn: Zweck entfallen, Einwilligung widerrufen, unrechtmäßige Verarbeitung, gesetzliche Pflicht. Ausnahmen: gesetzliche Aufbewahrungspflichten (z. B. 10 Jahre GoB/Buchführung), öffentliches Interesse, Meinungsfreiheit. Technische Umsetzung: Daten auch aus Backups, Protokollen.",
+  "Datenschutz by Design / by Default":
+      "Art. 25 DSGVO – Eingebauter Datenschutz: By Design = Datenschutz schon bei Systementwicklung berücksichtigen (Privacy by Design, z. B. Ende-zu-Ende-Verschlüsselung ab Entwicklungsstart). By Default = datenschutzfreundlichste Voreinstellung (z. B. Newsletter opt-in statt opt-out). Beide Konzepte sind rechtliche Pflicht – keine freiwilligen Best Practices.",
+  "Auftraggeber vs. Auftragsverarbeiter":
+      "Verantwortlicher (Art. 4 Nr. 7 DSGVO): bestimmt Zweck und Mittel der Verarbeitung (z. B. Unternehmen das Cloud-Dienst nutzt). Auftragsverarbeiter (Art. 4 Nr. 8): verarbeitet nur auf Weisung (z. B. Cloud-Anbieter). Abgrenzung: entscheidet über das Warum = Verantwortlicher. AVV nach Art. 28 Pflicht. Gemeinsam Verantwortliche (Art. 26): beide bestimmen Zweck gemeinsam.",
+  "Drittlandübermittlung":
+      "Übermittlung personenbezogener Daten in Länder außerhalb EU/EWR (Art. 44 ff. DSGVO). Erlaubt mit: Angemessenheitsbeschluss der EU-Kommission (z. B. UK, Japan, USA nach EU-US Data Privacy Framework 2023), Standardvertragsklauseln (SCC), Binding Corporate Rules (BCR). USA: Klärung nach Schrems I+II – aktuell EU-US DPF als Rechtsgrundlage.",
+  "Cookies und ePrivacy":
+      "HTTP-Cookies: kleine Datendateien im Browser. Kategorien: technisch notwendig (keine Einwilligung nötig), Präferenz, Statistik, Marketing. TTDSG (§ 25): Einwilligung für nicht notwendige Cookies erforderlich (gilt auch für Tracking-Pixel, Fingerprinting). Cookie-Banner: aktive Zustimmung, kein dark pattern (gleich große Buttons). ePrivacy-Verordnung: EU-Entwurf noch ausstehend.",
+  "WCAG":
+      "Web Content Accessibility Guidelines – internationale Standards des W3C für barrierefreie Webinhalte. Aktuell: WCAG 2.1 (Juni 2018), WCAG 2.2 (Oktober 2023). 4 Prinzipien (POUR): Wahrnehmbar, Bedienbar, Verständlich, Robust. Konformitätsstufen: A (Minimum), AA (gesetzlicher Standard DE/EU), AAA (höchste Stufe). Kriterium A.1.1.1: Textalternativen für Nicht-Text-Inhalte.",
+  "BITV 2.0":
+      "Barrierefreie-Informationstechnik-Verordnung – deutsches Recht, setzt WCAG 2.1 Level AA für öffentliche Stellen um (§ 12a BGG, BFSG). Gilt für: Bundesbehörden, öffentliche Verwaltung. Anforderungen: Barrierefreiheitserklärung auf Website, Feedbackmechanismus, Konformitätsprüfung. Seit 2021 auch für Mobile Apps. Prüfung: BITV-Test (91 Prüfschritte).",
+  "European Accessibility Act (EAA)":
+      "EU-Richtlinie 2019/882 – Barrierefreiheitsanforderungen für Produkte und Dienstleistungen (privater Sektor). In Deutschland umgesetzt als BFSG (Barrierefreiheitsstärkungsgesetz), gilt ab 28. Juni 2025. Betroffen: Computer, Smartphones, Geldautomaten, E-Books, Online-Banking, Streaming, E-Commerce. Ausnahme: KMU unter 10 MA oder < 2 Mio. € Jahresumsatz.",
+  "Barrierefreiheit (Webdesign)":
+      "Konkrete technische Maßnahmen: alt-Attribute für Bilder (Screenreader), Kontrastverhältnis ≥ 4,5:1 (WCAG AA), Tastaturnavigation (Tab-Reihenfolge, keine Maus-Pflicht), ARIA-Attribute (aria-label, role, aria-expanded) für dynamische Inhalte, Textgröße skalierbar (kein px-Fix), Untertitel für Videos, Sprachauszeichnung (lang-Attribut). Prüftools: Lighthouse, WAVE, axe.",
+  "Screenreader":
+      "Hilfstechnologie für blinde/sehbehinderte Nutzer: liest Bildschirminhalte vor (Text, Buttons, Formulare). Bekannte Tools: NVDA (Windows, kostenlos), JAWS (Windows, kommerziell), VoiceOver (macOS/iOS), TalkBack (Android). Voraussetzung: semantisches HTML (h1–h6, nav, main, button statt div), korrekte ARIA-Nutzung. Entwicklertest: Tab-Navigation + NVDA durchführen.",
+  "Kontrast (Barrierefreiheit)":
+      "WCAG 2.1 Erfolgskriterium 1.4.3 (AA): Texte ≥ 4,5:1 Kontrastverhältnis zum Hintergrund. Große Texte (≥ 18pt / 14pt fett): ≥ 3:1 reicht. WCAG 2.1 Kriterium 1.4.11: Nicht-Text-Kontrast (UI-Elemente, Formularrahmen) ≥ 3:1. Tools: WebAIM Contrast Checker, Figma-Plugin. Typische Fehler: hellgrauer Text auf weißem Hintergrund, farbige Icons ohne Beschriftung.",
+  "Tastaturzugänglichkeit":
+      "WCAG 2.1 Kriterium 2.1.1 (A): alle Funktionen per Tastatur erreichbar (ohne spezifische Zeitvorgaben). Fokus-Sichtbarkeit (2.4.7 AA): Tastaturfokus muss sichtbar sein. Reihenfolge: logische Tab-Reihenfolge im DOM. Fallen vermeiden (2.1.2): Nutzer darf nicht in Komponente eingesperrt werden. Test: vollständige Bedienung der Website nur mit Tab/Enter/Escape/Pfeiltasten.",
+  "KI-Grundlagen (Überblick)":
+      "Künstliche Intelligenz (KI/AI): Systeme, die kognitive Fähigkeiten simulieren. Schwache KI: spezifische Aufgaben (Schach, Bilderkennung, Sprachmodelle). Starke KI (AGI): allgemeine menschenähnliche Intelligenz – noch nicht erreicht. Teilgebiete: Machine Learning (ML), Deep Learning (DL), Natural Language Processing (NLP), Computer Vision, Robotik. Anwendungsbeispiele: ChatGPT, Bilderkennung, Empfehlungssysteme.",
+  "Maschinelles Lernen (ML)":
+      "ML-Lerntypen: (1) Überwachtes Lernen (supervised): Training mit gelabelten Daten → Klassifikation, Regression (z. B. Spam-Filter). (2) Unüberwachtes Lernen (unsupervised): Muster ohne Labels finden → Clustering, Dimensionsreduktion (z. B. Kundensegmentierung). (3) Bestärkendes Lernen (reinforcement): Agent lernt durch Belohnungen → Roboter, Spielstrategien. Unterschied: Trainingsphase vs. Inferenzphase.",
+  "Deep Learning":
+      "Teilgebiet des ML: neuronale Netze mit vielen Schichten (deep = viele hidden layers). Biologisch inspiriert: Neuronen + Synapsen → künstliche Neuronen + Gewichte. Typen: CNN (Convolutional Neural Network, Bilderkennung), RNN (Recurrent, Zeitreihen/Sprache), Transformer (Basis für LLMs wie GPT). Trainingsaufwand: hoher Rechenaufwand (GPU/TPU), große Datensätze notwendig.",
+  "Large Language Models (LLM)":
+      "Großes Sprachmodell – KI auf Transformer-Architektur, trainiert auf riesigen Textmengen (Bücher, Internet). Beispiele: GPT-4 (OpenAI), Claude (Anthropic), Gemini (Google), Llama (Meta). Funktionsprinzip: Vorhersage des nächsten Tokens (Wahrscheinlichkeitsverteilung). Fähigkeiten: Texte generieren, zusammenfassen, übersetzen, Code schreiben, Fragen beantworten. Grenzen: Halluzinationen, Wissensstichtag.",
+  "Prompt Engineering":
+      "Gezielte Formulierung von Eingaben (Prompts) für KI-Modelle zur Optimierung der Ausgabequalität. Techniken: Zero-Shot (direkte Frage), Few-Shot (Beispiele mitgeben), Chain-of-Thought (Schritt-für-Schritt-Anweisung), Role Prompting (Rolle zuweisen). Relevanz für Betrieb: Qualität der KI-Ausgabe hängt stark von der Prompt-Qualität ab. Datenschutz: keine personenbezogenen Daten in Prompts eingeben.",
+  "KI-Halluzination":
+      "KI-Modelle (besonders LLMs) generieren plausibel klingende, aber faktisch falsche Informationen – ohne Unsicherheitshinweis. Ursache: Sprachmodelle optimieren Plausibilität, nicht Faktizität. Risiken: fehlerhafte Rechtsinformationen, erfundene Quellen, falsche Codebeispiele. Gegenmaßnahmen: Retrieval-Augmented Generation (RAG), Fact-Checking, menschliche Überprüfung bei kritischen Anwendungen.",
+  "KI-Ethik und EU-AI-Act":
+      "EU AI Act (in Kraft August 2024): weltweit erstes KI-Regulierungsgesetz. Risikoklassen: Inakzeptables Risiko (verboten: Social Scoring, Manipulation), Hohes Risiko (reguliert: medizinische Diagnostik, Bewerbungssoftware, kritische Infrastruktur), Begrenztes Risiko (Transparenzpflicht: Chatbots müssen sich als KI zu erkennen geben), Minimales Risiko (unreguliert: Spamfilter). Vollständig in Kraft bis 2027.",
+  "Bias (KI)":
+      "Systematische Verzerrung in KI-Modellen durch einseitige Trainingsdaten oder fehlerhafte Modellierung. Beispiele: Gesichtserkennung erkennt dunkle Hautfarben schlechter (Trainingsdata-Bias), Personalauswahlsystem bevorzugt Männer (historischer Bias). Folgen: Diskriminierung (→ AGG-Problematik), fehlerhafte Entscheidungen. Gegenmittel: diverse Trainingsdaten, Fairness-Metriken, menschliche Aufsicht.",
+  "Generative KI":
+      "KI, die neue Inhalte erzeugt: Text (LLMs: GPT, Claude), Bilder (Diffusionsmodelle: DALL-E, Stable Diffusion, Midjourney), Audio (Sprachsynthese, Musikgenerierung), Video (Sora, Runway), Code (GitHub Copilot). Technologien: Transformer (Text), Diffusionsmodelle (Bild), GAN (Generative Adversarial Network, ältere Bildgenerierung). Betriebliche Einsatzmöglichkeiten: Content-Erstellung, Automatisierung, Support.",
+  "RAG (Retrieval-Augmented Generation)":
+      "Erweiterung von LLMs: externes Wissen in Echtzeit abrufen und in die Antwort einbeziehen. Ablauf: Frage → Vektorsuche in Wissensdatenbank → relevante Dokumente als Kontext → LLM generiert Antwort mit Quellenangabe. Vorteil: aktuelle Informationen (kein Wissensstichtag), reduzierte Halluzinationen, nachvollziehbare Quellen. Einsatz: Unternehmens-Chatbots, Wissensmanagement.",
+  "KI im Betrieb":
+      "Einsatzfelder: Predictive Maintenance (vorausschauende Wartung durch Sensordaten), Qualitätskontrolle (Bilderkennung in der Fertigung), Chatbots (Kundensupport, IT-Helpdesk), Prozessautomatisierung (RPA + KI), Personalrekrutierung (Bewerbungsscreening – hohes Risiko nach EU AI Act). Datenschutz: personenbezogene Daten im KI-Training → DSGVO-konform, ggf. AVV mit KI-Anbieter. Transparenz: Mitarbeiter informieren.",
+  "KI-Trainingsdaten":
+      "Qualität und Quantität der Trainingsdaten bestimmen Modellgüte. Anforderungen: repräsentativ (keine Bias-Quellen), vollständig, aktuell, korrekt gelabelt (supervised). Datenpipeline: Erfassung → Bereinigung (Duplikate, Fehler entfernen) → Labelung → Training → Validierung (Testdaten). Rechtliche Fragen: Urheberrecht an Trainingsdaten (Gerichtsurteile 2023/24), personenbezogene Daten → DSGVO.",
+  "Neuronales Netz":
+      "Berechnungsmodell: Eingabeschicht → verdeckte Schichten (hidden layers) → Ausgabeschicht. Jedes Neuron: gewichtete Summe der Eingaben + Aktivierungsfunktion (ReLU, Sigmoid, Softmax). Training: Forward Pass (Vorhersage) → Verlustfunktion berechnen → Backpropagation (Gradienten berechnen) → Gewichte aktualisieren (Gradient Descent). Overfitting: Modell lernt Trainingsdaten auswendig → Regularisierung, Dropout.",
+  "Automation / RPA":
+      "Robotic Process Automation: Software-Roboter automatisiert regelbasierte, repetitive Prozesse (ohne Programmierung der Kernsysteme). Beispiele: Rechnungsverarbeitung, Datenmigration, Formularausfüllung. Unterschied zu klassischer Automatisierung: RPA arbeitet auf der UI-Ebene (wie ein Mensch). KI-RPA (Intelligent Automation): kombiniert RPA mit ML für nicht-strukturierte Daten (OCR, NLP). Grenzen: Regeländerungen erfordern Anpassung.",
 };
 
 Map<String, String> termAspect = <String, String>{
@@ -813,4 +875,35 @@ Map<String, String> termAspect = <String, String>{
   "Arbeitstechniken (WiSo)": "Sozial",
   "Betriebsverfassungsgesetz (BetrVG)": "Sozial",
   "Entgeltformen": "Ökonomisch",
+  "Personenbezogene Daten": "Sozial",
+  "Einwilligung (DSGVO)": "Sozial",
+  "Datenschutzprinzipien": "Sozial",
+  "Verarbeitungsverzeichnis": "Sozial",
+  "Datenpanne (Art. 33 DSGVO)": "Sozial",
+  "Recht auf Vergessenwerden": "Sozial",
+  "Datenschutz by Design / by Default": "Funktional",
+  "Auftraggeber vs. Auftragsverarbeiter": "Sozial",
+  "Drittlandübermittlung": "Sozial",
+  "Cookies und ePrivacy": "Funktional",
+  "WCAG": "Funktional",
+  "BITV 2.0": "Funktional",
+  "European Accessibility Act (EAA)": "Sozial",
+  "Barrierefreiheit (Webdesign)": "Funktional",
+  "Screenreader": "Funktional",
+  "Kontrast (Barrierefreiheit)": "Funktional",
+  "Tastaturzugänglichkeit": "Funktional",
+  "KI-Grundlagen (Überblick)": "Funktional",
+  "Maschinelles Lernen (ML)": "Funktional",
+  "Deep Learning": "Funktional",
+  "Large Language Models (LLM)": "Funktional",
+  "Prompt Engineering": "Funktional",
+  "KI-Halluzination": "Funktional",
+  "KI-Ethik und EU-AI-Act": "Sozial",
+  "Bias (KI)": "Sozial",
+  "Generative KI": "Funktional",
+  "RAG (Retrieval-Augmented Generation)": "Funktional",
+  "KI im Betrieb": "Ökonomisch",
+  "KI-Trainingsdaten": "Funktional",
+  "Neuronales Netz": "Funktional",
+  "Automation / RPA": "Ökonomisch",
 };
