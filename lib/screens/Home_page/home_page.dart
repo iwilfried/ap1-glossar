@@ -109,14 +109,15 @@ class HomePageState extends State<HomePage> {
   }
 
   void navigateToTerm(String term) {
+    // Filter + Suche zurücksetzen, dann zum Begriff springen
     _searchController.clear();
     _applyFilter(search: '', aspekt: Aspekt.alle);
-    Future.delayed(const Duration(milliseconds: 100), () {
+    Future.delayed(const Duration(milliseconds: 150), () {
       final idx = _visibleKeys.indexOf(term);
       if (idx >= 0 && _scrollController.hasClients) {
         _scrollController.animateTo(
           idx * 82.0,
-          duration: const Duration(milliseconds: 400),
+          duration: const Duration(milliseconds: 350),
           curve: Curves.easeInOut,
         );
       }
