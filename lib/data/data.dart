@@ -1,5 +1,5 @@
 // AP1 Glossar – IHK Abschlussprüfung Teil 1
-// 315 Begriffe | Kategorien: Funktional · Ökonomisch · Ökologisch · Sozial · Berechnung
+// 351 Begriffe | Kategorien: Funktional · Ökonomisch · Ökologisch · Sozial · Berechnung
 // Basiert auf 10 echten AP1-Prüfungen (2021–2026) und dem IHK-Prüfungskatalog
 
 /// Begriff → vollständige Definition
@@ -636,6 +636,78 @@ Map<String, String> abbreviations = <String, String>{
       "Umweltbezogene Unternehmensziele als Teil der Nachhaltigkeitsstrategie: Ressourcenschonung, Reduzierung des CO2-Fusabdrucks, Energieverbrauch senken, Recycling und Green IT. Gesetzliche Basis: ElektroG, RoHS, Oekodesign-Verordnung. Teil des 3-Saeulen-Modells der Nachhaltigkeit (Oekonomie, Oekologie, Soziales).",
   "Oekonomische Ziele (Unternehmen)":
       "Wirtschaftliche Unternehmensziele: Gewinnmaximierung, Umsatzsteigerung, Marktanteil erhoehen, Rentabilitaet sichern, Liquiditaet erhalten. Abgrenzung: Produktivitaet = Output/Input, Wirtschaftlichkeit = Erloese/Kosten, Rentabilitaet = Gewinn/Kapital x 100%. Teil des Nachhaltigkeits-Dreiecks (neben Oekologie und Soziales).",
+  "Bandbreite":
+      "Maximale Datenübertragungsrate einer Verbindung, gemessen in Bit/s (kbit/s, Mbit/s, Gbit/s). Berechnung: Bandbreite = Datenmenge / Übertragungszeit. Abhängig von Medium (Kupfer, Glasfaser, Funk), Protokoll-Overhead und Entfernung. Nicht verwechseln mit Durchsatz (tatsächlich nutzbare Rate) oder Latenz (Verzögerung). WLAN-Standards: Wi-Fi 5 (max. 3,5 Gbit/s), Wi-Fi 6 (max. 9,6 Gbit/s).",
+  "Broadcast":
+      "Nachricht an alle Geräte im lokalen Netzwerk gleichzeitig. Broadcast-Adresse in IPv4: letzte Adresse im Subnetz (z. B. 192.168.1.255/24). ARP nutzt Broadcast zur MAC-Auflösung. Broadcast bleibt im lokalen Netz, Router leiten Broadcasts nicht weiter. IPv6 kennt keinen Broadcast, nutzt stattdessen Multicast.",
+  "Bytecode":
+      "Plattformunabhängiger Zwischencode, der von einer Virtual Machine (VM) ausgeführt wird. Java: Compiler erzeugt Bytecode (.class-Dateien), JVM interpretiert oder kompiliert ihn zur Laufzeit (JIT). Vorteil: Write once, run anywhere. Auch Python nutzt intern Bytecode (.pyc). Abgrenzung: Maschinencode = CPU-nativ, Quellcode = menschenlesbar.",
+  "CRUD":
+      "Create, Read, Update, Delete: die vier grundlegenden Datenbankoperationen. SQL-Zuordnung: Create = INSERT, Read = SELECT, Update = UPDATE, Delete = DELETE. REST-API-Zuordnung: Create = POST, Read = GET, Update = PUT/PATCH, Delete = DELETE. Jede datenverarbeitende Anwendung basiert im Kern auf CRUD-Operationen.",
+  "Durchsatz":
+      "Tatsächlich nutzbare Datenrate einer Verbindung (im Gegensatz zur theoretischen Bandbreite). Durchsatz = Bandbreite - Overhead (Protokoll-Header, Fehlerkorrektur, Wartezeiten). Gemessen in Bit/s oder Pakete/s. Beeinflusst durch Netzwerkauslastung, Paketverlust, Latenz und QoS-Einstellungen. Typisch: 60-80% der maximalen Bandbreite.",
+  "ESG (Nachhaltigkeitskriterien)":
+      "Environmental, Social, Governance: drei Dimensionen der Nachhaltigkeit in Unternehmen. E = Umwelt (CO2, Energieverbrauch, Recycling), S = Soziales (Arbeitsbedingungen, Diversität, Barrierefreiheit), G = Unternehmensfuehrung (Compliance, Transparenz, Ethik). ESG-Kriterien werden bei Beschaffungsentscheidungen und Lieferantenbewertungen zunehmend gefordert.",
+  "FTP":
+      "File Transfer Protocol: Protokoll zur Dateiuebertragung zwischen Client und Server. Port 20 (Daten) und Port 21 (Steuerung). Unsicher: Zugangsdaten im Klartext. Sichere Alternativen: SFTP (SSH File Transfer, Port 22), FTPS (FTP ueber TLS). Aktiver Modus: Server baut Datenverbindung auf. Passiver Modus: Client baut beide Verbindungen auf (Firewall-freundlich).",
+  "Firmware":
+      "Software, die fest in Hardware eingebettet ist (z. B. BIOS/UEFI, Router-OS, Druckersteuerung). Liegt zwischen Hardware und Betriebssystem. Gespeichert in Flash-Speicher (EEPROM). Firmware-Update: behebt Sicherheitsluecken und erweitert Funktionen. Risiko: fehlgeschlagenes Update kann Gerät unbrauchbar machen (Bricking).",
+  "GPT (Partitionsstil)":
+      "GUID Partition Table: moderner Partitionsstil als Nachfolger von MBR. Vorteile: Festplatten > 2 TB, bis zu 128 Partitionen, redundante Partitionstabellen (Kopie am Ende der Platte), CRC-Pruefsumme. Erforderlich fuer UEFI mit Secure Boot. MBR: max. 2 TB, nur 4 primaere Partitionen, kein Integritaetsschutz.",
+  "GWG (Geringwertiges Wirtschaftsgut)":
+      "Anschaffungskosten netto bis 800 EUR -> sofortige Vollabschreibung im Anschaffungsjahr (Par. 6 Abs. 2 EStG). Sammelposten: 250,01-1.000 EUR -> wahlweise Poolabschreibung ueber 5 Jahre. GWG-Grenze: 800 EUR netto. Typisch in AP1: IT-Zubehoer (Maus, Tastatur, Headset) wird oft als GWG abgeschrieben.",
+  "Gewinn":
+      "Differenz zwischen Erloesen und Kosten: Gewinn = Umsatz - Gesamtkosten. Brutto-Gewinn: Umsatz - Wareneinsatz. Netto-Gewinn: nach Abzug aller Kosten inkl. Steuern. Verlust: negative Differenz (Kosten > Erloese). Rentabilitaet = Gewinn / Kapital x 100%. Pruefungsrelevant bei Amortisationsrechnung und Wirtschaftlichkeitsvergleichen.",
+  "HDMI":
+      "High-Definition Multimedia Interface: digitaler Audio-/Video-Anschluss. HDMI 2.0: 4K bei 60 Hz, HDMI 2.1: 8K bei 60 Hz oder 4K bei 120 Hz. Unterstuetzt HDCP (Kopierschutz), ARC/eARC (Audio-Rueckkanal). Abgrenzung: DisplayPort (hoehere Aufloesung, Daisy Chaining), VGA (analog, veraltet), DVI (digital, kein Audio).",
+  "Integritaet (Schutzziel)":
+      "Schutzziel der IT-Sicherheit (Teil von CIA): Daten duerfen nicht unbemerkt veraendert werden. Massnahmen: Hashwerte (SHA-256) zum Erkennen von Aenderungen, digitale Signaturen, Checksummen, Versionskontrolle, Zugriffsrechte (Schreibschutz). Wird oft zusammen mit Vertraulichkeit und Verfuegbarkeit abgefragt.",
+  "JVM":
+      "Java Virtual Machine: Laufzeitumgebung, die Java-Bytecode auf jeder Plattform ausfuehrt. Komponenten: Class Loader, Bytecode Verifier, JIT-Compiler (Just-in-Time: uebersetzt haeufig genutzten Bytecode in nativen Maschinencode). Speicherverwaltung: Garbage Collection (automatische Freigabe nicht mehr genutzter Objekte). JVM-Sprachen: Java, Kotlin, Scala.",
+  "Kernel":
+      "Kern des Betriebssystems: verwaltet Hardware-Ressourcen (CPU, RAM, Geraete) und stellt Schnittstellen fuer Anwendungen bereit. Typen: Monolithisch (Linux: alles im Kernel), Mikrokernel (nur Grundfunktionen, Rest im Userspace). Aufgaben: Prozessverwaltung, Speicherverwaltung, Dateisystemzugriff, Geraetetreiber, Rechteverwaltung.",
+  "Latenz":
+      "Zeitverzoegerung bei der Datenuebertragung (Laufzeit), gemessen in Millisekunden (ms). Bestandteile: Signallaufzeit, Verarbeitungszeit im Router, Warteschlangenzeit. Ping misst Round-Trip-Time (RTT) = Latenz hin + zurueck. Niedrige Latenz wichtig fuer VoIP, Videokonferenz, Gaming. Typisch: LAN < 1 ms, Internet 20-100 ms.",
+  "Liquiditaet":
+      "Faehigkeit eines Unternehmens, seinen Zahlungsverpflichtungen fristgerecht nachzukommen. Liquiditaetsgrade: 1. Grad = Barliquiditaet (fluessige Mittel / kurzfristige Verbindlichkeiten x 100%), 2. Grad: + Forderungen, 3. Grad: + Vorraete. Illiquiditaet = Zahlungsunfaehigkeit -> haeufigster Insolvenzgrund. Leasing schont Liquiditaet im Vergleich zu Kauf.",
+  "MBR":
+      "Master Boot Record: aelterer Partitionsstil auf den ersten 512 Bytes einer Festplatte. Limitierungen: max. 2 TB, max. 4 primaere Partitionen (erweitert: 3 primaer + 1 erweiterte mit logischen). Kein Integritaetsschutz. Nachfolger: GPT (GUID Partition Table) mit UEFI. MBR wird noch fuer Legacy-BIOS-Systeme benoetigt.",
+  "MDM (Mobile Device Management)":
+      "Zentrale Verwaltung und Absicherung mobiler Endgeraete (Smartphones, Tablets, Laptops). Funktionen: Geraetekonfiguration, App-Verteilung, Passwort-Policies, Remote-Wipe (Fernloeschung bei Verlust), Containerisierung (Trennung privat/dienstlich). Wichtig bei BYOD-Konzepten. Beispiele: Microsoft Intune, Jamf, VMware Workspace ONE.",
+  "Maschinencode":
+      "Binaerer Programmcode (Nullen und Einsen), der direkt vom Prozessor ausgefuehrt wird. Plattformspezifisch: x86-64-Code laeuft nicht auf ARM und umgekehrt. Erzeugt durch Compiler (aus Quellcode) oder Assembler (aus Assembly). Nicht menschenlesbar. Abgrenzung: Quellcode = menschenlesbar, Bytecode = VM-Zwischencode, Maschinencode = CPU-nativ.",
+  "Multicast":
+      "Nachricht an eine definierte Gruppe von Empfaengern (im Gegensatz zu Broadcast = alle, Unicast = ein Empfaenger). IPv4-Multicast-Bereich: 224.0.0.0 - 239.255.255.255. Einsatz: IPTV, Videostreaming, OSPF-Routing-Updates. Vorteil: Bandbreite sparen, da Daten nur einmal gesendet und am Router vervielfaeltigt werden.",
+  "NLP (Natural Language Processing)":
+      "Verarbeitung natuerlicher Sprache: KI-Teilgebiet fuer maschinelles Verstehen und Erzeugen menschlicher Sprache. Anwendungen: Chatbots, Uebersetzung, Textklassifikation, Sentimentanalyse, Sprachassistenten. Technologien: Tokenisierung, Word Embeddings, Transformer-Architektur (GPT, BERT). Basis fuer Large Language Models.",
+  "OCR (Zeichenerkennung)":
+      "Optical Character Recognition: Software wandelt gescannte Dokumente oder Bilder in maschinenlesbaren Text um. Einsatz: Digitalisierung von Papierdokumenten, automatische Rechnungsverarbeitung, Barrierefreiheit (PDF zugaenglich machen). Moderne OCR nutzt KI/Deep Learning fuer hoehere Erkennungsraten.",
+  "POST (Power-On Self-Test)":
+      "Erster Schritt beim Bootvorgang: Das BIOS/UEFI testet grundlegende Hardware (CPU, RAM, Grafikkarte, Tastatur). Bei Fehlern: Pieptoene (Beep-Codes) oder LED-Anzeigen. Erfolgreicher POST: ein kurzer Piepton. Reihenfolge: POST -> UEFI/BIOS -> Bootloader -> Betriebssystem. Fehlerdiagnose: kein Bild = Grafikkarte/RAM pruefen.",
+  "Quellcode":
+      "Vom Programmierer geschriebener, menschenlesbarer Programmtext in einer Programmiersprache (z. B. Python, Java, C++). Wird durch Compiler in Maschinencode oder durch Interpreter zeilenweise ausgefuehrt. Open Source: Quellcode oeffentlich einsehbar (z. B. GPL-Lizenz). Closed Source: Quellcode nicht zugaenglich (proprietaer).",
+  "ROI (Return on Investment)":
+      "Kennzahl zur Bewertung der Wirtschaftlichkeit einer Investition. Formel: ROI = Gewinn / eingesetztes Kapital x 100%. Beispiel: Investition 10.000 EUR, Gewinn 2.000 EUR -> ROI = 20%. Verwandt mit Amortisationsrechnung (wann Investition zurueckverdient) und Kapitalwertmethode (Barwert aller Zahlungen).",
+  "Routing":
+      "Weiterleitung von Datenpaketen zwischen verschiedenen Netzwerken durch Router. Statisches Routing: manuell konfigurierte Routen (einfach, unflexibel). Dynamisches Routing: automatische Routenanpassung durch Protokolle (OSPF, RIP, BGP). Routing-Tabelle: enthaelt Zielnetz, Netzmaske, Gateway, Metrik (Kosten). Router waehlt besten Weg anhand der Metrik.",
+  "SATA":
+      "Serial ATA: Standard-Schnittstelle fuer Massenspeicher (HDD, SSD). SATA III: max. 6 Gbit/s (effektiv ca. 550 MB/s). Anschluss: 7-polig Daten + 15-polig Strom. Hot-Swap-faehig. Abloesung durch NVMe/M.2 (bis 7.000 MB/s bei PCIe 4.0). SATA reicht fuer HDD, limitiert aber SSD-Geschwindigkeit.",
+  "SHA-256":
+      "Secure Hash Algorithm mit 256-Bit-Ausgabe: erzeugt aus beliebig langen Eingabedaten einen 64 Zeichen langen Hexadezimal-Hashwert. Eigenschaften: deterministisch, kollisionsresistent, Einwegfunktion. Einsatz: Integritaetspruefung, Passwort-Hashing, Blockchain, digitale Zertifikate. Teil der SHA-2-Familie (neben SHA-384, SHA-512).",
+  "SMTP":
+      "Simple Mail Transfer Protocol: Standard-Protokoll zum Versenden von E-Mails. Port 25 (unverschluesselt), Port 587 (STARTTLS), Port 465 (SSL/TLS). SMTP sendet nur, Empfang ueber IMAP (Port 993) oder POP3 (Port 995). Spam-Schutz: SPF, DKIM, DMARC pruefen Absender-Authentizitaet. Arbeitet auf OSI-Schicht 7.",
+  "Secure Boot":
+      "UEFI-Sicherheitsfunktion: Beim Systemstart werden nur digital signierte Bootloader und Betriebssystem-Kernel geladen. Schuetzt vor Bootkits und Rootkits, die sich vor dem OS laden. Signaturpruefung ueber Zertifikate im UEFI-Firmware-Speicher. Kann in UEFI-Einstellungen aktiviert/deaktiviert werden. Voraussetzung fuer Windows 11.",
+  "TDP (Thermal Design Power)":
+      "Maximale Waermeabgabe einer CPU/GPU in Watt (Verlustleistung). Bestimmt die erforderliche Kuehlung (Luefter, Kuehlkoerper). Beispiel: Desktop-CPU 65-125 W TDP, Laptop-CPU 15-45 W. Hoehere TDP = mehr Leistung, aber mehr Stromverbrauch und Abwaerme. Relevant fuer Netzteil-Dimensionierung und Energieeffizienz-Bewertung.",
+  "USV (Unterbrechungsfreie Stromversorgung)":
+      "Schuetzt IT-Systeme bei Stromausfall. Typen: Offline/Standby (guenstig, Umschaltzeit 5-10 ms), Line-Interactive (Spannungsschwankungen reguliert), Online/Doppelwandler (permanente Versorgung ueber Akku, 0 ms Umschaltzeit). Dimensionierung ueber VA (Voltampere) und Autonomiezeit. Regelmaessiger Batterietest erforderlich.",
+  "Umsatz":
+      "Gesamtwert aller verkauften Gueter oder Dienstleistungen in einem Zeitraum. Formel: Umsatz = Absatzmenge x Verkaufspreis. Brutto-Umsatz: inkl. MwSt., Netto-Umsatz: ohne MwSt. Abgrenzung: Umsatz ist nicht Gewinn – erst nach Abzug aller Kosten entsteht Gewinn. Umsatzerloese stehen in der GuV (Gewinn- und Verlustrechnung).",
+  "Unicast":
+      "Punkt-zu-Punkt-Kommunikation: ein Sender, ein Empfaenger. Standard-Uebertragungsart in IP-Netzwerken (z. B. HTTP-Anfrage an Webserver). Jedes Paket hat genau eine Ziel-IP-Adresse. Abgrenzung: Broadcast = alle Geraete im Netz, Multicast = definierte Gruppe, Anycast = naechster Knoten einer Gruppe.",
+  "Vertraulichkeit (Schutzziel)":
+      "Schutzziel der IT-Sicherheit (Teil von CIA): Informationen duerfen nur fuer autorisierte Personen zugaenglich sein. Massnahmen: Verschluesselung (AES, RSA), Zugriffskontrollen (ACL, RBAC), Authentifizierung (Passwort, 2FA), Blickschutzfolien, VPN. Verletzung: Datenleck, Man-in-the-Middle-Angriff, Social Engineering.",
 };
 
 Map<String, String> termAspect = <String, String>{
@@ -954,4 +1026,40 @@ Map<String, String> termAspect = <String, String>{
   "Werkvertrag": "Funktional",
   "Oekologische Ziele (Unternehmen)": "Ökologisch",
   "Oekonomische Ziele (Unternehmen)": "Ökonomisch",
+  "Bandbreite": "Funktional",
+  "Broadcast": "Funktional",
+  "Bytecode": "Funktional",
+  "CRUD": "Funktional",
+  "Durchsatz": "Funktional",
+  "ESG (Nachhaltigkeitskriterien)": "Sozial",
+  "FTP": "Funktional",
+  "Firmware": "Funktional",
+  "GPT (Partitionsstil)": "Funktional",
+  "GWG (Geringwertiges Wirtschaftsgut)": "Ökonomisch",
+  "Gewinn": "Ökonomisch",
+  "HDMI": "Funktional",
+  "Integritaet (Schutzziel)": "Funktional",
+  "JVM": "Funktional",
+  "Kernel": "Funktional",
+  "Latenz": "Funktional",
+  "Liquiditaet": "Ökonomisch",
+  "MBR": "Funktional",
+  "MDM (Mobile Device Management)": "Funktional",
+  "Maschinencode": "Funktional",
+  "Multicast": "Funktional",
+  "NLP (Natural Language Processing)": "Funktional",
+  "OCR (Zeichenerkennung)": "Funktional",
+  "POST (Power-On Self-Test)": "Funktional",
+  "Quellcode": "Funktional",
+  "ROI (Return on Investment)": "Ökonomisch",
+  "Routing": "Funktional",
+  "SATA": "Funktional",
+  "SHA-256": "Funktional",
+  "SMTP": "Funktional",
+  "Secure Boot": "Funktional",
+  "TDP (Thermal Design Power)": "Ökologisch",
+  "USV (Unterbrechungsfreie Stromversorgung)": "Funktional",
+  "Umsatz": "Ökonomisch",
+  "Unicast": "Funktional",
+  "Vertraulichkeit (Schutzziel)": "Funktional",
 };
