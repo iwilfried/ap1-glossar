@@ -1,5 +1,5 @@
 // AP1 Glossar – IHK Abschlussprüfung Teil 1
-// 351 Begriffe | Kategorien: Funktional · Ökonomisch · Ökologisch · Sozial · Berechnung
+// 386 Begriffe | Kategorien: Funktional · Ökonomisch · Ökologisch · Sozial · Berechnung
 // Basiert auf 10 echten AP1-Prüfungen (2021–2026) und dem IHK-Prüfungskatalog
 
 /// Begriff → vollständige Definition
@@ -708,6 +708,76 @@ Map<String, String> abbreviations = <String, String>{
       "Punkt-zu-Punkt-Kommunikation: ein Sender, ein Empfaenger. Standard-Uebertragungsart in IP-Netzwerken (z. B. HTTP-Anfrage an Webserver). Jedes Paket hat genau eine Ziel-IP-Adresse. Abgrenzung: Broadcast = alle Geraete im Netz, Multicast = definierte Gruppe, Anycast = naechster Knoten einer Gruppe.",
   "Vertraulichkeit (Schutzziel)":
       "Schutzziel der IT-Sicherheit (Teil von CIA): Informationen duerfen nur fuer autorisierte Personen zugaenglich sein. Massnahmen: Verschluesselung (AES, RSA), Zugriffskontrollen (ACL, RBAC), Authentifizierung (Passwort, 2FA), Blickschutzfolien, VPN. Verletzung: Datenleck, Man-in-the-Middle-Angriff, Social Engineering.",
+  "Algorithmus":
+      "Eindeutige, endliche Folge von Anweisungen zur Loesung eines Problems. Eigenschaften: Determiniertheit (gleiche Eingabe = gleiche Ausgabe), Determinismus (eindeutiger Ablauf), Finitheit (endlich viele Schritte), Korrektheit (loest das Problem). Darstellung: Struktogramm, Programmablaufplan (PAP), Pseudocode, BPMN. Beispiel: Sortieralgorithmus, Suchalgorithmus. Basis jedes Programms.",
+  "Blackbox-Test":
+      "Testmethode, bei der nur das externe Verhalten geprueft wird, ohne Kenntnis des internen Aufbaus (Quellcode). Testfaelle basieren auf Spezifikation/Anforderungen. Vorteil: unabhaengig von Implementierung, testet wie Nutzer. Beispiele: funktionale Tests, Akzeptanztests, Systemtests. Gegenteil: Whitebox-Test (Kenntnis der Implementierung erforderlich).",
+  "DDoS":
+      "Distributed Denial of Service: koordinierter Angriff vieler kompromittierter Systeme (Botnet) auf ein Ziel. Ziel: Server oder Dienst durch Ueberlastung unverfuegbar machen. Varianten: volumetrisch (Bandbreite ueberfluten), protokollbasiert (TCP-Handshake ausnutzen), applikationsbasiert (HTTP-Requests). Schutz: DDoS-Mitigation (Scrubbing-Center), Rate Limiting, CDN.",
+  "Digitalisierung":
+      "Ueberfuehrung analoger Informationen und Prozesse in digitale Form. Drei Ebenen: 1. Digitization (Analoges digitalisieren, z. B. Scannen), 2. Digitalization (Prozesse digital unterstuetzen), 3. Digitale Transformation (Geschaeftsmodelle grundlegend veraendern). Treiber: Cloud, Mobile, Big Data, KI. Chancen: Effizienz, neue Maerkte. Risiken: Datenschutz, Abhaengigkeiten.",
+  "Dualsystem":
+      "Zahlensystem mit Basis 2: nur Ziffern 0 und 1. Umrechnung Dezimal zu Dual: Zahl wiederholt durch 2 dividieren, Reste von unten lesen. Beispiel: 13 dezimal = 1101 dual. Umrechnung Dual zu Dezimal: Stellenwerte (2^n) aufaddieren. Prufungsrelevant: Bit-Darstellung, IPv4-Subnetting, Bitoperationen. 1 Byte = 8 Bit = Werte 0-255.",
+  "EVA-Prinzip":
+      "Eingabe-Verarbeitung-Ausgabe: Grundprinzip jedes IT-Systems. Eingabe (Input): Daten werden erfasst (Tastatur, Sensor, Datei). Verarbeitung (Processing): CPU verarbeitet Daten (Berechnung, Logik). Ausgabe (Output): Ergebnisse ausgegeben (Monitor, Drucker, Datei). Erweiterung: EVA + Speicherung (S). Basis fuer alle Betrachtungen von IT-Systemen.",
+  "Einfuegeanomalie":
+      "Datenbankanomalie bei nicht normalisierter Tabelle: Daten koennen nicht eingefuegt werden, ohne andere (unnoetigen) Daten anzugeben. Beispiel: Neuen Lieferanten erst eintragen, wenn er auch eine Bestellung hat. Ursache: mehrere Entitaeten in einer Tabelle gemischt. Loesung: Normalisierung (1NF, 2NF, 3NF) und Aufteilen in separate Tabellen.",
+  "Energy Star":
+      "Internationales Energieeffizienz-Zertifikat (USA/EU) fuer IT-Geraete und Haushaltsgeraete. Ausgestellt von EPA (USA) und Europaeischer Kommission. Kennzeichnet Geraete mit ueberdurchschnittlicher Energieeffizienz. Fuer PCs: Energieverbrauch im Ruhezustand, Betrieb und beim Booten bewertet. Weniger streng als Blauer Engel, der auch Schadstoffe, Laerm und soziale Aspekte prueft.",
+  "Entitaet":
+      "Grundbegriff im Entity-Relationship-Modell (ERM): ein eindeutig identifizierbares Objekt der realen Welt (z. B. Kunde, Produkt, Bestellung). Entitaetstyp: Klasse gleichartiger Entitaeten (z. B. alle Kunden). Entitaetsmenge: alle Instanzen eines Entitaetstyps. Darstellung im ER-Diagramm als Rechteck. Zusammen mit Attributen und Beziehungen Grundlage des Datenbankdesigns.",
+  "Ethernet":
+      "Standard fuer kabelgebundene lokale Netzwerke (LAN), definiert in IEEE 802.3. Uebertraegt Daten in Rahmen (Frames) mit MAC-Quell-/Zieladresse. Geschwindigkeiten: Fast Ethernet (100 Mbit/s), Gigabit-Ethernet (1 Gbit/s), 10GbE. Kabel: Cat5e (bis 1 Gbit/s), Cat6 (bis 10 Gbit/s). Kollisionsvermeidung: CSMA/CD (heute durch Switches nicht mehr relevant).",
+  "Fremdschluessel":
+      "Attribut in einer Datenbanktabelle, das auf den Primaarschluessel einer anderen Tabelle verweist. Stellt referentielle Integritaet sicher: Fremdschlusselwert muss in Referenztabelle existieren. Beispiel: Bestellung.Kunden_ID verweist auf Kunden.ID. Verhindert verwaiste Datensaetze. SQL: FOREIGN KEY (Kunden_ID) REFERENCES Kunden(ID). ON DELETE CASCADE/RESTRICT konfiguriert Verhalten.",
+  "Fuehrungsstil":
+      "Art und Weise, wie eine Fuehrungskraft Mitarbeiter leitet. Klassische Stile: autoritaer (Entscheidungen top-down, schnell aber demotivierend), kooperativ/demokratisch (Mitarbeiter einbezogen, hoehere Motivation), Laissez-faire (Mitarbeiter entscheiden selbst, bei Experten sinnvoll). Situativer Fuehrungsstil: Anpassung an Situation und Reifegrad des Mitarbeiters.",
+  "Globalisierung":
+      "Weltweite Verflechtung von Wirtschaft, Kommunikation, Kultur und Politik. Ursachen: IT-Revolution, Abbau von Handelshemmnissen, guenstige Transportkosten. Auswirkungen auf IT: globale Lieferketten (LkSG), Datenschutz ueber Laendergrenzen (DSGVO, Drittlandubermittlung), Outsourcing. Chancen: groessere Maerkte. Risiken: Abhaengigkeiten, Standortkonkurrenz.",
+  "Handelsspanne":
+      "Differenz zwischen Verkaufspreis und Einkaufspreis. Absolute Handelsspanne: Nettoverkaufspreis - Bezugspreis. Relative Handelsspanne (Handelsspannen-Prozent): Handelsspanne / Nettoverkaufspreis x 100%. Bestandteil der Vorwaertskalkulation. Abgrenzung: Rohgewinn = Umsatz - Wareneinsatz. Prufungsrelevant bei Kalkulationsaufgaben im WiSo-Teil der AP1.",
+  "Hexadezimalsystem":
+      "Zahlensystem mit Basis 16: Ziffern 0-9 und A-F (A=10, B=11, ..., F=15). Umrechnung: 1 Hex-Ziffer = 4 Bit (Nibble). Einsatz: MAC-Adressen (6 Byte = 12 Hex-Zeichen), IPv6-Adressen, RGB-Farbcodes (#FF8800), Speicheradressen. Vorteil: kompakte Darstellung von Binaerdaten. Umrechnung: 0xFF = 15*16+15 = 255 dezimal.",
+  "Industrie 4.0":
+      "Vierte industrielle Revolution: Vernetzung von Maschinen, Anlagen und IT-Systemen ueber das Internet der Dinge (IoT). Merkmale: cyber-physische Systeme (CPS), Smart Factory, M2M-Kommunikation, Big Data, KI-gestuetzte Automatisierung. Ziel: flexible, effiziente Produktion mit Losgroe 1. Relevant fuer AP1: digitale Transformation, ERP-Integration, Datensicherheit in Produktion.",
+  "Kardinalitaet":
+      "Beschreibt die Anzahlbeziehung zwischen Entitaeten in einem ER-Modell. Typen: 1:1 (ein Mitarbeiter hat einen Ausweis), 1:n (ein Kunde hat viele Bestellungen), m:n (viele Studenten belegen viele Kurse). In SQL: 1:n durch Fremdschluessel, m:n durch Zwischentabelle. Prufungsrelevant bei Datenbankdesign-Aufgaben.",
+  "Loeschanomalie":
+      "Datenbankanomalie: beim Loeschen eines Datensatzes gehen unbeabsichtigt andere benoetigte Informationen verloren. Beispiel: Letzter Auftrag eines Kunden geloescht -> Kundendaten verschwinden ebenfalls. Ursache: fehlende Normalisierung (Daten gemischt in einer Tabelle). Loesung: Normalisierung auf separate Tabellen (1NF, 2NF, 3NF).",
+  "Malware":
+      "Oberbegriff fuer schaedliche Software. Arten: Virus (benoetigt Wirtsprogramm, verbreitet sich durch Ausfuehren), Wurm (selbststaendige Verbreitung ueber Netz, kein Wirtsprogramm), Trojaner (nuetzliches Programm als Tarnung), Ransomware (Verschluesselung + Loesegeld), Spyware (Datendiebstahl), Adware (unerwuenschte Werbung), Rootkit (verbirgt sich im System).",
+  "Meilenstein":
+      "Definierter Ereigniszeitpunkt im Projektablauf mit messbarem Ergebnis (kein Zeitraum, nur Zeitpunkt). Markiert den Abschluss einer Projektphase oder wichtigen Entscheidungspunkt. Beispiel: Anforderungen abgenommen, Testabschluss, Deployment durchgefuehrt. Darstellung im Gantt-Diagramm als Raute. Basis fuer Projektcontrolling und Fortschrittsmessung.",
+  "Netzplantechnik":
+      "Methode zur Planung und Steuerung von Projekten durch grafische Darstellung aller Vorgaenge und Abhaengigkeiten. Enthaelt: Vorgaenge (Knoten/Pfeile), Abhaengigkeiten (Anordnungsbeziehungen), Zeitplanung (FAZ, FEZ, SAZ, SEZ). Ermittelt kritischen Pfad, Gesamtpuffer (GP) und freien Puffer (FP). Grundlage fuer Netzplan und Terminplanung im Projektmanagement.",
+  "Preiskalkulation":
+      "Ermittlung des Verkaufspreises ausgehend vom Einkaufspreis. Vorwaertskalkulation: Listeneinkaufspreis - Rabatt = Zieleinkaufspreis - Skonto = Bareinkaufspreis + Bezugskosten = Bezugspreis + Handlungskosten = Selbstkostenpreis + Gewinnzuschlag = Nettoverkaufspreis + MwSt. = Bruttoverkaufspreis. Basis fuer Angebotspreise und Gewinnplanung.",
+  "Primaerschluessel":
+      "Attribut (oder Attributkombination) einer Datenbanktabelle, das jeden Datensatz eindeutig identifiziert. Eigenschaften: eindeutig (keine Duplikate), NOT NULL, unveraenderlich. SQL: PRIMARY KEY. Kann natuerlich (z. B. Matrikelnummer) oder kuenstlich (Auto-Inkrement-ID) sein. Basis fuer Fremdschluessel-Beziehungen und effiziente Datenbankabfragen.",
+  "Programmablaufplan":
+      "Grafische Darstellung eines Algorithmus mit DIN-66001-Symbolen. Symbole: Rechteck (Verarbeitung), Raute (Entscheidung/Verzweigung), Oval (Start/Stop), Parallelogramm (Ein-/Ausgabe). Ablaufstrukturen: Sequenz, einseitige Verzweigung (if), zweiseitige Verzweigung (if-else), Schleife. Alternativen: Struktogramm (Nassi-Shneiderman), Pseudocode.",
+  "Projektstrukturplan":
+      "Hierarchische Gliederung aller Arbeitspakete eines Projekts (PSP). Zerlegt das Projektziel in ueberschaubare, kontrollierbare Teilaufgaben. Darstellung: Baumstruktur oder Liste. Ebenen: Projekt > Teilprojekte > Arbeitspakete > Aufgaben. Grundlage fuer Ressourcenplanung, Kostenplanung und Terminplanung. Nicht zu verwechseln mit Netzplan (zeitlich) oder Gantt-Diagramm.",
+  "Rueckwaertskalkulation":
+      "Berechnung des maximal moeglichen Einkaufspreises ausgehend vom angestrebten Verkaufspreis. Vorgehen: Bruttoverkaufspreis - MwSt. = Nettoverkaufspreis - Gewinn = Selbstkostenpreis - Handlungskosten = Bezugspreis - Bezugskosten = Bareinkaufspreis + Skonto = Zieleinkaufspreis + Rabatt = Listeneinkaufspreis. Wichtig fuer Einkaufsverhandlungen.",
+  "Schleife":
+      "Kontrollstruktur: Wiederholung von Anweisungen solange eine Bedingung erfuellt ist. Typen: kopfgesteuerte Schleife (while: Bedingung vor Schleifenkoerper, kann 0x ausgefuehrt werden), fussgesteuerte Schleife (do-while: mind. 1x ausgefuehrt), Zaehlschleife (for: feste Anzahl). Abbruch: break, Sprung zum naechsten Schritt: continue.",
+  "Sequenz":
+      "Grundlegende Kontrollstruktur: Anweisungen werden der Reihe nach, eine nach der anderen ausgefuehrt. Erste Ablaufstruktur in strukturierten Programmen neben Verzweigung und Schleife. Darstellung im Struktogramm als uebereinander liegende Rechtecke, im PAP als Folge von Rechtecken mit Pfeilen. Bildet die Basis jedes Programms.",
+  "Softwarelebenszyklus":
+      "Gesamter Lebenszyklus einer Software von der Idee bis zur Ausserbetriebnahme (SDLC). Phasen: Anforderungsanalyse, Entwurf, Implementierung, Test, Einfuehrung/Deployment, Betrieb/Wartung, Abloesung. Wartungsphase ist oft laenger und teurer als Entwicklung (ca. 60-80% der Gesamtkosten). Basis fuer Projektplanung und Ressourcenschaetzung.",
+  "Spiralmodell":
+      "Iteratives Vorgehensmodell der Softwareentwicklung (Boehm 1986). Jede Iteration durchlaeuft 4 Quadranten: 1. Ziele festlegen, 2. Risiken analysieren und begrenzen, 3. Entwickeln und Testen, 4. Planung der naechsten Iteration. Besonderheit: systematisches Risikomanagement. Geeignet fuer grosse, komplexe und risikobehaftete Projekte.",
+  "Traceroute":
+      "Netzwerkdiagnose-Tool zur Verfolgung des Wegs von Datenpaketen. Zeigt alle Router (Hops) und deren Antwortzeiten zum Ziel. Windows: tracert, Linux/macOS: traceroute. Nutzt TTL-Feld: jeder Router reduziert TTL um 1, bei TTL=0 ICMP-Fehlermeldung. Hilfreich bei Diagnose von Netzwerkproblemen (Leitungsausfall, hohe Latenz).",
+  "Versionsverwaltung":
+      "System zur Verwaltung von Aenderungen an Quellcode und Dokumenten (VCS). Funktionen: Versionierung, Branching (parallele Entwicklungsstraenge), Merging (Zusammenfuehren), Konfliktloesung. Tools: Git (dezentral, Standard), SVN (zentral). Workflow: clone -> branch -> commit -> push -> pull request -> merge. Grundlage fuer Teamarbeit in der Softwareentwicklung.",
+  "Verzweigung":
+      "Kontrollstruktur: abhaengig von einer Bedingung wird einer von mehreren Pfaden ausgefuehrt. Einseitige Verzweigung: Anweisungen nur wenn Bedingung wahr (if). Zweiseitige Verzweigung: if-else (wahr oder falsch). Mehrfachverzweigung: switch/case oder elif-Ketten. Darstellung im PAP als Raute, im Struktogramm als Bedingungsfeld.",
+  "Wasserfallmodell":
+      "Klassisches, sequenzielles Vorgehensmodell der Softwareentwicklung. Phasen (streng nacheinander): 1. Anforderungsanalyse, 2. Systemdesign, 3. Implementierung, 4. Test, 5. Einfuehrung, 6. Wartung. Vorteile: klar strukturiert, gut dokumentierbar, Phasenergebnisse klar definiert. Nachteile: keine Flexibilitaet bei Anforderungsaenderungen, spaetes Kundenfeedback.",
+  "Whitebox-Test":
+      "Testmethode mit vollstaendiger Kenntnis des internen Aufbaus (Quellcode, Architektur). Prueft Codeabdeckung (Coverage), Pfade, Zweige und Bedingungen. Techniken: Statement Coverage, Branch Coverage, Path Coverage. Vorteil: findet Fehler in der Implementierung. Nachteil: fehlende Anforderungen werden nicht entdeckt. Wird oft von Entwicklern selbst durchgefuehrt.",
 };
 
 Map<String, String> termAspect = <String, String>{
@@ -961,6 +1031,7 @@ Map<String, String> termAspect = <String, String>{
   "Rechtsformen (Unternehmen)": "Ökonomisch",
   "GmbH vs. AG": "Ökonomisch",
   "Wirtschaftssektoren": "Ökonomisch",
+  "Traceroute": "Funktional",
   "Unternehmensorganisation": "Funktional",
   "Konzern / Kartell / Fusion": "Ökonomisch",
   "Produktivität / Wirtschaftlichkeit / Rentabilität": "Ökonomisch",
@@ -1062,4 +1133,38 @@ Map<String, String> termAspect = <String, String>{
   "Umsatz": "Ökonomisch",
   "Unicast": "Funktional",
   "Vertraulichkeit (Schutzziel)": "Funktional",
+  "Algorithmus": "Funktional",
+  "Blackbox-Test": "Funktional",
+  "DDoS": "Funktional",
+  "Digitalisierung": "Funktional",
+  "Dualsystem": "Berechnung",
+  "EVA-Prinzip": "Funktional",
+  "Einfuegeanomalie": "Funktional",
+  "Energy Star": "Ökologisch",
+  "Entitaet": "Funktional",
+  "Ethernet": "Funktional",
+  "Fremdschluessel": "Funktional",
+  "Fuehrungsstil": "Sozial",
+  "Globalisierung": "Ökonomisch",
+  "Handelsspanne": "Berechnung",
+  "Hexadezimalsystem": "Berechnung",
+  "Industrie 4.0": "Funktional",
+  "Kardinalitaet": "Funktional",
+  "Loeschanomalie": "Funktional",
+  "Malware": "Funktional",
+  "Meilenstein": "Funktional",
+  "Netzplantechnik": "Funktional",
+  "Preiskalkulation": "Berechnung",
+  "Primaerschluessel": "Funktional",
+  "Programmablaufplan": "Funktional",
+  "Projektstrukturplan": "Funktional",
+  "Rueckwaertskalkulation": "Berechnung",
+  "Schleife": "Funktional",
+  "Sequenz": "Funktional",
+  "Softwarelebenszyklus": "Funktional",
+  "Spiralmodell": "Funktional",
+  "Versionsverwaltung": "Funktional",
+  "Verzweigung": "Funktional",
+  "Wasserfallmodell": "Funktional",
+  "Whitebox-Test": "Funktional",
 };
