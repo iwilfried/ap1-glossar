@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:ap1_glossar/constants/colors.dart';
 import '../../about_page/about_screen.dart';
+import '../../legal/impressum_screen.dart';
+import '../../legal/datenschutz_screen.dart';
 
 class AppDrawer extends StatelessWidget {
   const AppDrawer({Key? key}) : super(key: key);
@@ -100,22 +102,19 @@ class AppDrawer extends StatelessWidget {
             ),
           ),
           ListTile(
-            leading: const Icon(Icons.source_rounded, color: AppColors.color),
-            title: const Text('Quellen'),
+            leading: const Icon(Icons.gavel_rounded, color: AppColors.color),
+            title: const Text('Impressum'),
             onTap: () => Navigator.of(context).push(
               MaterialPageRoute(
-                builder: (_) => Scaffold(
-                  appBar: AppBar(
-                    title: const Text('Quellen'),
-                    backgroundColor: AppColors.color,
-                    foregroundColor: Colors.white,
-                  ),
-                  body: const Padding(
-                    padding: EdgeInsets.all(20.0),
-                    child: _SourcesPage(),
-                  ),
-                ),
-              ),
+                  builder: (_) => const ImpressumScreen()),
+            ),
+          ),
+          ListTile(
+            leading: const Icon(Icons.privacy_tip_outlined, color: AppColors.color),
+            title: const Text('Datenschutz'),
+            onTap: () => Navigator.of(context).push(
+              MaterialPageRoute(
+                  builder: (_) => const DatenschutzScreen()),
             ),
           ),
 
@@ -124,7 +123,7 @@ class AppDrawer extends StatelessWidget {
           ListTile(
             leading: const Icon(Icons.info, color: Colors.grey),
             title: const Text(
-              'v1.3.0 – Learning Factory',
+              'v1.4.0 – Learning Factory',
               style: TextStyle(color: Colors.grey, fontSize: 13),
             ),
           ),
@@ -192,37 +191,3 @@ class _LegendItem extends StatelessWidget {
   }
 }
 
-class _SourcesPage extends StatelessWidget {
-  const _SourcesPage();
-
-  @override
-  Widget build(BuildContext context) {
-    final sources = [
-      ('IHK-Prüfungen 2021–2026', 'Vollständige Prüfungstexte (Herbst/Frühjahr), ausgewertet nach Themen und Punkteverteilung.'),
-      ('IHK-Prüfungskatalog AP1', 'Offizieller Prüfungskatalog für die gestreckten Abschlussprüfungen IT-Berufe, inkl. Änderungen ab 2025 (neue Themen: Schreibtischtest, BPMN, Barrierefreiheit).'),
-      ('BSI-Grundschutz-Kompendium', 'https://www.bsi.bund.de/grundschutz'),
-      ('DSGVO – EUR-Lex', 'https://eur-lex.europa.eu/legal-content/DE/TXT/?uri=CELEX:32016R0679'),
-      ('it-berufe-podcast.de', 'Themenübersicht AP1 und Prüfungsstatistiken von Stefan Macke'),
-    ];
-
-    return ListView.separated(
-      itemCount: sources.length,
-      separatorBuilder: (_, __) => const Divider(),
-      itemBuilder: (_, i) {
-        final (title, detail) = sources[i];
-        return Column(
-          crossAxisAlignment: CrossAxisAlignment.start,
-          children: [
-            Text(title,
-                style: const TextStyle(
-                    fontWeight: FontWeight.bold, fontSize: 15)),
-            const SizedBox(height: 4),
-            Text(detail,
-                style:
-                    const TextStyle(fontSize: 13, color: Colors.black87)),
-          ],
-        );
-      },
-    );
-  }
-}
