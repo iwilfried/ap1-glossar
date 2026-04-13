@@ -1,5 +1,5 @@
 // AP1 Glossar – IHK Abschlussprüfung Teil 1
-// 299 Begriffe | Kategorien: Funktional · Ökonomisch · Ökologisch · Sozial · Berechnung
+// 315 Begriffe | Kategorien: Funktional · Ökonomisch · Ökologisch · Sozial · Berechnung
 // Basiert auf 10 echten AP1-Prüfungen (2021–2026) und dem IHK-Prüfungskatalog
 
 /// Begriff → vollständige Definition
@@ -604,6 +604,38 @@ Map<String, String> abbreviations = <String, String>{
       "Berechnungsmodell: Eingabeschicht → verdeckte Schichten (hidden layers) → Ausgabeschicht. Jedes Neuron: gewichtete Summe der Eingaben + Aktivierungsfunktion (ReLU, Sigmoid, Softmax). Training: Forward Pass (Vorhersage) → Verlustfunktion berechnen → Backpropagation (Gradienten berechnen) → Gewichte aktualisieren (Gradient Descent). Overfitting: Modell lernt Trainingsdaten auswendig → Regularisierung, Dropout.",
   "Automation / RPA":
       "Robotic Process Automation: Software-Roboter automatisiert regelbasierte, repetitive Prozesse (ohne Programmierung der Kernsysteme). Beispiele: Rechnungsverarbeitung, Datenmigration, Formularausfüllung. Unterschied zu klassischer Automatisierung: RPA arbeitet auf der UI-Ebene (wie ein Mensch). KI-RPA (Intelligent Automation): kombiniert RPA mit ML für nicht-strukturierte Daten (OCR, NLP). Grenzen: Regeländerungen erfordern Anpassung.",
+  "CRM (Customer Relationship Management)":
+      "Softwaresystem und Strategie zur Verwaltung von Kundenbeziehungen. Erfasst Kontaktdaten, Kaufhistorie und Interaktionen. Ziel: Kundenbindung staerken, Umsatz steigern, Servicequalitaet verbessern. Beispiele: Salesforce, HubSpot. Abgrenzung zu ERP: CRM = Kundenfokus (Marketing, Vertrieb, Service), ERP = gesamte Unternehmensressourcen.",
+  "Dienstvertrag":
+      "Vertragstyp nach BGB Par. 611: Der Auftragnehmer schuldet nur das Bemuehen (die Arbeitsleistung), nicht einen bestimmten Erfolg. Kein Abnahmeerfordernis. Risiko beim Auftraggeber. Typische Beispiele: Arbeitsvertraege, Beratungsleistungen, Arzt-Patient-Verhaeltnis. Abgrenzung zum Werkvertrag: kein garantiertes Ergebnis geschuldet.",
+  "Effektivitaet vs. Effizienz":
+      "Zwei zentrale Wirtschaftlichkeitsprinzipien: Effektivitaet = die richtigen Dinge tun (Zielerreichung, Wirksamkeit). Effizienz = die Dinge richtig tun (optimales Verhaeltnis von Aufwand zu Ergebnis). Formel Effizienz: Output / Input. Merksatz: Effektivitaet = Grad der Zielerreichung; Effizienz = Wirtschaftlichkeit des Wegs.",
+  "ERP (Enterprise Resource Planning)":
+      "Integrierte Softwareloesung zur unternehmensweiten Steuerung von Geschaeftsprozessen: Personal, Material, Finanzen, Produktion, Vertrieb in einem System. Beispiele: SAP S/4HANA, Microsoft Dynamics. Vorteile: zentrale Datenbasis, keine Redundanz, durchgaengige Prozesse. Abgrenzung: CRM = Kundenfokus, ERP = gesamtes Unternehmen.",
+  "Gateway":
+      "Netzwerkkomponente als Schnittstelle zwischen zwei unterschiedlichen Netzen (z. B. LAN zu Internet). Meist der Router mit Standardgateway-Funktion. Leitet Pakete in fremde Netzwerke weiter. Standard-Gateway-Adresse wird per DHCP oder manuell konfiguriert. Ohne Gateway kein Internetzugriff moeglich.",
+  "Hashwert":
+      "Digitaler Fingerabdruck einer Datei oder Nachricht, erzeugt durch eine Hashfunktion (z. B. SHA-256, MD5). Eigenschaften: deterministisch (gleiche Eingabe = gleicher Hash), Einwegfunktion (kein Rueckschluss auf Eingabe), kollisionsresistent. Einsatz: Integritaetspruefung bei Downloads, Passwort-Speicherung, digitale Signaturen. SHA-256 erzeugt 256-Bit-Wert (64 Hexzeichen).",
+  "Leistungsaufnahme (Elektrotechnik)":
+      "Elektrische Leistung P (Watt) = Spannung U (Volt) x Stromstaerke I (Ampere). Energiearbeit W = P x t (Zeit in Stunden). Beispiel: 500-W-PC x 8 h = 4 kWh. Wirkungsgrad: eta = P_abgegeben / P_aufgenommen x 100%. Basis fuer Stromkosten-Berechnung und Bewertung von Energieeffizienz-Zertifikaten (80-PLUS).",
+  "Magisches Dreieck":
+      "Klassisches Projektmanagement-Modell: Drei konkurrierende Zielgroessen Qualitaet, Kosten und Zeit stehen in wechselseitiger Abhaengigkeit. Verbesserung einer Groesse beeinflusst immer die anderen. Erweiterung: Tetraeder mit vierter Dimension Leistungsumfang (Scope). Basis fuer jede Projektsteuerung und Risikoabwaegung.",
+  "Projektmerkmale":
+      "Merkmale eines Projekts nach DIN 69901: Einmaligkeit (kein identisches Projekt zuvor), Befristung (klarer Start- und Endtermin), definiertes Ziel, begrenzte Ressourcen (Budget, Personal), Neuartigkeit (Innovationsgrad) und Komplexitaet (viele Abhaengigkeiten). Abgrenzung zu Routineaufgaben: Projekte sind einmalig, Routineaufgaben wiederholen sich.",
+  "SMART-Prinzip":
+      "Methode zur Formulierung klarer Projektziele: S = Spezifisch (konkret, eindeutig), M = Messbar (quantifizierbar, pruefbar), A = Attraktiv/Akzeptiert (motivierend), R = Realistisch (erreichbar mit vorhandenen Mitteln), T = Terminiert (klarer Endzeitpunkt). Anwendung: Zieldefinition im Projektauftrag und Lastenheft.",
+  "Soziale Ziele (Unternehmen)":
+      "Neben oekonomischen Zielen verfolgen Unternehmen soziale Ziele: ergonomische und sichere Arbeitsbedingungen, Mitarbeiterzufriedenheit, Barrierefreiheit, Chancengleichheit (AGG), Work-Life-Balance. Teil des Nachhaltigkeitskonzepts (ESG: Environmental, Social, Governance). Messbar u. a. durch Mitarbeiterfluktuation und Krankheitsquote.",
+  "Teambildung (Tuckman)":
+      "Phasenmodell der Teamentwicklung nach Bruce Tuckman (1965): 1. Forming (Orientierung, gegenseitiges Kennenlernen), 2. Storming (Konflikte, Rollenklaerung), 3. Norming (Regeln entstehen, Zusammenhalt waechst), 4. Performing (produktive Hochleistungsphase). Ergaenzt um 5. Adjourning (Aufloesungsphase nach Projektende).",
+  "Thin Client":
+      "Hardware-Minimalkonfiguration ohne lokale Rechenleistung: Anwendungen und Daten werden ausschliesslich von einem zentralen Server bezogen (VDI oder Terminal Server). Vorteile: geringer Energieverbrauch (5-20 W), wenig Wartung, zentrale Administration, lange Lebensdauer. Einsatz: Call-Center, Behoerden, Schulen. Gegenmodell: Fat Client mit vollstaendiger lokaler Hardware.",
+  "Werkvertrag":
+      "Vertragstyp nach BGB Par. 631: Der Auftragnehmer schuldet einen bestimmten Erfolg (das fertige Werk), nicht nur Bemuehen. Abnahme erforderlich. Maengelhaftung: 2 Jahre (Bauwerke: 5 Jahre). Risiko beim Auftragnehmer bis zur Abnahme. Abgrenzung: Dienstvertrag = nur Leistung geschuldet, Werkvertrag = Ergebnis geschuldet.",
+  "Oekologische Ziele (Unternehmen)":
+      "Umweltbezogene Unternehmensziele als Teil der Nachhaltigkeitsstrategie: Ressourcenschonung, Reduzierung des CO2-Fusabdrucks, Energieverbrauch senken, Recycling und Green IT. Gesetzliche Basis: ElektroG, RoHS, Oekodesign-Verordnung. Teil des 3-Saeulen-Modells der Nachhaltigkeit (Oekonomie, Oekologie, Soziales).",
+  "Oekonomische Ziele (Unternehmen)":
+      "Wirtschaftliche Unternehmensziele: Gewinnmaximierung, Umsatzsteigerung, Marktanteil erhoehen, Rentabilitaet sichern, Liquiditaet erhalten. Abgrenzung: Produktivitaet = Output/Input, Wirtschaftlichkeit = Erloese/Kosten, Rentabilitaet = Gewinn/Kapital x 100%. Teil des Nachhaltigkeits-Dreiecks (neben Oekologie und Soziales).",
 };
 
 Map<String, String> termAspect = <String, String>{
@@ -906,4 +938,20 @@ Map<String, String> termAspect = <String, String>{
   "KI-Trainingsdaten": "Funktional",
   "Neuronales Netz": "Funktional",
   "Automation / RPA": "Ökonomisch",
+  "CRM (Customer Relationship Management)": "Funktional",
+  "Dienstvertrag": "Funktional",
+  "Effektivitaet vs. Effizienz": "Ökonomisch",
+  "ERP (Enterprise Resource Planning)": "Funktional",
+  "Gateway": "Funktional",
+  "Hashwert": "Funktional",
+  "Leistungsaufnahme (Elektrotechnik)": "Berechnung",
+  "Magisches Dreieck": "Funktional",
+  "Projektmerkmale": "Funktional",
+  "SMART-Prinzip": "Funktional",
+  "Soziale Ziele (Unternehmen)": "Sozial",
+  "Teambildung (Tuckman)": "Sozial",
+  "Thin Client": "Ökologisch",
+  "Werkvertrag": "Funktional",
+  "Oekologische Ziele (Unternehmen)": "Ökologisch",
+  "Oekonomische Ziele (Unternehmen)": "Ökonomisch",
 };
