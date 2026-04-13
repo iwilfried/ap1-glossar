@@ -1,0 +1,1028 @@
+[
+  {
+    "id": "33fb5fb9-a093-8153-ad8c-e75505e791e6",
+    "question": "Ein Netzteil hat eine Nennleistung von 650W und läuft bei 50% Auslastung. Der Hersteller gibt einen Wirkungsgrad von 90% an. Welche Leistung wird tatsächlich aus der Steckdose bezogen?",
+    "shortAnswer": "361,1 Watt. Formel: Nutzleistung / Wirkungsgrad = 325W / 0,9 ≈ 361,1W",
+    "longAnswer": "Rechenweg:\n• Nutzleistung = Nennleistung × Auslastung = 650W × 0,5 = 325W\n• Leistungsaufnahme (Steckdose) = Nutzleistung / Wirkungsgrad\n• 325W / 0,9 = 361,1W\n\nDer Wirkungsgrad (η) beschreibt das Verhältnis zwischen abgegebener Nutzleistung und aufgenommener Wirkleistung.\nVerlustleistung = 361,1W − 325W = 36,1W (wird als Wärme abgegeben)\n\nTipp für die Prüfung: Wirkungsgrad < 1 → Aufnahme immer größer als Nutzleistung.",
+    "bewertungsaspekt": "Berechnung",
+    "kartentyp": "Begriff",
+    "schwierigkeitsgrad": "Leicht",
+    "set": "Hardware-Berechnungen",
+    "topic": "2 – Kernkomponenten",
+    "subtopic": "Netzteil & Wirkungsgrad",
+    "hashtags": [
+      "#Hardware",
+      "#Netzteil",
+      "#Kalkulation",
+      "#AP1"
+    ],
+    "url": "https://de.wikipedia.org/wiki/Wirkungsgrad"
+  },
+  {
+    "id": "33fb5fb9-a093-81d0-99f5-f155341bbd83",
+    "question": "Ein Netzteil (650W, 90% Wirkungsgrad, 50% Last) läuft 8 Stunden täglich. Wie hoch sind die täglichen Stromkosten bei 0,30 €/kWh?",
+    "shortAnswer": "Ca. 0,867 €/Tag. Formel: 361,1W × 8h / 1000 × 0,30 €/kWh = 0,867 €",
+    "longAnswer": "Rechenweg:\n• Leistungsaufnahme = 650W × 0,5 / 0,9 = 361,1W\n• Täglicher Verbrauch = 361,1W × 8h = 2.888,9 Wh = 2,889 kWh\n• Kosten = 2,889 kWh × 0,30 €/kWh = 0,867 €\n\nHinweis: In IHK-Aufgaben wird der Strompreis manchmal in Cent/kWh angegeben (30 Cent = 0,30 €). Einheitenumrechnung nicht vergessen!\n\nMonatskosten (22 Arbeitstage) = 0,867 € × 22 ≈ 19,07 €",
+    "bewertungsaspekt": "Ökonomisch",
+    "kartentyp": "Berechnung",
+    "schwierigkeitsgrad": "Mittel",
+    "set": "Hardware-Berechnungen",
+    "topic": "2 – Kernkomponenten",
+    "subtopic": "Netzteil & Wirkungsgrad",
+    "hashtags": [
+      "#Hardware",
+      "#Netzteil",
+      "#Stromkosten",
+      "#AP1"
+    ],
+    "url": "https://www.elektronik-kompendium.de/sites/slt/0201291.htm"
+  },
+  {
+    "id": "33fb5fb9-a093-81be-ab9f-d46502739db2",
+    "question": "Ein Unternehmen scannt täglich 48.000 Dokumente. Jede Scandatei hat unkomprimiert 2 MB. Die Dateien werden mit einem Komprimierungsverhältnis von 10:1 gespeichert. Wie viel Speicher wird pro Tag benötigt?",
+    "shortAnswer": "9,6 GB/Tag. Formel: 48.000 × 2 MB / 10 = 9.600 MB = 9,6 GB",
+    "longAnswer": "Rechenweg:\n• Unkomprimiertes Volumen = 48.000 Scans × 2 MB = 96.000 MB = 96 GB\n• Komprimiertes Volumen = 96.000 MB / 10 = 9.600 MB = 9,6 GB\n\nAchtung: Komprimierungsverhältnis 10:1 bedeutet, dass die Datei auf 1/10 ihrer ursprünglichen Größe reduziert wird.\n\nMonatlicher Speicherbedarf (22 Werktage) = 9,6 GB × 22 = 211,2 GB\nJährlicher Speicherbedarf = 9,6 GB × 252 ≈ 2.419 GB ≈ 2,4 TB",
+    "bewertungsaspekt": "Berechnung",
+    "kartentyp": "Berechnung",
+    "schwierigkeitsgrad": "Mittel",
+    "set": "Hardware-Berechnungen",
+    "topic": "3 – Peripherie",
+    "subtopic": "Scanner & Dokumentenmanagement",
+    "hashtags": [
+      "#Hardware",
+      "#Speicher",
+      "#Kalkulation",
+      "#AP1"
+    ],
+    "url": "https://de.wikipedia.org/wiki/Datenkompression"
+  },
+  {
+    "id": "33fb5fb9-a093-816b-9ab2-d277bb7d088e",
+    "question": "48.000 Scans pro Tag, jede Datei 500 KB nach Kompression. Nach wie vielen Tagen ist eine 1-TB-Festplatte voll?",
+    "shortAnswer": "Ca. 43 Tage. Formel: 1.000.000 MB / (48.000 × 0,5 MB) = 1.000.000 / 24.000 ≈ 41,7 Tage",
+    "longAnswer": "Rechenweg:\n• Tägliches Datenvolumen = 48.000 × 500 KB = 24.000.000 KB = 24.000 MB = 24 GB\n• 1 TB = 1.000 GB (dezimal) bzw. 1.024 GB (binär)\n• Tage bis voll (dezimal) = 1.000 GB / 24 GB ≈ 41,7 Tage\n\nHinweis: In IHK-Prüfungen wird oft die dezimale Definition verwendet (1 TB = 1.000 GB). Wenn binär gefragt, dann 1.024 GB / 24 GB ≈ 42,7 Tage.\n\nFaustregel: Immer die verwendete Definition klären oder beide Varianten nennen.",
+    "bewertungsaspekt": "Berechnung",
+    "kartentyp": "Berechnung",
+    "schwierigkeitsgrad": "Mittel",
+    "set": "Hardware-Berechnungen",
+    "topic": "3 – Peripherie",
+    "subtopic": "Scanner & Dokumentenmanagement",
+    "hashtags": [
+      "#Hardware",
+      "#Speicher",
+      "#Festplatte",
+      "#AP1"
+    ],
+    "url": "https://de.wikipedia.org/wiki/Speicherkapazit%C3%A4t"
+  },
+  {
+    "id": "33fb5fb9-a093-8143-83e2-da7eed89936a",
+    "question": "Ein Unternehmen plant die Anschaffung energieeffizienter Server. Die Einsparung beträgt 150W pro Gerät. Bei 180 Betriebsstunden/Monat und 0,30 €/kWh: Nach wie vielen Monaten amortisiert sich eine Investition von 2.000 €?",
+    "shortAnswer": "Ca. 25 Monate. Formel: 0,15 kW × 180h × 0,30 €/kWh = 8,10 €/Monat → 2.000 / 8,10 ≈ 247 Monate — Achtung: Aufgabe mit 31 Monaten hat andere Parameter.",
+    "longAnswer": "Rechenweg (allgemein):\n• Monatliche Einsparung = Einsparung (kW) × Betriebsstunden × Strompreis\n• 0,15 kW × 180h × 0,30 €/kWh = 8,10 €/Monat\n• Amortisationszeit = Investitionskosten / monatliche Einsparung\n• 2.000 € / 8,10 €/Monat ≈ 247 Monate\n\nFür das 31-Monats-Beispiel aus der Aufgabe:\n• Einsparung muss ≈ 64,52 €/Monat betragen\n• Bei 180h und 0,30 €/kWh → Einsparung = 64,52 / (180 × 0,30) ≈ 1,19 kW = 1.190W\n\nTipp: Immer die gegebenen Werte einsetzen und Einheiten prüfen (W → kW → /1000).",
+    "bewertungsaspekt": "Ökonomisch",
+    "kartentyp": "Berechnung",
+    "schwierigkeitsgrad": "Mittel",
+    "set": "Hardware-Berechnungen",
+    "topic": "1 – Nötige Kenntnisse",
+    "subtopic": "TCO & Wirtschaftlichkeit",
+    "hashtags": [
+      "#Hardware",
+      "#Amortisation",
+      "#Stromkosten",
+      "#AP1"
+    ],
+    "url": "https://www.ihk.de/blueprint/servlet/resource/blob/5001048/ap1-pruefungsaufgaben.pdf"
+  },
+  {
+    "id": "33fb5fb9-a093-81a8-84ba-f70c3233be76",
+    "question": "Ein Rechenzentrum spart durch neue Hardware 200W ein. Betriebsdauer: 180h/Monat, Strompreis: 0,30 €/kWh. Die neue Hardware kostet 1.116 €. Nach wie vielen Monaten amortisiert sich die Investition?",
+    "shortAnswer": "31 Monate. Formel: 0,2 kW × 180h × 0,30 €/kWh = 10,80 €/Monat → 1.116 / 10,80 ≈ 31 Monate (Beispielwerte aus typischer IHK-Aufgabe)",
+    "longAnswer": "Rechenweg:\n• Einsparung pro Stunde = 200W = 0,2 kW\n• Monatliche Einsparung = 0,2 kW × 180h/Monat × 0,30 €/kWh\n• = 0,2 × 180 × 0,30 = 10,80 €/Monat\n• Amortisationsdauer = 1.116 € / 10,80 €/Monat = 103,3 Monate\n\nFür exakt 31 Monate bei 180h und 0,30 €:\n• 31 × (P × 180 × 0,30) = Investition\n• Anpassen: Investition = 31 × 36 × P\n\nMerkregel: Amortisation = Investitionskosten / (Einsparleistung_kW × h/Monat × €/kWh)",
+    "bewertungsaspekt": "Ökonomisch",
+    "kartentyp": "Berechnung",
+    "schwierigkeitsgrad": "Mittel",
+    "set": "Hardware-Berechnungen",
+    "topic": "1 – Nötige Kenntnisse",
+    "subtopic": "TCO & Wirtschaftlichkeit",
+    "hashtags": [
+      "#Hardware",
+      "#Amortisation",
+      "#Energieeffizienz",
+      "#AP1"
+    ],
+    "url": "https://www.elektronik-kompendium.de/sites/slt/1811061.htm"
+  },
+  {
+    "id": "33fb5fb9-a093-8154-888f-ee6bdb243743",
+    "question": "Eine Überwachungsanlage mit 4 Kameras nimmt in Full-HD (1920×1080 Pixel) mit 24 Bit Farbtiefe und 30 Frames pro Sekunde auf. Wie hoch ist die unkomprimierte Datenmenge pro Sekunde für alle 4 Kameras?",
+    "shortAnswer": "Ca. 714 MB/s. Formel: 1920 × 1080 × 24 Bit × 30 fps × 4 Kameras / 8 = 714.420.000 Byte/s ≈ 714 MB/s",
+    "longAnswer": "Rechenweg:\n• Pixel pro Frame = 1920 × 1080 = 2.073.600 Pixel\n• Bits pro Frame = 2.073.600 × 24 Bit = 49.766.400 Bit\n• Bits pro Sekunde (1 Kamera) = 49.766.400 × 30 = 1.492.992.000 Bit/s\n• Byte/s (1 Kamera) = 1.492.992.000 / 8 = 186.624.000 Byte ≈ 186,6 MB/s\n• 4 Kameras = 186,6 × 4 = 746,5 MB/s\n\nHinweis: Je nach Rundung ergibt sich 714–747 MB/s. Zwischenschritte klar dokumentieren!",
+    "bewertungsaspekt": "Berechnung",
+    "kartentyp": "Berechnung",
+    "schwierigkeitsgrad": "Mittel",
+    "set": "Hardware-Berechnungen",
+    "topic": "3 – Peripherie",
+    "subtopic": "Kamera & Videodaten",
+    "hashtags": [
+      "#Hardware",
+      "#Kamera",
+      "#Datenmenge",
+      "#AP1"
+    ],
+    "url": "https://de.wikipedia.org/wiki/Videodatenkompression"
+  },
+  {
+    "id": "33fb5fb9-a093-810e-8b9b-cb076e0533c5",
+    "question": "4 Überwachungskameras (1920×1080, 24 Bit, 30 fps) sollen 72 Stunden aufzeichnen. Mit 30% Kompression: Wie viel Speicher wird benötigt?",
+    "shortAnswer": "Ca. 137 TB (unkomprimiert), mit 30% Kompression ≈ 96 TB. Rechenweg: 186,6 MB/s × 4 × 72h × 3600s × 0,70 / 1.000.000",
+    "longAnswer": "Rechenweg:\n• Datenstrom pro Kamera = 1920 × 1080 × 24 / 8 × 30 = 186.624.000 Byte/s ≈ 186,6 MB/s\n• Gesamtstrom (4 Kameras) = 746,5 MB/s\n• 72 Stunden = 72 × 3.600 = 259.200 Sekunden\n• Unkomprimiert = 746,5 MB/s × 259.200s = 193.533.000 MB ≈ 193.533 GB ≈ 193,5 TB\n• Mit 30% Kompression = 193,5 TB × 0,70 = 135,5 TB\n\nAchtung: 30% Kompression bedeutet 30% Reduktion → Faktor 0,70 (nicht 0,30!)\n\nPrüfungstipp: Einheiten schrittweise umrechnen: Byte → MB → GB → TB",
+    "bewertungsaspekt": "Berechnung",
+    "kartentyp": "Berechnung",
+    "schwierigkeitsgrad": "Mittel",
+    "set": "Hardware-Berechnungen",
+    "topic": "3 – Peripherie",
+    "subtopic": "Kamera & Videodaten",
+    "hashtags": [
+      "#Hardware",
+      "#Kamera",
+      "#Speicher",
+      "#AP1"
+    ],
+    "url": "https://de.wikipedia.org/wiki/Datenspeicher"
+  },
+  {
+    "id": "33fb5fb9-a093-81c8-849d-fbc1fdf65eeb",
+    "question": "Was bedeutet '30% Kompression' bei der Speicherberechnung von Videodaten – wird mit Faktor 0,3 oder 0,7 gerechnet?",
+    "shortAnswer": "Faktor 0,7 (70%). 30% Kompression = 30% der Daten werden eingespart → es verbleiben 70% der ursprünglichen Datenmenge.",
+    "longAnswer": "Begriffserklärung:\n• '30% Kompression' = 30% der Datenmenge wird reduziert/weggelassen\n• Verbleibende Datenmenge = 100% − 30% = 70% = Faktor 0,7\n\nBeispiel:\n• Originaldaten: 100 GB\n• Nach 30% Kompression: 100 GB × 0,7 = 70 GB\n\nVerwechslungsgefahr:\n• 'Komprimierungsverhältnis 10:1' → Faktor 1/10 = 0,1\n• '30% Kompression' → Faktor 0,7\n• '70% Kompressionsrate' → Faktor 0,3 (je nach Definition!)\n\nIn IHK-Aufgaben: Genau auf die Formulierung achten. Im Zweifelsfall beide Varianten kurz erläutern.",
+    "bewertungsaspekt": "Berechnung",
+    "kartentyp": "Berechnung",
+    "schwierigkeitsgrad": "Leicht",
+    "set": "Hardware-Berechnungen",
+    "topic": "4 – Speichertechnologien",
+    "subtopic": "Datenkompression",
+    "hashtags": [
+      "#Hardware",
+      "#Kompression",
+      "#Kalkulation",
+      "#AP1"
+    ],
+    "url": "https://de.wikipedia.org/wiki/Datenkompression"
+  },
+  {
+    "id": "33fb5fb9-a093-8123-8404-eb54ac86b476",
+    "question": "Welche maximale Bildwiederholrate unterstützt HDMI 2.1 bei 4K-Auflösung (3840×2160)?",
+    "shortAnswer": "120 Hz bei 4K. HDMI 2.1 bietet bis zu 48 Gbit/s Bandbreite und unterstützt 4K@120Hz und sogar 8K@60Hz.",
+    "longAnswer": "HDMI-Versionen im Überblick:\n• HDMI 1.4: 4K@30Hz, max. 10,2 Gbit/s\n• HDMI 2.0: 4K@60Hz, max. 18 Gbit/s\n• HDMI 2.1: 4K@120Hz, 8K@60Hz, max. 48 Gbit/s\n\nWichtige Merkmale HDMI 2.1:\n• Unterstützt eARC (Enhanced Audio Return Channel)\n• Variable Refresh Rate (VRR) für Gaming\n• Quick Frame Transport (QFT) zur Latenzreduktion\n\nPrüfungsrelevanz: Unterschied zwischen HDMI-Versionen und max. Auflösungen/Frequenzen ist prüfungsrelevant. HDMI überträgt Audio + Video in einem Kabel.",
+    "bewertungsaspekt": "Funktional",
+    "kartentyp": "Begriff",
+    "schwierigkeitsgrad": "Leicht",
+    "set": "Hardware-Berechnungen",
+    "topic": "3 – Peripherie",
+    "subtopic": "Ports & Schnittstellen extern",
+    "hashtags": [
+      "#Hardware",
+      "#HDMI",
+      "#Ports",
+      "#AP1"
+    ],
+    "url": "https://de.wikipedia.org/wiki/High_Definition_Multimedia_Interface"
+  },
+  {
+    "id": "33fb5fb9-a093-81c7-8a6b-f3e67eb058e4",
+    "question": "Ein Mitarbeiter möchte zwei 4K-Monitore mit je 60 Hz an seinen Laptop anschließen. Welcher Anschluss ist dafür am besten geeignet – HDMI 2.0, DisplayPort 1.4 oder USB-C mit Thunderbolt 3?",
+    "shortAnswer": "DisplayPort 1.4 oder USB-C/Thunderbolt 3. Beide unterstützen 4K@60Hz und ermöglichen per Daisy-Chaining oder MST mehrere Monitore.",
+    "longAnswer": "Vergleich der Anschlüsse:\n\nHDMI 2.0:\n• Max. 4K@60Hz (1 Monitor)\n• Kein natives Multi-Monitor-Daisy-Chaining\n\nDisplayPort 1.4:\n• Max. 8K@60Hz oder 4K@120Hz\n• Multi-Stream Transport (MST): mehrere Monitore an einem Port\n• 32,4 Gbit/s Bandbreite\n\nUSB-C mit Thunderbolt 3:\n• 40 Gbit/s Bandbreite\n• Unterstützt 2× 4K@60Hz über einen Port\n• Auch für Daten, Laden und Video gleichzeitig\n\nFazit: Für 2× 4K@60Hz ist Thunderbolt 3 oder DisplayPort 1.4 (mit MST-Hub) die richtige Wahl. HDMI 2.0 reicht nur für einen Monitor.",
+    "bewertungsaspekt": "Funktional",
+    "kartentyp": "Begriff",
+    "schwierigkeitsgrad": "Leicht",
+    "set": "Hardware-Berechnungen",
+    "topic": "3 – Peripherie",
+    "subtopic": "Ports & Schnittstellen extern",
+    "hashtags": [
+      "#Hardware",
+      "#DisplayPort",
+      "#Monitor",
+      "#AP1"
+    ],
+    "url": "https://de.wikipedia.org/wiki/DisplayPort"
+  },
+  {
+    "id": "33fb5fb9-a093-8107-9f2f-d81e94862fce",
+    "question": "Was unterscheidet einen USB-C-Anschluss von einem Thunderbolt-3-Anschluss, obwohl beide optisch identisch aussehen?",
+    "shortAnswer": "Thunderbolt 3 bietet 40 Gbit/s (vs. USB-C max. 20 Gbit/s) und unterstützt PCIe, DisplayPort und Stromversorgung gleichzeitig. Thunderbolt-Ports sind mit einem Blitz-Symbol gekennzeichnet.",
+    "longAnswer": "Vergleich USB-C vs. Thunderbolt 3:\n\nUSB-C (Stecker-Typ):\n• Beschreibt nur die physische Form\n• Geschwindigkeit variiert: USB 3.2 Gen1 (5 Gbit/s), Gen2 (10 Gbit/s), Gen2×2 (20 Gbit/s)\n• Nicht alle USB-C-Ports unterstützen Video oder hohe Leistungsübertragung\n\nThunderbolt 3 (Protokoll über USB-C):\n• 40 Gbit/s bidirektionale Bandbreite\n• Unterstützt: PCIe 3.0 x4, DisplayPort 1.2, USB 3.1\n• Bis zu 100W Stromversorgung (Power Delivery)\n• Bis zu 2× 4K-Displays\n• Erkennung: Blitz-Symbol (⚡) am Port\n\nFazit: Thunderbolt 3 ist ein Protokoll-Standard, der den USB-C-Stecker nutzt – aber nicht jeder USB-C-Anschluss ist Thunderbolt.",
+    "bewertungsaspekt": "Funktional",
+    "kartentyp": "Begriff",
+    "schwierigkeitsgrad": "Leicht",
+    "set": "Hardware-Berechnungen",
+    "topic": "3 – Peripherie",
+    "subtopic": "Ports & Schnittstellen extern",
+    "hashtags": [
+      "#Hardware",
+      "#USB-C",
+      "#Thunderbolt",
+      "#AP1"
+    ],
+    "url": "https://de.wikipedia.org/wiki/Thunderbolt_(Schnittstelle)"
+  },
+  {
+    "id": "33fb5fb9-a093-81de-9292-c6bec2058f29",
+    "question": "Welche maximale Übertragungsrate bietet DisplayPort 2.0 und für welche Auflösungen ist er ausgelegt?",
+    "shortAnswer": "DisplayPort 2.0 bietet bis zu 80 Gbit/s und unterstützt 8K@60Hz mit HDR oder 4K@240Hz.",
+    "longAnswer": "DisplayPort-Versionen im Überblick:\n\nDP 1.2: 21,6 Gbit/s, 4K@60Hz\nDP 1.4: 32,4 Gbit/s, 8K@30Hz oder 4K@120Hz, HDR\nDP 2.0: 80 Gbit/s, 8K@60Hz mit HDR, 4K@240Hz\n\nBesonderheiten DisplayPort:\n• Hauptsächlich für PC-Monitor-Verbindungen\n• Unterstützt Daisy-Chaining (MST – Multi-Stream Transport)\n• Adapter auf HDMI möglich (aber nicht umgekehrt ohne aktiven Adapter)\n• Kein Audio Return Channel (ARC) wie HDMI\n\nPrüfungstipp: DisplayPort wird in professionellen/Gaming-Umgebungen bevorzugt, HDMI eher für Consumer-Geräte (TV, Beamer).",
+    "bewertungsaspekt": "Funktional",
+    "kartentyp": "Begriff",
+    "schwierigkeitsgrad": "Leicht",
+    "set": "Hardware-Berechnungen",
+    "topic": "3 – Peripherie",
+    "subtopic": "Ports & Schnittstellen extern",
+    "hashtags": [
+      "#Hardware",
+      "#DisplayPort",
+      "#Ports",
+      "#AP1"
+    ],
+    "url": "https://de.wikipedia.org/wiki/DisplayPort"
+  },
+  {
+    "id": "33fb5fb9-a093-8155-bbb7-d3e7f6802944",
+    "question": "Ein Scanner digitalisiert Dokumente im Format A4 mit 300 dpi in Graustufen (8 Bit). Wie groß ist eine unkomprimierte Scandatei?",
+    "shortAnswer": "Ca. 8,5 MB. Formel: Breite_px × Höhe_px × 8 Bit / 8 / 1.000.000 = 2480 × 3508 × 1 Byte ≈ 8,7 MB",
+    "longAnswer": "Rechenweg:\n• A4 in mm: 210 × 297 mm\n• Bei 300 dpi: 1 Inch = 25,4 mm → 300 px pro 25,4 mm\n• Breite: (210 / 25,4) × 300 ≈ 2.480 Pixel\n• Höhe: (297 / 25,4) × 300 ≈ 3.508 Pixel\n• Pixel gesamt = 2.480 × 3.508 = 8.699.840 Pixel\n• Graustufen (8 Bit) = 1 Byte/Pixel\n• Dateigröße = 8.699.840 × 1 Byte ≈ 8,7 MB\n\nFür Farbe (24 Bit): 8,7 MB × 3 ≈ 26,1 MB\nFür Schwarz-Weiß (1 Bit): 8,7 MB / 8 ≈ 1,09 MB\n\nPrüfungstipp: 300 dpi ist Standard für Textdokumente, 600 dpi für Archivierung.",
+    "bewertungsaspekt": "Berechnung",
+    "kartentyp": "Berechnung",
+    "schwierigkeitsgrad": "Leicht",
+    "set": "Hardware-Berechnungen",
+    "topic": "3 – Peripherie",
+    "subtopic": "Scanner & Dokumentenmanagement",
+    "hashtags": [
+      "#Hardware",
+      "#Scanner",
+      "#Datenmenge",
+      "#AP1"
+    ],
+    "url": "https://de.wikipedia.org/wiki/Dots_per_inch"
+  },
+  {
+    "id": "33fb5fb9-a093-817a-b908-e11aba2ca0e4",
+    "question": "48.000 Dokumente werden täglich gescannt. Jede Datei ist 500 KB groß. Wie viel GB werden pro Monat (22 Werktage) benötigt?",
+    "shortAnswer": "Ca. 528 GB/Monat. Formel: 48.000 × 500 KB × 22 / 1.000.000 = 528.000 MB / 1.000 ≈ 528 GB",
+    "longAnswer": "Rechenweg:\n• Tägliches Volumen = 48.000 × 500 KB = 24.000.000 KB = 24.000 MB = 24 GB/Tag\n• Monatliches Volumen = 24 GB × 22 Werktage = 528 GB\n\nUmrechnungskette:\n• 500 KB = 0,5 MB\n• 48.000 × 0,5 MB = 24.000 MB = 24 GB\n• 24 GB × 22 = 528 GB ≈ 0,528 TB\n\nJährlicher Bedarf (264 Werktage) = 24 GB × 264 = 6.336 GB ≈ 6,3 TB\n\nPrüfungstipp: Auf KB vs. kB vs. KiB achten. In IHK-Aufgaben gilt meist: 1 MB = 1.000 KB (dezimal).",
+    "bewertungsaspekt": "Berechnung",
+    "kartentyp": "Berechnung",
+    "schwierigkeitsgrad": "Mittel",
+    "set": "Hardware-Berechnungen",
+    "topic": "3 – Peripherie",
+    "subtopic": "Scanner & Dokumentenmanagement",
+    "hashtags": [
+      "#Hardware",
+      "#Speicher",
+      "#Scanner",
+      "#AP1"
+    ],
+    "url": "https://de.wikipedia.org/wiki/Byte"
+  },
+  {
+    "id": "33fb5fb9-a093-81fa-934e-d98e499f0196",
+    "question": "Was ist der Unterschied zwischen 80 PLUS Bronze, Silver, Gold und Platinum bei PC-Netzteilen?",
+    "shortAnswer": "Effizienzklassen: Bronze ≥82%, Silver ≥85%, Gold ≥87%, Platinum ≥89% bei 50% Last. Je höher, desto weniger Verlustleistung.",
+    "longAnswer": "80-PLUS-Zertifizierung – Wirkungsgrade bei 20%/50%/100% Last:\n\n• 80 PLUS (Standard): 80% / 80% / 80%\n• Bronze: 82% / 85% / 82%\n• Silver: 85% / 88% / 85%\n• Gold: 87% / 90% / 87%\n• Platinum: 90% / 92% / 89%\n• Titanium: 92% / 94% / 90%\n\nWirkungsgrad 90% (Gold/Platinum) bei 325W Nutzleistung:\n→ Aufnahme = 325 / 0,90 = 361,1W\n→ Verlust = 36,1W\n\nRelevanz in IHK-Prüfungen:\n• Wirkungsgrad-Berechnung ist Standardaufgabe\n• Amortisationsrechnung bei Upgrade von Bronze auf Gold\n\nFaustregel: Höhere Effizienzklasse lohnt sich bei Dauerbetrieb.",
+    "bewertungsaspekt": "Berechnung",
+    "kartentyp": "Vergleich",
+    "schwierigkeitsgrad": "Leicht",
+    "set": "Hardware-Berechnungen",
+    "topic": "2 – Kernkomponenten",
+    "subtopic": "Netzteil & Wirkungsgrad",
+    "hashtags": [
+      "#Hardware",
+      "#Netzteil",
+      "#Wirkungsgrad",
+      "#AP1"
+    ],
+    "url": "https://de.wikipedia.org/wiki/80_PLUS"
+  },
+  {
+    "id": "33fb5fb9-a093-817b-aaeb-c9e8046d8d0d",
+    "question": "Welche Ports werden typischerweise für die Bildschirmausgabe an einem modernen Desktop-PC verwendet – und welche Eigenschaft hat jeder davon?",
+    "shortAnswer": "HDMI (Audio+Video, Consumer), DisplayPort (High-Refresh, MST, Gaming), USB-C/Thunderbolt (universell, Video+Daten+Strom), VGA (analog, veraltet).",
+    "longAnswer": "Übersicht Videoausgabe-Schnittstellen:\n\nVGA (D-Sub):\n• Analog, max. 1080p, kein Audio\n• Veraltet, kaum noch verbaut\n\nDVI:\n• Digital/analog, max. 2560×1600\n• Kein Audio, wird ersetzt\n\nHDMI:\n• Digital, Audio+Video kombiniert\n• HDMI 2.0: 4K@60Hz | HDMI 2.1: 4K@120Hz\n• Standard für TV, Beamer, Konsolen\n\nDisplayPort:\n• Digital, kein Audio Return Channel\n• MST (Multi-Stream): mehrere Monitore\n• DP 1.4: 8K@30Hz | DP 2.0: 8K@60Hz\n• Standard in professionellen/Gaming-PCs\n\nUSB-C / Thunderbolt:\n• Überträgt Video (DP-Alt-Mode), Daten, Strom\n• Thunderbolt 3/4: 40 Gbit/s, 2× 4K\n\nPrüfungstipp: VGA und DVI kennen, aber als veraltet einordnen.",
+    "bewertungsaspekt": "Funktional",
+    "kartentyp": "Begriff",
+    "schwierigkeitsgrad": "Leicht",
+    "set": "Hardware-Berechnungen",
+    "topic": "3 – Peripherie",
+    "subtopic": "Ports & Schnittstellen extern",
+    "hashtags": [
+      "#Hardware",
+      "#Ports",
+      "#Monitor",
+      "#AP1"
+    ],
+    "url": "https://de.wikipedia.org/wiki/Grafikkarte"
+  },
+  {
+    "id": "33fb5fb9-a093-8162-93ca-c17c649b5c3e",
+    "question": "Ein Server verbraucht 400W im Betrieb. Er läuft 180 Stunden pro Monat. Der Strompreis beträgt 0,30 €/kWh. Wie hoch sind die jährlichen Stromkosten?",
+    "shortAnswer": "259,20 €/Jahr. Formel: 0,4 kW × 180h × 0,30 €/kWh × 12 Monate = 259,20 €",
+    "longAnswer": "Rechenweg:\n• Verbrauch pro Monat = 0,4 kW × 180h = 72 kWh\n• Kosten pro Monat = 72 kWh × 0,30 €/kWh = 21,60 €\n• Jahreskosten = 21,60 € × 12 = 259,20 €\n\nAlternativ direkt:\n• 0,4 × 180 × 0,30 × 12 = 259,20 €\n\nErweiterung – Amortisation bei Austausch:\nWenn neuer Server 250W verbraucht (Einsparung: 150W = 0,15 kW):\n• Monatliche Einsparung = 0,15 × 180 × 0,30 = 8,10 €\n• Bei Investitionskosten von 2.000 €: 2.000 / 8,10 ≈ 247 Monate ≈ 20,6 Jahre\n\nPrüfungstipp: W in kW umrechnen (÷1000) vor der Berechnung!",
+    "bewertungsaspekt": "Ökonomisch",
+    "kartentyp": "Berechnung",
+    "schwierigkeitsgrad": "Mittel",
+    "set": "Hardware-Berechnungen",
+    "topic": "5 – Stromversorgung & USV",
+    "subtopic": "Netzteileffizienz & Stromkosten",
+    "hashtags": [
+      "#Hardware",
+      "#Stromkosten",
+      "#Server",
+      "#AP1"
+    ],
+    "url": "https://www.elektronik-kompendium.de/sites/slt/1811061.htm"
+  },
+  {
+    "id": "33fb5fb9-a093-8102-8468-cc88bd9e289e",
+    "question": "Was versteht man unter 'Nutzleistung', 'Verlustleistung' und 'aufgenommener Wirkleistung' bei einem Netzteil – und wie hängen sie zusammen?",
+    "shortAnswer": "Aufgenommene Wirkleistung = Nutzleistung + Verlustleistung. Wirkungsgrad η = Nutzleistung / Wirkleistung. Verlust wird als Wärme abgegeben.",
+    "longAnswer": "Begriffe und Zusammenhang:\n\nNutzleistung (P_nutz):\n• Die Leistung, die das Netzteil tatsächlich an die Komponenten abgibt\n• Beispiel: 325W bei 650W-Netzteil mit 50% Last\n\nAufgenommene Wirkleistung (P_aufnahme):\n• Die Leistung, die das Netzteil aus der Steckdose zieht\n• Immer größer als Nutzleistung (außer η = 100%, theoretisch)\n\nVerlustleistung (P_verlust):\n• Differenz: P_aufnahme − P_nutz\n• Wird als Wärme abgegeben → erklärt Lüfterbedarf\n\nFormeln:\n• η = P_nutz / P_aufnahme\n• P_aufnahme = P_nutz / η\n• P_verlust = P_aufnahme − P_nutz\n\nBeispiel (650W, 50% Last, η=90%):\n• P_nutz = 325W\n• P_aufnahme = 325 / 0,9 = 361,1W\n• P_verlust = 361,1 − 325 = 36,1W",
+    "bewertungsaspekt": "Berechnung",
+    "kartentyp": "Begriff",
+    "schwierigkeitsgrad": "Leicht",
+    "set": "Hardware-Berechnungen",
+    "topic": "2 – Kernkomponenten",
+    "subtopic": "Netzteil & Wirkungsgrad",
+    "hashtags": [
+      "#Hardware",
+      "#Netzteil",
+      "#Grundlagen",
+      "#AP1"
+    ],
+    "url": "https://de.wikipedia.org/wiki/Wirkungsgrad"
+  },
+  {
+    "id": "33fb5fb9-a093-810d-9ad1-da9db9a85fa3",
+    "question": "Eine Überwachungskamera zeichnet in 1920×1080 mit 24 Bit Farbtiefe und 30 fps auf. Wie groß ist der unkomprimierte Datenstrom pro Minute für eine einzelne Kamera in MB?",
+    "shortAnswer": "Ca. 11.197 MB/min ≈ 11,2 GB/min. Formel: 1920 × 1080 × 24 / 8 × 30 fps × 60s = 11.197.440.000 Byte ≈ 11.197 MB",
+    "longAnswer": "Rechenweg Schritt für Schritt:\n\n1. Pixel pro Frame:\n   1920 × 1080 = 2.073.600 Pixel\n\n2. Bytes pro Frame (24 Bit = 3 Byte):\n   2.073.600 × 3 = 6.220.800 Byte\n\n3. Bytes pro Sekunde (30 fps):\n   6.220.800 × 30 = 186.624.000 Byte/s ≈ 186,6 MB/s\n\n4. Bytes pro Minute:\n   186.624.000 × 60 = 11.197.440.000 Byte ≈ 11.197 MB ≈ 11,2 GB\n\nFür 72 Stunden:\n   186,6 MB/s × 3600 × 72 = 48.329.856 MB ≈ 48.330 GB ≈ 48,3 TB (1 Kamera, unkomprimiert)\n\nPrüfungstipp: Zwischenergebnisse in der Prüfung notieren – Teilpunkte werden vergeben!",
+    "bewertungsaspekt": "Berechnung",
+    "kartentyp": "Berechnung",
+    "schwierigkeitsgrad": "Leicht",
+    "set": "Hardware-Berechnungen",
+    "topic": "3 – Peripherie",
+    "subtopic": "Kamera & Videodaten",
+    "hashtags": [
+      "#Hardware",
+      "#Kamera",
+      "#Datenstrom",
+      "#AP1"
+    ],
+    "url": "https://de.wikipedia.org/wiki/Aufl%C3%B6sung_(Rastergrafik)"
+  },
+  {
+    "id": "33fb5fb9-a093-8158-8f1b-e28330f0cc9d",
+    "question": "Ein Unternehmen beschafft 40 neue Büroarbeitsplätze. Sie sollen die Angebote zweier Hersteller hinsichtlich funktionaler, ökonomischer und ökologischer Aspekte bewerten. Nennen Sie je zwei Kriterien für jeden Aspekt.",
+    "shortAnswer": "Funktional: Leistungsparameter, Ergonomie. Ökonomisch: Anschaffungskosten, laufende Betriebskosten. Ökologisch: Energieverbrauch, Recyclingfähigkeit.",
+    "longAnswer": "Funktionale Aspekte:\n• Leistungsparameter: CPU-Takt, RAM-Kapazität, Reaktionszeiten – deckt die Anforderungen der betrieblichen Anwendungen ab\n• Ergonomie: Bildschirmgröße, Tastaturlayout, höhenverstellbarer Tisch/Monitor, Blendschutz gemäß ArbStättV\n\nÖkonomische Aspekte:\n• Einmalige Kosten: Anschaffungspreis, Lieferung, Installation\n• Laufende Kosten: Energie, Wartung, Lizenzgebühren, Support\n\nÖkologische Aspekte:\n• Energieverbrauch: Watt im Betrieb und Stand-by, Energieeffizienzklasse (Energy Star, 80 PLUS)\n• Recyclingfähigkeit: Anteil wiederverwertbarer Materialien, RoHS-Konformität, Herstellerrücknahme\n\nPrüfungshinweis: Die IHK erwartet pro Aspekt eine klare Zuordnung. Soziale Aspekte (ab 2025 neu) umfassen zusätzlich Arbeitsbedingungen in der Lieferkette und Nachhaltigkeit.",
+    "bewertungsaspekt": "Berechnung",
+    "kartentyp": "Aufzählung",
+    "schwierigkeitsgrad": "Leicht",
+    "set": "Bewertungsaspekte",
+    "topic": "1 – Nötige Kenntnisse",
+    "subtopic": "Bewertungsaspekte (funktional/ökon./ökol./sozial)",
+    "hashtags": [
+      "#Bewertungsaspekte",
+      "#Hardware",
+      "#Beschaffung",
+      "#AP1"
+    ],
+    "url": "https://it-berufe-podcast.de/vorbereitung-auf-die-ihk-abschlusspruefung-der-it-berufe/moegliche-themen-von-teil-1-der-gestreckten-abschlusspruefung-gap-in-den-it-berufen/"
+  },
+  {
+    "id": "33fb5fb9-a093-81a0-b129-c77693d8047b",
+    "question": "Die Geschäftsleitung möchte wissen, warum ergonomische Arbeitsplatzausstattung auch aus betriebswirtschaftlicher Sicht sinnvoll ist. Nennen Sie drei ökonomische Argumente für Ergonomie.",
+    "shortAnswer": "Weniger Fehlzeiten durch Vermeidung von Erkrankungen, höhere Produktivität durch komfortables Arbeiten, Vermeidung von Regressansprüchen durch Einhaltung der Arbeitsstättenverordnung.",
+    "longAnswer": "Ökonomische Argumente für ergonomische Arbeitsplätze:\n\n1. Reduzierung von Krankheitskosten\n   • Weniger Rücken-, Augen- und RSI-Erkrankungen durch richtige Sitzhaltung und Monitorhöhe\n   • Direkte Einsparung bei Lohnfortzahlung und Krankenvertretung\n\n2. Produktivitätssteigerung\n   • Mitarbeiter ermüden langsamer, Fehlerquote sinkt\n   • Angenehme Arbeitsbedingungen fördern Motivation und Bindung\n\n3. Rechtliche Absicherung\n   • Arbeitsstättenverordnung (ArbStättV) und DGUV-Vorschriften schreiben Mindestanforderungen vor\n   • Verstöße können zu Bußgeldern oder Haftung führen\n\n4. Geringere Fluktuation\n   • Ergonomisch ausgestattete Arbeitsplätze erhöhen die Mitarbeiterzufriedenheit\n   • Niedrigere Rekrutierungs- und Einarbeitungskosten\n\nPrüfungshinweis: Wenn nach 'betriebswirtschaftlichen Vorteilen' von Ergonomie gefragt wird, immer Bezug zu Kosten, Produktivität oder Rechtskonformität herstellen.",
+    "bewertungsaspekt": "Ökonomisch",
+    "kartentyp": "Aufzählung",
+    "schwierigkeitsgrad": "Leicht",
+    "set": "Bewertungsaspekte",
+    "topic": "1 – Nötige Kenntnisse",
+    "subtopic": "Ergonomie & Arbeitsschutz",
+    "hashtags": [
+      "#Ergonomie",
+      "#ÖkonomischeAspekte",
+      "#Arbeitsplatz",
+      "#AP1"
+    ],
+    "url": "https://de.wikipedia.org/wiki/Ergonomie"
+  },
+  {
+    "id": "33fb5fb9-a093-814c-afd7-f0d91e259589",
+    "question": "Ein Desktop-PC hat einen Energieverbrauch von 180 W im Betrieb und 5 W im Stand-by. Der PC läuft täglich 8 Stunden und steht 16 Stunden im Stand-by. Berechnen Sie die jährlichen Stromkosten bei 0,30 €/kWh (250 Arbeitstage).",
+    "shortAnswer": "Ca. 115,80 €/Jahr. Betrieb: 0,18 kW × 8h × 250 × 0,30 = 108 €. Stand-by: 0,005 kW × 16h × 250 × 0,30 = 6 €. Gesamt ≈ 114–116 €.",
+    "longAnswer": "Rechenweg:\n\nBetriebsstunden pro Jahr:\n• 8h × 250 Tage = 2.000 h\n• Verbrauch: 0,18 kW × 2.000 h = 360 kWh\n• Kosten Betrieb: 360 kWh × 0,30 €/kWh = 108,00 €\n\nStand-by-Stunden pro Jahr:\n• 16h × 250 Tage = 4.000 h\n• Verbrauch: 0,005 kW × 4.000 h = 20 kWh\n• Kosten Stand-by: 20 kWh × 0,30 €/kWh = 6,00 €\n\nGesamtkosten pro Jahr: 108 + 6 = 114,00 €\n\nHinweis: Stand-by-Verbrauch wirkt gering, summiert sich aber über viele Geräte erheblich. Bei 40 PCs = 4.560 €/Jahr nur für Strom.\n\nPrüfungshinweis: Einheit W in kW umrechnen (÷ 1.000) vor Berechnung!",
+    "bewertungsaspekt": "Ökologisch",
+    "kartentyp": "Berechnung",
+    "schwierigkeitsgrad": "Schwer",
+    "set": "Bewertungsaspekte",
+    "topic": "1 – Nötige Kenntnisse",
+    "subtopic": "Mobile & stationäre Arbeitsplätze",
+    "hashtags": [
+      "#Energieverbrauch",
+      "#ÖkologischeAspekte",
+      "#Stromkosten",
+      "#AP1"
+    ],
+    "url": "https://www.elektronik-kompendium.de/sites/slt/1811061.htm"
+  },
+  {
+    "id": "33fb5fb9-a093-81d9-b9e0-d0581a347ba4",
+    "question": "Erläutern Sie den Unterschied zwischen Anschaffungskosten (TCO-Betrachtung: CAPEX) und laufenden Betriebskosten (OPEX) am Beispiel eines Servers. Nennen Sie je drei Beispiele.",
+    "shortAnswer": "CAPEX (einmalig): Kaufpreis, Lieferung/Installation, Ersteinrichtung. OPEX (laufend): Stromkosten, Wartungsvertrag, Lizenzgebühren.",
+    "longAnswer": "CAPEX – Capital Expenditure (einmalige Kosten):\n• Anschaffungspreis des Servers (Hardware)\n• Lieferung, Montage und Inbetriebnahme\n• Schulungskosten für Administratoren\n• Einmalige Softwarelizenzen (z. B. Betriebssystem)\n\nOPEX – Operational Expenditure (laufende Kosten):\n• Stromkosten im Betrieb (abhängig von Wirkungsgrad)\n• Jährliche Wartungsverträge / Servicevereinbarungen (SLA)\n• Wiederkehrende Lizenzgebühren (z. B. Subscription-Modelle)\n• Personalkosten für Administration\n• Kühlungskosten im Rechenzentrum\n\nTCO (Total Cost of Ownership):\n• TCO = CAPEX + OPEX (über gesamte Nutzungsdauer)\n• Beispiel: Server 5.000 € Kaufpreis + 800 €/Jahr × 5 Jahre = TCO 9.000 €\n\nPrüfungshinweis: IHK-Aufgaben fragen oft nach dem 'Gesamtkostenvergleich' über eine definierte Nutzungsdauer – TCO immer angeben.",
+    "bewertungsaspekt": "Ökonomisch",
+    "kartentyp": "Vergleich",
+    "schwierigkeitsgrad": "Leicht",
+    "set": "Bewertungsaspekte",
+    "topic": "1 – Nötige Kenntnisse",
+    "subtopic": "TCO & Wirtschaftlichkeit",
+    "hashtags": [
+      "#Kosten",
+      "#TCO",
+      "#ÖkonomischeAspekte",
+      "#AP1"
+    ],
+    "url": "https://de.wikipedia.org/wiki/Total_Cost_of_Ownership"
+  },
+  {
+    "id": "33fb5fb9-a093-8195-ab4e-e51e77422ce9",
+    "question": "Ein Unternehmen kauft einen Laptop für 1.200 € und plant eine Nutzungsdauer von 4 Jahren. Nach 2 Jahren wird der Laptop gegen ein Modell mit 40 W weniger Verbrauch getauscht. Wie hoch ist die jährliche Abschreibung (linear) und ist der vorzeitige Tausch bei 0,30 €/kWh und 2.000 h/Jahr sinnvoll, wenn das neue Gerät 900 € kostet?",
+    "shortAnswer": "Abschreibung: 300 €/Jahr. Einsparung durch weniger Strom: 24 €/Jahr. Restwert nach 2 Jahren: 600 €. Vorzeitiger Tausch ist nicht wirtschaftlich – Restwert übersteigt die Stromeinsparung bei weitem.",
+    "longAnswer": "Abschreibungsrechnung (linear):\n• Jahres-AfA = Anschaffungswert / Nutzungsdauer = 1.200 € / 4 = 300 €/Jahr\n• Restwert nach 2 Jahren = 1.200 € − 2 × 300 € = 600 €\n\nStromeinsparung durch Neukauf:\n• Einsparung = 40 W = 0,04 kW\n• Jahreseinsparung = 0,04 kW × 2.000 h × 0,30 €/kWh = 24 €/Jahr\n\nAmortisationsrechnung Neukauf:\n• Effektivkosten Neukauf = 900 € + Restwert 600 € = Gesamtbelastung 1.500 €\n• Jährliche Einsparung: 24 €/Jahr\n• Amortisation = 1.500 € / 24 €/Jahr = 62,5 Jahre → nicht sinnvoll!\n\nFazit: Der vorzeitige Tausch lohnt sich aus ökonomischer Sicht nicht. Erst wenn die Energieeinsparung erheblich größer ist oder der Restwert sehr gering, kann ein Tausch wirtschaftlich sein.\n\nPrüfungshinweis: Abschreibung und Amortisation sind häufig kombiniert in einer Aufgabe.",
+    "bewertungsaspekt": "Ökonomisch",
+    "kartentyp": "Berechnung",
+    "schwierigkeitsgrad": "Mittel",
+    "set": "Bewertungsaspekte",
+    "topic": "1 – Nötige Kenntnisse",
+    "subtopic": "TCO & Wirtschaftlichkeit",
+    "hashtags": [
+      "#Nutzungsdauer",
+      "#Abschreibung",
+      "#ÖkonomischeAspekte",
+      "#AP1"
+    ],
+    "url": "https://de.wikipedia.org/wiki/Abschreibung"
+  },
+  {
+    "id": "33fb5fb9-a093-81fc-a2ff-c92702a22477",
+    "question": "Welche Anforderungen stellt die Arbeitsstättenverordnung (ArbStättV) an Bildschirmarbeitsplätze? Nennen Sie vier konkrete Vorgaben.",
+    "shortAnswer": "Monitor mind. 50 cm Abstand zum Auge, keine Blendung/Reflexion, einstellbare Helligkeit/Kontrast, Bildwiederholrate mind. 60 Hz (flimmerfrei), ergonomische Tastatur und Maus, korrekte Sitzhöhe.",
+    "longAnswer": "Anforderungen der ArbStättV / ASR A6 an Bildschirmarbeitsplätze:\n\nBildschirm:\n• Zeichenhöhe mind. 3,2 mm (bei 50 cm Sehabstand)\n• Keine störenden Reflexionen oder Spiegelungen\n• Einstellbare Helligkeit und Kontrast\n• Bildwiederholrate: mind. 60 Hz (besser 75 Hz) zur Vermeidung von Flimmern\n• Kippbar und neigbar (oder Schwenkarm)\n\nArbeitsplatz:\n• Tischtiefe mind. 80 cm, damit Bildschirm im richtigen Abstand steht\n• Sehabstand Bildschirm: 50–80 cm (je nach Schriftgröße)\n• Oberkante des Monitors auf Augenhöhe oder leicht darunter\n• Unterarmstützen oder ergonomische Tastatur\n\nBeleuchtung:\n• Beleuchtungsstärke am Arbeitsplatz: mind. 500 Lux\n• Keine Direktblendung durch Fenster oder Leuchten\n\nPrüfungshinweis: ArbStättV und Ergonomie werden oft im Kontext 'Barrierefreiheit' oder 'Mitarbeiterberatung' gefragt. Konkrete Zahlen (50 cm, 500 Lux) erhöhen die Punktzahl.",
+    "bewertungsaspekt": "Sozial",
+    "kartentyp": "Aufzählung",
+    "schwierigkeitsgrad": "Leicht",
+    "set": "Bewertungsaspekte",
+    "topic": "1 – Nötige Kenntnisse",
+    "subtopic": "Ergonomie & Arbeitsschutz",
+    "hashtags": [
+      "#Ergonomie",
+      "#ArbStättV",
+      "#SozialeAspekte",
+      "#AP1"
+    ],
+    "url": "https://de.wikipedia.org/wiki/Arbeitst%C3%A4ttenverordnung"
+  },
+  {
+    "id": "33fb5fb9-a093-8147-bb69-c84a1ddfb91c",
+    "question": "Was versteht man unter dem Energy-Star-Zertifikat und welche Bedeutung hat es bei der Hardware-Beschaffung? Nennen Sie auch eine Schwäche des Zertifikats.",
+    "shortAnswer": "Energy Star ist ein US-amerikanisches Energieeffizienz-Zertifikat für IT-Geräte. Es garantiert, dass Geräte bestimmte Verbrauchsgrenzen im Stand-by und Betrieb unterschreiten. Schwäche: Mindestanforderungen gelten als veraltet, kein Hinweis auf Produktionsökologie.",
+    "longAnswer": "Energy Star im Überblick:\n\nHerkunft und Träger:\n• Ursprünglich von der US-Umweltschutzbehörde EPA entwickelt\n• Seit 2001 auch in der EU anerkannt (Abkommen EU–USA)\n\nBedeutung für Hardware-Beschaffung:\n• Geräte mit Energy-Star-Label verbrauchen im Stand-by, Sleep und aktiven Betrieb weniger Energie als der Durchschnitt\n• Klar messbare Anforderungen: z. B. Desktop-PC max. X Watt im Leerlauf\n• Einfaches Vergleichskriterium bei Angebotsvergleichen\n• In öffentlichen Ausschreibungen teilweise Pflichtkriterium\n\nSchwächen:\n• Anforderungsgrenzen werden regelmäßig kritisiert als zu niedrig\n• Kein Hinweis auf Recyclingfähigkeit, Herstellungsbedingungen oder Langlebigkeit\n• Keine Überprüfung der Produktionsökologie (Rohstoffe, CO₂ bei Herstellung)\n\nAlternative Siegel:\n• Blauer Engel: strengere Anforderungen inkl. Recycling und Schadstoffe\n• EPEAT: umfassenderes Umweltsiegel für IT-Hardware\n\nPrüfungshinweis: Energy Star, Blauer Engel und EPEAT im Kontext ökologischer Kriterien kennen.",
+    "bewertungsaspekt": "Ökologisch",
+    "kartentyp": "Begriff",
+    "schwierigkeitsgrad": "Leicht",
+    "set": "Bewertungsaspekte",
+    "topic": "1 – Nötige Kenntnisse",
+    "subtopic": "Bewertungsaspekte (funktional/ökon./ökol./sozial)",
+    "hashtags": [
+      "#GreenIT",
+      "#EnergyStar",
+      "#ÖkologischeAspekte",
+      "#AP1"
+    ],
+    "url": "https://de.wikipedia.org/wiki/Energy_Star"
+  },
+  {
+    "id": "33fb5fb9-a093-81c3-aee9-cb26e3db82cb",
+    "question": "Erklären Sie den Begriff 'Nutzungsdauer' im Kontext der Hardware-Beschaffung und nennen Sie drei Faktoren, die die tatsächliche Nutzungsdauer eines PCs beeinflussen.",
+    "shortAnswer": "Nutzungsdauer = Zeitraum, über den eine Hardware wirtschaftlich sinnvoll eingesetzt werden kann. Einflussfaktoren: technischer Verschleiß, steigende Softwareanforderungen, Verfügbarkeit von Treibern/Updates.",
+    "longAnswer": "Definition Nutzungsdauer:\n• Technische Nutzungsdauer: Zeitraum bis zum physischen Defekt\n• Wirtschaftliche Nutzungsdauer: Zeitraum, bis Betrieb unwirtschaftlicher als Neuanschaffung\n• Steuerliche Nutzungsdauer (AfA-Tabelle): Für PCs laut BMF-AfA-Tabelle 3 Jahre (seit 2021)\n\nEinflussfaktoren:\n1. Technischer Verschleiß\n   • Lüfter, HDD-Festplatten, Akkus degradieren physisch\n   • Lösung: SSD statt HDD, Qualitätskomponenten\n\n2. Steigende Software-Anforderungen\n   • Neue Betriebssystemversionen (z. B. Windows 11: TPM 2.0 Pflicht)\n   • Anwendungen benötigen mehr RAM und CPU-Leistung\n\n3. Fehlende Treiber-/Update-Unterstützung\n   • Hersteller stellen Supportende fest (End-of-Life)\n   • Sicherheitsrisiko durch nicht mehr gepatchte Firmware\n\n4. Wandelnde Anforderungen des Unternehmens\n   • Neue Einsatzzwecke (z. B. Videokonferenzen, CAD) überfordern alte Hardware\n\nPrüfungshinweis: In Wirtschaftlichkeitsberechnungen immer die Nutzungsdauer explizit angeben, da sie die Abschreibungshöhe direkt bestimmt.",
+    "bewertungsaspekt": "Ökonomisch",
+    "kartentyp": "Begriff",
+    "schwierigkeitsgrad": "Leicht",
+    "set": "Bewertungsaspekte",
+    "topic": "1 – Nötige Kenntnisse",
+    "subtopic": "TCO & Wirtschaftlichkeit",
+    "hashtags": [
+      "#Nutzungsdauer",
+      "#ÖkonomischeAspekte",
+      "#Beschaffung",
+      "#AP1"
+    ],
+    "url": "https://de.wikipedia.org/wiki/Nutzungsdauer"
+  },
+  {
+    "id": "33fb5fb9-a093-8154-b9b7-efa99395667a",
+    "question": "Ein Unternehmen überlegt, ob es Thin Clients oder vollwertige Desktop-PCs beschaffen soll. Vergleichen Sie beide Geräteklassen nach ökonomischen und ökologischen Aspekten.",
+    "shortAnswer": "Thin Clients: geringe Anschaffungskosten, niedriger Energieverbrauch (5–20 W), lange Nutzungsdauer, abhängig vom Server. Desktop-PCs: höhere Kosten, mehr Leistung lokal, 60–200 W, eigenständig betreibbar.",
+    "longAnswer": "Vergleich Thin Client vs. Desktop-PC:\n\nÖkonomische Aspekte:\n\nThin Client:\n• Anschaffungskosten: 150–400 € (günstig)\n• Laufende Kosten: sehr niedrig (kaum Verschleiß, wenig Strom)\n• Wartung: zentral auf Server, geringer lokaler Aufwand\n• Nachteil: Serverinfrastruktur notwendig (hohe Initialkosten)\n\nDesktop-PC:\n• Anschaffungskosten: 500–1.500 € (je nach Ausstattung)\n• Laufende Kosten: höher (Energie, lokale Wartung, Updates)\n• Vorteil: kein zentraler Server notwendig, offline nutzbar\n\nÖkologische Aspekte:\n\nThin Client:\n• Energieverbrauch: 5–20 W (sehr energieeffizient)\n• Lange Nutzungsdauer: 7–10 Jahre durch geringe Hardware-Komplexität\n• Wenig Elektroschrott: kleine, ressourcenschonende Geräte\n\nDesktop-PC:\n• Energieverbrauch: 80–250 W\n• Nutzungsdauer: 3–5 Jahre (steuerlich 3 Jahre)\n• Mehr Bauteile → mehr Elektroschrott\n\nFazit: Bei zentralisierten Umgebungen sind Thin Clients ökonomisch und ökologisch vorteilhaft. Bei Offline-Anforderungen oder Hochleistungsanwendungen Desktop bevorzugen.",
+    "bewertungsaspekt": "Berechnung",
+    "kartentyp": "Vergleich",
+    "schwierigkeitsgrad": "Leicht",
+    "set": "Bewertungsaspekte",
+    "topic": "1 – Nötige Kenntnisse",
+    "subtopic": "Mobile & stationäre Arbeitsplätze",
+    "hashtags": [
+      "#ThinClient",
+      "#DesktopPC",
+      "#Geräteklassen",
+      "#AP1"
+    ],
+    "url": "https://de.wikipedia.org/wiki/Thin_Client"
+  },
+  {
+    "id": "33fb5fb9-a093-8105-8e5a-ff3d807f37d7",
+    "question": "Was ist die RoHS-Richtlinie und welche Bedeutung hat sie für die Hardware-Beschaffung in einem Unternehmen?",
+    "shortAnswer": "RoHS (Restriction of Hazardous Substances) schränkt den Einsatz gefährlicher Stoffe (Blei, Quecksilber, Cadmium u. a.) in Elektrogeräten ein. Pflicht in der EU – nur RoHS-konforme Geräte dürfen verkauft werden.",
+    "longAnswer": "RoHS – Restriction of Hazardous Substances:\n\nInhalt der Richtlinie (EU 2011/65/EU, RoHS 2):\n• Verbot bzw. Mengenbeschränkung von 10 Stoffen in Elektro- und Elektronikgeräten\n• Verbotene Stoffe u. a.: Blei (Pb), Quecksilber (Hg), Cadmium (Cd), Chrom VI, PBDE, PBB\n\nBedeutung für die Beschaffung:\n• In der EU dürfen nur RoHS-konforme Geräte verkauft werden → Grundschutz bereits beim Kauf\n• Unternehmen sollten CE-Kennzeichen und RoHS-Konformitätserklärungen im Lieferschein prüfen\n• Bei Importen aus Nicht-EU-Ländern eigene Prüfpflicht!\n\nZusammenhang mit Recycling:\n• Weniger Schadstoffe erleichtern und verbilligen die fachgerechte Entsorgung\n• Konsequenz aus ElektroG (Elektro- und Elektronikgerätegesetz): Hersteller müssen Rücknahme organisieren\n\nAbgrenzung zu WEEE:\n• RoHS: regelt Inhaltsstoffe\n• WEEE (Waste of Electrical and Electronic Equipment): regelt Entsorgung und Rücknahme\n\nPrüfungshinweis: RoHS und Recyclingfähigkeit werden oft als Paar im Kontext 'ökologische Bewertung' abgefragt.",
+    "bewertungsaspekt": "Ökologisch",
+    "kartentyp": "Begriff",
+    "schwierigkeitsgrad": "Leicht",
+    "set": "Bewertungsaspekte",
+    "topic": "1 – Nötige Kenntnisse",
+    "subtopic": "Ökologische Bewertung",
+    "hashtags": [
+      "#RoHS",
+      "#Recycling",
+      "#ÖkologischeAspekte",
+      "#AP1"
+    ],
+    "url": "https://de.wikipedia.org/wiki/RoHS"
+  },
+  {
+    "id": "33fb5fb9-a093-818d-99a4-e790505dbb18",
+    "question": "Ein Mitarbeiter beschwert sich über Nacken- und Rückenschmerzen am Bildschirmarbeitsplatz. Welche ergonomischen Maßnahmen können Sie als IT-Fachkraft ergreifen oder empfehlen? Nennen Sie vier Maßnahmen.",
+    "shortAnswer": "Monitor auf Augenhöhe positionieren, Sehabstand 50–80 cm, höhenverstellbarer Schreibtisch, ergonomischer Bürostuhl (Lendenwirbelstütze), externe Tastatur/Maus, Monitorneigung anpassen.",
+    "longAnswer": "Ergonomische Maßnahmen am Bildschirmarbeitsplatz:\n\n1. Monitoreinstellung:\n   • Oberkante des Monitors auf Augenhöhe oder 5–10 cm darunter\n   • Sehabstand: 50–80 cm (abhängig von Schriftgröße und Bildschirmgröße)\n   • Neigung 0–20° nach hinten (verhindert Nickbewegung)\n   • Keine Reflexionen: Monitor nicht gegen Fenster aufstellen\n\n2. Sitzposition (Bürostuhl):\n   • Sitzfläche so einstellen, dass Oberschenkel waagerecht, Knie 90°\n   • Armlehnen auf Tischplattenhöhe → Schultern entspannen\n   • Lendenwirbelstütze aktivieren\n\n3. Tisch und Peripherie:\n   • Tastatur auf Tisch, sodass Unterarme waagerecht liegen\n   • Maus in Reichweite, kein Strecken des Arms\n   • Handballenauflage für Tastatur und Maus\n\n4. Softwaremaßnahmen (IT-Fachkraft):\n   • Schriftgröße im Betriebssystem erhöhen (Skalierung 125–150 %)\n   • Blaulichtfilter / Nachtmodus aktivieren\n   • Bildschirmhelligkeit an Umgebungslicht anpassen\n\nRechtlicher Hintergrund: ArbStättV, ASR A6 (Bildschirmarbeit), DGUV Information 215-410",
+    "bewertungsaspekt": "Sozial",
+    "kartentyp": "Aufzählung",
+    "schwierigkeitsgrad": "Leicht",
+    "set": "Bewertungsaspekte",
+    "topic": "1 – Nötige Kenntnisse",
+    "subtopic": "Ergonomie & Arbeitsschutz",
+    "hashtags": [
+      "#Ergonomie",
+      "#SozialeAspekte",
+      "#Arbeitsplatz",
+      "#AP1"
+    ],
+    "url": "https://www.baua.de/DE/Themen/Arbeitsgestaltung-im-Betrieb/Ergonomie/_node.html"
+  },
+  {
+    "id": "33fb5fb9-a093-8172-b76c-e37a411317ae",
+    "question": "Erläutern Sie, was unter 'Nachhaltigkeit' im Kontext der IT-Hardware-Beschaffung zu verstehen ist. Unterscheiden Sie dabei ökologische, ökonomische und soziale Dimensionen.",
+    "shortAnswer": "Ökologisch: Energieeffizienz, Recycling, Schadstoffvermeidung. Ökonomisch: Langlebigkeit, niedrige TCO, Reparierbarkeit. Sozial: fairer Rohstoffabbau (Konfliktmineralien), gerechte Arbeitsbedingungen in der Lieferkette.",
+    "longAnswer": "Nachhaltigkeit in der IT-Beschaffung – Drei-Säulen-Modell:\n\nÖkologische Dimension:\n• Energieeffizienz im Betrieb (Energieeffizienzklasse, Energy Star, 80 PLUS)\n• Recyclingfähigkeit: Anteil recycelbarer Materialien, Rücknahmesysteme (ElektroG)\n• Schadstoffe: RoHS-Konformität, kein Einsatz von FCKW, Blei, Quecksilber\n• CO₂-Fußabdruck: Produktion, Transport, Betrieb, Entsorgung\n\nÖkonomische Dimension:\n• Langlebigkeit senkt Anschaffungsfrequenz → weniger Ressourcenverbrauch\n• Reparierbarkeit (Right to Repair): ersetzbare Akkus, verfügbare Ersatzteile\n• Niedrige TCO durch geringen Energieverbrauch und lange Garantielaufzeiten\n\nSoziale Dimension (neu ab AP1 2025):\n• Herkunft der Rohstoffe: Konfliktmineralien (Tantal, Kobalt, Zinn aus Krisenregionen)\n• Arbeitsbedingungen in der Produktion: Lohnhöhe, Arbeitszeiten, Kinderarbeit\n• Lieferkettengesetz (LkSG): Unternehmen ab 1.000 MA müssen Sorgfaltspflichten einhalten\n\nPrüfungshinweis: 'Soziale Aspekte' wurden ab 2025 explizit in den IHK-Prüfungskatalog aufgenommen. Stichworte: Arbeitsbedingungen, Lieferkette, Nachhaltigkeit.",
+    "bewertungsaspekt": "Sozial",
+    "kartentyp": "Begriff",
+    "schwierigkeitsgrad": "Leicht",
+    "set": "Bewertungsaspekte",
+    "topic": "1 – Nötige Kenntnisse",
+    "subtopic": "Soziale Aspekte & Nachhaltigkeit",
+    "hashtags": [
+      "#Nachhaltigkeit",
+      "#SozialeAspekte",
+      "#Beschaffung",
+      "#AP1"
+    ],
+    "url": "https://de.wikipedia.org/wiki/Nachhaltigkeit"
+  },
+  {
+    "id": "33fb5fb9-a093-81c1-b64d-fe89acc2e34c",
+    "question": "Ein Unternehmen mit 50 Arbeitsplätzen wechselt von Desktop-PCs (200 W) zu energiesparenden Mini-PCs (35 W). Berechnen Sie die jährliche Stromeinsparung und CO₂-Reduktion bei 2.000 Betriebsstunden und 0,30 €/kWh (CO₂-Faktor: 0,4 kg/kWh).",
+    "shortAnswer": "Einsparung pro PC: 165 W = 0,165 kW × 2.000 h = 330 kWh/Jahr. 50 PCs: 16.500 kWh = 4.950 €/Jahr gespart. CO₂: 16.500 × 0,4 = 6.600 kg = 6,6 Tonnen CO₂ weniger.",
+    "longAnswer": "Rechenweg:\n\nEinsparung pro Arbeitsplatz:\n• Verbrauchsunterschied = 200 W − 35 W = 165 W = 0,165 kW\n• Einsparung pro Jahr = 0,165 kW × 2.000 h = 330 kWh/Jahr\n• Kosteneinsparung = 330 kWh × 0,30 €/kWh = 99,00 €/Jahr pro Gerät\n\nEinsparung gesamt (50 Arbeitsplätze):\n• Energieeinsparung = 330 kWh × 50 = 16.500 kWh/Jahr\n• Kosteneinsparung = 16.500 × 0,30 = 4.950 €/Jahr\n\nCO₂-Einsparung:\n• CO₂-Reduktion = 16.500 kWh × 0,4 kg/kWh = 6.600 kg = 6,6 Tonnen CO₂/Jahr\n\nAmortisation (Mini-PCs 400 € teurer pro Stück):\n• Mehrinvestition = 50 × 400 € = 20.000 €\n• Amortisation = 20.000 € / 4.950 €/Jahr ≈ 4 Jahre\n\nPrüfungshinweis: CO₂-Faktor (Emissionsfaktor des deutschen Stromnetzes) wird in der Aufgabe vorgegeben. Einheit beachten: kg/kWh → Ergebnis in kg, dann in Tonnen umrechnen.",
+    "bewertungsaspekt": "Ökologisch",
+    "kartentyp": "Berechnung",
+    "schwierigkeitsgrad": "Schwer",
+    "set": "Bewertungsaspekte",
+    "topic": "1 – Nötige Kenntnisse",
+    "subtopic": "Mobile & stationäre Arbeitsplätze",
+    "hashtags": [
+      "#GreenIT",
+      "#CO2",
+      "#ÖkologischeAspekte",
+      "#AP1"
+    ],
+    "url": "https://de.wikipedia.org/wiki/Energieeffizienz"
+  },
+  {
+    "id": "33fb5fb9-a093-81fb-a36d-eba680dd2bc0",
+    "question": "Was sind 'Leistungsparameter' im Sinne der IHK-Prüfung und wie werden sie bei der Hardware-Auswahl bewertet? Nennen Sie vier relevante Leistungsparameter eines Arbeitsplatz-PCs.",
+    "shortAnswer": "Leistungsparameter beschreiben messbare technische Kenngrößen einer Hardware-Komponente. Beispiele: CPU-Taktfrequenz (GHz), RAM-Kapazität (GB), Lese-/Schreibrate der SSD (MB/s), GPU-Speicher (GB VRAM).",
+    "longAnswer": "Begriff 'Leistungsparameter' in IHK-Prüfungen:\n\nDefinition:\n• Messbare technische Kenngrößen, die die Leistungsfähigkeit einer Komponente beschreiben\n• Grundlage für den objektiven Angebotsvergleich\n\nRelevante Parameter für Arbeitsplatz-PCs:\n\n1. Prozessor (CPU):\n   • Anzahl Kerne und Threads\n   • Taktfrequenz (Basis/Boost in GHz)\n   • Cache-Größe (L2/L3 in MB)\n\n2. Arbeitsspeicher (RAM):\n   • Kapazität (GB)\n   • Typ und Taktrate (DDR5-4800)\n   • Erweiterbarkeit (max. RAM, freie Slots)\n\n3. Datenspeicher (SSD/HDD):\n   • Kapazität (GB/TB)\n   • Sequenzielle Lese-/Schreibrate (MB/s)\n   • Schnittstelle (NVMe PCIe vs. SATA – Faktor 5–7× schneller)\n\n4. Grafikkarte / integrierte Grafik:\n   • VRAM-Kapazität (GB)\n   • Unterstützte Auflösungen und Anschlüsse\n   • Relevant für CAD, Videobearbeitung, Mehrmonitorbetrieb\n\nPrüfungshinweis: Leistungsparameter immer in Bezug zum Einsatzzweck bewerten. Für ein Textverarbeitungs-PC sind RAM und CPU weniger kritisch als für ein Grafikdesign-Arbeitsplatz.",
+    "bewertungsaspekt": "Funktional",
+    "kartentyp": "Aufzählung",
+    "schwierigkeitsgrad": "Leicht",
+    "set": "Bewertungsaspekte",
+    "topic": "2 – Kernkomponenten",
+    "subtopic": "Kenngrößen & Leistungsdaten",
+    "hashtags": [
+      "#Leistungsparameter",
+      "#FunktionaleAspekte",
+      "#Hardware",
+      "#AP1"
+    ],
+    "url": "https://de.wikipedia.org/wiki/Prozessor"
+  },
+  {
+    "id": "33fb5fb9-a093-81b1-9689-f855e8da36f8",
+    "question": "Was ist eine Nutzwertanalyse und wie wird sie bei der Hardware-Beschaffung eingesetzt? Beschreiben Sie das Vorgehen in vier Schritten.",
+    "shortAnswer": "Nutzwertanalyse: strukturiertes Bewertungsverfahren für qualitative und quantitative Kriterien. Schritte: Kriterien festlegen → gewichten → Alternativen bewerten → gewichtete Punkte summieren → Rang ermitteln.",
+    "longAnswer": "Nutzwertanalyse – Vorgehen:\n\nSchritt 1: Bewertungskriterien festlegen\n• Funktionale Kriterien: CPU-Leistung, RAM, Schnittstellen\n• Ökonomische Kriterien: Anschaffungskosten, Betriebskosten\n• Ökologische Kriterien: Energieverbrauch, Recyclingfähigkeit\n• Soziale Kriterien: Lieferbedingungen, Herstellerzertifizierungen\n\nSchritt 2: Kriterien gewichten\n• Jedes Kriterium erhält einen Gewichtungsfaktor (Summe = 100 %)\n• Beispiel: Anschaffungskosten 30 %, Leistung 25 %, Energieverbrauch 20 %, Ergonomie 15 %, Recycling 10 %\n\nSchritt 3: Alternativen bewerten\n• Jede Alternative wird je Kriterium mit 0–10 Punkten bewertet\n• Bewertung möglichst objektiv (Datenblätter, Testberichte)\n\nSchritt 4: Nutzwert berechnen und vergleichen\n• Nutzwert = Σ (Gewicht × Punkte)\n• Alternative mit höchstem Nutzwert erhält Zuschlag\n\nBeispiel:\n| Kriterium | Gewicht | Angebot A | Angebot B |\n|---|---|---|---|\n| Kosten | 30% | 8 → 2,4 | 6 → 1,8 |\n| Leistung | 25% | 7 → 1,75 | 9 → 2,25 |\n| Energie | 20% | 9 → 1,8 | 7 → 1,4 |\n| Gesamt | | 5,95 | 5,45 |\n→ Angebot A gewinnt\n\nPrüfungshinweis: Nutzwertanalyse wird in AP1 oft als Tabellenaufgabe gestellt.",
+    "bewertungsaspekt": "Ökonomisch",
+    "kartentyp": "Begriff",
+    "schwierigkeitsgrad": "Leicht",
+    "set": "Bewertungsaspekte",
+    "topic": "1 – Nötige Kenntnisse",
+    "subtopic": "Nutzwertanalyse & Beschaffung",
+    "hashtags": [
+      "#Nutzwertanalyse",
+      "#Angebotsvergleich",
+      "#Beschaffung",
+      "#AP1"
+    ],
+    "url": "https://de.wikipedia.org/wiki/Nutzwertanalyse"
+  },
+  {
+    "id": "33fb5fb9-a093-8148-862c-e71eef682601",
+    "question": "Ein Laptop-Akku hat nach 3 Jahren nur noch 70 % der ursprünglichen Kapazität. Der Hersteller bietet keinen offiziellen Akkuwechsel an. Bewerten Sie diese Situation aus ökologischer, ökonomischer und sozialer Sicht.",
+    "shortAnswer": "Ökologisch: Erzwingt vorzeitigen Gerätewechsel → mehr Elektroschrott. Ökonomisch: Nutzungsdauer sinkt, TCO steigt. Sozial: Verletzung des 'Right to Repair', Verbrauchernachteile.",
+    "longAnswer": "Bewertung nicht austauschbarer Akkus:\n\nÖkologische Perspektive:\n• Nicht austauschbarer Akku erzwingt bei Kapazitätsverlust oft kompletten Gerätewechsel\n• Erhöhter Elektroschrott: Gerät mit funktionierender CPU/RAM wird entsorgt\n• Lithium-Ionen-Akkus enthalten wertvolle Rohstoffe (Li, Co) → Verlust bei unsachgemäßer Entsorgung\n• EU-Batterieverordnung (2023): schreibt ab 2027 austauschbare Akkus in tragbaren Geräten vor\n\nÖkonomische Perspektive:\n• Effektive Nutzungsdauer sinkt von z. B. 5 Jahren auf 3 Jahre\n• TCO steigt durch frühzeitige Neuanschaffung\n• Hersteller erzielt durch geplante Obsoleszenz höhere Verkaufszahlen\n\nSoziale Perspektive:\n• Verletzung des Verbraucherprinzips 'Right to Repair' (EU-Initiative)\n• Benachteiligung finanzschwacher Nutzer, die kein neues Gerät kaufen können\n• Fehlende Transparenz: Hersteller informiert nicht über Akkuzustand / Austauschbarkeit\n\nRelevante Regelwerke:\n• EU-Batterieverordnung 2023/1542\n• EU-Ökodesign-Verordnung\n• Right to Repair Initiative der EU-Kommission\n\nPrüfungshinweis: Solche Bewertungsaufgaben erwarten ausdrücklich Argumente zu allen genannten Aspekten.",
+    "bewertungsaspekt": "Ökologisch",
+    "kartentyp": "Begriff",
+    "schwierigkeitsgrad": "Leicht",
+    "set": "Bewertungsaspekte",
+    "topic": "1 – Nötige Kenntnisse",
+    "subtopic": "Ökologische Bewertung",
+    "hashtags": [
+      "#Nachhaltigkeit",
+      "#RightToRepair",
+      "#ÖkologischeAspekte",
+      "#AP1"
+    ],
+    "url": "https://de.wikipedia.org/wiki/Geplante_Obsoleszenz"
+  },
+  {
+    "id": "33fb5fb9-a093-81a3-b8bc-fac4c9dcf243",
+    "question": "Was versteht die IHK unter 'sozialen Aspekten' bei der Hardware-Bewertung? Nennen Sie drei Beispiele mit konkretem Bezug zur IT-Branche.",
+    "shortAnswer": "Soziale Aspekte umfassen Arbeitsbedingungen in der Lieferkette, fairen Rohstoffabbau (Konfliktmineralien) und Zugänglichkeit der Technologie (digitale Teilhabe, Barrierefreiheit).",
+    "longAnswer": "Soziale Aspekte in der IHK-Prüfung (ab 2025 explizit im Katalog):\n\n1. Arbeitsbedingungen in der Produktion:\n   • Smartphones, Laptops, Server werden oft in Ländern mit niedrigen Arbeitsstandards produziert\n   • Fragen: Mindestlohn, Arbeitszeiten, Kinderarbeit, Sicherheit am Arbeitsplatz\n   • Relevante Zertifizierungen: Fairtrade für Elektronik, SA8000\n   • Rechtlicher Rahmen: Lieferkettensorgfaltspflichtengesetz (LkSG, Deutschland ab 2023)\n\n2. Konflikmineralien / Rohstoffherkunft:\n   • Kobalt (Akkus), Tantal (Kondensatoren), Zinn, Gold werden teils aus Konfliktregionen bezogen\n   • 'Dodd-Frank Act' (USA) und EU-Konfliktmineralien-Verordnung verpflichten zur Herkunftsprüfung\n\n3. Digitale Teilhabe und Barrierefreiheit:\n   • Zugang zu IT-Infrastruktur für alle Bevölkerungsgruppen (ältere Menschen, Personen mit Behinderungen)\n   • Barrierefreier Zugriff auf IT-Systeme: größere Bildschirme, Screenreader, Spracheingabe\n   • Gesellschaftlicher Aspekt: digitale Spaltung (Digital Divide)\n\nPrüfungshinweis: 'Soziale Aspekte' sind in AP1-Aufgaben oft als Ergänzung zu ökonomischen und ökologischen Kriterien gefordert. Stichworte LkSG, Barrierefreiheit und digitale Teilhabe merken.",
+    "bewertungsaspekt": "Sozial",
+    "kartentyp": "Begriff",
+    "schwierigkeitsgrad": "Leicht",
+    "set": "Bewertungsaspekte",
+    "topic": "1 – Nötige Kenntnisse",
+    "subtopic": "Bewertungsaspekte (funktional/ökon./ökol./sozial)",
+    "hashtags": [
+      "#SozialeAspekte",
+      "#Nachhaltigkeit",
+      "#Lieferkette",
+      "#AP1"
+    ],
+    "url": "https://de.wikipedia.org/wiki/Konfliktmineral"
+  },
+  {
+    "id": "33fb5fb9-a093-81a4-a417-d6670b2899a1",
+    "question": "Zwei Serverangebote sollen verglichen werden: Server A kostet 8.000 € mit 400 W Verbrauch, Server B kostet 5.500 € mit 650 W. Nutzungsdauer 5 Jahre, 8.760 h/Jahr Betrieb, 0,30 €/kWh. Welcher Server ist wirtschaftlicher?",
+    "shortAnswer": "Server A: TCO = 8.000 + 5.256 = 13.256 €. Server B: TCO = 5.500 + 8.541 = 14.041 €. Server A ist über 5 Jahre um ca. 785 € günstiger.",
+    "longAnswer": "Vergleichsrechnung (TCO über 5 Jahre):\n\nServer A (400 W, 8.000 €):\n• Jährlicher Stromverbrauch = 0,4 kW × 8.760 h = 3.504 kWh\n• Jährliche Stromkosten = 3.504 × 0,30 = 1.051,20 €\n• Stromkosten über 5 Jahre = 1.051,20 × 5 = 5.256 €\n• TCO Server A = 8.000 + 5.256 = 13.256 €\n\nServer B (650 W, 5.500 €):\n• Jährlicher Stromverbrauch = 0,65 kW × 8.760 h = 5.694 kWh\n• Jährliche Stromkosten = 5.694 × 0,30 = 1.708,20 €\n• Stromkosten über 5 Jahre = 1.708,20 × 5 = 8.541 €\n• TCO Server B = 5.500 + 8.541 = 14.041 €\n\nDifferenz: 14.041 − 13.256 = 785 € → Server A günstiger\n\nBreak-Even (ab wann lohnt sich Server A?):\n• Mehrinvestition A: 2.500 €\n• Jährliche Einsparung: 1.708,20 − 1.051,20 = 657 €/Jahr\n• Break-Even = 2.500 / 657 ≈ 3,8 Jahre\n\nPrüfungshinweis: TCO-Vergleich + Break-Even ist Standardaufgabe bei Hardware-Wirtschaftlichkeit.",
+    "bewertungsaspekt": "Ökonomisch",
+    "kartentyp": "Berechnung",
+    "schwierigkeitsgrad": "Leicht",
+    "set": "Bewertungsaspekte",
+    "topic": "1 – Nötige Kenntnisse",
+    "subtopic": "TCO & Wirtschaftlichkeit",
+    "hashtags": [
+      "#TCO",
+      "#ÖkonomischeAspekte",
+      "#Server",
+      "#AP1"
+    ],
+    "url": "https://de.wikipedia.org/wiki/Total_Cost_of_Ownership"
+  },
+  {
+    "id": "33fb5fb9-a093-8101-8acc-d389eba9584b",
+    "question": "Welche Maßnahmen im Bereich Green IT kann ein mittelständisches Unternehmen bei der IT-Hardware ergreifen? Nennen Sie vier Maßnahmen und ordnen Sie diese ökologischen oder ökonomischen Aspekten zu.",
+    "shortAnswer": "Energiesparende Geräte (ökol./ökon.), Virtualisierung / Server-Konsolidierung (ökol./ökon.), Gerätelebensdauer verlängern durch Reparatur (ökol.), Herstellerrücknahme / Recycling (ökol.).",
+    "longAnswer": "Green IT – Maßnahmen und Zuordnung:\n\n1. Energieeffiziente Hardware beschaffen (ökologisch + ökonomisch)\n   • Energy-Star- oder Blauer-Engel-zertifizierte Geräte\n   • Netzteile mit 80-PLUS-Gold oder Platinum\n   • Direkter Effekt: weniger Strom, weniger CO₂, niedrigere Betriebskosten\n\n2. Virtualisierung und Server-Konsolidierung (ökologisch + ökonomisch)\n   • Mehrere virtuelle Server auf einem physischen System\n   • Weniger Hardware → weniger Energieverbrauch, weniger Kühlung\n   • Auch: Virtual Desktop Infrastructure (VDI) mit Thin Clients\n\n3. Nutzungsdauer verlängern (ökologisch)\n   • Reparatur statt Neukauf (Right to Repair)\n   • RAM/SSD-Upgrade statt Komplettaustausch\n   • Refurbished Hardware für weniger kritische Aufgaben\n   • Spart Ressourcen bei Produktion neuer Geräte (Herstellung = größter CO₂-Anteil)\n\n4. Fachgerechte Entsorgung / Rücknahme (ökologisch)\n   • Rückgabe an Hersteller oder zertifizierte Recycler (ElektroG)\n   • Datenlöschung nach BSI-Standard vor Entsorgung\n   • Spende funktionsfähiger Geräte an gemeinnützige Organisationen\n\nPrüfungshinweis: Green IT im IHK-Prüfungskatalog unter 'ökologische Aspekte'. Immer wirtschaftlichen Nutzen mitbenennen.",
+    "bewertungsaspekt": "Ökologisch",
+    "kartentyp": "Aufzählung",
+    "schwierigkeitsgrad": "Leicht",
+    "set": "Bewertungsaspekte",
+    "topic": "1 – Nötige Kenntnisse",
+    "subtopic": "Bewertungsaspekte (funktional/ökon./ökol./sozial)",
+    "hashtags": [
+      "#GreenIT",
+      "#Nachhaltigkeit",
+      "#ÖkologischeAspekte",
+      "#AP1"
+    ],
+    "url": "https://de.wikipedia.org/wiki/Green_IT"
+  },
+  {
+    "id": "33fb5fb9-a093-8169-900e-fcb6884f9ef7",
+    "question": "Ein Unternehmen stellt einem Außendienstmitarbeiter ein Notebook zur Verfügung. Bewerten Sie die Entscheidung 'Kauf vs. Leasing' nach ökonomischen Kriterien. Das Gerät kostet 1.400 €, Leasingrate 45 €/Monat über 36 Monate.",
+    "shortAnswer": "Kauf: 1.400 € einmalig. Leasing: 45 × 36 = 1.620 €. Leasing ist teurer, bietet aber Liquiditätsschonung, immer aktuelle Hardware und oft inkludierte Wartung.",
+    "longAnswer": "Kauf vs. Leasing – Gegenüberstellung:\n\nKauf:\n• Einmalige Ausgabe: 1.400 € (CAPEX)\n• Aktivierung in der Bilanz als Anlage\n• Abschreibung über 3 Jahre (AfA): 1.400 / 3 = 466,67 €/Jahr\n• Voller Eigentumsvorteil: nach AfA-Ende kostenlos weiternutzbar\n• Risiko: Wertverlust, Reparaturkosten nach Garantie\n\nLeasing:\n• Monatliche Rate: 45 € (OPEX)\n• Gesamtkosten: 45 × 36 = 1.620 € → 220 € teurer als Kauf\n• Liquiditätsvorteil: kein großer Einmalaufwand\n• Kein Aktivierungsbedarf in der Bilanz (Operating Leasing)\n• Oft inkludiert: Wartung, Versicherung, Hardware-Austausch bei Defekt\n• Nach Laufzeit: Rückgabe oder neues Modell → immer aktuelle Technologie\n\nFazit ökonomisch:\n• Wenn Unternehmen Kapital schonen will → Leasing vorteilhaft\n• Wenn langfristige Nutzung geplant → Kauf günstiger\n• Gemischte Betrachtung: bei kurzen Technologiezyklen (3 Jahre) ist Leasing oft sinnvoll\n\nPrüfungshinweis: IHK erwartet Vor- und Nachteile beider Varianten + Empfehlung mit Begründung.",
+    "bewertungsaspekt": "Ökonomisch",
+    "kartentyp": "Begriff",
+    "schwierigkeitsgrad": "Leicht",
+    "set": "Bewertungsaspekte",
+    "topic": "1 – Nötige Kenntnisse",
+    "subtopic": "TCO & Wirtschaftlichkeit",
+    "hashtags": [
+      "#Leasing",
+      "#Kauf",
+      "#ÖkonomischeAspekte",
+      "#AP1"
+    ],
+    "url": "https://de.wikipedia.org/wiki/Leasing"
+  },
+  {
+    "id": "33fb5fb9-a093-812a-8583-ec7bb57beea8",
+    "question": "Ein Unternehmen möchte bei der Beschaffung neuer Monitore auf Umweltzertifikate achten. Erklären Sie den Unterschied zwischen dem 'Blauen Engel' und dem 'Energy Star' Siegel. Welches ist aus ökologischer Sicht umfassender?",
+    "shortAnswer": "**Blauer Engel** ist umfassender: prüft Energieeffizienz, Schadstofffreiheit, Recyclingfähigkeit und Langlebigkeit. **Energy Star** prüft nur den Energieverbrauch im Betrieb und Stand-by.",
+    "longAnswer": "**Blauer Engel (RAL-UZ 78 für Monitore):**\n- Energieeffizienz im Betrieb und Stand-by\n- Schadstofffreiheit (strenger als RoHS)\n- Recyclingfähigkeit und Langlebigkeit\n- Reparierbarkeit und Ersatzteilverfügbarkeit\n- Rücknahmepflicht durch den Hersteller\n- Soziale Kriterien in der Produktion\n\n**Energy Star:**\n- Fokus ausschließlich auf Energieverbrauch\n- Grenzwerte für Betrieb, Leerlauf und Stand-by\n- Keine Aussage über Schadstoffe, Recycling oder Langlebigkeit\n- Selbstzertifizierung durch Hersteller\n\n**Fazit:** Der Blaue Engel ist aus ökologischer Sicht deutlich umfassender, da er den gesamten Lebenszyklus betrachtet.\n\n**Prüfungshinweis:** Bei IHK-Aufgaben zu Umweltzeichen immer Blauer Engel, Energy Star und EPEAT als Dreiergruppe kennen.",
+    "bewertungsaspekt": "Ökologisch",
+    "kartentyp": "Vergleich",
+    "schwierigkeitsgrad": "Leicht",
+    "set": "Bewertungsaspekte",
+    "topic": "5 – Stromversorgung & USV",
+    "subtopic": "Energieeffizienz & Green IT",
+    "hashtags": [
+      "#ÖkologischeAspekte",
+      "#GreenIT",
+      "#Beschaffung",
+      "#AP1"
+    ],
+    "url": "https://de.wikipedia.org/wiki/Blauer_Engel"
+  },
+  {
+    "id": "33fb5fb9-a093-81c3-987d-e602fa082775",
+    "question": "Was regelt das Elektro- und Elektronikgerätegesetz (ElektroG) und welche Pflichten ergeben sich daraus für Unternehmen bei der Entsorgung alter IT-Hardware?",
+    "shortAnswer": "ElektroG regelt die **Rücknahme und Entsorgung** von Elektroaltgeräten. Hersteller müssen kostenlose Rücknahme anbieten, Unternehmen dürfen IT-Hardware nicht über den Hausmüll entsorgen.",
+    "longAnswer": "**ElektroG (Umsetzung der EU-WEEE-Richtlinie):**\n\n**Herstellerpflichten:**\n- Registrierung bei der Stiftung EAR (Elektro-Altgeräte Register)\n- Kostenlose Rücknahme von Altgeräten organisieren\n- Finanzierung der Entsorgung und Verwertung\n- Kennzeichnung mit durchgestrichener Mülltonne\n\n**Pflichten für Unternehmen (als Nutzer):**\n- Elektroaltgeräte getrennt sammeln (nicht in Restmüll!)\n- Datenlöschung vor Rückgabe (BSI-konform)\n- Dokumentation der Entsorgung (Nachweis aufbewahren)\n- Nutzung zertifizierter Entsorger oder Herstellerrücknahme\n\n**Sammelgruppen für IT:**\n- Gruppe 3: IT- und Telekommunikationsgeräte\n- Gruppe 4: Bildschirme und Monitore\n\n**Prüfungshinweis:** ElektroG wird oft zusammen mit RoHS gefragt — RoHS regelt Inhaltsstoffe, ElektroG regelt Entsorgung.",
+    "bewertungsaspekt": "Ökologisch",
+    "kartentyp": "Begriff",
+    "schwierigkeitsgrad": "Leicht",
+    "set": "Bewertungsaspekte",
+    "topic": "1 – Nötige Kenntnisse",
+    "subtopic": "Ökologische Bewertung",
+    "hashtags": [
+      "#ÖkologischeAspekte",
+      "#Recycling",
+      "#ElektroG",
+      "#AP1"
+    ],
+    "url": "https://de.wikipedia.org/wiki/Elektro-_und_Elektronikgerätegesetz"
+  },
+  {
+    "id": "33fb5fb9-a093-81eb-b220-e09799a48a6e",
+    "question": "Erläutern Sie den Begriff 'CO₂-Fußabdruck' eines IT-Geräts. In welcher Lebenszyklusphase entsteht bei einem Laptop der größte CO₂-Anteil?",
+    "shortAnswer": "CO₂-Fußabdruck = Summe aller Treibhausgasemissionen über den gesamten Lebenszyklus. Bei Laptops entfallen ca. **70–80 % auf die Herstellung**, nicht auf die Nutzungsphase.",
+    "longAnswer": "**CO₂-Fußabdruck eines IT-Geräts:**\n\n**Lebenszyklusphasen:**\n1. **Rohstoffgewinnung**: Abbau seltener Erden, Lithium, Kobalt\n2. **Herstellung** (70–80 % des CO₂): Chipfertigung, Leiterplattenproduktion, Montage\n3. **Transport**: Verschiffung von Asien nach Europa\n4. **Nutzung** (15–25 %): Stromverbrauch über Nutzungsdauer\n5. **Entsorgung/Recycling** (1–5 %): Demontage, Rohstoffrückgewinnung\n\n**Konsequenz für Beschaffung:**\n- Lange Nutzungsdauer reduziert den CO₂-Fußabdruck pro Jahr erheblich\n- Reparatur und Aufrüstung sind ökologisch fast immer besser als Neukauf\n- Refurbished-Geräte vermeiden den Herstellungs-CO₂ komplett\n\n**Prüfungshinweis:** Viele Prüflinge nennen nur Stromverbrauch als Umweltfaktor — die Herstellung ist aber der größte CO₂-Posten. Das zeigt Verständnis!",
+    "bewertungsaspekt": "Ökologisch",
+    "kartentyp": "Begriff",
+    "schwierigkeitsgrad": "Leicht",
+    "set": "Bewertungsaspekte",
+    "topic": "5 – Stromversorgung & USV",
+    "subtopic": "Energieeffizienz & Green IT",
+    "hashtags": [
+      "#ÖkologischeAspekte",
+      "#CO2",
+      "#Nachhaltigkeit",
+      "#AP1"
+    ],
+    "url": "https://de.wikipedia.org/wiki/CO2-Fußabdruck"
+  },
+  {
+    "id": "33fb5fb9-a093-8193-a159-d69aed7da6db",
+    "question": "Was ist EPEAT und wie unterscheidet es sich von anderen Umweltzertifikaten für IT-Hardware? Nennen Sie die drei Bewertungsstufen.",
+    "shortAnswer": "EPEAT (Electronic Product Environmental Assessment Tool) bewertet IT-Hardware nach Umweltkriterien über den gesamten Lebenszyklus. Stufen: **Bronze** (Pflichtkriterien), **Silber** (50 % optional), **Gold** (75 % optional).",
+    "longAnswer": "**EPEAT im Überblick:**\n\n**Was ist EPEAT?**\n- Internationales Bewertungssystem für umweltfreundliche Elektronik\n- Entwickelt von IEEE (Institute of Electrical and Electronics Engineers)\n- Registrierung in einer öffentlichen Datenbank\n\n**Bewertungsstufen:**\n- **Bronze**: Alle Pflichtkriterien erfüllt\n- **Silber**: Pflichtkriterien + mind. 50 % der optionalen Kriterien\n- **Gold**: Pflichtkriterien + mind. 75 % der optionalen Kriterien\n\n**Bewertete Kategorien:**\n- Materialauswahl und Schadstoffreduzierung\n- Energieverbrauch (integriert Energy Star)\n- Langlebigkeit und Reparierbarkeit\n- Recyclingfähigkeit und End-of-Life-Management\n- Verpackung\n- Unternehmerische Verantwortung (Lieferkette)\n\n**Unterschied zu anderen Siegeln:**\n- Blauer Engel: streng, aber nur in DE/EU verbreitet\n- Energy Star: nur Energieverbrauch\n- EPEAT: umfassendster internationaler Standard\n\n**Prüfungshinweis:** EPEAT ist bei öffentlichen Ausschreibungen international oft Pflicht.",
+    "bewertungsaspekt": "Ökologisch",
+    "kartentyp": "Begriff",
+    "schwierigkeitsgrad": "Leicht",
+    "set": "Bewertungsaspekte",
+    "topic": "5 – Stromversorgung & USV",
+    "subtopic": "Energieeffizienz & Green IT",
+    "hashtags": [
+      "#ÖkologischeAspekte",
+      "#EPEAT",
+      "#Beschaffung",
+      "#AP1"
+    ],
+    "url": "https://de.wikipedia.org/wiki/Electronic_Product_Environmental_Assessment_Tool"
+  },
+  {
+    "id": "33fb5fb9-a093-8180-8367-f2efb1e56438",
+    "question": "Was ist der PUE-Wert (Power Usage Effectiveness) eines Rechenzentrums und warum ist er für die ökologische Bewertung relevant? Ein Rechenzentrum hat eine Gesamtleistungsaufnahme von 500 kW, davon 350 kW für IT-Systeme. Berechnen Sie den PUE.",
+    "shortAnswer": "PUE = Gesamtleistung / IT-Leistung = 500 / 350 = **1,43**. Idealwert: 1,0 (kein Overhead). Typisch: 1,5–2,0. Google/Facebook: ca. 1,1.",
+    "longAnswer": "**PUE – Power Usage Effectiveness:**\n\n**Definition:**\n- PUE = Gesamtleistungsaufnahme RZ / Leistungsaufnahme IT-Systeme\n- Misst die Energieeffizienz eines Rechenzentrums\n- Wert 1,0 = perfekt (gesamte Energie geht in IT)\n- Typischer Wert: 1,5–2,0\n\n**Berechnung:**\n- PUE = 500 kW / 350 kW = **1,43**\n- Overhead (Kühlung, USV, Beleuchtung) = 500 − 350 = 150 kW = 30 %\n\n**Bewertung:**\n- < 1,2: Sehr effizient (Hyperscaler wie Google)\n- 1,2–1,5: Gut (moderne RZ)\n- 1,5–2,0: Durchschnitt\n- > 2,0: Ineffizient, Optimierungsbedarf\n\n**Maßnahmen zur PUE-Senkung:**\n- Freikühlung (Free Cooling) statt Klimaanlagen\n- Hot-/Cold-Aisle-Containment\n- Effiziente USV-Anlagen\n\n**Prüfungshinweis:** PUE ist ein typischer Rechenwert in AP1-Aufgaben zu ökologischen Aspekten im Rechenzentrum.",
+    "bewertungsaspekt": "Ökologisch",
+    "kartentyp": "Berechnung",
+    "schwierigkeitsgrad": "Mittel",
+    "set": "Bewertungsaspekte",
+    "topic": "5 – Stromversorgung & USV",
+    "subtopic": "Energieeffizienz & Green IT",
+    "hashtags": [
+      "#ÖkologischeAspekte",
+      "#Rechenzentrum",
+      "#Energieverbrauch",
+      "#AP1"
+    ],
+    "url": "https://de.wikipedia.org/wiki/Power_Usage_Effectiveness"
+  },
+  {
+    "id": "33fb5fb9-a093-8165-ae39-d40d8ae7b7ba",
+    "question": "Ein Unternehmen vergleicht zwei Drucker: Drucker A (Laser, 800 W, 50.000 Seiten Lebensdauer) und Drucker B (Tintenstrahl, 30 W, 20.000 Seiten). Welche ökologischen Kriterien sollten neben dem Stromverbrauch noch berücksichtigt werden?",
+    "shortAnswer": "Verbrauchsmaterial (Toner vs. Tinte), Feinstaubemission (Laser!), Recyclingfähigkeit der Kartuschen, Lärmpegel, Druckgeschwindigkeit, Duplexdruck (Papierverbrauch).",
+    "longAnswer": "**Ökologischer Vergleich Laser vs. Tintenstrahl:**\n\n**Stromverbrauch:**\n- Laser: 800 W im Betrieb (Heizung der Fixiereinheit)\n- Tintenstrahl: 30 W (kein Heizen nötig)\n- Aber: Laser druckt schneller → weniger Betriebszeit pro Seite\n\n**Weitere ökologische Kriterien:**\n- **Feinstaubemission**: Laserdrucker emittieren Tonerpartikel und Ozon — Gesundheitsrisiko!\n- **Verbrauchsmaterial**: Tonerkartuschen vs. Tintenpatronen (Recyclingquoten vergleichen)\n- **Papierverbrauch**: Duplexdruck-Funktion spart 50 % Papier\n- **Lärmpegel**: Laser oft lauter → Arbeitsplatzergonomie\n- **Lebensdauer**: 50.000 vs. 20.000 Seiten → Kosten pro Seite berechnen\n- **Herstellerrücknahme**: Werden leere Kartuschen zurückgenommen?\n\n**Prüfungshinweis:** IHK-Aufgaben erwarten nicht nur Stromverbrauch, sondern eine ganzheitliche ökologische Betrachtung über den Lebenszyklus.",
+    "bewertungsaspekt": "Ökologisch",
+    "kartentyp": "Vergleich",
+    "schwierigkeitsgrad": "Leicht",
+    "set": "Bewertungsaspekte",
+    "topic": "1 – Nötige Kenntnisse",
+    "subtopic": "Bewertungsaspekte (funktional/ökon./ökol./sozial)",
+    "hashtags": [
+      "#ÖkologischeAspekte",
+      "#Hardware",
+      "#Beschaffung",
+      "#AP1"
+    ],
+    "url": "https://de.wikipedia.org/wiki/Laserdrucker"
+  },
+  {
+    "id": "33fb5fb9-a093-8183-89af-e933e4c83fda",
+    "question": "Was regelt die EU-Ökodesign-Verordnung und welche Auswirkungen hat sie auf die IT-Hardware-Beschaffung?",
+    "shortAnswer": "Die Ökodesign-Verordnung legt **Mindestanforderungen an Energieeffizienz und Reparierbarkeit** von Elektrogeräten fest. Ab 2025 müssen Hersteller Ersatzteile und Software-Updates für definierte Zeiträume bereitstellen.",
+    "longAnswer": "**EU-Ökodesign-Verordnung (2009/125/EG, Neufassung 2024):**\n\n**Kernregelungen:**\n- Mindestanforderungen an Energieeffizienz im Betrieb und Stand-by\n- Verbot besonders ineffizienter Geräte\n- Anforderungen an Reparierbarkeit und Langlebigkeit\n- Pflicht zur Bereitstellung von Ersatzteilen (mind. 7–10 Jahre)\n- Software-Updates dürfen Leistung nicht verschlechtern\n\n**Neuerungen ab 2024/2025:**\n- **Digitaler Produktpass**: Informationen über Materialien, Reparierbarkeit, CO₂-Fußabdruck\n- **Reparierbarkeitsindex**: Bewertungsskala für Verbraucher\n- **Recyclingquoten**: Mindestanteil recycelter Materialien\n\n**Auswirkung auf Beschaffung:**\n- Nur noch konforme Geräte in der EU verkaufbar\n- Hersteller müssen Reparierbarkeit nachweisen\n- Erleichtert nachhaltige Beschaffungsentscheidungen\n\n**Prüfungshinweis:** Ökodesign-VO zusammen mit EU-Batterieverordnung und Right to Repair als aktuelle Gesetzgebungstrends kennen.",
+    "bewertungsaspekt": "Ökologisch",
+    "kartentyp": "Begriff",
+    "schwierigkeitsgrad": "Leicht",
+    "set": "Bewertungsaspekte",
+    "topic": "1 – Nötige Kenntnisse",
+    "subtopic": "Ökologische Bewertung",
+    "hashtags": [
+      "#ÖkologischeAspekte",
+      "#Ökodesign",
+      "#Nachhaltigkeit",
+      "#AP1"
+    ],
+    "url": "https://de.wikipedia.org/wiki/Ökodesign-Richtlinie"
+  },
+  {
+    "id": "33fb5fb9-a093-8157-8c1c-d97c6cd0dc1e",
+    "question": "Vergleichen Sie den jährlichen Energieverbrauch und die CO₂-Emission folgender Arbeitsplatz-Konfigurationen: a) Desktop-PC (150W) + Monitor (40W), b) Laptop (45W) + Dockingstation (10W). Annahme: 2.000 h/Jahr, 0,4 kg CO₂/kWh.",
+    "shortAnswer": "a) 380 kWh → 152 kg CO₂. b) 110 kWh → 44 kg CO₂. Laptop spart **71 % Energie** und **108 kg CO₂** pro Arbeitsplatz und Jahr.",
+    "longAnswer": "**Vergleichsrechnung:**\n\n**a) Desktop + Monitor:**\n- Leistung = 150W + 40W = 190W = 0,19 kW\n- Jahresverbrauch = 0,19 × 2.000 = **380 kWh**\n- CO₂ = 380 × 0,4 = **152 kg CO₂/Jahr**\n\n**b) Laptop + Dockingstation:**\n- Leistung = 45W + 10W = 55W = 0,055 kW\n- Jahresverbrauch = 0,055 × 2.000 = **110 kWh**\n- CO₂ = 110 × 0,4 = **44 kg CO₂/Jahr**\n\n**Einsparung pro Arbeitsplatz:**\n- Energie: 380 − 110 = **270 kWh (71 %)**\n- CO₂: 152 − 44 = **108 kg CO₂ (71 %)**\n- Kosten (0,30 €/kWh): 270 × 0,30 = **81 € pro Jahr**\n\n**Bei 100 Arbeitsplätzen:**\n- 27.000 kWh, 10,8 t CO₂, 8.100 € Einsparung pro Jahr\n\n**Prüfungshinweis:** Solche Vergleichsrechnungen kombinieren ökologische und ökonomische Aspekte — IHK liebt das.",
+    "bewertungsaspekt": "Ökologisch",
+    "kartentyp": "Berechnung",
+    "schwierigkeitsgrad": "Leicht",
+    "set": "Bewertungsaspekte",
+    "topic": "1 – Nötige Kenntnisse",
+    "subtopic": "Mobile & stationäre Arbeitsplätze",
+    "hashtags": [
+      "#ÖkologischeAspekte",
+      "#CO2",
+      "#Stromkosten",
+      "#AP1"
+    ],
+    "url": "https://de.wikipedia.org/wiki/Energieeffizienz"
+  },
+  {
+    "id": "33fb5fb9-a093-8151-b0e0-d6841c9c2a1d",
+    "question": "Was regelt das Lieferkettensorgfaltspflichtengesetz (LkSG) und warum ist es bei der Beschaffung von IT-Hardware relevant? Nennen Sie drei konkrete Sorgfaltspflichten.",
+    "shortAnswer": "LkSG verpflichtet Unternehmen ab 1.000 Mitarbeitern, **Menschenrechte und Umweltstandards in der Lieferkette** einzuhalten. Sorgfaltspflichten: Risikoanalyse, Präventionsmaßnahmen, Beschwerdeverfahren.",
+    "longAnswer": "**LkSG (seit 01.01.2023):**\n\n**Geltungsbereich:**\n- Unternehmen mit Sitz in Deutschland ab 1.000 Mitarbeitern\n- Betrifft die gesamte Lieferkette, nicht nur direkte Zulieferer\n\n**Drei Sorgfaltspflichten:**\n1. **Risikoanalyse**: Jährliche Analyse der Lieferkette auf Menschenrechts- und Umweltrisiken\n2. **Präventionsmaßnahmen**: Verhaltenskodex für Lieferanten, Schulungen, Audits\n3. **Beschwerdeverfahren**: Einrichtung eines Meldesystems für Betroffene\n\n**Relevanz für IT-Beschaffung:**\n- Smartphones, Laptops, Server werden in Ländern mit niedrigen Standards produziert\n- Rohstoffe (Kobalt, Tantal) stammen teils aus Krisenregionen\n- Unternehmen müssen bei der Lieferantenauswahl LkSG-Konformität prüfen\n\n**Sanktionen bei Verstößen:**\n- Bußgelder bis zu 2 % des Jahresumsatzes\n- Ausschluss von öffentlichen Aufträgen\n\n**Prüfungshinweis:** LkSG ist ab 2025 prüfungsrelevant — als Teil der 'sozialen Aspekte' im IHK-Katalog.",
+    "bewertungsaspekt": "Sozial",
+    "kartentyp": "Begriff",
+    "schwierigkeitsgrad": "Leicht",
+    "set": "Bewertungsaspekte",
+    "topic": "1 – Nötige Kenntnisse",
+    "subtopic": "Soziale Aspekte & Nachhaltigkeit",
+    "hashtags": [
+      "#SozialeAspekte",
+      "#LkSG",
+      "#Lieferkette",
+      "#AP1"
+    ],
+    "url": "https://de.wikipedia.org/wiki/Lieferkettensorgfaltspflichtengesetz"
+  },
+  {
+    "id": "33fb5fb9-a093-819a-8471-d1e9fc46a574",
+    "question": "Welche Anforderungen an Barrierefreiheit müssen bei der Einrichtung eines IT-Arbeitsplatzes berücksichtigt werden? Nennen Sie vier konkrete Maßnahmen.",
+    "shortAnswer": "Screenreader-kompatible Software, einstellbare Schriftgrößen und Kontraste, ergonomische Eingabegeräte (Großtasten-Tastatur), höhenverstellbare Möbel für Rollstuhlfahrer.",
+    "longAnswer": "**Barrierefreiheit am IT-Arbeitsplatz:**\n\n**1. Sehbehinderung:**\n- Screenreader-kompatible Software (JAWS, NVDA)\n- Skalierbare Schriftgrößen (min. 150 %)\n- Hoher Kontrast (WCAG 2.1 Level AA: 4,5:1)\n- Große Monitore (mind. 27 Zoll)\n- Braille-Display für blinde Mitarbeiter\n\n**2. Motorische Einschränkungen:**\n- Großtasten-Tastatur oder Einhand-Tastatur\n- Trackball oder Mundmaus statt Standardmaus\n- Spracheingabe (Dragon NaturallySpeaking)\n- Höhenverstellbarer Tisch (elektrisch), Rollstuhlzugänglich\n\n**3. Hörbehinderung:**\n- Visuelles Feedback statt Audio-Signale\n- Untertitel in Videokonferenzen\n- Lichtsignalanlagen statt Klingel\n\n**4. Kognitive Einschränkungen:**\n- Leichte Sprache in Benutzeroberflächen\n- Klare, einheitliche Navigation\n\n**Rechtlicher Rahmen:**\n- Barrierefreiheitsstärkungsgesetz (BFSG, ab 2025)\n- EU-Richtlinie 2019/882 (European Accessibility Act)\n- ArbStättV Anhang 6\n\n**Prüfungshinweis:** Barrierefreiheit wird oft im Kontext 'Arbeitsplatz einrichten' oder 'soziale Aspekte' gefragt.",
+    "bewertungsaspekt": "Sozial",
+    "kartentyp": "Aufzählung",
+    "schwierigkeitsgrad": "Leicht",
+    "set": "Bewertungsaspekte",
+    "topic": "1 – Nötige Kenntnisse",
+    "subtopic": "Soziale Aspekte & Nachhaltigkeit",
+    "hashtags": [
+      "#SozialeAspekte",
+      "#Barrierefreiheit",
+      "#Arbeitsplatz",
+      "#AP1"
+    ],
+    "url": "https://de.wikipedia.org/wiki/Barrierefreiheit"
+  },
+  {
+    "id": "33fb5fb9-a093-816c-9480-e399a1fb25bd",
+    "question": "Was sind Konfliktmineralien und warum sind sie bei der IT-Hardware-Beschaffung ein soziales Kriterium? Nennen Sie drei betroffene Rohstoffe und deren Verwendung.",
+    "shortAnswer": "Rohstoffe aus Krisenregionen, deren Abbau bewaffnete Konflikte finanziert. **Kobalt** (Akkus), **Tantal** (Kondensatoren), **Zinn** (Lötstellen). EU-Verordnung 2017/821 regelt die Sorgfaltspflicht.",
+    "longAnswer": "**Konfliktmineralien in IT-Hardware:**\n\n**Betroffene Rohstoffe (3TG + Kobalt):**\n- **Tantal (Ta)**: Kondensatoren in Smartphones, Laptops\n- **Zinn (Sn)**: Lötverbindungen auf Leiterplatten\n- **Wolfram (W)**: Vibrationsmotoren in Smartphones\n- **Gold (Au)**: Kontakte und Leiterbahnen\n- **Kobalt (Co)**: Lithium-Ionen-Akkus (nicht offiziell 3TG, aber kritisch)\n\n**Problematik:**\n- Abbau finanziert bewaffnete Konflikte (v.a. DR Kongo)\n- Kinderarbeit und lebensgefährliche Arbeitsbedingungen\n- Umweltzerstörung durch unkontrollierten Bergbau\n\n**Regulierung:**\n- **EU-Verordnung 2017/821**: Sorgfaltspflicht für Importeure seit 2021\n- **Dodd-Frank Act** (USA, §1502): Offenlegungspflicht für börsennotierte Unternehmen\n- **OECD Due Diligence Guidance**: Leitfaden für verantwortungsvolle Lieferketten\n\n**Prüfungshinweis:** Konfliktmineralien sind das konkreteste Beispiel für 'soziale Aspekte' bei IT-Hardware — Prüfer erwarten Rohstoffbeispiele!",
+    "bewertungsaspekt": "Sozial",
+    "kartentyp": "Aufzählung",
+    "schwierigkeitsgrad": "Leicht",
+    "set": "Bewertungsaspekte",
+    "topic": "1 – Nötige Kenntnisse",
+    "subtopic": "Ökologische Bewertung",
+    "hashtags": [
+      "#SozialeAspekte",
+      "#Konfliktmineralien",
+      "#Lieferkette",
+      "#AP1"
+    ],
+    "url": "https://de.wikipedia.org/wiki/Konfliktmineral"
+  },
+  {
+    "id": "33fb5fb9-a093-8131-8d64-d87421aa2ad8",
+    "question": "Was versteht man unter 'digitaler Teilhabe' und 'Digital Divide'? Nennen Sie zwei Maßnahmen, wie ein Unternehmen digitale Teilhabe bei der IT-Ausstattung fördern kann.",
+    "shortAnswer": "**Digitale Teilhabe** = gleichberechtigter Zugang aller Menschen zu digitaler Technologie. **Digital Divide** = Kluft zwischen Menschen mit und ohne Zugang. Maßnahmen: barrierefreie Systeme, Schulungen für alle Altersgruppen.",
+    "longAnswer": "**Digitale Teilhabe und Digital Divide:**\n\n**Definitionen:**\n- **Digitale Teilhabe**: Jeder Mensch soll unabhängig von Alter, Behinderung, Einkommen oder Bildung digitale Technologie nutzen können\n- **Digital Divide (Digitale Kluft)**: Ungleichheit beim Zugang zu IT zwischen verschiedenen Bevölkerungsgruppen\n\n**Dimensionen des Digital Divide:**\n- **Zugang**: Hardware, Internetzugang (Breitband)\n- **Nutzung**: Digitale Kompetenz, Medienkompetenz\n- **Qualität**: Geschwindigkeit, Gerätequalität\n\n**Maßnahmen für Unternehmen:**\n1. **Barrierefreie IT-Systeme**: Screenreader, Kontrastmodi, Spracheingabe\n2. **Schulungsprogramme**: Digitalkompetenz für alle Mitarbeiter, auch ältere\n3. **Mehrsprachige Oberflächen**: Für internationales Personal\n4. **Geräte-Zugang**: Dienstgeräte auch für Home-Office bereitstellen\n\n**Prüfungshinweis:** Digitale Teilhabe fällt unter 'soziale Aspekte' und wird oft mit Barrierefreiheit kombiniert gefragt.",
+    "bewertungsaspekt": "Sozial",
+    "kartentyp": "Begriff",
+    "schwierigkeitsgrad": "Leicht",
+    "set": "Bewertungsaspekte",
+    "topic": "1 – Nötige Kenntnisse",
+    "subtopic": "Soziale Aspekte & Nachhaltigkeit",
+    "hashtags": [
+      "#SozialeAspekte",
+      "#DigitalDivide",
+      "#Barrierefreiheit",
+      "#AP1"
+    ],
+    "url": "https://de.wikipedia.org/wiki/Digitale_Kluft"
+  },
+  {
+    "id": "33fb5fb9-a093-8126-ae93-cd70ce5bf6d5",
+    "question": "Welche datenschutzrechtlichen Anforderungen müssen bei der Einrichtung eines neuen IT-Arbeitsplatzes beachtet werden? Nennen Sie vier Maßnahmen nach DSGVO.",
+    "shortAnswer": "Bildschirmsperre bei Abwesenheit, personenbezogene Daten verschlüsseln, Zugriffsrechte nach Minimalprinzip, Datenschutz-Unterweisung für Mitarbeiter.",
+    "longAnswer": "**Datenschutz am IT-Arbeitsplatz (DSGVO):**\n\n**1. Technische Maßnahmen:**\n- Automatische Bildschirmsperre nach max. 5 Minuten\n- Festplattenverschlüsselung (BitLocker, FileVault)\n- Sichtschutzfolie am Monitor (Clean Desk Policy)\n- Sichere Passwörter (mind. 12 Zeichen, Komplexitätsanforderungen)\n\n**2. Organisatorische Maßnahmen:**\n- Zugriffsrechte nach Minimalprinzip (Need-to-know)\n- Rollenbasierte Berechtigungen (RBAC)\n- Regelmäßige Datenschutz-Unterweisungen\n- Dokumentierte Einwilligungsprozesse\n\n**3. Physische Maßnahmen:**\n- Verschließbare Schränke für Akten\n- Aktenvernichter (Sicherheitsstufe P-4 oder höher)\n- Zugangskontrollen zum Büro\n\n**4. Beim Ausscheiden:**\n- Datenträger BSI-konform löschen oder vernichten\n- Zugänge sofort sperren (AD/IAM)\n\n**Prüfungshinweis:** DSGVO-Maßnahmen am Arbeitsplatz werden oft in Kombination mit IT-Sicherheit gefragt — soziale und technische Aspekte verbinden.",
+    "bewertungsaspekt": "Sozial",
+    "kartentyp": "Aufzählung",
+    "schwierigkeitsgrad": "Leicht",
+    "set": "Bewertungsaspekte",
+    "topic": "1 – Nötige Kenntnisse",
+    "subtopic": "Soziale Aspekte & Nachhaltigkeit",
+    "hashtags": [
+      "#SozialeAspekte",
+      "#Datenschutz",
+      "#DSGVO",
+      "#AP1"
+    ],
+    "url": "https://de.wikipedia.org/wiki/Datenschutz-Grundverordnung"
+  },
+  {
+    "id": "33fb5fb9-a093-81f6-a903-c3a7dabc4ed0",
+    "question": "Ein Unternehmen möchte bei der IT-Beschaffung auf faire Arbeitsbedingungen in der Lieferkette achten. Welche Zertifizierungen und Standards können als Kriterium herangezogen werden?",
+    "shortAnswer": "**TCO Certified** (IT-Produkte, inkl. Sozialstandards), **SA8000** (Arbeitsbedingungen), **Fair-Trade-Siegel**, **Responsible Business Alliance (RBA)** für Elektronikindustrie.",
+    "longAnswer": "**Zertifizierungen für faire IT-Beschaffung:**\n\n**1. TCO Certified:**\n- Schwedisches Siegel für IT-Produkte\n- Prüft neben Ergonomie und Umwelt auch soziale Verantwortung\n- Hersteller muss Arbeitsbedingungen in Fabriken offenlegen\n- Unabhängige Audits in der Produktion\n\n**2. SA8000 (Social Accountability):**\n- Internationaler Standard für Arbeitsbedingungen\n- Basiert auf ILO-Konventionen und UN-Menschenrechtserklärung\n- Prüft: Kinderarbeit, Zwangsarbeit, Arbeitszeiten, Löhne, Diskriminierung\n\n**3. Responsible Business Alliance (RBA):**\n- Brancheninitiative der Elektronikindustrie (200+ Mitglieder)\n- Code of Conduct für Arbeits-, Gesundheits- und Umweltstandards\n- Mitglieder: Apple, Dell, HP, Lenovo, Samsung\n\n**4. Weitere:**\n- **Fairtrade für Gold**: In Leiterplatten und Kontakten\n- **OECD-Leitsätze** für multinationale Unternehmen\n- **UN Global Compact**: 10 Prinzipien für nachhaltiges Wirtschaften\n\n**Prüfungshinweis:** TCO Certified ist das praxisrelevanteste Siegel, da es speziell für IT-Produkte entwickelt wurde.",
+    "bewertungsaspekt": "Sozial",
+    "kartentyp": "Begriff",
+    "schwierigkeitsgrad": "Leicht",
+    "set": "Bewertungsaspekte",
+    "topic": "1 – Nötige Kenntnisse",
+    "subtopic": "Soziale Aspekte & Nachhaltigkeit",
+    "hashtags": [
+      "#SozialeAspekte",
+      "#Beschaffung",
+      "#Nachhaltigkeit",
+      "#AP1"
+    ],
+    "url": "https://de.wikipedia.org/wiki/TCO_Certified"
+  }
+]
