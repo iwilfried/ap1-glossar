@@ -1,7 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:ap1_glossar/constants/colors.dart';
 import 'package:ap1_glossar/constants/theme.dart';
-import 'package:ap1_glossar/screens/Home_page/home_page.dart';
 import 'package:ap1_glossar/screens/welcome_page/main_screen.dart';
 
 void main() => runApp(const MyApp());

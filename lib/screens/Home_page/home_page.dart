@@ -53,6 +53,62 @@ extension AspektExt on Aspekt {
   }
 }
 
+// ── Themencluster-Icons ───────────────────────────────────────────────────────
+IconData _themaIcon(String thema) {
+  switch (thema) {
+    case 'Hardware':                    return Icons.memory_rounded;
+    case 'Netzwerk':                    return Icons.lan_rounded;
+    case 'IT-Sicherheit':              return Icons.security_rounded;
+    case 'Datenschutz':                return Icons.shield_rounded;
+    case 'Nachhaltigkeit':             return Icons.eco_rounded;
+    case 'Wirtschaft':                 return Icons.trending_up_rounded;
+    case 'Projektmanagement':          return Icons.account_tree_rounded;
+    case 'Programmierung':             return Icons.code_rounded;
+    case 'Künstliche Intelligenz':     return Icons.smart_toy_rounded;
+    case 'Ergonomie & Soziales':       return Icons.self_improvement_rounded;
+    case 'Barrierefreiheit':           return Icons.accessibility_rounded;
+    case 'Recht':                      return Icons.gavel_rounded;
+    case 'Berechnung':                 return Icons.calculate_rounded;
+    case 'Cloud & Virtualisierung':    return Icons.cloud_rounded;
+    case 'IT-Service-Management':      return Icons.support_agent_rounded;
+    case 'Systemadministration':       return Icons.admin_panel_settings_rounded;
+    case 'Datenspeicherung':           return Icons.storage_rounded;
+    case 'Kommunikation':              return Icons.forum_rounded;
+    case 'WiSo Ausbildung & Arbeitsrecht': return Icons.school_rounded;
+    case 'WiSo Unternehmen & Wirtschaft': return Icons.business_rounded;
+    case 'WiSo Sicherheit & Umwelt':   return Icons.park_rounded;
+    case 'WiSo Digitale Zusammenarbeit': return Icons.group_work_rounded;
+    default:                           return Icons.label_rounded;
+  }
+}
+
+// ── Sortierte Themencluster-Liste ─────────────────────────────────────────────
+const List<String> _themenReihenfolge = [
+  'Hardware',
+  'Netzwerk',
+  'IT-Sicherheit',
+  'Datenschutz',
+  'Programmierung',
+  'Datenbanken',
+  'Cloud & Virtualisierung',
+  'Systemadministration',
+  'Datenspeicherung',
+  'IT-Service-Management',
+  'Künstliche Intelligenz',
+  'Projektmanagement',
+  'Wirtschaft',
+  'Berechnung',
+  'Nachhaltigkeit',
+  'Ergonomie & Soziales',
+  'Barrierefreiheit',
+  'Kommunikation',
+  'Recht',
+  'WiSo Ausbildung & Arbeitsrecht',
+  'WiSo Unternehmen & Wirtschaft',
+  'WiSo Sicherheit & Umwelt',
+  'WiSo Digitale Zusammenarbeit',
+];
+
 // ── HomePage ──────────────────────────────────────────────────────────────────
 class HomePage extends StatefulWidget {
   const HomePage({Key? key}) : super(key: key);
@@ -66,6 +122,7 @@ class HomePageState extends State<HomePage> {
   final _searchController = TextEditingController();
   final _scrollController = ScrollController();
   Aspekt _selectedAspekt = Aspekt.alle;
+  String? _selectedThema;   // null = alle Themen
 
   @override
   void initState() {
@@ -80,19 +137,38 @@ class HomePageState extends State<HomePage> {
     super.dispose();
   }
 
-  void _applyFilter({String? search, Aspekt? aspekt}) {
+  // Alle Themencluster-Namen aus related.dart (nur die die Begriffe enthalten)
+  List<String> get _availableThemen {
+    final known = termGroups.keys.toSet();
+    return _themenReihenfolge.where((t) => known.contains(t)).toList()
+      ..addAll(known.where((t) => !_themenReihenfolge.contains(t)).toList());
+  }
+
+  // Welche Begriffe gehören zu einem Thema?
+  Set<String> _keysForThema(String thema) {
+    return (termGroups[thema] ?? []).toSet();
+  }
+
+  void _applyFilter({String? search, Aspekt? aspekt, String? thema, bool clearThema = false}) {
     final s = (search ?? _searchController.text).toLowerCase().trim();
     final a = aspekt ?? _selectedAspekt;
+    final t = clearThema ? null : (thema ?? _selectedThema);
     final allKeys = abbreviations.keys.toList();
+
+    final themaKeys = t != null ? _keysForThema(t) : null;
+
     setState(() {
       _selectedAspekt = a;
+      _selectedThema = t;
+
       final filtered = allKeys.where((key) {
         final matchSearch = s.isEmpty ||
             key.toLowerCase().contains(s) ||
             (abbreviations[key] ?? '').toLowerCase().contains(s);
         final matchAspekt = a == Aspekt.alle ||
             (termAspect[key] ?? 'Funktional') == a.label;
-        return matchSearch && matchAspekt;
+        final matchThema = themaKeys == null || themaKeys.contains(key);
+        return matchSearch && matchAspekt && matchThema;
       }).toList();
 
       // Begriffe mit Buchstaben zuerst, Zahlen/Sonderzeichen ans Ende
@@ -109,9 +185,8 @@ class HomePageState extends State<HomePage> {
   }
 
   void navigateToTerm(String term) {
-    // Filter + Suche zurücksetzen, dann zum Begriff springen
     _searchController.clear();
-    _applyFilter(search: '', aspekt: Aspekt.alle);
+    _applyFilter(search: '', aspekt: Aspekt.alle, clearThema: true);
     Future.delayed(const Duration(milliseconds: 150), () {
       final idx = _visibleKeys.indexOf(term);
       if (idx >= 0 && _scrollController.hasClients) {
@@ -126,6 +201,8 @@ class HomePageState extends State<HomePage> {
 
   @override
   Widget build(BuildContext context) {
+    final themen = _availableThemen;
+
     return Scaffold(
       backgroundColor: const Color(0xFFF4F6FA),
       appBar: AppBar(
@@ -194,7 +271,7 @@ class HomePageState extends State<HomePage> {
             ),
           ),
 
-          // ── Filter-Chips ─────────────────────────────────────────────────────
+          // ── Aspekt-Filter-Chips ──────────────────────────────────────────────
           SizedBox(
             height: 38,
             child: ListView(
@@ -214,9 +291,7 @@ class HomePageState extends State<HomePage> {
                         color: selected ? a.bgColor : Colors.white,
                         borderRadius: BorderRadius.circular(20),
                         border: Border.all(
-                          color: selected
-                              ? a.bgColor
-                              : Colors.grey.shade300,
+                          color: selected ? a.bgColor : Colors.grey.shade300,
                           width: 1.2,
                         ),
                         boxShadow: selected
@@ -232,11 +307,8 @@ class HomePageState extends State<HomePage> {
                       child: Row(
                         mainAxisSize: MainAxisSize.min,
                         children: [
-                          Icon(
-                            a.icon,
-                            size: 13,
-                            color: selected ? Colors.white : a.bgColor,
-                          ),
+                          Icon(a.icon, size: 13,
+                              color: selected ? Colors.white : a.bgColor),
                           const SizedBox(width: 5),
                           Text(
                             a.label,
@@ -255,7 +327,183 @@ class HomePageState extends State<HomePage> {
             ),
           ),
 
+          const SizedBox(height: 6),
+
+          // ── Themencluster-Filter-Chips ────────────────────────────────────────
+          SizedBox(
+            height: 36,
+            child: ListView(
+              scrollDirection: Axis.horizontal,
+              padding: const EdgeInsets.symmetric(horizontal: 16),
+              children: [
+                // "Alle Themen"-Chip
+                Padding(
+                  padding: const EdgeInsets.only(right: 7),
+                  child: GestureDetector(
+                    onTap: () => _applyFilter(clearThema: true),
+                    child: AnimatedContainer(
+                      duration: const Duration(milliseconds: 180),
+                      padding: const EdgeInsets.symmetric(
+                          horizontal: 11, vertical: 5),
+                      decoration: BoxDecoration(
+                        color: _selectedThema == null
+                            ? const Color(0xFF1B3A5C)
+                            : Colors.white,
+                        borderRadius: BorderRadius.circular(20),
+                        border: Border.all(
+                          color: _selectedThema == null
+                              ? const Color(0xFF1B3A5C)
+                              : Colors.grey.shade300,
+                          width: 1.2,
+                        ),
+                      ),
+                      child: Row(
+                        mainAxisSize: MainAxisSize.min,
+                        children: [
+                          Icon(Icons.grid_view_rounded,
+                              size: 12,
+                              color: _selectedThema == null
+                                  ? Colors.white
+                                  : Colors.grey.shade600),
+                          const SizedBox(width: 4),
+                          Text(
+                            'Alle Themen',
+                            style: TextStyle(
+                              fontSize: 11.5,
+                              fontWeight: FontWeight.w600,
+                              color: _selectedThema == null
+                                  ? Colors.white
+                                  : Colors.grey.shade600,
+                            ),
+                          ),
+                        ],
+                      ),
+                    ),
+                  ),
+                ),
+                // Themen-Chips
+                ...themen.map((thema) {
+                  final selected = _selectedThema == thema;
+                  final count = _keysForThema(thema).length;
+                  return Padding(
+                    padding: const EdgeInsets.only(right: 7),
+                    child: GestureDetector(
+                      onTap: () => _applyFilter(
+                          thema: selected ? null : thema,
+                          clearThema: selected),
+                      child: AnimatedContainer(
+                        duration: const Duration(milliseconds: 180),
+                        padding: const EdgeInsets.symmetric(
+                            horizontal: 11, vertical: 5),
+                        decoration: BoxDecoration(
+                          color: selected
+                              ? const Color(0xFF1B3A5C)
+                              : const Color(0xFFF0F3F7),
+                          borderRadius: BorderRadius.circular(20),
+                          border: Border.all(
+                            color: selected
+                                ? const Color(0xFF1B3A5C)
+                                : Colors.grey.shade300,
+                            width: 1.2,
+                          ),
+                          boxShadow: selected
+                              ? [
+                                  BoxShadow(
+                                    color: const Color(0xFF1B3A5C)
+                                        .withOpacity(0.25),
+                                    blurRadius: 6,
+                                    offset: const Offset(0, 2),
+                                  )
+                                ]
+                              : [],
+                        ),
+                        child: Row(
+                          mainAxisSize: MainAxisSize.min,
+                          children: [
+                            Icon(
+                              _themaIcon(thema),
+                              size: 12,
+                              color: selected
+                                  ? Colors.white
+                                  : const Color(0xFF1B3A5C),
+                            ),
+                            const SizedBox(width: 4),
+                            Text(
+                              thema,
+                              style: TextStyle(
+                                fontSize: 11.5,
+                                fontWeight: FontWeight.w600,
+                                color: selected
+                                    ? Colors.white
+                                    : const Color(0xFF1B3A5C),
+                              ),
+                            ),
+                            const SizedBox(width: 4),
+                            Container(
+                              padding: const EdgeInsets.symmetric(
+                                  horizontal: 5, vertical: 1),
+                              decoration: BoxDecoration(
+                                color: selected
+                                    ? Colors.white.withOpacity(0.25)
+                                    : const Color(0xFF1B3A5C).withOpacity(0.1),
+                                borderRadius: BorderRadius.circular(8),
+                              ),
+                              child: Text(
+                                '$count',
+                                style: TextStyle(
+                                  fontSize: 10,
+                                  fontWeight: FontWeight.bold,
+                                  color: selected
+                                      ? Colors.white
+                                      : const Color(0xFF1B3A5C),
+                                ),
+                              ),
+                            ),
+                          ],
+                        ),
+                      ),
+                    ),
+                  );
+                }).toList(),
+              ],
+            ),
+          ),
+
           const SizedBox(height: 8),
+
+          // ── Aktiver Filter-Hinweis ────────────────────────────────────────────
+          if (_selectedThema != null)
+            Padding(
+              padding: const EdgeInsets.fromLTRB(16, 0, 16, 6),
+              child: Row(
+                children: [
+                  Icon(_themaIcon(_selectedThema!),
+                      size: 13, color: const Color(0xFF1B3A5C)),
+                  const SizedBox(width: 5),
+                  Text(
+                    _selectedThema!,
+                    style: const TextStyle(
+                      fontSize: 12,
+                      fontWeight: FontWeight.w700,
+                      color: Color(0xFF1B3A5C),
+                    ),
+                  ),
+                  const SizedBox(width: 6),
+                  Text(
+                    '· ${_visibleKeys.length} Begriffe',
+                    style: TextStyle(
+                        fontSize: 12, color: Colors.grey.shade500),
+                  ),
+                  const Spacer(),
+                  GestureDetector(
+                    onTap: () => _applyFilter(clearThema: true),
+                    child: Icon(Icons.close_rounded,
+                        size: 16, color: Colors.grey.shade400),
+                  ),
+                ],
+              ),
+            ),
+
           const Divider(height: 1, thickness: 1, color: Color(0xFFE8ECF1)),
 
           // ── Begriffe-Liste ───────────────────────────────────────────────────
