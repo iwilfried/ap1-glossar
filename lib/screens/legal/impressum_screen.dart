@@ -31,7 +31,7 @@ class _ImpressumContent extends StatelessWidget {
         const SizedBox(height: 12),
         _body(
           "Wilfried Ifland\n"
-          "Learning Factory\n"
+          "Learning-Factory\n"
           "Düsseldorf, Deutschland",
         ),
         const SizedBox(height: 20),
