@@ -31,7 +31,7 @@ class _WelcomeScreenState extends State<WelcomeScreen> {
                   children: [
                     const SizedBox(height: 48),
                     Image.asset(
-                      'assets/images/smallview.png',
+                      'assets/images/lf_logo.png',
                       height: 90,
                     ),
                     const SizedBox(height: 12),
