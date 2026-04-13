@@ -30,7 +30,7 @@ class AppDrawer extends StatelessWidget {
                 ),
                 SizedBox(height: 4),
                 Text(
-                  '98 Fachbegriffe · 4 Bewertungsaspekte',
+                  '299 Fachbegriffe · 5 Bewertungsaspekte',
                   style: TextStyle(color: Colors.white70, fontSize: 12),
                 ),
               ],
@@ -79,6 +79,14 @@ class AppDrawer extends StatelessWidget {
             description: 'DSGVO · Ergonomie · Change Management',
           ),
 
+          _LegendItem(
+            color: AppColors.berechnung,
+            lightColor: AppColors.berechnungLight,
+            icon: Icons.calculate_rounded,
+            label: 'Berechnung',
+            description: 'Formeln · Kosten · Tilgung · Verfügbarkeit',
+          ),
+
           const Divider(height: 24),
 
           // ── Navigation ─────────────────────────────────────────────────
@@ -116,7 +124,7 @@ class AppDrawer extends StatelessWidget {
           ListTile(
             leading: const Icon(Icons.info, color: Colors.grey),
             title: const Text(
-              'Version 2.0.0 – AP1 Edition',
+              'v1.3.0 – Learning Factory',
               style: TextStyle(color: Colors.grey, fontSize: 13),
             ),
           ),

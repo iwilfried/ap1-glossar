@@ -5,7 +5,7 @@ import 'package:ap1_glossar/data/related.dart';
 import 'package:ap1_glossar/screens/Home_page/widgets/drawer.dart';
 
 // ── Aspekt-Enum (intern für Farben/Icons, kein Filter mehr) ──────────────────
-enum Aspekt { alle, funktional, oekonomisch, oekologisch, sozial }
+enum Aspekt { alle, funktional, oekonomisch, oekologisch, sozial, berechnung }
 
 extension AspektExt on Aspekt {
   String get label {
@@ -15,6 +15,7 @@ extension AspektExt on Aspekt {
       case Aspekt.oekonomisch: return 'Ökonomisch';
       case Aspekt.oekologisch: return 'Ökologisch';
       case Aspekt.sozial:      return 'Sozial';
+      case Aspekt.berechnung:  return 'Berechnung';
     }
   }
 
@@ -25,6 +26,7 @@ extension AspektExt on Aspekt {
       case Aspekt.oekonomisch: return AppColors.oekonomisch;
       case Aspekt.oekologisch: return AppColors.oekologisch;
       case Aspekt.sozial:      return AppColors.sozial;
+      case Aspekt.berechnung:  return AppColors.berechnung;
     }
   }
 
@@ -35,6 +37,7 @@ extension AspektExt on Aspekt {
       case Aspekt.oekonomisch: return AppColors.oekonomischLight;
       case Aspekt.oekologisch: return AppColors.oekologischLight;
       case Aspekt.sozial:      return AppColors.sozialLight;
+      case Aspekt.berechnung:  return AppColors.berechnungLight;
     }
   }
 
@@ -45,6 +48,7 @@ extension AspektExt on Aspekt {
       case Aspekt.oekonomisch: return Icons.euro_rounded;
       case Aspekt.oekologisch: return Icons.eco_rounded;
       case Aspekt.sozial:      return Icons.people_rounded;
+      case Aspekt.berechnung:  return Icons.calculate_rounded;
     }
   }
 }
@@ -235,6 +239,7 @@ class HomePageState extends State<HomePage> {
       case 'Ökonomisch': return Aspekt.oekonomisch;
       case 'Ökologisch': return Aspekt.oekologisch;
       case 'Sozial':     return Aspekt.sozial;
+      case 'Berechnung': return Aspekt.berechnung;
       default:           return Aspekt.funktional;
     }
   }
@@ -477,6 +482,7 @@ class _GlossarCardState extends State<_GlossarCard>
       case 'Ökonomisch': return Aspekt.oekonomisch;
       case 'Ökologisch': return Aspekt.oekologisch;
       case 'Sozial':     return Aspekt.sozial;
+      case 'Berechnung': return Aspekt.berechnung;
       default:           return Aspekt.funktional;
     }
   }

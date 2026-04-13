@@ -1,13 +1,16 @@
 {
-    "name": "AP1 Glossar – IHK Prüfungsvorbereitung",
+    "name": "AP1 Glossar – Learning Factory",
     "short_name": "AP1 Glossar",
     "start_url": ".",
     "display": "standalone",
     "background_color": "#1B3A5C",
     "theme_color": "#1B3A5C",
-    "description": "98 Fachbegriffe für die AP1-Abschlussprüfung Fachinformatiker – mit Bewertungsaspekt-Filter",
+    "description": "299 Fachbegriffe für die IHK AP1-Abschlussprüfung – Fachinformatiker Prüfungsvorbereitung mit Volltextsuche, Bewertungsaspekten und vernetzten Begriffen.",
     "orientation": "portrait-primary",
     "prefer_related_applications": false,
+    "categories": ["education", "productivity"],
+    "lang": "de",
+    "dir": "ltr",
     "icons": [
         {
             "src": "icons/Icon-192.png",

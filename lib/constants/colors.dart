@@ -16,6 +16,10 @@ class AppColors {
   static const oekologischLight = Color(0xFFF2EFE3);
   static const sozialLight      = Color(0xFFFDF0E6);
 
+  // Berechnung
+  static const berechnung      = Color(0xFF5C2D82); // Dunkelviolett
+  static const berechnungLight = Color(0xFFF0E6FA);
+
   // Neutral
   static const allFilter = Color(0xFF424242);
   static const allFilterLight = Color(0xFFF5F5F5);
