@@ -4,7 +4,7 @@ import 'package:ap1_glossar/data/data.dart';
 import 'package:ap1_glossar/data/related.dart';
 import 'package:ap1_glossar/screens/Home_page/widgets/drawer.dart';
 
-// ── Aspekt-Enum (intern für Farben/Icons, kein Filter mehr) ──────────────────
+// ── Aspekt-Enum ───────────────────────────────────────────────────────────────
 enum Aspekt { alle, funktional, oekonomisch, oekologisch, sozial, berechnung }
 
 extension AspektExt on Aspekt {
@@ -64,8 +64,8 @@ class HomePage extends StatefulWidget {
 class HomePageState extends State<HomePage> {
   List<String> _visibleKeys = [];
   final _searchController = TextEditingController();
-  // ScrollController für programmatischen Scroll zu einem Begriff
   final _scrollController = ScrollController();
+  Aspekt _selectedAspekt = Aspekt.alle;
 
   @override
   void initState() {
@@ -80,30 +80,31 @@ class HomePageState extends State<HomePage> {
     super.dispose();
   }
 
-  void _applyFilter({String search = ''}) {
+  void _applyFilter({String? search, Aspekt? aspekt}) {
+    final s = (search ?? _searchController.text).toLowerCase().trim();
+    final a = aspekt ?? _selectedAspekt;
     final allKeys = abbreviations.keys.toList();
-    final s = search.toLowerCase().trim();
     setState(() {
+      _selectedAspekt = a;
       _visibleKeys = allKeys.where((key) {
-        return s.isEmpty ||
+        final matchSearch = s.isEmpty ||
             key.toLowerCase().contains(s) ||
             (abbreviations[key] ?? '').toLowerCase().contains(s);
+        final matchAspekt = a == Aspekt.alle ||
+            (termAspect[key] ?? 'Funktional') == a.label;
+        return matchSearch && matchAspekt;
       }).toList();
     });
   }
 
-  /// Springt zu einem Begriff und öffnet ihn
   void navigateToTerm(String term) {
-    // Suche zurücksetzen, alle Begriffe zeigen
     _searchController.clear();
-    _applyFilter();
-
-    // Nach kurzer Verzögerung scrollen
+    _applyFilter(search: '', aspekt: Aspekt.alle);
     Future.delayed(const Duration(milliseconds: 100), () {
       final idx = _visibleKeys.indexOf(term);
       if (idx >= 0 && _scrollController.hasClients) {
         _scrollController.animateTo(
-          idx * 82.0, // geschätzte Kartenhöhe
+          idx * 82.0,
           duration: const Duration(milliseconds: 400),
           curve: Curves.easeInOut,
         );
@@ -141,9 +142,9 @@ class HomePageState extends State<HomePage> {
       body: Column(
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
-          // ── Suchfeld ──────────────────────────────────────────────────────
+          // ── Suchfeld ────────────────────────────────────────────────────────
           Padding(
-            padding: const EdgeInsets.fromLTRB(16, 14, 16, 10),
+            padding: const EdgeInsets.fromLTRB(16, 14, 16, 8),
             child: TextField(
               controller: _searchController,
               onChanged: (t) => _applyFilter(search: t),
@@ -159,7 +160,7 @@ class HomePageState extends State<HomePage> {
                         icon: const Icon(Icons.close, color: Colors.grey),
                         onPressed: () {
                           _searchController.clear();
-                          _applyFilter();
+                          _applyFilter(search: '');
                         },
                       ),
                 border: OutlineInputBorder(
@@ -181,9 +182,71 @@ class HomePageState extends State<HomePage> {
             ),
           ),
 
+          // ── Filter-Chips ─────────────────────────────────────────────────────
+          SizedBox(
+            height: 38,
+            child: ListView(
+              scrollDirection: Axis.horizontal,
+              padding: const EdgeInsets.symmetric(horizontal: 16),
+              children: Aspekt.values.map((a) {
+                final selected = _selectedAspekt == a;
+                return Padding(
+                  padding: const EdgeInsets.only(right: 8),
+                  child: GestureDetector(
+                    onTap: () => _applyFilter(aspekt: a),
+                    child: AnimatedContainer(
+                      duration: const Duration(milliseconds: 180),
+                      padding: const EdgeInsets.symmetric(
+                          horizontal: 12, vertical: 6),
+                      decoration: BoxDecoration(
+                        color: selected ? a.bgColor : Colors.white,
+                        borderRadius: BorderRadius.circular(20),
+                        border: Border.all(
+                          color: selected
+                              ? a.bgColor
+                              : Colors.grey.shade300,
+                          width: 1.2,
+                        ),
+                        boxShadow: selected
+                            ? [
+                                BoxShadow(
+                                  color: a.bgColor.withOpacity(0.25),
+                                  blurRadius: 6,
+                                  offset: const Offset(0, 2),
+                                )
+                              ]
+                            : [],
+                      ),
+                      child: Row(
+                        mainAxisSize: MainAxisSize.min,
+                        children: [
+                          Icon(
+                            a.icon,
+                            size: 13,
+                            color: selected ? Colors.white : a.bgColor,
+                          ),
+                          const SizedBox(width: 5),
+                          Text(
+                            a.label,
+                            style: TextStyle(
+                              fontSize: 12.5,
+                              fontWeight: FontWeight.w600,
+                              color: selected ? Colors.white : a.bgColor,
+                            ),
+                          ),
+                        ],
+                      ),
+                    ),
+                  ),
+                );
+              }).toList(),
+            ),
+          ),
+
+          const SizedBox(height: 8),
           const Divider(height: 1, thickness: 1, color: Color(0xFFE8ECF1)),
 
-          // ── Begriffe-Liste ─────────────────────────────────────────────────
+          // ── Begriffe-Liste ───────────────────────────────────────────────────
           Expanded(
             child: _visibleKeys.isEmpty
                 ? _buildEmptyState()
@@ -226,7 +289,7 @@ class HomePageState extends State<HomePage> {
           ),
           const SizedBox(height: 4),
           Text(
-            'Suchbegriff anpassen',
+            'Filter oder Suchbegriff anpassen',
             style: TextStyle(fontSize: 13, color: Colors.grey.shade400),
           ),
         ],
@@ -245,7 +308,7 @@ class HomePageState extends State<HomePage> {
   }
 }
 
-// ── Glossar-Karte ──────────────────────────────────────────────────────────────
+// ── Glossar-Karte ─────────────────────────────────────────────────────────────
 class _GlossarCard extends StatefulWidget {
   final String term;
   final String definition;
@@ -272,7 +335,6 @@ class _GlossarCardState extends State<_GlossarCard>
     setState(() {
       _expanded = !_expanded;
       if (_expanded && _related == null) {
-        // Lazy load verwandte Begriffe
         _related = getRelatedTerms(widget.term);
       }
     });
@@ -309,11 +371,10 @@ class _GlossarCardState extends State<_GlossarCard>
             child: Column(
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
-                // ── Kopfzeile ────────────────────────────────────────────
+                // ── Kopfzeile ─────────────────────────────────────────────
                 Row(
                   crossAxisAlignment: CrossAxisAlignment.start,
                   children: [
-                    // Avatar
                     Container(
                       width: 36,
                       height: 36,
@@ -360,7 +421,7 @@ class _GlossarCardState extends State<_GlossarCard>
                   ],
                 ),
 
-                // ── Kurzdefinition (eingeklappt) ──────────────────────────
+                // ── Kurzdefinition (eingeklappt) ───────────────────────────
                 if (!_expanded) ...[
                   const SizedBox(height: 8),
                   Text(
@@ -375,10 +436,9 @@ class _GlossarCardState extends State<_GlossarCard>
                   ),
                 ],
 
-                // ── Vollständige Definition + Verwandte Begriffe (aufgeklappt)
+                // ── Vollständige Definition + Verwandte Begriffe ───────────
                 if (_expanded) ...[
                   const SizedBox(height: 10),
-                  // Definition
                   Container(
                     padding: const EdgeInsets.all(12),
                     decoration: BoxDecoration(
@@ -394,8 +454,6 @@ class _GlossarCardState extends State<_GlossarCard>
                       ),
                     ),
                   ),
-
-                  // ── Verwandte Begriffe ──────────────────────────────────
                   if (_related != null && _related!.isNotEmpty) ...[
                     const SizedBox(height: 12),
                     Row(
@@ -488,7 +546,7 @@ class _GlossarCardState extends State<_GlossarCard>
   }
 }
 
-// ── Aspekt-Badge ───────────────────────────────────────────────────────────────
+// ── Aspekt-Badge ──────────────────────────────────────────────────────────────
 class _AspektBadge extends StatelessWidget {
   final Aspekt aspekt;
   const _AspektBadge({required this.aspekt});
