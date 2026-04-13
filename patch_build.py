@@ -93,7 +93,20 @@ html = html.replace("<body>", "<body>\n" + splash_div)
 index.write_text(html)
 print("✅ index.html: Splash-Screen eingebaut")
 
-# ── 3. docs/ aktualisieren
+# ── 3. version.json mit aktuellem Build-Timestamp aktualisieren
+import json, datetime
+version_file = BUILD / "version.json"
+ts = datetime.datetime.utcnow().strftime("%Y%m%d%H%M%S")
+version_data = {
+    "app_name": "ap1_glossar",
+    "version": "1.4.0",
+    "build_number": ts,
+    "package_name": "ap1_glossar"
+}
+version_file.write_text(json.dumps(version_data))
+print(f"✅ version.json → v1.4.0 (build {ts})")
+
+# ── 4. docs/ aktualisieren
 if DOCS.exists():
     shutil.rmtree(DOCS)
 DOCS.mkdir()
