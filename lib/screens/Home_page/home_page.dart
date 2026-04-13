@@ -86,7 +86,7 @@ class HomePageState extends State<HomePage> {
     final allKeys = abbreviations.keys.toList();
     setState(() {
       _selectedAspekt = a;
-      _visibleKeys = allKeys.where((key) {
+      final filtered = allKeys.where((key) {
         final matchSearch = s.isEmpty ||
             key.toLowerCase().contains(s) ||
             (abbreviations[key] ?? '').toLowerCase().contains(s);
@@ -94,6 +94,17 @@ class HomePageState extends State<HomePage> {
             (termAspect[key] ?? 'Funktional') == a.label;
         return matchSearch && matchAspekt;
       }).toList();
+
+      // Begriffe mit Buchstaben zuerst, Zahlen/Sonderzeichen ans Ende
+      filtered.sort((a, b) {
+        final aLetter = RegExp(r'^[A-Za-z\u00C0-\u024F]').hasMatch(a);
+        final bLetter = RegExp(r'^[A-Za-z\u00C0-\u024F]').hasMatch(b);
+        if (aLetter && !bLetter) return -1;
+        if (!aLetter && bLetter) return 1;
+        return a.toLowerCase().compareTo(b.toLowerCase());
+      });
+
+      _visibleKeys = filtered;
     });
   }
 
