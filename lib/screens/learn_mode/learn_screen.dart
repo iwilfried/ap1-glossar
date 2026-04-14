@@ -45,8 +45,8 @@ class _LearnScreenState extends State<LearnScreen> {
     if (correct) {
       await _leitner.markCorrect(_currentTerm!);
       _sessionCorrect++;
-      // Upgrade-CTA nach 20 richtigen Antworten in der Session
-      if (_sessionCorrect == 20 && !_showUpgradeCTA) {
+      // Upgrade-CTA nach 50 richtigen Antworten in der Session
+      if (_sessionCorrect == 50 && !_showUpgradeCTA) {
         setState(() => _showUpgradeCTA = true);
       }
     } else {
@@ -91,9 +91,7 @@ class _LearnScreenState extends State<LearnScreen> {
 
           // ── Karteikarte ────────────────────────────────────
           Expanded(
-            child: _currentTerm == null
-                ? _buildAllDone()
-                : _buildFlashcard(),
+            child: _currentTerm == null ? _buildAllDone() : _buildFlashcard(),
           ),
         ],
       ),
@@ -177,7 +175,8 @@ class _LearnScreenState extends State<LearnScreen> {
             mainAxisAlignment: MainAxisAlignment.spaceBetween,
             children: [
               Container(
-                padding: const EdgeInsets.symmetric(horizontal: 10, vertical: 4),
+                padding:
+                    const EdgeInsets.symmetric(horizontal: 10, vertical: 4),
                 decoration: BoxDecoration(
                   color: _aspektColor(aspekt).withOpacity(0.15),
                   borderRadius: BorderRadius.circular(12),
@@ -192,7 +191,11 @@ class _LearnScreenState extends State<LearnScreen> {
                 ),
               ),
               Text(
-                box == 0 ? 'Neu' : box == 1 ? 'Gelernt' : 'Gemeistert',
+                box == 0
+                    ? 'Neu'
+                    : box == 1
+                        ? 'Gelernt'
+                        : 'Gemeistert',
                 style: TextStyle(fontSize: 12, color: Colors.grey.shade500),
               ),
             ],
@@ -333,7 +336,8 @@ class _LearnScreenState extends State<LearnScreen> {
         child: Column(
           mainAxisAlignment: MainAxisAlignment.center,
           children: [
-            const Icon(Icons.emoji_events_rounded, size: 64, color: Colors.amber),
+            const Icon(Icons.emoji_events_rounded,
+                size: 64, color: Colors.amber),
             const SizedBox(height: 16),
             const Text(
               'Alle Begriffe gemeistert!',
@@ -378,20 +382,20 @@ class _LearnScreenState extends State<LearnScreen> {
                   'Du lernst gut!',
                   style: TextStyle(fontWeight: FontWeight.bold, fontSize: 14),
                 ),
-                const SizedBox(height: 2),
-                Text(
-                  'Mit der Learn-Factory lernst du 3× schneller – dank FSRS-Algorithmus und täglichem Lernplan.',
-                  style: TextStyle(fontSize: 12, color: Colors.grey.shade700),
+                const SizedBox(height: 4),
+                GestureDetector(
+                  onTap: () => launchUrl(Uri.parse('https://ihk-ap1-prep.web.app')),
+                  child: const Text(
+                    'Learn-Factory entdecken →',
+                    style: TextStyle(fontSize: 12, color: Colors.deepOrange, decoration: TextDecoration.underline),
+                  ),
                 ),
               ],
             ),
           ),
-          const SizedBox(width: 8),
           IconButton(
-            onPressed: () {
-              launchUrl(Uri.parse('https://ihk-ap1-prep.web.app'));
-            },
-            icon: const Icon(Icons.arrow_forward_rounded, color: Colors.deepOrange),
+            onPressed: () => setState(() => _showUpgradeCTA = false),
+            icon: Icon(Icons.close, size: 18, color: Colors.grey.shade400),
           ),
         ],
       ),
@@ -420,7 +424,8 @@ class _LearnScreenState extends State<LearnScreen> {
                 _showUpgradeCTA = false;
               });
             },
-            child: const Text('Zurücksetzen', style: TextStyle(color: Colors.red)),
+            child:
+                const Text('Zurücksetzen', style: TextStyle(color: Colors.red)),
           ),
         ],
       ),
@@ -430,12 +435,18 @@ class _LearnScreenState extends State<LearnScreen> {
   // ── Aspekt-Farben ────────────────────────────────────────────
   Color _aspektColor(String aspekt) {
     switch (aspekt) {
-      case 'Funktional':  return AppColors.funktional;
-      case 'Ökonomisch':  return AppColors.oekonomisch;
-      case 'Ökologisch':  return AppColors.oekologisch;
-      case 'Sozial':      return AppColors.sozial;
-      case 'Berechnung':  return AppColors.berechnung;
-      default:            return AppColors.funktional;
+      case 'Funktional':
+        return AppColors.funktional;
+      case 'Ökonomisch':
+        return AppColors.oekonomisch;
+      case 'Ökologisch':
+        return AppColors.oekologisch;
+      case 'Sozial':
+        return AppColors.sozial;
+      case 'Berechnung':
+        return AppColors.berechnung;
+      default:
+        return AppColors.funktional;
     }
   }
 }
