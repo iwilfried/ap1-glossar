@@ -38,9 +38,15 @@ Die vier IHK-Bewertungsaspekte sind das Rückgrat jeder AP1-Prüfungsaufgabe. Da
 
 ## Screenshots
 
-| Startseite | Aspekt-Filter | Themen-Filter |
-| --- | --- | --- |
-| Alle 386 Begriffe mit Suchleiste | Filter-Chips für die 4 Aspekte | Hardware · Netzwerk · Sicherheit · … |
+<p align="center">
+  <img src="docs/screenshots/01-startseite-mobile.png" width="220" alt="Startseite mit 386 Begriffen"/>
+  <img src="docs/screenshots/02-aspekt-filter-mobile.png" width="220" alt="Bewertungsaspekt-Filter"/>
+  <img src="docs/screenshots/03-themen-filter-mobile.png" width="220" alt="Themen-Filter mit Badges"/>
+</p>
+
+<p align="center">
+  <em>Startseite · Aspekt-Filter · Themen-Filter</em>
+</p>
 
 ---
 
