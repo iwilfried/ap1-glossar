@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:ap1_glossar/constants/colors.dart';
 import 'package:ap1_glossar/data/data.dart';
 import 'package:ap1_glossar/data/related.dart';
-import 'package:ap1_glossar/screens/Home_page/widgets/drawer.dart';
+import 'package:ap1_glossar/screens/home_page/widgets/drawer.dart';
 
 // ── Aspekt-Enum ───────────────────────────────────────────────────────────────
 enum Aspekt { alle, funktional, oekonomisch, oekologisch, sozial, berechnung }
@@ -10,45 +10,69 @@ enum Aspekt { alle, funktional, oekonomisch, oekologisch, sozial, berechnung }
 extension AspektExt on Aspekt {
   String get label {
     switch (this) {
-      case Aspekt.alle:        return 'Alle';
-      case Aspekt.funktional:  return 'Funktional';
-      case Aspekt.oekonomisch: return 'Ökonomisch';
-      case Aspekt.oekologisch: return 'Ökologisch';
-      case Aspekt.sozial:      return 'Sozial';
-      case Aspekt.berechnung:  return 'Berechnung';
+      case Aspekt.alle:
+        return 'Alle';
+      case Aspekt.funktional:
+        return 'Funktional';
+      case Aspekt.oekonomisch:
+        return 'Ökonomisch';
+      case Aspekt.oekologisch:
+        return 'Ökologisch';
+      case Aspekt.sozial:
+        return 'Sozial';
+      case Aspekt.berechnung:
+        return 'Berechnung';
     }
   }
 
   Color get bgColor {
     switch (this) {
-      case Aspekt.alle:        return AppColors.allFilter;
-      case Aspekt.funktional:  return AppColors.funktional;
-      case Aspekt.oekonomisch: return AppColors.oekonomisch;
-      case Aspekt.oekologisch: return AppColors.oekologisch;
-      case Aspekt.sozial:      return AppColors.sozial;
-      case Aspekt.berechnung:  return AppColors.berechnung;
+      case Aspekt.alle:
+        return AppColors.allFilter;
+      case Aspekt.funktional:
+        return AppColors.funktional;
+      case Aspekt.oekonomisch:
+        return AppColors.oekonomisch;
+      case Aspekt.oekologisch:
+        return AppColors.oekologisch;
+      case Aspekt.sozial:
+        return AppColors.sozial;
+      case Aspekt.berechnung:
+        return AppColors.berechnung;
     }
   }
 
   Color get lightColor {
     switch (this) {
-      case Aspekt.alle:        return AppColors.allFilterLight;
-      case Aspekt.funktional:  return AppColors.funktionalLight;
-      case Aspekt.oekonomisch: return AppColors.oekonomischLight;
-      case Aspekt.oekologisch: return AppColors.oekologischLight;
-      case Aspekt.sozial:      return AppColors.sozialLight;
-      case Aspekt.berechnung:  return AppColors.berechnungLight;
+      case Aspekt.alle:
+        return AppColors.allFilterLight;
+      case Aspekt.funktional:
+        return AppColors.funktionalLight;
+      case Aspekt.oekonomisch:
+        return AppColors.oekonomischLight;
+      case Aspekt.oekologisch:
+        return AppColors.oekologischLight;
+      case Aspekt.sozial:
+        return AppColors.sozialLight;
+      case Aspekt.berechnung:
+        return AppColors.berechnungLight;
     }
   }
 
   IconData get icon {
     switch (this) {
-      case Aspekt.alle:        return Icons.apps_rounded;
-      case Aspekt.funktional:  return Icons.settings_ethernet_rounded;
-      case Aspekt.oekonomisch: return Icons.euro_rounded;
-      case Aspekt.oekologisch: return Icons.eco_rounded;
-      case Aspekt.sozial:      return Icons.people_rounded;
-      case Aspekt.berechnung:  return Icons.calculate_rounded;
+      case Aspekt.alle:
+        return Icons.apps_rounded;
+      case Aspekt.funktional:
+        return Icons.settings_ethernet_rounded;
+      case Aspekt.oekonomisch:
+        return Icons.euro_rounded;
+      case Aspekt.oekologisch:
+        return Icons.eco_rounded;
+      case Aspekt.sozial:
+        return Icons.people_rounded;
+      case Aspekt.berechnung:
+        return Icons.calculate_rounded;
     }
   }
 }
@@ -56,29 +80,52 @@ extension AspektExt on Aspekt {
 // ── Themencluster-Icons ───────────────────────────────────────────────────────
 IconData _themaIcon(String thema) {
   switch (thema) {
-    case 'Hardware':                    return Icons.memory_rounded;
-    case 'Netzwerk':                    return Icons.lan_rounded;
-    case 'IT-Sicherheit':              return Icons.security_rounded;
-    case 'Datenschutz':                return Icons.shield_rounded;
-    case 'Nachhaltigkeit':             return Icons.eco_rounded;
-    case 'Wirtschaft':                 return Icons.trending_up_rounded;
-    case 'Projektmanagement':          return Icons.account_tree_rounded;
-    case 'Programmierung':             return Icons.code_rounded;
-    case 'Künstliche Intelligenz':     return Icons.smart_toy_rounded;
-    case 'Ergonomie & Soziales':       return Icons.self_improvement_rounded;
-    case 'Barrierefreiheit':           return Icons.accessibility_rounded;
-    case 'Recht':                      return Icons.gavel_rounded;
-    case 'Berechnung':                 return Icons.calculate_rounded;
-    case 'Cloud & Virtualisierung':    return Icons.cloud_rounded;
-    case 'IT-Service-Management':      return Icons.support_agent_rounded;
-    case 'Systemadministration':       return Icons.admin_panel_settings_rounded;
-    case 'Datenspeicherung':           return Icons.storage_rounded;
-    case 'Kommunikation':              return Icons.forum_rounded;
-    case 'WiSo Ausbildung & Arbeitsrecht': return Icons.school_rounded;
-    case 'WiSo Unternehmen & Wirtschaft': return Icons.business_rounded;
-    case 'WiSo Sicherheit & Umwelt':   return Icons.park_rounded;
-    case 'WiSo Digitale Zusammenarbeit': return Icons.group_work_rounded;
-    default:                           return Icons.label_rounded;
+    case 'Hardware':
+      return Icons.memory_rounded;
+    case 'Netzwerk':
+      return Icons.lan_rounded;
+    case 'IT-Sicherheit':
+      return Icons.security_rounded;
+    case 'Datenschutz':
+      return Icons.shield_rounded;
+    case 'Nachhaltigkeit':
+      return Icons.eco_rounded;
+    case 'Wirtschaft':
+      return Icons.trending_up_rounded;
+    case 'Projektmanagement':
+      return Icons.account_tree_rounded;
+    case 'Programmierung':
+      return Icons.code_rounded;
+    case 'Künstliche Intelligenz':
+      return Icons.smart_toy_rounded;
+    case 'Ergonomie & Soziales':
+      return Icons.self_improvement_rounded;
+    case 'Barrierefreiheit':
+      return Icons.accessibility_rounded;
+    case 'Recht':
+      return Icons.gavel_rounded;
+    case 'Berechnung':
+      return Icons.calculate_rounded;
+    case 'Cloud & Virtualisierung':
+      return Icons.cloud_rounded;
+    case 'IT-Service-Management':
+      return Icons.support_agent_rounded;
+    case 'Systemadministration':
+      return Icons.admin_panel_settings_rounded;
+    case 'Datenspeicherung':
+      return Icons.storage_rounded;
+    case 'Kommunikation':
+      return Icons.forum_rounded;
+    case 'WiSo Ausbildung & Arbeitsrecht':
+      return Icons.school_rounded;
+    case 'WiSo Unternehmen & Wirtschaft':
+      return Icons.business_rounded;
+    case 'WiSo Sicherheit & Umwelt':
+      return Icons.park_rounded;
+    case 'WiSo Digitale Zusammenarbeit':
+      return Icons.group_work_rounded;
+    default:
+      return Icons.label_rounded;
   }
 }
 
@@ -122,7 +169,7 @@ class HomePageState extends State<HomePage> {
   final _searchController = TextEditingController();
   final _scrollController = ScrollController();
   Aspekt _selectedAspekt = Aspekt.alle;
-  String? _selectedThema;   // null = alle Themen
+  String? _selectedThema; // null = alle Themen
 
   @override
   void initState() {
@@ -149,7 +196,11 @@ class HomePageState extends State<HomePage> {
     return (termGroups[thema] ?? []).toSet();
   }
 
-  void _applyFilter({String? search, Aspekt? aspekt, String? thema, bool clearThema = false}) {
+  void _applyFilter(
+      {String? search,
+      Aspekt? aspekt,
+      String? thema,
+      bool clearThema = false}) {
     final s = (search ?? _searchController.text).toLowerCase().trim();
     final a = aspekt ?? _selectedAspekt;
     final t = clearThema ? null : (thema ?? _selectedThema);
@@ -165,8 +216,8 @@ class HomePageState extends State<HomePage> {
         final matchSearch = s.isEmpty ||
             key.toLowerCase().contains(s) ||
             (abbreviations[key] ?? '').toLowerCase().contains(s);
-        final matchAspekt = a == Aspekt.alle ||
-            (termAspect[key] ?? 'Funktional') == a.label;
+        final matchAspekt =
+            a == Aspekt.alle || (termAspect[key] ?? 'Funktional') == a.label;
         final matchThema = themaKeys == null || themaKeys.contains(key);
         return matchSearch && matchAspekt && matchThema;
       }).toList();
@@ -310,7 +361,8 @@ class HomePageState extends State<HomePage> {
                       child: Row(
                         mainAxisSize: MainAxisSize.min,
                         children: [
-                          Icon(a.icon, size: 13,
+                          Icon(a.icon,
+                              size: 13,
                               color: selected ? Colors.white : a.bgColor),
                           const SizedBox(width: 5),
                           Text(
@@ -392,8 +444,7 @@ class HomePageState extends State<HomePage> {
                     padding: const EdgeInsets.only(right: 7),
                     child: GestureDetector(
                       onTap: () => _applyFilter(
-                          thema: selected ? null : thema,
-                          clearThema: selected),
+                          thema: selected ? null : thema, clearThema: selected),
                       child: AnimatedContainer(
                         duration: const Duration(milliseconds: 180),
                         padding: const EdgeInsets.symmetric(
@@ -494,8 +545,7 @@ class HomePageState extends State<HomePage> {
                   const SizedBox(width: 6),
                   Text(
                     '· ${_visibleKeys.length} Begriffe',
-                    style: TextStyle(
-                        fontSize: 12, color: Colors.grey.shade500),
+                    style: TextStyle(fontSize: 12, color: Colors.grey.shade500),
                   ),
                   const Spacer(),
                   GestureDetector(
@@ -562,11 +612,16 @@ class HomePageState extends State<HomePage> {
 
   Aspekt _aspektFromString(String s) {
     switch (s) {
-      case 'Ökonomisch': return Aspekt.oekonomisch;
-      case 'Ökologisch': return Aspekt.oekologisch;
-      case 'Sozial':     return Aspekt.sozial;
-      case 'Berechnung': return Aspekt.berechnung;
-      default:           return Aspekt.funktional;
+      case 'Ökonomisch':
+        return Aspekt.oekonomisch;
+      case 'Ökologisch':
+        return Aspekt.oekologisch;
+      case 'Sozial':
+        return Aspekt.sozial;
+      case 'Berechnung':
+        return Aspekt.berechnung;
+      default:
+        return Aspekt.funktional;
     }
   }
 }
@@ -766,8 +821,7 @@ class _GlossarCardState extends State<_GlossarCard>
                               mainAxisSize: MainAxisSize.min,
                               children: [
                                 Icon(Icons.arrow_forward_rounded,
-                                    size: 11,
-                                    color: relAspekt.bgColor),
+                                    size: 11, color: relAspekt.bgColor),
                                 const SizedBox(width: 5),
                                 Text(
                                   related,
@@ -800,11 +854,16 @@ class _GlossarCardState extends State<_GlossarCard>
 
   Aspekt _aspektFromString(String s) {
     switch (s) {
-      case 'Ökonomisch': return Aspekt.oekonomisch;
-      case 'Ökologisch': return Aspekt.oekologisch;
-      case 'Sozial':     return Aspekt.sozial;
-      case 'Berechnung': return Aspekt.berechnung;
-      default:           return Aspekt.funktional;
+      case 'Ökonomisch':
+        return Aspekt.oekonomisch;
+      case 'Ökologisch':
+        return Aspekt.oekologisch;
+      case 'Sozial':
+        return Aspekt.sozial;
+      case 'Berechnung':
+        return Aspekt.berechnung;
+      default:
+        return Aspekt.funktional;
     }
   }
 }

@@ -1,6 +1,6 @@
 // AP1 Glossar – IHK Abschlussprüfung Teil 1
 // 386 Begriffe | Kategorien: Funktional · Ökonomisch · Ökologisch · Sozial · Berechnung
-// Basiert auf 10 echten AP1-Prüfungen (2021–2026) und dem IHK-Prüfungskatalog
+// Basiert auf 10 echten AP1-Prüfungen (2021 – Frühjahr 2026) und dem IHK-Prüfungskatalog
 
 /// Begriff → vollständige Definition
 Map<String, String> abbreviations = <String, String>{
@@ -201,7 +201,7 @@ Map<String, String> abbreviations = <String, String>{
   "Übertragungsdauer":
       "Dauer = Dateigröße (Bit) ÷ Bandbreite (Bit/s). Achtung: Groß-B = Byte, klein-b = Bit, 1 Byte = 8 Bit. Beispiel: 2,5 GiB über 100 Mbit/s = 2,5 × 1024 × 8 MBit ÷ 100 Mbit/s = 204,8 Sekunden.",
 
-/// Begriff → Bewertungsaspekt (Funktional | Ökonomisch | Ökologisch | Sozial)
+  /// Begriff → Bewertungsaspekt (Funktional | Ökonomisch | Ökologisch | Sozial)
   "RAID":
       "Redundant Array of Independent Disks. Verbund mehrerer Festplatten für Redundanz und/oder Performance. RAID 0 = Striping (Speed, keine Redundanz), RAID 1 = Mirroring (Spiegelung), RAID 5 = Striping + Parität (min. 3 Platten), RAID 6 = 2 Paritäten (min. 4 Platten), RAID 10 = RAID 1+0.",
   "RAID-Level":
