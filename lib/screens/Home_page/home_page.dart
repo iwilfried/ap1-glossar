@@ -185,14 +185,17 @@ class HomePageState extends State<HomePage> {
   }
 
   void navigateToTerm(String term) {
-    _searchController.clear();
-    _applyFilter(search: '', aspekt: Aspekt.alle, clearThema: true);
+    // Alle Filter zurücksetzen → term wird sichtbar
+    _searchController.text = term;
+    _applyFilter(search: term, aspekt: Aspekt.alle, clearThema: true);
     Future.delayed(const Duration(milliseconds: 150), () {
+      if (!mounted) return;
+      // Ergebnis: entweder genau 1 Treffer → zu oberst, oder animierter Scroll
       final idx = _visibleKeys.indexOf(term);
       if (idx >= 0 && _scrollController.hasClients) {
         _scrollController.animateTo(
-          idx * 82.0,
-          duration: const Duration(milliseconds: 350),
+          0, // Nach Suche ist der Begriff ganz oben
+          duration: const Duration(milliseconds: 300),
           curve: Curves.easeInOut,
         );
       }

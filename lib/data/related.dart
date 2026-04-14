@@ -110,7 +110,7 @@ const Map<String, List<String>> termGroups = {
     'Barrierefreiheit (IT)', 'WCAG', 'BITV 2.0',
     'European Accessibility Act (EAA)', 'Barrierefreiheit (Webdesign)',
     'Screenreader', 'Kontrast (Barrierefreiheit)', 'Tastaturzugänglichkeit',
-    'Webentwicklung (Grundlagen)', 'HTML / CSS',
+    'Webentwicklung (Grundlagen)',
   ],
   'Recht': [
     'BDSG', 'Betroffenenrechte', 'DSGVO', 'ElektroG', 'Kaufvertrag',
@@ -158,7 +158,7 @@ const Map<String, List<String>> termGroups = {
   ],
   'Kommunikation': [
     'RFID', 'NFC', 'USB-Standards', 'QoS', 'SNMP', 'WLAN-Standards',
-    'RJ-45', 'Monitoranschlüsse', 'Peripherieanschlüsse', 'Bluetooth',
+    'RJ-45', 'Monitoranschlüsse', 'Peripherieanschlüsse',
   ],
   'WiSo Ausbildung & Arbeitsrecht': [
     'Ausbildungsvertrag', 'BBiG', 'Duales System', 'Berufsschulpflicht',
