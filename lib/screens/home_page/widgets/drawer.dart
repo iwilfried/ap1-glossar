@@ -32,7 +32,7 @@ class AppDrawer extends StatelessWidget {
                 ),
                 SizedBox(height: 4),
                 Text(
-                  '299 Fachbegriffe · 5 Bewertungsaspekte',
+                  '386 Fachbegriffe · 5 Bewertungsaspekte',
                   style: TextStyle(color: Colors.white70, fontSize: 12),
                 ),
               ],
@@ -43,28 +43,25 @@ class AppDrawer extends StatelessWidget {
 
           // ── Navigation ─────────────────────────────────────────────────
           ListTile(
-            leading:
-                const Icon(Icons.info_outline, color: AppColors.color),
+            leading: const Icon(Icons.info_outline, color: AppColors.color),
             title: const Text('Über diese App'),
             onTap: () => Navigator.of(context).push(
-              MaterialPageRoute(
-                  builder: (_) => const AboutScreen()),
+              MaterialPageRoute(builder: (_) => const AboutScreen()),
             ),
           ),
           ListTile(
             leading: const Icon(Icons.gavel_rounded, color: AppColors.color),
             title: const Text('Impressum'),
             onTap: () => Navigator.of(context).push(
-              MaterialPageRoute(
-                  builder: (_) => const ImpressumScreen()),
+              MaterialPageRoute(builder: (_) => const ImpressumScreen()),
             ),
           ),
           ListTile(
-            leading: const Icon(Icons.privacy_tip_outlined, color: AppColors.color),
+            leading:
+                const Icon(Icons.privacy_tip_outlined, color: AppColors.color),
             title: const Text('Datenschutz'),
             onTap: () => Navigator.of(context).push(
-              MaterialPageRoute(
-                  builder: (_) => const DatenschutzScreen()),
+              MaterialPageRoute(builder: (_) => const DatenschutzScreen()),
             ),
           ),
 
@@ -83,4 +80,3 @@ class AppDrawer extends StatelessWidget {
     );
   }
 }
-

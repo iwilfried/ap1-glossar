@@ -63,7 +63,7 @@ class AboutScreen extends StatelessWidget {
             const SizedBox(height: 8),
             Center(
               child: Text(
-                "v1.3.0 · $begriffe Begriffe",
+                "v1.9.8 · $begriffe Begriffe",
                 style: const TextStyle(fontSize: 13, color: Colors.grey),
               ),
             ),
@@ -72,7 +72,7 @@ class AboutScreen extends StatelessWidget {
               "Was ist das AP1 Glossar?",
               "Die vollständige Wissensdatenbank für die IHK Abschlussprüfung Teil 1 "
                   "(Fachinformatiker aller Fachrichtungen). Basiert auf der Analyse von "
-                  "10 echten AP1-Prüfungen (2021–2026) und dem aktuellen IHK-Prüfungskatalog.",
+                  "10 echten AP1-Prüfungen (2021 – Frühjahr2026) und dem aktuellen IHK-Prüfungskatalog.",
             ),
             _buildSection(
               "Bewertungsaspekte",
