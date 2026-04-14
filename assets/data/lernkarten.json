@@ -1196,7 +1196,6 @@
     "subtopic": "Active Directory",
     "hashtags": [
       "#ActiveDirectory",
-      "#AD",
       "#LDAP",
       "#Kerberos",
       "#AP1"
@@ -5670,7 +5669,6 @@
     "subtopic": "Netzwerkkonfiguration (Praxis)",
     "hashtags": [
       "#ipconfig",
-      "#ifconfig",
       "#DNS",
       "#Gateway",
       "#AP1"
@@ -5849,7 +5847,6 @@
       "#OSI",
       "#TCP",
       "#IP",
-      "#Schichtenmodell",
       "#AP1"
     ],
     "url": ""
@@ -6458,10 +6455,7 @@
     "topic": "Hardware",
     "subtopic": "RAID-Level",
     "hashtags": [
-      "#RAID0",
-      "#RAID1",
       "#RAID",
-      "#RAID10",
       "#AP1"
     ],
     "url": ""
@@ -7086,8 +7080,6 @@
     "subtopic": "SQL Grundlagen",
     "hashtags": [
       "#SQL",
-      "#SELECT",
-      "#WHERE",
       "#Datenbank",
       "#AP1"
     ],
@@ -7125,9 +7117,7 @@
     "topic": "Programmierung",
     "subtopic": "SQL SELECT",
     "hashtags": [
-      "#SELECT",
       "#SQL",
-      "#WHERE",
       "#ORDER BY",
       "#AP1"
     ],
