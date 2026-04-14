@@ -37782,7 +37782,7 @@ Zc(){return this.nz(null,!1,null,null)},
 agL(a){this.e.nu(0,B.y_)
 this.Zf(B.eW,!0,"")
 A.qI(B.e4,new A.a0W(this,a),t.P)},
-L(a){var s,r,q,p,o,n,m=this,l=null,k=m.gZj(),j=t.p,i=A.VL(A.b([new A.bb(B.CH,A.eP(A.aT(""+m.d.length+" Begriffe",l,l,l,B.Qb,l,l),l,l),l)],j),B.H,!0,2,B.j,0,B.SD),h=m.e,g=h.a.a.length===0?l:A.amF(l,l,B.Ec,l,l,new A.a0P(m),l,l,l)
+L(a){var s,r,q,p,o,n,m=this,l=null,k=m.gZj(),j=t.p,i=A.VL(A.b([new A.bb(B.CH,A.eP(A.aT(""+m.d.length+" Begriffe",l,l,l,B.Qb,l,l),l,l),l)],j),B.H,!0,2,B.j,0,B.SC),h=m.e,g=h.a.a.length===0?l:A.amF(l,l,B.Ec,l,l,new A.a0P(m),l,l,l)
 g=A.aqR(l,new A.fL(4,A.dp(12),B.q),l,B.CR,l,l,l,l,!0,new A.fL(4,A.dp(12),new A.b7(B.lr,1,B.w,-1)),l,l,l,l,l,B.j,!0,l,l,l,l,new A.fL(4,A.dp(12),new A.b7(B.H,1.5,B.w,-1)),l,l,l,l,l,l,l,B.PD,"Begriff oder Definition suchen \u2026",l,l,l,l,l,!0,l,l,l,!0,l,B.Ei,l,l,l,l,l,l,g,l,l,l,l)
 s=t.yg
 s=A.ii(A.arb(A.a2(new A.af(B.Gk,new A.a0Q(m),s),!0,s.i("aG.E")),B.iI,B.b2),38,l)
@@ -37958,7 +37958,7 @@ bJ(){this.cO()
 this.cs()
 this.hK()}}
 A.Fj.prototype={
-L(a){return new A.H_(A.ey(A.b([new A.H3(B.zf,A.ey(B.GT,B.aO,B.rG,B.aw),null),B.Ca,A.a2c(B.Ej,new A.VW(a),B.yb),A.a2c(B.Ed,new A.VX(a),B.yc),A.a2c(B.Ee,new A.VY(a),B.Sx),B.xM,B.Cc,A.a2c(B.Eg,null,B.SF),B.aj],t.p),B.e0,B.S,B.aw),null)}}
+L(a){return new A.H_(A.ey(A.b([new A.H3(B.zf,A.ey(B.GT,B.aO,B.rG,B.aw),null),B.Ca,A.a2c(B.Ej,new A.VW(a),B.yb),A.a2c(B.Ed,new A.VX(a),B.yc),A.a2c(B.Ee,new A.VY(a),B.Sx),B.xM,B.Cc,A.a2c(B.Eg,null,B.SG),B.aj],t.p),B.e0,B.S,B.aw),null)}}
 A.VW.prototype={
 $0(){return A.rg(this.a).kf(A.It(new A.VV(),null,t.z))},
 $S:0}
@@ -37984,21 +37984,21 @@ u5(a,b){var s=null
 return new A.bb(B.CF,A.ey(A.b([A.aT(a,s,s,s,B.aU,s,s),B.xJ,A.aT(b,s,s,s,B.Rc,s,s)],t.p),B.aO,B.S,B.aw),s)}}
 A.qo.prototype={
 L(a){var s=null
-return A.K8(A.VL(s,B.H,s,s,B.j,s,B.SB),s,B.MX,s)}}
+return A.K8(A.VL(s,B.H,s,s,B.j,s,B.SA),s,B.MX,s)}}
 A.NL.prototype={
 L(a){var s=null
-return A.ey(A.b([A.aT("Datenschutzerkl\xe4rung",s,s,s,B.aU,s,s),B.cI,new A.bb(B.aa,A.aT("Wir freuen uns \xfcber Ihr Interesse an unserer App. Der Schutz Ihrer personenbezogenen Daten ist uns ein wichtiges Anliegen. Nachfolgend informieren wir Sie \xfcber die Verarbeitung personenbezogener Daten bei der Nutzung dieser App.",s,s,s,B.ak,s,s),s),B.bf,A.aT("1. Verantwortlicher",s,s,s,B.aU,s,s),B.aj,new A.bb(B.aa,A.aT("Wilfried Ifland\nLearning-Factory\nD\xfcsseldorf, Deutschland\nE-Mail: wilfried.ifland@gmail.com",s,s,s,B.ak,s,s),s),B.bf,A.aT("2. Keine Erhebung personenbezogener Daten",s,s,s,B.aU,s,s),B.aj,new A.bb(B.aa,A.aT("Diese App erhebt, speichert oder verarbeitet keine personenbezogenen Daten. Es werden weder Cookies gesetzt noch Tracking-Technologien eingesetzt. Es findet keine Registrierung, kein Login und keine Weitergabe von Daten an Dritte statt.",s,s,s,B.ak,s,s),s),B.bf,A.aT("3. Hosting",s,s,s,B.aU,s,s),B.aj,new A.bb(B.aa,A.aT("Die App wird \xfcber GitHub Pages (GitHub Inc., 88 Colin P Kelly Jr St, San Francisco, CA 94107, USA) bereitgestellt. Beim Abruf der Seite werden automatisch technische Zugriffsdaten (z.\u202fB. IP-Adresse, Browsertyp, Zeitpunkt des Abrufs) durch den Hosting-Anbieter erfasst. Diese Daten werden in Server-Logfiles gespeichert und dienen ausschlie\xdflich der Sicherstellung eines st\xf6rungsfreien Betriebs. Eine Zusammenf\xfchrung mit anderen Datenquellen findet nicht statt.",s,s,s,B.ak,s,s),s),B.aj,new A.bb(B.aa,A.aT("Rechtsgrundlage: Art. 6 Abs. 1 lit. f DSGVO (berechtigtes Interesse an der sicheren Bereitstellung der App).",s,s,s,B.ak,s,s),s),B.aj,new A.bb(B.aa,A.aT("GitHub hat sich den EU-Standardvertragsklauseln unterworfen und ist unter dem Data Privacy Framework (DPF) zertifiziert. Weitere Informationen: https://docs.github.com/en/site-policy/privacy-policies",s,s,s,B.ak,s,s),s),B.bf,A.aT("4. Lokale Speicherung (PWA)",s,s,s,B.aU,s,s),B.aj,new A.bb(B.aa,A.aT("Wenn Sie die App als Progressive Web App (PWA) installieren, werden App-Daten lokal auf Ihrem Ger\xe4t im Cache/Service Worker gespeichert, um die Offline-Nutzung zu erm\xf6glichen. Diese Daten verlassen Ihr Ger\xe4t nicht und werden nicht an uns oder Dritte \xfcbermittelt.",s,s,s,B.ak,s,s),s),B.bf,A.aT("5. Keine Analyse- oder Werbetools",s,s,s,B.aU,s,s),B.aj,new A.bb(B.aa,A.aT("Diese App verwendet weder Google Analytics noch andere Analyse-, Tracking- oder Werbe-Tools. Es werden keine Daten zu Werbezwecken erhoben oder an Werbenetzwerke weitergegeben.",s,s,s,B.ak,s,s),s),B.bf,A.aT("6. Ihre Rechte",s,s,s,B.aU,s,s),B.aj,new A.bb(B.aa,A.aT("Da wir keine personenbezogenen Daten erheben, entfallen Auskunfts-, Berichtigungs- und L\xf6schanspr\xfcche in der Praxis. Gleichwohl stehen Ihnen als betroffene Person gem\xe4\xdf DSGVO folgende Rechte zu:",s,s,s,B.ak,s,s),s),B.aj,new A.bb(B.aa,A.aT("\u2022 Auskunftsrecht (Art. 15 DSGVO)\n\u2022 Recht auf Berichtigung (Art. 16 DSGVO)\n\u2022 Recht auf L\xf6schung (Art. 17 DSGVO)\n\u2022 Recht auf Einschr\xe4nkung der Verarbeitung (Art. 18 DSGVO)\n\u2022 Recht auf Daten\xfcbertragbarkeit (Art. 20 DSGVO)\n\u2022 Widerspruchsrecht (Art. 21 DSGVO)",s,s,s,B.ak,s,s),s),B.aj,new A.bb(B.aa,A.aT("Sie haben zudem das Recht, sich bei einer Datenschutz-Aufsichtsbeh\xf6rde zu beschweren (Art. 77 DSGVO). Zust\xe4ndig ist die Landesbeauftragte f\xfcr Datenschutz und Informationsfreiheit Nordrhein-Westfalen (LDI NRW).",s,s,s,B.ak,s,s),s),B.bf,A.aT("7. \xc4nderungen dieser Datenschutzerkl\xe4rung",s,s,s,B.aU,s,s),B.aj,new A.bb(B.aa,A.aT("Wir behalten uns vor, diese Datenschutzerkl\xe4rung bei Bedarf anzupassen, um sie an ge\xe4nderte Rechtslagen oder bei \xc4nderungen der App und der Datenverarbeitung anzupassen.",s,s,s,B.ak,s,s),s),B.aj,new A.bb(B.aa,A.aT("Stand: April 2026",s,s,s,B.ak,s,s),s),B.k1],t.p),B.aO,B.S,B.aw)}}
+return A.ey(A.b([A.aT("Datenschutzerkl\xe4rung",s,s,s,B.aU,s,s),B.cI,new A.bb(B.aa,A.aT("Wir freuen uns \xfcber Ihr Interesse an unserer App. Der Schutz Ihrer personenbezogenen Daten ist uns ein wichtiges Anliegen. Nachfolgend informieren wir Sie \xfcber die Verarbeitung personenbezogener Daten bei der Nutzung dieser App.",s,s,s,B.ak,s,s),s),B.bf,A.aT("1. Verantwortlicher",s,s,s,B.aU,s,s),B.aj,new A.bb(B.aa,A.aT("Wilfried Ifland\nLearning Factory\nD\xfcsseldorf, Deutschland\nE-Mail: wilfried.ifland@gmail.com",s,s,s,B.ak,s,s),s),B.bf,A.aT("2. Keine Erhebung personenbezogener Daten",s,s,s,B.aU,s,s),B.aj,new A.bb(B.aa,A.aT("Diese App erhebt, speichert oder verarbeitet keine personenbezogenen Daten. Es werden weder Cookies gesetzt noch Tracking-Technologien eingesetzt. Es findet keine Registrierung, kein Login und keine Weitergabe von Daten an Dritte statt.",s,s,s,B.ak,s,s),s),B.bf,A.aT("3. Hosting",s,s,s,B.aU,s,s),B.aj,new A.bb(B.aa,A.aT("Die App wird \xfcber GitHub Pages (GitHub Inc., 88 Colin P Kelly Jr St, San Francisco, CA 94107, USA) bereitgestellt. Beim Abruf der Seite werden automatisch technische Zugriffsdaten (z.\u202fB. IP-Adresse, Browsertyp, Zeitpunkt des Abrufs) durch den Hosting-Anbieter erfasst. Diese Daten werden in Server-Logfiles gespeichert und dienen ausschlie\xdflich der Sicherstellung eines st\xf6rungsfreien Betriebs. Eine Zusammenf\xfchrung mit anderen Datenquellen findet nicht statt.",s,s,s,B.ak,s,s),s),B.aj,new A.bb(B.aa,A.aT("Rechtsgrundlage: Art. 6 Abs. 1 lit. f DSGVO (berechtigtes Interesse an der sicheren Bereitstellung der App).",s,s,s,B.ak,s,s),s),B.aj,new A.bb(B.aa,A.aT("GitHub hat sich den EU-Standardvertragsklauseln unterworfen und ist unter dem Data Privacy Framework (DPF) zertifiziert. Weitere Informationen: https://docs.github.com/en/site-policy/privacy-policies",s,s,s,B.ak,s,s),s),B.bf,A.aT("4. Lokale Speicherung (PWA)",s,s,s,B.aU,s,s),B.aj,new A.bb(B.aa,A.aT("Wenn Sie die App als Progressive Web App (PWA) installieren, werden App-Daten lokal auf Ihrem Ger\xe4t im Cache/Service Worker gespeichert, um die Offline-Nutzung zu erm\xf6glichen. Diese Daten verlassen Ihr Ger\xe4t nicht und werden nicht an uns oder Dritte \xfcbermittelt.",s,s,s,B.ak,s,s),s),B.bf,A.aT("5. Keine Analyse- oder Werbetools",s,s,s,B.aU,s,s),B.aj,new A.bb(B.aa,A.aT("Diese App verwendet weder Google Analytics noch andere Analyse-, Tracking- oder Werbe-Tools. Es werden keine Daten zu Werbezwecken erhoben oder an Werbenetzwerke weitergegeben.",s,s,s,B.ak,s,s),s),B.bf,A.aT("6. Ihre Rechte",s,s,s,B.aU,s,s),B.aj,new A.bb(B.aa,A.aT("Da wir keine personenbezogenen Daten erheben, entfallen Auskunfts-, Berichtigungs- und L\xf6schanspr\xfcche in der Praxis. Gleichwohl stehen Ihnen als betroffene Person gem\xe4\xdf DSGVO folgende Rechte zu:",s,s,s,B.ak,s,s),s),B.aj,new A.bb(B.aa,A.aT("\u2022 Auskunftsrecht (Art. 15 DSGVO)\n\u2022 Recht auf Berichtigung (Art. 16 DSGVO)\n\u2022 Recht auf L\xf6schung (Art. 17 DSGVO)\n\u2022 Recht auf Einschr\xe4nkung der Verarbeitung (Art. 18 DSGVO)\n\u2022 Recht auf Daten\xfcbertragbarkeit (Art. 20 DSGVO)\n\u2022 Widerspruchsrecht (Art. 21 DSGVO)",s,s,s,B.ak,s,s),s),B.aj,new A.bb(B.aa,A.aT("Sie haben zudem das Recht, sich bei einer Datenschutz-Aufsichtsbeh\xf6rde zu beschweren (Art. 77 DSGVO). Zust\xe4ndig ist die Landesbeauftragte f\xfcr Datenschutz und Informationsfreiheit Nordrhein-Westfalen (LDI NRW).",s,s,s,B.ak,s,s),s),B.bf,A.aT("7. \xc4nderungen dieser Datenschutzerkl\xe4rung",s,s,s,B.aU,s,s),B.aj,new A.bb(B.aa,A.aT("Wir behalten uns vor, diese Datenschutzerkl\xe4rung bei Bedarf anzupassen, um sie an ge\xe4nderte Rechtslagen oder bei \xc4nderungen der App und der Datenverarbeitung anzupassen.",s,s,s,B.ak,s,s),s),B.aj,new A.bb(B.aa,A.aT("Stand: April 2026",s,s,s,B.ak,s,s),s),B.k1],t.p),B.aO,B.S,B.aw)}}
 A.qR.prototype={
 L(a){var s=null
 return A.K8(A.VL(s,B.H,s,s,B.j,s,B.yc),s,B.MW,s)}}
 A.OY.prototype={
 L(a){var s=null
-return A.ey(A.b([A.aT("Angaben gem\xe4\xdf \xa7 5 DDG",s,s,s,B.aU,s,s),B.cI,new A.bb(B.aa,A.aT("Wilfried Ifland\nLearning-Factory\nD\xfcsseldorf, Deutschland",s,s,s,B.ak,s,s),s),B.bf,A.aT("Kontakt",s,s,s,B.aU,s,s),B.aj,new A.bb(B.aa,A.aT("E-Mail: wilfried.ifland@gmail.com",s,s,s,B.ak,s,s),s),B.bf,A.aT("Verantwortlich f\xfcr den Inhalt nach \xa7 18 Abs. 2 MStV",s,s,s,B.aU,s,s),B.aj,new A.bb(B.aa,A.aT("Wilfried Ifland\nD\xfcsseldorf, Deutschland",s,s,s,B.ak,s,s),s),B.bf,A.aT("Haftungsausschluss",s,s,s,B.aU,s,s),B.aj,new A.bb(B.aa,A.aT("Haftung f\xfcr Inhalte",s,s,s,B.ya,s,s),s),new A.bb(B.aa,A.aT("Die Inhalte dieser App wurden mit gr\xf6\xdftm\xf6glicher Sorgfalt erstellt. F\xfcr die Richtigkeit, Vollst\xe4ndigkeit und Aktualit\xe4t der Inhalte kann jedoch keine Gew\xe4hr \xfcbernommen werden. Als Diensteanbieter sind wir gem\xe4\xdf \xa7 7 Abs. 1 DDG f\xfcr eigene Inhalte in dieser App nach den allgemeinen Gesetzen verantwortlich.",s,s,s,B.ak,s,s),s),B.cI,new A.bb(B.aa,A.aT("Haftung f\xfcr Links",s,s,s,B.ya,s,s),s),new A.bb(B.aa,A.aT("Diese App enth\xe4lt keine externen Links. Sollten in Zukunft Verlinkungen zu externen Webseiten aufgenommen werden, \xfcbernehmen wir keine Haftung f\xfcr deren Inhalte. F\xfcr die Inhalte der verlinkten Seiten ist stets der jeweilige Anbieter verantwortlich.",s,s,s,B.ak,s,s),s),B.bf,A.aT("Urheberrecht",s,s,s,B.aU,s,s),new A.bb(B.aa,A.aT("Die durch den Betreiber dieser App erstellten Inhalte und Werke unterliegen dem deutschen Urheberrecht. Die Vervielf\xe4ltigung, Bearbeitung, Verbreitung und jede Art der Verwertung au\xdferhalb der Grenzen des Urheberrechts bed\xfcrfen der schriftlichen Zustimmung des jeweiligen Autors bzw. Erstellers.",s,s,s,B.ak,s,s),s),B.bf,A.aT("Quellen",s,s,s,B.aU,s,s),new A.bb(B.aa,A.aT("Die Fachbegriffe und Definitionen basieren auf:\n\n\u2022 IHK-Pr\xfcfungen AP1 (2021\u20132026)\n\u2022 Offizieller IHK-Pr\xfcfungskatalog f\xfcr IT-Berufe\n\u2022 WiSo-Pr\xfcfungskatalog (Fragenkomplexe 01\u201305)\n\u2022 BSI-Grundschutz-Kompendium (bsi.bund.de)\n\u2022 DSGVO \u2013 EUR-Lex\n\u2022 WCAG 2.1/2.2 \u2013 W3C",s,s,s,B.ak,s,s),s),B.k1],t.p),B.aO,B.S,B.aw)}}
+return A.ey(A.b([A.aT("Angaben gem\xe4\xdf \xa7 5 DDG",s,s,s,B.aU,s,s),B.cI,new A.bb(B.aa,A.aT("Wilfried Ifland\nLearning Factory\nD\xfcsseldorf, Deutschland",s,s,s,B.ak,s,s),s),B.bf,A.aT("Kontakt",s,s,s,B.aU,s,s),B.aj,new A.bb(B.aa,A.aT("E-Mail: wilfried.ifland@gmail.com",s,s,s,B.ak,s,s),s),B.bf,A.aT("Verantwortlich f\xfcr den Inhalt nach \xa7 18 Abs. 2 MStV",s,s,s,B.aU,s,s),B.aj,new A.bb(B.aa,A.aT("Wilfried Ifland\nD\xfcsseldorf, Deutschland",s,s,s,B.ak,s,s),s),B.bf,A.aT("Haftungsausschluss",s,s,s,B.aU,s,s),B.aj,new A.bb(B.aa,A.aT("Haftung f\xfcr Inhalte",s,s,s,B.ya,s,s),s),new A.bb(B.aa,A.aT("Die Inhalte dieser App wurden mit gr\xf6\xdftm\xf6glicher Sorgfalt erstellt. F\xfcr die Richtigkeit, Vollst\xe4ndigkeit und Aktualit\xe4t der Inhalte kann jedoch keine Gew\xe4hr \xfcbernommen werden. Als Diensteanbieter sind wir gem\xe4\xdf \xa7 7 Abs. 1 DDG f\xfcr eigene Inhalte in dieser App nach den allgemeinen Gesetzen verantwortlich.",s,s,s,B.ak,s,s),s),B.cI,new A.bb(B.aa,A.aT("Haftung f\xfcr Links",s,s,s,B.ya,s,s),s),new A.bb(B.aa,A.aT("Diese App enth\xe4lt keine externen Links. Sollten in Zukunft Verlinkungen zu externen Webseiten aufgenommen werden, \xfcbernehmen wir keine Haftung f\xfcr deren Inhalte. F\xfcr die Inhalte der verlinkten Seiten ist stets der jeweilige Anbieter verantwortlich.",s,s,s,B.ak,s,s),s),B.bf,A.aT("Urheberrecht",s,s,s,B.aU,s,s),new A.bb(B.aa,A.aT("Die durch den Betreiber dieser App erstellten Inhalte und Werke unterliegen dem deutschen Urheberrecht. Die Vervielf\xe4ltigung, Bearbeitung, Verbreitung und jede Art der Verwertung au\xdferhalb der Grenzen des Urheberrechts bed\xfcrfen der schriftlichen Zustimmung des jeweiligen Autors bzw. Erstellers.",s,s,s,B.ak,s,s),s),B.bf,A.aT("Quellen",s,s,s,B.aU,s,s),new A.bb(B.aa,A.aT("Die Fachbegriffe und Definitionen basieren auf:\n\n\u2022 IHK-Pr\xfcfungen AP1 (2021\u20132026)\n\u2022 Offizieller IHK-Pr\xfcfungskatalog f\xfcr IT-Berufe\n\u2022 WiSo-Pr\xfcfungskatalog (Fragenkomplexe 01\u201305)\n\u2022 BSI-Grundschutz-Kompendium (bsi.bund.de)\n\u2022 DSGVO \u2013 EUR-Lex\n\u2022 WCAG 2.1/2.2 \u2013 W3C",s,s,s,B.ak,s,s),s),B.k1],t.p),B.aO,B.S,B.aw)}}
 A.AC.prototype={
 ap(){return new A.TG()}}
 A.TG.prototype={
 L(a){var s=null,r=A.bJ(a,s,t.w).w.a,q=A.a_(a),p=t.p
-return A.K8(s,s,A.hP(s,A.anb(!0,new A.bb(B.CY,A.ey(A.b([A.ey(A.b([B.Ne,new A.x0(A.aCI(s,s,new A.vg("assets/images/lf_logo.png",s,s)),90,s),B.cI,B.SG],p),B.ag,B.S,B.aw),A.ey(A.b([A.aT("IHK\nAP1",s,s,s,A.avm().$5$color$fontSize$fontWeight$height$letterSpacing(B.j,52,B.ao,1.15,2),B.cJ,s),B.cI,A.aT("GLOSSAR",s,s,s,A.avm().$4$color$fontSize$fontWeight$letterSpacing(B.rR,44,B.ao,4),B.cJ,s)],p),B.ag,B.S,B.aw),A.ey(A.b([A.aT("Alle wichtigen Begriffe und Definitionen\nf\xfcr die IHK-Abschlusspr\xfcfung Teil 1 \u2013\nFachinformatiker und IT-Berufe.",s,s,s,B.Qg,B.cJ,s),B.xH,A.ii(new A.H6(new A.ajD(a),s,s,s,A.aAk(s,s,B.rR,s,s,s,4,s,s,s,s,s,B.CJ,s,new A.cK(A.dp(30),B.q),s,s,s,s),s,s,!1,s,!0,s,A.ku(B.FW,B.ag,B.rH,B.aw),s),s,1/0),B.xH],p),B.ag,B.S,B.aw)],p),B.ag,B.rI,B.aw),s),B.bm,!0),B.y,q.dy,s,s,s,r.b,s,s,s,s,r.a),s)}}
+return A.K8(s,s,A.hP(s,A.anb(!0,new A.bb(B.CY,A.ey(A.b([A.ey(A.b([B.Ne,new A.x0(A.aCI(s,s,new A.vg("assets/images/lf_logo.png",s,s)),90,s),B.cI,B.SE],p),B.ag,B.S,B.aw),A.ey(A.b([A.aT("IHK\nAP1",s,s,s,A.avm().$5$color$fontSize$fontWeight$height$letterSpacing(B.j,52,B.ao,1.15,2),B.cJ,s),B.cI,A.aT("GLOSSAR",s,s,s,A.avm().$4$color$fontSize$fontWeight$letterSpacing(B.rR,44,B.ao,4),B.cJ,s)],p),B.ag,B.S,B.aw),A.ey(A.b([A.aT("Alle wichtigen Begriffe und Definitionen\nf\xfcr die IHK-Abschlusspr\xfcfung Teil 1 \u2013\nFachinformatiker und IT-Berufe.",s,s,s,B.Qg,B.cJ,s),B.xH,A.ii(new A.H6(new A.ajD(a),s,s,s,A.aAk(s,s,B.rR,s,s,s,4,s,s,s,s,s,B.CJ,s,new A.cK(A.dp(30),B.q),s,s,s,s),s,s,!1,s,!0,s,A.ku(B.FW,B.ag,B.rH,B.aw),s),s,1/0),B.xH],p),B.ag,B.S,B.aw)],p),B.ag,B.rI,B.aw),s),B.bm,!0),B.y,q.dy,s,s,s,r.b,s,s,s,s,r.a),s)}}
 A.ajD.prototype={
 $0(){var s=A.It(new A.ajC(),null,t.z)
 A.rg(this.a).kf(s)},
@@ -81475,11 +81475,11 @@ B.le=new A.x(1,0.12941176470588237,0.12941176470588237,0.12941176470588237,B.e)
 B.IC=new A.cW([50,B.lw,100,B.ly,200,B.lr,300,B.d0,350,B.d_,400,B.f1,500,B.d1,600,B.c5,700,B.cZ,800,B.bJ,850,B.ii,900,B.le],t.pl)
 B.cB=new A.r8(B.IC,1,0.6196078431372549,0.6196078431372549,0.6196078431372549,B.e)
 B.PQ=new A.l(!0,B.cB,null,null,null,null,12,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null)
-B.SE=new A.dY("\xa9 2026 Learning-Factory",null,B.PQ,null,null,null,null,null,null)
-B.Aq=new A.iI(B.a6,null,null,B.SE,null)
+B.SD=new A.dY("\xa9 2026 Learning Factory",null,B.PQ,null,null,null,null,null,null)
+B.Aq=new A.iI(B.a6,null,null,B.SD,null)
 B.RC=new A.l(!0,B.cB,null,null,null,null,14,null,null,1.5,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null)
-B.Sz=new A.dY("Learning-Factory",null,B.RC,null,null,null,null,null,null)
-B.Ar=new A.iI(B.a6,null,null,B.Sz,null)
+B.SF=new A.dY("Learning Factory",null,B.RC,null,null,null,null,null,null)
+B.Ar=new A.iI(B.a6,null,null,B.SF,null)
 B.j=new A.x(1,1,1,1,B.e)
 B.ao=new A.eA(6)
 B.Q1=new A.l(!0,B.j,null,null,null,null,32,B.ao,null,2,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null)
@@ -82071,11 +82071,11 @@ B.bE=new A.e_(9,"counter")
 B.bX=new A.e_(10,"container")
 B.FV=A.b(s([B.aq,B.aD,B.Y,B.aJ,B.aK,B.aL,B.V,B.az,B.bt,B.bE,B.bX]),A.aw("B<e_>"))
 B.Qw=new A.l(!0,B.j,null,null,null,null,16,B.ao,null,2,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null)
-B.SC=new A.dY("WEITER",null,B.Qw,null,null,null,null,null,null)
+B.SB=new A.dY("WEITER",null,B.Qw,null,null,null,null,null,null)
 B.Na=new A.cM(8,null,null,null)
 B.Dy=new A.bi(57500,!0)
 B.Ef=new A.ha(B.Dy,16,B.j,null,null)
-B.FW=A.b(s([B.SC,B.Na,B.Ef]),t.p)
+B.FW=A.b(s([B.SB,B.Na,B.Ef]),t.p)
 B.H3=new A.j2("en","US")
 B.mJ=A.b(s([B.H3]),t.ss)
 B.Uu=new A.kN(0,0)
@@ -82157,8 +82157,8 @@ B.PU=new A.l(!0,B.j,null,null,null,null,18,B.ao,null,null,null,null,null,null,nu
 B.Sy=new A.dY("IHK AP1 \u2013 Glossar",null,B.PU,null,null,null,null,null,null)
 B.xI=new A.cM(null,4,null,null)
 B.Ri=new A.l(!0,B.F,null,null,null,null,12,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null)
-B.SA=new A.dY("299 Fachbegriffe \xb7 5 Bewertungsaspekte",null,B.Ri,null,null,null,null,null,null)
-B.GT=A.b(s([B.Eh,B.xF,B.Sy,B.xI,B.SA]),t.p)
+B.Sz=new A.dY("299 Fachbegriffe \xb7 5 Bewertungsaspekte",null,B.Ri,null,null,null,null,null,null)
+B.GT=A.b(s([B.Eh,B.xF,B.Sy,B.xI,B.Sz]),t.p)
 B.dd=new A.fH(0,"controlModifier")
 B.de=new A.fH(1,"shiftModifier")
 B.df=new A.fH(2,"altModifier")
@@ -83824,14 +83824,14 @@ B.RA=new A.l(!0,B.l,null,".AppleSystemUIFont",null,null,null,null,null,null,null
 B.Ot=new A.l(!0,B.l,null,".AppleSystemUIFont",null,null,null,null,null,null,null,null,null,null,null,null,null,B.f,null,null,null,"blackRedwoodCity labelSmall",null,null,null,null)
 B.Sv=new A.di(B.Qc,B.Pb,B.Qd,B.QP,B.OP,B.OX,B.Pv,B.QC,B.PK,B.Rm,B.Oj,B.OE,B.Rh,B.RA,B.Ot)
 B.Sx=new A.dY("Datenschutz",null,null,null,null,null,null,null,null)
-B.SB=new A.dY("Datenschutzerkl\xe4rung",null,null,null,null,null,null,null,null)
+B.SA=new A.dY("Datenschutzerkl\xe4rung",null,null,null,null,null,null,null,null)
 B.OW=new A.l(!0,null,null,null,null,null,18,B.ao,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null)
-B.SD=new A.dY("IHK AP1 \u2013 Glossar",null,B.OW,null,null,null,null,null,null)
+B.SC=new A.dY("IHK AP1 \u2013 Glossar",null,B.OW,null,null,null,null,null,null)
 B.yb=new A.dY("\xdcber diese App",null,null,null,null,null,null,null,null)
 B.yc=new A.dY("Impressum",null,null,null,null,null,null,null,null)
-B.SF=new A.dY("v1.8.1 \u2013 Learning-Factory",null,B.y8,null,null,null,null,null,null)
 B.S5=new A.l(!0,B.F,null,null,null,null,18,null,null,1.5,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null)
-B.SG=new A.dY("Welcome",null,B.S5,B.cJ,null,null,null,null,null)
+B.SE=new A.dY("Welcome",null,B.S5,B.cJ,null,null,null,null,null)
+B.SG=new A.dY("v1.9.0 \u2013 Learning Factory",null,B.y8,null,null,null,null,null,null)
 B.VP=new A.abH(0,"system")
 B.JC=new A.j(0.056,0.024)
 B.JQ=new A.j(0.108,0.3085)

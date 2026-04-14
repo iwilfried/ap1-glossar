@@ -42,7 +42,7 @@ class _DatenschutzContent extends StatelessWidget {
         const SizedBox(height: 8),
         _body(
           "Wilfried Ifland\n"
-          "Learning-Factory\n"
+          "Learning Factory\n"
           "Düsseldorf, Deutschland\n"
           "E-Mail: wilfried.ifland@gmail.com",
         ),

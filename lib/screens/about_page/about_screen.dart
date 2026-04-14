@@ -52,7 +52,7 @@ class AboutScreen extends StatelessWidget {
             ),
             const Center(
               child: Text(
-                "Learning-Factory",
+                "Learning Factory",
                 style: TextStyle(
                   fontSize: 14,
                   color: Colors.grey,
@@ -107,7 +107,7 @@ class AboutScreen extends StatelessWidget {
             const SizedBox(height: 24),
             const Center(
               child: Text(
-                "© 2026 Learning-Factory",
+                "© 2026 Learning Factory",
                 style: TextStyle(fontSize: 12, color: Colors.grey),
               ),
             ),
