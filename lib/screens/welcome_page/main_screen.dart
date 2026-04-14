@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:ap1_glossar/screens/home_page/home_page.dart';
+import 'package:shared_preferences/shared_preferences.dart';
 
 class WelcomeScreen extends StatefulWidget {
   const WelcomeScreen({Key? key}) : super(key: key);
@@ -100,9 +101,11 @@ class _WelcomeScreenState extends State<WelcomeScreen> {
                           ),
                           elevation: 4,
                         ),
-                        onPressed: () {
-                          Navigator.push(
-                            context,
+                        onPressed: () async {
+                          final nav = Navigator.of(context);
+                          final prefs = await SharedPreferences.getInstance();
+                          await prefs.setBool('seen_welcome', true);
+                          nav.pushReplacement(
                             MaterialPageRoute(
                               builder: (context) => const HomePage(),
                             ),
