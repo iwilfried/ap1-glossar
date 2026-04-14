@@ -3,6 +3,7 @@ import 'package:ap1_glossar/constants/colors.dart';
 import '../../about_page/about_screen.dart';
 import '../../legal/impressum_screen.dart';
 import '../../legal/datenschutz_screen.dart';
+import '../../learn_mode/learn_screen.dart';
 
 class AppDrawer extends StatelessWidget {
   const AppDrawer({Key? key}) : super(key: key);
@@ -42,6 +43,17 @@ class AppDrawer extends StatelessWidget {
           const Divider(height: 24),
 
           // ── Navigation ─────────────────────────────────────────────────
+          ListTile(
+            leading: const Icon(Icons.school_rounded, color: Colors.deepOrange),
+            title: const Text('Lernmodus'),
+            subtitle:
+                const Text('Karteikarten-Quiz', style: TextStyle(fontSize: 12)),
+            onTap: () => Navigator.of(context).push(
+              MaterialPageRoute(builder: (_) => const LearnScreen()),
+            ),
+          ),
+          const Divider(height: 24),
+
           ListTile(
             leading: const Icon(Icons.info_outline, color: AppColors.color),
             title: const Text('Über diese App'),
