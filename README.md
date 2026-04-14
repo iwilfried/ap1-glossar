@@ -25,7 +25,7 @@ Die AP1-Prüfung verlangt sicheres Wissen über hunderte IT-Fachbegriffe – und
 
 ## Bewertungsaspekte
 
-Die vier IHK-Bewertungsaspekte sind das Rückgrat jeder AP1-Prüfungsaufgabe. Das Glossar ordnet jeden Begriff dem passenden Aspekt zu:
+Die 4+1 IHK-Bewertungsaspekte sind das Rückgrat jeder AP1-Prüfungsaufgabe. Das Glossar ordnet jeden Begriff dem passenden Aspekt zu:
 
 | Aspekt | Farbe | Prüfungsrelevanz |
 | --- | --- | --- |
@@ -33,6 +33,7 @@ Die vier IHK-Bewertungsaspekte sind das Rückgrat jeder AP1-Prüfungsaufgabe. Da
 | **Ökonomisch** | 🟢 Grün | TCO, ROI, Kosten-Nutzen, AfA, Lizenzmodelle |
 | **Ökologisch** | 🟤 Braun | Energieeffizienz, CO₂, Recycling, Green IT |
 | **Sozial** | 🟠 Orange | Ergonomie, Barrierefreiheit, DSGVO, Arbeitsschutz |
+| **Berechnung** | 🟣 Violett | Formeln, Kalkulationen, Umrechnungen (AfA, MwSt, Subnetting) |
 
 ---
 
