@@ -236,20 +236,25 @@ class HomePageState extends State<HomePage> {
   }
 
   void navigateToTerm(String term) {
-    // Reset all filters to show full list
-    _searchController.clear();
-    _applyFilter(search: '', aspekt: Aspekt.alle, clearThema: true);
+    // Set search to exact term name
+    _searchController.text = term;
+    _applyFilter(search: term, aspekt: Aspekt.alle, clearThema: true);
+    
+    // Reorder: put exact match first
+    setState(() {
+      final idx = _visibleKeys.indexOf(term);
+      if (idx > 0) {
+        _visibleKeys.remove(term);
+        _visibleKeys.insert(0, term);
+      }
+    });
 
-    // Find the exact index of the target term
-    final idx = _visibleKeys.indexOf(term);
-    if (idx < 0) return;
-
-    // Scroll to the term's position (estimated card height ~90px)
+    // Scroll to top where the exact match now sits
     Future.delayed(const Duration(milliseconds: 150), () {
       if (!mounted || !_scrollController.hasClients) return;
       _scrollController.animateTo(
-        idx * 90.0,
-        duration: const Duration(milliseconds: 400),
+        0,
+        duration: const Duration(milliseconds: 300),
         curve: Curves.easeInOut,
       );
     });
