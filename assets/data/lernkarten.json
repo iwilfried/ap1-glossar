@@ -1055,9 +1055,11 @@
     "topic": "Nachhaltigkeit",
     "subtopic": "80-PLUS-Zertifikat",
     "hashtags": [
-      "#Nachhaltigkeit",
-      "#AP1",
-      "#Ökologisch"
+      "#80PLUS",
+      "#Wirkungsgrad",
+      "#Netzteil",
+      "#Effizienz",
+      "#AP1"
     ],
     "url": ""
   },
@@ -1073,7 +1075,10 @@
     "topic": "IT-Sicherheit",
     "subtopic": "AES",
     "hashtags": [
-      "#ITSicherheit",
+      "#AES",
+      "#Symmetrisch",
+      "#Verschlüsselung",
+      "#256Bit",
       "#AP1"
     ],
     "url": ""
@@ -1090,9 +1095,11 @@
     "topic": "WiSo Ausbildung & Arbeitsrecht",
     "subtopic": "AGG (Gleichbehandlungsgesetz)",
     "hashtags": [
-      "#WiSoAusbildungArbeitsrecht",
-      "#AP1",
-      "#Sozial"
+      "#AGG",
+      "#Diskriminierung",
+      "#§1",
+      "#Arbeitsrecht",
+      "#AP1"
     ],
     "url": ""
   },
@@ -1108,6 +1115,9 @@
     "topic": "Netzwerk",
     "subtopic": "APIPA",
     "hashtags": [
+      "#APIPA",
+      "#DHCP",
+      "#169254",
       "#Netzwerk",
       "#AP1"
     ],
@@ -1125,6 +1135,9 @@
     "topic": "Netzwerk",
     "subtopic": "ARP",
     "hashtags": [
+      "#ARP",
+      "#MACAdresse",
+      "#OSI2",
       "#Netzwerk",
       "#AP1"
     ],
@@ -1142,7 +1155,10 @@
     "topic": "Hardware",
     "subtopic": "ASCII vs. Binärformat",
     "hashtags": [
-      "#Hardware",
+      "#ASCII",
+      "#Binär",
+      "#Kodierung",
+      "#Zeichensatz",
       "#AP1"
     ],
     "url": ""
@@ -1159,9 +1175,11 @@
     "topic": "Wirtschaft",
     "subtopic": "Abschreibung (AfA)",
     "hashtags": [
-      "#Wirtschaft",
-      "#AP1",
-      "#Ökonomisch"
+      "#AfA",
+      "#Abschreibung",
+      "#Berechnung",
+      "#Steuern",
+      "#AP1"
     ],
     "url": ""
   },
@@ -1177,7 +1195,10 @@
     "topic": "Systemadministration",
     "subtopic": "Active Directory",
     "hashtags": [
-      "#Systemadministration",
+      "#ActiveDirectory",
+      "#AD",
+      "#LDAP",
+      "#Kerberos",
       "#AP1"
     ],
     "url": ""
@@ -1194,7 +1215,10 @@
     "topic": "Projektmanagement",
     "subtopic": "Agile Methoden",
     "hashtags": [
-      "#Projektmanagement",
+      "#Agile",
+      "#Scrum",
+      "#Kanban",
+      "#Sprint",
       "#AP1"
     ],
     "url": ""
@@ -1211,7 +1235,10 @@
     "topic": "Allgemein",
     "subtopic": "Algorithmus",
     "hashtags": [
-      "#Allgemein",
+      "#Algorithmus",
+      "#Pseudocode",
+      "#Struktogramm",
+      "#Logik",
       "#AP1"
     ],
     "url": ""
@@ -1228,9 +1255,11 @@
     "topic": "Wirtschaft",
     "subtopic": "Amortisationsrechnung",
     "hashtags": [
-      "#Wirtschaft",
-      "#AP1",
-      "#Ökonomisch"
+      "#Amortisation",
+      "#Berechnung",
+      "#ROI",
+      "#Investition",
+      "#AP1"
     ],
     "url": ""
   },
@@ -1246,9 +1275,11 @@
     "topic": "Wirtschaft",
     "subtopic": "Angebotsvergleich",
     "hashtags": [
-      "#Wirtschaft",
-      "#AP1",
-      "#Ökonomisch"
+      "#Angebotsvergleich",
+      "#Bezugspreis",
+      "#Rabatt",
+      "#Lieferant",
+      "#AP1"
     ],
     "url": ""
   },
@@ -1264,7 +1295,10 @@
     "topic": "IT-Sicherheit",
     "subtopic": "Angriffsvektoren",
     "hashtags": [
-      "#ITSicherheit",
+      "#Phishing",
+      "#SQLInjection",
+      "#MITM",
+      "#Sicherheit",
       "#AP1"
     ],
     "url": ""
@@ -1281,9 +1315,11 @@
     "topic": "Datenschutz",
     "subtopic": "Anonymisierung vs. Pseudonymisierung",
     "hashtags": [
+      "#Anonymisierung",
+      "#Pseudonymisierung",
+      "#DSGVO",
       "#Datenschutz",
-      "#AP1",
-      "#Sozial"
+      "#AP1"
     ],
     "url": ""
   },
@@ -1299,9 +1335,11 @@
     "topic": "Ergonomie & Soziales",
     "subtopic": "Arbeitsschutzgesetz",
     "hashtags": [
-      "#ErgonomieSoziales",
-      "#AP1",
-      "#Sozial"
+      "#ArbSchG",
+      "#§5",
+      "#Gefährdungsbeurteilung",
+      "#Recht",
+      "#AP1"
     ],
     "url": ""
   },
@@ -1317,9 +1355,11 @@
     "topic": "WiSo Digitale Zusammenarbeit",
     "subtopic": "Arbeitstechniken (WiSo)",
     "hashtags": [
-      "#WiSoDigitaleZusammenarbeit",
-      "#AP1",
-      "#Sozial"
+      "#Lernstrategie",
+      "#Zeitmanagement",
+      "#WiSo",
+      "#Prüfung",
+      "#AP1"
     ],
     "url": ""
   },
@@ -1335,9 +1375,11 @@
     "topic": "WiSo Ausbildung & Arbeitsrecht",
     "subtopic": "Arbeitszeitgesetz (ArbZG)",
     "hashtags": [
-      "#WiSoAusbildungArbeitsrecht",
-      "#AP1",
-      "#Sozial"
+      "#ArbZG",
+      "#Arbeitszeit",
+      "#Ruhezeit",
+      "#Recht",
+      "#AP1"
     ],
     "url": ""
   },
@@ -1353,9 +1395,11 @@
     "topic": "Datenschutz",
     "subtopic": "Auftraggeber vs. Auftragsverarbeiter",
     "hashtags": [
+      "#AVV",
+      "#DSGVO",
+      "#Art28",
       "#Datenschutz",
-      "#AP1",
-      "#Sozial"
+      "#AP1"
     ],
     "url": ""
   },
@@ -1371,9 +1415,11 @@
     "topic": "Datenschutz",
     "subtopic": "Auftragsverarbeitung (AVV)",
     "hashtags": [
-      "#Datenschutz",
-      "#AP1",
-      "#Sozial"
+      "#AVV",
+      "#Art28",
+      "#DSGVO",
+      "#Recht",
+      "#AP1"
     ],
     "url": ""
   },
@@ -1389,9 +1435,11 @@
     "topic": "WiSo Ausbildung & Arbeitsrecht",
     "subtopic": "Ausbildungsrahmenplan",
     "hashtags": [
-      "#WiSoAusbildungArbeitsrecht",
-      "#AP1",
-      "#Sozial"
+      "#Ausbildungsplan",
+      "#BBiG",
+      "#Lernfeld",
+      "#Ausbildung",
+      "#AP1"
     ],
     "url": ""
   },
@@ -1407,9 +1455,11 @@
     "topic": "WiSo Ausbildung & Arbeitsrecht",
     "subtopic": "Ausbildungsvertrag",
     "hashtags": [
-      "#WiSoAusbildungArbeitsrecht",
-      "#AP1",
-      "#Sozial"
+      "#Ausbildungsvertrag",
+      "#BBiG",
+      "#§10",
+      "#Ausbildung",
+      "#AP1"
     ],
     "url": ""
   },
@@ -1425,9 +1475,11 @@
     "topic": "Programmierung",
     "subtopic": "Automation / RPA",
     "hashtags": [
-      "#Programmierung",
-      "#AP1",
-      "#Ökonomisch"
+      "#RPA",
+      "#Automatisierung",
+      "#Bot",
+      "#KI",
+      "#AP1"
     ],
     "url": ""
   },
@@ -1443,9 +1495,11 @@
     "topic": "WiSo Ausbildung & Arbeitsrecht",
     "subtopic": "BBiG",
     "hashtags": [
-      "#WiSoAusbildungArbeitsrecht",
-      "#AP1",
-      "#Sozial"
+      "#BBiG",
+      "#Berufsausbildung",
+      "#Ausbildung",
+      "#Recht",
+      "#AP1"
     ],
     "url": ""
   },
@@ -1461,9 +1515,11 @@
     "topic": "Datenschutz",
     "subtopic": "BDSG",
     "hashtags": [
-      "#Datenschutz",
-      "#AP1",
-      "#Sozial"
+      "#BDSG",
+      "#DSGVO",
+      "#Deutschland",
+      "#Recht",
+      "#AP1"
     ],
     "url": ""
   },
@@ -1479,6 +1535,9 @@
     "topic": "Hardware",
     "subtopic": "BIOS vs. UEFI",
     "hashtags": [
+      "#BIOS",
+      "#UEFI",
+      "#Firmware",
       "#Hardware",
       "#AP1"
     ],
@@ -1496,7 +1555,10 @@
     "topic": "Barrierefreiheit",
     "subtopic": "BITV 2.0",
     "hashtags": [
+      "#BITV",
+      "#WCAG",
       "#Barrierefreiheit",
+      "#Web",
       "#AP1"
     ],
     "url": ""
@@ -1513,7 +1575,10 @@
     "topic": "Projektmanagement",
     "subtopic": "BPMN",
     "hashtags": [
-      "#Projektmanagement",
+      "#BPMN",
+      "#Prozess",
+      "#Gateway",
+      "#Diagramm",
       "#AP1"
     ],
     "url": ""
@@ -1530,7 +1595,10 @@
     "topic": "IT-Sicherheit",
     "subtopic": "BSI-Grundschutz",
     "hashtags": [
-      "#ITSicherheit",
+      "#BSI",
+      "#ISMS",
+      "#Grundschutz",
+      "#ISO27001",
       "#AP1"
     ],
     "url": ""
@@ -1547,9 +1615,11 @@
     "topic": "IT-Sicherheit",
     "subtopic": "BYOD",
     "hashtags": [
-      "#ITSicherheit",
-      "#AP1",
-      "#Sozial"
+      "#BYOD",
+      "#MDM",
+      "#DSGVO",
+      "#Sicherheit",
+      "#AP1"
     ],
     "url": ""
   },
@@ -1565,7 +1635,10 @@
     "topic": "Allgemein",
     "subtopic": "Backup-Strategien",
     "hashtags": [
-      "#Allgemein",
+      "#Backup",
+      "#3-2-1-Regel",
+      "#Datensicherung",
+      "#RPO",
       "#AP1"
     ],
     "url": ""
@@ -1582,7 +1655,10 @@
     "topic": "Datenspeicherung",
     "subtopic": "Backup-Typen",
     "hashtags": [
-      "#Datenspeicherung",
+      "#Vollbackup",
+      "#Inkrementell",
+      "#Differenziell",
+      "#Backup",
       "#AP1"
     ],
     "url": ""
@@ -1599,7 +1675,10 @@
     "topic": "Allgemein",
     "subtopic": "Bandbreite",
     "hashtags": [
-      "#Allgemein",
+      "#Bandbreite",
+      "#Durchsatz",
+      "#Mbps",
+      "#Netzwerk",
       "#AP1"
     ],
     "url": ""
@@ -1616,7 +1695,10 @@
     "topic": "Ergonomie & Soziales",
     "subtopic": "Barrierefreiheit (IT)",
     "hashtags": [
-      "#ErgonomieSoziales",
+      "#Barrierefreiheit",
+      "#WCAG",
+      "#BITV",
+      "#Accessibility",
       "#AP1"
     ],
     "url": ""
@@ -1633,7 +1715,10 @@
     "topic": "Barrierefreiheit",
     "subtopic": "Barrierefreiheit (Webdesign)",
     "hashtags": [
-      "#Barrierefreiheit",
+      "#WCAG",
+      "#Kontrast",
+      "#Screenreader",
+      "#HTML",
       "#AP1"
     ],
     "url": ""
@@ -1650,9 +1735,11 @@
     "topic": "Wirtschaft",
     "subtopic": "Barwertmethode",
     "hashtags": [
-      "#Wirtschaft",
-      "#AP1",
-      "#Ökonomisch"
+      "#Barwert",
+      "#Abzinsung",
+      "#Berechnung",
+      "#Investition",
+      "#AP1"
     ],
     "url": ""
   },
@@ -1668,9 +1755,11 @@
     "topic": "WiSo Ausbildung & Arbeitsrecht",
     "subtopic": "Berufsschulpflicht",
     "hashtags": [
-      "#WiSoAusbildungArbeitsrecht",
-      "#AP1",
-      "#Sozial"
+      "#Berufsschule",
+      "#BBiG",
+      "#Pflicht",
+      "#Ausbildung",
+      "#AP1"
     ],
     "url": ""
   },
@@ -1686,9 +1775,11 @@
     "topic": "Wirtschaft",
     "subtopic": "Beschaffungsprozess",
     "hashtags": [
-      "#Wirtschaft",
-      "#AP1",
-      "#Ökonomisch"
+      "#Beschaffung",
+      "#Einkauf",
+      "#Lieferant",
+      "#Prozess",
+      "#AP1"
     ],
     "url": ""
   },
@@ -1704,9 +1795,11 @@
     "topic": "WiSo Ausbildung & Arbeitsrecht",
     "subtopic": "Betriebsrat",
     "hashtags": [
-      "#WiSoAusbildungArbeitsrecht",
-      "#AP1",
-      "#Sozial"
+      "#Betriebsrat",
+      "#BetrVG",
+      "#Mitbestimmung",
+      "#Arbeitnehmer",
+      "#AP1"
     ],
     "url": ""
   },
@@ -1722,7 +1815,10 @@
     "topic": "Systemadministration",
     "subtopic": "Betriebssysteme",
     "hashtags": [
-      "#Systemadministration",
+      "#Windows",
+      "#Linux",
+      "#macOS",
+      "#OS",
       "#AP1"
     ],
     "url": ""
@@ -1739,9 +1835,11 @@
     "topic": "WiSo Ausbildung & Arbeitsrecht",
     "subtopic": "Betriebsverfassungsgesetz (BetrVG)",
     "hashtags": [
-      "#WiSoAusbildungArbeitsrecht",
-      "#AP1",
-      "#Sozial"
+      "#BetrVG",
+      "#Betriebsrat",
+      "#Mitbestimmung",
+      "#Recht",
+      "#AP1"
     ],
     "url": ""
   },
@@ -1757,9 +1855,11 @@
     "topic": "Datenschutz",
     "subtopic": "Betroffenenrechte",
     "hashtags": [
-      "#Datenschutz",
-      "#AP1",
-      "#Sozial"
+      "#Art15",
+      "#Art17",
+      "#DSGVO",
+      "#Auskunft",
+      "#AP1"
     ],
     "url": ""
   },
@@ -1775,9 +1875,11 @@
     "topic": "Künstliche Intelligenz",
     "subtopic": "Bias (KI)",
     "hashtags": [
-      "#KünstlicheIntelligenz",
-      "#AP1",
-      "#Sozial"
+      "#Bias",
+      "#Fairness",
+      "#Trainingsdaten",
+      "#KI",
+      "#AP1"
     ],
     "url": ""
   },
@@ -1793,9 +1895,11 @@
     "topic": "Ergonomie & Soziales",
     "subtopic": "Bildschirmarbeitsplatz",
     "hashtags": [
-      "#ErgonomieSoziales",
-      "#AP1",
-      "#Sozial"
+      "#ArbStättV",
+      "#Ergonomie",
+      "#Monitor",
+      "#Bildschirm",
+      "#AP1"
     ],
     "url": ""
   },
@@ -1811,7 +1915,10 @@
     "topic": "IT-Sicherheit",
     "subtopic": "Biometrie",
     "hashtags": [
-      "#ITSicherheit",
+      "#Biometrie",
+      "#Fingerabdruck",
+      "#Authentifizierung",
+      "#MFA",
       "#AP1"
     ],
     "url": ""
@@ -1828,7 +1935,10 @@
     "topic": "Allgemein",
     "subtopic": "Blackbox-Test",
     "hashtags": [
-      "#Allgemein",
+      "#Blackbox",
+      "#Testen",
+      "#Testmethode",
+      "#QA",
       "#AP1"
     ],
     "url": ""
@@ -1845,9 +1955,11 @@
     "topic": "Nachhaltigkeit",
     "subtopic": "Blauer Engel",
     "hashtags": [
-      "#Nachhaltigkeit",
-      "#AP1",
-      "#Ökologisch"
+      "#BlauerEngel",
+      "#Umwelt",
+      "#Zertifikat",
+      "#GreenIT",
+      "#AP1"
     ],
     "url": ""
   },
@@ -1863,7 +1975,10 @@
     "topic": "IT-Sicherheit",
     "subtopic": "Blickschutzfolie",
     "hashtags": [
-      "#ITSicherheit",
+      "#Blickschutz",
+      "#Datenschutz",
+      "#Sichtschutz",
+      "#Ergonomie",
       "#AP1"
     ],
     "url": ""
@@ -1880,7 +1995,10 @@
     "topic": "Hardware",
     "subtopic": "Bootvorgang",
     "hashtags": [
-      "#Hardware",
+      "#Boot",
+      "#BIOS",
+      "#UEFI",
+      "#Betriebssystem",
       "#AP1"
     ],
     "url": ""
@@ -1897,9 +2015,11 @@
     "topic": "WiSo Sicherheit & Umwelt",
     "subtopic": "Brandschutz",
     "hashtags": [
-      "#WiSoSicherheitUmwelt",
-      "#AP1",
-      "#Sozial"
+      "#Brandschutz",
+      "#Feuerlöscher",
+      "#Fluchtweg",
+      "#Sicherheit",
+      "#AP1"
     ],
     "url": ""
   },
@@ -1915,7 +2035,10 @@
     "topic": "Allgemein",
     "subtopic": "Broadcast",
     "hashtags": [
-      "#Allgemein",
+      "#Broadcast",
+      "#Multicast",
+      "#Unicast",
+      "#Netzwerk",
       "#AP1"
     ],
     "url": ""
@@ -1932,9 +2055,11 @@
     "topic": "WiSo Ausbildung & Arbeitsrecht",
     "subtopic": "Brutto-Netto-Abrechnung",
     "hashtags": [
-      "#WiSoAusbildungArbeitsrecht",
-      "#AP1",
-      "#Berechnung"
+      "#Brutto",
+      "#Netto",
+      "#Lohnsteuer",
+      "#Sozialversicherung",
+      "#AP1"
     ],
     "url": ""
   },
@@ -1950,7 +2075,10 @@
     "topic": "Allgemein",
     "subtopic": "Bytecode",
     "hashtags": [
-      "#Allgemein",
+      "#Bytecode",
+      "#JVM",
+      "#Java",
+      "#Compiler",
       "#AP1"
     ],
     "url": ""
@@ -1967,9 +2095,11 @@
     "topic": "Wirtschaft",
     "subtopic": "CAPEX vs. OPEX",
     "hashtags": [
-      "#Wirtschaft",
-      "#AP1",
-      "#Ökonomisch"
+      "#CAPEX",
+      "#OPEX",
+      "#Cloud",
+      "#Investition",
+      "#AP1"
     ],
     "url": ""
   },
@@ -1985,7 +2115,10 @@
     "topic": "WiSo Sicherheit & Umwelt",
     "subtopic": "CE-Zeichen",
     "hashtags": [
-      "#WiSoSicherheitUmwelt",
+      "#CE",
+      "#EU",
+      "#Konformität",
+      "#Sicherheit",
       "#AP1"
     ],
     "url": ""
@@ -2002,7 +2135,10 @@
     "topic": "Netzwerk",
     "subtopic": "CIDR",
     "hashtags": [
-      "#Netzwerk",
+      "#CIDR",
+      "#Subnetting",
+      "#IPv4",
+      "#Netzmaske",
       "#AP1"
     ],
     "url": ""
@@ -2019,7 +2155,10 @@
     "topic": "IT-Service-Management",
     "subtopic": "CMDB",
     "hashtags": [
-      "#ITServiceManagement",
+      "#CMDB",
+      "#ITIL",
+      "#Assets",
+      "#Konfiguration",
       "#AP1"
     ],
     "url": ""
@@ -2036,9 +2175,11 @@
     "topic": "Nachhaltigkeit",
     "subtopic": "CO₂-Fußabdruck IT",
     "hashtags": [
+      "#CO2",
       "#Nachhaltigkeit",
-      "#AP1",
-      "#Ökologisch"
+      "#GreenIT",
+      "#Klimaschutz",
+      "#AP1"
     ],
     "url": ""
   },
@@ -2054,6 +2195,9 @@
     "topic": "Hardware",
     "subtopic": "CPU",
     "hashtags": [
+      "#CPU",
+      "#Prozessor",
+      "#Taktfrequenz",
       "#Hardware",
       "#AP1"
     ],
@@ -2071,7 +2215,10 @@
     "topic": "Allgemein",
     "subtopic": "CRM (Customer Relationship Management)",
     "hashtags": [
-      "#Allgemein",
+      "#CRM",
+      "#Kunde",
+      "#Software",
+      "#Vertrieb",
       "#AP1"
     ],
     "url": ""
@@ -2088,7 +2235,10 @@
     "topic": "Allgemein",
     "subtopic": "CRUD",
     "hashtags": [
-      "#Allgemein",
+      "#CRUD",
+      "#SQL",
+      "#Datenbank",
+      "#REST",
       "#AP1"
     ],
     "url": ""
@@ -2105,7 +2255,10 @@
     "topic": "Hardware",
     "subtopic": "Cache",
     "hashtags": [
-      "#Hardware",
+      "#Cache",
+      "#CPU",
+      "#Speicher",
+      "#L1L2L3",
       "#AP1"
     ],
     "url": ""
@@ -2122,9 +2275,11 @@
     "topic": "Projektmanagement",
     "subtopic": "Change Management",
     "hashtags": [
-      "#Projektmanagement",
-      "#AP1",
-      "#Sozial"
+      "#ITIL",
+      "#RFC",
+      "#CAB",
+      "#Change",
+      "#AP1"
     ],
     "url": ""
   },
@@ -2140,7 +2295,10 @@
     "topic": "Allgemein",
     "subtopic": "Change Management (ITIL)",
     "hashtags": [
-      "#Allgemein",
+      "#ITIL",
+      "#Change",
+      "#CAB",
+      "#RFC",
       "#AP1"
     ],
     "url": ""
@@ -2157,6 +2315,8 @@
     "topic": "Hardware",
     "subtopic": "Chipsatz",
     "hashtags": [
+      "#Chipsatz",
+      "#Mainboard",
       "#Hardware",
       "#AP1"
     ],
@@ -2174,7 +2334,10 @@
     "topic": "Cloud & Virtualisierung",
     "subtopic": "Cloud-Deployment-Modelle",
     "hashtags": [
-      "#CloudVirtualisierung",
+      "#Public",
+      "#Private",
+      "#Hybrid",
+      "#Cloud",
       "#AP1"
     ],
     "url": ""
@@ -2191,7 +2354,10 @@
     "topic": "Cloud & Virtualisierung",
     "subtopic": "Cloud-Modelle",
     "hashtags": [
-      "#CloudVirtualisierung",
+      "#IaaS",
+      "#PaaS",
+      "#SaaS",
+      "#Cloud",
       "#AP1"
     ],
     "url": ""
@@ -2208,7 +2374,10 @@
     "topic": "Programmierung",
     "subtopic": "Compiler vs. Interpreter",
     "hashtags": [
-      "#Programmierung",
+      "#Compiler",
+      "#Interpreter",
+      "#Java",
+      "#Python",
       "#AP1"
     ],
     "url": ""
@@ -2225,9 +2394,11 @@
     "topic": "WiSo Digitale Zusammenarbeit",
     "subtopic": "Compliance",
     "hashtags": [
-      "#WiSoDigitaleZusammenarbeit",
-      "#AP1",
-      "#Sozial"
+      "#Compliance",
+      "#Recht",
+      "#Regelkonformität",
+      "#Risiko",
+      "#AP1"
     ],
     "url": ""
   },
@@ -2243,7 +2414,10 @@
     "topic": "Cloud & Virtualisierung",
     "subtopic": "Container",
     "hashtags": [
-      "#CloudVirtualisierung",
+      "#Docker",
+      "#Container",
+      "#Kubernetes",
+      "#Image",
       "#AP1"
     ],
     "url": ""
@@ -2260,7 +2434,10 @@
     "topic": "Datenschutz",
     "subtopic": "Cookies und ePrivacy",
     "hashtags": [
-      "#Datenschutz",
+      "#Cookies",
+      "#DSGVO",
+      "#ePrivacy",
+      "#Tracking",
       "#AP1"
     ],
     "url": ""
@@ -2277,7 +2454,10 @@
     "topic": "Hardware",
     "subtopic": "DDR4 vs. DDR5",
     "hashtags": [
-      "#Hardware",
+      "#RAM",
+      "#DDR4",
+      "#DDR5",
+      "#Arbeitsspeicher",
       "#AP1"
     ],
     "url": ""
@@ -2294,7 +2474,10 @@
     "topic": "Allgemein",
     "subtopic": "DDoS",
     "hashtags": [
-      "#Allgemein",
+      "#DDoS",
+      "#DoS",
+      "#Angriff",
+      "#Verfügbarkeit",
       "#AP1"
     ],
     "url": ""
@@ -2311,6 +2494,9 @@
     "topic": "Netzwerk",
     "subtopic": "DHCP",
     "hashtags": [
+      "#DHCP",
+      "#DORA",
+      "#IPAdresse",
       "#Netzwerk",
       "#AP1"
     ],
@@ -2328,7 +2514,10 @@
     "topic": "IT-Sicherheit",
     "subtopic": "DKIM",
     "hashtags": [
-      "#ITSicherheit",
+      "#DKIM",
+      "#SPF",
+      "#DMARC",
+      "#Email",
       "#AP1"
     ],
     "url": ""
@@ -2345,7 +2534,10 @@
     "topic": "IT-Sicherheit",
     "subtopic": "DMARC",
     "hashtags": [
-      "#ITSicherheit",
+      "#DMARC",
+      "#DKIM",
+      "#SPF",
+      "#EmailSicherheit",
       "#AP1"
     ],
     "url": ""
@@ -2362,7 +2554,10 @@
     "topic": "Netzwerk",
     "subtopic": "DMZ",
     "hashtags": [
-      "#Netzwerk",
+      "#DMZ",
+      "#Firewall",
+      "#Netzwerksicherheit",
+      "#Perimeter",
       "#AP1"
     ],
     "url": ""
@@ -2379,7 +2574,10 @@
     "topic": "Netzwerk",
     "subtopic": "DNS",
     "hashtags": [
-      "#Netzwerk",
+      "#DNS",
+      "#Namensauflösung",
+      "#FQDN",
+      "#UDP53",
       "#AP1"
     ],
     "url": ""
@@ -2396,9 +2594,11 @@
     "topic": "Datenschutz",
     "subtopic": "DSGVO",
     "hashtags": [
+      "#DSGVO",
+      "#GDPR",
       "#Datenschutz",
-      "#AP1",
-      "#Sozial"
+      "#Art5",
+      "#AP1"
     ],
     "url": ""
   },
@@ -2414,7 +2614,10 @@
     "topic": "Hardware",
     "subtopic": "Daisy Chaining",
     "hashtags": [
-      "#Hardware",
+      "#DaisyChaining",
+      "#Thunderbolt",
+      "#DisplayPort",
+      "#MST",
       "#AP1"
     ],
     "url": ""
@@ -2431,7 +2634,10 @@
     "topic": "Hardware",
     "subtopic": "Dateigrößen-Berechnung",
     "hashtags": [
-      "#Hardware",
+      "#Dateigrößen",
+      "#Berechnung",
+      "#Bit",
+      "#Byte",
       "#AP1"
     ],
     "url": ""
@@ -2448,7 +2654,10 @@
     "topic": "Systemadministration",
     "subtopic": "Dateirechte (Linux)",
     "hashtags": [
-      "#Systemadministration",
+      "#chmod",
+      "#rwx",
+      "#Linux",
+      "#Berechtigungen",
       "#AP1"
     ],
     "url": ""
@@ -2465,7 +2674,10 @@
     "topic": "Systemadministration",
     "subtopic": "Dateirechte (Windows)",
     "hashtags": [
-      "#Systemadministration",
+      "#NTFS",
+      "#ACL",
+      "#Windows",
+      "#Berechtigungen",
       "#AP1"
     ],
     "url": ""
@@ -2482,7 +2694,10 @@
     "topic": "Programmierung",
     "subtopic": "Datenbankmodelle",
     "hashtags": [
-      "#Programmierung",
+      "#Relational",
+      "#NoSQL",
+      "#ER",
+      "#Datenbank",
       "#AP1"
     ],
     "url": ""
@@ -2499,7 +2714,10 @@
     "topic": "Hardware",
     "subtopic": "Datenformate",
     "hashtags": [
-      "#Hardware",
+      "#Datenformate",
+      "#Datei",
+      "#Binär",
+      "#Kodierung",
       "#AP1"
     ],
     "url": ""
@@ -2516,9 +2734,11 @@
     "topic": "Datenschutz",
     "subtopic": "Datenpanne (Art. 33 DSGVO)",
     "hashtags": [
-      "#Datenschutz",
-      "#AP1",
-      "#Sozial"
+      "#Datenpanne",
+      "#Art33",
+      "#Meldepflicht",
+      "#DSGVO",
+      "#AP1"
     ],
     "url": ""
   },
@@ -2534,6 +2754,9 @@
     "topic": "Datenschutz",
     "subtopic": "Datenschutz by Design / by Default",
     "hashtags": [
+      "#PrivacyByDesign",
+      "#DSGVO",
+      "#Art25",
       "#Datenschutz",
       "#AP1"
     ],
@@ -2551,9 +2774,11 @@
     "topic": "Datenschutz",
     "subtopic": "Datenschutz-Folgenabschätzung",
     "hashtags": [
-      "#Datenschutz",
-      "#AP1",
-      "#Sozial"
+      "#DSFA",
+      "#Art35",
+      "#DSGVO",
+      "#Recht",
+      "#AP1"
     ],
     "url": ""
   },
@@ -2569,9 +2794,11 @@
     "topic": "Datenschutz",
     "subtopic": "Datenschutzbeauftragter",
     "hashtags": [
-      "#Datenschutz",
-      "#AP1",
-      "#Sozial"
+      "#DSB",
+      "#Art37",
+      "#DSGVO",
+      "#Recht",
+      "#AP1"
     ],
     "url": ""
   },
@@ -2587,9 +2814,11 @@
     "topic": "Datenschutz",
     "subtopic": "Datenschutzprinzipien",
     "hashtags": [
-      "#Datenschutz",
-      "#AP1",
-      "#Sozial"
+      "#Art5",
+      "#DSGVO",
+      "#Zweckbindung",
+      "#Datensparsamkeit",
+      "#AP1"
     ],
     "url": ""
   },
@@ -2605,9 +2834,11 @@
     "topic": "Datenschutz",
     "subtopic": "Datensicherung (Backup)",
     "hashtags": [
-      "#Datenschutz",
-      "#AP1",
-      "#Sozial"
+      "#Backup",
+      "#3-2-1-Regel",
+      "#RTO",
+      "#RPO",
+      "#AP1"
     ],
     "url": ""
   },
@@ -2623,7 +2854,10 @@
     "topic": "Künstliche Intelligenz",
     "subtopic": "Deep Learning",
     "hashtags": [
-      "#KünstlicheIntelligenz",
+      "#DeepLearning",
+      "#NeuronalesNetz",
+      "#KI",
+      "#ML",
       "#AP1"
     ],
     "url": ""
@@ -2640,7 +2874,10 @@
     "topic": "Allgemein",
     "subtopic": "Dienstvertrag",
     "hashtags": [
-      "#Allgemein",
+      "#Dienstvertrag",
+      "#BGB",
+      "#§611",
+      "#Vertragsrecht",
       "#AP1"
     ],
     "url": ""
@@ -2657,7 +2894,10 @@
     "topic": "IT-Sicherheit",
     "subtopic": "Digitales Zertifikat",
     "hashtags": [
-      "#ITSicherheit",
+      "#X509",
+      "#PKI",
+      "#TLS",
+      "#CA",
       "#AP1"
     ],
     "url": ""
@@ -2674,7 +2914,10 @@
     "topic": "Allgemein",
     "subtopic": "Digitalisierung",
     "hashtags": [
-      "#Allgemein",
+      "#Digitalisierung",
+      "#Transformation",
+      "#IT",
+      "#Prozess",
       "#AP1"
     ],
     "url": ""
@@ -2691,9 +2934,11 @@
     "topic": "WiSo Digitale Zusammenarbeit",
     "subtopic": "Diversity",
     "hashtags": [
-      "#WiSoDigitaleZusammenarbeit",
-      "#AP1",
-      "#Sozial"
+      "#Diversity",
+      "#AGG",
+      "#Vielfalt",
+      "#Sozial",
+      "#AP1"
     ],
     "url": ""
   },
@@ -2709,7 +2954,10 @@
     "topic": "Cloud & Virtualisierung",
     "subtopic": "Docker",
     "hashtags": [
-      "#CloudVirtualisierung",
+      "#Docker",
+      "#Container",
+      "#Image",
+      "#Virtualisierung",
       "#AP1"
     ],
     "url": ""
@@ -2726,7 +2974,10 @@
     "topic": "Hardware",
     "subtopic": "Dockingstation",
     "hashtags": [
-      "#Hardware",
+      "#Dockingstation",
+      "#Ergonomie",
+      "#Notebook",
+      "#Peripherie",
       "#AP1"
     ],
     "url": ""
@@ -2743,9 +2994,11 @@
     "topic": "Datenschutz",
     "subtopic": "Drittlandübermittlung",
     "hashtags": [
+      "#DSGVO",
+      "#Drittland",
+      "#StandardvertragsKlauseln",
       "#Datenschutz",
-      "#AP1",
-      "#Sozial"
+      "#AP1"
     ],
     "url": ""
   },
@@ -2761,7 +3014,10 @@
     "topic": "Hardware",
     "subtopic": "Dual Channel",
     "hashtags": [
-      "#Hardware",
+      "#DualChannel",
+      "#RAM",
+      "#Speicher",
+      "#Performance",
       "#AP1"
     ],
     "url": ""
@@ -2778,9 +3034,11 @@
     "topic": "WiSo Ausbildung & Arbeitsrecht",
     "subtopic": "Duales System",
     "hashtags": [
-      "#WiSoAusbildungArbeitsrecht",
-      "#AP1",
-      "#Sozial"
+      "#DualesSystem",
+      "#BBiG",
+      "#Betrieb",
+      "#Berufsschule",
+      "#AP1"
     ],
     "url": ""
   },
@@ -2796,9 +3054,11 @@
     "topic": "Allgemein",
     "subtopic": "Dualsystem",
     "hashtags": [
-      "#Allgemein",
-      "#AP1",
-      "#Berechnung"
+      "#Dual",
+      "#Binär",
+      "#Zahlensystem",
+      "#Bit",
+      "#AP1"
     ],
     "url": ""
   },
@@ -2814,7 +3074,10 @@
     "topic": "Allgemein",
     "subtopic": "Durchsatz",
     "hashtags": [
-      "#Allgemein",
+      "#Durchsatz",
+      "#Bandbreite",
+      "#QoS",
+      "#Netzwerk",
       "#AP1"
     ],
     "url": ""
@@ -2831,9 +3094,11 @@
     "topic": "Nachhaltigkeit",
     "subtopic": "EPEAT",
     "hashtags": [
-      "#Nachhaltigkeit",
-      "#AP1",
-      "#Ökologisch"
+      "#EPEAT",
+      "#Umwelt",
+      "#Hardware",
+      "#Zertifikat",
+      "#AP1"
     ],
     "url": ""
   },
@@ -2849,7 +3114,10 @@
     "topic": "Allgemein",
     "subtopic": "ER-Diagramm",
     "hashtags": [
-      "#Allgemein",
+      "#ER",
+      "#Datenbank",
+      "#Entity",
+      "#Modell",
       "#AP1"
     ],
     "url": ""
@@ -2866,7 +3134,10 @@
     "topic": "Projektmanagement",
     "subtopic": "ERM",
     "hashtags": [
-      "#Projektmanagement",
+      "#ERM",
+      "#EntityRelationship",
+      "#Datenbank",
+      "#Modell",
       "#AP1"
     ],
     "url": ""
@@ -2883,7 +3154,10 @@
     "topic": "Allgemein",
     "subtopic": "ERP (Enterprise Resource Planning)",
     "hashtags": [
-      "#Allgemein",
+      "#ERP",
+      "#SAP",
+      "#Ressourcen",
+      "#Software",
       "#AP1"
     ],
     "url": ""
@@ -2900,9 +3174,11 @@
     "topic": "Allgemein",
     "subtopic": "ESG (Nachhaltigkeitskriterien)",
     "hashtags": [
-      "#Allgemein",
-      "#AP1",
-      "#Sozial"
+      "#ESG",
+      "#Nachhaltigkeit",
+      "#CSR",
+      "#Reporting",
+      "#AP1"
     ],
     "url": ""
   },
@@ -2918,7 +3194,10 @@
     "topic": "Allgemein",
     "subtopic": "EVA-Prinzip",
     "hashtags": [
-      "#Allgemein",
+      "#EVA",
+      "#Eingabe",
+      "#Verarbeitung",
+      "#Ausgabe",
       "#AP1"
     ],
     "url": ""
@@ -2935,9 +3214,11 @@
     "topic": "Allgemein",
     "subtopic": "Effektivitaet vs. Effizienz",
     "hashtags": [
-      "#Allgemein",
-      "#AP1",
-      "#Ökonomisch"
+      "#Effektivität",
+      "#Effizienz",
+      "#Vergleich",
+      "#Management",
+      "#AP1"
     ],
     "url": ""
   },
@@ -2953,7 +3234,10 @@
     "topic": "Allgemein",
     "subtopic": "Einfuegeanomalie",
     "hashtags": [
-      "#Allgemein",
+      "#Anomalie",
+      "#Normalisierung",
+      "#Datenbank",
+      "#SQL",
       "#AP1"
     ],
     "url": ""
@@ -2970,9 +3254,11 @@
     "topic": "Hardware",
     "subtopic": "Einheiten-Umrechnung (IT)",
     "hashtags": [
-      "#Hardware",
-      "#AP1",
-      "#Berechnung"
+      "#Einheiten",
+      "#Berechnung",
+      "#Bit",
+      "#Byte",
+      "#AP1"
     ],
     "url": ""
   },
@@ -2988,9 +3274,11 @@
     "topic": "Datenschutz",
     "subtopic": "Einwilligung (DSGVO)",
     "hashtags": [
+      "#Einwilligung",
+      "#Art6",
+      "#DSGVO",
       "#Datenschutz",
-      "#AP1",
-      "#Sozial"
+      "#AP1"
     ],
     "url": ""
   },
@@ -3006,9 +3294,11 @@
     "topic": "Nachhaltigkeit",
     "subtopic": "ElektroG",
     "hashtags": [
-      "#Nachhaltigkeit",
-      "#AP1",
-      "#Ökologisch"
+      "#ElektroG",
+      "#Entsorgung",
+      "#Recycling",
+      "#Recht",
+      "#AP1"
     ],
     "url": ""
   },
@@ -3024,7 +3314,10 @@
     "topic": "IT-Sicherheit",
     "subtopic": "Endpoint-Security",
     "hashtags": [
-      "#ITSicherheit",
+      "#Endpoint",
+      "#Antivirus",
+      "#EDR",
+      "#Sicherheit",
       "#AP1"
     ],
     "url": ""
@@ -3041,9 +3334,11 @@
     "topic": "Nachhaltigkeit",
     "subtopic": "Energieeffizienz-Berechnung",
     "hashtags": [
-      "#Nachhaltigkeit",
-      "#AP1",
-      "#Berechnung"
+      "#Energieeffizienz",
+      "#Berechnung",
+      "#PUE",
+      "#Strom",
+      "#AP1"
     ],
     "url": ""
   },
@@ -3059,9 +3354,11 @@
     "topic": "Nachhaltigkeit",
     "subtopic": "Energieeffizienz-Klassen",
     "hashtags": [
-      "#Nachhaltigkeit",
-      "#AP1",
-      "#Ökologisch"
+      "#Energieeffizienz",
+      "#EEK",
+      "#Label",
+      "#Strom",
+      "#AP1"
     ],
     "url": ""
   },
@@ -3077,9 +3374,11 @@
     "topic": "Allgemein",
     "subtopic": "Energy Star",
     "hashtags": [
-      "#Allgemein",
-      "#AP1",
-      "#Ökologisch"
+      "#EnergyStar",
+      "#Zertifikat",
+      "#GreenIT",
+      "#Effizienz",
+      "#AP1"
     ],
     "url": ""
   },
@@ -3095,9 +3394,11 @@
     "topic": "WiSo Ausbildung & Arbeitsrecht",
     "subtopic": "Entgeltformen",
     "hashtags": [
-      "#WiSoAusbildungArbeitsrecht",
-      "#AP1",
-      "#Ökonomisch"
+      "#Zeitlohn",
+      "#Akkordlohn",
+      "#Prämie",
+      "#Vergütung",
+      "#AP1"
     ],
     "url": ""
   },
@@ -3113,7 +3414,10 @@
     "topic": "Allgemein",
     "subtopic": "Entitaet",
     "hashtags": [
-      "#Allgemein",
+      "#Entität",
+      "#ER",
+      "#Datenbank",
+      "#Objekt",
       "#AP1"
     ],
     "url": ""
@@ -3130,9 +3434,11 @@
     "topic": "Ergonomie & Soziales",
     "subtopic": "Ergonomierichtlinien (ArbStättV)",
     "hashtags": [
-      "#ErgonomieSoziales",
-      "#AP1",
-      "#Sozial"
+      "#ArbStättV",
+      "#Ergonomie",
+      "#§6",
+      "#Bildschirm",
+      "#AP1"
     ],
     "url": ""
   },
@@ -3148,7 +3454,10 @@
     "topic": "Allgemein",
     "subtopic": "Ethernet",
     "hashtags": [
-      "#Allgemein",
+      "#Ethernet",
+      "#LAN",
+      "#IEEE802.3",
+      "#Netzwerk",
       "#AP1"
     ],
     "url": ""
@@ -3165,9 +3474,11 @@
     "topic": "Barrierefreiheit",
     "subtopic": "European Accessibility Act (EAA)",
     "hashtags": [
+      "#EAA",
       "#Barrierefreiheit",
-      "#AP1",
-      "#Sozial"
+      "#EU",
+      "#Richtlinie",
+      "#AP1"
     ],
     "url": ""
   },
@@ -3183,7 +3494,10 @@
     "topic": "Allgemein",
     "subtopic": "FTP",
     "hashtags": [
-      "#Allgemein",
+      "#FTP",
+      "#SFTP",
+      "#Dateiübertragung",
+      "#Port21",
       "#AP1"
     ],
     "url": ""
@@ -3200,7 +3514,10 @@
     "topic": "Netzwerk",
     "subtopic": "Firewall",
     "hashtags": [
-      "#Netzwerk",
+      "#Firewall",
+      "#Paketfilter",
+      "#Stateful",
+      "#Netzwerksicherheit",
       "#AP1"
     ],
     "url": ""
@@ -3217,7 +3534,10 @@
     "topic": "Allgemein",
     "subtopic": "Firmware",
     "hashtags": [
-      "#Allgemein",
+      "#Firmware",
+      "#BIOS",
+      "#UEFI",
+      "#Embedded",
       "#AP1"
     ],
     "url": ""
@@ -3234,7 +3554,10 @@
     "topic": "Allgemein",
     "subtopic": "Fremdschluessel",
     "hashtags": [
-      "#Allgemein",
+      "#Fremdschlüssel",
+      "#SQL",
+      "#Referenz",
+      "#Datenbank",
       "#AP1"
     ],
     "url": ""
@@ -3251,9 +3574,11 @@
     "topic": "Wirtschaft",
     "subtopic": "Fremdvergabe (Outsourcing)",
     "hashtags": [
-      "#Wirtschaft",
-      "#AP1",
-      "#Ökonomisch"
+      "#Outsourcing",
+      "#SLA",
+      "#Cloud",
+      "#MakeOrBuy",
+      "#AP1"
     ],
     "url": ""
   },
@@ -3269,9 +3594,11 @@
     "topic": "Allgemein",
     "subtopic": "Fuehrungsstil",
     "hashtags": [
-      "#Allgemein",
-      "#AP1",
-      "#Sozial"
+      "#Führungsstil",
+      "#Autoritar",
+      "#Kooperativ",
+      "#Management",
+      "#AP1"
     ],
     "url": ""
   },
@@ -3287,7 +3614,10 @@
     "topic": "Allgemein",
     "subtopic": "GPT (Partitionsstil)",
     "hashtags": [
-      "#Allgemein",
+      "#GPT",
+      "#MBR",
+      "#Partition",
+      "#UEFI",
       "#AP1"
     ],
     "url": ""
@@ -3304,9 +3634,11 @@
     "topic": "Allgemein",
     "subtopic": "GWG (Geringwertiges Wirtschaftsgut)",
     "hashtags": [
-      "#Allgemein",
-      "#AP1",
-      "#Ökonomisch"
+      "#GWG",
+      "#AfA",
+      "#800Euro",
+      "#Steuer",
+      "#AP1"
     ],
     "url": ""
   },
@@ -3322,7 +3654,10 @@
     "topic": "Projektmanagement",
     "subtopic": "Gantt-Diagramm",
     "hashtags": [
+      "#Gantt",
+      "#Zeitplanung",
       "#Projektmanagement",
+      "#Balken",
       "#AP1"
     ],
     "url": ""
@@ -3339,7 +3674,7 @@
     "topic": "Allgemein",
     "subtopic": "Gateway",
     "hashtags": [
-      "#Allgemein",
+      "#Gateway",
       "#AP1"
     ],
     "url": ""
@@ -3356,9 +3691,11 @@
     "topic": "WiSo Sicherheit & Umwelt",
     "subtopic": "Gefährdungsbeurteilung",
     "hashtags": [
-      "#WiSoSicherheitUmwelt",
-      "#AP1",
-      "#Sozial"
+      "#Gefährdungsbeurteilung",
+      "#ArbSchG",
+      "#§5",
+      "#Sicherheit",
+      "#AP1"
     ],
     "url": ""
   },
@@ -3374,7 +3711,10 @@
     "topic": "Künstliche Intelligenz",
     "subtopic": "Generative KI",
     "hashtags": [
-      "#KünstlicheIntelligenz",
+      "#GenerativeKI",
+      "#ChatGPT",
+      "#LLM",
+      "#KI",
       "#AP1"
     ],
     "url": ""
@@ -3391,7 +3731,10 @@
     "topic": "Hardware",
     "subtopic": "Geräteklassen",
     "hashtags": [
-      "#Hardware",
+      "#Geräteklassen",
+      "#Desktop",
+      "#Notebook",
+      "#Server",
       "#AP1"
     ],
     "url": ""
@@ -3408,9 +3751,9 @@
     "topic": "Berechnung",
     "subtopic": "Gesamtkosten-Berechnung",
     "hashtags": [
+      "#GesamtkostenBerechnung",
       "#Berechnung",
-      "#AP1",
-      "#Berechnung"
+      "#AP1"
     ],
     "url": ""
   },
@@ -3426,9 +3769,9 @@
     "topic": "Allgemein",
     "subtopic": "Gewinn",
     "hashtags": [
-      "#Allgemein",
-      "#AP1",
-      "#Ökonomisch"
+      "#Gewinn",
+      "#Wirtschaft",
+      "#AP1"
     ],
     "url": ""
   },
@@ -3444,9 +3787,9 @@
     "topic": "Allgemein",
     "subtopic": "Globalisierung",
     "hashtags": [
-      "#Allgemein",
-      "#AP1",
-      "#Ökonomisch"
+      "#Globalisierung",
+      "#Wirtschaft",
+      "#AP1"
     ],
     "url": ""
   },
@@ -3462,9 +3805,11 @@
     "topic": "WiSo Unternehmen & Wirtschaft",
     "subtopic": "GmbH vs. AG",
     "hashtags": [
-      "#WiSoUnternehmenWirtschaft",
-      "#AP1",
-      "#Ökonomisch"
+      "#GmbH",
+      "#AG",
+      "#Rechtsform",
+      "#Haftung",
+      "#AP1"
     ],
     "url": ""
   },
@@ -3480,7 +3825,10 @@
     "topic": "Hardware",
     "subtopic": "Grafikkarte",
     "hashtags": [
-      "#Hardware",
+      "#GPU",
+      "#Grafikkarte",
+      "#Rendering",
+      "#PCIe",
       "#AP1"
     ],
     "url": ""
@@ -3497,9 +3845,11 @@
     "topic": "Nachhaltigkeit",
     "subtopic": "Green IT",
     "hashtags": [
-      "#Nachhaltigkeit",
-      "#AP1",
-      "#Ökologisch"
+      "#GreenIT",
+      "#PUE",
+      "#EPEAT",
+      "#Virtualisierung",
+      "#AP1"
     ],
     "url": ""
   },
@@ -3515,7 +3865,8 @@
     "topic": "Allgemein",
     "subtopic": "Grundschutz-Maßnahmen",
     "hashtags": [
-      "#Allgemein",
+      "#GrundschutzMaßnahmen",
+      "#Sicherheit",
       "#AP1"
     ],
     "url": ""
@@ -3532,7 +3883,10 @@
     "topic": "Systemadministration",
     "subtopic": "Gruppenrichtlinien",
     "hashtags": [
-      "#Systemadministration",
+      "#GPO",
+      "#ActiveDirectory",
+      "#Windows",
+      "#Policy",
       "#AP1"
     ],
     "url": ""
@@ -3549,7 +3903,10 @@
     "topic": "Hardware",
     "subtopic": "HDD",
     "hashtags": [
-      "#Hardware",
+      "#HDD",
+      "#Festplatte",
+      "#Datenspeicher",
+      "#SATA",
       "#AP1"
     ],
     "url": ""
@@ -3566,7 +3923,7 @@
     "topic": "Allgemein",
     "subtopic": "HDMI",
     "hashtags": [
-      "#Allgemein",
+      "#HDMI",
       "#AP1"
     ],
     "url": ""
@@ -3583,7 +3940,10 @@
     "topic": "Netzwerk",
     "subtopic": "HTTPS",
     "hashtags": [
-      "#Netzwerk",
+      "#HTTPS",
+      "#TLS",
+      "#Port443",
+      "#Verschlüsselung",
       "#AP1"
     ],
     "url": ""
@@ -3600,9 +3960,11 @@
     "topic": "Wirtschaft",
     "subtopic": "Handelskalkulation",
     "hashtags": [
-      "#Wirtschaft",
-      "#AP1",
-      "#Ökonomisch"
+      "#Kalkulation",
+      "#Berechnung",
+      "#Preis",
+      "#Handelsspanne",
+      "#AP1"
     ],
     "url": ""
   },
@@ -3618,9 +3980,9 @@
     "topic": "Allgemein",
     "subtopic": "Handelsspanne",
     "hashtags": [
-      "#Allgemein",
-      "#AP1",
-      "#Berechnung"
+      "#Handelsspanne",
+      "#Berechnung",
+      "#AP1"
     ],
     "url": ""
   },
@@ -3636,7 +3998,10 @@
     "topic": "IT-Sicherheit",
     "subtopic": "Hashverfahren",
     "hashtags": [
-      "#ITSicherheit",
+      "#Hash",
+      "#SHA256",
+      "#MD5",
+      "#Integrität",
       "#AP1"
     ],
     "url": ""
@@ -3653,7 +4018,7 @@
     "topic": "Allgemein",
     "subtopic": "Hashwert",
     "hashtags": [
-      "#Allgemein",
+      "#Hashwert",
       "#AP1"
     ],
     "url": ""
@@ -3670,9 +4035,9 @@
     "topic": "Allgemein",
     "subtopic": "Hexadezimalsystem",
     "hashtags": [
-      "#Allgemein",
-      "#AP1",
-      "#Berechnung"
+      "#Hexadezimalsystem",
+      "#Berechnung",
+      "#AP1"
     ],
     "url": ""
   },
@@ -3688,9 +4053,11 @@
     "topic": "Ergonomie & Soziales",
     "subtopic": "Homeoffice",
     "hashtags": [
-      "#ErgonomieSoziales",
-      "#AP1",
-      "#Sozial"
+      "#Homeoffice",
+      "#Telearbeit",
+      "#DSGVO",
+      "#ArbSchG",
+      "#AP1"
     ],
     "url": ""
   },
@@ -3706,7 +4073,10 @@
     "topic": "Cloud & Virtualisierung",
     "subtopic": "Hypervisor",
     "hashtags": [
-      "#CloudVirtualisierung",
+      "#Hypervisor",
+      "#Typ1",
+      "#Typ2",
+      "#VMware",
       "#AP1"
     ],
     "url": ""
@@ -3723,7 +4093,10 @@
     "topic": "IT-Sicherheit",
     "subtopic": "Härtung",
     "hashtags": [
-      "#ITSicherheit",
+      "#Hardening",
+      "#LeastPrivilege",
+      "#BSI",
+      "#Sicherheit",
       "#AP1"
     ],
     "url": ""
@@ -3740,7 +4113,10 @@
     "topic": "Netzwerk",
     "subtopic": "IDS / IPS",
     "hashtags": [
-      "#Netzwerk",
+      "#IDS",
+      "#IPS",
+      "#Intrusion",
+      "#Netzwerksicherheit",
       "#AP1"
     ],
     "url": ""
@@ -3757,7 +4133,10 @@
     "topic": "Netzwerk",
     "subtopic": "IPv4",
     "hashtags": [
-      "#Netzwerk",
+      "#IPv4",
+      "#IP",
+      "#Subnetting",
+      "#32Bit",
       "#AP1"
     ],
     "url": ""
@@ -3774,7 +4153,10 @@
     "topic": "Netzwerk",
     "subtopic": "IPv4 vs. IPv6",
     "hashtags": [
-      "#Netzwerk",
+      "#IPv4",
+      "#IPv6",
+      "#NAT",
+      "#Adressierung",
       "#AP1"
     ],
     "url": ""
@@ -3791,7 +4173,10 @@
     "topic": "Netzwerk",
     "subtopic": "IPv4-Adressklassen",
     "hashtags": [
-      "#Netzwerk",
+      "#IPv4",
+      "#KlasseA",
+      "#KlasseB",
+      "#KlasseC",
       "#AP1"
     ],
     "url": ""
@@ -3808,6 +4193,9 @@
     "topic": "Netzwerk",
     "subtopic": "IPv6",
     "hashtags": [
+      "#IPv6",
+      "#128Bit",
+      "#SLAAC",
       "#Netzwerk",
       "#AP1"
     ],
@@ -3825,7 +4213,10 @@
     "topic": "IT-Sicherheit",
     "subtopic": "IT-Grundschutz-Kompendium",
     "hashtags": [
-      "#ITSicherheit",
+      "#BSI",
+      "#Bausteine",
+      "#Maßnahmen",
+      "#ISMS",
       "#AP1"
     ],
     "url": ""
@@ -3842,7 +4233,10 @@
     "topic": "Allgemein",
     "subtopic": "IT-Service-Management",
     "hashtags": [
-      "#Allgemein",
+      "#ITSM",
+      "#ITIL",
+      "#Service",
+      "#Prozess",
       "#AP1"
     ],
     "url": ""
@@ -3859,7 +4253,10 @@
     "topic": "IT-Service-Management",
     "subtopic": "ITIL",
     "hashtags": [
-      "#ITServiceManagement",
+      "#ITIL",
+      "#ITSM",
+      "#ServiceManagement",
+      "#Best Practice",
       "#AP1"
     ],
     "url": ""
@@ -3876,7 +4273,10 @@
     "topic": "Cloud & Virtualisierung",
     "subtopic": "IaaS",
     "hashtags": [
-      "#CloudVirtualisierung",
+      "#IaaS",
+      "#AWS",
+      "#Azure",
+      "#Cloud",
       "#AP1"
     ],
     "url": ""
@@ -3893,7 +4293,10 @@
     "topic": "IT-Service-Management",
     "subtopic": "Incident Management",
     "hashtags": [
-      "#ITServiceManagement",
+      "#Incident",
+      "#ITIL",
+      "#Ticket",
+      "#SLA",
       "#AP1"
     ],
     "url": ""
@@ -3910,7 +4313,7 @@
     "topic": "Allgemein",
     "subtopic": "Industrie 4.0",
     "hashtags": [
-      "#Allgemein",
+      "#Industrie40",
       "#AP1"
     ],
     "url": ""
@@ -3927,7 +4330,8 @@
     "topic": "Allgemein",
     "subtopic": "Integritaet (Schutzziel)",
     "hashtags": [
-      "#Allgemein",
+      "#IntegritaetSchutzziel",
+      "#Sicherheit",
       "#AP1"
     ],
     "url": ""
@@ -3944,7 +4348,10 @@
     "topic": "Hardware",
     "subtopic": "JBOD",
     "hashtags": [
-      "#Hardware",
+      "#JBOD",
+      "#Storage",
+      "#Festplatte",
+      "#Kapazität",
       "#AP1"
     ],
     "url": ""
@@ -3961,7 +4368,7 @@
     "topic": "Allgemein",
     "subtopic": "JVM",
     "hashtags": [
-      "#Allgemein",
+      "#JVM",
       "#AP1"
     ],
     "url": ""
@@ -3978,7 +4385,10 @@
     "topic": "Programmierung",
     "subtopic": "KI / Künstliche Intelligenz",
     "hashtags": [
-      "#Programmierung",
+      "#KI",
+      "#AI",
+      "#MachineLearning",
+      "#Algorithmus",
       "#AP1"
     ],
     "url": ""
@@ -3995,9 +4405,11 @@
     "topic": "Künstliche Intelligenz",
     "subtopic": "KI im Betrieb",
     "hashtags": [
-      "#KünstlicheIntelligenz",
-      "#AP1",
-      "#Ökonomisch"
+      "#KI",
+      "#Betrieb",
+      "#Automatisierung",
+      "#Prozess",
+      "#AP1"
     ],
     "url": ""
   },
@@ -4013,9 +4425,11 @@
     "topic": "Künstliche Intelligenz",
     "subtopic": "KI-Ethik und EU-AI-Act",
     "hashtags": [
-      "#KünstlicheIntelligenz",
-      "#AP1",
-      "#Sozial"
+      "#EUAI",
+      "#KIEthik",
+      "#Regulierung",
+      "#KI",
+      "#AP1"
     ],
     "url": ""
   },
@@ -4031,7 +4445,10 @@
     "topic": "Künstliche Intelligenz",
     "subtopic": "KI-Grundlagen (Überblick)",
     "hashtags": [
-      "#KünstlicheIntelligenz",
+      "#KI",
+      "#Schwach",
+      "#Stark",
+      "#Algorithmus",
       "#AP1"
     ],
     "url": ""
@@ -4048,7 +4465,10 @@
     "topic": "Künstliche Intelligenz",
     "subtopic": "KI-Halluzination",
     "hashtags": [
-      "#KünstlicheIntelligenz",
+      "#Halluzination",
+      "#LLM",
+      "#KI",
+      "#Fehler",
       "#AP1"
     ],
     "url": ""
@@ -4065,7 +4485,10 @@
     "topic": "Künstliche Intelligenz",
     "subtopic": "KI-Trainingsdaten",
     "hashtags": [
-      "#KünstlicheIntelligenz",
+      "#Trainingsdaten",
+      "#Bias",
+      "#Qualität",
+      "#KI",
       "#AP1"
     ],
     "url": ""
@@ -4082,7 +4505,10 @@
     "topic": "Projektmanagement",
     "subtopic": "Kanban",
     "hashtags": [
-      "#Projektmanagement",
+      "#Kanban",
+      "#Agile",
+      "#WIP",
+      "#Board",
       "#AP1"
     ],
     "url": ""
@@ -4099,9 +4525,11 @@
     "topic": "Wirtschaft",
     "subtopic": "Kapitalwertmethode",
     "hashtags": [
-      "#Wirtschaft",
-      "#AP1",
-      "#Ökonomisch"
+      "#Kapitalwert",
+      "#NPV",
+      "#Berechnung",
+      "#Investition",
+      "#AP1"
     ],
     "url": ""
   },
@@ -4117,7 +4545,7 @@
     "topic": "Allgemein",
     "subtopic": "Kardinalitaet",
     "hashtags": [
-      "#Allgemein",
+      "#Kardinalitaet",
       "#AP1"
     ],
     "url": ""
@@ -4134,9 +4562,11 @@
     "topic": "Wirtschaft",
     "subtopic": "Kaufvertrag",
     "hashtags": [
-      "#Wirtschaft",
-      "#AP1",
-      "#Sozial"
+      "#BGB",
+      "#§433",
+      "#Kaufvertrag",
+      "#Vertragsrecht",
+      "#AP1"
     ],
     "url": ""
   },
@@ -4152,9 +4582,11 @@
     "topic": "Wirtschaft",
     "subtopic": "Kaufvertrag (Inhalte)",
     "hashtags": [
-      "#Wirtschaft",
-      "#AP1",
-      "#Ökonomisch"
+      "#Kaufvertrag",
+      "#BGB",
+      "#Vertragsinhalt",
+      "#Leistung",
+      "#AP1"
     ],
     "url": ""
   },
@@ -4170,9 +4602,11 @@
     "topic": "Wirtschaft",
     "subtopic": "Kaufvertragsstörungen",
     "hashtags": [
-      "#Wirtschaft",
-      "#AP1",
-      "#Sozial"
+      "#§437",
+      "#Gewährleistung",
+      "#BGB",
+      "#Recht",
+      "#AP1"
     ],
     "url": ""
   },
@@ -4188,7 +4622,10 @@
     "topic": "Systemadministration",
     "subtopic": "Kerberos",
     "hashtags": [
-      "#Systemadministration",
+      "#Kerberos",
+      "#SSO",
+      "#TGT",
+      "#ActiveDirectory",
       "#AP1"
     ],
     "url": ""
@@ -4205,7 +4642,10 @@
     "topic": "Allgemein",
     "subtopic": "Kernel",
     "hashtags": [
-      "#Allgemein",
+      "#Kernel",
+      "#Betriebssystem",
+      "#Linux",
+      "#Prozess",
       "#AP1"
     ],
     "url": ""
@@ -4222,7 +4662,10 @@
     "topic": "Programmierung",
     "subtopic": "Klassendiagramm (UML)",
     "hashtags": [
-      "#Programmierung",
+      "#UML",
+      "#Klasse",
+      "#OOP",
+      "#Attribut",
       "#AP1"
     ],
     "url": ""
@@ -4239,9 +4682,11 @@
     "topic": "Nachhaltigkeit",
     "subtopic": "Konfliktmineralien",
     "hashtags": [
-      "#Nachhaltigkeit",
-      "#AP1",
-      "#Ökologisch"
+      "#Dodd-Frank",
+      "#LkSG",
+      "#ESG",
+      "#Recht",
+      "#AP1"
     ],
     "url": ""
   },
@@ -4257,6 +4702,9 @@
     "topic": "Barrierefreiheit",
     "subtopic": "Kontrast (Barrierefreiheit)",
     "hashtags": [
+      "#Kontrast",
+      "#WCAG",
+      "#4.5:1",
       "#Barrierefreiheit",
       "#AP1"
     ],
@@ -4274,9 +4722,11 @@
     "topic": "WiSo Unternehmen & Wirtschaft",
     "subtopic": "Konzern / Kartell / Fusion",
     "hashtags": [
-      "#WiSoUnternehmenWirtschaft",
-      "#AP1",
-      "#Ökonomisch"
+      "#Konzern",
+      "#Kartell",
+      "#Fusion",
+      "#Unternehmen",
+      "#AP1"
     ],
     "url": ""
   },
@@ -4292,7 +4742,10 @@
     "topic": "Projektmanagement",
     "subtopic": "Kritischer Pfad",
     "hashtags": [
+      "#KritischerPfad",
+      "#Netzplan",
       "#Projektmanagement",
+      "#Zeit",
       "#AP1"
     ],
     "url": ""
@@ -4309,7 +4762,10 @@
     "topic": "Cloud & Virtualisierung",
     "subtopic": "Kubernetes",
     "hashtags": [
-      "#CloudVirtualisierung",
+      "#Kubernetes",
+      "#K8s",
+      "#Pod",
+      "#Container",
       "#AP1"
     ],
     "url": ""
@@ -4326,9 +4782,11 @@
     "topic": "WiSo Ausbildung & Arbeitsrecht",
     "subtopic": "Kündigungsschutz",
     "hashtags": [
-      "#WiSoAusbildungArbeitsrecht",
-      "#AP1",
-      "#Sozial"
+      "#Kündigungsschutz",
+      "#KSchG",
+      "#Kündigung",
+      "#Arbeitsrecht",
+      "#AP1"
     ],
     "url": ""
   },
@@ -4344,7 +4802,10 @@
     "topic": "Systemadministration",
     "subtopic": "LDAP",
     "hashtags": [
-      "#Systemadministration",
+      "#LDAP",
+      "#Verzeichnis",
+      "#ActiveDirectory",
+      "#RFC4510",
       "#AP1"
     ],
     "url": ""
@@ -4361,7 +4822,10 @@
     "topic": "Künstliche Intelligenz",
     "subtopic": "Large Language Models (LLM)",
     "hashtags": [
-      "#KünstlicheIntelligenz",
+      "#LLM",
+      "#GPT",
+      "#ChatGPT",
+      "#GenerativeKI",
       "#AP1"
     ],
     "url": ""
@@ -4378,7 +4842,10 @@
     "topic": "Projektmanagement",
     "subtopic": "Lastenheft vs. Pflichtenheft",
     "hashtags": [
-      "#Projektmanagement",
+      "#Lastenheft",
+      "#Pflichtenheft",
+      "#Anforderungen",
+      "#PM",
       "#AP1"
     ],
     "url": ""
@@ -4395,7 +4862,7 @@
     "topic": "Allgemein",
     "subtopic": "Latenz",
     "hashtags": [
-      "#Allgemein",
+      "#Latenz",
       "#AP1"
     ],
     "url": ""
@@ -4412,9 +4879,11 @@
     "topic": "Wirtschaft",
     "subtopic": "Laufende vs. einmalige Kosten",
     "hashtags": [
-      "#Wirtschaft",
-      "#AP1",
-      "#Ökonomisch"
+      "#OPEX",
+      "#CAPEX",
+      "#Kosten",
+      "#Berechnung",
+      "#AP1"
     ],
     "url": ""
   },
@@ -4430,9 +4899,11 @@
     "topic": "Wirtschaft",
     "subtopic": "Leasing",
     "hashtags": [
-      "#Wirtschaft",
-      "#AP1",
-      "#Ökonomisch"
+      "#Leasing",
+      "#CAPEX",
+      "#OPEX",
+      "#Finanzierung",
+      "#AP1"
     ],
     "url": ""
   },
@@ -4448,9 +4919,11 @@
     "topic": "WiSo Digitale Zusammenarbeit",
     "subtopic": "Lebenslanges Lernen",
     "hashtags": [
-      "#WiSoDigitaleZusammenarbeit",
-      "#AP1",
-      "#Sozial"
+      "#LLL",
+      "#Weiterbildung",
+      "#Kompetenz",
+      "#Sozial",
+      "#AP1"
     ],
     "url": ""
   },
@@ -4466,9 +4939,9 @@
     "topic": "Allgemein",
     "subtopic": "Leistungsaufnahme (Elektrotechnik)",
     "hashtags": [
-      "#Allgemein",
-      "#AP1",
-      "#Berechnung"
+      "#LeistungsaufnahmeElektrotechni",
+      "#Berechnung",
+      "#AP1"
     ],
     "url": ""
   },
@@ -4484,9 +4957,11 @@
     "topic": "Wirtschaft",
     "subtopic": "Lieferantenauswahl",
     "hashtags": [
-      "#Wirtschaft",
-      "#AP1",
-      "#Ökonomisch"
+      "#Lieferant",
+      "#Nutzwertanalyse",
+      "#Angebotsvergleich",
+      "#Einkauf",
+      "#AP1"
     ],
     "url": ""
   },
@@ -4502,9 +4977,9 @@
     "topic": "Allgemein",
     "subtopic": "Liquiditaet",
     "hashtags": [
-      "#Allgemein",
-      "#AP1",
-      "#Ökonomisch"
+      "#Liquiditaet",
+      "#Wirtschaft",
+      "#AP1"
     ],
     "url": ""
   },
@@ -4520,9 +4995,11 @@
     "topic": "Datenschutz",
     "subtopic": "Lizenzmodelle",
     "hashtags": [
-      "#Datenschutz",
-      "#AP1",
-      "#Ökonomisch"
+      "#Lizenz",
+      "#Open Source",
+      "#EULA",
+      "#Recht",
+      "#AP1"
     ],
     "url": ""
   },
@@ -4538,9 +5015,11 @@
     "topic": "Nachhaltigkeit",
     "subtopic": "LkSG",
     "hashtags": [
-      "#Nachhaltigkeit",
-      "#AP1",
-      "#Ökologisch"
+      "#LkSG",
+      "#Sorgfaltspflicht",
+      "#Lieferkette",
+      "#Recht",
+      "#AP1"
     ],
     "url": ""
   },
@@ -4556,7 +5035,7 @@
     "topic": "Allgemein",
     "subtopic": "Loeschanomalie",
     "hashtags": [
-      "#Allgemein",
+      "#Loeschanomalie",
       "#AP1"
     ],
     "url": ""
@@ -4573,7 +5052,10 @@
     "topic": "Datenschutz",
     "subtopic": "Logging",
     "hashtags": [
-      "#Datenschutz",
+      "#Syslog",
+      "#SIEM",
+      "#Log",
+      "#Monitoring",
       "#AP1"
     ],
     "url": ""
@@ -4590,9 +5072,11 @@
     "topic": "WiSo Ausbildung & Arbeitsrecht",
     "subtopic": "Lohnsteuer",
     "hashtags": [
-      "#WiSoAusbildungArbeitsrecht",
-      "#AP1",
-      "#Ökonomisch"
+      "#Lohnsteuer",
+      "#Steuer",
+      "#Brutto",
+      "#Abzüge",
+      "#AP1"
     ],
     "url": ""
   },
@@ -4608,7 +5092,10 @@
     "topic": "Netzwerk",
     "subtopic": "MAC-Adresse",
     "hashtags": [
-      "#Netzwerk",
+      "#MAC",
+      "#Layer2",
+      "#Ethernet",
+      "#Hardware",
       "#AP1"
     ],
     "url": ""
@@ -4625,7 +5112,7 @@
     "topic": "Allgemein",
     "subtopic": "MBR",
     "hashtags": [
-      "#Allgemein",
+      "#MBR",
       "#AP1"
     ],
     "url": ""
@@ -4642,7 +5129,7 @@
     "topic": "Allgemein",
     "subtopic": "MDM (Mobile Device Management)",
     "hashtags": [
-      "#Allgemein",
+      "#MDMMobileDeviceManagement",
       "#AP1"
     ],
     "url": ""
@@ -4659,7 +5146,10 @@
     "topic": "IT-Service-Management",
     "subtopic": "MTBF / MTTR",
     "hashtags": [
-      "#ITServiceManagement",
+      "#MTBF",
+      "#MTTR",
+      "#Verfügbarkeit",
+      "#SLA",
       "#AP1"
     ],
     "url": ""
@@ -4676,7 +5166,10 @@
     "topic": "Programmierung",
     "subtopic": "Machine Learning",
     "hashtags": [
-      "#Programmierung",
+      "#ML",
+      "#Supervised",
+      "#Unsupervised",
+      "#KI",
       "#AP1"
     ],
     "url": ""
@@ -4693,7 +5186,7 @@
     "topic": "Allgemein",
     "subtopic": "Magisches Dreieck",
     "hashtags": [
-      "#Allgemein",
+      "#MagischesDreieck",
       "#AP1"
     ],
     "url": ""
@@ -4710,7 +5203,10 @@
     "topic": "Hardware",
     "subtopic": "Mainboard",
     "hashtags": [
-      "#Hardware",
+      "#Mainboard",
+      "#Motherboard",
+      "#Sockel",
+      "#PCIe",
       "#AP1"
     ],
     "url": ""
@@ -4727,9 +5223,11 @@
     "topic": "Wirtschaft",
     "subtopic": "Make-or-Buy",
     "hashtags": [
-      "#Wirtschaft",
-      "#AP1",
-      "#Ökonomisch"
+      "#MakeOrBuy",
+      "#Outsourcing",
+      "#TCO",
+      "#Entscheidung",
+      "#AP1"
     ],
     "url": ""
   },
@@ -4745,7 +5243,10 @@
     "topic": "Allgemein",
     "subtopic": "Malware",
     "hashtags": [
-      "#Allgemein",
+      "#Malware",
+      "#Virus",
+      "#Trojaner",
+      "#Ransomware",
       "#AP1"
     ],
     "url": ""
@@ -4762,9 +5263,11 @@
     "topic": "Wirtschaft",
     "subtopic": "Marktformen",
     "hashtags": [
-      "#Wirtschaft",
-      "#AP1",
-      "#Ökonomisch"
+      "#Monopol",
+      "#Oligopol",
+      "#Polypol",
+      "#Markt",
+      "#AP1"
     ],
     "url": ""
   },
@@ -4780,7 +5283,10 @@
     "topic": "Künstliche Intelligenz",
     "subtopic": "Maschinelles Lernen (ML)",
     "hashtags": [
-      "#KünstlicheIntelligenz",
+      "#ML",
+      "#Algorithmus",
+      "#Training",
+      "#KI",
       "#AP1"
     ],
     "url": ""
@@ -4797,7 +5303,7 @@
     "topic": "Allgemein",
     "subtopic": "Maschinencode",
     "hashtags": [
-      "#Allgemein",
+      "#Maschinencode",
       "#AP1"
     ],
     "url": ""
@@ -4814,7 +5320,7 @@
     "topic": "Allgemein",
     "subtopic": "Meilenstein",
     "hashtags": [
-      "#Allgemein",
+      "#Meilenstein",
       "#AP1"
     ],
     "url": ""
@@ -4831,7 +5337,10 @@
     "topic": "Hardware",
     "subtopic": "Monitoranschlüsse",
     "hashtags": [
-      "#Hardware",
+      "#HDMI",
+      "#DisplayPort",
+      "#VGA",
+      "#Monitor",
       "#AP1"
     ],
     "url": ""
@@ -4848,7 +5357,10 @@
     "topic": "Allgemein",
     "subtopic": "Multicast",
     "hashtags": [
-      "#Allgemein",
+      "#Multicast",
+      "#Broadcast",
+      "#Unicast",
+      "#Netzwerk",
       "#AP1"
     ],
     "url": ""
@@ -4865,9 +5377,9 @@
     "topic": "Berechnung",
     "subtopic": "MwSt.-Berechnung",
     "hashtags": [
+      "#MwStBerechnung",
       "#Berechnung",
-      "#AP1",
-      "#Berechnung"
+      "#AP1"
     ],
     "url": ""
   },
@@ -4883,7 +5395,10 @@
     "topic": "Hardware",
     "subtopic": "NAS",
     "hashtags": [
-      "#Hardware",
+      "#NAS",
+      "#Netzwerkspeicher",
+      "#RAID",
+      "#Datenspeicher",
       "#AP1"
     ],
     "url": ""
@@ -4900,7 +5415,10 @@
     "topic": "Netzwerk",
     "subtopic": "NAT",
     "hashtags": [
-      "#Netzwerk",
+      "#NAT",
+      "#IPv4",
+      "#Router",
+      "#Portweiterleitung",
       "#AP1"
     ],
     "url": ""
@@ -4917,6 +5435,9 @@
     "topic": "Kommunikation",
     "subtopic": "NFC",
     "hashtags": [
+      "#NFC",
+      "#RFID",
+      "#Funk",
       "#Kommunikation",
       "#AP1"
     ],
@@ -4934,7 +5455,10 @@
     "topic": "Allgemein",
     "subtopic": "NLP (Natural Language Processing)",
     "hashtags": [
-      "#Allgemein",
+      "#NLP",
+      "#Sprache",
+      "#KI",
+      "#Text",
       "#AP1"
     ],
     "url": ""
@@ -4951,7 +5475,10 @@
     "topic": "Hardware",
     "subtopic": "NVMe",
     "hashtags": [
-      "#Hardware",
+      "#NVMe",
+      "#SSD",
+      "#PCIe",
+      "#M2",
       "#AP1"
     ],
     "url": ""
@@ -4968,9 +5495,11 @@
     "topic": "WiSo Sicherheit & Umwelt",
     "subtopic": "Nachhaltigkeit (3-Säulen-Modell)",
     "hashtags": [
-      "#WiSoSicherheitUmwelt",
-      "#AP1",
-      "#Ökologisch"
+      "#Nachhaltigkeit",
+      "#Ökologie",
+      "#Ökonomie",
+      "#Sozial",
+      "#AP1"
     ],
     "url": ""
   },
@@ -4986,9 +5515,11 @@
     "topic": "WiSo Digitale Zusammenarbeit",
     "subtopic": "Netiquette",
     "hashtags": [
-      "#WiSoDigitaleZusammenarbeit",
-      "#AP1",
-      "#Sozial"
+      "#Netiquette",
+      "#Online",
+      "#Kommunikation",
+      "#Sozial",
+      "#AP1"
     ],
     "url": ""
   },
@@ -5004,7 +5535,10 @@
     "topic": "Netzwerk",
     "subtopic": "Netzmaske",
     "hashtags": [
-      "#Netzwerk",
+      "#Netzmaske",
+      "#Subnetting",
+      "#CIDR",
+      "#IPv4",
       "#AP1"
     ],
     "url": ""
@@ -5021,7 +5555,10 @@
     "topic": "Projektmanagement",
     "subtopic": "Netzplan",
     "hashtags": [
-      "#Projektmanagement",
+      "#Netzplan",
+      "#Netzplantechnik",
+      "#KritischerPfad",
+      "#PM",
       "#AP1"
     ],
     "url": ""
@@ -5038,7 +5575,10 @@
     "topic": "Projektmanagement",
     "subtopic": "Netzplan (Methodik)",
     "hashtags": [
-      "#Projektmanagement",
+      "#Netzplan",
+      "#CPM",
+      "#Vorgänger",
+      "#Nachfolger",
       "#AP1"
     ],
     "url": ""
@@ -5055,7 +5595,10 @@
     "topic": "Allgemein",
     "subtopic": "Netzplantechnik",
     "hashtags": [
-      "#Allgemein",
+      "#Netzplan",
+      "#CPM",
+      "#Projektmanagement",
+      "#Terminplanung",
       "#AP1"
     ],
     "url": ""
@@ -5072,7 +5615,10 @@
     "topic": "Hardware",
     "subtopic": "Netzteil-Leistungsberechnung",
     "hashtags": [
-      "#Hardware",
+      "#Netzteil",
+      "#Berechnung",
+      "#Watt",
+      "#Effizienz",
       "#AP1"
     ],
     "url": ""
@@ -5089,9 +5635,11 @@
     "topic": "Hardware",
     "subtopic": "Netzteil-Wirkungsgrad",
     "hashtags": [
-      "#Hardware",
-      "#AP1",
-      "#Ökologisch"
+      "#Wirkungsgrad",
+      "#80PLUS",
+      "#Netzteil",
+      "#GreenIT",
+      "#AP1"
     ],
     "url": ""
   },
@@ -5107,7 +5655,10 @@
     "topic": "Netzwerk",
     "subtopic": "Netzwerkdiagnose",
     "hashtags": [
-      "#Netzwerk",
+      "#Ping",
+      "#Traceroute",
+      "#ipconfig",
+      "#Diagnose",
       "#AP1"
     ],
     "url": ""
@@ -5124,7 +5675,10 @@
     "topic": "Netzwerk",
     "subtopic": "Netzwerkkonfiguration (Praxis)",
     "hashtags": [
-      "#Netzwerk",
+      "#ipconfig",
+      "#ifconfig",
+      "#DNS",
+      "#Gateway",
       "#AP1"
     ],
     "url": ""
@@ -5141,7 +5695,10 @@
     "topic": "Netzwerk",
     "subtopic": "Netzwerkprotokoll-Übersicht",
     "hashtags": [
-      "#Netzwerk",
+      "#OSI",
+      "#TCP",
+      "#UDP",
+      "#Protokoll",
       "#AP1"
     ],
     "url": ""
@@ -5158,7 +5715,10 @@
     "topic": "Netzwerk",
     "subtopic": "Netzwerksicherheit",
     "hashtags": [
-      "#Netzwerk",
+      "#Firewall",
+      "#IDS",
+      "#DMZ",
+      "#ZeroTrust",
       "#AP1"
     ],
     "url": ""
@@ -5175,7 +5735,10 @@
     "topic": "Netzwerk",
     "subtopic": "Netzwerktopologien",
     "hashtags": [
-      "#Netzwerk",
+      "#Stern",
+      "#Ring",
+      "#Bus",
+      "#Topologie",
       "#AP1"
     ],
     "url": ""
@@ -5192,7 +5755,10 @@
     "topic": "Programmierung",
     "subtopic": "Neuronales Netz",
     "hashtags": [
-      "#Programmierung",
+      "#NeuronalesNetz",
+      "#DeepLearning",
+      "#KI",
+      "#Layer",
       "#AP1"
     ],
     "url": ""
@@ -5209,7 +5775,10 @@
     "topic": "Programmierung",
     "subtopic": "Normalisierung",
     "hashtags": [
-      "#Programmierung",
+      "#1NF",
+      "#2NF",
+      "#3NF",
+      "#Normalisierung",
       "#AP1"
     ],
     "url": ""
@@ -5226,9 +5795,11 @@
     "topic": "Wirtschaft",
     "subtopic": "Nutzwertanalyse",
     "hashtags": [
-      "#Wirtschaft",
-      "#AP1",
-      "#Ökonomisch"
+      "#Nutzwertanalyse",
+      "#Bewertung",
+      "#Kriterien",
+      "#Entscheidung",
+      "#AP1"
     ],
     "url": ""
   },
@@ -5244,7 +5815,10 @@
     "topic": "IT-Sicherheit",
     "subtopic": "OAuth 2.0",
     "hashtags": [
-      "#ITSicherheit",
+      "#OAuth",
+      "#OpenID",
+      "#API",
+      "#Authentifizierung",
       "#AP1"
     ],
     "url": ""
@@ -5261,7 +5835,7 @@
     "topic": "Allgemein",
     "subtopic": "OCR (Zeichenerkennung)",
     "hashtags": [
-      "#Allgemein",
+      "#OCRZeichenerkennung",
       "#AP1"
     ],
     "url": ""
@@ -5278,7 +5852,10 @@
     "topic": "Netzwerk",
     "subtopic": "OSI-Modell",
     "hashtags": [
-      "#Netzwerk",
+      "#OSI",
+      "#TCP",
+      "#IP",
+      "#Schichtenmodell",
       "#AP1"
     ],
     "url": ""
@@ -5295,9 +5872,9 @@
     "topic": "Allgemein",
     "subtopic": "Oekologische Ziele (Unternehmen)",
     "hashtags": [
-      "#Allgemein",
-      "#AP1",
-      "#Ökologisch"
+      "#OekologischeZieleUnternehmen",
+      "#GreenIT",
+      "#AP1"
     ],
     "url": ""
   },
@@ -5313,9 +5890,9 @@
     "topic": "Allgemein",
     "subtopic": "Oekonomische Ziele (Unternehmen)",
     "hashtags": [
-      "#Allgemein",
-      "#AP1",
-      "#Ökonomisch"
+      "#OekonomischeZieleUnternehmen",
+      "#Wirtschaft",
+      "#AP1"
     ],
     "url": ""
   },
@@ -5331,7 +5908,7 @@
     "topic": "Allgemein",
     "subtopic": "POST (Power-On Self-Test)",
     "hashtags": [
-      "#Allgemein",
+      "#POSTPowerOnSelfTest",
       "#AP1"
     ],
     "url": ""
@@ -5348,9 +5925,11 @@
     "topic": "Nachhaltigkeit",
     "subtopic": "PUE-Wert",
     "hashtags": [
-      "#Nachhaltigkeit",
-      "#AP1",
-      "#Ökologisch"
+      "#PUE",
+      "#Rechenzentrum",
+      "#GreenIT",
+      "#Energieeffizienz",
+      "#AP1"
     ],
     "url": ""
   },
@@ -5366,7 +5945,10 @@
     "topic": "Cloud & Virtualisierung",
     "subtopic": "PaaS",
     "hashtags": [
-      "#CloudVirtualisierung",
+      "#PaaS",
+      "#Plattform",
+      "#Cloud",
+      "#Entwicklung",
       "#AP1"
     ],
     "url": ""
@@ -5383,7 +5965,10 @@
     "topic": "IT-Sicherheit",
     "subtopic": "Passwortrichtlinie",
     "hashtags": [
-      "#ITSicherheit",
+      "#Passwort",
+      "#MFA",
+      "#Komplexität",
+      "#Sicherheit",
       "#AP1"
     ],
     "url": ""
@@ -5400,7 +5985,10 @@
     "topic": "IT-Sicherheit",
     "subtopic": "Penetrationstest",
     "hashtags": [
-      "#ITSicherheit",
+      "#Pentest",
+      "#Schwachstellen",
+      "#Whitebox",
+      "#Blackbox",
       "#AP1"
     ],
     "url": ""
@@ -5417,6 +6005,9 @@
     "topic": "Hardware",
     "subtopic": "Peripherieanschlüsse",
     "hashtags": [
+      "#USB",
+      "#Peripherie",
+      "#Anschlüsse",
       "#Hardware",
       "#AP1"
     ],
@@ -5434,9 +6025,11 @@
     "topic": "Datenschutz",
     "subtopic": "Personenbezogene Daten",
     "hashtags": [
+      "#DSGVO",
+      "#Art4",
       "#Datenschutz",
-      "#AP1",
-      "#Sozial"
+      "#Betroffene",
+      "#AP1"
     ],
     "url": ""
   },
@@ -5452,7 +6045,10 @@
     "topic": "IT-Sicherheit",
     "subtopic": "Phishing",
     "hashtags": [
-      "#ITSicherheit",
+      "#Phishing",
+      "#SocialEngineering",
+      "#Email",
+      "#Sicherheit",
       "#AP1"
     ],
     "url": ""
@@ -5469,6 +6065,9 @@
     "topic": "Netzwerk",
     "subtopic": "Ping",
     "hashtags": [
+      "#Ping",
+      "#ICMP",
+      "#Diagnose",
       "#Netzwerk",
       "#AP1"
     ],
@@ -5486,7 +6085,10 @@
     "topic": "Netzwerk",
     "subtopic": "Portweiterleitung",
     "hashtags": [
-      "#Netzwerk",
+      "#Port",
+      "#NAT",
+      "#Firewall",
+      "#Router",
       "#AP1"
     ],
     "url": ""
@@ -5503,9 +6105,9 @@
     "topic": "Allgemein",
     "subtopic": "Preiskalkulation",
     "hashtags": [
-      "#Allgemein",
-      "#AP1",
-      "#Berechnung"
+      "#Preiskalkulation",
+      "#Berechnung",
+      "#AP1"
     ],
     "url": ""
   },
@@ -5521,9 +6123,11 @@
     "topic": "Wirtschaft",
     "subtopic": "Preisnachlass (Rabatt / Skonto)",
     "hashtags": [
-      "#Wirtschaft",
-      "#AP1",
-      "#Ökonomisch"
+      "#Rabatt",
+      "#Skonto",
+      "#Kalkulation",
+      "#Bezugspreis",
+      "#AP1"
     ],
     "url": ""
   },
@@ -5539,7 +6143,7 @@
     "topic": "Allgemein",
     "subtopic": "Primaerschluessel",
     "hashtags": [
-      "#Allgemein",
+      "#Primaerschluessel",
       "#AP1"
     ],
     "url": ""
@@ -5556,7 +6160,10 @@
     "topic": "IT-Service-Management",
     "subtopic": "Problem Management",
     "hashtags": [
-      "#ITServiceManagement",
+      "#Problem",
+      "#ITIL",
+      "#Ursache",
+      "#Workaround",
       "#AP1"
     ],
     "url": ""
@@ -5573,9 +6180,11 @@
     "topic": "WiSo Unternehmen & Wirtschaft",
     "subtopic": "Produktivität / Wirtschaftlichkeit / Rentabilität",
     "hashtags": [
-      "#WiSoUnternehmenWirtschaft",
-      "#AP1",
-      "#Ökonomisch"
+      "#Produktivität",
+      "#ROI",
+      "#Wirtschaftlichkeit",
+      "#KPI",
+      "#AP1"
     ],
     "url": ""
   },
@@ -5591,7 +6200,7 @@
     "topic": "Allgemein",
     "subtopic": "Programmablaufplan",
     "hashtags": [
-      "#Allgemein",
+      "#Programmablaufplan",
       "#AP1"
     ],
     "url": ""
@@ -5608,6 +6217,9 @@
     "topic": "Programmierung",
     "subtopic": "Programmiersprachen (Auswahl)",
     "hashtags": [
+      "#Python",
+      "#Java",
+      "#JavaScript",
       "#Programmierung",
       "#AP1"
     ],
@@ -5625,7 +6237,10 @@
     "topic": "Projektmanagement",
     "subtopic": "Projektmanagement-Methoden",
     "hashtags": [
-      "#Projektmanagement",
+      "#Wasserfall",
+      "#Scrum",
+      "#Kanban",
+      "#Hybrid",
       "#AP1"
     ],
     "url": ""
@@ -5642,7 +6257,7 @@
     "topic": "Allgemein",
     "subtopic": "Projektmerkmale",
     "hashtags": [
-      "#Allgemein",
+      "#Projektmerkmale",
       "#AP1"
     ],
     "url": ""
@@ -5659,7 +6274,7 @@
     "topic": "Allgemein",
     "subtopic": "Projektstrukturplan",
     "hashtags": [
-      "#Allgemein",
+      "#Projektstrukturplan",
       "#AP1"
     ],
     "url": ""
@@ -5676,7 +6291,10 @@
     "topic": "Künstliche Intelligenz",
     "subtopic": "Prompt Engineering",
     "hashtags": [
-      "#KünstlicheIntelligenz",
+      "#Prompt",
+      "#LLM",
+      "#KI",
+      "#ChatGPT",
       "#AP1"
     ],
     "url": ""
@@ -5693,7 +6311,10 @@
     "topic": "Netzwerk",
     "subtopic": "Protokolltypen (Überblick)",
     "hashtags": [
-      "#Netzwerk",
+      "#TCP",
+      "#UDP",
+      "#HTTP",
+      "#Protokoll",
       "#AP1"
     ],
     "url": ""
@@ -5710,6 +6331,9 @@
     "topic": "Netzwerk",
     "subtopic": "Proxy-Server",
     "hashtags": [
+      "#Proxy",
+      "#Caching",
+      "#Anonymisierung",
       "#Netzwerk",
       "#AP1"
     ],
@@ -5727,7 +6351,10 @@
     "topic": "Programmierung",
     "subtopic": "Pseudocode",
     "hashtags": [
+      "#Pseudocode",
+      "#Algorithmus",
       "#Programmierung",
+      "#Logik",
       "#AP1"
     ],
     "url": ""
@@ -5744,7 +6371,7 @@
     "topic": "Allgemein",
     "subtopic": "QR-Code",
     "hashtags": [
-      "#Allgemein",
+      "#QRCode",
       "#AP1"
     ],
     "url": ""
@@ -5761,6 +6388,9 @@
     "topic": "Netzwerk",
     "subtopic": "QoS",
     "hashtags": [
+      "#QoS",
+      "#Priorisierung",
+      "#Bandbreite",
       "#Netzwerk",
       "#AP1"
     ],
@@ -5778,7 +6408,7 @@
     "topic": "Allgemein",
     "subtopic": "Quellcode",
     "hashtags": [
-      "#Allgemein",
+      "#Quellcode",
       "#AP1"
     ],
     "url": ""
@@ -5795,7 +6425,10 @@
     "topic": "Künstliche Intelligenz",
     "subtopic": "RAG (Retrieval-Augmented Generation)",
     "hashtags": [
-      "#KünstlicheIntelligenz",
+      "#RAG",
+      "#LLM",
+      "#KI",
+      "#Retrieval",
       "#AP1"
     ],
     "url": ""
@@ -5812,7 +6445,10 @@
     "topic": "Hardware",
     "subtopic": "RAID",
     "hashtags": [
-      "#Hardware",
+      "#RAID",
+      "#Redundanz",
+      "#RAID5",
+      "#Datenspeicher",
       "#AP1"
     ],
     "url": ""
@@ -5829,7 +6465,10 @@
     "topic": "Hardware",
     "subtopic": "RAID-Level",
     "hashtags": [
-      "#Hardware",
+      "#RAID0",
+      "#RAID1",
+      "#RAID5",
+      "#RAID10",
       "#AP1"
     ],
     "url": ""
@@ -5846,7 +6485,10 @@
     "topic": "Hardware",
     "subtopic": "RAM",
     "hashtags": [
-      "#Hardware",
+      "#RAM",
+      "#Arbeitsspeicher",
+      "#DDR",
+      "#Speicher",
       "#AP1"
     ],
     "url": ""
@@ -5863,6 +6505,9 @@
     "topic": "Kommunikation",
     "subtopic": "RFID",
     "hashtags": [
+      "#RFID",
+      "#Funk",
+      "#Identifikation",
       "#Kommunikation",
       "#AP1"
     ],
@@ -5880,7 +6525,10 @@
     "topic": "Hardware",
     "subtopic": "RGB-Farbraum",
     "hashtags": [
-      "#Hardware",
+      "#RGB",
+      "#Farbraum",
+      "#Monitor",
+      "#Grafik",
       "#AP1"
     ],
     "url": ""
@@ -5897,6 +6545,9 @@
     "topic": "Netzwerk",
     "subtopic": "RJ-45",
     "hashtags": [
+      "#RJ45",
+      "#Ethernet",
+      "#Kabel",
       "#Netzwerk",
       "#AP1"
     ],
@@ -5914,9 +6565,9 @@
     "topic": "Allgemein",
     "subtopic": "ROI (Return on Investment)",
     "hashtags": [
-      "#Allgemein",
-      "#AP1",
-      "#Ökonomisch"
+      "#ROIReturnonInvestment",
+      "#Wirtschaft",
+      "#AP1"
     ],
     "url": ""
   },
@@ -5932,7 +6583,10 @@
     "topic": "IT-Sicherheit",
     "subtopic": "RSA",
     "hashtags": [
-      "#ITSicherheit",
+      "#RSA",
+      "#Asymmetrisch",
+      "#PublicKey",
+      "#Verschlüsselung",
       "#AP1"
     ],
     "url": ""
@@ -5949,7 +6603,10 @@
     "topic": "IT-Service-Management",
     "subtopic": "RTO / RPO",
     "hashtags": [
-      "#ITServiceManagement",
+      "#RTO",
+      "#RPO",
+      "#Backup",
+      "#Disaster Recovery",
       "#AP1"
     ],
     "url": ""
@@ -5966,9 +6623,11 @@
     "topic": "Wirtschaft",
     "subtopic": "Rabatt und Skonto",
     "hashtags": [
-      "#Wirtschaft",
-      "#AP1",
-      "#Ökonomisch"
+      "#Rabatt",
+      "#Skonto",
+      "#Bezugspreis",
+      "#Kalkulation",
+      "#AP1"
     ],
     "url": ""
   },
@@ -5984,7 +6643,10 @@
     "topic": "IT-Sicherheit",
     "subtopic": "Ransomware",
     "hashtags": [
-      "#ITSicherheit",
+      "#Ransomware",
+      "#Malware",
+      "#Verschlüsselung",
+      "#Backup",
       "#AP1"
     ],
     "url": ""
@@ -6001,9 +6663,11 @@
     "topic": "Wirtschaft",
     "subtopic": "Ratendarlehen",
     "hashtags": [
-      "#Wirtschaft",
-      "#AP1",
-      "#Ökonomisch"
+      "#Ratendarlehen",
+      "#Berechnung",
+      "#Tilgung",
+      "#Zinsen",
+      "#AP1"
     ],
     "url": ""
   },
@@ -6019,9 +6683,9 @@
     "topic": "Berechnung",
     "subtopic": "Rechnung prüfen",
     "hashtags": [
+      "#Rechnungprüfen",
       "#Berechnung",
-      "#AP1",
-      "#Berechnung"
+      "#AP1"
     ],
     "url": ""
   },
@@ -6037,9 +6701,11 @@
     "topic": "Datenschutz",
     "subtopic": "Recht auf Vergessenwerden",
     "hashtags": [
+      "#Art17",
+      "#DSGVO",
+      "#Löschung",
       "#Datenschutz",
-      "#AP1",
-      "#Sozial"
+      "#AP1"
     ],
     "url": ""
   },
@@ -6055,9 +6721,11 @@
     "topic": "WiSo Unternehmen & Wirtschaft",
     "subtopic": "Rechtsformen (Unternehmen)",
     "hashtags": [
-      "#WiSoUnternehmenWirtschaft",
-      "#AP1",
-      "#Ökonomisch"
+      "#GmbH",
+      "#AG",
+      "#GbR",
+      "#Rechtsform",
+      "#AP1"
     ],
     "url": ""
   },
@@ -6073,7 +6741,10 @@
     "topic": "Netzwerk",
     "subtopic": "Redundanz (IT)",
     "hashtags": [
-      "#Netzwerk",
+      "#Redundanz",
+      "#Hochverfügbarkeit",
+      "#Failover",
+      "#RAID",
       "#AP1"
     ],
     "url": ""
@@ -6090,9 +6761,11 @@
     "topic": "WiSo Sicherheit & Umwelt",
     "subtopic": "Regenerative Energien",
     "hashtags": [
-      "#WiSoSicherheitUmwelt",
-      "#AP1",
-      "#Ökologisch"
+      "#Solar",
+      "#Wind",
+      "#GreenIT",
+      "#Nachhaltigkeit",
+      "#AP1"
     ],
     "url": ""
   },
@@ -6108,9 +6781,11 @@
     "topic": "Nachhaltigkeit",
     "subtopic": "RoHS-Richtlinie",
     "hashtags": [
-      "#Nachhaltigkeit",
-      "#AP1",
-      "#Ökologisch"
+      "#RoHS",
+      "#EU",
+      "#Schadstoffe",
+      "#Recht",
+      "#AP1"
     ],
     "url": ""
   },
@@ -6126,7 +6801,10 @@
     "topic": "Projektmanagement",
     "subtopic": "Rollout",
     "hashtags": [
-      "#Projektmanagement",
+      "#Rollout",
+      "#Deployment",
+      "#Patch",
+      "#Update",
       "#AP1"
     ],
     "url": ""
@@ -6143,7 +6821,10 @@
     "topic": "Netzwerk",
     "subtopic": "Router",
     "hashtags": [
-      "#Netzwerk",
+      "#Router",
+      "#OSI3",
+      "#Routing",
+      "#Gateway",
       "#AP1"
     ],
     "url": ""
@@ -6160,7 +6841,10 @@
     "topic": "Allgemein",
     "subtopic": "Routing",
     "hashtags": [
-      "#Allgemein",
+      "#Routing",
+      "#Router",
+      "#BGP",
+      "#OSPF",
       "#AP1"
     ],
     "url": ""
@@ -6177,9 +6861,9 @@
     "topic": "Allgemein",
     "subtopic": "Rueckwaertskalkulation",
     "hashtags": [
-      "#Allgemein",
-      "#AP1",
-      "#Berechnung"
+      "#Rueckwaertskalkulation",
+      "#Berechnung",
+      "#AP1"
     ],
     "url": ""
   },
@@ -6195,7 +6879,10 @@
     "topic": "Hardware",
     "subtopic": "S.M.A.R.T.",
     "hashtags": [
-      "#Hardware",
+      "#SMART",
+      "#Festplatte",
+      "#Diagnose",
+      "#Monitoring",
       "#AP1"
     ],
     "url": ""
@@ -6212,7 +6899,10 @@
     "topic": "Hardware",
     "subtopic": "SAN",
     "hashtags": [
-      "#Hardware",
+      "#SAN",
+      "#Storage",
+      "#Fibre",
+      "#Datenspeicher",
       "#AP1"
     ],
     "url": ""
@@ -6229,7 +6919,7 @@
     "topic": "Allgemein",
     "subtopic": "SATA",
     "hashtags": [
-      "#Allgemein",
+      "#SATA",
       "#AP1"
     ],
     "url": ""
@@ -6246,7 +6936,10 @@
     "topic": "Allgemein",
     "subtopic": "SHA-256",
     "hashtags": [
-      "#Allgemein",
+      "#SHA256",
+      "#Hash",
+      "#Kryptografie",
+      "#Integrität",
       "#AP1"
     ],
     "url": ""
@@ -6281,6 +6974,9 @@
     "topic": "Netzwerk",
     "subtopic": "SLAAC",
     "hashtags": [
+      "#SLAAC",
+      "#IPv6",
+      "#Autokonfiguration",
       "#Netzwerk",
       "#AP1"
     ],
@@ -6298,7 +6994,10 @@
     "topic": "Projektmanagement",
     "subtopic": "SMART-Kriterien",
     "hashtags": [
+      "#SMART",
+      "#Ziele",
       "#Projektmanagement",
+      "#Messbar",
       "#AP1"
     ],
     "url": ""
@@ -6315,7 +7014,8 @@
     "topic": "Allgemein",
     "subtopic": "SMART-Prinzip",
     "hashtags": [
-      "#Allgemein",
+      "#SMARTPrinzip",
+      "#Netzwerk",
       "#AP1"
     ],
     "url": ""
@@ -6332,7 +7032,10 @@
     "topic": "Allgemein",
     "subtopic": "SMTP",
     "hashtags": [
-      "#Allgemein",
+      "#SMTP",
+      "#Email",
+      "#Port25",
+      "#Protokoll",
       "#AP1"
     ],
     "url": ""
@@ -6349,7 +7052,10 @@
     "topic": "Netzwerk",
     "subtopic": "SNMP",
     "hashtags": [
-      "#Netzwerk",
+      "#SNMP",
+      "#Monitoring",
+      "#Netzwerkmanagement",
+      "#UDP",
       "#AP1"
     ],
     "url": ""
@@ -6366,7 +7072,10 @@
     "topic": "IT-Sicherheit",
     "subtopic": "SPF",
     "hashtags": [
-      "#ITSicherheit",
+      "#SPF",
+      "#Email",
+      "#DKIM",
+      "#DNS",
       "#AP1"
     ],
     "url": ""
@@ -6383,7 +7092,10 @@
     "topic": "Programmierung",
     "subtopic": "SQL Grundlagen",
     "hashtags": [
-      "#Programmierung",
+      "#SQL",
+      "#SELECT",
+      "#WHERE",
+      "#Datenbank",
       "#AP1"
     ],
     "url": ""
@@ -6400,7 +7112,10 @@
     "topic": "Programmierung",
     "subtopic": "SQL JOIN",
     "hashtags": [
-      "#Programmierung",
+      "#JOIN",
+      "#INNER",
+      "#LEFT",
+      "#SQL",
       "#AP1"
     ],
     "url": ""
@@ -6417,7 +7132,10 @@
     "topic": "Programmierung",
     "subtopic": "SQL SELECT",
     "hashtags": [
-      "#Programmierung",
+      "#SELECT",
+      "#SQL",
+      "#WHERE",
+      "#ORDER BY",
       "#AP1"
     ],
     "url": ""
@@ -6434,7 +7152,10 @@
     "topic": "Hardware",
     "subtopic": "SSD",
     "hashtags": [
-      "#Hardware",
+      "#SSD",
+      "#Flash",
+      "#Datenspeicher",
+      "#NVMe",
       "#AP1"
     ],
     "url": ""
@@ -6451,7 +7172,10 @@
     "topic": "Cloud & Virtualisierung",
     "subtopic": "SaaS",
     "hashtags": [
-      "#CloudVirtualisierung",
+      "#SaaS",
+      "#Cloud",
+      "#Abonnement",
+      "#Software",
       "#AP1"
     ],
     "url": ""
@@ -6468,9 +7192,11 @@
     "topic": "Wirtschaft",
     "subtopic": "SaaS vs. On-Premise",
     "hashtags": [
-      "#Wirtschaft",
-      "#AP1",
-      "#Ökonomisch"
+      "#SaaS",
+      "#OnPremise",
+      "#OPEX",
+      "#CAPEX",
+      "#AP1"
     ],
     "url": ""
   },
@@ -6486,7 +7212,7 @@
     "topic": "Allgemein",
     "subtopic": "Schleife",
     "hashtags": [
-      "#Allgemein",
+      "#Schleife",
       "#AP1"
     ],
     "url": ""
@@ -6503,7 +7229,10 @@
     "topic": "Projektmanagement",
     "subtopic": "Schreibtischtest",
     "hashtags": [
-      "#Projektmanagement",
+      "#Schreibtischtest",
+      "#Testen",
+      "#Algorithmus",
+      "#Programmierung",
       "#AP1"
     ],
     "url": ""
@@ -6520,7 +7249,10 @@
     "topic": "IT-Sicherheit",
     "subtopic": "Schutzbedarf",
     "hashtags": [
-      "#ITSicherheit",
+      "#Normal",
+      "#Hoch",
+      "#SehrHoch",
+      "#BSI",
       "#AP1"
     ],
     "url": ""
@@ -6537,7 +7269,10 @@
     "topic": "IT-Sicherheit",
     "subtopic": "Schutzziele (CIA)",
     "hashtags": [
-      "#ITSicherheit",
+      "#CIA",
+      "#Vertraulichkeit",
+      "#Integrität",
+      "#Verfügbarkeit",
       "#AP1"
     ],
     "url": ""
@@ -6554,7 +7289,10 @@
     "topic": "IT-Sicherheit",
     "subtopic": "Schwachstellenmanagement",
     "hashtags": [
-      "#ITSicherheit",
+      "#CVE",
+      "#CVSS",
+      "#Patch",
+      "#Sicherheit",
       "#AP1"
     ],
     "url": ""
@@ -6571,7 +7309,10 @@
     "topic": "Barrierefreiheit",
     "subtopic": "Screenreader",
     "hashtags": [
+      "#Screenreader",
       "#Barrierefreiheit",
+      "#NVDA",
+      "#JAWS",
       "#AP1"
     ],
     "url": ""
@@ -6588,7 +7329,10 @@
     "topic": "Projektmanagement",
     "subtopic": "Scrum",
     "hashtags": [
-      "#Projektmanagement",
+      "#Scrum",
+      "#Sprint",
+      "#Backlog",
+      "#Agile",
       "#AP1"
     ],
     "url": ""
@@ -6605,7 +7349,7 @@
     "topic": "Allgemein",
     "subtopic": "Secure Boot",
     "hashtags": [
-      "#Allgemein",
+      "#SecureBoot",
       "#AP1"
     ],
     "url": ""
@@ -6622,7 +7366,7 @@
     "topic": "Allgemein",
     "subtopic": "Sequenz",
     "hashtags": [
-      "#Allgemein",
+      "#Sequenz",
       "#AP1"
     ],
     "url": ""
@@ -6639,9 +7383,11 @@
     "topic": "IT-Sicherheit",
     "subtopic": "Social Engineering",
     "hashtags": [
-      "#ITSicherheit",
-      "#AP1",
-      "#Sozial"
+      "#SocialEngineering",
+      "#Phishing",
+      "#Pretexting",
+      "#Sicherheit",
+      "#AP1"
     ],
     "url": ""
   },
@@ -6657,7 +7403,7 @@
     "topic": "Allgemein",
     "subtopic": "Softwarelebenszyklus",
     "hashtags": [
-      "#Allgemein",
+      "#Softwarelebenszyklus",
       "#AP1"
     ],
     "url": ""
@@ -6674,9 +7420,11 @@
     "topic": "WiSo Unternehmen & Wirtschaft",
     "subtopic": "Soziale Marktwirtschaft",
     "hashtags": [
-      "#WiSoUnternehmenWirtschaft",
-      "#AP1",
-      "#Ökonomisch"
+      "#Marktwirtschaft",
+      "#Sozial",
+      "#Ordnungspolitik",
+      "#Wirtschaft",
+      "#AP1"
     ],
     "url": ""
   },
@@ -6692,9 +7440,9 @@
     "topic": "Allgemein",
     "subtopic": "Soziale Ziele (Unternehmen)",
     "hashtags": [
-      "#Allgemein",
-      "#AP1",
-      "#Sozial"
+      "#SozialeZieleUnternehmen",
+      "#Sozial",
+      "#AP1"
     ],
     "url": ""
   },
@@ -6710,9 +7458,11 @@
     "topic": "WiSo Ausbildung & Arbeitsrecht",
     "subtopic": "Sozialversicherung",
     "hashtags": [
-      "#WiSoAusbildungArbeitsrecht",
-      "#AP1",
-      "#Sozial"
+      "#SV",
+      "#Krankenversicherung",
+      "#Rentenversicherung",
+      "#Abzüge",
+      "#AP1"
     ],
     "url": ""
   },
@@ -6728,7 +7478,7 @@
     "topic": "Allgemein",
     "subtopic": "Spiralmodell",
     "hashtags": [
-      "#Allgemein",
+      "#Spiralmodell",
       "#AP1"
     ],
     "url": ""
@@ -6745,9 +7495,11 @@
     "topic": "Projektmanagement",
     "subtopic": "Stakeholder",
     "hashtags": [
+      "#Stakeholder",
       "#Projektmanagement",
-      "#AP1",
-      "#Sozial"
+      "#Kommunikation",
+      "#Analyse",
+      "#AP1"
     ],
     "url": ""
   },
@@ -6763,9 +7515,11 @@
     "topic": "Nachhaltigkeit",
     "subtopic": "Stromkosten-Berechnung",
     "hashtags": [
-      "#Nachhaltigkeit",
-      "#AP1",
-      "#Ökonomisch"
+      "#Stromkosten",
+      "#Berechnung",
+      "#kWh",
+      "#Effizienz",
+      "#AP1"
     ],
     "url": ""
   },
@@ -6781,7 +7535,10 @@
     "topic": "Programmierung",
     "subtopic": "Struktogramm",
     "hashtags": [
-      "#Programmierung",
+      "#Struktogramm",
+      "#Nassi",
+      "#Algorithmus",
+      "#Diagramm",
       "#AP1"
     ],
     "url": ""
@@ -6798,9 +7555,11 @@
     "topic": "Wirtschaft",
     "subtopic": "Stundensatz-Kalkulation",
     "hashtags": [
-      "#Wirtschaft",
-      "#AP1",
-      "#Ökonomisch"
+      "#Stundensatz",
+      "#Kalkulation",
+      "#Berechnung",
+      "#Personalkosten",
+      "#AP1"
     ],
     "url": ""
   },
@@ -6816,7 +7575,10 @@
     "topic": "Netzwerk",
     "subtopic": "Subnetting",
     "hashtags": [
-      "#Netzwerk",
+      "#Subnetting",
+      "#CIDR",
+      "#IPv4",
+      "#Netzmaske",
       "#AP1"
     ],
     "url": ""
@@ -6833,7 +7595,10 @@
     "topic": "Netzwerk",
     "subtopic": "Switch",
     "hashtags": [
-      "#Netzwerk",
+      "#Switch",
+      "#OSI2",
+      "#MAC",
+      "#VLAN",
       "#AP1"
     ],
     "url": ""
@@ -6850,9 +7615,11 @@
     "topic": "Wirtschaft",
     "subtopic": "TCO",
     "hashtags": [
-      "#Wirtschaft",
-      "#AP1",
-      "#Ökonomisch"
+      "#TCO",
+      "#Gesamtkosten",
+      "#CAPEX",
+      "#OPEX",
+      "#AP1"
     ],
     "url": ""
   },
@@ -6868,7 +7635,10 @@
     "topic": "Netzwerk",
     "subtopic": "TCP",
     "hashtags": [
-      "#Netzwerk",
+      "#TCP",
+      "#Verbindungsorientiert",
+      "#OSI4",
+      "#3WayHandshake",
       "#AP1"
     ],
     "url": ""
@@ -6885,9 +7655,9 @@
     "topic": "Allgemein",
     "subtopic": "TDP (Thermal Design Power)",
     "hashtags": [
-      "#Allgemein",
-      "#AP1",
-      "#Ökologisch"
+      "#TDPThermalDesignPower",
+      "#GreenIT",
+      "#AP1"
     ],
     "url": ""
   },
@@ -6903,7 +7673,10 @@
     "topic": "Netzwerk",
     "subtopic": "TLS",
     "hashtags": [
-      "#Netzwerk",
+      "#TLS",
+      "#SSL",
+      "#Verschlüsselung",
+      "#HTTPS",
       "#AP1"
     ],
     "url": ""
@@ -6920,9 +7693,11 @@
     "topic": "IT-Sicherheit",
     "subtopic": "TOM",
     "hashtags": [
-      "#ITSicherheit",
-      "#AP1",
-      "#Sozial"
+      "#TOM",
+      "#Art32",
+      "#DSGVO",
+      "#Datenschutz",
+      "#AP1"
     ],
     "url": ""
   },
@@ -6938,7 +7713,10 @@
     "topic": "Hardware",
     "subtopic": "TPM",
     "hashtags": [
-      "#Hardware",
+      "#TPM",
+      "#BitLocker",
+      "#Sicherheitschip",
+      "#UEFI",
       "#AP1"
     ],
     "url": ""
@@ -6955,9 +7733,11 @@
     "topic": "WiSo Ausbildung & Arbeitsrecht",
     "subtopic": "Tarifautonomie",
     "hashtags": [
-      "#WiSoAusbildungArbeitsrecht",
-      "#AP1",
-      "#Sozial"
+      "#Tarifautonomie",
+      "#Gewerkschaft",
+      "#Arbeitgeber",
+      "#Recht",
+      "#AP1"
     ],
     "url": ""
   },
@@ -6973,9 +7753,11 @@
     "topic": "WiSo Ausbildung & Arbeitsrecht",
     "subtopic": "Tarifvertrag",
     "hashtags": [
-      "#WiSoAusbildungArbeitsrecht",
-      "#AP1",
-      "#Sozial"
+      "#Tarifvertrag",
+      "#Gewerkschaft",
+      "#Lohn",
+      "#Arbeitsrecht",
+      "#AP1"
     ],
     "url": ""
   },
@@ -6991,7 +7773,10 @@
     "topic": "Barrierefreiheit",
     "subtopic": "Tastaturzugänglichkeit",
     "hashtags": [
+      "#Tastatur",
+      "#Tab",
       "#Barrierefreiheit",
+      "#WCAG",
       "#AP1"
     ],
     "url": ""
@@ -7008,9 +7793,9 @@
     "topic": "Allgemein",
     "subtopic": "Teambildung (Tuckman)",
     "hashtags": [
-      "#Allgemein",
-      "#AP1",
-      "#Sozial"
+      "#TeambildungTuckman",
+      "#Sozial",
+      "#AP1"
     ],
     "url": ""
   },
@@ -7026,9 +7811,11 @@
     "topic": "Datenschutz",
     "subtopic": "Telearbeitsplatz",
     "hashtags": [
-      "#Datenschutz",
-      "#AP1",
-      "#Sozial"
+      "#Telearbeit",
+      "#ArbStättV",
+      "#Homeoffice",
+      "#DSGVO",
+      "#AP1"
     ],
     "url": ""
   },
@@ -7044,9 +7831,11 @@
     "topic": "Allgemein",
     "subtopic": "Thin Client",
     "hashtags": [
-      "#Allgemein",
-      "#AP1",
-      "#Ökologisch"
+      "#ThinClient",
+      "#VDI",
+      "#Terminal",
+      "#Cloud",
+      "#AP1"
     ],
     "url": ""
   },
@@ -7062,9 +7851,9 @@
     "topic": "Berechnung",
     "subtopic": "Tilgungsplan",
     "hashtags": [
+      "#Tilgungsplan",
       "#Berechnung",
-      "#AP1",
-      "#Berechnung"
+      "#AP1"
     ],
     "url": ""
   },
@@ -7080,7 +7869,10 @@
     "topic": "Netzwerk",
     "subtopic": "Traceroute",
     "hashtags": [
-      "#Netzwerk",
+      "#Traceroute",
+      "#TTL",
+      "#Hops",
+      "#Diagnose",
       "#AP1"
     ],
     "url": ""
@@ -7097,7 +7889,10 @@
     "topic": "IT-Sicherheit",
     "subtopic": "Trojaner",
     "hashtags": [
-      "#ITSicherheit",
+      "#Trojaner",
+      "#Malware",
+      "#Backdoor",
+      "#Sicherheit",
       "#AP1"
     ],
     "url": ""
@@ -7114,7 +7909,10 @@
     "topic": "Netzwerk",
     "subtopic": "UDP",
     "hashtags": [
-      "#Netzwerk",
+      "#UDP",
+      "#Verbindungslos",
+      "#OSI4",
+      "#Streaming",
       "#AP1"
     ],
     "url": ""
@@ -7131,7 +7929,10 @@
     "topic": "Projektmanagement",
     "subtopic": "UML Aktivitätsdiagramm",
     "hashtags": [
-      "#Projektmanagement",
+      "#UML",
+      "#Aktivität",
+      "#Diagramm",
+      "#Prozess",
       "#AP1"
     ],
     "url": ""
@@ -7148,7 +7949,10 @@
     "topic": "Projektmanagement",
     "subtopic": "UML Use-Case-Diagramm",
     "hashtags": [
-      "#Projektmanagement",
+      "#UML",
+      "#UseCase",
+      "#Akteur",
+      "#Anforderung",
       "#AP1"
     ],
     "url": ""
@@ -7165,7 +7969,10 @@
     "topic": "Hardware",
     "subtopic": "USB-Standards",
     "hashtags": [
-      "#Hardware",
+      "#USB",
+      "#USB3",
+      "#USB4",
+      "#Thunderbolt",
       "#AP1"
     ],
     "url": ""
@@ -7182,7 +7989,10 @@
     "topic": "Allgemein",
     "subtopic": "USV (Unterbrechungsfreie Stromversorgung)",
     "hashtags": [
-      "#Allgemein",
+      "#USV",
+      "#Stromversorgung",
+      "#Backup",
+      "#Hardware",
       "#AP1"
     ],
     "url": ""
@@ -7199,9 +8009,9 @@
     "topic": "Allgemein",
     "subtopic": "Umsatz",
     "hashtags": [
-      "#Allgemein",
-      "#AP1",
-      "#Ökonomisch"
+      "#Umsatz",
+      "#Wirtschaft",
+      "#AP1"
     ],
     "url": ""
   },
@@ -7217,9 +8027,11 @@
     "topic": "WiSo Sicherheit & Umwelt",
     "subtopic": "Umweltschutz (betrieblich)",
     "hashtags": [
-      "#WiSoSicherheitUmwelt",
-      "#AP1",
-      "#Ökologisch"
+      "#Umweltschutz",
+      "#ISO14001",
+      "#GreenIT",
+      "#Nachhaltigkeit",
+      "#AP1"
     ],
     "url": ""
   },
@@ -7235,9 +8047,11 @@
     "topic": "WiSo Sicherheit & Umwelt",
     "subtopic": "Unfallverhütung",
     "hashtags": [
-      "#WiSoSicherheitUmwelt",
-      "#AP1",
-      "#Sozial"
+      "#Unfallverhütung",
+      "#BGV",
+      "#DGUV",
+      "#Arbeitsschutz",
+      "#AP1"
     ],
     "url": ""
   },
@@ -7253,7 +8067,10 @@
     "topic": "Allgemein",
     "subtopic": "Unicast",
     "hashtags": [
-      "#Allgemein",
+      "#Unicast",
+      "#Broadcast",
+      "#Multicast",
+      "#Netzwerk",
       "#AP1"
     ],
     "url": ""
@@ -7270,7 +8087,10 @@
     "topic": "WiSo Unternehmen & Wirtschaft",
     "subtopic": "Unternehmensorganisation",
     "hashtags": [
-      "#WiSoUnternehmenWirtschaft",
+      "#Organigramm",
+      "#Linie",
+      "#Stab",
+      "#Matrix",
       "#AP1"
     ],
     "url": ""
@@ -7287,7 +8107,10 @@
     "topic": "Netzwerk",
     "subtopic": "VLAN",
     "hashtags": [
-      "#Netzwerk",
+      "#VLAN",
+      "#Switch",
+      "#802.1Q",
+      "#Netzwerksegmentierung",
       "#AP1"
     ],
     "url": ""
@@ -7304,7 +8127,10 @@
     "topic": "Netzwerk",
     "subtopic": "VPN",
     "hashtags": [
-      "#Netzwerk",
+      "#VPN",
+      "#IPSec",
+      "#Tunnel",
+      "#Verschlüsselung",
       "#AP1"
     ],
     "url": ""
@@ -7321,9 +8147,11 @@
     "topic": "Datenschutz",
     "subtopic": "Verarbeitungsverzeichnis",
     "hashtags": [
+      "#Art30",
+      "#DSGVO",
       "#Datenschutz",
-      "#AP1",
-      "#Sozial"
+      "#Dokumentation",
+      "#AP1"
     ],
     "url": ""
   },
@@ -7339,7 +8167,10 @@
     "topic": "IT-Service-Management",
     "subtopic": "Verfügbarkeit",
     "hashtags": [
-      "#ITServiceManagement",
+      "#Verfügbarkeit",
+      "#MTBF",
+      "#SLA",
+      "#Berechnung",
       "#AP1"
     ],
     "url": ""
@@ -7356,9 +8187,11 @@
     "topic": "Berechnung",
     "subtopic": "Verfügbarkeit (Berechnung)",
     "hashtags": [
+      "#Verfügbarkeit",
       "#Berechnung",
-      "#AP1",
-      "#Berechnung"
+      "#MTBF",
+      "#MTTR",
+      "#AP1"
     ],
     "url": ""
   },
@@ -7374,7 +8207,10 @@
     "topic": "IT-Sicherheit",
     "subtopic": "Verschlüsselung",
     "hashtags": [
-      "#ITSicherheit",
+      "#Verschlüsselung",
+      "#AES",
+      "#RSA",
+      "#Symmetrisch",
       "#AP1"
     ],
     "url": ""
@@ -7391,7 +8227,8 @@
     "topic": "Allgemein",
     "subtopic": "Verschlüsselung (Typen)",
     "hashtags": [
-      "#Allgemein",
+      "#VerschlüsselungTypen",
+      "#Sicherheit",
       "#AP1"
     ],
     "url": ""
@@ -7408,7 +8245,8 @@
     "topic": "Allgemein",
     "subtopic": "Verschlüsselungsarten",
     "hashtags": [
-      "#Allgemein",
+      "#Verschlüsselungsarten",
+      "#Sicherheit",
       "#AP1"
     ],
     "url": ""
@@ -7425,7 +8263,7 @@
     "topic": "Allgemein",
     "subtopic": "Versionsverwaltung",
     "hashtags": [
-      "#Allgemein",
+      "#Versionsverwaltung",
       "#AP1"
     ],
     "url": ""
@@ -7442,7 +8280,8 @@
     "topic": "Allgemein",
     "subtopic": "Vertraulichkeit (Schutzziel)",
     "hashtags": [
-      "#Allgemein",
+      "#VertraulichkeitSchutzziel",
+      "#Sicherheit",
       "#AP1"
     ],
     "url": ""
@@ -7459,7 +8298,7 @@
     "topic": "Allgemein",
     "subtopic": "Verzweigung",
     "hashtags": [
-      "#Allgemein",
+      "#Verzweigung",
       "#AP1"
     ],
     "url": ""
@@ -7476,7 +8315,10 @@
     "topic": "Cloud & Virtualisierung",
     "subtopic": "Virtualisierung",
     "hashtags": [
-      "#CloudVirtualisierung",
+      "#Virtualisierung",
+      "#VM",
+      "#Hypervisor",
+      "#VMware",
       "#AP1"
     ],
     "url": ""
@@ -7493,7 +8335,10 @@
     "topic": "IT-Sicherheit",
     "subtopic": "Virus",
     "hashtags": [
-      "#ITSicherheit",
+      "#Virus",
+      "#Malware",
+      "#Antivirus",
+      "#Sicherheit",
       "#AP1"
     ],
     "url": ""
@@ -7510,6 +8355,9 @@
     "topic": "Barrierefreiheit",
     "subtopic": "WCAG",
     "hashtags": [
+      "#WCAG",
+      "#AA",
+      "#AAA",
       "#Barrierefreiheit",
       "#AP1"
     ],
@@ -7527,7 +8375,10 @@
     "topic": "Netzwerk",
     "subtopic": "WLAN-Standards",
     "hashtags": [
-      "#Netzwerk",
+      "#WLAN",
+      "#WiFi6",
+      "#802.11ax",
+      "#Frequenz",
       "#AP1"
     ],
     "url": ""
@@ -7544,7 +8395,10 @@
     "topic": "Allgemein",
     "subtopic": "Wasserfallmodell",
     "hashtags": [
-      "#Allgemein",
+      "#Wasserfall",
+      "#SDLC",
+      "#Phasen",
+      "#Projektmanagement",
       "#AP1"
     ],
     "url": ""
@@ -7561,7 +8415,10 @@
     "topic": "Programmierung",
     "subtopic": "Webentwicklung (Grundlagen)",
     "hashtags": [
-      "#Programmierung",
+      "#HTML",
+      "#CSS",
+      "#Barrierefreiheit",
+      "#Semantic",
       "#AP1"
     ],
     "url": ""
@@ -7578,7 +8435,10 @@
     "topic": "Allgemein",
     "subtopic": "Werkvertrag",
     "hashtags": [
-      "#Allgemein",
+      "#Werkvertrag",
+      "#BGB",
+      "#§631",
+      "#Recht",
       "#AP1"
     ],
     "url": ""
@@ -7595,7 +8455,10 @@
     "topic": "Allgemein",
     "subtopic": "Whitebox-Test",
     "hashtags": [
-      "#Allgemein",
+      "#Whitebox",
+      "#Testen",
+      "#Codeabdeckung",
+      "#QA",
       "#AP1"
     ],
     "url": ""
@@ -7612,9 +8475,11 @@
     "topic": "WiSo Unternehmen & Wirtschaft",
     "subtopic": "Wirtschaftssektoren",
     "hashtags": [
-      "#WiSoUnternehmenWirtschaft",
-      "#AP1",
-      "#Ökonomisch"
+      "#Primär",
+      "#Sekundär",
+      "#Tertiär",
+      "#Wirtschaft",
+      "#AP1"
     ],
     "url": ""
   },
@@ -7630,7 +8495,10 @@
     "topic": "Hardware",
     "subtopic": "Wärmeleitpaste",
     "hashtags": [
-      "#Hardware",
+      "#Wärmeleitpaste",
+      "#Kühlung",
+      "#CPU",
+      "#Thermal",
       "#AP1"
     ],
     "url": ""
@@ -7647,7 +8515,10 @@
     "topic": "IT-Sicherheit",
     "subtopic": "Zero Trust",
     "hashtags": [
-      "#ITSicherheit",
+      "#ZeroTrust",
+      "#MFA",
+      "#NeverTrust",
+      "#Sicherheit",
       "#AP1"
     ],
     "url": ""
@@ -7664,7 +8535,10 @@
     "topic": "IT-Sicherheit",
     "subtopic": "Zutrittskontrolle",
     "hashtags": [
-      "#ITSicherheit",
+      "#Zutritt",
+      "#Badge",
+      "#Biometrie",
+      "#Sicherheit",
       "#AP1"
     ],
     "url": ""
@@ -7681,7 +8555,10 @@
     "topic": "IT-Sicherheit",
     "subtopic": "Zwei-Faktor-Authentisierung",
     "hashtags": [
-      "#ITSicherheit",
+      "#2FA",
+      "#OTP",
+      "#TOTP",
+      "#Sicherheit",
       "#AP1"
     ],
     "url": ""
@@ -7698,9 +8575,11 @@
     "topic": "Nachhaltigkeit",
     "subtopic": "Ökodesign-Verordnung",
     "hashtags": [
-      "#Nachhaltigkeit",
-      "#AP1",
-      "#Ökologisch"
+      "#Ökodesign",
+      "#EU",
+      "#Energieeffizienz",
+      "#Recht",
+      "#AP1"
     ],
     "url": ""
   },
@@ -7716,7 +8595,7 @@
     "topic": "Hardware",
     "subtopic": "Übertragungsdauer",
     "hashtags": [
-      "#Hardware",
+      "#Übertragungsdauer",
       "#AP1"
     ],
     "url": ""
