@@ -393,7 +393,7 @@
     "hashtags": [
       "#Bewertungsaspekte",
       "#Hardware",
-      "#Beschaffung",
+      "#Einkauf",
       "#AP1"
     ],
     "url": "https://it-berufe-podcast.de/vorbereitung-auf-die-ihk-abschlusspruefung-der-it-berufe/moegliche-themen-von-teil-1-der-gestreckten-abschlusspruefung-gap-in-den-it-berufen/"
@@ -411,7 +411,7 @@
     "subtopic": "Ergonomie & Arbeitsschutz",
     "hashtags": [
       "#Ergonomie",
-      "#ÖkonomischeAspekte",
+      "#Ökonomisch",
       "#Arbeitsplatz",
       "#AP1"
     ],
@@ -430,7 +430,7 @@
     "subtopic": "Mobile & stationäre Arbeitsplätze",
     "hashtags": [
       "#Energieverbrauch",
-      "#ÖkologischeAspekte",
+      "#Ökologisch",
       "#Stromkosten",
       "#AP1"
     ],
@@ -450,7 +450,7 @@
     "hashtags": [
       "#Kosten",
       "#TCO",
-      "#ÖkonomischeAspekte",
+      "#Ökonomisch",
       "#AP1"
     ],
     "url": "https://de.wikipedia.org/wiki/Total_Cost_of_Ownership"
@@ -469,7 +469,7 @@
     "hashtags": [
       "#Nutzungsdauer",
       "#Abschreibung",
-      "#ÖkonomischeAspekte",
+      "#Ökonomisch",
       "#AP1"
     ],
     "url": "https://de.wikipedia.org/wiki/Abschreibung"
@@ -488,7 +488,7 @@
     "hashtags": [
       "#Ergonomie",
       "#ArbStättV",
-      "#SozialeAspekte",
+      "#Sozial",
       "#AP1"
     ],
     "url": "https://de.wikipedia.org/wiki/Arbeitst%C3%A4ttenverordnung"
@@ -507,7 +507,7 @@
     "hashtags": [
       "#GreenIT",
       "#EnergyStar",
-      "#ÖkologischeAspekte",
+      "#Ökologisch",
       "#AP1"
     ],
     "url": "https://de.wikipedia.org/wiki/Energy_Star"
@@ -525,8 +525,8 @@
     "subtopic": "TCO & Wirtschaftlichkeit",
     "hashtags": [
       "#Nutzungsdauer",
-      "#ÖkonomischeAspekte",
-      "#Beschaffung",
+      "#Ökonomisch",
+      "#Einkauf",
       "#AP1"
     ],
     "url": "https://de.wikipedia.org/wiki/Nutzungsdauer"
@@ -564,7 +564,7 @@
     "hashtags": [
       "#RoHS",
       "#Recycling",
-      "#ÖkologischeAspekte",
+      "#Ökologisch",
       "#AP1"
     ],
     "url": "https://de.wikipedia.org/wiki/RoHS"
@@ -582,7 +582,7 @@
     "subtopic": "Ergonomie & Arbeitsschutz",
     "hashtags": [
       "#Ergonomie",
-      "#SozialeAspekte",
+      "#Sozial",
       "#Arbeitsplatz",
       "#AP1"
     ],
@@ -601,8 +601,8 @@
     "subtopic": "Soziale Aspekte & Nachhaltigkeit",
     "hashtags": [
       "#Nachhaltigkeit",
-      "#SozialeAspekte",
-      "#Beschaffung",
+      "#Sozial",
+      "#Einkauf",
       "#AP1"
     ],
     "url": "https://de.wikipedia.org/wiki/Nachhaltigkeit"
@@ -621,7 +621,7 @@
     "hashtags": [
       "#GreenIT",
       "#CO2",
-      "#ÖkologischeAspekte",
+      "#Ökologisch",
       "#AP1"
     ],
     "url": "https://de.wikipedia.org/wiki/Energieeffizienz"
@@ -659,7 +659,7 @@
     "hashtags": [
       "#Nutzwertanalyse",
       "#Angebotsvergleich",
-      "#Beschaffung",
+      "#Einkauf",
       "#AP1"
     ],
     "url": "https://de.wikipedia.org/wiki/Nutzwertanalyse"
@@ -678,7 +678,7 @@
     "hashtags": [
       "#Nachhaltigkeit",
       "#RightToRepair",
-      "#ÖkologischeAspekte",
+      "#Ökologisch",
       "#AP1"
     ],
     "url": "https://de.wikipedia.org/wiki/Geplante_Obsoleszenz"
@@ -695,7 +695,7 @@
     "topic": "1 – Nötige Kenntnisse",
     "subtopic": "Bewertungsaspekte (funktional/ökon./ökol./sozial)",
     "hashtags": [
-      "#SozialeAspekte",
+      "#Sozial",
       "#Nachhaltigkeit",
       "#Lieferkette",
       "#AP1"
@@ -715,7 +715,7 @@
     "subtopic": "TCO & Wirtschaftlichkeit",
     "hashtags": [
       "#TCO",
-      "#ÖkonomischeAspekte",
+      "#Ökonomisch",
       "#Server",
       "#AP1"
     ],
@@ -735,7 +735,7 @@
     "hashtags": [
       "#GreenIT",
       "#Nachhaltigkeit",
-      "#ÖkologischeAspekte",
+      "#Ökologisch",
       "#AP1"
     ],
     "url": "https://de.wikipedia.org/wiki/Green_IT"
@@ -754,7 +754,7 @@
     "hashtags": [
       "#Leasing",
       "#Kauf",
-      "#ÖkonomischeAspekte",
+      "#Ökonomisch",
       "#AP1"
     ],
     "url": "https://de.wikipedia.org/wiki/Leasing"
@@ -771,9 +771,9 @@
     "topic": "5 – Stromversorgung & USV",
     "subtopic": "Energieeffizienz & Green IT",
     "hashtags": [
-      "#ÖkologischeAspekte",
+      "#Ökologisch",
       "#GreenIT",
-      "#Beschaffung",
+      "#Einkauf",
       "#AP1"
     ],
     "url": "https://de.wikipedia.org/wiki/Blauer_Engel"
@@ -790,7 +790,7 @@
     "topic": "1 – Nötige Kenntnisse",
     "subtopic": "Ökologische Bewertung",
     "hashtags": [
-      "#ÖkologischeAspekte",
+      "#Ökologisch",
       "#Recycling",
       "#ElektroG",
       "#AP1"
@@ -809,7 +809,7 @@
     "topic": "5 – Stromversorgung & USV",
     "subtopic": "Energieeffizienz & Green IT",
     "hashtags": [
-      "#ÖkologischeAspekte",
+      "#Ökologisch",
       "#CO2",
       "#Nachhaltigkeit",
       "#AP1"
@@ -828,9 +828,9 @@
     "topic": "5 – Stromversorgung & USV",
     "subtopic": "Energieeffizienz & Green IT",
     "hashtags": [
-      "#ÖkologischeAspekte",
+      "#Ökologisch",
       "#EPEAT",
-      "#Beschaffung",
+      "#Einkauf",
       "#AP1"
     ],
     "url": "https://de.wikipedia.org/wiki/Electronic_Product_Environmental_Assessment_Tool"
@@ -847,7 +847,7 @@
     "topic": "5 – Stromversorgung & USV",
     "subtopic": "Energieeffizienz & Green IT",
     "hashtags": [
-      "#ÖkologischeAspekte",
+      "#Ökologisch",
       "#Rechenzentrum",
       "#Energieverbrauch",
       "#AP1"
@@ -866,9 +866,9 @@
     "topic": "1 – Nötige Kenntnisse",
     "subtopic": "Bewertungsaspekte (funktional/ökon./ökol./sozial)",
     "hashtags": [
-      "#ÖkologischeAspekte",
+      "#Ökologisch",
       "#Hardware",
-      "#Beschaffung",
+      "#Einkauf",
       "#AP1"
     ],
     "url": "https://de.wikipedia.org/wiki/Laserdrucker"
@@ -885,7 +885,7 @@
     "topic": "1 – Nötige Kenntnisse",
     "subtopic": "Ökologische Bewertung",
     "hashtags": [
-      "#ÖkologischeAspekte",
+      "#Ökologisch",
       "#Ökodesign",
       "#Nachhaltigkeit",
       "#AP1"
@@ -904,7 +904,7 @@
     "topic": "1 – Nötige Kenntnisse",
     "subtopic": "Mobile & stationäre Arbeitsplätze",
     "hashtags": [
-      "#ÖkologischeAspekte",
+      "#Ökologisch",
       "#CO2",
       "#Stromkosten",
       "#AP1"
@@ -923,7 +923,7 @@
     "topic": "1 – Nötige Kenntnisse",
     "subtopic": "Soziale Aspekte & Nachhaltigkeit",
     "hashtags": [
-      "#SozialeAspekte",
+      "#Sozial",
       "#LkSG",
       "#Lieferkette",
       "#AP1"
@@ -942,7 +942,7 @@
     "topic": "1 – Nötige Kenntnisse",
     "subtopic": "Soziale Aspekte & Nachhaltigkeit",
     "hashtags": [
-      "#SozialeAspekte",
+      "#Sozial",
       "#Barrierefreiheit",
       "#Arbeitsplatz",
       "#AP1"
@@ -961,7 +961,7 @@
     "topic": "1 – Nötige Kenntnisse",
     "subtopic": "Ökologische Bewertung",
     "hashtags": [
-      "#SozialeAspekte",
+      "#Sozial",
       "#Konfliktmineralien",
       "#Lieferkette",
       "#AP1"
@@ -980,7 +980,7 @@
     "topic": "1 – Nötige Kenntnisse",
     "subtopic": "Soziale Aspekte & Nachhaltigkeit",
     "hashtags": [
-      "#SozialeAspekte",
+      "#Sozial",
       "#DigitalDivide",
       "#Barrierefreiheit",
       "#AP1"
@@ -999,7 +999,7 @@
     "topic": "1 – Nötige Kenntnisse",
     "subtopic": "Soziale Aspekte & Nachhaltigkeit",
     "hashtags": [
-      "#SozialeAspekte",
+      "#Sozial",
       "#Datenschutz",
       "#DSGVO",
       "#AP1"
@@ -1018,8 +1018,8 @@
     "topic": "1 – Nötige Kenntnisse",
     "subtopic": "Soziale Aspekte & Nachhaltigkeit",
     "hashtags": [
-      "#SozialeAspekte",
-      "#Beschaffung",
+      "#Sozial",
+      "#Einkauf",
       "#Nachhaltigkeit",
       "#AP1"
     ],
@@ -1596,7 +1596,7 @@
     "subtopic": "BSI-Grundschutz",
     "hashtags": [
       "#BSI",
-      "#ISMS",
+      "#ITSM",
       "#Grundschutz",
       "#ISO27001",
       "#AP1"
@@ -1637,7 +1637,6 @@
     "hashtags": [
       "#Backup",
       "#3-2-1-Regel",
-      "#Datensicherung",
       "#RPO",
       "#AP1"
     ],
@@ -1775,7 +1774,6 @@
     "topic": "Wirtschaft",
     "subtopic": "Beschaffungsprozess",
     "hashtags": [
-      "#Beschaffung",
       "#Einkauf",
       "#Lieferant",
       "#Prozess",
@@ -1917,7 +1915,6 @@
     "hashtags": [
       "#Biometrie",
       "#Fingerabdruck",
-      "#Authentifizierung",
       "#MFA",
       "#AP1"
     ],
@@ -2238,7 +2235,7 @@
       "#CRUD",
       "#SQL",
       "#Datenbank",
-      "#REST",
+      "#API",
       "#AP1"
     ],
     "url": ""
@@ -2595,7 +2592,6 @@
     "subtopic": "DSGVO",
     "hashtags": [
       "#DSGVO",
-      "#GDPR",
       "#Datenschutz",
       "#Art5",
       "#AP1"
@@ -4216,7 +4212,7 @@
       "#BSI",
       "#Bausteine",
       "#Maßnahmen",
-      "#ISMS",
+      "#ITSM",
       "#AP1"
     ],
     "url": ""
@@ -4386,8 +4382,7 @@
     "subtopic": "KI / Künstliche Intelligenz",
     "hashtags": [
       "#KI",
-      "#AI",
-      "#MachineLearning",
+      "#ML",
       "#Algorithmus",
       "#AP1"
     ],
@@ -4664,7 +4659,7 @@
     "hashtags": [
       "#UML",
       "#Klasse",
-      "#OOP",
+      "#Objektorientierung",
       "#Attribut",
       "#AP1"
     ],
@@ -4763,7 +4758,6 @@
     "subtopic": "Kubernetes",
     "hashtags": [
       "#Kubernetes",
-      "#K8s",
       "#Pod",
       "#Container",
       "#AP1"
@@ -5818,7 +5812,7 @@
       "#OAuth",
       "#OpenID",
       "#API",
-      "#Authentifizierung",
+      "#MFA",
       "#AP1"
     ],
     "url": ""
@@ -6447,7 +6441,6 @@
     "hashtags": [
       "#RAID",
       "#Redundanz",
-      "#RAID5",
       "#Datenspeicher",
       "#AP1"
     ],
@@ -6467,7 +6460,7 @@
     "hashtags": [
       "#RAID0",
       "#RAID1",
-      "#RAID5",
+      "#RAID",
       "#RAID10",
       "#AP1"
     ],
@@ -7674,7 +7667,6 @@
     "subtopic": "TLS",
     "hashtags": [
       "#TLS",
-      "#SSL",
       "#Verschlüsselung",
       "#HTTPS",
       "#AP1"
@@ -8316,7 +8308,6 @@
     "subtopic": "Virtualisierung",
     "hashtags": [
       "#Virtualisierung",
-      "#VM",
       "#Hypervisor",
       "#VMware",
       "#AP1"
@@ -8555,7 +8546,7 @@
     "topic": "IT-Sicherheit",
     "subtopic": "Zwei-Faktor-Authentisierung",
     "hashtags": [
-      "#2FA",
+      "#MFA",
       "#OTP",
       "#TOTP",
       "#Sicherheit",
