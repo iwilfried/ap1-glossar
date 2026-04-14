@@ -349,7 +349,7 @@ aFP(){var s,r=A.e0().b
 if(r==null)s=null
 else{r=r.canvasKitVariant
 if(r==null)r=null
-s=r}r=A.aIl(A.aAr(B.G9,s==null?"auto":s))
+s=r}r=A.aIl(A.aAr(B.Ga,s==null?"auto":s))
 return new A.af(r,new A.ak_(),A.a0(r).i("af<1,q>"))},
 aHF(a,b){return b+a},
 V3(){var s=0,r=A.S(t.e),q,p,o,n,m
@@ -17896,7 +17896,7 @@ r.toString
 A.eL(r)
 q=a.h(0,"swipeEdge")
 q.toString
-return new A.Ji(s,r,B.G1[A.cs(q)])},
+return new A.Ji(s,r,B.G2[A.cs(q)])},
 zS:function zS(a,b){this.a=a
 this.b=b},
 Ji:function Ji(a,b,c){this.a=a
@@ -19750,7 +19750,7 @@ q=b.as
 if(a.as!==q)return q?-1:1
 return 0},
 aAh(a,b){var s=A.a0(b).i("af<1,d4>")
-return A.azM(!0,A.a2(new A.af(b,new A.Zv(),s),!0,s.i("aG.E")),a,B.GB,!0,B.C6,null)},
+return A.azM(!0,A.a2(new A.af(b,new A.Zv(),s),!0,s.i("aG.E")),a,B.GC,!0,B.C6,null)},
 aAf(a){a.bJ()
 a.aT(A.av6())},
 a_4(a){var s=a.a,r=s instanceof A.nF?s:null
@@ -20302,7 +20302,7 @@ _.as=!0
 _.at=!1
 _.$ti=d},
 amK(a,b){var s
-if(a.j(0,b))return new A.FP(B.GD)
+if(a.j(0,b))return new A.FP(B.GE)
 s=A.b([],t.fJ)
 A.bv("debugDidFindAncestor")
 a.kn(new A.a1s(b,A.az(t.u),s))
@@ -26271,7 +26271,7 @@ T9(){var s=this.Q
 s===$&&A.a()
 return s},
 FL(a,b,c,d){var s,r,q,p
-if(a<0||b<0)return B.GA
+if(a<0||b<0)return B.GB
 s=this.a
 s===$&&A.a()
 s=s.a
@@ -26290,7 +26290,7 @@ l.push(new A.en(n[0],n[1],n[2],n[3],B.j3[m]))}return l},
 cT(a){var s,r=this.a
 r===$&&A.a()
 r=r.a.getGlyphPositionAtCoordinate(a.a,a.b)
-s=B.G2[B.c.ag(r.affinity.value)]
+s=B.G3[B.c.ag(r.affinity.value)]
 return new A.a9(B.c.ag(r.pos),s)},
 Tb(a){var s=this.a
 s===$&&A.a()
@@ -27812,7 +27812,7 @@ if(g.b){q=t.f
 f=q.a(J.bt(q.a(B.c4.fj(a0)),"data"))
 e=A.cx(J.bt(f,"message"))
 if(e!=null&&e.length!==0){d=A.I3(f,"assertiveness")
-g.a.Op(e,B.FN[d==null?0:d])}}c.eq(a1,B.c4.bW(!0))
+g.a.Op(e,B.FO[d==null?0:d])}}c.eq(a1,B.c4.bW(!0))
 return
 case"flutter/navigation":q=t.e8
 if(q.a(c.gcz().b.h(0,0))!=null)q.a(c.gcz().b.h(0,0)).E4(a0).bR(new A.ZS(c,a1),t.P)
@@ -29580,14 +29580,14 @@ a1m(){var s=this,r=s.r
 if(r==null){r=s.r=new A.uX(s.c)
 r.d=new A.a_1(s)}return r},
 S4(a){var s,r=this
-if(B.b.p(B.Gd,a.type)){s=r.a1m()
+if(B.b.p(B.Ge,a.type)){s=r.a1m()
 s.toString
 s.sD7(r.c.$0().zk(5e5))
 if(r.f!==B.mm){r.f=B.mm
 r.L9()}}return r.d.a.U6(a)},
 L9(){var s,r
 for(s=this.w,r=0;r<s.length;++r)s[r].$1(this.f)},
-U5(a){if(B.b.p(B.Go,a))return this.f===B.fG
+U5(a){if(B.b.p(B.Gp,a))return this.f===B.fG
 return!1}}
 A.a_2.prototype={
 $0(){return new A.fu(Date.now(),0,!1)},
@@ -30962,7 +30962,7 @@ m=A.fZ(r.h(s,"fontWeightIndex"))
 l=m!=null?A.aIj(m):"normal"
 q=A.aub(r.h(s,"fontSize"))
 if(q==null)q=null
-p=new A.abl(new A.Zr(q,l,A.cx(r.h(s,"fontFamily")),B.FL[o],B.j3[n]))
+p=new A.abl(new A.Zr(q,l,A.cx(r.h(s,"fontFamily")),B.FM[o],B.j3[n]))
 break
 case"TextInput.clearClient":p=B.A1
 break
@@ -35023,7 +35023,7 @@ if(o>0)return s
 return null}}
 A.ad6.prototype={
 F(a,b){this.IG(0,b,0,b.length,!1)},
-aW(a){this.IG(0,B.Gt,0,0,!0)}}
+aW(a){this.IG(0,B.Gu,0,0,!0)}}
 A.ajw.prototype={
 IG(a,b,c,d,e){var s=this.b.adl(b,c,d,e)
 if(s!=null)this.a.m7(s,0,s.length,e)}}
@@ -37787,7 +37787,7 @@ A.qI(B.e4,new A.a0W(this,a),t.P)},
 L(a){var s,r,q,p,o,n,m=this,l=null,k=m.gZj(),j=t.p,i=A.VL(A.b([new A.bb(B.CG,A.eP(A.aT(""+m.d.length+" Begriffe",l,l,l,B.Qb,l,l),l,l),l)],j),B.H,!0,2,B.j,0,B.SC),h=m.e,g=h.a.a.length===0?l:A.amF(l,l,B.Eb,l,l,new A.a0P(m),l,l,l)
 g=A.aqR(l,new A.fL(4,A.dp(12),B.q),l,B.CQ,l,l,l,l,!0,new A.fL(4,A.dp(12),new A.b7(B.lr,1,B.w,-1)),l,l,l,l,l,B.j,!0,l,l,l,l,new A.fL(4,A.dp(12),new A.b7(B.H,1.5,B.w,-1)),l,l,l,l,l,l,l,B.PD,"Begriff oder Definition suchen \u2026",l,l,l,l,l,!0,l,l,l,!0,l,B.Eh,l,l,l,l,l,l,g,l,l,l,l)
 s=t.yg
-s=A.ii(A.arb(A.a2(new A.af(B.Gi,new A.a0Q(m),s),!0,s.i("aG.E")),B.iH,B.b2),38,l)
+s=A.ii(A.arb(A.a2(new A.af(B.Gj,new A.a0Q(m),s),!0,s.i("aG.E")),B.iH,B.b2),38,l)
 r=m.w==null
 q=r?B.H:B.j
 p=A.dp(20)
@@ -37961,7 +37961,7 @@ bJ(){this.cO()
 this.cs()
 this.hK()}}
 A.Fj.prototype={
-L(a){return new A.H_(A.ey(A.b([new A.H3(B.ze,A.ey(B.GS,B.aO,B.rH,B.aw),null),B.C9,A.a2c(B.Ei,new A.VW(a),B.ya),A.a2c(B.Ec,new A.VX(a),B.yb),A.a2c(B.Ed,new A.VY(a),B.Sx),B.xN,B.Cb,A.a2c(B.Ef,null,B.SG),B.aj],t.p),B.e0,B.S,B.aw),null)}}
+L(a){return new A.H_(A.ey(A.b([new A.H3(B.ze,A.ey(B.GT,B.aO,B.rH,B.aw),null),B.C9,A.a2c(B.Ei,new A.VW(a),B.ya),A.a2c(B.Ec,new A.VX(a),B.yb),A.a2c(B.Ed,new A.VY(a),B.Sx),B.xN,B.Cb,A.a2c(B.Ef,null,B.SG),B.aj],t.p),B.e0,B.S,B.aw),null)}}
 A.VW.prototype={
 $0(){return A.rg(this.a).kf(A.It(new A.VV(),null,t.z))},
 $S:0}
@@ -38001,7 +38001,7 @@ A.AC.prototype={
 ap(){return new A.TG()}}
 A.TG.prototype={
 L(a){var s=null,r=A.bJ(a,s,t.w).w.a,q=A.a_(a),p=t.p
-return A.K8(s,s,A.hP(s,A.anb(!0,new A.bb(B.CX,A.ey(A.b([A.ey(A.b([B.Nd,new A.x0(A.aCI(s,s,new A.vg("assets/images/lf_logo.png",s,s)),90,s),B.cI,B.SE],p),B.ag,B.S,B.aw),A.ey(A.b([A.aT("IHK\nAP1",s,s,s,A.avm().$5$color$fontSize$fontWeight$height$letterSpacing(B.j,52,B.ao,1.15,2),B.cJ,s),B.cI,A.aT("GLOSSAR",s,s,s,A.avm().$4$color$fontSize$fontWeight$letterSpacing(B.rS,44,B.ao,4),B.cJ,s)],p),B.ag,B.S,B.aw),A.ey(A.b([A.aT("Alle wichtigen Begriffe und Definitionen\nf\xfcr die IHK-Abschlusspr\xfcfung Teil 1 \u2013\nFachinformatiker und IT-Berufe.",s,s,s,B.Qg,B.cJ,s),B.xI,A.ii(new A.H6(new A.ajD(a),s,s,s,A.aAk(s,s,B.rS,s,s,s,4,s,s,s,s,s,B.CI,s,new A.cK(A.dp(30),B.q),s,s,s,s),s,s,!1,s,!0,s,A.ku(B.FT,B.ag,B.rI,B.aw),s),s,1/0),B.xI],p),B.ag,B.S,B.aw)],p),B.ag,B.rJ,B.aw),s),B.bn,!0),B.y,q.dy,s,s,s,r.b,s,s,s,s,r.a),s)}}
+return A.K8(s,s,A.hP(s,A.anb(!0,new A.bb(B.CX,A.ey(A.b([A.ey(A.b([B.Nd,new A.x0(A.aCI(s,s,new A.vg("assets/images/lf_logo.png",s,s)),90,s),B.cI,B.SE],p),B.ag,B.S,B.aw),A.ey(A.b([A.aT("IHK\nAP1",s,s,s,A.avm().$5$color$fontSize$fontWeight$height$letterSpacing(B.j,52,B.ao,1.15,2),B.cJ,s),B.cI,A.aT("GLOSSAR",s,s,s,A.avm().$4$color$fontSize$fontWeight$letterSpacing(B.rS,44,B.ao,4),B.cJ,s)],p),B.ag,B.S,B.aw),A.ey(A.b([A.aT("Alle wichtigen Begriffe und Definitionen\nf\xfcr die IHK-Abschlusspr\xfcfung Teil 1 \u2013\nFachinformatiker und IT-Berufe.",s,s,s,B.Qg,B.cJ,s),B.xI,A.ii(new A.H6(new A.ajD(a),s,s,s,A.aAk(s,s,B.rS,s,s,s,4,s,s,s,s,s,B.CI,s,new A.cK(A.dp(30),B.q),s,s,s,s),s,s,!1,s,!0,s,A.ku(B.FU,B.ag,B.rI,B.aw),s),s,1/0),B.xI],p),B.ag,B.S,B.aw)],p),B.ag,B.rJ,B.aw),s),B.bn,!0),B.y,q.dy,s,s,s,r.b,s,s,s,s,r.a),s)}}
 A.ajD.prototype={
 $0(){var s=A.It(new A.ajC(),null,t.z)
 A.rg(this.a).kf(s)},
@@ -38325,7 +38325,7 @@ h=r[4]
 g=r[5]
 f=r[6]
 e=r[7]
-for(d=l,q=0;q<64;++q,e=f,f=g,g=h,h=b,i=j,j=k,k=d,d=a){c=(e+(((h>>>6|h<<26)^(h>>>11|h<<21)^(h>>>25|h<<7))>>>0)>>>0)+(((h&g^~h&f)>>>0)+(B.FP[q]+s[q]>>>0)>>>0)>>>0
+for(d=l,q=0;q<64;++q,e=f,f=g,g=h,h=b,i=j,j=k,k=d,d=a){c=(e+(((h>>>6|h<<26)^(h>>>11|h<<21)^(h>>>25|h<<7))>>>0)>>>0)+(((h&g^~h&f)>>>0)+(B.FQ[q]+s[q]>>>0)>>>0)>>>0
 b=i+c>>>0
 a=c+((((d>>>2|d<<30)^(d>>>13|d<<19)^(d>>>22|d<<10))>>>0)+((d&k^d&j^k&j)>>>0)>>>0)>>>0}r.$flags&2&&A.ag(r)
 r[0]=d+l>>>0
@@ -39237,7 +39237,7 @@ r=A.rh(B.Jo,B.h,r==null?1:r)
 r.toString
 p=o.ad(0,p.gD(p))
 if(p==null)p=1
-p=A.arZ(q,B.y,new A.r6(p,B.G0,new A.cK(B.z3,this.e)),s,1,B.N3)
+p=A.arZ(q,B.y,new A.r6(p,B.G1,new A.cK(B.z3,this.e)),s,1,B.N3)
 return new A.tg(A.ol(r.a,r.b,0),q,!0,q,p,q)}}
 A.Ed.prototype={
 l(){var s=this,r=s.bP$
@@ -42421,7 +42421,7 @@ ZB(a){var s,r=this,q=null,p=r.a,o=p.id,n=p.e
 p=p.cx
 s=r.ga5a()
 r.a.toString
-return new A.AD(q,q,q,new A.agl(),q,q,q,q,q,n,B.II,q,q,q,B.GF,r.ga5g(),p,q,B.PI,o,q,s,q,q,B.mK,!1,!1,q,q,q,new A.nQ(r,t.bT))},
+return new A.AD(q,q,q,new A.agl(),q,q,q,q,q,n,B.II,q,q,q,B.GG,r.ga5g(),p,q,B.PI,o,q,s,q,q,B.mK,!1,!1,q,q,q,new A.nQ(r,t.bT))},
 L(a){var s,r=null,q=A.qE(!1,!1,this.ZB(a),r,r,r,r,!0,r,r,r,new A.agm(),r,r)
 this.a.toString
 s=this.d
@@ -42726,7 +42726,7 @@ A.tG.prototype={
 G(){return"_CornerId."+this.b}}
 A.kM.prototype={}
 A.r9.prototype={
-jJ(){var s,r,q=this,p=A.aGX(B.Gg,new A.a4Y(q,q.b.gb0().V(0,q.a.gb0()))),o=q.a
+jJ(){var s,r,q=this,p=A.aGX(B.Gh,new A.a4Y(q,q.b.gb0().V(0,q.a.gb0()))),o=q.a
 o.toString
 s=p.a
 o=q.nD(o,s)
@@ -45881,7 +45881,7 @@ A.ahp.prototype={
 $2(a,b){return this.a.cc(a,b)},
 $S:14}
 A.NQ.prototype={
-gGy(){return B.FS},
+gGy(){return B.FT},
 OT(a){var s,r=this
 switch(a.a){case 0:s=r.d.z
 break
@@ -46483,7 +46483,7 @@ return s.b}}
 A.ix.prototype={
 G(){return"_ListTileSlot."+this.b}}
 A.Pi.prototype={
-gGy(){return B.Gb},
+gGy(){return B.Gc},
 OT(a){var s,r=this
 switch(a.a){case 0:s=r.d
 break
@@ -46804,7 +46804,7 @@ r.e=s.a.a
 r.f=s.d},
 $S:0}
 A.Ip.prototype={
-L(a){return A.arZ(new A.lk(B.Bp,null,null),B.Z,new A.r6(1,B.GJ,new A.cK(B.z2,B.q)),this.c.U(0,new A.j(0,40.95)),1.25,B.N4)}}
+L(a){return A.arZ(new A.lk(B.Bp,null,null),B.Z,new A.r6(1,B.GK,new A.cK(B.z2,B.q)),this.c.U(0,new A.j(0,40.95)),1.25,B.N4)}}
 A.oh.prototype={
 G(){return"MaterialType."+this.b}}
 A.xH.prototype={
@@ -47140,7 +47140,7 @@ A.Go.prototype={
 OI(a,b,c,d,e,f){return A.azr(a,b,c,d,e,f)}}
 A.J2.prototype={
 Z0(a){var s=t.Tr
-return A.a2(new A.af(B.Gf,new A.a6a(a),s),!0,s.i("aG.E"))},
+return A.a2(new A.af(B.Gg,new A.a6a(a),s),!0,s.i("aG.E"))},
 j(a,b){if(b==null)return!1
 if(this===b)return!0
 if(J.N(b)!==A.u(this))return!1
@@ -51586,7 +51586,7 @@ return new A.nR(r.a.cr(s.ghz()),r.b,r.c)},
 cT(a){var s=this.b
 return s.a.c.cT(a.V(0,s.ghz()))},
 qQ(){var s,r,q=this.b,p=q.ghz()
-if(!isFinite(p.a)||!isFinite(p.b))return B.GC
+if(!isFinite(p.a)||!isFinite(p.b))return B.GD
 s=q.f
 if(s==null){s=q.a.c.qQ()
 q.f=s}if(p.j(0,B.h))r=s
@@ -60144,7 +60144,7 @@ break
 case 1:return A.Q(q,r)}})
 return A.R($async$Ax,r)},
 a15(a,b){var s,r,q,p
-if(a===b)return B.Gz
+if(a===b)return B.GA
 s=A.b([],t.QP)
 if(a==null)s.push(b)
 else{r=B.b.jg(B.ec,a)
@@ -61941,7 +61941,7 @@ A.kq.prototype={}
 A.Jn.prototype={
 kc(a,b,c){var s,r,q,p,o,n=$.a4.ac$.d.c
 if(n==null||n.e==null)return!1
-for(s=t.F,r=0;r<2;++r){q=B.Gp[r]
+for(s=t.F,r=0;r<2;++r){q=B.Gq[r]
 p=n.e
 p.toString
 o=A.alM(p,q,s)
@@ -63337,7 +63337,7 @@ q.c9$.F(0,s.ga5L())
 s.e=q}return q},
 gKJ(){var s=this.f
 if(s===$){s!==$&&A.ak()
-s=this.f=new A.aeA(1,B.FK,B.bV)}return s},
+s=this.f=new A.aeA(1,B.FL,B.bV)}return s},
 gfI(){var s=this.z
 s=s==null?null:$.bW().d===s
 return s===!0},
@@ -64009,7 +64009,7 @@ h.C2()
 r=h.ga1L()
 q=q.ou
 h.e!==$&&A.bs()
-h.e=new A.Ky(s,new A.c9(B.Iv,l),new A.oc(),p,B.bU,0,k,h.ga3J(),h.ga3L(),r,B.bU,0,j,h.ga3D(),h.ga3F(),r,i,B.GE,f,g.CW,g.cx,g.cy,o,g,n,m,g.x,q,new A.Gg(),new A.Gg())
+h.e=new A.Ky(s,new A.c9(B.Iv,l),new A.oc(),p,B.bU,0,k,h.ga3J(),h.ga3L(),r,B.bU,0,j,h.ga3D(),h.ga3F(),r,i,B.GF,f,g.CW,g.cx,g.cy,o,g,n,m,g.x,q,new A.Gg(),new A.Gg())
 return h},
 uj(a,b){var s,r,q,p=this,o=p.a.c,n=o.a.a.length
 if(n<a.b||n<a.a)return
@@ -67301,7 +67301,7 @@ A.bi.prototype={
 j(a,b){if(b==null)return!1
 if(J.N(b)!==A.u(this))return!1
 return b instanceof A.bi&&b.a===this.a&&b.d===this.d&&A.cy(null,null)},
-gB(a){return A.K(this.a,"MaterialIcons",null,this.d,A.bL(B.Gu),B.a,B.a,B.a,B.a,B.a,B.a,B.a,B.a,B.a,B.a,B.a,B.a,B.a,B.a,B.a)},
+gB(a){return A.K(this.a,"MaterialIcons",null,this.d,A.bL(B.Gv),B.a,B.a,B.a,B.a,B.a,B.a,B.a,B.a,B.a,B.a,B.a,B.a,B.a,B.a,B.a)},
 k(a){return"IconData(U+"+B.d.rZ(B.i.lC(this.a,16).toUpperCase(),5,"0")+")"}}
 A.nX.prototype={
 cf(a){return!this.w.j(0,a.w)},
@@ -68187,7 +68187,7 @@ g=s&&d
 b=s?d:b.ch
 if(b==null)b=B.di
 s=s&&d
-f=new A.xN(a1,a,q,p,l,o,n,a0,g===!0,m,k,h,c,j,i,b,new A.qr(d),B.Gx,s===!0)
+f=new A.xN(a1,a,q,p,l,o,n,a0,g===!0,m,k,h,c,j,i,b,new A.qr(d),B.Gy,s===!0)
 if(!f.j(0,e.e))e.aw(new A.agD(e,f))},
 Dj(){this.qt()},
 Pz(){if(this.d==null)this.qt()},
@@ -68507,7 +68507,7 @@ r.S(0,s.Ss(null,l))
 l.a.toString
 q=r.a
 p=0
-for(;!1;++p){o=B.Gv[p]
+for(;!1;++p){o=B.Gw[p]
 n=l.c
 n.toString
 m=new A.fY(o.D2(n),null,!0,B.kv,B.bI,new A.pC(new ($.Vi())(B.bI)),B.bI)
@@ -68859,7 +68859,7 @@ L(a){var s,r,q=this,p=null,o=q.ga3f(),n=A.lw(a),m=q.bC$,l=q.d
 l===$&&A.a()
 s=q.a.ax
 if(l.gH()==null){r=q.gHH()
-r=J.lI(r.slice(0),A.a0(r).c)}else r=B.Gw
+r=J.lI(r.slice(0),A.a0(r).c)}else r=B.Gx
 return new A.nT(p,new A.cZ(new A.a5Q(q,a),A.xy(B.bN,new A.F7(!1,A.ams(A.qE(!0,p,A.LS(m,new A.rj(r,s,l)),p,p,p,q.y,!1,p,p,p,p,p,!0),n),p),o,q.ga5D(),p,p,o),p,t.w3),p)}}
 A.a5P.prototype={
 $1(a){var s=this.a.c
@@ -73924,7 +73924,7 @@ r.vu()
 return s.aP()},
 l(){var s,r,q,p,o=this
 for(s=o.b,r=s.length,q=o.gAz(),p=0;p<s.length;s.length===r||(0,A.G)(s),++p)s[p].I(0,q)
-o.b=B.Gy
+o.b=B.Gz
 o.y=!1
 o.d0()},
 du(a,b){return a.l2(b)},
@@ -81212,8 +81212,8 @@ B.ze=new A.cj(B.H,null,null,null,null,null,B.a0)
 B.Bh=new A.x(0.23529411764705882,0,0,0,B.e)
 B.Jp=new A.j(0,4)
 B.zk=new A.cV(0.5,B.c3,B.Bh,B.Jp,10)
-B.Gn=A.b(s([B.zk]),t.sq)
-B.zf=new A.cj(null,null,null,B.kL,B.Gn,null,B.a0)
+B.Go=A.b(s([B.zk]),t.sq)
+B.zf=new A.cj(null,null,null,B.kL,B.Go,null,B.a0)
 B.zg=new A.Ww(6,"scaleDown")
 B.dJ=new A.vt(0,"tight")
 B.zh=new A.vt(1,"max")
@@ -81435,7 +81435,7 @@ B.Aa=new A.ac2()
 B.af=new A.ac3()
 B.cn=new A.ac5()
 B.dy=new A.M_(0,0,0,0)
-B.Gx=A.b(s([]),A.aw("B<aK4>"))
+B.Gy=A.b(s([]),A.aw("B<aK4>"))
 B.VD=new A.acb()
 B.dM=new A.Mk()
 B.dN=new A.Ml()
@@ -82016,20 +82016,20 @@ B.EX=new A.oa(4,"bottom")
 B.EZ=A.b(s([0,6,12,18]),t.t)
 B.mH=A.b(s(["text","multiline","number","phone","datetime","emailAddress","url","visiblePassword","name","address","none","webSearch","twitter"]),t.s)
 B.Fn=A.b(s([4,9,14,19]),t.t)
-B.GT=A.b(s([137,80,78,71,13,10,26,10]),t.Z)
+B.GU=A.b(s([137,80,78,71,13,10,26,10]),t.Z)
 B.Ep=new A.lA(0,"png")
 B.Ex=new A.iW(B.Ep,!1,0,"png")
-B.En=new A.k7(B.GT,B.Ex,0,"png")
-B.GV=A.b(s([71,73,70,56,55,97]),t.Z)
-B.Em=new A.k7(B.GV,B.fI,1,"gif87a")
-B.Ge=A.b(s([71,73,70,56,57,97]),t.Z)
-B.El=new A.k7(B.Ge,B.fI,2,"gif89a")
+B.En=new A.k7(B.GU,B.Ex,0,"png")
+B.GW=A.b(s([71,73,70,56,55,97]),t.Z)
+B.Em=new A.k7(B.GW,B.fI,1,"gif87a")
+B.Gf=A.b(s([71,73,70,56,57,97]),t.Z)
+B.El=new A.k7(B.Gf,B.fI,2,"gif89a")
 B.F1=A.b(s([255,216,255]),t.Z)
 B.Eq=new A.lA(2,"jpeg")
 B.EB=new A.iW(B.Eq,!1,3,"jpeg")
 B.Eo=new A.k7(B.F1,B.EB,3,"jpeg")
-B.FJ=A.b(s([82,73,70,70,null,null,null,null,87,69,66,80]),t.Z)
-B.Ek=new A.k7(B.FJ,B.mx,4,"webp")
+B.FK=A.b(s([82,73,70,70,null,null,null,null,87,69,66,80]),t.Z)
+B.Ek=new A.k7(B.FK,B.mx,4,"webp")
 B.FB=A.b(s([66,77]),t.Z)
 B.Er=new A.lA(4,"bmp")
 B.Ez=new A.iW(B.Er,!1,6,"bmp")
@@ -82050,16 +82050,16 @@ B.UN=new A.fk(0.8875,0.25)
 B.UL=new A.fk(0.925,0.5)
 B.UF=new A.fk(0.9625,0.75)
 B.UG=new A.fk(1,1)
-B.FK=A.b(s([B.UE,B.UJ,B.UM,B.UO,B.UK,B.UI,B.UH,B.UN,B.UL,B.UF,B.UG]),A.aw("B<fk>"))
+B.FL=A.b(s([B.UE,B.UJ,B.UM,B.UO,B.UK,B.UI,B.UH,B.UN,B.UL,B.UF,B.UG]),A.aw("B<fk>"))
 B.eK=new A.kC(0,"left")
 B.k1=new A.kC(1,"right")
 B.cJ=new A.kC(2,"center")
 B.ht=new A.kC(3,"justify")
 B.b7=new A.kC(4,"start")
 B.k2=new A.kC(5,"end")
-B.FL=A.b(s([B.eK,B.k1,B.cJ,B.ht,B.b7,B.k2]),A.aw("B<kC>"))
-B.FN=A.b(s([B.i4,B.i5]),A.aw("B<vf>"))
-B.FP=A.b(s([1116352408,1899447441,3049323471,3921009573,961987163,1508970993,2453635748,2870763221,3624381080,310598401,607225278,1426881987,1925078388,2162078206,2614888103,3248222580,3835390401,4022224774,264347078,604807628,770255983,1249150122,1555081692,1996064986,2554220882,2821834349,2952996808,3210313671,3336571891,3584528711,113926993,338241895,666307205,773529912,1294757372,1396182291,1695183700,1986661051,2177026350,2456956037,2730485921,2820302411,3259730800,3345764771,3516065817,3600352804,4094571909,275423344,430227734,506948616,659060556,883997877,958139571,1322822218,1537002063,1747873779,1955562222,2024104815,2227730452,2361852424,2428436474,2756734187,3204031479,3329325298]),t.t)
+B.FM=A.b(s([B.eK,B.k1,B.cJ,B.ht,B.b7,B.k2]),A.aw("B<kC>"))
+B.FO=A.b(s([B.i4,B.i5]),A.aw("B<vf>"))
+B.FQ=A.b(s([1116352408,1899447441,3049323471,3921009573,961987163,1508970993,2453635748,2870763221,3624381080,310598401,607225278,1426881987,1925078388,2162078206,2614888103,3248222580,3835390401,4022224774,264347078,604807628,770255983,1249150122,1555081692,1996064986,2554220882,2821834349,2952996808,3210313671,3336571891,3584528711,113926993,338241895,666307205,773529912,1294757372,1396182291,1695183700,1986661051,2177026350,2456956037,2730485921,2820302411,3259730800,3345764771,3516065817,3600352804,4094571909,275423344,430227734,506948616,659060556,883997877,958139571,1322822218,1537002063,1747873779,1955562222,2024104815,2227730452,2361852424,2428436474,2756734187,3204031479,3329325298]),t.t)
 B.mJ=A.b(s(["Hardware","Netzwerk","IT-Sicherheit","Datenschutz","Programmierung","Datenbanken","Cloud & Virtualisierung","Systemadministration","Datenspeicherung","IT-Service-Management","K\xfcnstliche Intelligenz","Projektmanagement","Wirtschaft","Berechnung","Nachhaltigkeit","Ergonomie & Soziales","Barrierefreiheit","Kommunikation","Recht","WiSo Ausbildung & Arbeitsrecht","WiSo Unternehmen & Wirtschaft","WiSo Sicherheit & Umwelt","WiSo Digitale Zusammenarbeit"]),t.s)
 B.aq=new A.e_(0,"icon")
 B.aD=new A.e_(1,"input")
@@ -82072,13 +82072,13 @@ B.az=new A.e_(7,"suffixIcon")
 B.bt=new A.e_(8,"helperError")
 B.bF=new A.e_(9,"counter")
 B.bX=new A.e_(10,"container")
-B.FS=A.b(s([B.aq,B.aD,B.Y,B.aJ,B.aK,B.aL,B.V,B.az,B.bt,B.bF,B.bX]),A.aw("B<e_>"))
+B.FT=A.b(s([B.aq,B.aD,B.Y,B.aJ,B.aK,B.aL,B.V,B.az,B.bt,B.bF,B.bX]),A.aw("B<e_>"))
 B.Qw=new A.l(!0,B.j,null,null,null,null,16,B.ao,null,2,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null)
 B.SB=new A.dY("WEITER",null,B.Qw,null,null,null,null,null,null)
 B.N9=new A.cM(8,null,null,null)
 B.Dx=new A.bi(57500,!0)
 B.Ee=new A.ha(B.Dx,16,B.j,null,null)
-B.FT=A.b(s([B.SB,B.N9,B.Ee]),t.p)
+B.FU=A.b(s([B.SB,B.N9,B.Ee]),t.p)
 B.H2=new A.j2("en","US")
 B.mK=A.b(s([B.H2]),t.ss)
 B.Uu=new A.kN(0,0)
@@ -82088,33 +82088,33 @@ B.Uy=new A.kN(6,0.11)
 B.Uw=new A.kN(8,0.12)
 B.Uv=new A.kN(12,0.14)
 B.mL=A.b(s([B.Uu,B.Uz,B.Ux,B.Uy,B.Uw,B.Uv]),A.aw("B<kN>"))
-B.G_=A.b(s([-1,0,0,1,0,0,-1,0,1,0,0,0,-1,1,0,1,1,1,1,0]),t.n)
+B.G0=A.b(s([-1,0,0,1,0,0,-1,0,1,0,0,0,-1,1,0,1,1,1,1,0]),t.n)
 B.z_=new A.FE(2,"outer")
 B.lm=new A.x(0.09803921568627451,0,0,0,B.e)
 B.zj=new A.cV(0.2,B.z_,B.lm,B.h,11)
-B.G0=A.b(s([B.zj]),t.sq)
+B.G1=A.b(s([B.zj]),t.sq)
 B.Nx=new A.zS(0,"left")
 B.Ny=new A.zS(1,"right")
-B.G1=A.b(s([B.Nx,B.Ny]),A.aw("B<zS>"))
+B.G2=A.b(s([B.Nx,B.Ny]),A.aw("B<zS>"))
 B.ab=new A.A1(0,"upstream")
-B.G2=A.b(s([B.ab,B.k]),A.aw("B<A1>"))
+B.G3=A.b(s([B.ab,B.k]),A.aw("B<A1>"))
 B.aB=new A.A5(0,"rtl")
 B.ac=new A.A5(1,"ltr")
 B.j3=A.b(s([B.aB,B.ac]),A.aw("B<A5>"))
 B.Al=new A.q1(0,"auto")
 B.Am=new A.q1(1,"full")
 B.An=new A.q1(2,"chromium")
-B.G9=A.b(s([B.Al,B.Am,B.An]),A.aw("B<q1>"))
+B.Ga=A.b(s([B.Al,B.Am,B.An]),A.aw("B<q1>"))
 B.bZ=new A.ix(0,"leading")
 B.bl=new A.ix(1,"title")
 B.c_=new A.ix(2,"subtitle")
 B.cS=new A.ix(3,"trailing")
-B.Gb=A.b(s([B.bZ,B.bl,B.c_,B.cS]),A.aw("B<ix>"))
-B.Gd=A.b(s(["pointerdown","pointermove","pointerleave","pointerup","pointercancel","touchstart","touchend","touchmove","touchcancel","mousedown","mousemove","mouseleave","mouseup"]),t.s)
+B.Gc=A.b(s([B.bZ,B.bl,B.c_,B.cS]),A.aw("B<ix>"))
+B.Ge=A.b(s(["pointerdown","pointermove","pointerleave","pointerup","pointercancel","touchstart","touchend","touchmove","touchcancel","mousedown","mousemove","mouseleave","mouseup"]),t.s)
 B.bg=new A.em(1,"fuchsia")
 B.bh=new A.em(3,"linux")
 B.bi=new A.em(5,"windows")
-B.Gf=A.b(s([B.a5,B.bg,B.P,B.bh,B.aT,B.bi]),A.aw("B<em>"))
+B.Gg=A.b(s([B.a5,B.bg,B.P,B.bh,B.aT,B.bi]),A.aw("B<em>"))
 B.yo=new A.tG(0,"topLeft")
 B.yr=new A.tG(3,"bottomRight")
 B.Up=new A.kM(B.yo,B.yr)
@@ -82123,35 +82123,35 @@ B.yp=new A.tG(1,"topRight")
 B.yq=new A.tG(2,"bottomLeft")
 B.Uq=new A.kM(B.yp,B.yq)
 B.Ur=new A.kM(B.yq,B.yp)
-B.Gg=A.b(s([B.Up,B.Us,B.Uq,B.Ur]),A.aw("B<kM>"))
-B.Gi=A.b(s([B.eW,B.i_,B.i0,B.i1,B.i2,B.i3]),A.aw("B<h1>"))
-B.Go=A.b(s(["click","scroll"]),t.s)
+B.Gh=A.b(s([B.Up,B.Us,B.Uq,B.Ur]),A.aw("B<kM>"))
+B.Gj=A.b(s([B.eW,B.i_,B.i0,B.i1,B.i2,B.i3]),A.aw("B<h1>"))
+B.Gp=A.b(s(["click","scroll"]),t.s)
 B.zp=new A.pP()
 B.ez=new A.Kp(1,"page")
 B.he=new A.dI(B.N,B.ez)
-B.Gp=A.b(s([B.zp,B.he]),A.aw("B<aP>"))
-B.Gz=A.b(s([]),t.QP)
+B.Gq=A.b(s([B.zp,B.he]),A.aw("B<aP>"))
+B.GA=A.b(s([]),t.QP)
 B.mN=A.b(s([]),A.aw("B<aJP>"))
-B.GB=A.b(s([]),t.D)
-B.GD=A.b(s([]),t.fJ)
-B.GC=A.b(s([]),t.ER)
-B.GF=A.b(s([]),t.tc)
+B.GC=A.b(s([]),t.D)
+B.GE=A.b(s([]),t.fJ)
+B.GD=A.b(s([]),t.ER)
+B.GG=A.b(s([]),t.tc)
 B.fP=A.b(s([]),t.jl)
-B.Gw=A.b(s([]),t.wi)
-B.Gv=A.b(s([]),A.aw("B<arE<@>>"))
+B.Gx=A.b(s([]),t.wi)
+B.Gw=A.b(s([]),A.aw("B<arE<@>>"))
 B.j5=A.b(s([]),t.AO)
-B.Gy=A.b(s([]),t.D1)
+B.Gz=A.b(s([]),t.D1)
 B.j4=A.b(s([]),t.QF)
-B.GA=A.b(s([]),t.Lx)
-B.GE=A.b(s([]),t.fm)
+B.GB=A.b(s([]),t.Lx)
+B.GF=A.b(s([]),t.fm)
 B.VJ=A.b(s([]),t.p)
-B.Gt=A.b(s([]),t.t)
+B.Gu=A.b(s([]),t.t)
 B.mM=A.b(s([]),t.ee)
-B.Gu=A.b(s([]),t.XS)
+B.Gv=A.b(s([]),t.XS)
 B.mO=A.b(s([B.fF,B.iY,B.iZ,B.n,B.R,B.bv,B.ao,B.mk,B.j_]),A.aw("B<eA>"))
 B.h0=new A.j(0,2)
 B.zi=new A.cV(0.75,B.c3,B.lm,B.h0,1.5)
-B.GJ=A.b(s([B.zi]),t.sq)
+B.GK=A.b(s([B.zi]),t.sq)
 B.ec=A.b(s([B.cj,B.c1,B.eU,B.eV,B.hZ]),t.QP)
 B.DV=new A.bi(63668,!1)
 B.Eg=new A.ha(B.DV,36,B.j,null,null)
@@ -82161,7 +82161,7 @@ B.Sy=new A.dY("IHK AP1 \u2013 Glossar",null,B.PU,null,null,null,null,null,null)
 B.xJ=new A.cM(null,4,null,null)
 B.Ri=new A.l(!0,B.F,null,null,null,null,12,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null)
 B.Sz=new A.dY("299 Fachbegriffe \xb7 5 Bewertungsaspekte",null,B.Ri,null,null,null,null,null,null)
-B.GS=A.b(s([B.Eg,B.xG,B.Sy,B.xJ,B.Sz]),t.p)
+B.GT=A.b(s([B.Eg,B.xG,B.Sy,B.xJ,B.Sz]),t.p)
 B.dd=new A.fH(0,"controlModifier")
 B.de=new A.fH(1,"shiftModifier")
 B.df=new A.fH(2,"altModifier")
@@ -82687,29 +82687,29 @@ B.MR=new A.a3(B.aA,!1,!0,!0,!1,B.m)
 B.MF=new A.a3(B.aA,!1,!1,!0,!1,B.m)
 B.rL=new A.cW([B.MM,B.p,B.Mh,B.p,B.Mg,B.p,B.M5,B.p,B.MB,B.p,B.Ms,B.p,B.MR,B.p,B.MF,B.p],t.Fp)
 B.Jd={Hardware:0,Netzwerk:1,"IT-Sicherheit":2,Datenschutz:3,Nachhaltigkeit:4,Wirtschaft:5,Projektmanagement:6,Programmierung:7,"K\xfcnstliche Intelligenz":8,"Ergonomie & Soziales":9,Barrierefreiheit:10,Recht:11,Berechnung:12,"Cloud & Virtualisierung":13,"IT-Service-Management":14,Systemadministration:15,Datenspeicherung:16,Kommunikation:17,"WiSo Ausbildung & Arbeitsrecht":18,"WiSo Unternehmen & Wirtschaft":19,"WiSo Sicherheit & Umwelt":20,"WiSo Digitale Zusammenarbeit":21}
-B.GR=A.b(s(["BIOS vs. UEFI","Bootvorgang","CPU","DDR4 vs. DDR5","HDD","NVMe","RAM","SSD","Ger\xe4teklassen","Netzteil-Leistungsberechnung","Netzteil-Wirkungsgrad","S.M.A.R.T.","Daisy Chaining","Monitoranschl\xfcsse","Peripherieanschl\xfcsse","RGB-Farbraum","Dateigr\xf6\xdfen-Berechnung","\xdcbertragungsdauer","RAID","RAID-Level","Cache","USB-Standards","W\xe4rmeleitpaste","Mainboard","Chipsatz","JBOD","NAS","SAN","Grafikkarte","Dual Channel","TPM","Dockingstation","Einheiten-Umrechnung (IT)","Datenformate","ASCII vs. Bin\xe4rformat"]),t.s)
-B.H0=A.b(s(["ARP","APIPA","DHCP","DNS","IPv4","IPv6","MAC-Adresse","OSI-Modell","Router","RJ-45","SLAAC","Subnetting","Switch","TCP","UDP","WLAN-Standards","VPN","Firewall","Daisy Chaining","Monitoranschl\xfcsse","Peripherieanschl\xfcsse","VLAN","DMZ","Proxy-Server","HTTPS","TLS","Ping","Netzwerkdiagnose","Netzwerktopologien","NAT","Portweiterleitung","SNMP","QoS","CIDR","IDS / IPS","Netzmaske","IPv4-Adressklassen","Protokolltypen (\xdcberblick)","Netzwerkkonfiguration (Praxis)","Redundanz (IT)"]),t.s)
+B.GS=A.b(s(["BIOS vs. UEFI","Bootvorgang","CPU","DDR4 vs. DDR5","HDD","NVMe","RAM","SSD","Ger\xe4teklassen","Netzteil-Leistungsberechnung","Netzteil-Wirkungsgrad","S.M.A.R.T.","Daisy Chaining","Monitoranschl\xfcsse","Peripherieanschl\xfcsse","RGB-Farbraum","Dateigr\xf6\xdfen-Berechnung","\xdcbertragungsdauer","RAID","RAID-Level","Cache","USB-Standards","W\xe4rmeleitpaste","Mainboard","Chipsatz","JBOD","NAS","SAN","Grafikkarte","Dual Channel","TPM","Dockingstation","Einheiten-Umrechnung (IT)","Datenformate","ASCII vs. Bin\xe4rformat"]),t.s)
+B.FJ=A.b(s(["IPv4","IPv6","IPv4 vs. IPv6","IPv4-Adressklassen","Subnetting","CIDR","Netzmaske","NAT","Portweiterleitung","ARP","APIPA","SLAAC","DHCP","DNS","MAC-Adresse","OSI-Modell","TCP","UDP","HTTPS","TLS","Protokolltypen (\xdcberblick)","Netzwerkprotokoll-\xdcbersicht","SNMP","QoS","Router","Switch","VLAN","DMZ","Proxy-Server","Firewall","IDS / IPS","Netzwerksicherheit","VPN","WLAN-Standards","Netzwerktopologien","Redundanz (IT)","Netzwerkkonfiguration (Praxis)","Ping","Traceroute","Netzwerkdiagnose","RJ-45","Daisy Chaining","Monitoranschl\xfcsse","Peripherieanschl\xfcsse"]),t.s)
 B.F0=A.b(s(["BSI-Grundschutz","BYOD","Digitales Zertifikat","Endpoint-Security","Firewall","Hashverfahren","H\xe4rtung","Passwortrichtlinie","Phishing","Ransomware","Schutzziele (CIA)","Trojaner","Virus","VPN","Verschl\xfcsselung","Zwei-Faktor-Authentisierung","Zutrittskontrolle","TOM","Social Engineering","DKIM","SPF","DMARC","Schwachstellenmanagement","Penetrationstest","Zero Trust","IDS / IPS","AES","RSA","OAuth 2.0","DMZ","Biometrie","Blickschutzfolie","Schutzbedarf","Angriffsvektoren","IT-Grundschutz-Kompendium","TPM"]),t.s)
-B.GN=A.b(s(["Anonymisierung vs. Pseudonymisierung","BDSG","Betroffenenrechte","BYOD","DSGVO","Datensicherung (Backup)","TOM","Datenschutzbeauftragter","Datenschutz-Folgenabsch\xe4tzung","Logging","Lizenzmodelle","Auftragsverarbeitung (AVV)","Telearbeitsplatz","Personenbezogene Daten","Einwilligung (DSGVO)","Datenschutzprinzipien","Verarbeitungsverzeichnis","Datenpanne (Art. 33 DSGVO)","Recht auf Vergessenwerden","Datenschutz by Design / by Default","Auftraggeber vs. Auftragsverarbeiter","Drittland\xfcbermittlung","Cookies und ePrivacy"]),t.s)
-B.FR=A.b(s(["80-PLUS-Zertifikat","Blauer Engel","CO\u2082-Fu\xdfabdruck IT","EPEAT","ElektroG","Green IT","Konfliktmineralien","LkSG","Netzteil-Wirkungsgrad","PUE-Wert","RoHS-Richtlinie","\xd6kodesign-Verordnung","Stromkosten-Berechnung","Energieeffizienz-Klassen","Energieeffizienz-Berechnung"]),t.s)
-B.GK=A.b(s(["Abschreibung (AfA)","Amortisationsrechnung","CAPEX vs. OPEX","Handelskalkulation","Kaufvertrag","Kaufvertragsst\xf6rungen","Leasing","Make-or-Buy","Nutzwertanalyse","Rabatt und Skonto","Ratendarlehen","Stromkosten-Berechnung","Stundensatz-Kalkulation","TCO","Lieferantenauswahl","Angebotsvergleich","Marktformen","Kapitalwertmethode","Barwertmethode","Lizenzmodelle","Fremdvergabe (Outsourcing)","SaaS vs. On-Premise","Laufende vs. einmalige Kosten","Kaufvertrag (Inhalte)","Preisnachlass (Rabatt / Skonto)","Beschaffungsprozess"]),t.s)
-B.FO=A.b(s(["Gantt-Diagramm","Lastenheft vs. Pflichtenheft","Netzplan","SMART-Kriterien","Schreibtischtest","Change Management","Make-or-Buy","Nutzwertanalyse","BPMN","ERM","UML Aktivit\xe4tsdiagramm","UML Use-Case-Diagramm","Scrum","Kanban","Agile Methoden","Stakeholder","Projektmanagement-Methoden","Kritischer Pfad","Netzplan (Methodik)","Rollout","Beschaffungsprozess"]),t.s)
-B.Gq=A.b(s(["Compiler vs. Interpreter","ERM","Pseudocode","Schreibtischtest","BPMN","UML Aktivit\xe4tsdiagramm","UML Use-Case-Diagramm","Struktogramm","SQL Grundlagen","SQL SELECT","SQL JOIN","Datenbankmodelle","Normalisierung","KI / K\xfcnstliche Intelligenz","Machine Learning","Klassendiagramm (UML)","Programmiersprachen (Auswahl)","ASCII vs. Bin\xe4rformat","Webentwicklung (Grundlagen)","Datenformate","Neuronales Netz","Automation / RPA"]),t.s)
-B.G3=A.b(s(["KI / K\xfcnstliche Intelligenz","Machine Learning","KI-Grundlagen (\xdcberblick)","Maschinelles Lernen (ML)","Deep Learning","Neuronales Netz","Large Language Models (LLM)","Generative KI","Prompt Engineering","KI-Halluzination","RAG (Retrieval-Augmented Generation)","KI-Trainingsdaten","KI-Ethik und EU-AI-Act","Bias (KI)","KI im Betrieb","Automation / RPA"]),t.s)
-B.GU=A.b(s(["4-Ohren-Modell","Barrierefreiheit (IT)","Bildschirmarbeitsplatz","Change Management","Homeoffice","SMART-Kriterien","Arbeitsschutzgesetz","Stakeholder","Telearbeitsplatz","Ergonomierichtlinien (ArbSt\xe4ttV)","Dockingstation","Blickschutzfolie"]),t.s)
-B.Gl=A.b(s(["Barrierefreiheit (IT)","WCAG","BITV 2.0","European Accessibility Act (EAA)","Barrierefreiheit (Webdesign)","Screenreader","Kontrast (Barrierefreiheit)","Tastaturzug\xe4nglichkeit","Webentwicklung (Grundlagen)"]),t.s)
-B.Gr=A.b(s(["BDSG","Betroffenenrechte","DSGVO","ElektroG","Kaufvertrag","Kaufvertragsst\xf6rungen","Konfliktmineralien","LkSG","RoHS-Richtlinie","TOM","\xd6kodesign-Verordnung","Datenschutzbeauftragter","Datenschutz-Folgenabsch\xe4tzung","Lizenzmodelle","Arbeitsschutzgesetz","Auftragsverarbeitung (AVV)","Kaufvertrag (Inhalte)"]),t.s)
-B.Gk=A.b(s(["Abschreibung (AfA)","Amortisationsrechnung","Dateigr\xf6\xdfen-Berechnung","Handelskalkulation","Netzteil-Leistungsberechnung","Rabatt und Skonto","Ratendarlehen","Stromkosten-Berechnung","Stundensatz-Kalkulation","Subnetting","TCO","\xdcbertragungsdauer","Nutzwertanalyse","Angebotsvergleich","Kapitalwertmethode","Barwertmethode","CIDR","Einheiten-Umrechnung (IT)","Energieeffizienz-Berechnung","MwSt.-Berechnung","Gesamtkosten-Berechnung","Tilgungsplan","Verf\xfcgbarkeit (Berechnung)","Preisnachlass (Rabatt / Skonto)","Rechnung pr\xfcfen","Laufende vs. einmalige Kosten"]),t.s)
-B.Gj=A.b(s(["Cloud-Modelle","IaaS","PaaS","SaaS","Virtualisierung","Hypervisor","Docker","Container","Kubernetes","CAPEX vs. OPEX","TCO","Datensicherung (Backup)","NAS","SAN","SaaS vs. On-Premise","Cloud-Deployment-Modelle","Fremdvergabe (Outsourcing)"]),t.s)
+B.GO=A.b(s(["Anonymisierung vs. Pseudonymisierung","BDSG","Betroffenenrechte","BYOD","DSGVO","Datensicherung (Backup)","TOM","Datenschutzbeauftragter","Datenschutz-Folgenabsch\xe4tzung","Logging","Lizenzmodelle","Auftragsverarbeitung (AVV)","Telearbeitsplatz","Personenbezogene Daten","Einwilligung (DSGVO)","Datenschutzprinzipien","Verarbeitungsverzeichnis","Datenpanne (Art. 33 DSGVO)","Recht auf Vergessenwerden","Datenschutz by Design / by Default","Auftraggeber vs. Auftragsverarbeiter","Drittland\xfcbermittlung","Cookies und ePrivacy"]),t.s)
+B.FS=A.b(s(["80-PLUS-Zertifikat","Blauer Engel","CO\u2082-Fu\xdfabdruck IT","EPEAT","ElektroG","Green IT","Konfliktmineralien","LkSG","Netzteil-Wirkungsgrad","PUE-Wert","RoHS-Richtlinie","\xd6kodesign-Verordnung","Stromkosten-Berechnung","Energieeffizienz-Klassen","Energieeffizienz-Berechnung"]),t.s)
+B.GL=A.b(s(["Abschreibung (AfA)","Amortisationsrechnung","CAPEX vs. OPEX","Handelskalkulation","Kaufvertrag","Kaufvertragsst\xf6rungen","Leasing","Make-or-Buy","Nutzwertanalyse","Rabatt und Skonto","Ratendarlehen","Stromkosten-Berechnung","Stundensatz-Kalkulation","TCO","Lieferantenauswahl","Angebotsvergleich","Marktformen","Kapitalwertmethode","Barwertmethode","Lizenzmodelle","Fremdvergabe (Outsourcing)","SaaS vs. On-Premise","Laufende vs. einmalige Kosten","Kaufvertrag (Inhalte)","Preisnachlass (Rabatt / Skonto)","Beschaffungsprozess"]),t.s)
+B.FP=A.b(s(["Gantt-Diagramm","Lastenheft vs. Pflichtenheft","Netzplan","SMART-Kriterien","Schreibtischtest","Change Management","Make-or-Buy","Nutzwertanalyse","BPMN","ERM","UML Aktivit\xe4tsdiagramm","UML Use-Case-Diagramm","Scrum","Kanban","Agile Methoden","Stakeholder","Projektmanagement-Methoden","Kritischer Pfad","Netzplan (Methodik)","Rollout","Beschaffungsprozess"]),t.s)
+B.Gr=A.b(s(["Compiler vs. Interpreter","ERM","Pseudocode","Schreibtischtest","BPMN","UML Aktivit\xe4tsdiagramm","UML Use-Case-Diagramm","Struktogramm","SQL Grundlagen","SQL SELECT","SQL JOIN","Datenbankmodelle","Normalisierung","KI / K\xfcnstliche Intelligenz","Machine Learning","Klassendiagramm (UML)","Programmiersprachen (Auswahl)","ASCII vs. Bin\xe4rformat","Webentwicklung (Grundlagen)","Datenformate","Neuronales Netz","Automation / RPA"]),t.s)
+B.G4=A.b(s(["KI / K\xfcnstliche Intelligenz","Machine Learning","KI-Grundlagen (\xdcberblick)","Maschinelles Lernen (ML)","Deep Learning","Neuronales Netz","Large Language Models (LLM)","Generative KI","Prompt Engineering","KI-Halluzination","RAG (Retrieval-Augmented Generation)","KI-Trainingsdaten","KI-Ethik und EU-AI-Act","Bias (KI)","KI im Betrieb","Automation / RPA"]),t.s)
+B.GV=A.b(s(["4-Ohren-Modell","Barrierefreiheit (IT)","Bildschirmarbeitsplatz","Change Management","Homeoffice","SMART-Kriterien","Arbeitsschutzgesetz","Stakeholder","Telearbeitsplatz","Ergonomierichtlinien (ArbSt\xe4ttV)","Dockingstation","Blickschutzfolie"]),t.s)
+B.Gm=A.b(s(["Barrierefreiheit (IT)","WCAG","BITV 2.0","European Accessibility Act (EAA)","Barrierefreiheit (Webdesign)","Screenreader","Kontrast (Barrierefreiheit)","Tastaturzug\xe4nglichkeit","Webentwicklung (Grundlagen)"]),t.s)
+B.Gs=A.b(s(["BDSG","Betroffenenrechte","DSGVO","ElektroG","Kaufvertrag","Kaufvertragsst\xf6rungen","Konfliktmineralien","LkSG","RoHS-Richtlinie","TOM","\xd6kodesign-Verordnung","Datenschutzbeauftragter","Datenschutz-Folgenabsch\xe4tzung","Lizenzmodelle","Arbeitsschutzgesetz","Auftragsverarbeitung (AVV)","Kaufvertrag (Inhalte)"]),t.s)
+B.Gl=A.b(s(["Abschreibung (AfA)","Amortisationsrechnung","Dateigr\xf6\xdfen-Berechnung","Handelskalkulation","Netzteil-Leistungsberechnung","Rabatt und Skonto","Ratendarlehen","Stromkosten-Berechnung","Stundensatz-Kalkulation","Subnetting","TCO","\xdcbertragungsdauer","Nutzwertanalyse","Angebotsvergleich","Kapitalwertmethode","Barwertmethode","CIDR","Einheiten-Umrechnung (IT)","Energieeffizienz-Berechnung","MwSt.-Berechnung","Gesamtkosten-Berechnung","Tilgungsplan","Verf\xfcgbarkeit (Berechnung)","Preisnachlass (Rabatt / Skonto)","Rechnung pr\xfcfen","Laufende vs. einmalige Kosten"]),t.s)
+B.Gk=A.b(s(["Cloud-Modelle","IaaS","PaaS","SaaS","Virtualisierung","Hypervisor","Docker","Container","Kubernetes","CAPEX vs. OPEX","TCO","Datensicherung (Backup)","NAS","SAN","SaaS vs. On-Premise","Cloud-Deployment-Modelle","Fremdvergabe (Outsourcing)"]),t.s)
 B.FE=A.b(s(["ITIL","SLA","Incident Management","Problem Management","Change Management","CMDB","Verf\xfcgbarkeit","MTBF / MTTR","RTO / RPO","Datensicherung (Backup)","Schutzziele (CIA)","Verf\xfcgbarkeit (Berechnung)","Redundanz (IT)","Rollout"]),t.s)
-B.Gc=A.b(s(["Betriebssysteme","Gruppenrichtlinien","Active Directory","LDAP","Kerberos","Dateirechte (Linux)","CMDB","Logging","Passwortrichtlinie","H\xe4rtung","Endpoint-Security","Zwei-Faktor-Authentisierung","Zutrittskontrolle","Dateirechte (Windows)","TPM","Netzwerkkonfiguration (Praxis)","Rollout","Schutzbedarf","IT-Grundschutz-Kompendium"]),t.s)
+B.Gd=A.b(s(["Betriebssysteme","Gruppenrichtlinien","Active Directory","LDAP","Kerberos","Dateirechte (Linux)","CMDB","Logging","Passwortrichtlinie","H\xe4rtung","Endpoint-Security","Zwei-Faktor-Authentisierung","Zutrittskontrolle","Dateirechte (Windows)","TPM","Netzwerkkonfiguration (Praxis)","Rollout","Schutzbedarf","IT-Grundschutz-Kompendium"]),t.s)
 B.FD=A.b(s(["RAID","RAID-Level","JBOD","NAS","SAN","HDD","SSD","NVMe","Datensicherung (Backup)","RTO / RPO","S.M.A.R.T.","Backup-Typen","Datenformate"]),t.s)
-B.G4=A.b(s(["RFID","NFC","USB-Standards","QoS","SNMP","WLAN-Standards","RJ-45","Monitoranschl\xfcsse","Peripherieanschl\xfcsse"]),t.s)
-B.GO=A.b(s(["Ausbildungsvertrag","BBiG","Duales System","Berufsschulpflicht","Ausbildungsrahmenplan","Tarifvertrag","Tarifautonomie","Betriebsrat","K\xfcndigungsschutz","AGG (Gleichbehandlungsgesetz)","Arbeitszeitgesetz (ArbZG)","Betriebsverfassungsgesetz (BetrVG)","Entgeltformen","Sozialversicherung","Lohnsteuer","Brutto-Netto-Abrechnung","Arbeitsschutzgesetz"]),t.s)
-B.GZ=A.b(s(["Rechtsformen (Unternehmen)","GmbH vs. AG","Wirtschaftssektoren","Unternehmensorganisation","Konzern / Kartell / Fusion",u.X,"Soziale Marktwirtschaft","Marktformen","Make-or-Buy","Lieferantenauswahl"]),t.s)
+B.G5=A.b(s(["RFID","NFC","USB-Standards","QoS","SNMP","WLAN-Standards","RJ-45","Monitoranschl\xfcsse","Peripherieanschl\xfcsse"]),t.s)
+B.GP=A.b(s(["Ausbildungsvertrag","BBiG","Duales System","Berufsschulpflicht","Ausbildungsrahmenplan","Tarifvertrag","Tarifautonomie","Betriebsrat","K\xfcndigungsschutz","AGG (Gleichbehandlungsgesetz)","Arbeitszeitgesetz (ArbZG)","Betriebsverfassungsgesetz (BetrVG)","Entgeltformen","Sozialversicherung","Lohnsteuer","Brutto-Netto-Abrechnung","Arbeitsschutzgesetz"]),t.s)
+B.H_=A.b(s(["Rechtsformen (Unternehmen)","GmbH vs. AG","Wirtschaftssektoren","Unternehmensorganisation","Konzern / Kartell / Fusion",u.X,"Soziale Marktwirtschaft","Marktformen","Make-or-Buy","Lieferantenauswahl"]),t.s)
 B.H1=A.b(s(["Gef\xe4hrdungsbeurteilung","Brandschutz","Unfallverh\xfctung","CE-Zeichen","Umweltschutz (betrieblich)","Nachhaltigkeit (3-S\xe4ulen-Modell)","Regenerative Energien","Green IT","Arbeitsschutzgesetz","CO\u2082-Fu\xdfabdruck IT","ElektroG","LkSG"]),t.s)
-B.Gh=A.b(s(["Netiquette","Diversity","Compliance","Lebenslanges Lernen","Arbeitstechniken (WiSo)","4-Ohren-Modell","Change Management","Social Engineering","BYOD","Homeoffice","Telearbeitsplatz","KI / K\xfcnstliche Intelligenz"]),t.s)
-B.ep=new A.bI(B.Jd,[B.GR,B.H0,B.F0,B.GN,B.FR,B.GK,B.FO,B.Gq,B.G3,B.GU,B.Gl,B.Gr,B.Gk,B.Gj,B.FE,B.Gc,B.FD,B.G4,B.GO,B.GZ,B.H1,B.Gh],t.VJ)
+B.Gi=A.b(s(["Netiquette","Diversity","Compliance","Lebenslanges Lernen","Arbeitstechniken (WiSo)","4-Ohren-Modell","Change Management","Social Engineering","BYOD","Homeoffice","Telearbeitsplatz","KI / K\xfcnstliche Intelligenz"]),t.s)
+B.ep=new A.bI(B.Jd,[B.GS,B.FJ,B.F0,B.GO,B.FS,B.GL,B.FP,B.Gr,B.G4,B.GV,B.Gm,B.Gs,B.Gl,B.Gk,B.FE,B.Gd,B.FD,B.G5,B.GP,B.H_,B.H1,B.Gi],t.VJ)
 B.Jl={type:0}
 B.IG=new A.bI(B.Jl,["line"],t.li)
 B.br={}
@@ -82737,57 +82737,57 @@ B.Ft=A.b(s([54,null,null,8589935158]),t.Z)
 B.Fu=A.b(s([55,null,null,8589935159]),t.Z)
 B.Fv=A.b(s([56,null,null,8589935160]),t.Z)
 B.Fx=A.b(s([57,null,null,8589935161]),t.Z)
-B.G5=A.b(s([8589934852,8589934852,8589934853,null]),t.Z)
+B.G6=A.b(s([8589934852,8589934852,8589934853,null]),t.Z)
 B.F5=A.b(s([4294967555,null,4294967555,null]),t.Z)
 B.F6=A.b(s([4294968065,null,null,8589935154]),t.Z)
 B.F7=A.b(s([4294968066,null,null,8589935156]),t.Z)
 B.F8=A.b(s([4294968067,null,null,8589935158]),t.Z)
 B.F9=A.b(s([4294968068,null,null,8589935160]),t.Z)
 B.Fe=A.b(s([4294968321,null,null,8589935157]),t.Z)
-B.G6=A.b(s([8589934848,8589934848,8589934849,null]),t.Z)
+B.G7=A.b(s([8589934848,8589934848,8589934849,null]),t.Z)
 B.F4=A.b(s([4294967423,null,null,8589935150]),t.Z)
 B.Fa=A.b(s([4294968069,null,null,8589935153]),t.Z)
 B.F3=A.b(s([4294967309,null,null,8589935117]),t.Z)
 B.Fb=A.b(s([4294968070,null,null,8589935159]),t.Z)
 B.Ff=A.b(s([4294968327,null,null,8589935152]),t.Z)
-B.G7=A.b(s([8589934854,8589934854,8589934855,null]),t.Z)
+B.G8=A.b(s([8589934854,8589934854,8589934855,null]),t.Z)
 B.Fc=A.b(s([4294968071,null,null,8589935155]),t.Z)
 B.Fd=A.b(s([4294968072,null,null,8589935161]),t.Z)
-B.G8=A.b(s([8589934850,8589934850,8589934851,null]),t.Z)
-B.rQ=new A.cW(["*",B.Fg,"+",B.Fh,"-",B.Fi,".",B.Fj,"/",B.Fk,"0",B.Fl,"1",B.Fm,"2",B.Fo,"3",B.Fq,"4",B.Fr,"5",B.Fs,"6",B.Ft,"7",B.Fu,"8",B.Fv,"9",B.Fx,"Alt",B.G5,"AltGraph",B.F5,"ArrowDown",B.F6,"ArrowLeft",B.F7,"ArrowRight",B.F8,"ArrowUp",B.F9,"Clear",B.Fe,"Control",B.G6,"Delete",B.F4,"End",B.Fa,"Enter",B.F3,"Home",B.Fb,"Insert",B.Ff,"Meta",B.G7,"PageDown",B.Fc,"PageUp",B.Fd,"Shift",B.G8],A.aw("cW<q,F<n?>>"))
+B.G9=A.b(s([8589934850,8589934850,8589934851,null]),t.Z)
+B.rQ=new A.cW(["*",B.Fg,"+",B.Fh,"-",B.Fi,".",B.Fj,"/",B.Fk,"0",B.Fl,"1",B.Fm,"2",B.Fo,"3",B.Fq,"4",B.Fr,"5",B.Fs,"6",B.Ft,"7",B.Fu,"8",B.Fv,"9",B.Fx,"Alt",B.G6,"AltGraph",B.F5,"ArrowDown",B.F6,"ArrowLeft",B.F7,"ArrowRight",B.F8,"ArrowUp",B.F9,"Clear",B.Fe,"Control",B.G7,"Delete",B.F4,"End",B.Fa,"Enter",B.F3,"Home",B.Fb,"Insert",B.Ff,"Meta",B.G8,"PageDown",B.Fc,"PageUp",B.Fd,"Shift",B.G9],A.aw("cW<q,F<n?>>"))
 B.Fw=A.b(s([B.mW,null,null,B.rC]),t.L)
-B.GG=A.b(s([B.ro,null,null,B.rD]),t.L)
-B.FQ=A.b(s([B.rp,null,null,B.rE]),t.L)
-B.Ga=A.b(s([B.rq,null,null,B.cw]),t.L)
+B.GH=A.b(s([B.ro,null,null,B.rD]),t.L)
+B.FR=A.b(s([B.rp,null,null,B.rE]),t.L)
+B.Gb=A.b(s([B.rq,null,null,B.cw]),t.L)
 B.EY=A.b(s([B.rr,null,null,B.rF]),t.L)
-B.GW=A.b(s([B.rs,null,null,B.jh]),t.L)
-B.GQ=A.b(s([B.rt,null,null,B.el]),t.L)
+B.GX=A.b(s([B.rs,null,null,B.jh]),t.L)
+B.GR=A.b(s([B.rt,null,null,B.el]),t.L)
 B.FC=A.b(s([B.ru,null,null,B.cx]),t.L)
-B.H_=A.b(s([B.rv,null,null,B.em]),t.L)
-B.GP=A.b(s([B.rw,null,null,B.cy]),t.L)
+B.H0=A.b(s([B.rv,null,null,B.em]),t.L)
+B.GQ=A.b(s([B.rw,null,null,B.cy]),t.L)
 B.FA=A.b(s([B.rx,null,null,B.ji]),t.L)
 B.F2=A.b(s([B.ry,null,null,B.cz]),t.L)
-B.FM=A.b(s([B.rz,null,null,B.en]),t.L)
-B.GH=A.b(s([B.rA,null,null,B.cA]),t.L)
-B.GI=A.b(s([B.rB,null,null,B.eo]),t.L)
+B.FN=A.b(s([B.rz,null,null,B.en]),t.L)
+B.GI=A.b(s([B.rA,null,null,B.cA]),t.L)
+B.GJ=A.b(s([B.rB,null,null,B.eo]),t.L)
 B.FF=A.b(s([B.ej,B.ej,B.fW,null]),t.L)
-B.GX=A.b(s([B.fS,null,B.fS,null]),t.L)
-B.FU=A.b(s([B.by,null,null,B.cx]),t.L)
-B.FV=A.b(s([B.bo,null,null,B.cy]),t.L)
-B.FW=A.b(s([B.bp,null,null,B.cz]),t.L)
-B.GY=A.b(s([B.bz,null,null,B.cA]),t.L)
-B.GL=A.b(s([B.ja,null,null,B.ji]),t.L)
+B.GY=A.b(s([B.fS,null,B.fS,null]),t.L)
+B.FV=A.b(s([B.by,null,null,B.cx]),t.L)
+B.FW=A.b(s([B.bo,null,null,B.cy]),t.L)
+B.FX=A.b(s([B.bp,null,null,B.cz]),t.L)
+B.GZ=A.b(s([B.bz,null,null,B.cA]),t.L)
+B.GM=A.b(s([B.ja,null,null,B.ji]),t.L)
 B.FG=A.b(s([B.ei,B.ei,B.fV,null]),t.L)
-B.Gm=A.b(s([B.aA,null,null,B.cw]),t.L)
-B.FX=A.b(s([B.ct,null,null,B.el]),t.L)
+B.Gn=A.b(s([B.aA,null,null,B.cw]),t.L)
+B.FY=A.b(s([B.ct,null,null,B.el]),t.L)
 B.Fz=A.b(s([B.fR,null,null,B.jg]),t.L)
-B.FY=A.b(s([B.cu,null,null,B.en]),t.L)
-B.GM=A.b(s([B.jb,null,null,B.jh]),t.L)
+B.FZ=A.b(s([B.cu,null,null,B.en]),t.L)
+B.GN=A.b(s([B.jb,null,null,B.jh]),t.L)
 B.FH=A.b(s([B.ek,B.ek,B.fX,null]),t.L)
-B.FZ=A.b(s([B.eg,null,null,B.em]),t.L)
-B.Gs=A.b(s([B.eh,null,null,B.eo]),t.L)
+B.G_=A.b(s([B.eg,null,null,B.em]),t.L)
+B.Gt=A.b(s([B.eh,null,null,B.eo]),t.L)
 B.FI=A.b(s([B.c7,B.c7,B.cv,null]),t.L)
-B.IJ=new A.cW(["*",B.Fw,"+",B.GG,"-",B.FQ,".",B.Ga,"/",B.EY,"0",B.GW,"1",B.GQ,"2",B.FC,"3",B.H_,"4",B.GP,"5",B.FA,"6",B.F2,"7",B.FM,"8",B.GH,"9",B.GI,"Alt",B.FF,"AltGraph",B.GX,"ArrowDown",B.FU,"ArrowLeft",B.FV,"ArrowRight",B.FW,"ArrowUp",B.GY,"Clear",B.GL,"Control",B.FG,"Delete",B.Gm,"End",B.FX,"Enter",B.Fz,"Home",B.FY,"Insert",B.GM,"Meta",B.FH,"PageDown",B.FZ,"PageUp",B.Gs,"Shift",B.FI],A.aw("cW<q,F<h?>>"))
+B.IJ=new A.cW(["*",B.Fw,"+",B.GH,"-",B.FR,".",B.Gb,"/",B.EY,"0",B.GX,"1",B.GR,"2",B.FC,"3",B.H0,"4",B.GQ,"5",B.FA,"6",B.F2,"7",B.FN,"8",B.GI,"9",B.GJ,"Alt",B.FF,"AltGraph",B.GY,"ArrowDown",B.FV,"ArrowLeft",B.FW,"ArrowRight",B.FX,"ArrowUp",B.GZ,"Clear",B.GM,"Control",B.FG,"Delete",B.Gn,"End",B.FY,"Enter",B.Fz,"Home",B.FZ,"Insert",B.GN,"Meta",B.FH,"PageDown",B.G_,"PageUp",B.Gt,"Shift",B.FI],A.aw("cW<q,F<h?>>"))
 B.Jh={KeyA:0,KeyB:1,KeyC:2,KeyD:3,KeyE:4,KeyF:5,KeyG:6,KeyH:7,KeyI:8,KeyJ:9,KeyK:10,KeyL:11,KeyM:12,KeyN:13,KeyO:14,KeyP:15,KeyQ:16,KeyR:17,KeyS:18,KeyT:19,KeyU:20,KeyV:21,KeyW:22,KeyX:23,KeyY:24,KeyZ:25,Digit1:26,Digit2:27,Digit3:28,Digit4:29,Digit5:30,Digit6:31,Digit7:32,Digit8:33,Digit9:34,Digit0:35,Minus:36,Equal:37,BracketLeft:38,BracketRight:39,Backslash:40,Semicolon:41,Quote:42,Backquote:43,Comma:44,Period:45,Slash:46}
 B.jn=new A.bI(B.Jh,["a","b","c","d","e","f","g","h","i","j","k","l","m","n","o","p","q","r","s","t","u","v","w","x","y","z","1","2","3","4","5","6","7","8","9","0","-","=","[","]","\\",";","'","`",",",".","/"],t.li)
 B.Je={Abort:0,Again:1,AltLeft:2,AltRight:3,ArrowDown:4,ArrowLeft:5,ArrowRight:6,ArrowUp:7,AudioVolumeDown:8,AudioVolumeMute:9,AudioVolumeUp:10,Backquote:11,Backslash:12,Backspace:13,BracketLeft:14,BracketRight:15,BrightnessDown:16,BrightnessUp:17,BrowserBack:18,BrowserFavorites:19,BrowserForward:20,BrowserHome:21,BrowserRefresh:22,BrowserSearch:23,BrowserStop:24,CapsLock:25,Comma:26,ContextMenu:27,ControlLeft:28,ControlRight:29,Convert:30,Copy:31,Cut:32,Delete:33,Digit0:34,Digit1:35,Digit2:36,Digit3:37,Digit4:38,Digit5:39,Digit6:40,Digit7:41,Digit8:42,Digit9:43,DisplayToggleIntExt:44,Eject:45,End:46,Enter:47,Equal:48,Escape:49,Esc:50,F1:51,F10:52,F11:53,F12:54,F13:55,F14:56,F15:57,F16:58,F17:59,F18:60,F19:61,F2:62,F20:63,F21:64,F22:65,F23:66,F24:67,F3:68,F4:69,F5:70,F6:71,F7:72,F8:73,F9:74,Find:75,Fn:76,FnLock:77,GameButton1:78,GameButton10:79,GameButton11:80,GameButton12:81,GameButton13:82,GameButton14:83,GameButton15:84,GameButton16:85,GameButton2:86,GameButton3:87,GameButton4:88,GameButton5:89,GameButton6:90,GameButton7:91,GameButton8:92,GameButton9:93,GameButtonA:94,GameButtonB:95,GameButtonC:96,GameButtonLeft1:97,GameButtonLeft2:98,GameButtonMode:99,GameButtonRight1:100,GameButtonRight2:101,GameButtonSelect:102,GameButtonStart:103,GameButtonThumbLeft:104,GameButtonThumbRight:105,GameButtonX:106,GameButtonY:107,GameButtonZ:108,Help:109,Home:110,Hyper:111,Insert:112,IntlBackslash:113,IntlRo:114,IntlYen:115,KanaMode:116,KeyA:117,KeyB:118,KeyC:119,KeyD:120,KeyE:121,KeyF:122,KeyG:123,KeyH:124,KeyI:125,KeyJ:126,KeyK:127,KeyL:128,KeyM:129,KeyN:130,KeyO:131,KeyP:132,KeyQ:133,KeyR:134,KeyS:135,KeyT:136,KeyU:137,KeyV:138,KeyW:139,KeyX:140,KeyY:141,KeyZ:142,KeyboardLayoutSelect:143,Lang1:144,Lang2:145,Lang3:146,Lang4:147,Lang5:148,LaunchApp1:149,LaunchApp2:150,LaunchAssistant:151,LaunchControlPanel:152,LaunchMail:153,LaunchScreenSaver:154,MailForward:155,MailReply:156,MailSend:157,MediaFastForward:158,MediaPause:159,MediaPlay:160,MediaPlayPause:161,MediaRecord:162,MediaRewind:163,MediaSelect:164,MediaStop:165,MediaTrackNext:166,MediaTrackPrevious:167,MetaLeft:168,MetaRight:169,MicrophoneMuteToggle:170,Minus:171,NonConvert:172,NumLock:173,Numpad0:174,Numpad1:175,Numpad2:176,Numpad3:177,Numpad4:178,Numpad5:179,Numpad6:180,Numpad7:181,Numpad8:182,Numpad9:183,NumpadAdd:184,NumpadBackspace:185,NumpadClear:186,NumpadClearEntry:187,NumpadComma:188,NumpadDecimal:189,NumpadDivide:190,NumpadEnter:191,NumpadEqual:192,NumpadMemoryAdd:193,NumpadMemoryClear:194,NumpadMemoryRecall:195,NumpadMemoryStore:196,NumpadMemorySubtract:197,NumpadMultiply:198,NumpadParenLeft:199,NumpadParenRight:200,NumpadSubtract:201,Open:202,PageDown:203,PageUp:204,Paste:205,Pause:206,Period:207,Power:208,PrintScreen:209,PrivacyScreenToggle:210,Props:211,Quote:212,Resume:213,ScrollLock:214,Select:215,SelectTask:216,Semicolon:217,ShiftLeft:218,ShiftRight:219,ShowAllWindows:220,Slash:221,Sleep:222,Space:223,Super:224,Suspend:225,Tab:226,Turbo:227,Undo:228,WakeUp:229,ZoomToggle:230}
@@ -83834,7 +83834,7 @@ B.ya=new A.dY("\xdcber diese App",null,null,null,null,null,null,null,null)
 B.yb=new A.dY("Impressum",null,null,null,null,null,null,null,null)
 B.S5=new A.l(!0,B.F,null,null,null,null,18,null,null,1.5,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null)
 B.SE=new A.dY("Welcome",null,B.S5,B.cJ,null,null,null,null,null)
-B.SG=new A.dY("v1.9.1 \u2013 Learning Factory",null,B.y7,null,null,null,null,null,null)
+B.SG=new A.dY("v1.9.2 \u2013 Learning Factory",null,B.y7,null,null,null,null,null,null)
 B.VP=new A.abH(0,"system")
 B.JB=new A.j(0.056,0.024)
 B.JP=new A.j(0.108,0.3085)
@@ -84281,7 +84281,7 @@ r($,"aGu","axm",()=>A.aFW())
 r($,"aNt","axL",()=>A.e0().gDW()+"roboto/v32/KFOmCnqEu92Fr1Me4GZLCzYlKw.woff2")
 r($,"aMT","axj",()=>A.aFJ(A.auo(A.auo(A.aJ5(),"window"),"FinalizationRegistry"),A.bN(new A.ak8())))
 r($,"aOa","aya",()=>new A.a5M())
-s($,"aN_","axo",()=>A.aBC(B.G_))
+s($,"aN_","axo",()=>A.aBC(B.G0))
 s($,"aMZ","alE",()=>A.a2t(A.az9($.axo())))
 s($,"aMN","axh",()=>A.aso(A.C(A.aa(),"ParagraphBuilder")))
 s($,"aOg","ayc",()=>{var q=t.N,p=A.aw("+breaks,graphemes,words(tl,tl,tl)"),o=A.amS(1e5,q,p),n=A.amS(1e4,q,p)

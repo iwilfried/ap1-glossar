@@ -20,15 +20,23 @@ const Map<String, List<String>> termGroups = {
     'Einheiten-Umrechnung (IT)', 'Datenformate', 'ASCII vs. Binärformat',
   ],
   'Netzwerk': [
-    'ARP', 'APIPA', 'DHCP', 'DNS', 'IPv4', 'IPv6', 'MAC-Adresse',
-    'OSI-Modell', 'Router', 'RJ-45', 'SLAAC', 'Subnetting', 'Switch',
-    'TCP', 'UDP', 'WLAN-Standards', 'VPN', 'Firewall', 'Daisy Chaining',
-    'Monitoranschlüsse', 'Peripherieanschlüsse',
-    'VLAN', 'DMZ', 'Proxy-Server', 'HTTPS', 'TLS', 'Ping',
-    'Netzwerkdiagnose', 'Netzwerktopologien', 'NAT', 'Portweiterleitung',
-    'SNMP', 'QoS', 'CIDR', 'IDS / IPS',
-    'Netzmaske', 'IPv4-Adressklassen', 'Protokolltypen (Überblick)',
-    'Netzwerkkonfiguration (Praxis)', 'Redundanz (IT)',
+    // Adressierung & Subnetting
+    'IPv4', 'IPv6', 'IPv4 vs. IPv6', 'IPv4-Adressklassen',
+    'Subnetting', 'CIDR', 'Netzmaske', 'NAT', 'Portweiterleitung',
+    'ARP', 'APIPA', 'SLAAC', 'DHCP', 'DNS', 'MAC-Adresse',
+    // OSI & Protokolle
+    'OSI-Modell', 'TCP', 'UDP', 'HTTPS', 'TLS',
+    'Protokolltypen (Überblick)', 'Netzwerkprotokoll-Übersicht',
+    'SNMP', 'QoS',
+    // Infrastruktur & VLANs
+    'Router', 'Switch', 'VLAN', 'DMZ', 'Proxy-Server',
+    'Firewall', 'IDS / IPS', 'Netzwerksicherheit',
+    'VPN', 'WLAN-Standards', 'Netzwerktopologien',
+    'Redundanz (IT)', 'Netzwerkkonfiguration (Praxis)',
+    // Diagnose
+    'Ping', 'Traceroute', 'Netzwerkdiagnose',
+    // Hardware
+    'RJ-45', 'Daisy Chaining', 'Monitoranschlüsse', 'Peripherieanschlüsse',
   ],
   'IT-Sicherheit': [
     'BSI-Grundschutz', 'BYOD', 'Digitales Zertifikat', 'Endpoint-Security',
