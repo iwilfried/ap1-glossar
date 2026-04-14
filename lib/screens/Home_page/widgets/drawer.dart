@@ -73,7 +73,7 @@ class AppDrawer extends StatelessWidget {
           ListTile(
             leading: const Icon(Icons.info, color: Colors.grey),
             title: const Text(
-              'v1.9.2 – Learning Factory',
+              'v1.9.3 – Learning Factory',
               style: TextStyle(color: Colors.grey, fontSize: 13),
             ),
           ),
