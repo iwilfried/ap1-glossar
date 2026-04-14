@@ -18,6 +18,9 @@ const Map<String, List<String>> termGroups = {
     'Mainboard', 'Chipsatz', 'JBOD', 'NAS', 'SAN',
     'Grafikkarte', 'Dual Channel', 'TPM', 'Dockingstation',
     'Einheiten-Umrechnung (IT)', 'Datenformate', 'ASCII vs. Binärformat',
+    'EVA-Prinzip', 'Firmware', 'GPT (Partitionsstil)', 'HDMI', 'Kernel',
+    'MBR', 'POST (Power-On Self-Test)', 'SATA', 'Secure Boot',
+    'TDP (Thermal Design Power)', 'Thin Client', 'USV (Unterbrechungsfreie Stromversorgung)',
   ],
   'Netzwerk': [
     // Adressierung & Subnetting
@@ -37,6 +40,8 @@ const Map<String, List<String>> termGroups = {
     'Ping', 'Traceroute', 'Netzwerkdiagnose',
     // Hardware
     'RJ-45', 'Daisy Chaining', 'Monitoranschlüsse', 'Peripherieanschlüsse',
+    'Bandbreite', 'Broadcast', 'Durchsatz', 'Ethernet', 'FTP', 'Gateway',
+    'Latenz', 'Multicast', 'Routing', 'SMTP', 'Unicast',
   ],
   'IT-Sicherheit': [
     'BSI-Grundschutz', 'BYOD', 'Digitales Zertifikat', 'Endpoint-Security',
@@ -48,6 +53,10 @@ const Map<String, List<String>> termGroups = {
     'IDS / IPS', 'AES', 'RSA', 'OAuth 2.0', 'DMZ',
     'Biometrie', 'Blickschutzfolie', 'Schutzbedarf', 'Angriffsvektoren',
     'IT-Grundschutz-Kompendium', 'TPM',
+    'Backup-Strategien', 'DDoS', 'Grundschutz-Maßnahmen', 'Hashwert',
+    'Integritaet (Schutzziel)', 'MDM (Mobile Device Management)', 'Malware',
+    'SHA-256', 'Verschlüsselung (Typen)', 'Verschlüsselungsarten',
+    'Vertraulichkeit (Schutzziel)',
   ],
   'Datenschutz': [
     'Anonymisierung vs. Pseudonymisierung', 'BDSG', 'Betroffenenrechte',
@@ -59,6 +68,7 @@ const Map<String, List<String>> termGroups = {
     'Datenpanne (Art. 33 DSGVO)', 'Recht auf Vergessenwerden',
     'Datenschutz by Design / by Default', 'Auftraggeber vs. Auftragsverarbeiter',
     'Drittlandübermittlung', 'Cookies und ePrivacy',
+    'Loeschanomalie',
   ],
   'Nachhaltigkeit': [
     '80-PLUS-Zertifikat', 'Blauer Engel', 'CO₂-Fußabdruck IT', 'EPEAT',
@@ -66,6 +76,8 @@ const Map<String, List<String>> termGroups = {
     'Netzteil-Wirkungsgrad', 'PUE-Wert', 'RoHS-Richtlinie',
     'Ökodesign-Verordnung', 'Stromkosten-Berechnung',
     'Energieeffizienz-Klassen', 'Energieeffizienz-Berechnung',
+    'Energy Star', 'ESG (Nachhaltigkeitskriterien)',
+    'Oekologische Ziele (Unternehmen)',
   ],
   'Wirtschaft': [
     'Abschreibung (AfA)', 'Amortisationsrechnung', 'CAPEX vs. OPEX',
@@ -77,6 +89,13 @@ const Map<String, List<String>> termGroups = {
     'Fremdvergabe (Outsourcing)', 'SaaS vs. On-Premise',
     'Laufende vs. einmalige Kosten', 'Kaufvertrag (Inhalte)',
     'Preisnachlass (Rabatt / Skonto)', 'Beschaffungsprozess',
+    'CRM (Customer Relationship Management)', 'Dienstvertrag',
+    'Effektivitaet vs. Effizienz', 'ERP (Enterprise Resource Planning)',
+    'GWG (Geringwertiges Wirtschaftsgut)', 'Gewinn', 'Globalisierung',
+    'Handelsspanne', 'Industrie 4.0', 'Liquiditaet',
+    'Oekonomische Ziele (Unternehmen)', 'Preiskalkulation',
+    'ROI (Return on Investment)', 'Rueckwaertskalkulation', 'Umsatz',
+    'Werkvertrag', 'Leistungsaufnahme (Elektrotechnik)', 'Digitalisierung',
   ],
   'Projektmanagement': [
     'Gantt-Diagramm', 'Lastenheft vs. Pflichtenheft', 'Netzplan',
@@ -86,6 +105,10 @@ const Map<String, List<String>> termGroups = {
     'Scrum', 'Kanban', 'Agile Methoden', 'Stakeholder',
     'Projektmanagement-Methoden', 'Kritischer Pfad',
     'Netzplan (Methodik)', 'Rollout', 'Beschaffungsprozess',
+    'Change Management (ITIL)', 'IT-Service-Management', 'Magisches Dreieck',
+    'Meilenstein', 'Netzplantechnik', 'Projektmerkmale',
+    'Projektstrukturplan', 'SMART-Prinzip', 'Softwarelebenszyklus',
+    'Spiralmodell', 'Wasserfallmodell',
   ],
   'Programmierung': [
     'Compiler vs. Interpreter', 'ERM', 'Pseudocode', 'Schreibtischtest',
@@ -96,6 +119,11 @@ const Map<String, List<String>> termGroups = {
     'Programmiersprachen (Auswahl)', 'ASCII vs. Binärformat',
     'Webentwicklung (Grundlagen)', 'Datenformate',
     'Neuronales Netz', 'Automation / RPA',
+    'Algorithmus', 'Blackbox-Test', 'Bytecode', 'CRUD', 'Dualsystem',
+    'ER-Diagramm', 'Einfuegeanomalie', 'Entitaet', 'Fremdschluessel',
+    'Hexadezimalsystem', 'JVM', 'Kardinalitaet', 'Maschinencode',
+    'Primaerschluessel', 'Programmablaufplan', 'Quellcode', 'Schleife',
+    'Sequenz', 'Verzweigung', 'Versionsverwaltung', 'Whitebox-Test',
   ],
   'Künstliche Intelligenz': [
     'KI / Künstliche Intelligenz', 'Machine Learning',
@@ -106,6 +134,8 @@ const Map<String, List<String>> termGroups = {
     'RAG (Retrieval-Augmented Generation)', 'KI-Trainingsdaten',
     'KI-Ethik und EU-AI-Act', 'Bias (KI)',
     'KI im Betrieb', 'Automation / RPA',
+    'NLP (Natural Language Processing)', 'OCR (Zeichenerkennung)',
+    'QR-Code',
   ],
   'Ergonomie & Soziales': [
     '4-Ohren-Modell', 'Barrierefreiheit (IT)', 'Bildschirmarbeitsplatz',
@@ -113,6 +143,8 @@ const Map<String, List<String>> termGroups = {
     'Arbeitsschutzgesetz', 'Stakeholder',
     'Telearbeitsplatz', 'Ergonomierichtlinien (ArbStättV)',
     'Dockingstation', 'Blickschutzfolie',
+    'Fuehrungsstil', 'Soziale Ziele (Unternehmen)',
+    'Teambildung (Tuckman)',
   ],
   'Barrierefreiheit': [
     'Barrierefreiheit (IT)', 'WCAG', 'BITV 2.0',
