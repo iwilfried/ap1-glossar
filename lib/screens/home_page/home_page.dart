@@ -236,20 +236,22 @@ class HomePageState extends State<HomePage> {
   }
 
   void navigateToTerm(String term) {
-    // Alle Filter zurücksetzen → term wird sichtbar
-    _searchController.text = term;
-    _applyFilter(search: term, aspekt: Aspekt.alle, clearThema: true);
+    // Reset all filters to show full list
+    _searchController.clear();
+    _applyFilter(search: '', aspekt: Aspekt.alle, clearThema: true);
+
+    // Find the exact index of the target term
+    final idx = _visibleKeys.indexOf(term);
+    if (idx < 0) return;
+
+    // Scroll to the term's position (estimated card height ~90px)
     Future.delayed(const Duration(milliseconds: 150), () {
-      if (!mounted) return;
-      // Ergebnis: entweder genau 1 Treffer → zu oberst, oder animierter Scroll
-      final idx = _visibleKeys.indexOf(term);
-      if (idx >= 0 && _scrollController.hasClients) {
-        _scrollController.animateTo(
-          0, // Nach Suche ist der Begriff ganz oben
-          duration: const Duration(milliseconds: 300),
-          curve: Curves.easeInOut,
-        );
-      }
+      if (!mounted || !_scrollController.hasClients) return;
+      _scrollController.animateTo(
+        idx * 90.0,
+        duration: const Duration(milliseconds: 400),
+        curve: Curves.easeInOut,
+      );
     });
   }
 
