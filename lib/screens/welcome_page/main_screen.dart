@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:google_fonts/google_fonts.dart';
 import 'package:ap1_glossar/screens/home_page/home_page.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 
@@ -54,7 +53,8 @@ class _WelcomeScreenState extends State<WelcomeScreen> {
                     Text(
                       'IHK\nAP1',
                       textAlign: TextAlign.center,
-                      style: GoogleFonts.oswald(
+                      style: const TextStyle(
+                        fontFamily: 'Oswald',
                         fontSize: 52,
                         fontWeight: FontWeight.w700,
                         color: Colors.white,
@@ -66,7 +66,8 @@ class _WelcomeScreenState extends State<WelcomeScreen> {
                     Text(
                       'GLOSSAR',
                       textAlign: TextAlign.center,
-                      style: GoogleFonts.oswald(
+                      style: const TextStyle(
+                        fontFamily: 'Oswald',
                         fontSize: 44,
                         fontWeight: FontWeight.w700,
                         color: Colors.deepOrange,
