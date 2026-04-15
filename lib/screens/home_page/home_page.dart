@@ -1,8 +1,10 @@
 import 'package:flutter/material.dart';
+import 'package:shared_preferences/shared_preferences.dart';
 import 'package:ap1_glossar/constants/colors.dart';
 import 'package:ap1_glossar/data/data.dart';
 import 'package:ap1_glossar/data/related.dart';
 import 'package:ap1_glossar/screens/home_page/widgets/drawer.dart';
+import 'package:ap1_glossar/main.dart';
 
 // ── Aspekt-Enum ───────────────────────────────────────────────────────────────
 enum Aspekt { alle, funktional, oekonomisch, oekologisch, sozial, berechnung }
@@ -277,6 +279,31 @@ class HomePageState extends State<HomePage> {
         scrolledUnderElevation: 0,
         elevation: 2,
         actions: [
+          ValueListenableBuilder<ThemeMode>(
+            valueListenable: MyApp.themeNotifier,
+            builder: (context, themeMode, child) {
+              return IconButton(
+                icon: Icon(
+                  themeMode == ThemeMode.dark
+                      ? Icons.light_mode_rounded
+                      : Icons.dark_mode_rounded,
+                  color: Colors.white,
+                ),
+                tooltip: 'Dark/Light Mode',
+                onPressed: () {
+                  final isDark = themeMode == ThemeMode.dark;
+                  final newMode = isDark ? ThemeMode.light : ThemeMode.dark;
+                  MyApp.themeNotifier.value = newMode;
+                  SharedPreferences.getInstance().then((prefs) {
+                    prefs.setString(
+                      'theme_mode',
+                      isDark ? 'light' : 'dark',
+                    );
+                  });
+                },
+              );
+            },
+          ),
           Padding(
             padding: const EdgeInsets.only(right: 12),
             child: Center(
