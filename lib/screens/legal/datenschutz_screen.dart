@@ -63,25 +63,17 @@ class _DatenschutzContent extends StatelessWidget {
         _heading("3. Hosting"),
         const SizedBox(height: 8),
         _body(
-          "Die App wird über GitHub Pages (GitHub Inc., 88 Colin P Kelly Jr St, "
-          "San Francisco, CA 94107, USA) bereitgestellt. Beim Abruf der Seite "
-          "werden automatisch technische Zugriffsdaten (z.\u202FB. IP-Adresse, "
-          "Browsertyp, Zeitpunkt des Abrufs) durch den Hosting-Anbieter "
-          "erfasst. Diese Daten werden in Server-Logfiles gespeichert und "
-          "dienen ausschließlich der Sicherstellung eines störungsfreien "
-          "Betriebs. Eine Zusammenführung mit anderen Datenquellen findet "
-          "nicht statt.",
-        ),
-        const SizedBox(height: 8),
-        _body(
+          "Diese App wird bereitgestellt über:\n\n"
+          "a) GitHub Pages (GitHub Inc., San Francisco, USA) unter "
+          "iwilfried.github.io/ap1-glossar\n\n"
+          "b) IONOS SE (Elgendorfer Str. 57, 56410 Montabaur) unter "
+          "learningfactory.io/glossar\n\n"
+          "Beim Abruf werden automatisch technische Zugriffsdaten "
+          "(z.\u202FB. IP-Adresse, Browsertyp, Zeitpunkt) durch den "
+          "Hosting-Anbieter erfasst. Diese dienen ausschließlich der "
+          "Sicherstellung eines störungsfreien Betriebs.\n\n"
           "Rechtsgrundlage: Art. 6 Abs. 1 lit. f DSGVO (berechtigtes "
           "Interesse an der sicheren Bereitstellung der App).",
-        ),
-        const SizedBox(height: 8),
-        _body(
-          "GitHub hat sich den EU-Standardvertragsklauseln unterworfen und "
-          "ist unter dem Data Privacy Framework (DPF) zertifiziert. Weitere "
-          "Informationen: https://docs.github.com/en/site-policy/privacy-policies",
         ),
         const SizedBox(height: 20),
 
@@ -97,8 +89,35 @@ class _DatenschutzContent extends StatelessWidget {
         ),
         const SizedBox(height: 20),
 
-        // ── 5. Keine Analyse- oder Werbetools ───────────────
-        _heading("5. Keine Analyse- oder Werbetools"),
+        // ── 5. Lernfortschritt (localStorage) ───────────────
+        _heading("5. Lernfortschritt (localStorage)"),
+        const SizedBox(height: 8),
+        _body(
+          "Der Lernmodus speichert Ihren Lernfortschritt "
+          "(welche Begriffe gelernt/nicht gelernt) ausschließlich lokal "
+          "in Ihrem Browser (localStorage/SharedPreferences). Diese Daten "
+          "werden nicht an uns oder Dritte übermittelt und können jederzeit "
+          "über die Zurücksetzen-Funktion in der App oder durch Löschen "
+          "der Browser-Daten entfernt werden.",
+        ),
+        const SizedBox(height: 20),
+
+        // ── 6. Google Fonts ────────────────────────────────
+        _heading("6. Google Fonts"),
+        const SizedBox(height: 8),
+        _body(
+          "Diese App verwendet Google Fonts zur Darstellung von Schriftarten. "
+          "Beim Laden der Schriften wird eine Verbindung zu Servern von "
+          "Google LLC (USA) hergestellt, wobei Ihre IP-Adresse an Google "
+          "übertragen wird.\n\n"
+          "Rechtsgrundlage: Art. 6 Abs. 1 lit. f DSGVO. Google ist unter "
+          "dem EU-US Data Privacy Framework zertifiziert.\n\n"
+          "Weitere Informationen: https://policies.google.com/privacy",
+        ),
+        const SizedBox(height: 20),
+
+        // ── 7. Keine Analyse- oder Werbetools ───────────────
+        _heading("7. Keine Analyse- oder Werbetools"),
         const SizedBox(height: 8),
         _body(
           "Diese App verwendet weder Google Analytics noch andere "
@@ -107,8 +126,8 @@ class _DatenschutzContent extends StatelessWidget {
         ),
         const SizedBox(height: 20),
 
-        // ── 6. Ihre Rechte ──────────────────────────────────
-        _heading("6. Ihre Rechte"),
+        // ── 8. Ihre Rechte ──────────────────────────────────
+        _heading("8. Ihre Rechte"),
         const SizedBox(height: 8),
         _body(
           "Da wir keine personenbezogenen Daten erheben, entfallen "
@@ -134,8 +153,8 @@ class _DatenschutzContent extends StatelessWidget {
         ),
         const SizedBox(height: 20),
 
-        // ── 7. Änderungen ───────────────────────────────────
-        _heading("7. Änderungen dieser Datenschutzerklärung"),
+        // ── 9. Änderungen ───────────────────────────────────
+        _heading("9. Änderungen dieser Datenschutzerklärung"),
         const SizedBox(height: 8),
         _body(
           "Wir behalten uns vor, diese Datenschutzerklärung bei Bedarf "

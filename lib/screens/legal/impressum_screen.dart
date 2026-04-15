@@ -35,12 +35,10 @@ class _ImpressumContent extends StatelessWidget {
           "Düsseldorf, Deutschland",
         ),
         const SizedBox(height: 20),
-
         _heading("Kontakt"),
         const SizedBox(height: 8),
         _body("E-Mail: wilfried.ifland@gmail.com"),
         const SizedBox(height: 20),
-
         _heading("Verantwortlich für den Inhalt nach § 18 Abs. 2 MStV"),
         const SizedBox(height: 8),
         _body(
@@ -48,7 +46,6 @@ class _ImpressumContent extends StatelessWidget {
           "Düsseldorf, Deutschland",
         ),
         const SizedBox(height: 20),
-
         _heading("Haftungsausschluss"),
         const SizedBox(height: 8),
         _subheading("Haftung für Inhalte"),
@@ -60,7 +57,6 @@ class _ImpressumContent extends StatelessWidget {
           "allgemeinen Gesetzen verantwortlich.",
         ),
         const SizedBox(height: 12),
-
         _subheading("Haftung für Links"),
         _body(
           "Diese App enthält keine externen Links. Sollten in Zukunft Verlinkungen "
@@ -69,7 +65,6 @@ class _ImpressumContent extends StatelessWidget {
           "jeweilige Anbieter verantwortlich.",
         ),
         const SizedBox(height: 20),
-
         _heading("Urheberrecht"),
         _body(
           "Die durch den Betreiber dieser App erstellten Inhalte und Werke "
@@ -79,11 +74,10 @@ class _ImpressumContent extends StatelessWidget {
           "jeweiligen Autors bzw. Erstellers.",
         ),
         const SizedBox(height: 20),
-
         _heading("Quellen"),
         _body(
           "Die Fachbegriffe und Definitionen basieren auf:\n\n"
-          "• IHK-Prüfungen AP1 (2021–2026)\n"
+          "• IHK-Prüfungen AP1 (2021–Frühjahr 2026)\n"
           "• Offizieller IHK-Prüfungskatalog für IT-Berufe\n"
           "• WiSo-Prüfungskatalog (Fragenkomplexe 01–05)\n"
           "• BSI-Grundschutz-Kompendium (bsi.bund.de)\n"
