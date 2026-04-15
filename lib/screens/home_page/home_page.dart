@@ -1,3 +1,5 @@
+import 'dart:html' as html;
+
 import 'package:flutter/material.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 import 'package:ap1_glossar/constants/colors.dart';
@@ -172,11 +174,15 @@ class HomePageState extends State<HomePage> {
   final _scrollController = ScrollController();
   Aspekt _selectedAspekt = Aspekt.alle;
   String? _selectedThema; // null = alle Themen
+  String? _activeDeepLinkTerm;
 
   @override
   void initState() {
     super.initState();
     _applyFilter();
+    WidgetsBinding.instance.addPostFrameCallback((_) {
+      _handleDeepLink();
+    });
   }
 
   @override
@@ -233,14 +239,32 @@ class HomePageState extends State<HomePage> {
         return a.toLowerCase().compareTo(b.toLowerCase());
       });
 
-      _visibleKeys = filtered;
+        _visibleKeys = filtered;
     });
+  }
+
+  void _handleDeepLink() {
+    try {
+      final hash = html.window.location.hash;
+      if (hash.isNotEmpty) {
+        final term = Uri.decodeComponent(hash.substring(1));
+        if (abbreviations.containsKey(term)) {
+          navigateToTerm(term);
+        }
+      }
+    } catch (_) {
+      // ignore web-only hash handling failures
+    }
   }
 
   void navigateToTerm(String term) {
     // Set search to exact term name
     _searchController.text = term;
     _applyFilter(search: term, aspekt: Aspekt.alle, clearThema: true);
+    _activeDeepLinkTerm = term;
+    try {
+      html.window.location.hash = Uri.encodeComponent(term);
+    } catch (_) {}
 
     // Reorder: put exact match first
     setState(() {
@@ -628,6 +652,7 @@ class HomePageState extends State<HomePage> {
                         definition: abbreviations[key] ?? '',
                         aspekt: _aspektFromString(aspect),
                         onRelatedTap: navigateToTerm,
+                        expandOnLoad: _activeDeepLinkTerm == key,
                       );
                     },
                   ),
@@ -693,12 +718,14 @@ class _GlossarCard extends StatefulWidget {
   final String definition;
   final Aspekt aspekt;
   final void Function(String) onRelatedTap;
+  final bool expandOnLoad;
 
   const _GlossarCard({
     required this.term,
     required this.definition,
     required this.aspekt,
     required this.onRelatedTap,
+    this.expandOnLoad = false,
   });
 
   @override
@@ -710,6 +737,26 @@ class _GlossarCardState extends State<_GlossarCard>
   bool _expanded = false;
   List<String>? _related;
 
+  @override
+  void initState() {
+    super.initState();
+    _expanded = widget.expandOnLoad;
+    if (_expanded) {
+      _related = getRelatedTerms(widget.term);
+    }
+  }
+
+  @override
+  void didUpdateWidget(covariant _GlossarCard oldWidget) {
+    super.didUpdateWidget(oldWidget);
+    if (!oldWidget.expandOnLoad && widget.expandOnLoad && !_expanded) {
+      setState(() {
+        _expanded = true;
+        _related = getRelatedTerms(widget.term);
+      });
+    }
+  }
+
   void _toggleExpand() {
     setState(() {
       _expanded = !_expanded;
@@ -717,6 +764,13 @@ class _GlossarCardState extends State<_GlossarCard>
         _related = getRelatedTerms(widget.term);
       }
     });
+    try {
+      if (_expanded) {
+        html.window.location.hash = Uri.encodeComponent(widget.term);
+      } else {
+        html.window.history.replaceState(null, '', html.window.location.pathname);
+      }
+    } catch (_) {}
   }
 
   @override
