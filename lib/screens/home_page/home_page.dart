@@ -779,7 +779,7 @@ class _GlossarCardState extends State<_GlossarCard>
                         children: [
                           Text(
                             widget.term,
-                            style: const TextStyle(
+                            style: TextStyle(
                               fontWeight: FontWeight.bold,
                               fontSize: 15.5,
                               color: Theme.of(context)
