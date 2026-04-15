@@ -162,7 +162,8 @@ const List<String> _themenReihenfolge = [
 
 // ── HomePage ──────────────────────────────────────────────────────────────────
 class HomePage extends StatefulWidget {
-  const HomePage({Key? key}) : super(key: key);
+  final String? deepLinkTerm;
+  const HomePage({Key? key, this.deepLinkTerm}) : super(key: key);
 
   @override
   HomePageState createState() => HomePageState();
@@ -180,12 +181,11 @@ class HomePageState extends State<HomePage> {
   void initState() {
     super.initState();
     _applyFilter();
-    WidgetsBinding.instance.addPostFrameCallback((_) {
-      Future.delayed(const Duration(milliseconds: 500), () {
-        if (!mounted) return;
-        _handleDeepLink();
+    if (widget.deepLinkTerm != null && abbreviations.containsKey(widget.deepLinkTerm)) {
+      WidgetsBinding.instance.addPostFrameCallback((_) {
+        navigateToTerm(widget.deepLinkTerm!);
       });
-    });
+    }
   }
 
   @override
@@ -244,20 +244,6 @@ class HomePageState extends State<HomePage> {
 
         _visibleKeys = filtered;
     });
-  }
-
-  void _handleDeepLink() {
-    try {
-      final hash = html.window.location.hash;
-      if (hash.isNotEmpty) {
-        final term = Uri.decodeComponent(hash.substring(1));
-        if (abbreviations.containsKey(term)) {
-          navigateToTerm(term);
-        }
-      }
-    } catch (_) {
-      // ignore web-only hash handling failures
-    }
   }
 
   void navigateToTerm(String term) {
