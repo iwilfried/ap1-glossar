@@ -102,17 +102,13 @@ class _DatenschutzContent extends StatelessWidget {
         ),
         const SizedBox(height: 20),
 
-        // ── 6. Google Fonts ────────────────────────────────
-        _heading("6. Google Fonts"),
+        // ── 6. Schriftarten ───────────────────────────────
+        _heading("6. Schriftarten"),
         const SizedBox(height: 8),
         _body(
-          "Diese App verwendet Google Fonts zur Darstellung von Schriftarten. "
-          "Beim Laden der Schriften wird eine Verbindung zu Servern von "
-          "Google LLC (USA) hergestellt, wobei Ihre IP-Adresse an Google "
-          "übertragen wird.\n\n"
-          "Rechtsgrundlage: Art. 6 Abs. 1 lit. f DSGVO. Google ist unter "
-          "dem EU-US Data Privacy Framework zertifiziert.\n\n"
-          "Weitere Informationen: https://policies.google.com/privacy",
+          "Diese App verwendet die Schriftart Oswald, die lokal in der App "
+          "eingebettet ist. Es wird keine Verbindung zu Google-Servern "
+          "hergestellt. Keine Daten werden an Dritte übertragen.",
         ),
         const SizedBox(height: 20),
 
