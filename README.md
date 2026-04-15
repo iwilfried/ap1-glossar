@@ -39,16 +39,22 @@ Die 4+1 IHK-Bewertungsaspekte sind das Rückgrat jeder AP1-Prüfungsaufgabe. Das
 
 ## Screenshots
 
-<p align="center">
-  <img src="docs/screenshots/01-startseite-mobile.png" width="220" alt="Startseite mit 386 Begriffen"/>
-  <img src="docs/screenshots/02-aspekt-filter-mobile.png" width="220" alt="Bewertungsaspekt-Filter"/>
-  <img src="docs/screenshots/03-themen-filter-mobile.png" width="220" alt="Themen-Filter mit Badges"/>
-</p>
+## Screenshots
+
+## Screenshots
 
 <p align="center">
-  <em>Startseite · Aspekt-Filter · Themen-Filter</em>
+  <img src="docs/screenshots/01-startseite-mobile.png" width="180" alt="Startseite"/>
+  <img src="docs/screenshots/02-lernmodus-mobile.png" width="180" alt="Lernmodus"/>
+  <img src="docs/screenshots/03-quiz-modus-mobile.png" width="180" alt="Quiz-Modus"/>
 </p>
-
+<p align="center">
+  <img src="docs/screenshots/04-themen-filter-mobile.png" width="180" alt="Themen-Filter"/>
+  <img src="docs/screenshots/05-detail-ansicht-mobile.png" width="180" alt="Detail-Ansicht"/>
+</p>
+<p align="center">
+  <em>Glossar · Lernmodus · Quiz · Themen-Filter · Detail</em>
+</p>
 ---
 
 ## Themengebiete
