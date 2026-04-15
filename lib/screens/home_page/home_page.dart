@@ -1,5 +1,3 @@
-import 'dart:html' as html;
-
 import 'package:flutter/material.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 import 'package:ap1_glossar/constants/colors.dart';
@@ -162,7 +160,8 @@ const List<String> _themenReihenfolge = [
 
 // ── HomePage ──────────────────────────────────────────────────────────────────
 class HomePage extends StatefulWidget {
-  const HomePage({Key? key}) : super(key: key);
+  final String? deepLinkTerm;
+  const HomePage({Key? key, this.deepLinkTerm}) : super(key: key);
 
   @override
   HomePageState createState() => HomePageState();
@@ -180,9 +179,11 @@ class HomePageState extends State<HomePage> {
   void initState() {
     super.initState();
     _applyFilter();
-    WidgetsBinding.instance.addPostFrameCallback((_) {
-      _handleDeepLink();
-    });
+    if (widget.deepLinkTerm != null && abbreviations.containsKey(widget.deepLinkTerm)) {
+      WidgetsBinding.instance.addPostFrameCallback((_) {
+        navigateToTerm(widget.deepLinkTerm!);
+      });
+    }
   }
 
   @override
@@ -243,28 +244,11 @@ class HomePageState extends State<HomePage> {
     });
   }
 
-  void _handleDeepLink() {
-    try {
-      final hash = html.window.location.hash;
-      if (hash.isNotEmpty) {
-        final term = Uri.decodeComponent(hash.substring(1));
-        if (abbreviations.containsKey(term)) {
-          navigateToTerm(term);
-        }
-      }
-    } catch (_) {
-      // ignore web-only hash handling failures
-    }
-  }
-
   void navigateToTerm(String term) {
     // Set search to exact term name
     _searchController.text = term;
     _applyFilter(search: term, aspekt: Aspekt.alle, clearThema: true);
     _activeDeepLinkTerm = term;
-    try {
-      html.window.location.hash = Uri.encodeComponent(term);
-    } catch (_) {}
 
     // Reorder: put exact match first
     setState(() {
@@ -764,13 +748,6 @@ class _GlossarCardState extends State<_GlossarCard>
         _related = getRelatedTerms(widget.term);
       }
     });
-    try {
-      if (_expanded) {
-        html.window.location.hash = Uri.encodeComponent(widget.term);
-      } else {
-        html.window.history.replaceState(null, '', html.window.location.pathname);
-      }
-    } catch (_) {}
   }
 
   @override
