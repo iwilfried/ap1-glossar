@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:ap1_glossar/constants/colors.dart';
 import 'package:ap1_glossar/data/data.dart';
 import 'package:ap1_glossar/data/leitner.dart';
+import 'package:ap1_glossar/data/related.dart';
 import 'package:url_launcher/url_launcher.dart';
 
 class LearnScreen extends StatefulWidget {
@@ -18,6 +19,8 @@ class _LearnScreenState extends State<LearnScreen> {
   bool _showAnswer = false;
   bool _showUpgradeCTA = false;
   int _sessionCorrect = 0;
+  String _selectedAspekt = 'Alle';
+  String? _selectedThema;
 
   @override
   void initState() {
@@ -34,7 +37,11 @@ class _LearnScreenState extends State<LearnScreen> {
 
   void _loadNext() {
     setState(() {
-      _currentTerm = _leitner.getNextTerm(exclude: _currentTerm);
+      _currentTerm = _leitner.getNextTermFiltered(
+        exclude: _currentTerm,
+        aspekt: _selectedAspekt,
+        thema: _selectedThema,
+      );
       _showAnswer = false;
     });
   }
@@ -85,6 +92,9 @@ class _LearnScreenState extends State<LearnScreen> {
         children: [
           // ── Fortschrittsbalken ──────────────────────────────
           _buildProgressBar(),
+
+          // ── Filter / Kategorie ──────────────────────────────
+          _buildFilterSection(),
 
           // ── Upgrade CTA (wenn ausgelöst) ───────────────────
           if (_showUpgradeCTA) _buildUpgradeCTA(),
@@ -137,6 +147,244 @@ class _LearnScreenState extends State<LearnScreen> {
     );
   }
 
+  Widget _buildFilterSection() {
+    final aspects = [
+      'Alle',
+      'Funktional',
+      'Ökonomisch',
+      'Ökologisch',
+      'Sozial',
+      'Berechnung'
+    ];
+    final themen = termGroups.keys.toList();
+    final count = _filteredRemainingCount;
+
+    return Padding(
+      padding: const EdgeInsets.symmetric(vertical: 8),
+      child: Column(
+        children: [
+          SizedBox(
+            height: 38,
+            child: ListView(
+              scrollDirection: Axis.horizontal,
+              padding: const EdgeInsets.symmetric(horizontal: 16),
+              children: aspects.map((aspekt) {
+                final selected = _selectedAspekt == aspekt;
+                return Padding(
+                  padding: const EdgeInsets.only(right: 8),
+                  child: GestureDetector(
+                    onTap: () {
+                      setState(() {
+                        _selectedAspekt = aspekt;
+                      });
+                      _loadNext();
+                    },
+                    child: AnimatedContainer(
+                      duration: const Duration(milliseconds: 180),
+                      padding: const EdgeInsets.symmetric(
+                          horizontal: 12, vertical: 6),
+                      decoration: BoxDecoration(
+                        color: selected ? _aspektColor(aspekt) : Colors.white,
+                        borderRadius: BorderRadius.circular(20),
+                        border: Border.all(
+                          color: selected
+                              ? _aspektColor(aspekt)
+                              : Colors.grey.shade300,
+                          width: 1.2,
+                        ),
+                        boxShadow: selected
+                            ? [
+                                BoxShadow(
+                                  color: _aspektColor(aspekt).withOpacity(0.25),
+                                  blurRadius: 6,
+                                  offset: const Offset(0, 2),
+                                )
+                              ]
+                            : [],
+                      ),
+                      child: Row(
+                        mainAxisSize: MainAxisSize.min,
+                        children: [
+                          Icon(
+                            _aspektIcon(aspekt),
+                            size: 13,
+                            color:
+                                selected ? Colors.white : _aspektColor(aspekt),
+                          ),
+                          const SizedBox(width: 5),
+                          Text(
+                            aspekt,
+                            style: TextStyle(
+                              fontSize: 12.5,
+                              fontWeight: FontWeight.w600,
+                              color: selected
+                                  ? Colors.white
+                                  : _aspektColor(aspekt),
+                            ),
+                          ),
+                        ],
+                      ),
+                    ),
+                  ),
+                );
+              }).toList(),
+            ),
+          ),
+          const SizedBox(height: 6),
+          SizedBox(
+            height: 36,
+            child: ListView(
+              scrollDirection: Axis.horizontal,
+              padding: const EdgeInsets.symmetric(horizontal: 16),
+              children: [
+                Padding(
+                  padding: const EdgeInsets.only(right: 7),
+                  child: GestureDetector(
+                    onTap: () {
+                      setState(() {
+                        _selectedThema = null;
+                      });
+                      _loadNext();
+                    },
+                    child: AnimatedContainer(
+                      duration: const Duration(milliseconds: 180),
+                      padding: const EdgeInsets.symmetric(
+                          horizontal: 11, vertical: 5),
+                      decoration: BoxDecoration(
+                        color: _selectedThema == null
+                            ? const Color(0xFF1B3A5C)
+                            : Colors.white,
+                        borderRadius: BorderRadius.circular(20),
+                        border: Border.all(
+                          color: _selectedThema == null
+                              ? const Color(0xFF1B3A5C)
+                              : Colors.grey.shade300,
+                          width: 1.2,
+                        ),
+                      ),
+                      child: Row(
+                        mainAxisSize: MainAxisSize.min,
+                        children: [
+                          Icon(
+                            Icons.grid_view_rounded,
+                            size: 12,
+                            color: _selectedThema == null
+                                ? Colors.white
+                                : Colors.grey.shade600,
+                          ),
+                          const SizedBox(width: 4),
+                          Text(
+                            'Alle Themen',
+                            style: TextStyle(
+                              fontSize: 11.5,
+                              fontWeight: FontWeight.w600,
+                              color: _selectedThema == null
+                                  ? Colors.white
+                                  : Colors.grey.shade600,
+                            ),
+                          ),
+                        ],
+                      ),
+                    ),
+                  ),
+                ),
+                ...themen.map((thema) {
+                  final selected = _selectedThema == thema;
+                  return Padding(
+                    padding: const EdgeInsets.only(right: 7),
+                    child: GestureDetector(
+                      onTap: () {
+                        setState(() {
+                          _selectedThema = selected ? null : thema;
+                        });
+                        _loadNext();
+                      },
+                      child: AnimatedContainer(
+                        duration: const Duration(milliseconds: 180),
+                        padding: const EdgeInsets.symmetric(
+                            horizontal: 11, vertical: 5),
+                        decoration: BoxDecoration(
+                          color: selected
+                              ? const Color(0xFF1B3A5C)
+                              : const Color(0xFFF0F3F7),
+                          borderRadius: BorderRadius.circular(20),
+                          border: Border.all(
+                            color: selected
+                                ? const Color(0xFF1B3A5C)
+                                : Colors.grey.shade300,
+                            width: 1.2,
+                          ),
+                          boxShadow: selected
+                              ? [
+                                  BoxShadow(
+                                    color: const Color(0xFF1B3A5C)
+                                        .withOpacity(0.25),
+                                    blurRadius: 6,
+                                    offset: const Offset(0, 2),
+                                  )
+                                ]
+                              : [],
+                        ),
+                        child: Text(
+                          thema,
+                          style: TextStyle(
+                            fontSize: 11.5,
+                            fontWeight: FontWeight.w600,
+                            color: selected
+                                ? Colors.white
+                                : const Color(0xFF1B3A5C),
+                          ),
+                        ),
+                      ),
+                    ),
+                  );
+                }).toList(),
+              ],
+            ),
+          ),
+          const SizedBox(height: 10),
+          Padding(
+            padding: const EdgeInsets.symmetric(horizontal: 20),
+            child: Align(
+              alignment: Alignment.centerLeft,
+              child: Text(
+                _filterSummary(count),
+                style: TextStyle(
+                  fontSize: 13,
+                  fontWeight: FontWeight.w600,
+                  color: Colors.grey.shade700,
+                ),
+              ),
+            ),
+          ),
+        ],
+      ),
+    );
+  }
+
+  int get _filteredRemainingCount {
+    var candidates = [..._leitner.termsInBox(0), ..._leitner.termsInBox(1)];
+    if (_selectedAspekt != 'Alle') {
+      candidates =
+          candidates.where((t) => termAspect[t] == _selectedAspekt).toList();
+    }
+    if (_selectedThema != null) {
+      final themaKeys = termGroups[_selectedThema!] ?? [];
+      candidates = candidates.where((t) => themaKeys.contains(t)).toList();
+    }
+    return candidates.length;
+  }
+
+  String _filterSummary(int count) {
+    if (_selectedThema != null) {
+      return '$_selectedThema: $count Begriffe noch zu lernen';
+    }
+    if (_selectedAspekt != 'Alle') {
+      return '$_selectedAspekt: $count Begriffe noch zu lernen';
+    }
+    return '$count Begriffe noch zu lernen';
+  }
+
   Widget _buildBoxChip(String label, int count, Color color) {
     return Row(
       mainAxisSize: MainAxisSize.min,
@@ -156,6 +404,23 @@ class _LearnScreenState extends State<LearnScreen> {
         ),
       ],
     );
+  }
+
+  IconData _aspektIcon(String aspekt) {
+    switch (aspekt) {
+      case 'Funktional':
+        return Icons.settings_ethernet_rounded;
+      case 'Ökonomisch':
+        return Icons.euro_rounded;
+      case 'Ökologisch':
+        return Icons.eco_rounded;
+      case 'Sozial':
+        return Icons.people_rounded;
+      case 'Berechnung':
+        return Icons.calculate_rounded;
+      default:
+        return Icons.apps_rounded;
+    }
   }
 
   // ── Karteikarte ──────────────────────────────────────────────
@@ -330,6 +595,17 @@ class _LearnScreenState extends State<LearnScreen> {
 
   // ── Alles gemeistert ─────────────────────────────────────────
   Widget _buildAllDone() {
+    final filteredCount = _filteredRemainingCount;
+    final hasFilter = _selectedAspekt != 'Alle' || _selectedThema != null;
+    final title = _selectedThema != null
+        ? 'Alle $_selectedThema Begriffe gemeistert!'
+        : 'Alle Begriffe gemeistert!';
+    final subtitle = hasFilter
+        ? _selectedThema != null
+            ? 'Versuche einen anderen Filter, um weitere Begriffe anzuzeigen.'
+            : 'Der Aspekt ist aktuell abgeschlossen. Wähle einen weiteren Filter aus.'
+        : '${_leitner.masteredCount} / ${_leitner.totalTerms} Begriffe in Box 3';
+
     return Center(
       child: Padding(
         padding: const EdgeInsets.all(32),
@@ -339,21 +615,36 @@ class _LearnScreenState extends State<LearnScreen> {
             const Icon(Icons.emoji_events_rounded,
                 size: 64, color: Colors.amber),
             const SizedBox(height: 16),
-            const Text(
-              'Alle Begriffe gemeistert!',
-              style: TextStyle(fontSize: 22, fontWeight: FontWeight.bold),
+            Text(
+              title,
+              style: const TextStyle(fontSize: 22, fontWeight: FontWeight.bold),
+              textAlign: TextAlign.center,
             ),
             const SizedBox(height: 8),
             Text(
-              '${_leitner.masteredCount} / ${_leitner.totalTerms} Begriffe in Box 3',
+              subtitle,
+              textAlign: TextAlign.center,
               style: TextStyle(fontSize: 14, color: Colors.grey.shade600),
             ),
             const SizedBox(height: 24),
-            OutlinedButton.icon(
-              onPressed: () => _showResetDialog(),
-              icon: const Icon(Icons.refresh),
-              label: const Text('Nochmal lernen'),
-            ),
+            if (hasFilter)
+              OutlinedButton.icon(
+                onPressed: () {
+                  setState(() {
+                    _selectedAspekt = 'Alle';
+                    _selectedThema = null;
+                    _loadNext();
+                  });
+                },
+                icon: const Icon(Icons.filter_alt_off_rounded),
+                label: const Text('Anderen Filter wählen'),
+              )
+            else
+              OutlinedButton.icon(
+                onPressed: () => _showResetDialog(),
+                icon: const Icon(Icons.refresh),
+                label: const Text('Nochmal lernen'),
+              ),
           ],
         ),
       ),
@@ -372,7 +663,8 @@ class _LearnScreenState extends State<LearnScreen> {
       ),
       child: Row(
         children: [
-          const Icon(Icons.rocket_launch_rounded, color: Colors.deepOrange, size: 28),
+          const Icon(Icons.rocket_launch_rounded,
+              color: Colors.deepOrange, size: 28),
           const SizedBox(width: 12),
           Expanded(
             child: Column(
@@ -384,10 +676,14 @@ class _LearnScreenState extends State<LearnScreen> {
                 ),
                 const SizedBox(height: 4),
                 GestureDetector(
-                  onTap: () => launchUrl(Uri.parse('https://ihk-ap1-prep.web.app')),
+                  onTap: () =>
+                      launchUrl(Uri.parse('https://ihk-ap1-prep.web.app')),
                   child: const Text(
                     'Learn-Factory entdecken →',
-                    style: TextStyle(fontSize: 12, color: Colors.deepOrange, decoration: TextDecoration.underline),
+                    style: TextStyle(
+                        fontSize: 12,
+                        color: Colors.deepOrange,
+                        decoration: TextDecoration.underline),
                   ),
                 ),
               ],
@@ -435,6 +731,8 @@ class _LearnScreenState extends State<LearnScreen> {
   // ── Aspekt-Farben ────────────────────────────────────────────
   Color _aspektColor(String aspekt) {
     switch (aspekt) {
+      case 'Alle':
+        return AppColors.allFilter;
       case 'Funktional':
         return AppColors.funktional;
       case 'Ökonomisch':

@@ -2,6 +2,7 @@ import 'dart:convert';
 import 'dart:math';
 import 'package:shared_preferences/shared_preferences.dart';
 import 'package:ap1_glossar/data/data.dart';
+import 'package:ap1_glossar/data/related.dart';
 
 /// Einfaches Leitner-System mit 3 Boxen:
 ///   Box 0 = Neu / Nicht gewusst (Standard)
@@ -35,7 +36,9 @@ class LeitnerService {
   List<String> termsInBox(int box) {
     final allTerms = abbreviations.keys.toList();
     if (box == 0) {
-      return allTerms.where((t) => !_boxes.containsKey(t) || _boxes[t] == 0).toList();
+      return allTerms
+          .where((t) => !_boxes.containsKey(t) || _boxes[t] == 0)
+          .toList();
     }
     return allTerms.where((t) => _boxes[t] == box).toList();
   }
@@ -96,6 +99,11 @@ class LeitnerService {
 
     if (aspekt != null && aspekt != 'Alle') {
       candidates = candidates.where((t) => termAspect[t] == aspekt).toList();
+    }
+
+    if (thema != null) {
+      final themaKeys = termGroups[thema] ?? [];
+      candidates = candidates.where((t) => themaKeys.contains(t)).toList();
     }
 
     if (exclude != null) candidates.remove(exclude);
