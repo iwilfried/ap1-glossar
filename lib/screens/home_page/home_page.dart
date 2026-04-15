@@ -239,7 +239,7 @@ class HomePageState extends State<HomePage> {
     // Set search to exact term name
     _searchController.text = term;
     _applyFilter(search: term, aspekt: Aspekt.alle, clearThema: true);
-    
+
     // Reorder: put exact match first
     setState(() {
       final idx = _visibleKeys.indexOf(term);
@@ -265,7 +265,7 @@ class HomePageState extends State<HomePage> {
     final themen = _availableThemen;
 
     return Scaffold(
-      backgroundColor: const Color(0xFFF4F6FA),
+      backgroundColor: Theme.of(context).scaffoldBackgroundColor,
       appBar: AppBar(
         backgroundColor: AppColors.color,
         foregroundColor: Colors.white,
@@ -300,14 +300,19 @@ class HomePageState extends State<HomePage> {
               onChanged: (t) => _applyFilter(search: t),
               decoration: InputDecoration(
                 filled: true,
-                fillColor: Colors.white,
+                fillColor: Theme.of(context).cardColor,
                 hintText: 'Begriff oder Definition suchen …',
-                hintStyle: const TextStyle(fontSize: 14, color: Colors.grey),
-                prefixIcon: const Icon(Icons.search, color: Colors.grey),
+                hintStyle: TextStyle(
+                  fontSize: 14,
+                  color: Theme.of(context).hintColor,
+                ),
+                prefixIcon:
+                    Icon(Icons.search, color: Theme.of(context).hintColor),
                 suffixIcon: _searchController.text.isEmpty
                     ? null
                     : IconButton(
-                        icon: const Icon(Icons.close, color: Colors.grey),
+                        icon: Icon(Icons.close,
+                            color: Theme.of(context).hintColor),
                         onPressed: () {
                           _searchController.clear();
                           _applyFilter(search: '');
@@ -319,7 +324,7 @@ class HomePageState extends State<HomePage> {
                 ),
                 enabledBorder: OutlineInputBorder(
                   borderRadius: BorderRadius.circular(12),
-                  borderSide: BorderSide(color: Colors.grey.shade200),
+                  borderSide: BorderSide(color: Theme.of(context).dividerColor),
                 ),
                 focusedBorder: OutlineInputBorder(
                   borderRadius: BorderRadius.circular(12),
@@ -349,10 +354,13 @@ class HomePageState extends State<HomePage> {
                       padding: const EdgeInsets.symmetric(
                           horizontal: 12, vertical: 6),
                       decoration: BoxDecoration(
-                        color: selected ? a.bgColor : Colors.white,
+                        color:
+                            selected ? a.bgColor : Theme.of(context).cardColor,
                         borderRadius: BorderRadius.circular(20),
                         border: Border.all(
-                          color: selected ? a.bgColor : Colors.grey.shade300,
+                          color: selected
+                              ? a.bgColor
+                              : Theme.of(context).dividerColor,
                           width: 1.2,
                         ),
                         boxShadow: selected
@@ -410,12 +418,12 @@ class HomePageState extends State<HomePage> {
                       decoration: BoxDecoration(
                         color: _selectedThema == null
                             ? const Color(0xFF1B3A5C)
-                            : Colors.white,
+                            : Theme.of(context).cardColor,
                         borderRadius: BorderRadius.circular(20),
                         border: Border.all(
                           color: _selectedThema == null
                               ? const Color(0xFF1B3A5C)
-                              : Colors.grey.shade300,
+                              : Theme.of(context).dividerColor,
                           width: 1.2,
                         ),
                       ),
@@ -426,7 +434,11 @@ class HomePageState extends State<HomePage> {
                               size: 12,
                               color: _selectedThema == null
                                   ? Colors.white
-                                  : Colors.grey.shade600),
+                                  : Theme.of(context)
+                                          .textTheme
+                                          .bodySmall
+                                          ?.color ??
+                                      Colors.grey.shade600),
                           const SizedBox(width: 4),
                           Text(
                             'Alle Themen',
@@ -435,7 +447,11 @@ class HomePageState extends State<HomePage> {
                               fontWeight: FontWeight.w600,
                               color: _selectedThema == null
                                   ? Colors.white
-                                  : Colors.grey.shade600,
+                                  : Theme.of(context)
+                                          .textTheme
+                                          .bodySmall
+                                          ?.color ??
+                                      Colors.grey.shade600,
                             ),
                           ),
                         ],
@@ -558,7 +574,9 @@ class HomePageState extends State<HomePage> {
                   GestureDetector(
                     onTap: () => _applyFilter(clearThema: true),
                     child: Icon(Icons.close_rounded,
-                        size: 16, color: Colors.grey.shade400),
+                        size: 16,
+                        color: Theme.of(context).textTheme.bodySmall?.color ??
+                            Colors.grey.shade400),
                   ),
                 ],
               ),
@@ -597,7 +615,12 @@ class HomePageState extends State<HomePage> {
       child: Column(
         mainAxisSize: MainAxisSize.min,
         children: [
-          Icon(Icons.search_off_rounded, size: 56, color: Colors.grey.shade300),
+          Icon(
+            Icons.search_off_rounded,
+            size: 56,
+            color: Theme.of(context).textTheme.bodySmall?.color ??
+                Colors.grey.shade300,
+          ),
           const SizedBox(height: 12),
           Text(
             'Kein Begriff gefunden',
@@ -610,7 +633,11 @@ class HomePageState extends State<HomePage> {
           const SizedBox(height: 4),
           Text(
             'Filter oder Suchbegriff anpassen',
-            style: TextStyle(fontSize: 13, color: Colors.grey.shade400),
+            style: TextStyle(
+              fontSize: 13,
+              color: Theme.of(context).textTheme.bodySmall?.color ??
+                  Colors.grey.shade400,
+            ),
           ),
         ],
       ),
@@ -728,7 +755,11 @@ class _GlossarCardState extends State<_GlossarCard>
                             style: const TextStyle(
                               fontWeight: FontWeight.bold,
                               fontSize: 15.5,
-                              color: Color(0xFF1A1A2E),
+                              color: Theme.of(context)
+                                      .textTheme
+                                      .bodyLarge
+                                      ?.color ??
+                                  Colors.black,
                             ),
                           ),
                           const SizedBox(height: 3),
@@ -791,7 +822,9 @@ class _GlossarCardState extends State<_GlossarCard>
                           style: TextStyle(
                             fontSize: 11.5,
                             fontWeight: FontWeight.w600,
-                            color: Colors.grey.shade500,
+                            color:
+                                Theme.of(context).textTheme.bodySmall?.color ??
+                                    Colors.grey.shade500,
                             letterSpacing: 0.3,
                           ),
                         ),
