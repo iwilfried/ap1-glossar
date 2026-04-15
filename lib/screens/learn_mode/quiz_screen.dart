@@ -16,6 +16,7 @@ class QuizScreen extends StatefulWidget {
 class _QuizScreenState extends State<QuizScreen> {
   final LeitnerService _leitner = LeitnerService();
   final Random _random = Random();
+  final Stopwatch _stopwatch = Stopwatch();
 
   bool _isLoading = true;
   bool _showSummary = false;
@@ -24,8 +25,10 @@ class _QuizScreenState extends State<QuizScreen> {
   String? _selectedOption;
   String? _feedbackText;
   int _correctAnswers = 0;
+  int _currentStreak = 0;
   List<bool> _results = [];
   List<String> _options = [];
+  List<Map<String, String>> _wrongAnswers = [];
   String _selectedAspekt = 'Alle';
   String? _selectedThema;
 
@@ -48,8 +51,13 @@ class _QuizScreenState extends State<QuizScreen> {
 
   Future<void> _loadNextQuestion({bool afterAnswer = false}) async {
     if (_results.length >= _maxQuestions) {
+      _stopwatch.stop();
       setState(() => _showSummary = true);
       return;
+    }
+
+    if (_results.isEmpty && !_stopwatch.isRunning) {
+      _stopwatch.start();
     }
 
     final nextTerm = _leitner.getNextTermFiltered(
@@ -59,6 +67,7 @@ class _QuizScreenState extends State<QuizScreen> {
     );
 
     if (nextTerm == null) {
+      _stopwatch.stop();
       setState(() => _showSummary = true);
       return;
     }
@@ -113,11 +122,18 @@ class _QuizScreenState extends State<QuizScreen> {
     _results.add(correct);
     if (correct) {
       _correctAnswers++;
+      _currentStreak++;
       _feedbackText = 'Richtig!';
       _leitner.markCorrect(_currentTerm!);
     } else {
+      _currentStreak = 0;
       _feedbackText = 'Leider falsch';
       _leitner.markWrong(_currentTerm!);
+      _wrongAnswers.add({
+        'term': _currentTerm!,
+        'selected': abbreviations[option] ?? 'Unbekannt',
+        'correct': abbreviations[_currentTerm!] ?? 'Unbekannt',
+      });
     }
 
     setState(() {});
@@ -128,6 +144,7 @@ class _QuizScreenState extends State<QuizScreen> {
     Future.delayed(delay, () {
       if (!mounted) return;
       if (_results.length >= _maxQuestions) {
+        _stopwatch.stop();
         setState(() => _showSummary = true);
         return;
       }
@@ -184,6 +201,28 @@ class _QuizScreenState extends State<QuizScreen> {
       return Colors.red;
     }
     return Colors.grey.shade300;
+  }
+
+  String _getMotivationalMessage(int percent) {
+    if (percent >= 90) return 'Hervorragend! Du bist prüfungsfit!';
+    if (percent >= 70) return 'Gut gemacht! Weiter so!';
+    if (percent >= 50) return 'Ordentlich, aber da geht noch mehr!';
+    return 'Übung macht den Meister — bleib dran!';
+  }
+
+  String _formatTime(Duration duration) {
+    final minutes = duration.inMinutes;
+    final seconds = duration.inSeconds % 60;
+    return '$minutes:${seconds.toString().padLeft(2, '0')} min';
+  }
+
+  String _formatAverageTime(Duration total, int questions) {
+    if (questions == 0) return '0:00';
+    final avgMs = total.inMilliseconds ~/ questions;
+    final avgDuration = Duration(milliseconds: avgMs);
+    final seconds = avgDuration.inSeconds;
+    final ms = (avgDuration.inMilliseconds % 1000) ~/ 100;
+    return '$seconds.${ms}s';
   }
 
   @override
@@ -564,64 +603,158 @@ class _QuizScreenState extends State<QuizScreen> {
 
   Widget _buildSummary() {
     final questions = _results.length;
-    final percent =
-        questions > 0 ? (_correctAnswers * 100 / questions).round() : 0;
-    final percentColor = percent > 80
+    final percent = questions > 0 ? (_correctAnswers * 100 / questions).round() : 0;
+    final percentColor = percent >= 80
         ? Colors.green
-        : percent > 50
+        : percent >= 50
             ? Colors.orange
             : Colors.red;
+    final motivationalMessage = _getMotivationalMessage(percent);
+    final totalTime = _stopwatch.elapsed;
+    final avgTime = _formatAverageTime(totalTime, questions);
 
-    return Center(
-      child: Padding(
-        padding: const EdgeInsets.symmetric(horizontal: 24),
+    return AnimatedOpacity(
+      opacity: 1.0,
+      duration: const Duration(milliseconds: 500),
+      child: SingleChildScrollView(
+        padding: const EdgeInsets.symmetric(horizontal: 20, vertical: 16),
         child: Column(
-          mainAxisAlignment: MainAxisAlignment.center,
+          crossAxisAlignment: CrossAxisAlignment.center,
           children: [
-            Icon(Icons.emoji_events_rounded, size: 72, color: percentColor),
             const SizedBox(height: 20),
-            const Text(
-              'Session beendet',
-              style: TextStyle(fontSize: 22, fontWeight: FontWeight.bold),
-            ),
-            const SizedBox(height: 16),
+            // Big score display
             Text(
               '$_correctAnswers / $questions richtig',
-              style: const TextStyle(fontSize: 20, fontWeight: FontWeight.w700),
-            ),
-            const SizedBox(height: 8),
-            Text(
-              '$percent %',
-              style: TextStyle(
-                  fontSize: 18,
-                  fontWeight: FontWeight.w700,
-                  color: percentColor),
+              textAlign: TextAlign.center,
+              style: const TextStyle(
+                fontSize: 32,
+                fontWeight: FontWeight.bold,
+                color: AppColors.color,
+              ),
             ),
             const SizedBox(height: 24),
+            // Percentage circle
+            CircularProgressWithText(
+              progress: percent.toDouble(),
+              color: percentColor,
+              text: '$percent%',
+            ),
+            const SizedBox(height: 20),
+            // Motivational message
+            Text(
+              motivationalMessage,
+              textAlign: TextAlign.center,
+              style: const TextStyle(
+                fontSize: 18,
+                fontWeight: FontWeight.w500,
+              ),
+            ),
+            const SizedBox(height: 32),
+            // Stats row
+            Row(
+              mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+              children: [
+                _buildStatItem('Gesamtzeit', _formatTime(totalTime)),
+                _buildStatItem('Ø pro Frage', avgTime),
+                _buildStatItem('Serie', '$_currentStreak'),
+              ],
+            ),
+            const SizedBox(height: 32),
+            // Wrong answers list
+            if (_wrongAnswers.isNotEmpty) ...[
+              const Text(
+                'Falsche Antworten',
+                style: TextStyle(
+                  fontSize: 20,
+                  fontWeight: FontWeight.bold,
+                  color: AppColors.color,
+                ),
+              ),
+              const SizedBox(height: 16),
+              ..._wrongAnswers.map((wrong) => _buildWrongAnswerItem(wrong)),
+            ],
+            const SizedBox(height: 40),
+            // Buttons
             ElevatedButton(
               onPressed: _restartQuiz,
               style: ElevatedButton.styleFrom(
-                backgroundColor: AppColors.color,
+                backgroundColor: Colors.orange,
+                foregroundColor: Colors.white,
                 shape: RoundedRectangleBorder(
-                    borderRadius: BorderRadius.circular(12)),
-                padding:
-                    const EdgeInsets.symmetric(horizontal: 24, vertical: 14),
+                  borderRadius: BorderRadius.circular(12),
+                ),
+                padding: const EdgeInsets.symmetric(horizontal: 32, vertical: 16),
               ),
-              child: const Text('Nochmal'),
+              child: const Text('Nochmal spielen'),
             ),
             const SizedBox(height: 12),
             OutlinedButton(
               onPressed: () => Navigator.of(context).pop(),
               style: OutlinedButton.styleFrom(
-                padding:
-                    const EdgeInsets.symmetric(horizontal: 24, vertical: 14),
                 shape: RoundedRectangleBorder(
-                    borderRadius: BorderRadius.circular(12)),
+                  borderRadius: BorderRadius.circular(12),
+                ),
+                padding: const EdgeInsets.symmetric(horizontal: 32, vertical: 16),
               ),
               child: const Text('Zurück zum Glossar'),
             ),
+            const SizedBox(height: 20),
           ],
         ),
+      ),
+    );
+  }
+
+  Widget _buildStatItem(String label, String value) {
+    return Column(
+      children: [
+        Text(
+          value,
+          style: const TextStyle(
+            fontSize: 18,
+            fontWeight: FontWeight.bold,
+          ),
+        ),
+        const SizedBox(height: 4),
+        Text(
+          label,
+          style: TextStyle(
+            fontSize: 12,
+            color: Colors.grey.shade600,
+          ),
+        ),
+      ],
+    );
+  }
+
+  Widget _buildWrongAnswerItem(Map<String, String> wrong) {
+    return Container(
+      margin: const EdgeInsets.only(bottom: 16),
+      padding: const EdgeInsets.all(16),
+      decoration: BoxDecoration(
+        color: Colors.red.shade50,
+        borderRadius: BorderRadius.circular(12),
+        border: Border.all(color: Colors.red.shade200),
+      ),
+      child: Column(
+        crossAxisAlignment: CrossAxisAlignment.start,
+        children: [
+          Text(
+            'Du hast getippt: ${_truncateDefinition(wrong['selected']!)}',
+            style: const TextStyle(
+              fontSize: 14,
+              color: Colors.red,
+            ),
+          ),
+          const SizedBox(height: 8),
+          Text(
+            'Richtig war: ${wrong['term']} — ${_truncateDefinition(wrong['correct']!)}',
+            style: const TextStyle(
+              fontSize: 14,
+              fontWeight: FontWeight.w500,
+            ),
+          ),
+        ],
       ),
     );
   }
@@ -630,7 +763,10 @@ class _QuizScreenState extends State<QuizScreen> {
     setState(() {
       _results.clear();
       _correctAnswers = 0;
+      _currentStreak = 0;
+      _wrongAnswers.clear();
       _showSummary = false;
+      _stopwatch.reset();
     });
     _loadNextQuestion();
   }
@@ -669,5 +805,45 @@ class _QuizScreenState extends State<QuizScreen> {
       default:
         return AppColors.funktional;
     }
+  }
+}
+
+class CircularProgressWithText extends StatelessWidget {
+  final double progress;
+  final Color color;
+  final String text;
+
+  const CircularProgressWithText({
+    Key? key,
+    required this.progress,
+    required this.color,
+    required this.text,
+  }) : super(key: key);
+
+  @override
+  Widget build(BuildContext context) {
+    return SizedBox(
+      width: 120,
+      height: 120,
+      child: Stack(
+        alignment: Alignment.center,
+        children: [
+          CircularProgressIndicator(
+            value: progress / 100,
+            strokeWidth: 8,
+            backgroundColor: color.withOpacity(0.2),
+            valueColor: AlwaysStoppedAnimation<Color>(color),
+          ),
+          Text(
+            text,
+            style: TextStyle(
+              fontSize: 24,
+              fontWeight: FontWeight.bold,
+              color: color,
+            ),
+          ),
+        ],
+      ),
+    );
   }
 }
