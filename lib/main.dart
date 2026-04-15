@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_web_plugins/flutter_web_plugins.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 import 'package:ap1_glossar/constants/colors.dart';
 import 'package:ap1_glossar/constants/theme.dart';
@@ -6,6 +7,7 @@ import 'package:ap1_glossar/screens/welcome_page/main_screen.dart';
 import 'package:ap1_glossar/screens/home_page/home_page.dart';
 
 void main() async {
+  usePathUrlStrategy();
   WidgetsFlutterBinding.ensureInitialized();
   final prefs = await SharedPreferences.getInstance();
   final seenWelcome = prefs.getBool('seen_welcome') ?? false;

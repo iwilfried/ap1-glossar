@@ -181,7 +181,10 @@ class HomePageState extends State<HomePage> {
     super.initState();
     _applyFilter();
     WidgetsBinding.instance.addPostFrameCallback((_) {
-      _handleDeepLink();
+      Future.delayed(const Duration(milliseconds: 500), () {
+        if (!mounted) return;
+        _handleDeepLink();
+      });
     });
   }
 
