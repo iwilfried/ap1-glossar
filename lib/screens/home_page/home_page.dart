@@ -753,13 +753,6 @@ class _GlossarCardState extends State<_GlossarCard>
         _related = getRelatedTerms(widget.term);
       }
     });
-    try {
-      if (_expanded) {
-        html.window.location.hash = Uri.encodeComponent(widget.term);
-      } else {
-        html.window.history.replaceState(null, '', html.window.location.pathname);
-      }
-    } catch (_) {}
   }
 
   @override
