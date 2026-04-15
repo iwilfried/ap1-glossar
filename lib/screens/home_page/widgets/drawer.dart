@@ -5,6 +5,7 @@ import '../../legal/impressum_screen.dart';
 import '../../legal/datenschutz_screen.dart';
 import '../../learn_mode/learn_screen.dart';
 import 'package:ap1_glossar/data/data.dart';
+import '../../learn_mode/quiz_screen.dart';
 
 class AppDrawer extends StatelessWidget {
   const AppDrawer({Key? key}) : super(key: key);
@@ -51,6 +52,15 @@ class AppDrawer extends StatelessWidget {
                 const Text('Karteikarten-Quiz', style: TextStyle(fontSize: 12)),
             onTap: () => Navigator.of(context).push(
               MaterialPageRoute(builder: (_) => const LearnScreen()),
+            ),
+          ),
+          ListTile(
+            leading: const Icon(Icons.quiz_rounded, color: Colors.deepOrange),
+            title: const Text('Quiz-Modus'),
+            subtitle:
+                const Text('Multiple Choice', style: TextStyle(fontSize: 12)),
+            onTap: () => Navigator.of(context).push(
+              MaterialPageRoute(builder: (_) => const QuizScreen()),
             ),
           ),
           const Divider(height: 24),
