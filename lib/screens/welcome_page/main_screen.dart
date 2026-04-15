@@ -107,7 +107,7 @@ class _WelcomeScreenState extends State<WelcomeScreen> {
                           await prefs.setBool('seen_welcome', true);
                           nav.pushReplacement(
                             MaterialPageRoute(
-                              builder: (context) => HomePage(deepLinkTerm: null),
+                              builder: (context) => const HomePage(),
                             ),
                           );
                         },

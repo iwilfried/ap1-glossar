@@ -162,8 +162,7 @@ const List<String> _themenReihenfolge = [
 
 // ── HomePage ──────────────────────────────────────────────────────────────────
 class HomePage extends StatefulWidget {
-  final String? deepLinkTerm;
-  const HomePage({Key? key, this.deepLinkTerm}) : super(key: key);
+  const HomePage({Key? key}) : super(key: key);
 
   @override
   HomePageState createState() => HomePageState();
@@ -181,11 +180,9 @@ class HomePageState extends State<HomePage> {
   void initState() {
     super.initState();
     _applyFilter();
-    if (widget.deepLinkTerm != null && abbreviations.containsKey(widget.deepLinkTerm)) {
-      WidgetsBinding.instance.addPostFrameCallback((_) {
-        navigateToTerm(widget.deepLinkTerm!);
-      });
-    }
+    WidgetsBinding.instance.addPostFrameCallback((_) {
+      _handleDeepLink();
+    });
   }
 
   @override
@@ -244,6 +241,20 @@ class HomePageState extends State<HomePage> {
 
         _visibleKeys = filtered;
     });
+  }
+
+  void _handleDeepLink() {
+    try {
+      final hash = html.window.location.hash;
+      if (hash.isNotEmpty) {
+        final term = Uri.decodeComponent(hash.substring(1));
+        if (abbreviations.containsKey(term)) {
+          navigateToTerm(term);
+        }
+      }
+    } catch (_) {
+      // ignore web-only hash handling failures
+    }
   }
 
   void navigateToTerm(String term) {
@@ -753,6 +764,13 @@ class _GlossarCardState extends State<_GlossarCard>
         _related = getRelatedTerms(widget.term);
       }
     });
+    try {
+      if (_expanded) {
+        html.window.location.hash = Uri.encodeComponent(widget.term);
+      } else {
+        html.window.history.replaceState(null, '', html.window.location.pathname);
+      }
+    } catch (_) {}
   }
 
   @override
