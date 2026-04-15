@@ -4,6 +4,7 @@ import '../../about_page/about_screen.dart';
 import '../../legal/impressum_screen.dart';
 import '../../legal/datenschutz_screen.dart';
 import '../../learn_mode/learn_screen.dart';
+import 'package:ap1_glossar/data/data.dart';
 
 class AppDrawer extends StatelessWidget {
   const AppDrawer({Key? key}) : super(key: key);
@@ -20,7 +21,7 @@ class AppDrawer extends StatelessWidget {
             child: Column(
               crossAxisAlignment: CrossAxisAlignment.start,
               mainAxisAlignment: MainAxisAlignment.end,
-              children: const [
+              children: [
                 Icon(Icons.menu_book_rounded, color: Colors.white, size: 36),
                 SizedBox(height: 10),
                 Text(
@@ -33,7 +34,7 @@ class AppDrawer extends StatelessWidget {
                 ),
                 SizedBox(height: 4),
                 Text(
-                  '386 Fachbegriffe · 5 Bewertungsaspekte',
+                  '${abbreviations.length} Fachbegriffe · 5 Bewertungsaspekte',
                   style: TextStyle(color: Colors.white70, fontSize: 12),
                 ),
               ],
