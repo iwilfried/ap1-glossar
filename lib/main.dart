@@ -59,7 +59,7 @@ class _MyAppState extends State<MyApp> {
       valueListenable: MyApp.themeNotifier,
       builder: (context, themeMode, child) {
         return MaterialApp(
-          title: 'AP1 Glossar – IHK Prüfungsvorbereitung',
+          title: 'AP1 Coach – IHK Prüfungsvorbereitung',
           theme: AppTheme.lightTheme,
           darkTheme: AppTheme.darkTheme,
           themeMode: themeMode,

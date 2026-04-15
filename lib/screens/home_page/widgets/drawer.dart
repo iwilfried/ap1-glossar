@@ -26,7 +26,7 @@ class AppDrawer extends StatelessWidget {
                 Icon(Icons.menu_book_rounded, color: Colors.white, size: 36),
                 SizedBox(height: 10),
                 Text(
-                  'IHK AP1 – Glossar',
+                  'AP1 Coach',
                   style: TextStyle(
                     color: Colors.white,
                     fontSize: 18,

@@ -64,7 +64,7 @@ class _WelcomeScreenState extends State<WelcomeScreen> {
                     ),
                     const SizedBox(height: 12),
                     Text(
-                      'GLOSSAR',
+                      'COACH',
                       textAlign: TextAlign.center,
                       style: const TextStyle(
                         fontFamily: 'Oswald',

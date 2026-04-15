@@ -280,7 +280,7 @@ class HomePageState extends State<HomePage> {
         backgroundColor: AppColors.color,
         foregroundColor: Colors.white,
         title: const Text(
-          'IHK AP1 – Glossar',
+          'AP1 Coach',
           style: TextStyle(fontWeight: FontWeight.bold, fontSize: 18),
         ),
         centerTitle: true,

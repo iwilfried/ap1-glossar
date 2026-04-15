@@ -43,7 +43,7 @@ class AboutScreen extends StatelessWidget {
             const SizedBox(height: 16),
             Center(
               child: Text(
-                "AP1 Glossar",
+                "AP1 Coach",
                 style: Theme.of(context).textTheme.headlineSmall?.copyWith(
                       fontWeight: FontWeight.bold,
                       color: const Color(0xFF1B3A5C),
@@ -69,7 +69,7 @@ class AboutScreen extends StatelessWidget {
             ),
             const SizedBox(height: 32),
             _buildSection(
-              "Was ist das AP1 Glossar?",
+              "Was ist der AP1 Coach?",
               "Die vollständige Wissensdatenbank für die IHK Abschlussprüfung Teil 1 "
                   "(Fachinformatiker aller Fachrichtungen). Basiert auf der Analyse von "
                   "10 echten AP1-Prüfungen (2021 – Frühjahr2026) und dem aktuellen IHK-Prüfungskatalog.",

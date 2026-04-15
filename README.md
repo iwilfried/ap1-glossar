@@ -1,7 +1,7 @@
-# AP1 Glossar – IHK Prüfungsvorbereitung
+# AP1 Coach – IHK Prüfungsvorbereitung
 
-> **386 Fachbegriffe** · **817 Tags** · **4 IHK-Bewertungsaspekte** · **Themen-Filter**  
-> Die umfassendste Glossar-App für die IHK Abschlussprüfung Teil 1 – Fachinformatiker (FIAE/FISI), IT-Systemkaufleute & Kaufleute für Digitalisierungsmanagement.
+> **386 Fachbegriffe** · **817 Tags** · **4 IHK-Bewertungsaspekte** · **Themen-Filter** · **Karteikarten-Lernmodus** · **Multiple-Choice-Quiz**  
+> Der intelligente Lernbegleiter für die IHK Abschlussprüfung Teil 1 – Fachinformatiker (FIAE/FISI), IT-Systemkaufleute & Kaufleute für Digitalisierungsmanagement.
 
 **🔗 Live-App:** [iwilfried.github.io/ap1-glossar](https://iwilfried.github.io/ap1-glossar/)
 
