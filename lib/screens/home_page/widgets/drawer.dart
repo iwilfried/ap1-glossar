@@ -6,9 +6,11 @@ import '../../legal/datenschutz_screen.dart';
 import '../../learn_mode/learn_screen.dart';
 import 'package:ap1_glossar/data/data.dart';
 import '../../learn_mode/quiz_screen.dart';
+import '../../daily_challenge/daily_challenge_screen.dart';
+import '../../settings/notifications_settings_screen.dart';
 
 class AppDrawer extends StatelessWidget {
-  const AppDrawer({Key? key}) : super(key: key);
+  const AppDrawer({super.key});
 
   @override
   Widget build(BuildContext context) {
@@ -61,6 +63,22 @@ class AppDrawer extends StatelessWidget {
                 const Text('Multiple Choice', style: TextStyle(fontSize: 12)),
             onTap: () => Navigator.of(context).push(
               MaterialPageRoute(builder: (_) => const QuizScreen()),
+            ),
+          ),
+          ListTile(
+            leading: const Icon(Icons.today_rounded, color: Colors.blue),
+            title: const Text('Tägliche Challenge'),
+            subtitle: const Text('Deine Mini-Aufgabe', style: TextStyle(fontSize: 12)),
+            onTap: () => Navigator.of(context).push(
+              MaterialPageRoute(builder: (_) => const DailyChallengeScreen()),
+            ),
+          ),
+          ListTile(
+            leading: const Icon(Icons.notifications_rounded, color: Colors.purple),
+            title: const Text('Benachrichtigungen'),
+            subtitle: const Text('Push & Einstellungen', style: TextStyle(fontSize: 12)),
+            onTap: () => Navigator.of(context).push(
+              MaterialPageRoute(builder: (_) => const NotificationsSettingsScreen()),
             ),
           ),
           const Divider(height: 24),

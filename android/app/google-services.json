@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "699390760154",
+    "project_id": "ap1-coach",
+    "storage_bucket": "ap1-coach.firebasestorage.app"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:699390760154:android:0f413cf27167a44467c1e3",
+        "android_client_info": {
+          "package_name": "com.example.nasa"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDT4pzGZDCo70CcDBnBAYEvh5WSDoAryY0"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
