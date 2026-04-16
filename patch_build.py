@@ -74,7 +74,7 @@ splash_css = """
 
 splash_div = """
 <div id="flutter-loading">
-  <div class="loader-logo">AP1 Glossar</div>
+  <div class="loader-logo">AP1 Coach</div>
   <div class="loader-sub">IHK Prüfungsvorbereitung</div>
   <div class="loader-bar-bg"><div class="loader-bar"></div></div>
 </div>

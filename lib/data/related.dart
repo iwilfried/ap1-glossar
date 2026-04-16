@@ -1,4 +1,4 @@
-// AP1 Glossar – Verwandte Begriffe
+// AP1 Coach – Verwandte Begriffe
 // Automatische Ähnlichkeitsberechnung basierend auf:
 //   1. Thematischer Gruppe (höchste Gewichtung)
 //   2. Bewertungsaspekt (mittlere Gewichtung)

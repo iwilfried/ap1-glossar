@@ -1,4 +1,4 @@
-// AP1 Glossar – IHK Abschlussprüfung Teil 1
+// AP1 Coach – IHK Abschlussprüfung Teil 1
 // 386 Begriffe | Kategorien: Funktional · Ökonomisch · Ökologisch · Sozial · Berechnung
 // Basiert auf 10 echten AP1-Prüfungen (2021 – Frühjahr 2026) und dem IHK-Prüfungskatalog
 

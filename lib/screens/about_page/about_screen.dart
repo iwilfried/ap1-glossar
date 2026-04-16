@@ -70,7 +70,8 @@ class AboutScreen extends StatelessWidget {
             const SizedBox(height: 32),
             _buildSection(
               "Was ist der AP1 Coach?",
-              "Die vollständige Wissensdatenbank für die IHK Abschlussprüfung Teil 1 "
+              "Dein Lernbegleiter für die IT-Ausbildung — von Tag 1 bis zur bestandenen AP1-Prüfung. "
+                  "Die vollständige Wissensdatenbank für die IHK Abschlussprüfung Teil 1 "
                   "(Fachinformatiker aller Fachrichtungen). Basiert auf der Analyse von "
                   "10 echten AP1-Prüfungen (2021 – Frühjahr2026) und dem aktuellen IHK-Prüfungskatalog.",
             ),

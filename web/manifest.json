@@ -5,7 +5,7 @@
     "display": "standalone",
     "background_color": "#1B3A5C",
     "theme_color": "#1B3A5C",
-    "description": "AP1 Coach: 386 Fachbegriffe, Karteikarten-Lernmodus und Quiz für die IHK AP1 Prüfung. Lerne so, wie die IHK prüft.",
+    "description": "AP1 Coach: 386 Fachbegriffe mit IHK-Bewertungsaspekten, Lernmodus und Quiz für die Fachinformatiker-Prüfung",
     "orientation": "portrait-primary",
     "prefer_related_applications": false,
     "categories": ["education", "productivity"],
