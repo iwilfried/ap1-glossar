@@ -1,9 +1,52 @@
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.evaluateAnswer = void 0;
+exports.digistore24Webhook = exports.evaluateAnswer = void 0;
 const functions = require("firebase-functions");
 const admin = require("firebase-admin");
+const crypto = require("crypto");
 admin.initializeApp();
+const examDates = {
+    F2026: new Date('2026-03-31'),
+    H2026: new Date('2026-10-31'),
+    F2027: new Date('2027-03-31'),
+    H2027: new Date('2027-10-31'),
+};
+function normalizeParams(body) {
+    if (!body)
+        return {};
+    if (typeof body === 'string') {
+        return Object.fromEntries(new URLSearchParams(body).entries());
+    }
+    return Object.keys(body).reduce((acc, key) => {
+        var _a;
+        const value = body[key];
+        acc[key] = Array.isArray(value) ? String((_a = value[0]) !== null && _a !== void 0 ? _a : '') : String(value !== null && value !== void 0 ? value : '');
+        return acc;
+    }, {});
+}
+function verifyDigistore24Signature(params, passphrase) {
+    const shaSign = params['sha_sign'];
+    if (!shaSign)
+        return false;
+    const keys = Object.keys(params)
+        .filter((k) => k !== 'sha_sign')
+        .sort();
+    const hashedValues = keys.map((key) => {
+        const value = params[key] || '';
+        return crypto
+            .createHash('sha512')
+            .update(value + passphrase)
+            .digest('hex')
+            .toUpperCase();
+    });
+    const concatenated = hashedValues.join('');
+    const finalHash = crypto
+        .createHash('sha512')
+        .update(concatenated + passphrase)
+        .digest('hex')
+        .toUpperCase();
+    return finalHash === shaSign.toUpperCase();
+}
 exports.evaluateAnswer = functions
     .region('europe-west1')
     .https.onCall(async (data, context) => {
@@ -118,6 +161,65 @@ ANTWORTFORMAT (antworte NUR mit diesem JSON, kein Markdown, keine Backticks):
     catch (error) {
         console.error('Error calling Claude API:', error);
         throw new functions.https.HttpsError('internal', 'Fehler bei der Bewertung. Bitte versuche es später erneut.');
+    }
+});
+exports.digistore24Webhook = functions
+    .region('europe-west1')
+    .https.onRequest(async (request, response) => {
+    var _a, _b, _c, _d, _e, _f, _g, _h, _j, _k;
+    if (request.method !== 'POST') {
+        response.status(405).send('Method not allowed');
+        return;
+    }
+    const passphrase = process.env.DIGISTORE24_PASSPHRASE;
+    if (!passphrase) {
+        response.status(500).send('Digistore24 passphrase not configured');
+        return;
+    }
+    const params = normalizeParams(request.body);
+    if (!verifyDigistore24Signature(params, passphrase)) {
+        console.error('Invalid Digistore24 signature', params);
+        response.status(403).send('Invalid signature');
+        return;
+    }
+    const eventType = (_a = params['event']) === null || _a === void 0 ? void 0 : _a.trim();
+    const uid = (_b = params['custom']) === null || _b === void 0 ? void 0 : _b.trim();
+    const orderId = (_d = (_c = params['order_id']) === null || _c === void 0 ? void 0 : _c.trim()) !== null && _d !== void 0 ? _d : '';
+    const email = (_f = (_e = params['email']) === null || _e === void 0 ? void 0 : _e.trim()) !== null && _f !== void 0 ? _f : '';
+    const payMethod = (_h = (_g = params['pay_method']) === null || _g === void 0 ? void 0 : _g.trim()) !== null && _h !== void 0 ? _h : '';
+    const custom2 = (_k = (_j = params['custom2']) === null || _j === void 0 ? void 0 : _j.trim()) !== null && _k !== void 0 ? _k : '';
+    if (!uid) {
+        response.status(400).send('Missing custom uid');
+        return;
+    }
+    const userRef = admin.firestore().collection('users').doc(uid);
+    try {
+        if (eventType === 'on_payment') {
+            const updateData = {
+                isPro: true,
+                purchaseDate: admin.firestore.FieldValue.serverTimestamp(),
+                digistore24OrderId: orderId,
+                digistore24Email: email,
+                payMethod: payMethod,
+            };
+            if (custom2 && examDates[custom2]) {
+                updateData.examDate = admin.firestore.Timestamp.fromDate(examDates[custom2]);
+                updateData.examDateCode = custom2;
+            }
+            await userRef.set(updateData, { merge: true });
+        }
+        else if (eventType === 'on_refund' || eventType === 'on_chargeback') {
+            await userRef.set({
+                isPro: false,
+                refundDate: admin.firestore.FieldValue.serverTimestamp(),
+                refundReason: eventType,
+            }, { merge: true });
+        }
+        response.status(200).send('OK');
+    }
+    catch (error) {
+        console.error('Digistore24 webhook failed:', error);
+        response.status(500).send('Internal error');
     }
 });
 //# sourceMappingURL=index.js.map

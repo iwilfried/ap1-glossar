@@ -3,19 +3,22 @@ import 'dart:math';
 import 'package:flutter/material.dart';
 import 'package:ap1_glossar/data/data.dart';
 import 'package:ap1_glossar/data/related.dart';
+import 'package:ap1_glossar/screens/paywall/paywall_screen.dart';
 import 'package:ap1_glossar/services/firebase_service.dart';
 
 class FreetextChallengeScreen extends StatefulWidget {
   const FreetextChallengeScreen({super.key});
 
   @override
-  State<FreetextChallengeScreen> createState() => _FreetextChallengeScreenState();
+  State<FreetextChallengeScreen> createState() =>
+      _FreetextChallengeScreenState();
 }
 
 class _FreetextChallengeScreenState extends State<FreetextChallengeScreen> {
   bool _isLoading = true;
   bool _isEvaluating = false;
   bool _questionAnswered = false;
+  bool _isPro = false;
   Map<String, dynamic>? _evaluationResult;
   String? _currentTerm;
   String? _currentDefinition;
@@ -29,6 +32,15 @@ class _FreetextChallengeScreenState extends State<FreetextChallengeScreen> {
   void initState() {
     super.initState();
     _loadQuestion();
+    _loadProStatus();
+  }
+
+  Future<void> _loadProStatus() async {
+    final isPro = await FirebaseService.instance.isUserPro();
+    if (!mounted) return;
+    setState(() {
+      _isPro = isPro;
+    });
   }
 
   @override
@@ -82,7 +94,8 @@ class _FreetextChallengeScreenState extends State<FreetextChallengeScreen> {
   }
 
   Future<void> _submitAnswer() async {
-    if (_answerController.text.trim().isEmpty || _answerController.text.length < 10) {
+    if (_answerController.text.trim().isEmpty ||
+        _answerController.text.length < 10) {
       ScaffoldMessenger.of(context).showSnackBar(
         const SnackBar(content: Text('Bitte gib mindestens 10 Zeichen ein.')),
       );
@@ -112,9 +125,27 @@ class _FreetextChallengeScreenState extends State<FreetextChallengeScreen> {
       setState(() {
         _isEvaluating = false;
       });
-      ScaffoldMessenger.of(context).showSnackBar(
-        SnackBar(content: Text('Fehler: ${e.toString()}')),
-      );
+      
+      // Check for specific resource-exhausted error (daily limit reached)
+      if (e.toString().contains('resource-exhausted') || 
+          e.toString().contains('Tageslimit erreicht')) {
+        // Show paywall teaser for Free users who reached daily limit
+        setState(() {
+          _evaluationResult = {
+            'score': 0,
+            'feedback': {'correct': '', 'missing': '', 'wrong': ''},
+            'modelAnswer': '',
+            'ihkTips': '',
+            'languageTips': '',
+            'limitReached': true,
+          };
+          _questionAnswered = true;
+        });
+      } else {
+        ScaffoldMessenger.of(context).showSnackBar(
+          SnackBar(content: Text('Fehler: ${e.toString()}')),
+        );
+      }
     }
   }
 
@@ -156,46 +187,64 @@ class _FreetextChallengeScreenState extends State<FreetextChallengeScreen> {
                 child: Column(
                   crossAxisAlignment: CrossAxisAlignment.start,
                   children: [
-                    const Text('Filter', style: TextStyle(fontSize: 18, fontWeight: FontWeight.bold)),
+                    const Text('Filter',
+                        style: TextStyle(
+                            fontSize: 18, fontWeight: FontWeight.bold)),
                     const SizedBox(height: 8),
                     Row(
                       children: [
                         Expanded(
                           child: DropdownButtonFormField<String>(
                             value: _selectedAspect,
-                            decoration: const InputDecoration(labelText: 'Aspekt'),
+                            decoration:
+                                const InputDecoration(labelText: 'Aspekt'),
                             items: const [
-                              DropdownMenuItem(value: 'alle', child: Text('Alle Aspekte')),
-                              DropdownMenuItem(value: 'funktional', child: Text('Funktional')),
-                              DropdownMenuItem(value: 'ökonomisch', child: Text('Ökonomisch')),
-                              DropdownMenuItem(value: 'ökologisch', child: Text('Ökologisch')),
-                              DropdownMenuItem(value: 'sozial', child: Text('Sozial')),
+                              DropdownMenuItem(
+                                  value: 'alle', child: Text('Alle Aspekte')),
+                              DropdownMenuItem(
+                                  value: 'funktional',
+                                  child: Text('Funktional')),
+                              DropdownMenuItem(
+                                  value: 'ökonomisch',
+                                  child: Text('Ökonomisch')),
+                              DropdownMenuItem(
+                                  value: 'ökologisch',
+                                  child: Text('Ökologisch')),
+                              DropdownMenuItem(
+                                  value: 'sozial', child: Text('Sozial')),
                             ],
-                            onChanged: _questionAnswered ? null : (value) {
-                              setState(() {
-                                _selectedAspect = value!;
-                                _loadQuestion();
-                              });
-                            },
+                            onChanged: _questionAnswered
+                                ? null
+                                : (value) {
+                                    setState(() {
+                                      _selectedAspect = value!;
+                                      _loadQuestion();
+                                    });
+                                  },
                           ),
                         ),
                         const SizedBox(width: 16),
                         Expanded(
                           child: DropdownButtonFormField<String>(
                             value: _selectedTheme,
-                            decoration: const InputDecoration(labelText: 'Thema'),
+                            decoration:
+                                const InputDecoration(labelText: 'Thema'),
                             items: [
-                              const DropdownMenuItem(value: 'alle', child: Text('Alle Themen')),
-                              ...termGroups.keys.map((theme) =>
-                                DropdownMenuItem(value: theme, child: Text(theme)),
+                              const DropdownMenuItem(
+                                  value: 'alle', child: Text('Alle Themen')),
+                              ...termGroups.keys.map(
+                                (theme) => DropdownMenuItem(
+                                    value: theme, child: Text(theme)),
                               ),
                             ],
-                            onChanged: _questionAnswered ? null : (value) {
-                              setState(() {
-                                _selectedTheme = value!;
-                                _loadQuestion();
-                              });
-                            },
+                            onChanged: _questionAnswered
+                                ? null
+                                : (value) {
+                                    setState(() {
+                                      _selectedTheme = value!;
+                                      _loadQuestion();
+                                    });
+                                  },
                           ),
                         ),
                       ],
@@ -214,9 +263,12 @@ class _FreetextChallengeScreenState extends State<FreetextChallengeScreen> {
                   child: Column(
                     crossAxisAlignment: CrossAxisAlignment.start,
                     children: [
-                      const Text('Frage:', style: TextStyle(fontSize: 18, fontWeight: FontWeight.bold)),
+                      const Text('Frage:',
+                          style: TextStyle(
+                              fontSize: 18, fontWeight: FontWeight.bold)),
                       const SizedBox(height: 8),
-                      Text(_currentQuestion!, style: const TextStyle(fontSize: 16)),
+                      Text(_currentQuestion!,
+                          style: const TextStyle(fontSize: 16)),
                     ],
                   ),
                 ),
@@ -240,6 +292,19 @@ class _FreetextChallengeScreenState extends State<FreetextChallengeScreen> {
                   width: double.infinity,
                   child: ElevatedButton(
                     onPressed: _isEvaluating ? null : _submitAnswer,
+                    style: ElevatedButton.styleFrom(
+                      backgroundColor: const Color(0xFFFF6B35), // Kräftiges Orange
+                      foregroundColor: Colors.white,
+                      padding: const EdgeInsets.all(16),
+                      textStyle: const TextStyle(
+                        fontSize: 18,
+                        fontWeight: FontWeight.w600,
+                      ),
+                      shape: RoundedRectangleBorder(
+                        borderRadius: BorderRadius.circular(12),
+                      ),
+                      minimumSize: const Size(double.infinity, 56),
+                    ),
                     child: _isEvaluating
                         ? const Text('Claude bewertet deine Antwort...')
                         : const Text('Antwort absenden'),
@@ -249,56 +314,161 @@ class _FreetextChallengeScreenState extends State<FreetextChallengeScreen> {
 
               // Evaluation Result
               if (_questionAnswered && _evaluationResult != null) ...[
-                Card(
-                  color: _getScoreColor(_evaluationResult!['score'] as int).withOpacity(0.1),
-                  child: Padding(
-                    padding: const EdgeInsets.all(16),
-                    child: Column(
-                      children: [
-                        Row(
-                          mainAxisAlignment: MainAxisAlignment.center,
+                if (_evaluationResult!['limitReached'] == true) ...[
+                  // Show paywall teaser when daily limit is reached
+                  Card(
+                    color: Theme.of(context).colorScheme.surfaceVariant,
+                    child: Padding(
+                      padding: const EdgeInsets.all(16),
+                      child: Column(
+                        crossAxisAlignment: CrossAxisAlignment.start,
+                        children: [
+                          const Text(
+                            'Du hast dein tägliches Freitext-Limit erreicht.',
+                            style: TextStyle(fontWeight: FontWeight.bold),
+                          ),
+                          const SizedBox(height: 8),
+                          const Text(
+                              'Mit dem Prüfungspass trainierst du unbegrenzt in allen Modi.'),
+                          const SizedBox(height: 16),
+                          SizedBox(
+                            width: double.infinity,
+                            child: ElevatedButton.icon(
+                              onPressed: () => Navigator.of(context).push(
+                                MaterialPageRoute(
+                                    builder: (_) => const PaywallScreen()),
+                              ),
+                              icon: const Icon(Icons.rocket_launch, color: Colors.white),
+                              label: const Text('Prüfungspass holen – €14,99'),
+                              style: ElevatedButton.styleFrom(
+                                backgroundColor: const Color(0xFFFFA500), // Gold/Orange
+                                foregroundColor: Colors.white,
+                                padding: const EdgeInsets.symmetric(vertical: 16, horizontal: 24),
+                                textStyle: const TextStyle(
+                                  fontSize: 18,
+                                  fontWeight: FontWeight.bold,
+                                ),
+                                shape: RoundedRectangleBorder(
+                                  borderRadius: BorderRadius.circular(12),
+                                ),
+                                elevation: 8,
+                                shadowColor: const Color(0xFFFFA500).withOpacity(0.3),
+                                minimumSize: const Size(double.infinity, 60),
+                              ),
+                            ),
+                          ),
+                        ],
+                      ),
+                    ),
+                  ),
+                ] else ...[
+                  // Show normal evaluation result
+                  Card(
+                    color: _getScoreColor(_evaluationResult!['score'] as int)
+                        .withOpacity(0.1),
+                    child: Padding(
+                      padding: const EdgeInsets.all(16),
+                      child: Column(
+                        children: [
+                          Row(
+                            mainAxisAlignment: MainAxisAlignment.center,
+                            children: [
+                              Text(
+                                '${_evaluationResult!['score']}/10',
+                                style: TextStyle(
+                                  fontSize: 48,
+                                  fontWeight: FontWeight.bold,
+                                  color: _getScoreColor(
+                                      _evaluationResult!['score'] as int),
+                                ),
+                              ),
+                            ],
+                          ),
+                          const SizedBox(height: 16),
+                          _buildFeedbackCard('✅ Richtig',
+                              _evaluationResult!['feedback']['correct']),
+                          _buildFeedbackCard('⚠️ Fehlt noch',
+                              _evaluationResult!['feedback']['missing']),
+                          if (_evaluationResult!['feedback']['wrong'].isNotEmpty)
+                            _buildFeedbackCard('❌ Falsch',
+                                _evaluationResult!['feedback']['wrong']),
+                          const SizedBox(height: 16),
+                          _buildTipCard('💡 IHK-Formulierungstipp',
+                              _evaluationResult!['ihkTips']),
+                          if (_evaluationResult!['languageTips'].isNotEmpty)
+                            _buildTipCard('🗣️ Sprachfeedback',
+                                _evaluationResult!['languageTips']),
+                          const SizedBox(height: 16),
+                          ExpansionTile(
+                            title: const Text('📝 Musterantwort'),
+                            children: [
+                              Padding(
+                                padding: const EdgeInsets.all(16),
+                                child: Text(_evaluationResult!['modelAnswer']),
+                              ),
+                            ],
+                          ),
+                        ],
+                      ),
+                    ),
+                  ),
+                  const SizedBox(height: 16),
+                  if (_isPro) ...[
+                    SizedBox(
+                      width: double.infinity,
+                      child: ElevatedButton(
+                        onPressed: _loadQuestion,
+                        child: const Text('Nächste Frage'),
+                      ),
+                    ),
+                  ] else ...[
+                    Card(
+                      color: Theme.of(context).colorScheme.surfaceVariant,
+                      child: Padding(
+                        padding: const EdgeInsets.all(16),
+                        child: Column(
+                          crossAxisAlignment: CrossAxisAlignment.start,
                           children: [
                             Text(
-                              '${_evaluationResult!['score']}/10',
-                              style: TextStyle(
-                                fontSize: 48,
-                                fontWeight: FontWeight.bold,
-                                color: _getScoreColor(_evaluationResult!['score'] as int),
+                              'Du hast heute ${_evaluationResult!['score']}/10 Punkte erreicht. Mit dem Prüfungspass trainierst du unbegrenzt.',
+                              style: const TextStyle(fontWeight: FontWeight.bold),
+                            ),
+                            const SizedBox(height: 8),
+                            const Text(
+                                'Hol dir den Prüfungspass und nutze Freitext, Quiz und mehr ohne Limit.'),
+                            const SizedBox(height: 16),
+                            SizedBox(
+                              width: double.infinity,
+                              child: ElevatedButton.icon(
+                                onPressed: () => Navigator.of(context).push(
+                                  MaterialPageRoute(
+                                      builder: (_) => const PaywallScreen()),
+                                ),
+                                icon: const Icon(Icons.rocket_launch, color: Colors.white),
+                                label: const Text('Prüfungspass holen – €14,99'),
+                                style: ElevatedButton.styleFrom(
+                                  backgroundColor: const Color(0xFFFFA500), // Gold/Orange
+                                  foregroundColor: Colors.white,
+                                  padding: const EdgeInsets.symmetric(vertical: 16, horizontal: 24),
+                                  textStyle: const TextStyle(
+                                    fontSize: 18,
+                                    fontWeight: FontWeight.bold,
+                                  ),
+                                  shape: RoundedRectangleBorder(
+                                    borderRadius: BorderRadius.circular(12),
+                                  ),
+                                  elevation: 8,
+                                  shadowColor: const Color(0xFFFFA500).withOpacity(0.3),
+                                  minimumSize: const Size(double.infinity, 60),
+                                ),
                               ),
                             ),
                           ],
                         ),
-                        const SizedBox(height: 16),
-                        _buildFeedbackCard('✅ Richtig', _evaluationResult!['feedback']['correct']),
-                        _buildFeedbackCard('⚠️ Fehlt noch', _evaluationResult!['feedback']['missing']),
-                        if (_evaluationResult!['feedback']['wrong'].isNotEmpty)
-                          _buildFeedbackCard('❌ Falsch', _evaluationResult!['feedback']['wrong']),
-                        const SizedBox(height: 16),
-                        _buildTipCard('💡 IHK-Formulierungstipp', _evaluationResult!['ihkTips']),
-                        if (_evaluationResult!['languageTips'].isNotEmpty)
-                          _buildTipCard('🗣️ Sprachfeedback', _evaluationResult!['languageTips']),
-                        const SizedBox(height: 16),
-                        ExpansionTile(
-                          title: const Text('📝 Musterantwort'),
-                          children: [
-                            Padding(
-                              padding: const EdgeInsets.all(16),
-                              child: Text(_evaluationResult!['modelAnswer']),
-                            ),
-                          ],
-                        ),
-                      ],
+                      ),
                     ),
-                  ),
-                ),
-                const SizedBox(height: 16),
-                SizedBox(
-                  width: double.infinity,
-                  child: ElevatedButton(
-                    onPressed: _loadQuestion,
-                    child: const Text('Nächste Frage'),
-                  ),
-                ),
+                  ],
+                ],
               ],
             ],
           ],

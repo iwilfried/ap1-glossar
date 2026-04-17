@@ -1,7 +1,57 @@
 import * as functions from 'firebase-functions';
 import * as admin from 'firebase-admin';
+import * as crypto from 'crypto';
 
 admin.initializeApp();
+
+const examDates: Record<string, Date> = {
+  F2026: new Date('2026-03-31'),
+  H2026: new Date('2026-10-31'),
+  F2027: new Date('2027-03-31'),
+  H2027: new Date('2027-10-31'),
+};
+
+function normalizeParams(body: any): Record<string, string> {
+  if (!body) return {};
+  if (typeof body === 'string') {
+    return Object.fromEntries(new URLSearchParams(body).entries());
+  }
+  return Object.keys(body).reduce<Record<string, string>>((acc, key) => {
+    const value = body[key];
+    acc[key] = Array.isArray(value) ? String(value[0] ?? '') : String(value ?? '');
+    return acc;
+  }, {});
+}
+
+function verifyDigistore24Signature(
+  params: Record<string, string>,
+  passphrase: string
+): boolean {
+  const shaSign = params['sha_sign'];
+  if (!shaSign) return false;
+
+  const keys = Object.keys(params)
+    .filter((k) => k !== 'sha_sign')
+    .sort();
+
+  const hashedValues = keys.map((key) => {
+    const value = params[key] || '';
+    return crypto
+      .createHash('sha512')
+      .update(value + passphrase)
+      .digest('hex')
+      .toUpperCase();
+  });
+
+  const concatenated = hashedValues.join('');
+  const finalHash = crypto
+    .createHash('sha512')
+    .update(concatenated + passphrase)
+    .digest('hex')
+    .toUpperCase();
+
+  return finalHash === shaSign.toUpperCase();
+}
 
 interface EvaluateAnswerRequest {
   term: string;
@@ -163,5 +213,74 @@ ANTWORTFORMAT (antworte NUR mit diesem JSON, kein Markdown, keine Backticks):
         'internal',
         'Fehler bei der Bewertung. Bitte versuche es später erneut.'
       );
+    }
+  });
+
+export const digistore24Webhook = functions
+  .region('europe-west1')
+  .https.onRequest(async (request, response) => {
+    if (request.method !== 'POST') {
+      response.status(405).send('Method not allowed');
+      return;
+    }
+
+    const passphrase = process.env.DIGISTORE24_PASSPHRASE;
+    if (!passphrase) {
+      response.status(500).send('Digistore24 passphrase not configured');
+      return;
+    }
+
+    const params = normalizeParams(request.body);
+    if (!verifyDigistore24Signature(params, passphrase)) {
+      console.error('Invalid Digistore24 signature', params);
+      response.status(403).send('Invalid signature');
+      return;
+    }
+
+    const eventType = params['event']?.trim();
+    const uid = params['custom']?.trim();
+    const orderId = params['order_id']?.trim() ?? '';
+    const email = params['email']?.trim() ?? '';
+    const payMethod = params['pay_method']?.trim() ?? '';
+    const custom2 = params['custom2']?.trim() ?? '';
+
+    if (!uid) {
+      response.status(400).send('Missing custom uid');
+      return;
+    }
+
+    const userRef = admin.firestore().collection('users').doc(uid);
+
+    try {
+      if (eventType === 'on_payment') {
+        const updateData: Record<string, unknown> = {
+          isPro: true,
+          purchaseDate: admin.firestore.FieldValue.serverTimestamp(),
+          digistore24OrderId: orderId,
+          digistore24Email: email,
+          payMethod: payMethod,
+        };
+
+        if (custom2 && examDates[custom2]) {
+          updateData.examDate = admin.firestore.Timestamp.fromDate(examDates[custom2]);
+          updateData.examDateCode = custom2;
+        }
+
+        await userRef.set(updateData, { merge: true });
+      } else if (eventType === 'on_refund' || eventType === 'on_chargeback') {
+        await userRef.set(
+          {
+            isPro: false,
+            refundDate: admin.firestore.FieldValue.serverTimestamp(),
+            refundReason: eventType,
+          },
+          { merge: true }
+        );
+      }
+
+      response.status(200).send('OK');
+    } catch (error) {
+      console.error('Digistore24 webhook failed:', error);
+      response.status(500).send('Internal error');
     }
   });

@@ -7,6 +7,7 @@ import 'package:ap1_glossar/constants/colors.dart';
 import 'package:ap1_glossar/constants/theme.dart';
 import 'package:ap1_glossar/screens/welcome_page/main_screen.dart';
 import 'package:ap1_glossar/screens/home_page/home_page.dart';
+import 'package:ap1_glossar/screens/paywall/paywall_screen.dart';
 import 'package:ap1_glossar/services/firebase_service.dart';
 import 'package:ap1_glossar/services/fcm_service.dart';
 import 'firebase_options.dart';
@@ -19,12 +20,17 @@ void main() async {
 
   final uri = Uri.parse(html.window.location.href);
   final deepLinkTerm = uri.queryParameters['term'];
+  final purchaseSuccess = uri.queryParameters['purchase'] == 'success';
   final prefs = await SharedPreferences.getInstance();
   final seenWelcome = prefs.getBool('seen_welcome') ?? false;
   final themeModePref = prefs.getString('theme_mode') ?? 'system';
   final themeMode = _stringToThemeMode(themeModePref);
   MyApp.themeNotifier.value = themeMode;
-  runApp(MyApp(showWelcome: !seenWelcome && deepLinkTerm == null, deepLinkTerm: deepLinkTerm));
+  runApp(MyApp(
+    showWelcome: !seenWelcome && !purchaseSuccess && deepLinkTerm == null,
+    deepLinkTerm: deepLinkTerm,
+    purchaseSuccess: purchaseSuccess,
+  ));
 }
 
 ThemeMode _stringToThemeMode(String value) {
@@ -41,10 +47,16 @@ ThemeMode _stringToThemeMode(String value) {
 class MyApp extends StatefulWidget {
   final bool showWelcome;
   final String? deepLinkTerm;
+  final bool purchaseSuccess;
   static final ValueNotifier<ThemeMode> themeNotifier =
       ValueNotifier(ThemeMode.system);
 
-  const MyApp({super.key, required this.showWelcome, this.deepLinkTerm});
+  const MyApp({
+    super.key,
+    required this.showWelcome,
+    this.deepLinkTerm,
+    this.purchaseSuccess = false,
+  });
 
   @override
   State<MyApp> createState() => _MyAppState();
@@ -52,7 +64,8 @@ class MyApp extends StatefulWidget {
 
 class _MyAppState extends State<MyApp> {
   final GlobalKey<NavigatorState> _navigatorKey = GlobalKey<NavigatorState>();
-  final GlobalKey<ScaffoldMessengerState> _scaffoldMessengerKey = GlobalKey<ScaffoldMessengerState>();
+  final GlobalKey<ScaffoldMessengerState> _scaffoldMessengerKey =
+      GlobalKey<ScaffoldMessengerState>();
 
   @override
   void initState() {
@@ -74,7 +87,11 @@ class _MyAppState extends State<MyApp> {
           theme: AppTheme.lightTheme,
           darkTheme: AppTheme.darkTheme,
           themeMode: themeMode,
-          home: widget.showWelcome ? const WelcomeScreen() : HomePage(deepLinkTerm: widget.deepLinkTerm),
+          home: widget.showWelcome
+              ? const WelcomeScreen()
+              : widget.purchaseSuccess
+                  ? const PurchaseProcessingScreen()
+                  : HomePage(deepLinkTerm: widget.deepLinkTerm),
           color: AppColors.color,
         );
       },

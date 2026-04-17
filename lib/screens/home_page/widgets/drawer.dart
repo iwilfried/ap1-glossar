@@ -9,9 +9,42 @@ import '../../learn_mode/quiz_screen.dart';
 import '../../daily_challenge/daily_challenge_screen.dart';
 import '../../settings/notifications_settings_screen.dart';
 import 'package:ap1_glossar/screens/daily_challenge/freetext_challenge_screen.dart';
+import 'package:ap1_glossar/screens/paywall/paywall_screen.dart';
+import 'package:ap1_glossar/services/firebase_service.dart';
 
 class AppDrawer extends StatelessWidget {
   const AppDrawer({super.key});
+
+  Future<void> _navigateProFeature(BuildContext context, Widget targetScreen) async {
+    final navigator = Navigator.of(context);
+    navigator.pop();
+    final isPro = await FirebaseService.instance.isUserPro();
+    if (isPro) {
+      navigator.push(
+        MaterialPageRoute(builder: (_) => targetScreen),
+      );
+    } else {
+      navigator.push(
+        MaterialPageRoute(builder: (_) => const PaywallScreen()),
+      );
+    }
+  }
+
+  Future<void> _navigateQuiz(BuildContext context) async {
+    final navigator = Navigator.of(context);
+    navigator.pop();
+    final canStartQuiz = await FirebaseService.instance.canStartQuiz();
+    if (canStartQuiz) {
+      await FirebaseService.instance.markQuizStarted();
+      navigator.push(
+        MaterialPageRoute(builder: (_) => const QuizScreen()),
+      );
+    } else {
+      navigator.push(
+        MaterialPageRoute(builder: (_) => const PaywallScreen()),
+      );
+    }
+  }
 
   @override
   Widget build(BuildContext context) {
@@ -62,35 +95,105 @@ class AppDrawer extends StatelessWidget {
             title: const Text('Quiz-Modus'),
             subtitle:
                 const Text('Multiple Choice', style: TextStyle(fontSize: 12)),
-            onTap: () => Navigator.of(context).push(
-              MaterialPageRoute(builder: (_) => const QuizScreen()),
-            ),
+            onTap: () => _navigateQuiz(context),
           ),
           ListTile(
-            leading: const Icon(Icons.edit_note_rounded, color: Colors.deepOrange),
-            title: const Text('Freitext-Challenge'),
-            subtitle: const Text('KI-bewertete Freitext-Antworten', style: TextStyle(fontSize: 12)),
+            leading: const Icon(Icons.emoji_events_rounded, color: Colors.deepOrange),
+            title: Row(
+              children: const [
+                Expanded(child: Text('Champion-Rangliste')),
+                SizedBox(width: 8),
+                Chip(
+                  label: Text('PRO',
+                      style: TextStyle(color: Colors.white, fontSize: 12)),
+                  backgroundColor: Colors.deepOrange,
+                  visualDensity: VisualDensity.compact,
+                ),
+              ],
+            ),
+            subtitle: const Text('Platzhalter für Pro-Feature',
+                style: TextStyle(fontSize: 12)),
             onTap: () {
-              Navigator.of(context).pop(); // Drawer schließen
+              Navigator.of(context).pop();
               Navigator.of(context).push(
-                MaterialPageRoute(builder: (_) => FreetextChallengeScreen()),
+                MaterialPageRoute(builder: (_) => const PaywallScreen()),
               );
             },
           ),
           ListTile(
+            leading: const Icon(Icons.assessment_rounded, color: Colors.deepOrange),
+            title: Row(
+              children: const [
+                Expanded(child: Text('Schwächen-Report')),
+                SizedBox(width: 8),
+                Chip(
+                  label: Text('PRO',
+                      style: TextStyle(color: Colors.white, fontSize: 12)),
+                  backgroundColor: Colors.deepOrange,
+                  visualDensity: VisualDensity.compact,
+                ),
+              ],
+            ),
+            subtitle: const Text('Platzhalter für Pro-Feature',
+                style: TextStyle(fontSize: 12)),
+            onTap: () {
+              Navigator.of(context).pop();
+              Navigator.of(context).push(
+                MaterialPageRoute(builder: (_) => const PaywallScreen()),
+              );
+            },
+          ),
+          ListTile(
+            leading: const Icon(Icons.school_rounded, color: Colors.deepOrange),
+            title: Row(
+              children: const [
+                Expanded(child: Text('Prüfungssimulator')),
+                SizedBox(width: 8),
+                Chip(
+                  label: Text('PRO',
+                      style: TextStyle(color: Colors.white, fontSize: 12)),
+                  backgroundColor: Colors.deepOrange,
+                  visualDensity: VisualDensity.compact,
+                ),
+              ],
+            ),
+            subtitle: const Text('Platzhalter für Pro-Feature',
+                style: TextStyle(fontSize: 12)),
+            onTap: () {
+              Navigator.of(context).pop();
+              Navigator.of(context).push(
+                MaterialPageRoute(builder: (_) => const PaywallScreen()),
+              );
+            },
+          ),
+          ListTile(
+            leading:
+                const Icon(Icons.edit_note_rounded, color: Colors.deepOrange),
+            title: const Text('Freitext-Challenge'),
+            subtitle: const Text('KI-bewertete Freitext-Antworten',
+                style: TextStyle(fontSize: 12)),
+            onTap: () => Navigator.of(context).push(
+              MaterialPageRoute(builder: (_) => const FreetextChallengeScreen()),
+            ),
+          ),
+          ListTile(
             leading: const Icon(Icons.today_rounded, color: Colors.blue),
             title: const Text('Tägliche Challenge'),
-            subtitle: const Text('Deine Mini-Aufgabe', style: TextStyle(fontSize: 12)),
+            subtitle: const Text('Deine Mini-Aufgabe',
+                style: TextStyle(fontSize: 12)),
             onTap: () => Navigator.of(context).push(
               MaterialPageRoute(builder: (_) => const DailyChallengeScreen()),
             ),
           ),
           ListTile(
-            leading: const Icon(Icons.notifications_rounded, color: Colors.purple),
+            leading:
+                const Icon(Icons.notifications_rounded, color: Colors.purple),
             title: const Text('Benachrichtigungen'),
-            subtitle: const Text('Push & Einstellungen', style: TextStyle(fontSize: 12)),
+            subtitle: const Text('Push & Einstellungen',
+                style: TextStyle(fontSize: 12)),
             onTap: () => Navigator.of(context).push(
-              MaterialPageRoute(builder: (_) => const NotificationsSettingsScreen()),
+              MaterialPageRoute(
+                  builder: (_) => const NotificationsSettingsScreen()),
             ),
           ),
           const Divider(height: 24),

@@ -3,7 +3,12 @@ service cloud.firestore {
   match /databases/{database}/documents {
     // Users collection
     match /users/{userId} {
-      allow read, write: if request.auth != null && request.auth.uid == userId;
+      allow read: if request.auth != null && request.auth.uid == userId;
+      allow create: if request.auth != null && request.auth.uid == userId;
+      allow update: if request.auth != null && request.auth.uid == userId
+        && !request.resource.data.diff(resource.data).affectedKeys()
+            .hasAny(['isPro', 'purchaseDate', 'digistore24OrderId', 'digistore24Email', 'payMethod', 'examDate', 'examDateCode', 'proExpiredAt']);
+      allow delete: if false;
     }
 
     // User subcollections

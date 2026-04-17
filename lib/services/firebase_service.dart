@@ -30,10 +30,45 @@ class FirebaseService {
         'fcmToken': '',
         'streak': 0,
         'lastChallengeDate': Timestamp.fromDate(DateTime.utc(1970, 1, 1)),
+        'lastQuizDate': Timestamp.fromDate(DateTime.utc(1970, 1, 1)),
         'totalChallenges': 0,
         'createdAt': Timestamp.now(),
       });
     }
+  }
+
+  Future<bool> canStartQuiz() async {
+    final user = _auth.currentUser;
+    if (user == null) return false;
+
+    if (await isUserPro()) {
+      return true;
+    }
+
+    final doc = await _firestore.collection('users').doc(user.uid).get();
+    final data = doc.data();
+    final lastQuizTimestamp = data?['lastQuizDate'] as Timestamp?;
+    if (lastQuizTimestamp == null) return true;
+
+    final lastQuizDate = lastQuizTimestamp.toDate();
+    return !_isSameDay(lastQuizDate, DateTime.now());
+  }
+
+  Future<void> markQuizStarted() async {
+    final user = _auth.currentUser;
+    if (user == null) return;
+
+    if (await isUserPro()) {
+      return;
+    }
+
+    await _firestore.collection('users').doc(user.uid).set({
+      'lastQuizDate': Timestamp.fromDate(DateTime.now()),
+    }, SetOptions(merge: true));
+  }
+
+  bool _isSameDay(DateTime a, DateTime b) {
+    return a.year == b.year && a.month == b.month && a.day == b.day;
   }
 
   Future<Map<String, dynamic>?> getUserPrefs() async {
@@ -44,7 +79,10 @@ class FirebaseService {
 
   Future<void> updateUserPrefs(Map<String, dynamic> data) async {
     final uid = await getUserId();
-    await _firestore.collection('users').doc(uid).set(data, SetOptions(merge: true));
+    await _firestore
+        .collection('users')
+        .doc(uid)
+        .set(data, SetOptions(merge: true));
   }
 
   Future<void> saveFcmToken(String token) async {
@@ -56,7 +94,8 @@ class FirebaseService {
     }, SetOptions(merge: true));
   }
 
-  Future<void> recordChallengeCompletion(List<String> terms, bool correct) async {
+  Future<void> recordChallengeCompletion(
+      List<String> terms, bool correct) async {
     final uid = await getUserId();
     final userRef = _firestore.collection('users').doc(uid);
     final today = DateTime.now();
@@ -85,11 +124,14 @@ class FirebaseService {
         'answeredAt': Timestamp.now(),
       });
 
-      transaction.set(userRef, {
-        'streak': newStreak,
-        'lastChallengeDate': Timestamp.fromDate(today),
-        'totalChallenges': totalChallenges + 1,
-      }, SetOptions(merge: true));
+      transaction.set(
+          userRef,
+          {
+            'streak': newStreak,
+            'lastChallengeDate': Timestamp.fromDate(today),
+            'totalChallenges': totalChallenges + 1,
+          },
+          SetOptions(merge: true));
     });
   }
 
@@ -108,9 +150,43 @@ class FirebaseService {
   }
 
   bool _isYesterday(DateTime lastDate, DateTime today) {
-    final yesterday = DateTime(today.year, today.month, today.day).subtract(const Duration(days: 1));
+    final yesterday = DateTime(today.year, today.month, today.day)
+        .subtract(const Duration(days: 1));
     final last = DateTime(lastDate.year, lastDate.month, lastDate.day);
     return last == yesterday;
+  }
+
+  Future<bool> isUserPro() async {
+    final user = _auth.currentUser;
+    if (user == null) return false;
+
+    final doc = await _firestore.collection('users').doc(user.uid).get();
+    if (!doc.exists) return false;
+
+    final data = doc.data();
+    final isPro = data?['isPro'] == true;
+    if (!isPro) return false;
+
+    final examDate = data?['examDate'] as Timestamp?;
+    if (examDate != null && examDate.toDate().isBefore(DateTime.now())) {
+      await _firestore.collection('users').doc(user.uid).update({
+        'isPro': false,
+        'proExpiredAt': FieldValue.serverTimestamp(),
+      });
+      return false;
+    }
+
+    return true;
+  }
+
+  Stream<bool> proStatusStream() {
+    final user = _auth.currentUser;
+    if (user == null) return Stream.value(false);
+
+    return _firestore.collection('users').doc(user.uid).snapshots().map((doc) {
+      if (!doc.exists) return false;
+      return doc.data()?['isPro'] == true;
+    });
   }
 
   Future<Map<String, dynamic>> evaluateFreetextAnswer({

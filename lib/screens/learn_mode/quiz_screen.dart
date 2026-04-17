@@ -5,6 +5,8 @@ import 'package:ap1_glossar/constants/colors.dart';
 import 'package:ap1_glossar/data/data.dart';
 import 'package:ap1_glossar/data/related.dart';
 import 'package:ap1_glossar/data/leitner.dart';
+import 'package:ap1_glossar/screens/paywall/paywall_screen.dart';
+import 'package:ap1_glossar/services/firebase_service.dart';
 
 class QuizScreen extends StatefulWidget {
   const QuizScreen({Key? key}) : super(key: key);
@@ -42,6 +44,17 @@ class _QuizScreenState extends State<QuizScreen> {
 
   Future<void> _init() async {
     await _leitner.init();
+
+    final canStartQuiz = await FirebaseService.instance.canStartQuiz();
+    if (!canStartQuiz) {
+      if (!mounted) return;
+      Navigator.of(context).pushReplacement(
+        MaterialPageRoute(builder: (_) => const PaywallScreen()),
+      );
+      return;
+    }
+
+    await FirebaseService.instance.markQuizStarted();
     await _leitner.incrementSession();
     await _loadNextQuestion();
     if (mounted) {
