@@ -16,6 +16,7 @@ class FreetextChallengeScreen extends StatefulWidget {
 
 class _FreetextChallengeScreenState extends State<FreetextChallengeScreen> {
   bool _isLoading = true;
+  bool _isGenerating = false;
   bool _isEvaluating = false;
   bool _questionAnswered = false;
   bool _isPro = false;
@@ -23,6 +24,8 @@ class _FreetextChallengeScreenState extends State<FreetextChallengeScreen> {
   String? _currentTerm;
   String? _currentDefinition;
   String? _currentQuestion;
+  String? _questionDifficulty;
+  List<String> _currentRelatedTerms = [];
   String _selectedAspect = 'alle';
   String _selectedTheme = 'alle';
   final TextEditingController _answerController = TextEditingController();
@@ -31,7 +34,6 @@ class _FreetextChallengeScreenState extends State<FreetextChallengeScreen> {
   @override
   void initState() {
     super.initState();
-    _loadQuestion();
     _loadProStatus();
   }
 
@@ -40,7 +42,75 @@ class _FreetextChallengeScreenState extends State<FreetextChallengeScreen> {
     if (!mounted) return;
     setState(() {
       _isPro = isPro;
+      _isLoading = false;
     });
+  }
+
+  Future<void> _startChallenge() async {
+    final availableTerms = _buildTermPool();
+    if (availableTerms.isEmpty) {
+      ScaffoldMessenger.of(context).showSnackBar(
+        const SnackBar(
+          content: Text('Keine Begriffe im ausgewählten Thema gefunden.'),
+        ),
+      );
+      return;
+    }
+
+    final term = availableTerms[_random.nextInt(availableTerms.length)];
+    final definition = abbreviations[term]!;
+    final relatedTerms = getRelatedTerms(term, count: 3);
+
+    setState(() {
+      _isGenerating = true;
+      _currentTerm = term;
+      _currentDefinition = definition;
+      _currentQuestion = null;
+      _questionDifficulty = null;
+      _currentRelatedTerms = relatedTerms;
+      _questionAnswered = false;
+      _evaluationResult = null;
+      _answerController.clear();
+    });
+
+    try {
+      final questionData = await FirebaseService.instance.generateFreetextQuestion(
+        term: term,
+        definition: definition,
+        relatedTerms: relatedTerms,
+        aspect: _selectedAspect,
+        theme: _selectedTheme == 'alle' ? '' : _selectedTheme,
+      );
+
+      final questionText = (questionData['question'] as String?)?.trim();
+      final difficulty = (questionData['difficulty'] as String?)?.trim().toLowerCase();
+
+      setState(() {
+        _currentQuestion = (questionText != null && questionText.isNotEmpty)
+            ? questionText
+            : _generateQuestion(term);
+        _questionDifficulty = difficulty == 'basis' ||
+                difficulty == 'mittel' ||
+                difficulty == 'anspruchsvoll'
+            ? difficulty
+            : 'mittel';
+        _isGenerating = false;
+      });
+    } catch (e) {
+      final fallback = _generateQuestion(term);
+      setState(() {
+        _currentQuestion = fallback;
+        _questionDifficulty = 'basis';
+        _isGenerating = false;
+      });
+      ScaffoldMessenger.of(context).showSnackBar(
+        const SnackBar(
+          content: Text(
+            'Leider konnte die IHK-Frage nicht geladen werden. Es wurde eine Standardfrage erstellt.',
+          ),
+        ),
+      );
+    }
   }
 
   @override
@@ -169,10 +239,12 @@ class _FreetextChallengeScreenState extends State<FreetextChallengeScreen> {
       appBar: AppBar(
         title: const Text('Freitext-Challenge'),
         actions: [
-          IconButton(
-            icon: const Icon(Icons.refresh),
-            onPressed: _questionAnswered ? null : _loadQuestion,
-          ),
+          if (_isPro)
+            IconButton(
+              icon: const Icon(Icons.autorenew),
+              tooltip: 'Neue Frage generieren',
+              onPressed: _isGenerating ? null : _startChallenge,
+            ),
         ],
       ),
       body: SingleChildScrollView(
@@ -218,7 +290,11 @@ class _FreetextChallengeScreenState extends State<FreetextChallengeScreen> {
                                 : (value) {
                                     setState(() {
                                       _selectedAspect = value!;
-                                      _loadQuestion();
+                                      _currentQuestion = null;
+                                      _currentTerm = null;
+                                      _currentDefinition = null;
+                                      _questionAnswered = false;
+                                      _evaluationResult = null;
                                     });
                                   },
                           ),
@@ -242,7 +318,11 @@ class _FreetextChallengeScreenState extends State<FreetextChallengeScreen> {
                                 : (value) {
                                     setState(() {
                                       _selectedTheme = value!;
-                                      _loadQuestion();
+                                      _currentQuestion = null;
+                                      _currentTerm = null;
+                                      _currentDefinition = null;
+                                      _questionAnswered = false;
+                                      _evaluationResult = null;
                                     });
                                   },
                           ),
@@ -255,6 +335,49 @@ class _FreetextChallengeScreenState extends State<FreetextChallengeScreen> {
             ),
             const SizedBox(height: 16),
 
+            if (_currentQuestion == null && !_isGenerating) ...[
+              SizedBox(
+                width: double.infinity,
+                child: ElevatedButton(
+                  onPressed: _startChallenge,
+                  style: ElevatedButton.styleFrom(
+                    backgroundColor: const Color(0xFF1B3A5C),
+                    foregroundColor: Colors.white,
+                    padding: const EdgeInsets.symmetric(vertical: 16),
+                    textStyle: const TextStyle(
+                      fontSize: 18,
+                      fontWeight: FontWeight.bold,
+                    ),
+                    shape: RoundedRectangleBorder(
+                      borderRadius: BorderRadius.circular(12),
+                    ),
+                    minimumSize: const Size(double.infinity, 56),
+                  ),
+                  child: const Text('Prüfungsfrage generieren'),
+                ),
+              ),
+            ],
+            if (_isGenerating) ...[
+              Card(
+                color: Theme.of(context).colorScheme.surfaceVariant,
+                child: Padding(
+                  padding: const EdgeInsets.all(16),
+                  child: Row(
+                    children: const [
+                      CircularProgressIndicator(),
+                      SizedBox(width: 16),
+                      Expanded(
+                        child: Text(
+                          'IHK-Prüfungsfrage wird erstellt...',
+                          style: TextStyle(fontSize: 16),
+                        ),
+                      ),
+                    ],
+                  ),
+                ),
+              ),
+            ],
+
             // Question Section
             if (_currentQuestion != null) ...[
               Card(
@@ -263,9 +386,27 @@ class _FreetextChallengeScreenState extends State<FreetextChallengeScreen> {
                   child: Column(
                     crossAxisAlignment: CrossAxisAlignment.start,
                     children: [
-                      const Text('Frage:',
-                          style: TextStyle(
-                              fontSize: 18, fontWeight: FontWeight.bold)),
+                      Row(
+                        children: [
+                          const Expanded(
+                            child: Text('Frage:',
+                                style: TextStyle(
+                                    fontSize: 18, fontWeight: FontWeight.bold)),
+                          ),
+                          if (_questionDifficulty != null)
+                            Chip(
+                              label: Text(
+                                'Schwierigkeit: ${_questionDifficulty!}',
+                                style: const TextStyle(color: Colors.white),
+                              ),
+                              backgroundColor: _questionDifficulty == 'anspruchsvoll'
+                                  ? Colors.deepOrange
+                                  : _questionDifficulty == 'mittel'
+                                      ? Colors.orange
+                                      : Colors.green,
+                            ),
+                        ],
+                      ),
                       const SizedBox(height: 8),
                       Text(_currentQuestion!,
                           style: const TextStyle(fontSize: 16)),
@@ -417,8 +558,21 @@ class _FreetextChallengeScreenState extends State<FreetextChallengeScreen> {
                     SizedBox(
                       width: double.infinity,
                       child: ElevatedButton(
-                        onPressed: _loadQuestion,
-                        child: const Text('Nächste Frage'),
+                        onPressed: _isGenerating ? null : _startChallenge,
+                        style: ElevatedButton.styleFrom(
+                          backgroundColor: const Color(0xFF1B3A5C),
+                          foregroundColor: Colors.white,
+                          padding: const EdgeInsets.symmetric(vertical: 16),
+                          textStyle: const TextStyle(
+                            fontSize: 18,
+                            fontWeight: FontWeight.bold,
+                          ),
+                          shape: RoundedRectangleBorder(
+                            borderRadius: BorderRadius.circular(12),
+                          ),
+                          minimumSize: const Size(double.infinity, 56),
+                        ),
+                        child: const Text('Neue Frage generieren'),
                       ),
                     ),
                   ] else ...[

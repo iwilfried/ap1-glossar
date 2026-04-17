@@ -74,6 +74,135 @@ interface EvaluateAnswerResponse {
   modelAnswer: string;
 }
 
+interface GenerateQuestionRequest {
+  term: string;
+  definition: string;
+  relatedTerms: string[];
+  aspect?: string;
+  theme?: string;
+}
+
+interface GenerateQuestionResponse {
+  question: string;
+  targetTerms: string[];
+  difficulty: 'basis' | 'mittel' | 'anspruchsvoll';
+}
+
+export const generateQuestion = functions
+  .region('europe-west1')
+  .https.onCall(async (data: GenerateQuestionRequest, context) => {
+    if (!context.auth) {
+      throw new functions.https.HttpsError(
+        'unauthenticated',
+        'User must be authenticated'
+      );
+    }
+
+    const uid = context.auth.uid;
+    const today = new Date().toISOString().split('T')[0];
+
+    const userRef = admin.firestore().collection('users').doc(uid);
+    const userDoc = await userRef.get();
+    const userData = userDoc.data();
+
+    const isPro = userData?.isPro === true;
+    if (!isPro) {
+      const freetextRef = userRef.collection('freetextChallenges').doc(today);
+      const freetextDoc = await freetextRef.get();
+      if (freetextDoc.exists) {
+        throw new functions.https.HttpsError(
+          'resource-exhausted',
+          'Tageslimit erreicht. Mit dem Prüfungspass trainierst du unbegrenzt.'
+        );
+      }
+    }
+
+    const apiKey = functions.config().claude?.api_key || process.env.CLAUDE_API_KEY;
+    if (!apiKey) {
+      throw new functions.https.HttpsError(
+        'internal',
+        'API key not configured'
+      );
+    }
+
+    const systemPrompt = `Du bist ein IHK-Prüfungsexperte für die AP1 (Einrichten eines IT-gestützten Arbeitsplatzes).
+
+DEINE AUFGABE:
+Generiere EINE prüfungsnahe Freitext-Frage zum Fachbegriff "${data.term}".
+Definition: "${data.definition}"
+Verwandte Begriffe die einbezogen werden können: ${data.relatedTerms.join(', ')}
+
+REGELN FÜR DIE FRAGESTELLUNG:
+1. NIEMALS nur "Was ist X?" oder "Erkläre den Begriff X" fragen — das ist Definitionswissen, nicht IHK-Niveau
+2. Die Frage soll 2-4 Sätze lang sein
+3. Baue einen kurzen Praxiskontext ein (Firma, Auszubildender, IT-Abteilung, Projekt — 1-2 Sätze)
+4. Verwende IHK-typische Operatoren: "Erläutern Sie", "Begründen Sie", "Bewerten Sie", "Vergleichen Sie", "Nennen Sie Vor- und Nachteile", "Grenzen Sie ab"
+5. Die Frage soll Anwendungs- oder Transferwissen prüfen, nicht reines Faktenwissen
+6. Beziehe wenn möglich einen verwandten Begriff zum Vergleich oder zur Abgrenzung ein
+7. Streue KEINE unnötig langen Szenarien ein — halte es kompakt aber realistisch
+8. Die Frage muss auf Deutsch sein und dem Sprachniveau einer IHK-AP1-Prüfung entsprechen
+
+ANTWORTFORMAT (antworte NUR mit diesem JSON, kein Markdown, keine Backticks):
+{
+  "question": "<Die generierte Frage, 2-4 Sätze>",
+  "targetTerms": ["<Hauptbegriff>", "<ggf. verwandter Begriff>"],
+  "difficulty": "basis|mittel|anspruchsvoll"
+}`;
+
+    const userPrompt = `Bitte generiere die Frage anhand der obigen Vorgaben.`;
+
+    try {
+      const response = await fetch('https://api.anthropic.com/v1/messages', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+          'x-api-key': apiKey,
+          'anthropic-version': '2023-06-01',
+        },
+        body: JSON.stringify({
+          model: 'claude-sonnet-4-20250514',
+          max_tokens: 500,
+          system: systemPrompt,
+          messages: [
+            {
+              role: 'user',
+              content: userPrompt,
+            },
+          ],
+        }),
+      });
+
+      if (!response.ok) {
+        throw new Error(`Claude API error: ${response.status}`);
+      }
+
+      const result = await response.json();
+      const content = result.content[0].text;
+      const questionData = JSON.parse(content) as GenerateQuestionResponse;
+
+      const difficulty =
+        questionData.difficulty === 'basis' ||
+        questionData.difficulty === 'mittel' ||
+        questionData.difficulty === 'anspruchsvoll'
+          ? questionData.difficulty
+          : 'mittel';
+
+      return {
+        question: questionData.question,
+        targetTerms: Array.isArray(questionData.targetTerms)
+          ? questionData.targetTerms.map(String)
+          : [data.term],
+        difficulty,
+      };
+    } catch (error) {
+      console.error('Error calling Claude API for question generation:', error);
+      throw new functions.https.HttpsError(
+        'internal',
+        'Frage konnte nicht generiert werden. Bitte versuche es später erneut.'
+      );
+    }
+  });
+
 export const evaluateAnswer = functions
   .region('europe-west1')
   .https.onCall(async (data: EvaluateAnswerRequest, context) => {
@@ -120,6 +249,9 @@ DEINE AUFGABE:
 Bewerte die Freitext-Antwort eines Prüflings zum Fachbegriff "${data.term}".
 Die korrekte Fachdefinition lautet: "${data.definition}"
 Die gestellte Frage war: "${data.question}"
+Die Frage wurde im IHK-Prüfungsstil formuliert und prüft Anwendungswissen, nicht nur Definitionswissen.
+Bewerte die Antwort entsprechend: Reines Wiedergeben der Definition reicht für maximal 4/10 Punkte.
+Für volle Punktzahl muss der Prüfling die Frage vollständig beantworten, Vergleiche ziehen und Fachsprache verwenden.
 
 BEWERTUNGSKRITERIEN (IHK-Niveau):
 1. Fachliche Korrektheit (0-4 Punkte): Sind die Kernaussagen richtig?
