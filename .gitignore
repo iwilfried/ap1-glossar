@@ -8,3 +8,5 @@ build/
 .flutter-plugins
 .flutter-plugins-dependencies
 tools/
+functions/.env
+functions/node_modules

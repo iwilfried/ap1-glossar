@@ -1,5 +1,6 @@
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:firebase_auth/firebase_auth.dart';
+import 'package:cloud_functions/cloud_functions.dart';
 
 class FirebaseService {
   FirebaseService._();
@@ -110,5 +111,26 @@ class FirebaseService {
     final yesterday = DateTime(today.year, today.month, today.day).subtract(const Duration(days: 1));
     final last = DateTime(lastDate.year, lastDate.month, lastDate.day);
     return last == yesterday;
+  }
+
+  Future<Map<String, dynamic>> evaluateFreetextAnswer({
+    required String term,
+    required String definition,
+    required String question,
+    required String userAnswer,
+    String? aspect,
+    String? theme,
+  }) async {
+    final callable = FirebaseFunctions.instanceFor(region: 'europe-west1')
+        .httpsCallable('evaluateAnswer');
+    final result = await callable.call({
+      'term': term,
+      'definition': definition,
+      'question': question,
+      'userAnswer': userAnswer,
+      'aspect': aspect ?? '',
+      'theme': theme ?? '',
+    });
+    return Map<String, dynamic>.from(result.data);
   }
 }

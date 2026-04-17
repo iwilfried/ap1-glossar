@@ -8,6 +8,7 @@ import 'package:ap1_glossar/data/data.dart';
 import '../../learn_mode/quiz_screen.dart';
 import '../../daily_challenge/daily_challenge_screen.dart';
 import '../../settings/notifications_settings_screen.dart';
+import 'package:ap1_glossar/screens/daily_challenge/freetext_challenge_screen.dart';
 
 class AppDrawer extends StatelessWidget {
   const AppDrawer({super.key});
@@ -64,6 +65,17 @@ class AppDrawer extends StatelessWidget {
             onTap: () => Navigator.of(context).push(
               MaterialPageRoute(builder: (_) => const QuizScreen()),
             ),
+          ),
+          ListTile(
+            leading: const Icon(Icons.edit_note_rounded, color: Colors.deepOrange),
+            title: const Text('Freitext-Challenge'),
+            subtitle: const Text('KI-bewertete Freitext-Antworten', style: TextStyle(fontSize: 12)),
+            onTap: () {
+              Navigator.of(context).pop(); // Drawer schließen
+              Navigator.of(context).push(
+                MaterialPageRoute(builder: (_) => FreetextChallengeScreen()),
+              );
+            },
           ),
           ListTile(
             leading: const Icon(Icons.today_rounded, color: Colors.blue),
