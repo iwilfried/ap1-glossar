@@ -15,15 +15,22 @@ class DailyChallengeScreen extends StatefulWidget {
 
 class _DailyChallengeScreenState extends State<DailyChallengeScreen> {
   bool _isLoading = true;
+  bool _isGeneratingQuestion = false;
   bool _completedToday = false;
   bool _questionAnswered = false;
   bool _correctAnswer = false;
+  bool _useFallback = false;
   String? _selectedOption;
   String? _currentTerm;
+  String? _currentDefinition;
+  String? _correctAnswerText;
   List<String> _options = [];
   String _theme = 'alle';
   int _streak = 0;
   String _statusMessage = '';
+  String _explanation = '';
+  int _points = 2;
+  String _questionText = '';
 
   final Random _random = Random();
 
@@ -50,7 +57,7 @@ class _DailyChallengeScreenState extends State<DailyChallengeScreen> {
     });
 
     if (!completed) {
-      _loadQuestion(theme);
+      await _loadQuestion(theme);
     }
 
     setState(() {
@@ -58,7 +65,7 @@ class _DailyChallengeScreenState extends State<DailyChallengeScreen> {
     });
   }
 
-  void _loadQuestion(String theme) {
+  Future<void> _loadQuestion(String theme) async {
     final availableTerms = _buildTermPool(_theme);
     if (availableTerms.isEmpty) {
       setState(() {
@@ -68,16 +75,60 @@ class _DailyChallengeScreenState extends State<DailyChallengeScreen> {
     }
 
     final term = availableTerms[_random.nextInt(availableTerms.length)];
-    final options = _buildOptions(term, availableTerms);
+    final definition = abbreviations[term] ?? '';
+    final relatedTerms = getRelatedTerms(term, count: 3);
 
-    setState(() {
-      _currentTerm = term;
-      _options = options;
-      _selectedOption = null;
-      _questionAnswered = false;
-      _correctAnswer = false;
-      _statusMessage = '';
-    });
+    // Try to generate IHK-style MC question
+    try {
+      setState(() {
+        _isGeneratingQuestion = true;
+      });
+
+      final mcData = await FirebaseService.instance.generateMCQuestion(
+        term: term,
+        definition: definition,
+        relatedTerms: relatedTerms,
+      );
+
+      // Shuffle options: correct answer + 3 distractors
+      final correctAnswerText = mcData['correctAnswer'] as String;
+      final allOptions = [correctAnswerText, ...mcData['distractors'] as List<String>];
+      allOptions.shuffle(_random);
+
+      setState(() {
+        _currentTerm = term;
+        _currentDefinition = definition;
+        _correctAnswerText = correctAnswerText;
+        _options = allOptions;
+        _questionText = mcData['question'] as String;
+        _explanation = mcData['explanation'] as String;
+        _points = (mcData['points'] as num?)?.toInt() ?? 2;
+        _selectedOption = null;
+        _questionAnswered = false;
+        _correctAnswer = false;
+        _statusMessage = '';
+        _useFallback = false;
+        _isGeneratingQuestion = false;
+      });
+    } catch (e) {
+      // Fallback to old MC logic
+      final options = _buildOptions(term, availableTerms);
+      setState(() {
+        _currentTerm = term;
+        _currentDefinition = definition;
+        _correctAnswerText = term;
+        _options = options;
+        _questionText = 'Was bedeutet "$term"?';
+        _explanation = definition;
+        _points = 2;
+        _selectedOption = null;
+        _questionAnswered = false;
+        _correctAnswer = false;
+        _statusMessage = '';
+        _useFallback = true;
+        _isGeneratingQuestion = false;
+      });
+    }
   }
 
   List<String> _buildTermPool(String theme) {
@@ -109,7 +160,10 @@ class _DailyChallengeScreenState extends State<DailyChallengeScreen> {
 
   Future<void> _submitAnswer(String option) async {
     if (_questionAnswered || _currentTerm == null) return;
-    final correct = option == _currentTerm;
+    
+    final correctAnswer = _correctAnswerText ?? _currentTerm;
+    final correct = option == correctAnswer;
+    
     final terms = [
       _currentTerm!,
       ...getRelatedTerms(_currentTerm!, count: 2).where((term) => term != _currentTerm!),
@@ -138,14 +192,16 @@ class _DailyChallengeScreenState extends State<DailyChallengeScreen> {
 
   Color _optionColor(String option) {
     if (!_questionAnswered) return Colors.white;
-    if (option == _currentTerm) return Colors.green.shade50;
+    final correctAnswer = _correctAnswerText ?? _currentTerm;
+    if (option == correctAnswer) return Colors.green.shade50;
     if (option == _selectedOption) return Colors.red.shade50;
     return Colors.white;
   }
 
   Color _borderColor(String option) {
     if (!_questionAnswered) return Colors.grey.shade300;
-    if (option == _currentTerm) return Colors.green;
+    final correctAnswer = _correctAnswerText ?? _currentTerm;
+    if (option == correctAnswer) return Colors.green;
     if (option == _selectedOption) return Colors.red;
     return Colors.grey.shade300;
   }
@@ -194,13 +250,40 @@ class _DailyChallengeScreenState extends State<DailyChallengeScreen> {
                           style: TextStyle(fontSize: 16),
                         ),
                         const SizedBox(height: 16),
-                        if (_currentTerm != null)
-                          Text(
-                            _currentTerm!,
-                            style: const TextStyle(
-                              fontSize: 26,
-                              fontWeight: FontWeight.bold,
-                            ),
+                        if (_isGeneratingQuestion)
+                          const Column(
+                            children: [
+                              CircularProgressIndicator(),
+                              SizedBox(height: 16),
+                              Text(
+                                'IHK-Frage wird erstellt...',
+                                style: TextStyle(fontSize: 14, color: Colors.grey),
+                              ),
+                            ],
+                          )
+                        else if (_questionText.isNotEmpty)
+                          Column(
+                            crossAxisAlignment: CrossAxisAlignment.start,
+                            children: [
+                              Text(
+                                _questionText,
+                                style: const TextStyle(
+                                  fontSize: 18,
+                                  fontWeight: FontWeight.w500,
+                                  height: 1.4,
+                                ),
+                              ),
+                              const SizedBox(height: 8),
+                              Text(
+                                '$_points Punkte',
+                                style: TextStyle(
+                                  fontSize: 14,
+                                  color: Colors.grey.shade600,
+                                  fontWeight: FontWeight.w500,
+                                ),
+                              ),
+                              const SizedBox(height: 16),
+                            ],
                           ),
                         const SizedBox(height: 24),
                         ..._options.map((option) {
@@ -229,17 +312,24 @@ class _DailyChallengeScreenState extends State<DailyChallengeScreen> {
                             children: [
                               const SizedBox(height: 16),
                               Text(
-                                _correctAnswer ? 'Richtig!' : 'Leider falsch',
+                                _correctAnswer ? '✓ Richtig!' : '✗ Leider falsch',
                                 style: TextStyle(
                                   fontSize: 18,
                                   fontWeight: FontWeight.bold,
                                   color: _correctAnswer ? Colors.green : Colors.red,
                                 ),
                               ),
-                              const SizedBox(height: 8),
-                              Text(
-                                abbreviations[_currentTerm!] ?? '',
-                                style: const TextStyle(fontSize: 16, height: 1.5),
+                              const SizedBox(height: 12),
+                              Container(
+                                padding: const EdgeInsets.all(12),
+                                decoration: BoxDecoration(
+                                  color: Colors.grey.shade100,
+                                  borderRadius: BorderRadius.circular(8),
+                                ),
+                                child: Text(
+                                  _explanation.isNotEmpty ? _explanation : (_currentDefinition ?? abbreviations[_currentTerm!] ?? ''),
+                                  style: const TextStyle(fontSize: 15, height: 1.5),
+                                ),
                               ),
                             ],
                           ),

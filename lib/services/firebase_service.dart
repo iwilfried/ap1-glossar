@@ -228,4 +228,23 @@ class FirebaseService {
     });
     return Map<String, dynamic>.from(result.data);
   }
+
+  Future<Map<String, dynamic>> generateMCQuestion({
+    required String term,
+    required String definition,
+    List<String> relatedTerms = const [],
+    String? aspect,
+    String? theme,
+  }) async {
+    final callable = FirebaseFunctions.instanceFor(region: 'europe-west1')
+        .httpsCallable('generateMCQuestion');
+    final result = await callable.call({
+      'term': term,
+      'definition': definition,
+      'relatedTerms': relatedTerms,
+      'aspect': aspect ?? '',
+      'theme': theme ?? '',
+    });
+    return Map<String, dynamic>.from(result.data);
+  }
 }

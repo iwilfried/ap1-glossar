@@ -448,6 +448,140 @@ ANTWORTFORMAT (antworte NUR mit diesem JSON, kein Markdown, keine Backticks):
     }
   });
 
+interface GenerateMCQuestionRequest {
+  term: string;
+  definition: string;
+  relatedTerms: string[];
+  aspect?: string;
+  theme?: string;
+}
+
+interface GenerateMCQuestionResponse {
+  question: string;
+  correctAnswer: string;
+  distractors: string[];
+  explanation: string;
+  points: number;
+}
+
+export const generateMCQuestion = functions
+  .region('europe-west1')
+  .https.onCall(async (data: GenerateMCQuestionRequest, context) => {
+    // Auth check
+    if (!context.auth) {
+      throw new functions.https.HttpsError(
+        'unauthenticated',
+        'User must be authenticated'
+      );
+    }
+
+    const apiKey = functions.config().claude?.api_key || process.env.CLAUDE_API_KEY;
+    if (!apiKey) {
+      throw new functions.https.HttpsError(
+        'internal',
+        'API key not configured'
+      );
+    }
+
+    const systemPrompt = `Du bist ein IHK-Prüfungsautor für die AP1-Prüfung. Du erstellst Multiple-Choice-Aufgaben im echten IHK-Stil.
+
+FACHBEGRIFF: "${data.term}"
+DEFINITION: "${data.definition}"
+VERWANDTE BEGRIFFE: ${data.relatedTerms.join(', ')}
+
+DEINE AUFGABE:
+Erstelle EINE Multiple-Choice-Frage mit 4 Antwortoptionen (1 richtig, 3 falsch) im IHK-AP1-Stil.
+
+REGELN FÜR DIE FRAGESTELLUNG:
+1. NICHT "Was ist X?" oder "Was bedeutet X?" — das ist zu einfach
+2. Baue einen kurzen Praxiskontext ein (1-2 Sätze)
+3. Die Frage soll Anwendungswissen prüfen
+4. Verwende IHK-Operatoren: "Welche Aussage trifft zu?", "Welche Maßnahme ist geeignet?", "Welches Protokoll wird eingesetzt?"
+5. Punkteangabe am Ende (2-4 Punkte)
+
+REGELN FÜR DIE ANTWORTOPTIONEN:
+1. Alle 4 Optionen müssen plausibel klingen
+2. Falsche Antworten sollen typische Missverständnisse oder Verwechslungen sein
+3. Keine offensichtlich absurden Distraktoren
+4. Alle Optionen sollen ungefähr gleich lang sein
+5. Die richtige Antwort darf NICHT immer die längste oder detaillierteste sein
+
+BEISPIELE FÜR GUTE MC-FRAGEN:
+
+Statt "Was ist DHCP?" →
+"Ein Netzwerkadministrator richtet in einer Filiale mit 25 Arbeitsplätzen die IP-Konfiguration ein. Welches Protokoll ermöglicht die automatische Zuweisung von IP-Adressen an die Clients? 2 Punkte"
+A) ARP
+B) DHCP ✓
+C) DNS
+D) SNMP
+
+Statt "Was ist ein Backup?" →
+"Die IT-Abteilung soll ein Datensicherungskonzept für den Fileserver erstellen. Welche Aussage zur differenziellen Datensicherung trifft zu? 3 Punkte"
+A) Es werden nur die seit der letzten Sicherung geänderten Dateien gesichert
+B) Es werden nur die seit der letzten Vollsicherung geänderten Dateien gesichert ✓
+C) Es werden alle Dateien bei jeder Sicherung vollständig kopiert
+D) Es werden nur Dateien gesichert, die größer als 1 MB sind
+
+PRÜFUNGSKATALOG AB 2025 — BEACHTE:
+Neue Themen: KI, Change Management, Aktivitätsdiagramm, 2FA, Härtung, Barrierefreiheit, SMART-Prinzip, ERP/SCM/CRM
+Gestrichene Themen (NICHT abfragen): RAID, SAN, SQL, Struktogramm, SWOT, Vererbung, ISO 2700x
+
+ANTWORTFORMAT (antworte NUR mit diesem JSON, kein Markdown, keine Backticks):
+{
+  "question": "<Die MC-Frage im IHK-Stil, 1-3 Sätze, mit Punkteangabe>",
+  "correctAnswer": "<Die korrekte Antwort, 1-2 Sätze>",
+  "distractors": ["<Falsche Antwort 1>", "<Falsche Antwort 2>", "<Falsche Antwort 3>"],
+  "explanation": "<Kurze Erklärung (1-2 Sätze) warum die richtige Antwort korrekt ist und was an den häufigsten Verwechslungen falsch ist>",
+  "points": <2-4>
+}`;
+
+    const userPrompt = `Bitte generiere die MC-Frage anhand der obigen Vorgaben.`;
+
+    try {
+      const response = await fetch('https://api.anthropic.com/v1/messages', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+          'x-api-key': apiKey,
+          'anthropic-version': '2023-06-01',
+        },
+        body: JSON.stringify({
+          model: 'claude-sonnet-4-20250514',
+          max_tokens: 500,
+          system: systemPrompt,
+          messages: [
+            {
+              role: 'user',
+              content: userPrompt,
+            },
+          ],
+        }),
+      });
+
+      if (!response.ok) {
+        throw new Error(`Claude API error: ${response.status}`);
+      }
+
+      const result = await response.json();
+      const content = result.content[0].text;
+      const mcData = JSON.parse(content) as GenerateMCQuestionResponse;
+
+      return {
+        question: mcData.question,
+        correctAnswer: mcData.correctAnswer,
+        distractors: mcData.distractors,
+        explanation: mcData.explanation,
+        points: typeof mcData.points === 'number' ? mcData.points : 2,
+      };
+    } catch (error) {
+      console.error('Error calling Claude API for MC question generation:', error);
+      throw new functions.https.HttpsError(
+        'internal',
+        'MC-Frage konnte nicht generiert werden. Bitte versuche es später erneut.'
+      );
+    }
+  });
+
 export const digistore24Webhook = functions
   .region('europe-west1')
   .https.onRequest(async (request, response) => {
