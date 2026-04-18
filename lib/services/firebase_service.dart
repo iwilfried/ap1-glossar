@@ -248,6 +248,13 @@ class FirebaseService {
     return Map<String, dynamic>.from(result.data);
   }
 
+  Future<Map<String, dynamic>> redeemVoucher(String code) async {
+    final callable = FirebaseFunctions.instanceFor(region: 'europe-west1')
+        .httpsCallable('redeemVoucher');
+    final result = await callable.call({'code': code.trim().toUpperCase()});
+    return Map<String, dynamic>.from(result.data);
+  }
+
   Future<void> resetProgress() async {
     final user = FirebaseAuth.instance.currentUser;
     if (user == null) return;

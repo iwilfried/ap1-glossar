@@ -5,6 +5,7 @@ import 'package:flutter/material.dart';
 import 'package:url_launcher/url_launcher.dart';
 import 'package:ap1_glossar/screens/legal/datenschutz_screen.dart';
 import 'package:ap1_glossar/screens/legal/impressum_screen.dart';
+import 'package:ap1_glossar/screens/voucher/redeem_voucher_screen.dart';
 import 'package:ap1_glossar/services/firebase_service.dart';
 
 const _digistoreProductId = '685497';
@@ -205,6 +206,22 @@ class _PaywallScreenState extends State<PaywallScreen> {
               ),
             ),
             const SizedBox(height: 16),
+            Center(
+              child: TextButton(
+                onPressed: () => Navigator.of(context).push(
+                  MaterialPageRoute(
+                      builder: (_) => const RedeemVoucherScreen()),
+                ),
+                child: const Text(
+                  'Zugangscode vom Bildungsträger? Hier einlösen.',
+                  style: TextStyle(
+                    fontSize: 14,
+                    decoration: TextDecoration.underline,
+                  ),
+                ),
+              ),
+            ),
+            const SizedBox(height: 8),
             Text(
               'Einmalzahlung. Kein Abo. Zugang bis zu deiner Prüfung.',
               style: theme.textTheme.bodyMedium,

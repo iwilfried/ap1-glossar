@@ -582,6 +582,171 @@ ANTWORTFORMAT (antworte NUR mit diesem JSON, kein Markdown, keine Backticks):
     }
   });
 
+interface RedeemVoucherRequest {
+  code: string;
+}
+
+export const redeemVoucher = functions
+  .region('europe-west1')
+  .https.onCall(async (data: RedeemVoucherRequest, context) => {
+    if (!context.auth) {
+      throw new functions.https.HttpsError(
+        'unauthenticated',
+        'User must be authenticated'
+      );
+    }
+
+    const uid = context.auth.uid;
+    const code = (data?.code ?? '').trim().toUpperCase();
+    if (!code) {
+      throw new functions.https.HttpsError(
+        'invalid-argument',
+        'Bitte gib einen Code ein.'
+      );
+    }
+
+    const db = admin.firestore();
+    const voucherRef = db.collection('vouchers').doc(code);
+    const userRef = db.collection('users').doc(uid);
+
+    const [voucherDoc, userDoc] = await Promise.all([
+      voucherRef.get(),
+      userRef.get(),
+    ]);
+
+    if (!voucherDoc.exists) {
+      throw new functions.https.HttpsError('not-found', 'Ungültiger Code.');
+    }
+
+    const voucher = voucherDoc.data()!;
+    if (voucher.redeemed === true) {
+      throw new functions.https.HttpsError(
+        'already-exists',
+        'Dieser Code wurde bereits eingelöst.'
+      );
+    }
+
+    const expiresAt = voucher.expiresAt as admin.firestore.Timestamp | undefined;
+    if (expiresAt && expiresAt.toDate() < new Date()) {
+      throw new functions.https.HttpsError(
+        'deadline-exceeded',
+        'Dieser Code ist abgelaufen.'
+      );
+    }
+
+    const userData = userDoc.data();
+    if (userData?.isPro === true) {
+      const userExamDate = userData.examDate as admin.firestore.Timestamp | undefined;
+      if (!userExamDate || userExamDate.toDate() >= new Date()) {
+        throw new functions.https.HttpsError(
+          'already-exists',
+          'Du hast bereits einen aktiven Prüfungspass.'
+        );
+      }
+    }
+
+    const batch = db.batch();
+    batch.update(voucherRef, {
+      redeemed: true,
+      redeemedAt: admin.firestore.FieldValue.serverTimestamp(),
+      redeemedBy: uid,
+    });
+    batch.set(
+      userRef,
+      {
+        isPro: true,
+        purchaseDate: admin.firestore.FieldValue.serverTimestamp(),
+        examDate: voucher.examDate,
+        examDateCode: voucher.examDateCode,
+        voucherCode: code,
+        voucherPartner: voucher.partner,
+      },
+      { merge: true }
+    );
+    await batch.commit();
+
+    const examLabels: Record<string, string> = {
+      F2026: 'Frühjahr 2026',
+      H2026: 'Herbst 2026',
+      F2027: 'Frühjahr 2027',
+      H2027: 'Herbst 2027',
+    };
+    const label = examLabels[voucher.examDateCode as string] ?? voucher.examDateCode;
+
+    return {
+      success: true,
+      partner: voucher.partner,
+      examDateCode: voucher.examDateCode,
+      message: `Prüfungspass aktiviert bis ${label}!`,
+    };
+  });
+
+interface GenerateVouchersRequest {
+  partner: string;
+  batchId: string;
+  count: number;
+  examDateCode: string;
+  adminKey: string;
+}
+
+export const generateVouchers = functions
+  .region('europe-west1')
+  .https.onCall(async (data: GenerateVouchersRequest) => {
+    const adminKey = process.env.ADMIN_KEY;
+    if (!adminKey || data?.adminKey !== adminKey) {
+      throw new functions.https.HttpsError('permission-denied', 'Nicht autorisiert.');
+    }
+
+    const partner = (data.partner ?? '').trim();
+    const batchId = (data.batchId ?? '').trim().toUpperCase();
+    const count = Number(data.count);
+    const examDateCode = (data.examDateCode ?? '').trim();
+
+    if (!partner || !count || count <= 0 || count > 500) {
+      throw new functions.https.HttpsError(
+        'invalid-argument',
+        'Ungültige Parameter (partner, count 1-500 erforderlich).'
+      );
+    }
+
+    const examDate = examDates[examDateCode];
+    if (!examDate) {
+      throw new functions.https.HttpsError(
+        'invalid-argument',
+        `Unbekannter examDateCode: ${examDateCode}`
+      );
+    }
+
+    const prefix = batchId || partner.split(/\s+/)[0].toUpperCase().slice(0, 3);
+
+    const expiresAt = new Date();
+    expiresAt.setFullYear(expiresAt.getFullYear() + 1);
+
+    const db = admin.firestore();
+    const batch = db.batch();
+    const codes: string[] = [];
+
+    for (let i = 1; i <= count; i++) {
+      const num = i.toString().padStart(3, '0');
+      const code = `${prefix}-${num}`;
+      codes.push(code);
+      batch.set(db.collection('vouchers').doc(code), {
+        code,
+        partner,
+        batchId,
+        createdAt: admin.firestore.FieldValue.serverTimestamp(),
+        expiresAt: admin.firestore.Timestamp.fromDate(expiresAt),
+        examDate: admin.firestore.Timestamp.fromDate(examDate),
+        examDateCode,
+        redeemed: false,
+      });
+    }
+
+    await batch.commit();
+
+    return { codes, count: codes.length };
+  });
+
 export const digistore24Webhook = functions
   .region('europe-west1')
   .https.onRequest(async (request, response) => {

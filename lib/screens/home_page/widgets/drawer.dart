@@ -9,6 +9,8 @@ import '../../daily_challenge/daily_challenge_screen.dart';
 import '../../settings/notifications_settings_screen.dart';
 import 'package:ap1_glossar/screens/daily_challenge/freetext_challenge_screen.dart';
 import 'package:ap1_glossar/screens/paywall/paywall_screen.dart';
+import 'package:ap1_glossar/screens/voucher/redeem_voucher_screen.dart';
+import 'package:ap1_glossar/services/firebase_service.dart';
 
 class AppDrawer extends StatelessWidget {
   const AppDrawer({super.key});
@@ -160,6 +162,27 @@ class AppDrawer extends StatelessWidget {
 
           // ── EINSTELLUNGEN ──────────────────────────────────────────────
           _GroupHeader('EINSTELLUNGEN'),
+          StreamBuilder<bool>(
+            stream: FirebaseService.instance.proStatusStream(),
+            builder: (context, snapshot) {
+              final isPro = snapshot.data ?? false;
+              if (isPro) return const SizedBox.shrink();
+              return ListTile(
+                leading: const Icon(Icons.card_giftcard_rounded,
+                    color: Colors.green),
+                title: const Text('Code einlösen'),
+                subtitle: const Text('Bildungsträger-Zugangscode',
+                    style: TextStyle(fontSize: 12)),
+                onTap: () {
+                  Navigator.of(context).pop();
+                  Navigator.of(context).push(
+                    MaterialPageRoute(
+                        builder: (_) => const RedeemVoucherScreen()),
+                  );
+                },
+              );
+            },
+          ),
           ListTile(
             leading:
                 const Icon(Icons.notifications_rounded, color: Colors.purple),

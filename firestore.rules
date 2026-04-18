@@ -19,5 +19,10 @@ service cloud.firestore {
       allow read, delete: if request.auth != null && request.auth.uid == userId;
       allow create, update: if false; // Only Cloud Function can write
     }
-      }
+
+    // Voucher codes — Cloud Functions only
+    match /vouchers/{code} {
+      allow read, write: if false;
+    }
+  }
 }
