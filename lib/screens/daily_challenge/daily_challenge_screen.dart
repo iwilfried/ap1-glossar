@@ -26,6 +26,7 @@ class _DailyChallengeScreenState extends State<DailyChallengeScreen> {
   String? _correctAnswerText;
   List<String> _options = [];
   String _theme = 'alle';
+  String _selectedThema = 'Alle Themen';
   int _streak = 0;
   String _statusMessage = '';
   String _explanation = '';
@@ -33,6 +34,11 @@ class _DailyChallengeScreenState extends State<DailyChallengeScreen> {
   String _questionText = '';
 
   final Random _random = Random();
+
+  List<String> get _availableThemen {
+    final known = termGroups.keys.toSet();
+    return ['Alle Themen', ...known.toList()..sort()];
+  }
 
   @override
   void initState() {
@@ -65,8 +71,15 @@ class _DailyChallengeScreenState extends State<DailyChallengeScreen> {
     });
   }
 
+  List<String> _buildTermPool(String thema) {
+    if (thema == 'Alle Themen' || thema == 'alle') {
+      return abbreviations.keys.toList();
+    }
+    return termGroups[thema] ?? abbreviations.keys.toList();
+  }
+
   Future<void> _loadQuestion(String theme) async {
-    final availableTerms = _buildTermPool(_theme);
+    final availableTerms = _buildTermPool(_selectedThema);
     if (availableTerms.isEmpty) {
       setState(() {
         _statusMessage = 'Keine Challenge-Begriffe gefunden. Bitte überprüfe deine Einstellungen.';
@@ -91,8 +104,9 @@ class _DailyChallengeScreenState extends State<DailyChallengeScreen> {
       );
 
       // Shuffle options: correct answer + 3 distractors
-      final correctAnswerText = mcData['correctAnswer'] as String;
-      final allOptions = [correctAnswerText, ...mcData['distractors'] as List<String>];
+      final correctAnswerText = mcData['correctAnswer']?.toString() ?? term;
+      final distractors = (mcData['distractors'] as List?)?.map((e) => e.toString()).toList() ?? [];
+      final allOptions = [correctAnswerText, ...distractors];
       allOptions.shuffle(_random);
 
       setState(() {
@@ -100,8 +114,8 @@ class _DailyChallengeScreenState extends State<DailyChallengeScreen> {
         _currentDefinition = definition;
         _correctAnswerText = correctAnswerText;
         _options = allOptions;
-        _questionText = mcData['question'] as String;
-        _explanation = mcData['explanation'] as String;
+        _questionText = mcData['question']?.toString() ?? 'Was bedeutet "$term"?';
+        _explanation = mcData['explanation']?.toString() ?? definition;
         _points = (mcData['points'] as num?)?.toInt() ?? 2;
         _selectedOption = null;
         _questionAnswered = false;
@@ -129,13 +143,6 @@ class _DailyChallengeScreenState extends State<DailyChallengeScreen> {
         _isGeneratingQuestion = false;
       });
     }
-  }
-
-  List<String> _buildTermPool(String theme) {
-    if (theme == 'alle') {
-      return abbreviations.keys.toList();
-    }
-    return termGroups[theme] ?? abbreviations.keys.toList();
   }
 
   List<String> _buildOptions(String term, List<String> pool) {
@@ -178,9 +185,24 @@ class _DailyChallengeScreenState extends State<DailyChallengeScreen> {
     await FirebaseService.instance.recordChallengeCompletion(terms, correct);
     final prefs = await FirebaseService.instance.getUserPrefs();
     setState(() {
-      _completedToday = true;
       _streak = (prefs?['streak'] as int?) ?? _streak;
     });
+  }
+
+  void _finishChallenge() {
+    setState(() {
+      _completedToday = true;
+    });
+  }
+
+  void _onThemaChanged(String? thema) {
+    if (thema == null) return;
+    setState(() {
+      _selectedThema = thema;
+    });
+    if (!_completedToday && !_questionAnswered) {
+      _loadQuestion(thema);
+    }
   }
 
   String _formatDate(DateTime date) {
@@ -240,9 +262,26 @@ class _DailyChallengeScreenState extends State<DailyChallengeScreen> {
                   : Column(
                       crossAxisAlignment: CrossAxisAlignment.start,
                       children: [
-                        Text(
-                          'Streak: $_streak Tage',
-                          style: const TextStyle(fontSize: 16, fontWeight: FontWeight.bold),
+                        Row(
+                          mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                          children: [
+                            Text(
+                              'Streak: $_streak Tage',
+                              style: const TextStyle(fontSize: 16, fontWeight: FontWeight.bold),
+                            ),
+                            DropdownButton<String>(
+                              value: _selectedThema,
+                              isDense: true,
+                              underline: const SizedBox(),
+                              items: _availableThemen.map((thema) {
+                                return DropdownMenuItem(
+                                  value: thema,
+                                  child: Text(thema, style: const TextStyle(fontSize: 14)),
+                                );
+                              }).toList(),
+                              onChanged: _onThemaChanged,
+                            ),
+                          ],
                         ),
                         const SizedBox(height: 16),
                         const Text(
@@ -329,6 +368,19 @@ class _DailyChallengeScreenState extends State<DailyChallengeScreen> {
                                 child: Text(
                                   _explanation.isNotEmpty ? _explanation : (_currentDefinition ?? abbreviations[_currentTerm!] ?? ''),
                                   style: const TextStyle(fontSize: 15, height: 1.5),
+                                ),
+                              ),
+                              const SizedBox(height: 20),
+                              SizedBox(
+                                width: double.infinity,
+                                child: ElevatedButton(
+                                  onPressed: _finishChallenge,
+                                  style: ElevatedButton.styleFrom(
+                                    backgroundColor: const Color(0xFF1B3A5C),
+                                    foregroundColor: Colors.white,
+                                    padding: const EdgeInsets.symmetric(vertical: 14),
+                                  ),
+                                  child: const Text('Weiter'),
                                 ),
                               ),
                             ],

@@ -179,7 +179,8 @@ class HomePageState extends State<HomePage> {
   void initState() {
     super.initState();
     _applyFilter();
-    if (widget.deepLinkTerm != null && abbreviations.containsKey(widget.deepLinkTerm)) {
+    if (widget.deepLinkTerm != null &&
+        abbreviations.containsKey(widget.deepLinkTerm)) {
       WidgetsBinding.instance.addPostFrameCallback((_) {
         navigateToTerm(widget.deepLinkTerm!);
       });
@@ -240,7 +241,7 @@ class HomePageState extends State<HomePage> {
         return a.toLowerCase().compareTo(b.toLowerCase());
       });
 
-        _visibleKeys = filtered;
+      _visibleKeys = filtered;
     });
   }
 

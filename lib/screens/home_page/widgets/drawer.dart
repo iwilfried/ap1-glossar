@@ -5,46 +5,13 @@ import '../../legal/impressum_screen.dart';
 import '../../legal/datenschutz_screen.dart';
 import '../../learn_mode/learn_screen.dart';
 import 'package:ap1_glossar/data/data.dart';
-import '../../learn_mode/quiz_screen.dart';
 import '../../daily_challenge/daily_challenge_screen.dart';
 import '../../settings/notifications_settings_screen.dart';
 import 'package:ap1_glossar/screens/daily_challenge/freetext_challenge_screen.dart';
 import 'package:ap1_glossar/screens/paywall/paywall_screen.dart';
-import 'package:ap1_glossar/services/firebase_service.dart';
 
 class AppDrawer extends StatelessWidget {
   const AppDrawer({super.key});
-
-  Future<void> _navigateProFeature(BuildContext context, Widget targetScreen) async {
-    final navigator = Navigator.of(context);
-    navigator.pop();
-    final isPro = await FirebaseService.instance.isUserPro();
-    if (isPro) {
-      navigator.push(
-        MaterialPageRoute(builder: (_) => targetScreen),
-      );
-    } else {
-      navigator.push(
-        MaterialPageRoute(builder: (_) => const PaywallScreen()),
-      );
-    }
-  }
-
-  Future<void> _navigateQuiz(BuildContext context) async {
-    final navigator = Navigator.of(context);
-    navigator.pop();
-    final canStartQuiz = await FirebaseService.instance.canStartQuiz();
-    if (canStartQuiz) {
-      await FirebaseService.instance.markQuizStarted();
-      navigator.push(
-        MaterialPageRoute(builder: (_) => const QuizScreen()),
-      );
-    } else {
-      navigator.push(
-        MaterialPageRoute(builder: (_) => const PaywallScreen()),
-      );
-    }
-  }
 
   @override
   Widget build(BuildContext context) {
@@ -78,27 +45,54 @@ class AppDrawer extends StatelessWidget {
             ),
           ),
 
-          const Divider(height: 24),
+          const SizedBox(height: 8),
 
-          // ── Navigation ─────────────────────────────────────────────────
+          // ── LERNEN ─────────────────────────────────────────────────────
+          _GroupHeader('LERNEN'),
+          ListTile(
+            leading: const Icon(Icons.search_rounded, color: Colors.deepOrange),
+            title: const Text('Nachschlagen'),
+            subtitle: const Text('Glossar durchsuchen',
+                style: TextStyle(fontSize: 12)),
+            onTap: () => Navigator.of(context).pop(),
+          ),
           ListTile(
             leading: const Icon(Icons.school_rounded, color: Colors.deepOrange),
             title: const Text('Lernmodus'),
             subtitle:
-                const Text('Karteikarten-Quiz', style: TextStyle(fontSize: 12)),
+                const Text('Karteikarten', style: TextStyle(fontSize: 12)),
             onTap: () => Navigator.of(context).push(
               MaterialPageRoute(builder: (_) => const LearnScreen()),
             ),
           ),
           ListTile(
             leading: const Icon(Icons.quiz_rounded, color: Colors.deepOrange),
-            title: const Text('Quiz-Modus'),
-            subtitle:
-                const Text('Multiple Choice', style: TextStyle(fontSize: 12)),
-            onTap: () => _navigateQuiz(context),
+            title: const Text('Tägliche Challenge'),
+            subtitle: const Text('MC-Quiz im IHK-Stil',
+                style: TextStyle(fontSize: 12)),
+            onTap: () => Navigator.of(context).push(
+              MaterialPageRoute(builder: (_) => const DailyChallengeScreen()),
+            ),
           ),
           ListTile(
-            leading: const Icon(Icons.emoji_events_rounded, color: Colors.deepOrange),
+            leading:
+                const Icon(Icons.edit_note_rounded, color: Colors.deepOrange),
+            title: const Text('Freitext-Challenge'),
+            subtitle: const Text('KI-bewertete Freitext-Antworten',
+                style: TextStyle(fontSize: 12)),
+            onTap: () => Navigator.of(context).push(
+              MaterialPageRoute(
+                  builder: (_) => const FreetextChallengeScreen()),
+            ),
+          ),
+
+          const Divider(height: 24),
+
+          // ── PRO-FEATURES ───────────────────────────────────────────────
+          _GroupHeader('PRO-FEATURES'),
+          ListTile(
+            leading: const Icon(Icons.emoji_events_rounded,
+                color: Colors.deepOrange),
             title: Row(
               children: const [
                 Expanded(child: Text('Champion-Rangliste')),
@@ -111,8 +105,6 @@ class AppDrawer extends StatelessWidget {
                 ),
               ],
             ),
-            subtitle: const Text('Platzhalter für Pro-Feature',
-                style: TextStyle(fontSize: 12)),
             onTap: () {
               Navigator.of(context).pop();
               Navigator.of(context).push(
@@ -121,7 +113,8 @@ class AppDrawer extends StatelessWidget {
             },
           ),
           ListTile(
-            leading: const Icon(Icons.assessment_rounded, color: Colors.deepOrange),
+            leading:
+                const Icon(Icons.assessment_rounded, color: Colors.deepOrange),
             title: Row(
               children: const [
                 Expanded(child: Text('Schwächen-Report')),
@@ -134,8 +127,6 @@ class AppDrawer extends StatelessWidget {
                 ),
               ],
             ),
-            subtitle: const Text('Platzhalter für Pro-Feature',
-                style: TextStyle(fontSize: 12)),
             onTap: () {
               Navigator.of(context).pop();
               Navigator.of(context).push(
@@ -157,8 +148,6 @@ class AppDrawer extends StatelessWidget {
                 ),
               ],
             ),
-            subtitle: const Text('Platzhalter für Pro-Feature',
-                style: TextStyle(fontSize: 12)),
             onTap: () {
               Navigator.of(context).pop();
               Navigator.of(context).push(
@@ -166,25 +155,11 @@ class AppDrawer extends StatelessWidget {
               );
             },
           ),
-          ListTile(
-            leading:
-                const Icon(Icons.edit_note_rounded, color: Colors.deepOrange),
-            title: const Text('Freitext-Challenge'),
-            subtitle: const Text('KI-bewertete Freitext-Antworten',
-                style: TextStyle(fontSize: 12)),
-            onTap: () => Navigator.of(context).push(
-              MaterialPageRoute(builder: (_) => const FreetextChallengeScreen()),
-            ),
-          ),
-          ListTile(
-            leading: const Icon(Icons.today_rounded, color: Colors.blue),
-            title: const Text('Tägliche Challenge'),
-            subtitle: const Text('Deine Mini-Aufgabe',
-                style: TextStyle(fontSize: 12)),
-            onTap: () => Navigator.of(context).push(
-              MaterialPageRoute(builder: (_) => const DailyChallengeScreen()),
-            ),
-          ),
+
+          const Divider(height: 24),
+
+          // ── EINSTELLUNGEN ──────────────────────────────────────────────
+          _GroupHeader('EINSTELLUNGEN'),
           ListTile(
             leading:
                 const Icon(Icons.notifications_rounded, color: Colors.purple),
@@ -196,8 +171,6 @@ class AppDrawer extends StatelessWidget {
                   builder: (_) => const NotificationsSettingsScreen()),
             ),
           ),
-          const Divider(height: 24),
-
           ListTile(
             leading: const Icon(Icons.info_outline, color: AppColors.color),
             title: const Text('Über diese App'),
@@ -232,6 +205,27 @@ class AppDrawer extends StatelessWidget {
           ),
           const SizedBox(height: 8),
         ],
+      ),
+    );
+  }
+}
+
+class _GroupHeader extends StatelessWidget {
+  const _GroupHeader(this.label);
+  final String label;
+
+  @override
+  Widget build(BuildContext context) {
+    return Padding(
+      padding: const EdgeInsets.fromLTRB(16, 8, 16, 4),
+      child: Text(
+        label,
+        style: const TextStyle(
+          color: Colors.grey,
+          fontSize: 12,
+          fontWeight: FontWeight.w600,
+          letterSpacing: 0.8,
+        ),
       ),
     );
   }

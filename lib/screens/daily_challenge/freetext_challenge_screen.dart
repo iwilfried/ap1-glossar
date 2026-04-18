@@ -458,7 +458,7 @@ class _FreetextChallengeScreenState extends State<FreetextChallengeScreen> {
                 if (_evaluationResult!['limitReached'] == true) ...[
                   // Show paywall teaser when daily limit is reached
                   Card(
-                    color: Theme.of(context).colorScheme.surfaceVariant,
+                    color: const Color(0xFFE3F2FD),
                     child: Padding(
                       padding: const EdgeInsets.all(16),
                       child: Column(
@@ -472,32 +472,7 @@ class _FreetextChallengeScreenState extends State<FreetextChallengeScreen> {
                           const Text(
                               'Mit dem Prüfungspass trainierst du unbegrenzt in allen Modi.'),
                           const SizedBox(height: 16),
-                          SizedBox(
-                            width: double.infinity,
-                            child: ElevatedButton.icon(
-                              onPressed: () => Navigator.of(context).push(
-                                MaterialPageRoute(
-                                    builder: (_) => const PaywallScreen()),
-                              ),
-                              icon: const Icon(Icons.rocket_launch, color: Colors.white),
-                              label: const Text('Prüfungspass holen – €14,99'),
-                              style: ElevatedButton.styleFrom(
-                                backgroundColor: const Color(0xFFFFA500), // Gold/Orange
-                                foregroundColor: Colors.white,
-                                padding: const EdgeInsets.symmetric(vertical: 16, horizontal: 24),
-                                textStyle: const TextStyle(
-                                  fontSize: 18,
-                                  fontWeight: FontWeight.bold,
-                                ),
-                                shape: RoundedRectangleBorder(
-                                  borderRadius: BorderRadius.circular(12),
-                                ),
-                                elevation: 8,
-                                shadowColor: const Color(0xFFFFA500).withOpacity(0.3),
-                                minimumSize: const Size(double.infinity, 60),
-                              ),
-                            ),
-                          ),
+                          _buildUpgradeCta(context),
                         ],
                       ),
                     ),
@@ -577,7 +552,7 @@ class _FreetextChallengeScreenState extends State<FreetextChallengeScreen> {
                     ),
                   ] else ...[
                     Card(
-                      color: Theme.of(context).colorScheme.surfaceVariant,
+                      color: const Color(0xFFE3F2FD),
                       child: Padding(
                         padding: const EdgeInsets.all(16),
                         child: Column(
@@ -591,32 +566,7 @@ class _FreetextChallengeScreenState extends State<FreetextChallengeScreen> {
                             const Text(
                                 'Hol dir den Prüfungspass und nutze Freitext, Quiz und mehr ohne Limit.'),
                             const SizedBox(height: 16),
-                            SizedBox(
-                              width: double.infinity,
-                              child: ElevatedButton.icon(
-                                onPressed: () => Navigator.of(context).push(
-                                  MaterialPageRoute(
-                                      builder: (_) => const PaywallScreen()),
-                                ),
-                                icon: const Icon(Icons.rocket_launch, color: Colors.white),
-                                label: const Text('Prüfungspass holen – €14,99'),
-                                style: ElevatedButton.styleFrom(
-                                  backgroundColor: const Color(0xFFFFA500), // Gold/Orange
-                                  foregroundColor: Colors.white,
-                                  padding: const EdgeInsets.symmetric(vertical: 16, horizontal: 24),
-                                  textStyle: const TextStyle(
-                                    fontSize: 18,
-                                    fontWeight: FontWeight.bold,
-                                  ),
-                                  shape: RoundedRectangleBorder(
-                                    borderRadius: BorderRadius.circular(12),
-                                  ),
-                                  elevation: 8,
-                                  shadowColor: const Color(0xFFFFA500).withOpacity(0.3),
-                                  minimumSize: const Size(double.infinity, 60),
-                                ),
-                              ),
-                            ),
+                            _buildUpgradeCta(context),
                           ],
                         ),
                       ),
@@ -644,6 +594,37 @@ class _FreetextChallengeScreenState extends State<FreetextChallengeScreen> {
             const SizedBox(height: 4),
             Text(content),
           ],
+        ),
+      ),
+    );
+  }
+
+  Widget _buildUpgradeCta(BuildContext context) {
+    return SizedBox(
+      width: double.infinity,
+      child: ElevatedButton.icon(
+        onPressed: () => Navigator.of(context).push(
+          MaterialPageRoute(builder: (_) => const PaywallScreen()),
+        ),
+        icon: const Icon(Icons.rocket_launch, color: Colors.white, size: 22),
+        label: const Text(
+          'Prüfungspass holen – €14,99',
+          style: TextStyle(
+            color: Colors.white,
+            fontSize: 18,
+            fontWeight: FontWeight.bold,
+          ),
+        ),
+        style: ElevatedButton.styleFrom(
+          backgroundColor: const Color(0xFF1B3A5C),
+          foregroundColor: Colors.white,
+          padding: const EdgeInsets.symmetric(vertical: 16, horizontal: 24),
+          shape: RoundedRectangleBorder(
+            borderRadius: BorderRadius.circular(12),
+            side: const BorderSide(color: Colors.white, width: 2),
+          ),
+          elevation: 4,
+          minimumSize: const Size(double.infinity, 56),
         ),
       ),
     );

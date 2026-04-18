@@ -179,24 +179,29 @@ class _PaywallScreenState extends State<PaywallScreen> {
             const SizedBox(height: 24),
             SizedBox(
               width: double.infinity,
-              child: ElevatedButton(
+              child: ElevatedButton.icon(
                 onPressed: _isLaunching ? null : _openCheckout,
-                style: ElevatedButton.styleFrom(
-                  backgroundColor: const Color(0xFFFF6B35), // Kräftiges Orange
-                  foregroundColor: Colors.white,
-                  padding: const EdgeInsets.all(16),
-                  textStyle: const TextStyle(
+                icon: const Icon(Icons.rocket_launch,
+                    color: Colors.white, size: 22),
+                label: Text(
+                  _isLaunching ? 'Zur Kasse…' : 'Jetzt freischalten',
+                  style: const TextStyle(
+                    color: Colors.white,
                     fontSize: 18,
                     fontWeight: FontWeight.bold,
                   ),
+                ),
+                style: ElevatedButton.styleFrom(
+                  backgroundColor: const Color(0xFF1B3A5C),
+                  foregroundColor: Colors.white,
+                  padding: const EdgeInsets.all(16),
                   shape: RoundedRectangleBorder(
                     borderRadius: BorderRadius.circular(12),
+                    side: const BorderSide(color: Colors.white, width: 2),
                   ),
+                  elevation: 4,
                   minimumSize: const Size(double.infinity, 56),
                 ),
-                child: _isLaunching
-                    ? const Text('Zur Kasse…')
-                    : const Text('Jetzt freischalten'),
               ),
             ),
             const SizedBox(height: 16),

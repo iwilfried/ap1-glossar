@@ -247,4 +247,33 @@ class FirebaseService {
     });
     return Map<String, dynamic>.from(result.data);
   }
+
+  Future<void> resetProgress() async {
+    final user = FirebaseAuth.instance.currentUser;
+    if (user == null) return;
+    final uid = user.uid;
+    final userRef = FirebaseFirestore.instance.collection('users').doc(uid);
+    
+    // Delete all documents in freetextChallenges subcollection
+    final freetextDocs = await userRef.collection('freetextChallenges').get();
+    for (final doc in freetextDocs.docs) {
+      await doc.reference.delete();
+    }
+    
+    // Delete all documents in progress subcollection
+    final progressDocs = await userRef.collection('progress').get();
+    for (final doc in progressDocs.docs) {
+      await doc.reference.delete();
+    }
+    
+    // Reset user document fields
+    await userRef.update({
+      'streak': 0,
+      'totalChallenges': 0,
+      'freetextCount': 0,
+      'totalFreetextScore': 0,
+      'lastChallengeDate': FieldValue.delete(),
+      'lastFreetextDate': FieldValue.delete(),
+    });
+  }
 }
