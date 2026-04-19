@@ -2,6 +2,10 @@ import 'package:flutter/material.dart';
 import 'package:ap1_glossar/screens/home_page/home_page.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 
+const Color kBgColor = Color(0xFF162447);
+const Color kAccentColor = Color(0xFFE8813A);
+const Color kCardColor = Color(0xFF1e3a5f);
+
 class WelcomeScreen extends StatefulWidget {
   const WelcomeScreen({Key? key}) : super(key: key);
 
@@ -12,130 +16,146 @@ class WelcomeScreen extends StatefulWidget {
 class _WelcomeScreenState extends State<WelcomeScreen> {
   @override
   Widget build(BuildContext context) {
-    final size = MediaQuery.of(context).size;
-
     return Scaffold(
-      body: Container(
-        width: size.width,
-        height: size.height,
-        color: Theme.of(context).primaryColor,
-        child: SafeArea(
-          child: Padding(
-            padding: const EdgeInsets.symmetric(horizontal: 32.0),
-            child: Column(
-              mainAxisAlignment: MainAxisAlignment.spaceBetween,
-              crossAxisAlignment: CrossAxisAlignment.center,
-              children: [
-                // ── Oberer Block: Logo + Welcome
-                Column(
-                  children: [
-                    const SizedBox(height: 48),
-                    Image.asset(
-                      'assets/images/lf_logo.png',
-                      height: 90,
-                    ),
-                    const SizedBox(height: 12),
-                    const Text(
-                      'Welcome',
-                      textAlign: TextAlign.center,
+      backgroundColor: kBgColor,
+      body: SafeArea(
+        child: Padding(
+          padding: const EdgeInsets.all(32.0),
+          child: Column(
+            crossAxisAlignment: CrossAxisAlignment.center,
+            children: [
+              const SizedBox(height: 40),
+
+              // ── Logo-Block
+              Container(
+                width: 100,
+                height: 100,
+                decoration: BoxDecoration(
+                  color: kCardColor,
+                  borderRadius: BorderRadius.circular(18),
+                  border: Border.all(color: Colors.white12, width: 1),
+                ),
+                child: Column(
+                  mainAxisAlignment: MainAxisAlignment.center,
+                  children: const [
+                    Text(
+                      'LF',
                       style: TextStyle(
-                        fontSize: 18,
-                        color: Colors.white70,
-                        letterSpacing: 1.5,
-                      ),
-                    ),
-                  ],
-                ),
-
-                // ── Mittlerer Block: Titel
-                Column(
-                  children: [
-                    Text(
-                      'IHK\nAP1',
-                      textAlign: TextAlign.center,
-                      style: const TextStyle(
-                        fontFamily: 'Oswald',
-                        fontSize: 52,
-                        fontWeight: FontWeight.w700,
+                        fontFamily: 'Inter',
                         color: Colors.white,
-                        height: 1.15,
-                        letterSpacing: 2,
+                        fontSize: 40,
+                        fontWeight: FontWeight.bold,
                       ),
                     ),
-                    const SizedBox(height: 12),
-                    Text(
-                      'COACH',
-                      textAlign: TextAlign.center,
-                      style: const TextStyle(
-                        fontFamily: 'Oswald',
-                        fontSize: 44,
-                        fontWeight: FontWeight.w700,
-                        color: Colors.deepOrange,
-                        letterSpacing: 4,
-                      ),
-                    ),
-                  ],
-                ),
-
-                // ── Unterer Block: Beschreibung + Button
-                Column(
-                  children: [
-                    Text(
-                      'Alle wichtigen Begriffe und Definitionen\nfür die IHK-Abschlussprüfung Teil 1 –\nFachinformatiker und IT-Berufe.',
-                      textAlign: TextAlign.center,
-                      style: const TextStyle(
-                        fontSize: 16,
-                        fontWeight: FontWeight.w400,
-                        color: Colors.white70,
-                        height: 1.6,
-                      ),
-                    ),
-                    const SizedBox(height: 40),
+                    SizedBox(height: 8),
                     SizedBox(
-                      width: double.infinity,
-                      child: ElevatedButton(
-                        style: ElevatedButton.styleFrom(
-                          backgroundColor: Colors.deepOrange,
-                          padding: const EdgeInsets.symmetric(vertical: 16),
-                          shape: RoundedRectangleBorder(
-                            borderRadius: BorderRadius.circular(30),
-                          ),
-                          elevation: 4,
-                        ),
-                        onPressed: () async {
-                          final nav = Navigator.of(context);
-                          final prefs = await SharedPreferences.getInstance();
-                          await prefs.setBool('seen_welcome', true);
-                          nav.pushReplacement(
-                            MaterialPageRoute(
-                              builder: (context) => HomePage(deepLinkTerm: null),
-                            ),
-                          );
-                        },
-                        child: Row(
-                          mainAxisAlignment: MainAxisAlignment.center,
-                          children: const [
-                            Text(
-                              'WEITER',
-                              style: TextStyle(
-                                color: Colors.white,
-                                fontSize: 16,
-                                fontWeight: FontWeight.w700,
-                                letterSpacing: 2,
-                              ),
-                            ),
-                            SizedBox(width: 8),
-                            Icon(Icons.arrow_forward_ios,
-                                color: Colors.white, size: 16),
-                          ],
-                        ),
+                      width: 40,
+                      height: 3,
+                      child: DecoratedBox(
+                        decoration: BoxDecoration(color: kAccentColor),
                       ),
                     ),
-                    const SizedBox(height: 40),
                   ],
                 ),
-              ],
-            ),
+              ),
+              const SizedBox(height: 12),
+              const Text(
+                'Learning Factory',
+                style: TextStyle(
+                  fontFamily: 'Inter',
+                  color: Colors.white54,
+                  fontSize: 14,
+                ),
+              ),
+
+              const SizedBox(height: 80),
+
+              // ── Titel (3 Zeilen)
+              const Text(
+                'IHK',
+                textAlign: TextAlign.center,
+                style: TextStyle(
+                  fontFamily: 'Inter',
+                  color: Colors.white,
+                  fontSize: 48,
+                  fontWeight: FontWeight.bold,
+                ),
+              ),
+              const Text(
+                'AP1',
+                textAlign: TextAlign.center,
+                style: TextStyle(
+                  fontFamily: 'Inter',
+                  color: Colors.white,
+                  fontSize: 48,
+                  fontWeight: FontWeight.bold,
+                ),
+              ),
+              const Text(
+                'COACH',
+                textAlign: TextAlign.center,
+                style: TextStyle(
+                  fontFamily: 'Inter',
+                  color: kAccentColor,
+                  fontSize: 48,
+                  fontWeight: FontWeight.bold,
+                  letterSpacing: 8,
+                ),
+              ),
+
+              const Spacer(),
+
+              // ── Beschreibung
+              const Padding(
+                padding: EdgeInsets.symmetric(horizontal: 40),
+                child: Text(
+                  'Alle wichtigen Begriffe und Definitionen\nfür die IHK-Abschlussprüfung Teil 1 –\nFachinformatiker und IT-Berufe.',
+                  textAlign: TextAlign.center,
+                  style: TextStyle(
+                    fontFamily: 'Inter',
+                    color: Colors.white70,
+                    fontSize: 14,
+                  ),
+                ),
+              ),
+
+              const SizedBox(height: 24),
+
+              // ── WEITER-Button
+              SizedBox(
+                width: double.infinity,
+                height: 52,
+                child: ElevatedButton(
+                  style: ElevatedButton.styleFrom(
+                    backgroundColor: kAccentColor,
+                    shape: RoundedRectangleBorder(
+                      borderRadius: BorderRadius.circular(28),
+                    ),
+                    elevation: 0,
+                  ),
+                  onPressed: () async {
+                    final nav = Navigator.of(context);
+                    final prefs = await SharedPreferences.getInstance();
+                    await prefs.setBool('seen_welcome', true);
+                    nav.pushReplacement(
+                      MaterialPageRoute(
+                        builder: (context) => HomePage(deepLinkTerm: null),
+                      ),
+                    );
+                  },
+                  child: const Text(
+                    'WEITER >',
+                    style: TextStyle(
+                      fontFamily: 'Inter',
+                      color: Colors.white,
+                      fontSize: 16,
+                      fontWeight: FontWeight.bold,
+                      letterSpacing: 1.5,
+                    ),
+                  ),
+                ),
+              ),
+            ],
           ),
         ),
       ),
