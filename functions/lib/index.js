@@ -1,6 +1,6 @@
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.digistore24Webhook = exports.generateVouchers = exports.redeemVoucher = exports.generateMCQuestion = exports.evaluateAnswer = exports.generateQuestion = void 0;
+exports.updateMCScore = exports.digistore24Webhook = exports.generateVouchers = exports.redeemVoucher = exports.generateMCQuestion = exports.evaluateAnswer = exports.generateQuestion = void 0;
 const functions = require("firebase-functions");
 const admin = require("firebase-admin");
 const crypto = require("crypto");
@@ -61,9 +61,12 @@ exports.generateQuestion = functions
     const userData = userDoc.data();
     const isPro = (userData === null || userData === void 0 ? void 0 : userData.isPro) === true;
     if (!isPro) {
-        const freetextRef = userRef.collection('freetextChallenges').doc(today);
-        const freetextDoc = await freetextRef.get();
-        if (freetextDoc.exists) {
+        const existing = await userRef
+            .collection('freetextChallenges')
+            .where('dateKey', '==', today)
+            .limit(1)
+            .get();
+        if (!existing.empty) {
             throw new functions.https.HttpsError('resource-exhausted', 'Tageslimit erreicht. Mit dem Prüfungspass trainierst du unbegrenzt.');
         }
     }
@@ -209,9 +212,12 @@ exports.evaluateAnswer = functions
     const userData = userDoc.data();
     const isPro = (userData === null || userData === void 0 ? void 0 : userData.isPro) === true;
     if (!isPro) {
-        const freetextRef = userRef.collection('freetextChallenges').doc(today);
-        const freetextDoc = await freetextRef.get();
-        if (freetextDoc.exists) {
+        const existing = await userRef
+            .collection('freetextChallenges')
+            .where('dateKey', '==', today)
+            .limit(1)
+            .get();
+        if (!existing.empty) {
             throw new functions.https.HttpsError('resource-exhausted', 'Tageslimit erreicht. Mit dem Prüfungspass trainierst du unbegrenzt.');
         }
     }
@@ -330,7 +336,7 @@ ANTWORTFORMAT (antworte NUR mit diesem JSON, kein Markdown, keine Backticks):
         const evaluation = JSON.parse(content);
         // Write to Firestore
         const batch = admin.firestore().batch();
-        const freetextDocRef = userRef.collection('freetextChallenges').doc(today);
+        const freetextDocRef = userRef.collection('freetextChallenges').doc();
         batch.set(freetextDocRef, {
             term: data.term,
             question: data.question,
@@ -341,6 +347,7 @@ ANTWORTFORMAT (antworte NUR mit diesem JSON, kein Markdown, keine Backticks):
             languageTips: evaluation.languageTips,
             modelAnswer: evaluation.modelAnswer,
             answeredAt: admin.firestore.FieldValue.serverTimestamp(),
+            dateKey: today,
             aspect: data.aspect || '',
             theme: data.theme || '',
         });
@@ -351,6 +358,40 @@ ANTWORTFORMAT (antworte NUR mit diesem JSON, kein Markdown, keine Backticks):
             lastFreetextDate: admin.firestore.FieldValue.serverTimestamp(),
         });
         await batch.commit();
+        // ── Leaderboard aktualisieren (nur für Pro-User)
+        if (isPro) {
+            try {
+                const now = new Date();
+                const yearMonth = `${now.getFullYear()}-${String(now.getMonth() + 1).padStart(2, '0')}`;
+                const leaderboardRef = admin.firestore().doc(`leaderboard/${yearMonth}/entries/${uid}`);
+                const lbDoc = await leaderboardRef.get();
+                const lbData = lbDoc.exists ? lbDoc.data() : null;
+                const displayName = (userData === null || userData === void 0 ? void 0 : userData.leaderboardDisplayName)
+                    || `IT-Held ${uid.substring(0, 4).toUpperCase()}`;
+                const newFreetextScore = ((lbData === null || lbData === void 0 ? void 0 : lbData.freetextScore) || 0) + evaluation.score;
+                const newFreetextCount = ((lbData === null || lbData === void 0 ? void 0 : lbData.freetextCount) || 0) + 1;
+                const mcCorrect = (lbData === null || lbData === void 0 ? void 0 : lbData.mcCorrect) || 0;
+                const mcTotal = (lbData === null || lbData === void 0 ? void 0 : lbData.mcTotal) || 0;
+                const streak = (userData === null || userData === void 0 ? void 0 : userData.streak) || 0;
+                const newTotalScore = newFreetextScore + (mcCorrect * 2) + Math.min(streak * 3, 30);
+                await leaderboardRef.set({
+                    uid,
+                    displayName,
+                    score: newTotalScore,
+                    freetextCount: newFreetextCount,
+                    freetextScore: newFreetextScore,
+                    mcCorrect,
+                    mcTotal,
+                    streak,
+                    isPro: true,
+                    lastActivity: admin.firestore.FieldValue.serverTimestamp(),
+                    createdAt: (lbData === null || lbData === void 0 ? void 0 : lbData.createdAt) || admin.firestore.FieldValue.serverTimestamp(),
+                }, { merge: true });
+            }
+            catch (lbError) {
+                console.error('Leaderboard update failed (non-fatal):', lbError);
+            }
+        }
         return evaluation;
     }
     catch (error) {
@@ -628,5 +669,47 @@ exports.digistore24Webhook = functions
         console.error('Digistore24 webhook failed:', error);
         response.status(500).send('Internal error');
     }
+});
+exports.updateMCScore = functions
+    .region('europe-west1')
+    .https.onCall(async (data, context) => {
+    if (!context.auth) {
+        throw new functions.https.HttpsError('unauthenticated', 'User must be authenticated');
+    }
+    const uid = context.auth.uid;
+    const correct = (data === null || data === void 0 ? void 0 : data.correct) === true;
+    const userRef = admin.firestore().collection('users').doc(uid);
+    const userDoc = await userRef.get();
+    const userData = userDoc.data();
+    if (!(userData === null || userData === void 0 ? void 0 : userData.isPro)) {
+        return { updated: false };
+    }
+    const now = new Date();
+    const yearMonth = `${now.getFullYear()}-${String(now.getMonth() + 1).padStart(2, '0')}`;
+    const leaderboardRef = admin.firestore().doc(`leaderboard/${yearMonth}/entries/${uid}`);
+    const lbDoc = await leaderboardRef.get();
+    const lbData = lbDoc.exists ? lbDoc.data() : null;
+    const displayName = userData.leaderboardDisplayName
+        || `IT-Held ${uid.substring(0, 4).toUpperCase()}`;
+    const newMcTotal = ((lbData === null || lbData === void 0 ? void 0 : lbData.mcTotal) || 0) + 1;
+    const newMcCorrect = ((lbData === null || lbData === void 0 ? void 0 : lbData.mcCorrect) || 0) + (correct ? 1 : 0);
+    const freetextScore = (lbData === null || lbData === void 0 ? void 0 : lbData.freetextScore) || 0;
+    const freetextCount = (lbData === null || lbData === void 0 ? void 0 : lbData.freetextCount) || 0;
+    const streak = userData.streak || 0;
+    const newTotalScore = freetextScore + (newMcCorrect * 2) + Math.min(streak * 3, 30);
+    await leaderboardRef.set({
+        uid,
+        displayName,
+        score: newTotalScore,
+        freetextCount,
+        freetextScore,
+        mcCorrect: newMcCorrect,
+        mcTotal: newMcTotal,
+        streak,
+        isPro: true,
+        lastActivity: admin.firestore.FieldValue.serverTimestamp(),
+        createdAt: (lbData === null || lbData === void 0 ? void 0 : lbData.createdAt) || admin.firestore.FieldValue.serverTimestamp(),
+    }, { merge: true });
+    return { updated: true, score: newTotalScore };
 });
 //# sourceMappingURL=index.js.map

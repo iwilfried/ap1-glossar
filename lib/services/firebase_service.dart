@@ -248,6 +248,25 @@ class FirebaseService {
     return Map<String, dynamic>.from(result.data);
   }
 
+  Future<void> updateMCScore(bool correct) async {
+    try {
+      final callable = FirebaseFunctions.instanceFor(region: 'europe-west1')
+          .httpsCallable('updateMCScore');
+      await callable.call({'correct': correct});
+    } catch (_) {
+      // Stille Fehlerbehandlung — Score-Update ist nicht kritisch
+    }
+  }
+
+  Future<void> setLeaderboardDisplayName(String displayName) async {
+    final user = _auth.currentUser;
+    if (user == null) return;
+    await _firestore
+        .collection('users')
+        .doc(user.uid)
+        .update({'leaderboardDisplayName': displayName});
+  }
+
   Future<Map<String, dynamic>> redeemVoucher(String code) async {
     final callable = FirebaseFunctions.instanceFor(region: 'europe-west1')
         .httpsCallable('redeemVoucher');

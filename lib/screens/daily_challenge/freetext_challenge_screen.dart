@@ -7,7 +7,9 @@ import 'package:ap1_glossar/screens/paywall/paywall_screen.dart';
 import 'package:ap1_glossar/services/firebase_service.dart';
 
 class FreetextChallengeScreen extends StatefulWidget {
-  const FreetextChallengeScreen({super.key});
+  const FreetextChallengeScreen({super.key, this.initialTheme});
+
+  final String? initialTheme;
 
   @override
   State<FreetextChallengeScreen> createState() =>
@@ -34,6 +36,10 @@ class _FreetextChallengeScreenState extends State<FreetextChallengeScreen> {
   @override
   void initState() {
     super.initState();
+    if (widget.initialTheme != null &&
+        termGroups.containsKey(widget.initialTheme)) {
+      _selectedTheme = widget.initialTheme!;
+    }
     _loadProStatus();
   }
 

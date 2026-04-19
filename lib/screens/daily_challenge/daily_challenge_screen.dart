@@ -183,6 +183,7 @@ class _DailyChallengeScreenState extends State<DailyChallengeScreen> {
     });
 
     await FirebaseService.instance.recordChallengeCompletion(terms, correct);
+    FirebaseService.instance.updateMCScore(correct);
     final prefs = await FirebaseService.instance.getUserPrefs();
     setState(() {
       _streak = (prefs?['streak'] as int?) ?? _streak;

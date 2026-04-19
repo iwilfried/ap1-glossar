@@ -24,5 +24,12 @@ service cloud.firestore {
     match /vouchers/{code} {
       allow read, write: if false;
     }
+
+    // Leaderboard — Pro-User dürfen lesen, nur Cloud Functions schreiben
+    match /leaderboard/{yearMonth}/entries/{uid} {
+      allow read: if request.auth != null
+        && get(/databases/$(database)/documents/users/$(request.auth.uid)).data.isPro == true;
+      allow write: if false;
+    }
   }
 }

@@ -10,6 +10,8 @@ import '../../settings/notifications_settings_screen.dart';
 import 'package:ap1_glossar/screens/daily_challenge/freetext_challenge_screen.dart';
 import 'package:ap1_glossar/screens/paywall/paywall_screen.dart';
 import 'package:ap1_glossar/screens/voucher/redeem_voucher_screen.dart';
+import 'package:ap1_glossar/screens/leaderboard/leaderboard_screen.dart';
+import 'package:ap1_glossar/screens/weakness_report/weakness_report_screen.dart';
 import 'package:ap1_glossar/services/firebase_service.dart';
 
 class AppDrawer extends StatelessWidget {
@@ -107,10 +109,16 @@ class AppDrawer extends StatelessWidget {
                 ),
               ],
             ),
-            onTap: () {
+            onTap: () async {
               Navigator.of(context).pop();
+              final isPro = await FirebaseService.instance.isUserPro();
+              if (!context.mounted) return;
               Navigator.of(context).push(
-                MaterialPageRoute(builder: (_) => const PaywallScreen()),
+                MaterialPageRoute(
+                  builder: (_) => isPro
+                      ? const LeaderboardScreen()
+                      : const PaywallScreen(),
+                ),
               );
             },
           ),
@@ -129,10 +137,16 @@ class AppDrawer extends StatelessWidget {
                 ),
               ],
             ),
-            onTap: () {
+            onTap: () async {
               Navigator.of(context).pop();
+              final isPro = await FirebaseService.instance.isUserPro();
+              if (!context.mounted) return;
               Navigator.of(context).push(
-                MaterialPageRoute(builder: (_) => const PaywallScreen()),
+                MaterialPageRoute(
+                  builder: (_) => isPro
+                      ? const WeaknessReportScreen()
+                      : const PaywallScreen(),
+                ),
               );
             },
           ),

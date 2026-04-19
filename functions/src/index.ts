@@ -107,9 +107,12 @@ export const generateQuestion = functions
 
     const isPro = userData?.isPro === true;
     if (!isPro) {
-      const freetextRef = userRef.collection('freetextChallenges').doc(today);
-      const freetextDoc = await freetextRef.get();
-      if (freetextDoc.exists) {
+      const existing = await userRef
+        .collection('freetextChallenges')
+        .where('dateKey', '==', today)
+        .limit(1)
+        .get();
+      if (!existing.empty) {
         throw new functions.https.HttpsError(
           'resource-exhausted',
           'Tageslimit erreicht. Mit dem Prüfungspass trainierst du unbegrenzt.'
@@ -278,9 +281,12 @@ export const evaluateAnswer = functions
 
     const isPro = userData?.isPro === true;
     if (!isPro) {
-      const freetextRef = userRef.collection('freetextChallenges').doc(today);
-      const freetextDoc = await freetextRef.get();
-      if (freetextDoc.exists) {
+      const existing = await userRef
+        .collection('freetextChallenges')
+        .where('dateKey', '==', today)
+        .limit(1)
+        .get();
+      if (!existing.empty) {
         throw new functions.https.HttpsError(
           'resource-exhausted',
           'Tageslimit erreicht. Mit dem Prüfungspass trainierst du unbegrenzt.'
@@ -414,7 +420,7 @@ ANTWORTFORMAT (antworte NUR mit diesem JSON, kein Markdown, keine Backticks):
       // Write to Firestore
       const batch = admin.firestore().batch();
 
-      const freetextDocRef = userRef.collection('freetextChallenges').doc(today);
+      const freetextDocRef = userRef.collection('freetextChallenges').doc();
       batch.set(freetextDocRef, {
         term: data.term,
         question: data.question,
@@ -425,6 +431,7 @@ ANTWORTFORMAT (antworte NUR mit diesem JSON, kein Markdown, keine Backticks):
         languageTips: evaluation.languageTips,
         modelAnswer: evaluation.modelAnswer,
         answeredAt: admin.firestore.FieldValue.serverTimestamp(),
+        dateKey: today,
         aspect: data.aspect || '',
         theme: data.theme || '',
       });
@@ -437,6 +444,43 @@ ANTWORTFORMAT (antworte NUR mit diesem JSON, kein Markdown, keine Backticks):
       });
 
       await batch.commit();
+
+      // ── Leaderboard aktualisieren (nur für Pro-User)
+      if (isPro) {
+        try {
+          const now = new Date();
+          const yearMonth = `${now.getFullYear()}-${String(now.getMonth() + 1).padStart(2, '0')}`;
+          const leaderboardRef = admin.firestore().doc(`leaderboard/${yearMonth}/entries/${uid}`);
+
+          const lbDoc = await leaderboardRef.get();
+          const lbData = lbDoc.exists ? lbDoc.data() : null;
+
+          const displayName = userData?.leaderboardDisplayName
+            || `IT-Held ${uid.substring(0, 4).toUpperCase()}`;
+          const newFreetextScore = (lbData?.freetextScore || 0) + evaluation.score;
+          const newFreetextCount = (lbData?.freetextCount || 0) + 1;
+          const mcCorrect = lbData?.mcCorrect || 0;
+          const mcTotal = lbData?.mcTotal || 0;
+          const streak = userData?.streak || 0;
+          const newTotalScore = newFreetextScore + (mcCorrect * 2) + Math.min(streak * 3, 30);
+
+          await leaderboardRef.set({
+            uid,
+            displayName,
+            score: newTotalScore,
+            freetextCount: newFreetextCount,
+            freetextScore: newFreetextScore,
+            mcCorrect,
+            mcTotal,
+            streak,
+            isPro: true,
+            lastActivity: admin.firestore.FieldValue.serverTimestamp(),
+            createdAt: lbData?.createdAt || admin.firestore.FieldValue.serverTimestamp(),
+          }, { merge: true });
+        } catch (lbError) {
+          console.error('Leaderboard update failed (non-fatal):', lbError);
+        }
+      }
 
       return evaluation;
     } catch (error) {
@@ -814,4 +858,61 @@ export const digistore24Webhook = functions
       console.error('Digistore24 webhook failed:', error);
       response.status(500).send('Internal error');
     }
+  });
+
+interface UpdateMCScoreRequest {
+  correct: boolean;
+}
+
+export const updateMCScore = functions
+  .region('europe-west1')
+  .https.onCall(async (data: UpdateMCScoreRequest, context) => {
+    if (!context.auth) {
+      throw new functions.https.HttpsError(
+        'unauthenticated',
+        'User must be authenticated'
+      );
+    }
+
+    const uid = context.auth.uid;
+    const correct = data?.correct === true;
+
+    const userRef = admin.firestore().collection('users').doc(uid);
+    const userDoc = await userRef.get();
+    const userData = userDoc.data();
+    if (!userData?.isPro) {
+      return { updated: false };
+    }
+
+    const now = new Date();
+    const yearMonth = `${now.getFullYear()}-${String(now.getMonth() + 1).padStart(2, '0')}`;
+    const leaderboardRef = admin.firestore().doc(`leaderboard/${yearMonth}/entries/${uid}`);
+
+    const lbDoc = await leaderboardRef.get();
+    const lbData = lbDoc.exists ? lbDoc.data() : null;
+
+    const displayName = userData.leaderboardDisplayName
+      || `IT-Held ${uid.substring(0, 4).toUpperCase()}`;
+    const newMcTotal = (lbData?.mcTotal || 0) + 1;
+    const newMcCorrect = (lbData?.mcCorrect || 0) + (correct ? 1 : 0);
+    const freetextScore = lbData?.freetextScore || 0;
+    const freetextCount = lbData?.freetextCount || 0;
+    const streak = userData.streak || 0;
+    const newTotalScore = freetextScore + (newMcCorrect * 2) + Math.min(streak * 3, 30);
+
+    await leaderboardRef.set({
+      uid,
+      displayName,
+      score: newTotalScore,
+      freetextCount,
+      freetextScore,
+      mcCorrect: newMcCorrect,
+      mcTotal: newMcTotal,
+      streak,
+      isPro: true,
+      lastActivity: admin.firestore.FieldValue.serverTimestamp(),
+      createdAt: lbData?.createdAt || admin.firestore.FieldValue.serverTimestamp(),
+    }, { merge: true });
+
+    return { updated: true, score: newTotalScore };
   });
