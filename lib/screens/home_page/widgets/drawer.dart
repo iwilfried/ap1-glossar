@@ -150,27 +150,6 @@ class AppDrawer extends StatelessWidget {
               );
             },
           ),
-          ListTile(
-            leading: const Icon(Icons.school_rounded, color: Colors.deepOrange),
-            title: Row(
-              children: const [
-                Expanded(child: Text('Prüfungssimulator')),
-                SizedBox(width: 8),
-                Chip(
-                  label: Text('PRO',
-                      style: TextStyle(color: Colors.white, fontSize: 12)),
-                  backgroundColor: Colors.deepOrange,
-                  visualDensity: VisualDensity.compact,
-                ),
-              ],
-            ),
-            onTap: () {
-              Navigator.of(context).pop();
-              Navigator.of(context).push(
-                MaterialPageRoute(builder: (_) => const PaywallScreen()),
-              );
-            },
-          ),
 
           const Divider(height: 24),
 

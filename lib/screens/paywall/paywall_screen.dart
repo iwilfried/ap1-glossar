@@ -291,7 +291,6 @@ class _PaywallScreenState extends State<PaywallScreen> {
                         'Freitext mit KI-Feedback', '1 pro Tag', 'Unbegrenzt'),
                     _buildFeatureRow('Champion-Rangliste', '—', 'Live Top 10'),
                     _buildFeatureRow('Schwächen-Report', '—', 'Themenanalyse'),
-                    _buildFeatureRow('Prüfungssimulator', '—', '90 Min Probe'),
                   ],
                 ),
               ),
