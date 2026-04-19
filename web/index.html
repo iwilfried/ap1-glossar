@@ -18,8 +18,81 @@
   <link rel="stylesheet" type="text/css" href="splash/style.css">
   <meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" name="viewport">
   <script src="splash/splash.js"></script>
+  <style>
+    html, body {
+      margin: 0;
+      padding: 0;
+      background-color: #162447;
+    }
+    #loading {
+      position: fixed;
+      inset: 0;
+      background-color: #162447;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      z-index: 9999;
+      font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+    }
+    #loading .lf-logo {
+      width: 100px;
+      height: 100px;
+      background-color: #1e3a5f;
+      border: 1px solid rgba(255, 255, 255, 0.12);
+      border-radius: 18px;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+    }
+    #loading .lf-logo .lf-text {
+      color: #ffffff;
+      font-size: 40px;
+      font-weight: 700;
+      line-height: 1;
+    }
+    #loading .lf-logo .lf-line {
+      width: 40px;
+      height: 3px;
+      background-color: #E8813A;
+      margin-top: 8px;
+    }
+    #loading .loading-text {
+      margin-top: 24px;
+      color: #ffffff;
+      opacity: 0.5;
+      font-size: 14px;
+    }
+    #loading .spinner {
+      margin-top: 20px;
+      width: 30px;
+      height: 30px;
+      border: 3px solid transparent;
+      border-top-color: #E8813A;
+      border-radius: 50%;
+      animation: lf-spin 0.9s linear infinite;
+    }
+    @keyframes lf-spin {
+      to { transform: rotate(360deg); }
+    }
+  </style>
 </head>
 <body>
+  <div id="loading">
+    <div class="lf-logo">
+      <div class="lf-text">LF</div>
+      <div class="lf-line"></div>
+    </div>
+    <div class="loading-text">Wird geladen...</div>
+    <div class="spinner"></div>
+  </div>
+  <script>
+    window.addEventListener('flutter-first-frame', function() {
+      var el = document.getElementById('loading');
+      if (el) el.remove();
+    });
+  </script>
   <script src="flutter_bootstrap.js" async></script>
   <script type="module">
     if ('serviceWorker' in navigator) {

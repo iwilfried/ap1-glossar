@@ -103,7 +103,20 @@ class _WelcomeScreenState extends State<WelcomeScreen> {
                 ),
               ),
 
-              const Spacer(),
+              const SizedBox(height: 40),
+              const Text(
+                'learningfactory.io/coach',
+                textAlign: TextAlign.center,
+                style: TextStyle(
+                  fontFamily: 'Inter',
+                  color: Colors.white30,
+                  fontSize: 13,
+                  letterSpacing: 0.5,
+                ),
+              ),
+
+              const Expanded(flex: 1, child: SizedBox()),
+              const SizedBox(height: 20),
 
               // ── Beschreibung
               const Padding(
