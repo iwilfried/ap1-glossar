@@ -9,7 +9,9 @@ import 'package:ap1_glossar/screens/voucher/redeem_voucher_screen.dart';
 import 'package:ap1_glossar/services/firebase_service.dart';
 
 const _digistoreProductId = '685497';
-const _priceBadge = '€14,99 einmalig';
+
+const Color _kCard = Color(0xFF1e3a5f);
+const Color _kAccent = Color(0xFFE8813A);
 
 const Map<String, String> _examDateLabels = {
   'F2026': 'Frühjahr 2026 (März)',
@@ -71,6 +73,7 @@ class _PaywallScreenState extends State<PaywallScreen> {
   }
 
   Widget _buildFeatureRow(String feature, String freeValue, String proValue) {
+    final bool isLimited = freeValue != '✅';
     return Padding(
       padding: const EdgeInsets.symmetric(vertical: 10),
       child: Row(
@@ -80,12 +83,83 @@ class _PaywallScreenState extends State<PaywallScreen> {
                   style: const TextStyle(fontWeight: FontWeight.w600))),
           const SizedBox(width: 8),
           Expanded(
-              child: Text(freeValue,
-                  style: const TextStyle(color: Colors.white70))),
+            child: Text(
+              freeValue,
+              style: TextStyle(
+                color: isLimited ? Colors.white54 : Colors.white70,
+                fontStyle:
+                    isLimited ? FontStyle.italic : FontStyle.normal,
+              ),
+            ),
+          ),
           const SizedBox(width: 8),
           Expanded(
               child:
                   Text(proValue, style: const TextStyle(color: Colors.green))),
+        ],
+      ),
+    );
+  }
+
+  Widget _buildBenefitCard(
+    IconData icon,
+    String title,
+    String subtitle,
+  ) {
+    return Container(
+      padding: const EdgeInsets.all(16),
+      decoration: BoxDecoration(
+        color: _kCard,
+        borderRadius: BorderRadius.circular(12),
+      ),
+      child: Row(
+        crossAxisAlignment: CrossAxisAlignment.start,
+        children: [
+          Icon(icon, color: _kAccent, size: 32),
+          const SizedBox(width: 16),
+          Expanded(
+            child: Column(
+              crossAxisAlignment: CrossAxisAlignment.start,
+              children: [
+                Text(
+                  title,
+                  style: const TextStyle(
+                    color: Colors.white,
+                    fontSize: 16,
+                    fontWeight: FontWeight.bold,
+                  ),
+                ),
+                const SizedBox(height: 4),
+                Text(
+                  subtitle,
+                  style: const TextStyle(
+                    color: Colors.white70,
+                    fontSize: 13,
+                    height: 1.4,
+                  ),
+                ),
+              ],
+            ),
+          ),
+        ],
+      ),
+    );
+  }
+
+  Widget _buildGuaranteeRow(IconData icon, String text) {
+    return Padding(
+      padding: const EdgeInsets.symmetric(vertical: 4),
+      child: Row(
+        crossAxisAlignment: CrossAxisAlignment.start,
+        children: [
+          Icon(icon, color: _kAccent, size: 18),
+          const SizedBox(width: 10),
+          Expanded(
+            child: Text(
+              text,
+              style: const TextStyle(fontSize: 13),
+            ),
+          ),
         ],
       ),
     );
@@ -101,37 +175,170 @@ class _PaywallScreenState extends State<PaywallScreen> {
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
-            Row(
-              crossAxisAlignment: CrossAxisAlignment.end,
-              children: [
-                Expanded(
-                  child: Text(
-                    'Prüfungspass',
-                    style: theme.textTheme.headlineSmall
-                        ?.copyWith(fontWeight: FontWeight.bold),
+            Text(
+              'Prüfungspass',
+              style: theme.textTheme.headlineSmall
+                  ?.copyWith(fontWeight: FontWeight.bold),
+            ),
+            const SizedBox(height: 8),
+            Container(
+              padding:
+                  const EdgeInsets.symmetric(horizontal: 16, vertical: 10),
+              decoration: BoxDecoration(
+                color: _kAccent,
+                borderRadius: BorderRadius.circular(24),
+              ),
+              child: const Column(
+                mainAxisSize: MainAxisSize.min,
+                crossAxisAlignment: CrossAxisAlignment.start,
+                children: [
+                  Text(
+                    '€14,99',
+                    style: TextStyle(
+                      fontSize: 20,
+                      fontWeight: FontWeight.bold,
+                      color: Colors.white,
+                    ),
                   ),
-                ),
-                Container(
-                  padding:
-                      const EdgeInsets.symmetric(horizontal: 12, vertical: 6),
-                  decoration: BoxDecoration(
-                    color: theme.colorScheme.secondary,
-                    borderRadius: BorderRadius.circular(24),
+                  Text(
+                    'einmalig · kein Abo',
+                    style: TextStyle(
+                      fontSize: 11,
+                      color: Color.fromRGBO(255, 255, 255, 0.9),
+                    ),
                   ),
-                  child: Text(
-                    _priceBadge,
-                    style: theme.textTheme.bodyMedium?.copyWith(
-                        color: Colors.white, fontWeight: FontWeight.bold),
-                  ),
-                ),
-              ],
+                ],
+              ),
             ),
             const SizedBox(height: 16),
             Text(
-              'Unbegrenzter Zugang zu allen Premium-Features des AP1 Coach bis zu deinem IHK-Prüfungstermin.',
-              style: theme.textTheme.bodyMedium,
+              'Trainiere unbegrenzt mit KI-Feedback im IHK-Stil. Bis zu deiner Prüfung. Einmal bezahlen, dann voller Zugriff auf alle Premium-Features.',
+              style: TextStyle(
+                fontSize: 15,
+                height: 1.4,
+                color: theme.textTheme.bodyMedium?.color,
+              ),
             ),
             const SizedBox(height: 24),
+            _buildBenefitCard(
+              Icons.auto_awesome_rounded,
+              'KI bewertet deine Antworten',
+              'Claude analysiert Korrektheit, Vollständigkeit und IHK-Fachsprache in Echtzeit. Mit konkreten Formulierungstipps und Musterantwort.',
+            ),
+            const SizedBox(height: 8),
+            _buildBenefitCard(
+              Icons.insights_rounded,
+              'Erkenne deine Schwächen',
+              'Der Schwächen-Report zeigt dir auf einen Blick, wo du Punkte verlierst. Dann trainierst du gezielt das richtige Thema.',
+            ),
+            const SizedBox(height: 8),
+            _buildBenefitCard(
+              Icons.emoji_events_rounded,
+              'Champion-Rangliste',
+              'Miss dich mit anderen Prüflingen. Motivation durch monatlichen Wettbewerb.',
+            ),
+            const SizedBox(height: 20),
+            Text('Feature-Vergleich',
+                style: theme.textTheme.titleMedium
+                    ?.copyWith(fontWeight: FontWeight.bold)),
+            const SizedBox(height: 12),
+            Card(
+              child: Padding(
+                padding: const EdgeInsets.all(16),
+                child: Column(
+                  children: [
+                    Padding(
+                      padding: const EdgeInsets.symmetric(vertical: 10),
+                      child: Row(
+                        children: const [
+                          Expanded(child: SizedBox()),
+                          SizedBox(width: 8),
+                          Expanded(
+                            child: Text(
+                              'Free',
+                              style: TextStyle(
+                                color: Colors.white70,
+                                fontWeight: FontWeight.bold,
+                              ),
+                            ),
+                          ),
+                          SizedBox(width: 8),
+                          Expanded(
+                            child: Text(
+                              'Pro',
+                              style: TextStyle(
+                                color: _kAccent,
+                                fontWeight: FontWeight.bold,
+                                fontSize: 16,
+                              ),
+                            ),
+                          ),
+                        ],
+                      ),
+                    ),
+                    const Padding(
+                      padding: EdgeInsets.symmetric(vertical: 8),
+                      child: Divider(
+                        color: Colors.white24,
+                        height: 1,
+                        thickness: 0.5,
+                      ),
+                    ),
+                    _buildFeatureRow('Glossar (386 Begriffe)', '✅', '✅'),
+                    _buildFeatureRow('Karteikarten', '✅', '✅'),
+                    _buildFeatureRow('MC-Challenges', '1 pro Tag', 'Unbegrenzt'),
+                    _buildFeatureRow(
+                        'Freitext mit KI-Feedback', '1 pro Tag', 'Unbegrenzt'),
+                    _buildFeatureRow('Champion-Rangliste', '—', 'Live Top 10'),
+                    _buildFeatureRow('Schwächen-Report', '—', 'Themenanalyse'),
+                    _buildFeatureRow('Prüfungssimulator', '—', '90 Min Probe'),
+                  ],
+                ),
+              ),
+            ),
+            const SizedBox(height: 16),
+            Container(
+              padding: const EdgeInsets.all(16),
+              decoration: BoxDecoration(
+                color: _kAccent.withValues(alpha: 0.1),
+                borderRadius: BorderRadius.circular(12),
+                border: Border.all(color: _kAccent),
+              ),
+              child: Column(
+                crossAxisAlignment: CrossAxisAlignment.start,
+                children: [
+                  Row(
+                    children: [
+                      const Icon(Icons.verified_rounded, color: _kAccent),
+                      const SizedBox(width: 8),
+                      const Expanded(
+                        child: Text(
+                          'Basiert auf echten IHK-Prüfungen',
+                          style: TextStyle(
+                            fontWeight: FontWeight.bold,
+                            fontSize: 15,
+                          ),
+                        ),
+                      ),
+                    ],
+                  ),
+                  const SizedBox(height: 8),
+                  Text(
+                    'Die Fragen und Bewertungen basieren auf der Analyse von 9 echten AP1-Prüfungen 2021–2026 und dem neuen IHK-Prüfungskatalog 2025.',
+                    style: theme.textTheme.bodyMedium,
+                  ),
+                ],
+              ),
+            ),
+            const SizedBox(height: 20),
+            Text('Prüfungsdatum auswählen',
+                style: theme.textTheme.titleMedium
+                    ?.copyWith(fontWeight: FontWeight.bold)),
+            const SizedBox(height: 8),
+            Text(
+                'Wann schreibst du deine AP1? Der Prüfungspass bleibt bis dahin aktiv. Kein Abo, keine Verlängerung.',
+                style: theme.textTheme.bodyMedium),
+            const SizedBox(height: 12),
             Card(
               child: Padding(
                 padding: const EdgeInsets.all(16),
@@ -148,36 +355,7 @@ class _PaywallScreenState extends State<PaywallScreen> {
                 ),
               ),
             ),
-            const SizedBox(height: 24),
-            Text('Feature-Vergleich',
-                style: theme.textTheme.titleMedium
-                    ?.copyWith(fontWeight: FontWeight.bold)),
-            const SizedBox(height: 12),
-            Card(
-              child: Padding(
-                padding: const EdgeInsets.all(16),
-                child: Column(
-                  children: [
-                    _buildFeatureRow('Nachschlagen (386 Begriffe)', '✅', '✅'),
-                    _buildFeatureRow('Karteikarten (Leitner)', '✅', '✅'),
-                    _buildFeatureRow('MC-Quiz', '1x/Tag', 'Unbegrenzt'),
-                    _buildFeatureRow(
-                        'Freitext + KI-Feedback', '1x/Tag', 'Unbegrenzt'),
-                    _buildFeatureRow('Champion-Rangliste', '❌', '✅'),
-                    _buildFeatureRow('Schwächen-Report', '❌', '✅'),
-                    _buildFeatureRow('Prüfungssimulator', '❌', '✅'),
-                  ],
-                ),
-              ),
-            ),
-            const SizedBox(height: 24),
-            Text('Prüfungsdatum auswählen',
-                style: theme.textTheme.titleMedium
-                    ?.copyWith(fontWeight: FontWeight.bold)),
-            const SizedBox(height: 8),
-            Text('Damit Dein Prüfungspass bis zu Deinem Termin gültig bleibt.',
-                style: theme.textTheme.bodyMedium),
-            const SizedBox(height: 24),
+            const SizedBox(height: 16),
             SizedBox(
               width: double.infinity,
               child: ElevatedButton.icon(
@@ -185,7 +363,7 @@ class _PaywallScreenState extends State<PaywallScreen> {
                 icon: const Icon(Icons.rocket_launch,
                     color: Colors.white, size: 22),
                 label: Text(
-                  _isLaunching ? 'Zur Kasse…' : 'Jetzt freischalten',
+                  _isLaunching ? 'Zur Kasse…' : 'Prüfungspass sichern',
                   style: const TextStyle(
                     color: Colors.white,
                     fontSize: 18,
@@ -206,6 +384,15 @@ class _PaywallScreenState extends State<PaywallScreen> {
               ),
             ),
             const SizedBox(height: 16),
+            _buildGuaranteeRow(
+              Icons.schedule_rounded,
+              'Einmalzahlung · kein Abo · keine Verlängerung',
+            ),
+            _buildGuaranteeRow(
+              Icons.lock_outline_rounded,
+              'Sichere Zahlung über Digistore24 (Kreditkarte, PayPal, Überweisung)',
+            ),
+            const SizedBox(height: 16),
             Center(
               child: TextButton(
                 onPressed: () => Navigator.of(context).push(
@@ -220,16 +407,6 @@ class _PaywallScreenState extends State<PaywallScreen> {
                   ),
                 ),
               ),
-            ),
-            const SizedBox(height: 8),
-            Text(
-              'Einmalzahlung. Kein Abo. Zugang bis zu deiner Prüfung.',
-              style: theme.textTheme.bodyMedium,
-            ),
-            const SizedBox(height: 8),
-            Text(
-              'Sichere Zahlung über Digistore24. Kreditkarte, PayPal, Überweisung.',
-              style: theme.textTheme.bodySmall,
             ),
             const SizedBox(height: 24),
             const Divider(),
