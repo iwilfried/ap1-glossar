@@ -737,7 +737,10 @@ class HomePageState extends State<HomePage> with SingleTickerProviderStateMixin 
         ],
         ),
       ),
-      floatingActionButton: _buildFab(),
+      floatingActionButton: Padding(
+        padding: const EdgeInsets.only(bottom: 4, right: 4),
+        child: _buildFab(),
+      ),
     );
   }
 
@@ -749,7 +752,7 @@ class HomePageState extends State<HomePage> with SingleTickerProviderStateMixin 
     return AnimatedScale(
       scale: isVisible ? 1.0 : 0.0,
       duration: const Duration(milliseconds: 200),
-      child: FloatingActionButton(
+      child: FloatingActionButton.small(
         onPressed: () {
           if (hasBackHistory) {
             _navigateBack();
@@ -764,9 +767,12 @@ class HomePageState extends State<HomePage> with SingleTickerProviderStateMixin 
         },
         backgroundColor: const Color(0xFFE8813A),
         foregroundColor: Colors.white,
+        elevation: 4,
+        shape: const CircleBorder(),
         tooltip: hasBackHistory ? 'Zurück' : 'Nach oben',
         child: Icon(
           hasBackHistory ? Icons.arrow_back : Icons.arrow_upward,
+          size: 20,
         ),
       ),
     );

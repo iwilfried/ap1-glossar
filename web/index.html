@@ -7,9 +7,13 @@
   <meta content="IE=Edge" http-equiv="X-UA-Compatible">
   <meta name="description" content="AP1 Coach: 386 Fachbegriffe, Karteikarten-Lernmodus und Multiple-Choice-Quiz für die IHK AP1 Prüfung. Lerne so, wie die IHK prüft.">
 
+  <!-- Theme-Color: wird aus Flutter dynamisch via window.setThemeColor() gesetzt -->
+  <meta id="theme-color-meta" name="theme-color" content="#162447">
+
   <!-- iOS meta tags & icons -->
   <meta name="mobile-web-app-capable" content="yes">
-  <meta name="apple-mobile-web-app-status-bar-style" content="black">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
   <meta name="apple-mobile-web-app-title" content="AP1 Coach">
   <link rel="apple-touch-icon" href="icons/Icon-192.png">
   <link rel="icon" type="image/svg+xml" href="icons/lf_logo.svg">
@@ -18,7 +22,7 @@
   <title>AP1 Coach – Dein Lernbegleiter für die IT-Ausbildung</title>
   <link rel="manifest" href="manifest.json">
   <link rel="stylesheet" type="text/css" href="splash/style.css">
-  <meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" name="viewport">
+  <meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, viewport-fit=cover" name="viewport">
   <script src="splash/splash.js"></script>
   <style>
     html, body {
@@ -67,6 +71,16 @@
       to { transform: rotate(360deg); }
     }
   </style>
+  <script>
+    // JS-Bridge: Flutter ruft diese Funktion bei jedem Theme-Wechsel auf.
+    // Aktualisiert die Browser-/PWA-Statusleiste passend zur App-Hintergrundfarbe.
+    window.setThemeColor = function(color) {
+      var meta = document.getElementById('theme-color-meta');
+      if (meta) {
+        meta.setAttribute('content', color);
+      }
+    };
+  </script>
 </head>
 <body style="background: #162447; margin: 0;">
   <div id="loading">

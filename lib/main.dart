@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'dart:html' as html;
+import 'dart:js' as js;
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:firebase_core/firebase_core.dart';
 import 'package:shared_preferences/shared_preferences.dart';
@@ -11,6 +12,36 @@ import 'package:ap1_glossar/screens/paywall/paywall_screen.dart';
 import 'package:ap1_glossar/services/firebase_service.dart';
 import 'package:ap1_glossar/services/fcm_service.dart';
 import 'firebase_options.dart';
+
+// ── Theme-Color Helper für PWA-Browser-Statusleiste ──────────────────────────
+// Hex-Farben für Browser-/PWA-Statusleiste je nach Theme-Modus.
+// Light: #F5F7FA (passt zum Listen-Hintergrund)
+// Dark:  #162447 (Navy, passt zur AppBar und zum Splashscreen)
+const String _themeColorLight = '#F5F7FA';
+const String _themeColorDark = '#162447';
+
+void updateBrowserThemeColor(ThemeMode mode) {
+  String color;
+  switch (mode) {
+    case ThemeMode.light:
+      color = _themeColorLight;
+      break;
+    case ThemeMode.dark:
+      color = _themeColorDark;
+      break;
+    case ThemeMode.system:
+      // System-Setting auslesen
+      final isSystemDark =
+          html.window.matchMedia('(prefers-color-scheme: dark)').matches;
+      color = isSystemDark ? _themeColorDark : _themeColorLight;
+      break;
+  }
+  try {
+    js.context.callMethod('setThemeColor', [color]);
+  } catch (_) {
+    // Stummes Fail-Safe: falls JS-Bridge nicht erreichbar (z.B. in Test-Umgebung)
+  }
+}
 
 void main() async {
   WidgetsFlutterBinding.ensureInitialized();
@@ -26,6 +57,10 @@ void main() async {
   final themeModePref = prefs.getString('theme_mode') ?? 'system';
   final themeMode = _stringToThemeMode(themeModePref);
   MyApp.themeNotifier.value = themeMode;
+
+  // Initiale Browser-Statusleisten-Farbe setzen
+  updateBrowserThemeColor(themeMode);
+
   runApp(MyApp(
     showWelcome: !seenWelcome && !purchaseSuccess && deepLinkTerm == null,
     deepLinkTerm: deepLinkTerm,
@@ -80,6 +115,9 @@ class _MyAppState extends State<MyApp> {
     return ValueListenableBuilder<ThemeMode>(
       valueListenable: MyApp.themeNotifier,
       builder: (context, themeMode, child) {
+        // Bei jedem Theme-Wechsel die Browser-Statusleiste mitziehen
+        updateBrowserThemeColor(themeMode);
+
         return MaterialApp(
           title: 'AP1 Coach – IHK Prüfungsvorbereitung',
           navigatorKey: _navigatorKey,
