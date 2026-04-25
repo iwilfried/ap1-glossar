@@ -1,8 +1,9 @@
 """
 Post-Build Patch für Flutter Web:
 1. Renderer von canvaskit → html (kein WASM, sofortiger Start)
-2. Splash-Screen in index.html einbauen (kein weißer Bildschirm)
-3. docs/ aktualisieren
+2. docs/ aktualisieren
+(Splash-Screen wird direkt in web/index.html gepflegt — nahtloser
+ Übergang zum Flutter-Welcome-Screen via identischem LF-Logo.)
 """
 import os, re, shutil
 from pathlib import Path
@@ -26,74 +27,7 @@ if '"renderer":"html"' in patched:
 else:
     print("⚠️  Renderer-Patch nicht angewendet")
 
-# ── 2. index.html: Loading-Splash einbauen
-index = BUILD / "index.html"
-html = index.read_text()
-
-splash_css = """
-<style>
-  #flutter-loading {
-    position: fixed; inset: 0;
-    display: flex; flex-direction: column;
-    align-items: center; justify-content: center;
-    background: #1B3A5C;
-    z-index: 9999;
-    transition: opacity 0.4s ease;
-  }
-  #flutter-loading.hidden { opacity: 0; pointer-events: none; }
-  .loader-logo {
-    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
-    font-size: 28px; font-weight: 700;
-    color: #ffffff; letter-spacing: -0.5px;
-    margin-bottom: 8px;
-  }
-  .loader-sub {
-    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
-    font-size: 14px; color: rgba(255,255,255,0.7);
-    margin-bottom: 32px;
-  }
-  .loader-bar-bg {
-    width: 200px; height: 3px;
-    background: rgba(255,255,255,0.2);
-    border-radius: 2px; overflow: hidden;
-  }
-  .loader-bar {
-    height: 100%; width: 0%;
-    background: #ffffff;
-    border-radius: 2px;
-    animation: load 2s ease forwards;
-  }
-  @keyframes load {
-    0%   { width: 0%; }
-    40%  { width: 60%; }
-    80%  { width: 85%; }
-    100% { width: 95%; }
-  }
-</style>
-"""
-
-splash_div = """
-<div id="flutter-loading">
-  <div class="loader-logo">AP1 Coach</div>
-  <div class="loader-sub">IHK Prüfungsvorbereitung</div>
-  <div class="loader-bar-bg"><div class="loader-bar"></div></div>
-</div>
-<script>
-  window.addEventListener('flutter-first-frame', function() {
-    var el = document.getElementById('flutter-loading');
-    if (el) { el.classList.add('hidden'); setTimeout(function(){ el.remove(); }, 500); }
-  });
-</script>
-"""
-
-# Splash-CSS vor </head> einfügen
-html = html.replace("</head>", splash_css + "\n</head>")
-# Splash-Div nach <body> einfügen
-html = html.replace("<body>", "<body>\n" + splash_div)
-index.write_text(html)
-print("✅ index.html: Splash-Screen eingebaut")
-
-# ── 3. version.json mit aktuellem Build-Timestamp aktualisieren
+# ── 2. version.json mit aktuellem Build-Timestamp aktualisieren
 import json, datetime
 version_file = BUILD / "version.json"
 ts = datetime.datetime.utcnow().strftime("%Y%m%d%H%M%S")
@@ -106,7 +40,7 @@ version_data = {
 version_file.write_text(json.dumps(version_data))
 print(f"✅ version.json → v1.4.0 (build {ts})")
 
-# ── 4. docs/ aktualisieren
+# ── 3. docs/ aktualisieren
 if DOCS.exists():
     shutil.rmtree(DOCS)
 DOCS.mkdir()

@@ -167,7 +167,7 @@ class HomePage extends StatefulWidget {
   HomePageState createState() => HomePageState();
 }
 
-class HomePageState extends State<HomePage> {
+class HomePageState extends State<HomePage> with SingleTickerProviderStateMixin {
   List<String> _visibleKeys = [];
   final _searchController = TextEditingController();
   final _scrollController = ScrollController();
@@ -175,9 +175,21 @@ class HomePageState extends State<HomePage> {
   String? _selectedThema; // null = alle Themen
   String? _activeDeepLinkTerm;
 
+  late AnimationController _fadeController;
+  late Animation<double> _fadeAnimation;
+
   @override
   void initState() {
     super.initState();
+    _fadeController = AnimationController(
+      duration: const Duration(milliseconds: 250),
+      vsync: this,
+    );
+    _fadeAnimation = CurvedAnimation(
+      parent: _fadeController,
+      curve: Curves.easeIn,
+    );
+    _fadeController.forward();
     _applyFilter();
     if (widget.deepLinkTerm != null &&
         abbreviations.containsKey(widget.deepLinkTerm)) {
@@ -189,6 +201,7 @@ class HomePageState extends State<HomePage> {
 
   @override
   void dispose() {
+    _fadeController.dispose();
     _searchController.dispose();
     _scrollController.dispose();
     super.dispose();
@@ -325,9 +338,11 @@ class HomePageState extends State<HomePage> {
         ],
       ),
       drawer: const AppDrawer(),
-      body: Column(
-        crossAxisAlignment: CrossAxisAlignment.start,
-        children: [
+      body: FadeTransition(
+        opacity: _fadeAnimation,
+        child: Column(
+          crossAxisAlignment: CrossAxisAlignment.start,
+          children: [
           // ── Suchfeld ────────────────────────────────────────────────────────
           Padding(
             padding: const EdgeInsets.fromLTRB(16, 14, 16, 8),
@@ -643,6 +658,7 @@ class HomePageState extends State<HomePage> {
                   ),
           ),
         ],
+        ),
       ),
     );
   }

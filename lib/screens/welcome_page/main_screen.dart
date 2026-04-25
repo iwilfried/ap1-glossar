@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:ap1_glossar/screens/home_page/home_page.dart';
+import 'package:ap1_glossar/widgets/lf_logo.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 
 const Color kBgColor = Color(0xFF162447);
@@ -27,37 +28,7 @@ class _WelcomeScreenState extends State<WelcomeScreen> {
               const SizedBox(height: 40),
 
               // ── Logo-Block
-              Container(
-                width: 100,
-                height: 100,
-                decoration: BoxDecoration(
-                  color: kCardColor,
-                  borderRadius: BorderRadius.circular(18),
-                  border: Border.all(color: Colors.white12, width: 1),
-                ),
-                child: Column(
-                  mainAxisAlignment: MainAxisAlignment.center,
-                  children: const [
-                    Text(
-                      'LF',
-                      style: TextStyle(
-                        fontFamily: 'Inter',
-                        color: Colors.white,
-                        fontSize: 40,
-                        fontWeight: FontWeight.bold,
-                      ),
-                    ),
-                    SizedBox(height: 8),
-                    SizedBox(
-                      width: 40,
-                      height: 3,
-                      child: DecoratedBox(
-                        decoration: BoxDecoration(color: kAccentColor),
-                      ),
-                    ),
-                  ],
-                ),
-              ),
+              const LFLogo(size: 100),
               const SizedBox(height: 12),
               const Text(
                 'Learning Factory',

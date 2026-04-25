@@ -12,6 +12,8 @@
   <meta name="apple-mobile-web-app-status-bar-style" content="black">
   <meta name="apple-mobile-web-app-title" content="AP1 Coach">
   <link rel="apple-touch-icon" href="icons/Icon-192.png">
+  <link rel="icon" type="image/svg+xml" href="icons/lf_logo.svg">
+  <link rel="alternate icon" type="image/png" href="favicon.png">
 
   <title>AP1 Coach – Dein Lernbegleiter für die IT-Ausbildung</title>
   <link rel="manifest" href="manifest.json">
@@ -38,25 +40,13 @@
     #loading .lf-logo {
       width: 100px;
       height: 100px;
-      background-color: #1e3a5f;
-      border: 1px solid rgba(255, 255, 255, 0.12);
-      border-radius: 18px;
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      justify-content: center;
+      display: block;
     }
-    #loading .lf-logo .lf-text {
-      color: #ffffff;
-      font-size: 40px;
-      font-weight: 700;
+    #loading .lf-sub {
+      margin-top: 12px;
+      color: rgba(255, 255, 255, 0.54);
+      font-size: 14px;
       line-height: 1;
-    }
-    #loading .lf-logo .lf-line {
-      width: 40px;
-      height: 3px;
-      background-color: #E8813A;
-      margin-top: 8px;
     }
     #loading .loading-text {
       margin-top: 24px;
@@ -78,19 +68,19 @@
     }
   </style>
 </head>
-<body>
+<body style="background: #162447; margin: 0;">
   <div id="loading">
-    <div class="lf-logo">
-      <div class="lf-text">LF</div>
-      <div class="lf-line"></div>
-    </div>
+    <img class="lf-logo" src="icons/lf_logo.svg" alt="Learning Factory" width="100" height="100">
+    <div class="lf-sub">Learning Factory</div>
     <div class="loading-text">Wird geladen...</div>
     <div class="spinner"></div>
   </div>
   <script>
     window.addEventListener('flutter-first-frame', function() {
-      var el = document.getElementById('loading');
-      if (el) el.remove();
+      setTimeout(function() {
+        var loading = document.getElementById('loading');
+        if (loading) loading.style.display = 'none';
+      }, 300);
     });
   </script>
   <script src="flutter_bootstrap.js" async></script>
