@@ -174,6 +174,7 @@ class HomePageState extends State<HomePage> with SingleTickerProviderStateMixin 
   Aspekt _selectedAspekt = Aspekt.alle;
   String? _selectedThema; // null = alle Themen
   String? _activeDeepLinkTerm;
+  String? _expandedTermId;
 
   late AnimationController _fadeController;
   late Animation<double> _fadeAnimation;
@@ -264,8 +265,9 @@ class HomePageState extends State<HomePage> with SingleTickerProviderStateMixin 
     _applyFilter(search: term, aspekt: Aspekt.alle, clearThema: true);
     _activeDeepLinkTerm = term;
 
-    // Reorder: put exact match first
+    // Reorder: put exact match first, open in accordion
     setState(() {
+      _expandedTermId = term;
       final idx = _visibleKeys.indexOf(term);
       if (idx > 0) {
         _visibleKeys.remove(term);
@@ -648,11 +650,16 @@ class HomePageState extends State<HomePage> with SingleTickerProviderStateMixin 
                       final key = _visibleKeys[i];
                       final aspect = termAspect[key] ?? 'Funktional';
                       return _GlossarCard(
+                        key: ValueKey(key),
                         term: key,
                         definition: abbreviations[key] ?? '',
                         aspekt: _aspektFromString(aspect),
                         onRelatedTap: navigateToTerm,
-                        expandOnLoad: _activeDeepLinkTerm == key,
+                        isExpanded: _expandedTermId == key,
+                        onToggle: () => setState(() {
+                          _expandedTermId =
+                              _expandedTermId == key ? null : key;
+                        }),
                       );
                     },
                   ),
@@ -719,14 +726,17 @@ class _GlossarCard extends StatefulWidget {
   final String definition;
   final Aspekt aspekt;
   final void Function(String) onRelatedTap;
-  final bool expandOnLoad;
+  final bool isExpanded;
+  final VoidCallback onToggle;
 
   const _GlossarCard({
+    super.key,
     required this.term,
     required this.definition,
     required this.aspekt,
     required this.onRelatedTap,
-    this.expandOnLoad = false,
+    required this.isExpanded,
+    required this.onToggle,
   });
 
   @override
@@ -735,14 +745,12 @@ class _GlossarCard extends StatefulWidget {
 
 class _GlossarCardState extends State<_GlossarCard>
     with SingleTickerProviderStateMixin {
-  bool _expanded = false;
   List<String>? _related;
 
   @override
   void initState() {
     super.initState();
-    _expanded = widget.expandOnLoad;
-    if (_expanded) {
+    if (widget.isExpanded) {
       _related = getRelatedTerms(widget.term);
     }
   }
@@ -750,21 +758,24 @@ class _GlossarCardState extends State<_GlossarCard>
   @override
   void didUpdateWidget(covariant _GlossarCard oldWidget) {
     super.didUpdateWidget(oldWidget);
-    if (!oldWidget.expandOnLoad && widget.expandOnLoad && !_expanded) {
-      setState(() {
-        _expanded = true;
-        _related = getRelatedTerms(widget.term);
-      });
+    if (widget.isExpanded && _related == null) {
+      _related = getRelatedTerms(widget.term);
     }
   }
 
-  void _toggleExpand() {
-    setState(() {
-      _expanded = !_expanded;
-      if (_expanded && _related == null) {
-        _related = getRelatedTerms(widget.term);
-      }
-    });
+  void _handleTap() {
+    if (!widget.isExpanded) {
+      Future.delayed(const Duration(milliseconds: 100), () {
+        if (mounted) {
+          Scrollable.ensureVisible(
+            context,
+            duration: const Duration(milliseconds: 300),
+            curve: Curves.easeInOut,
+          );
+        }
+      });
+    }
+    widget.onToggle();
   }
 
   @override
@@ -792,7 +803,7 @@ class _GlossarCardState extends State<_GlossarCard>
         borderRadius: BorderRadius.circular(14),
         child: InkWell(
           borderRadius: BorderRadius.circular(14),
-          onTap: _toggleExpand,
+          onTap: _handleTap,
           child: Padding(
             padding: const EdgeInsets.fromLTRB(14, 12, 12, 12),
             child: Column(
@@ -843,7 +854,7 @@ class _GlossarCardState extends State<_GlossarCard>
                       ),
                     ),
                     Icon(
-                      _expanded
+                      widget.isExpanded
                           ? Icons.keyboard_arrow_up_rounded
                           : Icons.keyboard_arrow_down_rounded,
                       color: Colors.grey.shade400,
@@ -853,7 +864,7 @@ class _GlossarCardState extends State<_GlossarCard>
                 ),
 
                 // ── Kurzdefinition (eingeklappt) ───────────────────────────
-                if (!_expanded) ...[
+                if (!widget.isExpanded) ...[
                   const SizedBox(height: 8),
                   Text(
                     _shortDef(widget.definition),
@@ -868,7 +879,7 @@ class _GlossarCardState extends State<_GlossarCard>
                 ],
 
                 // ── Vollständige Definition + Verwandte Begriffe ───────────
-                if (_expanded) ...[
+                if (widget.isExpanded) ...[
                   const SizedBox(height: 10),
                   Container(
                     padding: const EdgeInsets.all(12),
