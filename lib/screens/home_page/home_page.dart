@@ -158,6 +158,23 @@ const List<String> _themenReihenfolge = [
   'WiSo Digitale Zusammenarbeit',
 ];
 
+// ── Navigation-Eintrag (für Back-Stack) ───────────────────────────────────────
+class _NavigationEntry {
+  final String search;
+  final Aspekt aspekt;
+  final String? thema;
+  final String? expandedTermId;
+  final double scrollOffset;
+
+  _NavigationEntry({
+    required this.search,
+    required this.aspekt,
+    required this.thema,
+    required this.expandedTermId,
+    required this.scrollOffset,
+  });
+}
+
 // ── HomePage ──────────────────────────────────────────────────────────────────
 class HomePage extends StatefulWidget {
   final String? deepLinkTerm;
@@ -175,6 +192,8 @@ class HomePageState extends State<HomePage> with SingleTickerProviderStateMixin 
   String? _selectedThema; // null = alle Themen
   String? _activeDeepLinkTerm;
   String? _expandedTermId;
+  bool _showScrollTopButton = false;
+  final List<_NavigationEntry> _navigationStack = [];
 
   late AnimationController _fadeController;
   late Animation<double> _fadeAnimation;
@@ -191,6 +210,14 @@ class HomePageState extends State<HomePage> with SingleTickerProviderStateMixin 
       curve: Curves.easeIn,
     );
     _fadeController.forward();
+
+    _scrollController.addListener(() {
+      final shouldShow = _scrollController.offset > 400;
+      if (shouldShow != _showScrollTopButton) {
+        setState(() => _showScrollTopButton = shouldShow);
+      }
+    });
+
     _applyFilter();
     if (widget.deepLinkTerm != null &&
         abbreviations.containsKey(widget.deepLinkTerm)) {
@@ -260,14 +287,25 @@ class HomePageState extends State<HomePage> with SingleTickerProviderStateMixin 
   }
 
   void navigateToTerm(String term) {
+    // Aktuellen Zustand auf den Back-Stack pushen
+    _navigationStack.add(_NavigationEntry(
+      search: _searchController.text,
+      aspekt: _selectedAspekt,
+      thema: _selectedThema,
+      expandedTermId: _expandedTermId,
+      scrollOffset: _scrollController.hasClients
+          ? _scrollController.offset
+          : 0.0,
+    ));
+
     // Set search to exact term name
     _searchController.text = term;
     _applyFilter(search: term, aspekt: Aspekt.alle, clearThema: true);
     _activeDeepLinkTerm = term;
 
-    // Reorder: put exact match first, open in accordion
+    // Reorder: put exact match first, but keep it COLLAPSED (Nutzer entscheidet)
     setState(() {
-      _expandedTermId = term;
+      _expandedTermId = null;
       final idx = _visibleKeys.indexOf(term);
       if (idx > 0) {
         _visibleKeys.remove(term);
@@ -280,6 +318,38 @@ class HomePageState extends State<HomePage> with SingleTickerProviderStateMixin 
       if (!mounted || !_scrollController.hasClients) return;
       _scrollController.animateTo(
         0,
+        duration: const Duration(milliseconds: 300),
+        curve: Curves.easeInOut,
+      );
+    });
+  }
+
+  // Zurück zum vorherigen Zustand (Browser-artig)
+  void _navigateBack() {
+    if (_navigationStack.isEmpty) return;
+    final entry = _navigationStack.removeLast();
+
+    _searchController.text = entry.search;
+    _applyFilter(
+      search: entry.search,
+      aspekt: entry.aspekt,
+      thema: entry.thema,
+      clearThema: entry.thema == null,
+    );
+
+    // Karte beim Zurückkommen IMMER zugeklappt — sauberer Listenüberblick
+    setState(() {
+      _expandedTermId = null;
+    });
+
+    // Scroll-Position wiederherstellen
+    Future.delayed(const Duration(milliseconds: 150), () {
+      if (!mounted || !_scrollController.hasClients) return;
+      _scrollController.animateTo(
+        entry.scrollOffset.clamp(
+          0.0,
+          _scrollController.position.maxScrollExtent,
+        ),
         duration: const Duration(milliseconds: 300),
         curve: Curves.easeInOut,
       );
@@ -667,6 +737,38 @@ class HomePageState extends State<HomePage> with SingleTickerProviderStateMixin 
         ],
         ),
       ),
+      floatingActionButton: _buildFab(),
+    );
+  }
+
+  // ── Floating Action Button: Back ODER Scroll-to-Top ────────────────────────
+  Widget _buildFab() {
+    final hasBackHistory = _navigationStack.isNotEmpty;
+    final isVisible = hasBackHistory || _showScrollTopButton;
+
+    return AnimatedScale(
+      scale: isVisible ? 1.0 : 0.0,
+      duration: const Duration(milliseconds: 200),
+      child: FloatingActionButton(
+        onPressed: () {
+          if (hasBackHistory) {
+            _navigateBack();
+          } else {
+            setState(() => _expandedTermId = null);
+            _scrollController.animateTo(
+              0,
+              duration: const Duration(milliseconds: 500),
+              curve: Curves.easeInOut,
+            );
+          }
+        },
+        backgroundColor: const Color(0xFFE8813A),
+        foregroundColor: Colors.white,
+        tooltip: hasBackHistory ? 'Zurück' : 'Nach oben',
+        child: Icon(
+          hasBackHistory ? Icons.arrow_back : Icons.arrow_upward,
+        ),
+      ),
     );
   }
 
@@ -847,6 +949,8 @@ class _GlossarCardState extends State<_GlossarCard>
                                       ?.color ??
                                   Colors.black,
                             ),
+                            maxLines: 2,
+                            overflow: TextOverflow.ellipsis,
                           ),
                           const SizedBox(height: 3),
                           _AspektBadge(aspekt: widget.aspekt),
