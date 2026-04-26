@@ -20,8 +20,8 @@ class AppDrawer extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Drawer(
-      child: Column(
-        crossAxisAlignment: CrossAxisAlignment.stretch,
+      child: ListView(
+        padding: EdgeInsets.zero,
         children: <Widget>[
           // ── Header ────────────────────────────────────────────────────────
           DrawerHeader(
@@ -115,9 +115,8 @@ class AppDrawer extends StatelessWidget {
               if (!context.mounted) return;
               Navigator.of(context).push(
                 MaterialPageRoute(
-                  builder: (_) => isPro
-                      ? const LeaderboardScreen()
-                      : const PaywallScreen(),
+                  builder: (_) =>
+                      isPro ? const LeaderboardScreen() : const PaywallScreen(),
                 ),
               );
             },
@@ -210,16 +209,15 @@ class AppDrawer extends StatelessWidget {
             ),
           ),
 
-          const Spacer(),
-          const Divider(),
-          ListTile(
-            leading: const Icon(Icons.info, color: Colors.grey),
-            title: const Text(
-              'v1.9.8 – Learning Factory',
+          const Divider(height: 24),
+          const ListTile(
+            leading: Icon(Icons.info, color: Colors.grey),
+            title: Text(
+              'v2.0.0 – Learning Factory',
               style: TextStyle(color: Colors.grey, fontSize: 13),
             ),
           ),
-          const SizedBox(height: 8),
+          const SizedBox(height: 16),
         ],
       ),
     );

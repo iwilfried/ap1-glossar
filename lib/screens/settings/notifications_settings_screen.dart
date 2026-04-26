@@ -1,3 +1,4 @@
+import 'package:cloud_functions/cloud_functions.dart';
 import 'package:firebase_messaging/firebase_messaging.dart';
 import 'package:flutter/material.dart';
 import 'package:ap1_glossar/data/related.dart';
@@ -16,8 +17,10 @@ class _NotificationsSettingsScreenState extends State<NotificationsSettingsScree
   String _notificationTime = '09:00';
   int _termsPerDay = 2;
   bool _weekdaysOnly = true;
+  bool _dailyPushEnabled = false;
   NotificationSettings? _permissionSettings;
   bool _isSaving = false;
+  bool _isSendingTest = false;
 
   @override
   void initState() {
@@ -34,6 +37,7 @@ class _NotificationsSettingsScreenState extends State<NotificationsSettingsScree
       _notificationTime = (prefs?['notificationTime'] as String?) ?? '09:00';
       _termsPerDay = (prefs?['termsPerDay'] as int?) ?? 2;
       _weekdaysOnly = (prefs?['weekdaysOnly'] as bool?) ?? true;
+      _dailyPushEnabled = (prefs?['dailyPushEnabled'] as bool?) ?? false;
       _permissionSettings = settings;
     });
   }
@@ -45,6 +49,7 @@ class _NotificationsSettingsScreenState extends State<NotificationsSettingsScree
       'notificationTime': _notificationTime,
       'termsPerDay': _termsPerDay,
       'weekdaysOnly': _weekdaysOnly,
+      'dailyPushEnabled': _dailyPushEnabled,
     });
     setState(() => _isSaving = false);
     if (mounted) {
@@ -63,6 +68,37 @@ class _NotificationsSettingsScreenState extends State<NotificationsSettingsScree
       final message = settings.authorizationStatus == AuthorizationStatus.authorized
           ? 'Benachrichtigungen aktiviert' : 'Benachrichtigungen nicht aktiviert';
       ScaffoldMessenger.of(context).showSnackBar(SnackBar(content: Text(message)));
+    }
+  }
+
+  Future<void> _sendTestPush() async {
+    if (_permissionSettings?.authorizationStatus != AuthorizationStatus.authorized) {
+      ScaffoldMessenger.of(context).showSnackBar(
+        const SnackBar(content: Text('Bitte aktiviere zuerst Benachrichtigungen.')),
+      );
+      return;
+    }
+
+    setState(() => _isSendingTest = true);
+    try {
+      final callable = FirebaseFunctions
+          .instanceFor(region: 'europe-west1')
+          .httpsCallable('testDailyChallenge');
+      final result = await callable.call();
+      final term = result.data['term'] as String? ?? '?';
+      if (mounted) {
+        ScaffoldMessenger.of(context).showSnackBar(
+          SnackBar(content: Text('Test-Push gesendet (Begriff: $term)')),
+        );
+      }
+    } catch (e) {
+      if (mounted) {
+        ScaffoldMessenger.of(context).showSnackBar(
+          SnackBar(content: Text('Fehler: $e')),
+        );
+      }
+    } finally {
+      if (mounted) setState(() => _isSendingTest = false);
     }
   }
 
@@ -85,6 +121,9 @@ class _NotificationsSettingsScreenState extends State<NotificationsSettingsScree
     }
   }
 
+  bool get _pushAuthorized =>
+      _permissionSettings?.authorizationStatus == AuthorizationStatus.authorized;
+
   @override
   Widget build(BuildContext context) {
     final themes = ['alle', ...termGroups.keys];
@@ -103,6 +142,44 @@ class _NotificationsSettingsScreenState extends State<NotificationsSettingsScree
               style: TextStyle(fontSize: 18, fontWeight: FontWeight.bold),
             ),
             const SizedBox(height: 16),
+
+            // ── Frage des Tages aktivieren ─────────────────────────────────
+            Card(
+              elevation: 2,
+              child: Padding(
+                padding: const EdgeInsets.all(12),
+                child: Column(
+                  crossAxisAlignment: CrossAxisAlignment.start,
+                  children: [
+                    SwitchListTile(
+                      contentPadding: EdgeInsets.zero,
+                      title: const Text(
+                        '🎯 Frage des Tages',
+                        style: TextStyle(fontWeight: FontWeight.bold),
+                      ),
+                      subtitle: const Text(
+                        'Tägliche Push-Erinnerung mit einem Lernbegriff zur gewählten Uhrzeit',
+                      ),
+                      value: _dailyPushEnabled && _pushAuthorized,
+                      onChanged: _pushAuthorized
+                          ? (value) => setState(() => _dailyPushEnabled = value)
+                          : null,
+                    ),
+                    if (!_pushAuthorized)
+                      Padding(
+                        padding: const EdgeInsets.only(top: 8),
+                        child: Text(
+                          'Aktiviere zuerst die System-Benachrichtigungen weiter unten.',
+                          style: TextStyle(color: Colors.orange.shade700, fontSize: 13),
+                        ),
+                      ),
+                  ],
+                ),
+              ),
+            ),
+
+            const SizedBox(height: 16),
+
             DropdownButtonFormField<String>(
               initialValue: _selectedTheme,
               decoration: const InputDecoration(labelText: 'Thema'),
@@ -134,7 +211,10 @@ class _NotificationsSettingsScreenState extends State<NotificationsSettingsScree
                       ),
                     );
                     if (time != null) {
-                      setState(() => _notificationTime = time.format(context));
+                      // Auf "HH:MM" 24h-Format normalisieren (für Cloud Function)
+                      final h = time.hour.toString().padLeft(2, '0');
+                      final m = time.minute.toString().padLeft(2, '0');
+                      setState(() => _notificationTime = '$h:$m');
                     }
                   },
                   child: const Text('Ändern'),
@@ -164,7 +244,7 @@ class _NotificationsSettingsScreenState extends State<NotificationsSettingsScree
             const SizedBox(height: 16),
             Text('Push-Berechtigung: ${_permissionLabel()}'),
             const SizedBox(height: 10),
-            if (_permissionSettings?.authorizationStatus != AuthorizationStatus.authorized)
+            if (!_pushAuthorized)
               ElevatedButton(
                 onPressed: _requestPermission,
                 child: const Text('Benachrichtigungen aktivieren'),
@@ -176,6 +256,24 @@ class _NotificationsSettingsScreenState extends State<NotificationsSettingsScree
                   ? const CircularProgressIndicator(color: Colors.white)
                   : const Text('Einstellungen speichern'),
             ),
+            const SizedBox(height: 16),
+
+            // ── Test-Push-Button ───────────────────────────────────────────
+            if (_pushAuthorized)
+              OutlinedButton.icon(
+                onPressed: _isSendingTest ? null : _sendTestPush,
+                icon: _isSendingTest
+                    ? const SizedBox(
+                        width: 16,
+                        height: 16,
+                        child: CircularProgressIndicator(strokeWidth: 2),
+                      )
+                    : const Icon(Icons.notifications_active),
+                label: Text(_isSendingTest
+                    ? 'Wird gesendet...'
+                    : 'Test-Push jetzt senden'),
+              ),
+
             const SizedBox(height: 32),
             const Divider(),
             const SizedBox(height: 16),

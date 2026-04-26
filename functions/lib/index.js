@@ -1,6 +1,6 @@
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.updateMCScore = exports.digistore24Webhook = exports.generateVouchers = exports.redeemVoucher = exports.generateMCQuestion = exports.evaluateAnswer = exports.generateQuestion = void 0;
+exports.testDailyChallenge = exports.sendDailyChallenge = exports.updateMCScore = exports.digistore24Webhook = exports.generateVouchers = exports.redeemVoucher = exports.generateMCQuestion = exports.evaluateAnswer = exports.generateQuestion = void 0;
 const functions = require("firebase-functions");
 const admin = require("firebase-admin");
 const crypto = require("crypto");
@@ -762,5 +762,225 @@ exports.updateMCScore = functions
         createdAt: (lbData === null || lbData === void 0 ? void 0 : lbData.createdAt) || admin.firestore.FieldValue.serverTimestamp(),
     }, { merge: true });
     return { updated: true, score: newTotalScore };
+});
+// ─────────────────────────────────────────────────────────────────────────────
+// DAILY CHALLENGE PUSH NOTIFICATIONS
+// ─────────────────────────────────────────────────────────────────────────────
+//
+// scheduled function läuft alle 15 Minuten und prüft, welche User gerade
+// (innerhalb der letzten 15 Min) ihre gewünschte notificationTime erreicht
+// haben. Schickt einen Push mit zufälligem Begriff aus der globalen Liste.
+//
+// Datenmodell:
+// - users/{uid}.fcmToken          (string, gesetzt durch FcmService)
+// - users/{uid}.notificationTime  (string "HH:MM", gesetzt durch Settings)
+// - users/{uid}.dailyPushEnabled  (boolean, gesetzt durch Settings, default false)
+// - users/{uid}.lastDailyPushDate (string "YYYY-MM-DD", gesetzt durch diese Function)
+//
+// Begriffsquelle: globale Sammlung "dailyTerms" mit doc {term: "DHCP"} pro Begriff.
+// Falls leer, wird Fallback-Liste verwendet.
+const FALLBACK_DAILY_TERMS = [
+    'DHCP', 'IPv6', 'Subnetting', 'PoE', 'DSGVO', 'Firewall', 'VPN', 'NAT',
+    'DNS', 'Backup', 'Change Management', 'Ergonomie', '2FA', 'Phishing',
+    'KI', 'ERP', 'Härtung', 'Aktivitätsdiagramm', 'UML', 'ER-Diagramm',
+    'Daisy-Chaining', 'TCO', 'CAPEX', 'OPEX', 'Barrierefreiheit',
+];
+function pickRandomTerm(terms) {
+    if (terms.length === 0)
+        return FALLBACK_DAILY_TERMS[0];
+    return terms[Math.floor(Math.random() * terms.length)];
+}
+async function loadDailyTerms() {
+    try {
+        const snap = await admin.firestore().collection('dailyTerms').get();
+        if (snap.empty)
+            return FALLBACK_DAILY_TERMS;
+        const terms = snap.docs
+            .map((d) => { var _a; return (_a = d.data().term) === null || _a === void 0 ? void 0 : _a.trim(); })
+            .filter((t) => !!t && t.length > 0);
+        return terms.length > 0 ? terms : FALLBACK_DAILY_TERMS;
+    }
+    catch (err) {
+        console.error('loadDailyTerms failed, using fallback:', err);
+        return FALLBACK_DAILY_TERMS;
+    }
+}
+// Berechnet die User-Lokalzeit (Berlin-TZ) als "HH:MM"-String, gerundet
+// auf die nächsten 15 Minuten nach unten. Beispiel: 09:23 -> "09:15".
+function currentBerlinTimeSlot() {
+    var _a, _b, _c, _d;
+    // Date in Europe/Berlin
+    const fmt = new Intl.DateTimeFormat('de-DE', {
+        timeZone: 'Europe/Berlin',
+        hour: '2-digit',
+        minute: '2-digit',
+        hour12: false,
+    });
+    const parts = fmt.formatToParts(new Date());
+    const hour = Number((_b = (_a = parts.find((p) => p.type === 'hour')) === null || _a === void 0 ? void 0 : _a.value) !== null && _b !== void 0 ? _b : 0);
+    const minute = Number((_d = (_c = parts.find((p) => p.type === 'minute')) === null || _c === void 0 ? void 0 : _c.value) !== null && _d !== void 0 ? _d : 0);
+    // Slot: 15-Min-Bucket
+    const slotMinute = Math.floor(minute / 15) * 15;
+    const slotStart = `${String(hour).padStart(2, '0')}:${String(slotMinute).padStart(2, '0')}`;
+    const slotEndMinute = slotMinute + 15;
+    const slotEndHour = slotEndMinute >= 60 ? (hour + 1) % 24 : hour;
+    const slotEnd = `${String(slotEndHour).padStart(2, '0')}:${String(slotEndMinute % 60).padStart(2, '0')}`;
+    // Datums-Key in Berlin-TZ
+    const dateFmt = new Intl.DateTimeFormat('en-CA', {
+        timeZone: 'Europe/Berlin',
+        year: 'numeric',
+        month: '2-digit',
+        day: '2-digit',
+    });
+    const dateKey = dateFmt.format(new Date()); // "YYYY-MM-DD"
+    return { slotStart, slotEnd, dateKey };
+}
+// Prüft ob notificationTime in den aktuellen 15-Min-Slot fällt
+function isInCurrentSlot(notificationTime, slotStart, slotEnd) {
+    const toMinutes = (t) => {
+        const [h, m] = t.split(':').map(Number);
+        return h * 60 + m;
+    };
+    const target = toMinutes(notificationTime);
+    const start = toMinutes(slotStart);
+    const end = toMinutes(slotEnd);
+    // Spezialfall Mitternacht-Sprung
+    if (start > end) {
+        return target >= start || target < end;
+    }
+    return target >= start && target < end;
+}
+exports.sendDailyChallenge = functions
+    .region('europe-west1')
+    .pubsub.schedule('every 15 minutes')
+    .timeZone('Europe/Berlin')
+    .onRun(async () => {
+    var _a;
+    const { slotStart, slotEnd, dateKey } = currentBerlinTimeSlot();
+    console.log(`sendDailyChallenge: slot=${slotStart}-${slotEnd}, dateKey=${dateKey}`);
+    const db = admin.firestore();
+    const messaging = admin.messaging();
+    // Kandidaten: User mit dailyPushEnabled=true
+    const snap = await db
+        .collection('users')
+        .where('dailyPushEnabled', '==', true)
+        .get();
+    if (snap.empty) {
+        console.log('sendDailyChallenge: keine User mit dailyPushEnabled=true');
+        return null;
+    }
+    const terms = await loadDailyTerms();
+    let sent = 0;
+    let skipped = 0;
+    let failed = 0;
+    for (const userDoc of snap.docs) {
+        const uid = userDoc.id;
+        const data = userDoc.data();
+        const fcmToken = data.fcmToken;
+        const notificationTime = data.notificationTime;
+        const lastPush = data.lastDailyPushDate;
+        // Skip-Bedingungen
+        if (!fcmToken || fcmToken.length === 0) {
+            skipped++;
+            continue;
+        }
+        if (!notificationTime || !/^\d{2}:\d{2}$/.test(notificationTime)) {
+            skipped++;
+            continue;
+        }
+        if (!isInCurrentSlot(notificationTime, slotStart, slotEnd)) {
+            skipped++;
+            continue;
+        }
+        if (lastPush === dateKey) {
+            // Heute schon gesendet (Idempotenz, falls Funktion zweimal triggert)
+            skipped++;
+            continue;
+        }
+        const term = pickRandomTerm(terms);
+        const title = '🎯 Frage des Tages';
+        const body = `Heute lernst du: ${term} — Tippe für die Challenge!`;
+        try {
+            await messaging.send({
+                token: fcmToken,
+                notification: { title, body },
+                data: {
+                    type: 'daily_challenge',
+                    term,
+                    dateKey,
+                },
+                webpush: {
+                    notification: {
+                        icon: '/icons/Icon-192.png',
+                        badge: '/icons/Icon-maskable-192.png',
+                    },
+                    fcmOptions: {
+                        link: `/coach/?term=${encodeURIComponent(term)}`,
+                    },
+                },
+            });
+            await userDoc.ref.update({ lastDailyPushDate: dateKey });
+            sent++;
+        }
+        catch (err) {
+            failed++;
+            console.error(`sendDailyChallenge: failed for ${uid}:`, (_a = err === null || err === void 0 ? void 0 : err.code) !== null && _a !== void 0 ? _a : err);
+            // Bei ungültigem Token: Token entfernen
+            if ((err === null || err === void 0 ? void 0 : err.code) === 'messaging/registration-token-not-registered' ||
+                (err === null || err === void 0 ? void 0 : err.code) === 'messaging/invalid-registration-token') {
+                await userDoc.ref.update({
+                    fcmToken: admin.firestore.FieldValue.delete(),
+                    dailyPushEnabled: false,
+                });
+            }
+        }
+    }
+    console.log(`sendDailyChallenge: sent=${sent}, skipped=${skipped}, failed=${failed}`);
+    return null;
+});
+// Hilfsfunktion für manuelles Testen ohne 24h Wartezeit.
+// Triggert für den aufrufenden User sofort einen Daily-Push.
+// Nur in der App im Settings-Screen verwenden ("Test-Push").
+exports.testDailyChallenge = functions
+    .region('europe-west1')
+    .https.onCall(async (_data, context) => {
+    var _a, _b;
+    if (!context.auth) {
+        throw new functions.https.HttpsError('unauthenticated', 'User must be authenticated');
+    }
+    const uid = context.auth.uid;
+    const userRef = admin.firestore().collection('users').doc(uid);
+    const userDoc = await userRef.get();
+    const data = userDoc.data();
+    const fcmToken = data === null || data === void 0 ? void 0 : data.fcmToken;
+    if (!fcmToken) {
+        throw new functions.https.HttpsError('failed-precondition', 'Kein FCM-Token vorhanden. Aktiviere zuerst Benachrichtigungen.');
+    }
+    const terms = await loadDailyTerms();
+    const term = pickRandomTerm(terms);
+    try {
+        await admin.messaging().send({
+            token: fcmToken,
+            notification: {
+                title: '🎯 Test-Push',
+                body: `So sieht deine Tagesfrage aus: ${term}`,
+            },
+            data: { type: 'daily_challenge', term, test: 'true' },
+            webpush: {
+                notification: {
+                    icon: '/icons/Icon-192.png',
+                    badge: '/icons/Icon-maskable-192.png',
+                },
+                fcmOptions: {
+                    link: `/coach/?term=${encodeURIComponent(term)}`,
+                },
+            },
+        });
+        return { success: true, term };
+    }
+    catch (err) {
+        console.error('testDailyChallenge failed:', err);
+        throw new functions.https.HttpsError('internal', `Push fehlgeschlagen: ${(_b = (_a = err === null || err === void 0 ? void 0 : err.code) !== null && _a !== void 0 ? _a : err === null || err === void 0 ? void 0 : err.message) !== null && _b !== void 0 ? _b : 'unbekannt'}`);
+    }
 });
 //# sourceMappingURL=index.js.map
