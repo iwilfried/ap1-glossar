@@ -65,9 +65,16 @@ class _NotificationsSettingsScreenState extends State<NotificationsSettingsScree
       _permissionSettings = settings;
     });
     if (mounted) {
-      final message = settings.authorizationStatus == AuthorizationStatus.authorized
-          ? 'Benachrichtigungen aktiviert' : 'Benachrichtigungen nicht aktiviert';
-      ScaffoldMessenger.of(context).showSnackBar(SnackBar(content: Text(message)));
+      final isAuth = settings.authorizationStatus == AuthorizationStatus.authorized;
+      final message = isAuth
+          ? 'Benachrichtigungen aktiviert — Token wird gespeichert...'
+          : 'Benachrichtigungen nicht aktiviert';
+      ScaffoldMessenger.of(context).showSnackBar(
+        SnackBar(
+          content: Text(message),
+          duration: Duration(seconds: isAuth ? 3 : 4),
+        ),
+      );
     }
   }
 
@@ -80,7 +87,31 @@ class _NotificationsSettingsScreenState extends State<NotificationsSettingsScree
     }
 
     setState(() => _isSendingTest = true);
+
     try {
+      // Schritt 1: Sicherstellen dass Token vorhanden ist
+      // (3 Versuche mit Backoff, falls Token noch nicht generiert wurde)
+      final token = await FcmService.instance.getTokenAndSave(retries: 3);
+
+      if (token == null) {
+        if (mounted) {
+          ScaffoldMessenger.of(context).showSnackBar(
+            const SnackBar(
+              content: Text(
+                'FCM-Token konnte nicht erzeugt werden. '
+                'Bitte App neu laden (Strg+Shift+R) und erneut versuchen.',
+              ),
+              duration: Duration(seconds: 5),
+            ),
+          );
+        }
+        return;
+      }
+
+      // Schritt 2: Token muss in Firestore landen — kurzer Delay
+      await Future.delayed(const Duration(milliseconds: 300));
+
+      // Schritt 3: Cloud Function aufrufen
       final callable = FirebaseFunctions
           .instanceFor(region: 'europe-west1')
           .httpsCallable('testDailyChallenge');
@@ -94,12 +125,58 @@ class _NotificationsSettingsScreenState extends State<NotificationsSettingsScree
     } catch (e) {
       if (mounted) {
         ScaffoldMessenger.of(context).showSnackBar(
-          SnackBar(content: Text('Fehler: $e')),
+          SnackBar(content: Text('Fehler: $e'), duration: const Duration(seconds: 6)),
         );
       }
     } finally {
       if (mounted) setState(() => _isSendingTest = false);
     }
+  }
+
+  /// Diagnose-Dialog: zeigt Permission-Status und Token-Status für Support
+  Future<void> _showDiagnostics() async {
+    final info = await FcmService.instance.getDiagnosticInfo();
+    if (!mounted) return;
+    showDialog(
+      context: context,
+      builder: (ctx) => AlertDialog(
+        title: const Text('Push-Diagnose'),
+        content: Column(
+          mainAxisSize: MainAxisSize.min,
+          crossAxisAlignment: CrossAxisAlignment.start,
+          children: [
+            Text('Permission: ${info['permission']}'),
+            const SizedBox(height: 8),
+            Text('Token vorhanden: ${info['hasToken']}'),
+            const SizedBox(height: 8),
+            Text('Token: ${info['tokenPreview']}',
+                style: const TextStyle(fontFamily: 'monospace', fontSize: 12)),
+          ],
+        ),
+        actions: [
+          TextButton(
+            onPressed: () => Navigator.pop(ctx),
+            child: const Text('OK'),
+          ),
+          TextButton(
+            onPressed: () async {
+              Navigator.pop(ctx);
+              final token = await FcmService.instance.getTokenAndSave(retries: 3);
+              if (mounted) {
+                ScaffoldMessenger.of(context).showSnackBar(
+                  SnackBar(
+                    content: Text(token != null
+                        ? 'Token aktualisiert ✓'
+                        : 'Token konnte nicht geholt werden'),
+                  ),
+                );
+              }
+            },
+            child: const Text('Token erneuern'),
+          ),
+        ],
+      ),
+    );
   }
 
   String _themeLabel(String value) {
@@ -132,6 +209,13 @@ class _NotificationsSettingsScreenState extends State<NotificationsSettingsScree
         title: const Text('Benachrichtigungen'),
         backgroundColor: const Color(0xFF1B3A5C),
         foregroundColor: Colors.white,
+        actions: [
+          IconButton(
+            icon: const Icon(Icons.bug_report_outlined),
+            tooltip: 'Push-Diagnose',
+            onPressed: _showDiagnostics,
+          ),
+        ],
       ),
       body: Padding(
         padding: const EdgeInsets.all(20),

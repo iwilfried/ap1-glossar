@@ -27,7 +27,20 @@ class FcmService {
       _handleMessageClick(initialMessage);
     }
 
-    await getTokenAndSave();
+    // Token-Refresh-Listener: holt automatisch neuen Token wenn der alte expired
+    FirebaseMessaging.instance.onTokenRefresh.listen((newToken) async {
+      if (newToken.isNotEmpty) {
+        await FirebaseService.instance.saveFcmToken(newToken);
+        debugPrint('FCM-Token (refresh) gespeichert: ${newToken.substring(0, 20)}...');
+      }
+    });
+
+    // Token holen — aber nur wenn Permission vorhanden, sonst skip
+    final settings = await FirebaseMessaging.instance.getNotificationSettings();
+    if (settings.authorizationStatus == AuthorizationStatus.authorized ||
+        settings.authorizationStatus == AuthorizationStatus.provisional) {
+      await getTokenAndSave();
+    }
   }
 
   Future<NotificationSettings> requestPermission() async {
@@ -36,8 +49,11 @@ class FcmService {
       badge: true,
       sound: true,
     );
-    if (settings.authorizationStatus == AuthorizationStatus.authorized) {
-      await getTokenAndSave();
+    if (settings.authorizationStatus == AuthorizationStatus.authorized ||
+        settings.authorizationStatus == AuthorizationStatus.provisional) {
+      // Kleiner Delay, damit FCM die Permission verarbeiten kann
+      await Future.delayed(const Duration(milliseconds: 500));
+      await getTokenAndSave(retries: 3);
     }
     return settings;
   }
@@ -46,13 +62,51 @@ class FcmService {
     return FirebaseMessaging.instance.getNotificationSettings();
   }
 
-  Future<void> getTokenAndSave() async {
-    final token = await FirebaseMessaging.instance.getToken(
-      vapidKey: kWebPushVapidKey,
-    );
-    if (token != null && token.isNotEmpty) {
-      await FirebaseService.instance.saveFcmToken(token);
+  /// Versucht den FCM-Token zu holen und in Firestore zu speichern.
+  /// Bei Fehlern: bis zu [retries] Wiederholungen mit Delay.
+  /// Returns: Token-String wenn erfolgreich, null sonst.
+  Future<String?> getTokenAndSave({int retries = 1}) async {
+    for (int attempt = 0; attempt < retries; attempt++) {
+      try {
+        final token = await FirebaseMessaging.instance.getToken(
+          vapidKey: kWebPushVapidKey,
+        );
+        if (token != null && token.isNotEmpty) {
+          await FirebaseService.instance.saveFcmToken(token);
+          debugPrint('FCM-Token gespeichert (Versuch ${attempt + 1}): ${token.substring(0, 20)}...');
+          return token;
+        }
+        debugPrint('FCM-Token leer (Versuch ${attempt + 1}/$retries)');
+      } catch (e) {
+        debugPrint('FCM-Token Fehler (Versuch ${attempt + 1}/$retries): $e');
+      }
+      // Delay vor Retry — exponentiell backoff
+      if (attempt < retries - 1) {
+        await Future.delayed(Duration(milliseconds: 800 * (attempt + 1)));
+      }
     }
+    return null;
+  }
+
+  /// Diagnose-Helper für Settings-Screen / Debug.
+  /// Returns: { 'permission': '...', 'hasToken': true/false, 'tokenPreview': '...' }
+  Future<Map<String, dynamic>> getDiagnosticInfo() async {
+    final settings = await getPermissionStatus();
+    String? token;
+    try {
+      token = await FirebaseMessaging.instance.getToken(
+        vapidKey: kWebPushVapidKey,
+      );
+    } catch (_) {
+      token = null;
+    }
+    return {
+      'permission': settings.authorizationStatus.toString(),
+      'hasToken': token != null && token.isNotEmpty,
+      'tokenPreview': token != null && token.length > 20
+          ? '${token.substring(0, 20)}...'
+          : 'kein Token',
+    };
   }
 
   void _handleForegroundMessage(RemoteMessage message) {
