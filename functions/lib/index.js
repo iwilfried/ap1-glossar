@@ -444,8 +444,7 @@ ANTWORTFORMAT (antworte NUR mit diesem JSON, kein Markdown, keine Backticks):
 exports.generateMCQuestion = functions
     .region('europe-west1')
     .https.onCall(async (data, context) => {
-    var _a;
-    // Auth check
+    var _a, _b, _c;
     if (!context.auth) {
         throw new functions.https.HttpsError('unauthenticated', 'User must be authenticated');
     }
@@ -453,50 +452,96 @@ exports.generateMCQuestion = functions
     if (!apiKey) {
         throw new functions.https.HttpsError('internal', 'API key not configured');
     }
-    const systemPrompt = `Du bist ein IHK-Prüfungsautor für die AP1-Prüfung. Du erstellst Multiple-Choice-Aufgaben im echten IHK-Stil.
+    const systemPrompt = `Du bist ein erfahrener IHK-Prüfungsautor für die AP1-Prüfung (Einrichten eines IT-gestützten Arbeitsplatzes). Du erstellst hochwertige Multiple-Choice-Aufgaben im echten IHK-Stil mit pädagogisch durchdachten Distraktoren.
 
 FACHBEGRIFF: "${data.term}"
 DEFINITION: "${data.definition}"
 VERWANDTE BEGRIFFE: ${data.relatedTerms.join(', ')}
 
 DEINE AUFGABE:
-Erstelle EINE Multiple-Choice-Frage mit 4 Antwortoptionen (1 richtig, 3 falsch) im IHK-AP1-Stil.
+Erstelle EINE Multiple-Choice-Frage mit 4 Antwortoptionen (1 richtig, 3 falsch). Die Distraktoren müssen pädagogisch wertvoll sein — sie sollen typische Fehlannahmen und Verwechslungen abprüfen, nicht nur "Füllmaterial" sein.
 
 REGELN FÜR DIE FRAGESTELLUNG:
 1. NICHT "Was ist X?" oder "Was bedeutet X?" — das ist zu einfach
 2. Baue einen kurzen Praxiskontext ein (1-2 Sätze)
 3. Die Frage soll Anwendungswissen prüfen
-4. Verwende IHK-Operatoren: "Welche Aussage trifft zu?", "Welche Maßnahme ist geeignet?", "Welches Protokoll wird eingesetzt?"
-5. Punkteangabe am Ende (2-4 Punkte)
+4. Verwende IHK-Operatoren: "Welche Aussage trifft zu?", "Welche Maßnahme ist geeignet?", "Welches Protokoll wird eingesetzt?", "Welche der folgenden..."
+5. Punkteangabe am Ende (2-4 Punkte je nach Schwierigkeit)
 
-REGELN FÜR DIE ANTWORTOPTIONEN:
-1. Alle 4 Optionen müssen plausibel klingen
-2. Falsche Antworten sollen typische Missverständnisse oder Verwechslungen sein
-3. Keine offensichtlich absurden Distraktoren
-4. Alle Optionen sollen ungefähr gleich lang sein
-5. Die richtige Antwort darf NICHT immer die längste oder detaillierteste sein
+DISTRAKTOREN-STRATEGIE (Pflicht — exakt diese 3 Typen):
 
-BEISPIELE FÜR GUTE MC-FRAGEN:
+D1 — VERWECHSLUNG mit ähnlichem Begriff:
+Eine Aussage über einen Begriff, der dem korrekten Begriff verwandt aber unterschiedlich ist. Typische Verwechslungen sind das pädagogische Herzstück. Beispiele:
+- ARP statt DHCP (beide Netzwerkprotokolle, anderer Zweck)
+- Inkrementelles statt differentielles Backup
+- Authentifizierung statt Autorisierung
+- Switch statt Router
+- Symmetrische statt asymmetrische Verschlüsselung
+- ROM statt RAM
+- TCP statt UDP
 
-Statt "Was ist DHCP?" →
-"Ein Netzwerkadministrator richtet in einer Filiale mit 25 Arbeitsplätzen die IP-Konfiguration ein. Welches Protokoll ermöglicht die automatische Zuweisung von IP-Adressen an die Clients? 2 Punkte"
-A) ARP
-B) DHCP ✓
-C) DNS
-D) SNMP
+D2 — HALBWAHRHEIT:
+Eine Aussage die für sich genommen FACHLICH KORREKT ist, aber NICHT die Frage beantwortet oder nicht zum Kontext passt. Beispiele:
+- Eine korrekte Aussage über DNS, wenn nach DHCP gefragt wird
+- Eine korrekte Aussage über Vollsicherung, wenn nach differenzieller Sicherung gefragt wird
+- Eine korrekte Aussage über IPv4, wenn nach IPv6 gefragt wird
 
-Statt "Was ist ein Backup?" →
-"Die IT-Abteilung soll ein Datensicherungskonzept für den Fileserver erstellen. Welche Aussage zur differenziellen Datensicherung trifft zu? 3 Punkte"
-A) Es werden nur die seit der letzten Sicherung geänderten Dateien gesichert
-B) Es werden nur die seit der letzten Vollsicherung geänderten Dateien gesichert ✓
-C) Es werden alle Dateien bei jeder Sicherung vollständig kopiert
-D) Es werden nur Dateien gesichert, die größer als 1 MB sind
+D3 — HÄUFIGER DENKFEHLER:
+Eine Aussage die einen typischen Anfänger-Irrtum widerspiegelt. Etwas das Auszubildende oft falsch verstehen. Beispiele:
+- "MAC-Adresse wird vom Router vergeben" (falsch — ist Hardware-fest)
+- "HTTPS verschlüsselt nur das Passwort" (falsch — verschlüsselt alles)
+- "Backup auf gleicher Festplatte ist sicher" (falsch — kein Schutz vor Hardware-Defekt)
+- "Firewall schützt vor Phishing" (falsch — Phishing ist Social Engineering)
+- "Längeres Passwort = automatisch sicherer" (falsch — Komplexität ist auch wichtig)
 
-PRÜFUNGSKATALOG AB 2025 — BEACHTE:
-Neue Themen: KI, Change Management, Aktivitätsdiagramm, 2FA, Härtung, Barrierefreiheit, SMART-Prinzip, ERP/SCM/CRM, Sofortumstellung vs. Parallelbetrieb
+REGELN FÜR DIE OPTIONEN:
+1. Alle 4 Optionen müssen ähnlich lang sein (±20%) — die richtige darf NICHT auffällig länger oder kürzer sein
+2. Alle Optionen sollen grammatikalisch parallel sein (z.B. alle als Aussagesatz, alle als Begriff)
+3. Keine offensichtlich absurden Optionen ("Der Mond ist aus Käse")
+4. Keine "Alle obigen" oder "Keine der obigen" Optionen
+5. Sprachlich präzise, IHK-Niveau
+6. Vermeide Verneinungen in der Frage ("Welche Aussage ist NICHT korrekt") — verwirrend
+
+ECHTE IHK-MC-BEISPIELE (zum Stil-Lernen):
+
+Beispiel 1 — Anwendungswissen mit Distraktoren-Typen:
+Frage: "Ein Netzwerkadministrator richtet in einer Filiale mit 25 Arbeitsplätzen die IP-Konfiguration ein. Welches Protokoll ermöglicht die automatische Zuweisung von IP-Adressen an die Clients? 2 Punkte"
+✓ Richtig: "DHCP — Dynamic Host Configuration Protocol"
+   correctReason: "DHCP ist das Standardprotokoll zur automatischen Vergabe von IP-Konfigurationen (IP-Adresse, Subnetzmaske, Gateway, DNS) an Clients im Netzwerk."
+✗ D1 (Verwechslung): "ARP — Address Resolution Protocol"
+   wrongReason: "ARP übersetzt zwar IP-Adressen in MAC-Adressen, vergibt aber keine IP-Adressen. Häufige Verwechslung wegen ähnlicher Abkürzung."
+✗ D2 (Halbwahrheit): "DNS — Domain Name System"
+   wrongReason: "DNS übersetzt Domainnamen in IP-Adressen — eine wichtige Funktion, aber keine Adressvergabe an Clients."
+✗ D3 (Denkfehler): "SNMP — Simple Network Management Protocol"
+   wrongReason: "SNMP dient der Überwachung und Verwaltung von Netzwerkgeräten, nicht der Adressvergabe. Häufige Fehlannahme weil 'Network Management' im Namen steht."
+
+Beispiel 2 — Datensicherung:
+Frage: "Die IT-Abteilung soll ein Datensicherungskonzept für den Fileserver erstellen. Welche Aussage zur differenziellen Datensicherung trifft zu? 3 Punkte"
+✓ Richtig: "Es werden alle Dateien gesichert, die seit der letzten Vollsicherung geändert wurden."
+   correctReason: "Differenzielle Sicherung speichert alle Änderungen seit der letzten Vollsicherung. Wiederherstellung benötigt nur Vollsicherung + letzte differenzielle Sicherung."
+✗ D1: "Es werden nur die seit der letzten Sicherung geänderten Dateien gesichert."
+   wrongReason: "Das ist die Definition der inkrementellen Sicherung — eine häufige Verwechslung mit differenzieller Sicherung."
+✗ D2: "Es wird täglich eine vollständige Kopie aller Daten erstellt."
+   wrongReason: "Korrekt für Vollsicherung, aber nicht für differenzielle Sicherung. Richtige Aussage zum falschen Begriff."
+✗ D3: "Differenzielle Sicherungen werden mit der Zeit kleiner."
+   wrongReason: "Falsch — sie werden größer, da sie alle Änderungen seit der letzten Vollsicherung kumulieren. Häufiger Anfänger-Irrtum."
+
+Beispiel 3 — Datenschutz:
+Frage: "Ein Unternehmen plant Videoüberwachung am Mitarbeiterparkplatz. Welche Maßnahme ist gemäß DSGVO zwingend erforderlich? 2 Punkte"
+✓ Richtig: "Anbringung deutlich sichtbarer Hinweisschilder im Erfassungsbereich."
+   correctReason: "Die DSGVO verlangt Transparenz: Betroffene müssen vor Betreten des überwachten Bereichs informiert werden. Hinweisschilder sind die Standardumsetzung."
+✗ D1: "Schriftliche Einwilligung jedes einzelnen Mitarbeiters."
+   wrongReason: "Verwechslung — Einwilligung wäre eine andere Rechtsgrundlage. Bei berechtigtem Interesse (z.B. Diebstahlschutz) reicht sie nicht aus, da Arbeitnehmer nicht frei einwilligen können."
+✗ D2: "Verschlüsselte Speicherung der Aufnahmen auf einem ISO-zertifizierten Server."
+   wrongReason: "Verschlüsselung ist generell sinnvoll und kann erforderlich sein, ist aber nicht die DSGVO-Hauptpflicht bei Videoüberwachung."
+✗ D3: "Aufbewahrung der Aufnahmen für mindestens 6 Monate zur Beweissicherung."
+   wrongReason: "Falsch — DSGVO verlangt das Gegenteil: kürzestmögliche Speicherdauer. Häufiger Irrtum, der das Datenschutz-Prinzip umkehrt."
+
+PRÜFUNGSKATALOG AB 2025:
+Neue Themen: KI, Change Management, Aktivitätsdiagramm, 2FA, Härtung, Barrierefreiheit, SMART-Prinzip, ERP/SCM/CRM, Sofortumstellung vs. Parallelbetrieb, Anonymisierung/Pseudonymisierung
 Gestrichene Themen (NICHT abfragen): RAID, SAN, SQL, Struktogramm, SWOT, Vererbung, ISO 2700x
 
-F26-DOMINANTE THEMEN (in der Frühjahr-2026-Prüfung tatsächlich stark gewichtet — orientiere MC-Fragen besonders an diesen Bereichen):
+F26-DOMINANTE THEMEN (Frühjahr-2026 stark gewichtet):
 - Subnetting, IPv4 vs. IPv6, Dual-Stack, Ping-Analyse
 - PoE-Berechnungen, Datenraten mit Komprimierung
 - DSGVO bei Videoüberwachung
@@ -504,14 +549,42 @@ F26-DOMINANTE THEMEN (in der Frühjahr-2026-Prüfung tatsächlich stark gewichte
 - Change Management, Sofortumstellung vs. Parallelbetrieb
 - Ergonomie am Bildschirmarbeitsplatz
 - OOP-Vorteile, ER-Diagramme, UML-Klassendiagramme
+- 2FA, Härtung, Passwortrichtlinien
+
+THEMEN-KATEGORISIERUNG (für topic-Feld):
+- "Netzwerk" — IP, DNS, DHCP, Routing, Subnetting, Protokolle
+- "Sicherheit" — Verschlüsselung, 2FA, Firewall, Härtung, BSI
+- "Datenschutz" — DSGVO, Anonymisierung, Hinweispflicht
+- "Hardware" — CPU, RAM, PoE, Schnittstellen, Geräte
+- "Software" — Betriebssystem, Lizenzen, Anwendungen
+- "Programmierung" — OOP, UML, ER, Pseudocode
+- "Datenbanken" — ER-Diagramm, Beziehungen
+- "Wirtschaft" — Lieferverzug, Kalkulation, Verträge
+- "Projekt" — Netzplan, SMART, Change Management
+- "Soft Skills" — Ergonomie, Barrierefreiheit, Kommunikation
 
 ANTWORTFORMAT (antworte NUR mit diesem JSON, kein Markdown, keine Backticks):
 {
-  "question": "<Die MC-Frage im IHK-Stil, 1-3 Sätze, mit Punkteangabe>",
+  "question": "<Die MC-Frage im IHK-Stil, 1-3 Sätze, mit Punkteangabe am Ende>",
   "correctAnswer": "<Die korrekte Antwort, 1-2 Sätze>",
-  "distractors": ["<Falsche Antwort 1>", "<Falsche Antwort 2>", "<Falsche Antwort 3>"],
-  "explanation": "<Kurze Erklärung (1-2 Sätze) warum die richtige Antwort korrekt ist und was an den häufigsten Verwechslungen falsch ist>",
-  "points": <2-4>
+  "correctReason": "<Warum diese Antwort fachlich korrekt ist, 1-2 Sätze in IHK-Sprache>",
+  "distractors": [
+    {
+      "text": "<D1: Verwechslung mit ähnlichem Begriff>",
+      "wrongReason": "<Warum falsch + welche Verwechslung dahintersteckt>"
+    },
+    {
+      "text": "<D2: Halbwahrheit — korrekt aber nicht zur Frage>",
+      "wrongReason": "<Was an der Aussage stimmt + warum sie hier nicht passt>"
+    },
+    {
+      "text": "<D3: Häufiger Denkfehler>",
+      "wrongReason": "<Den typischen Irrtum benennen + Korrektur>"
+    }
+  ],
+  "explanation": "<Zusammenfassende Erklärung in 2-3 Sätzen für den Lerneffekt nach der Antwort. Kontext + Schlüsselregel + Eselsbrücke wenn möglich.>",
+  "points": <2|3|4>,
+  "topic": "<eine der Themen-Kategorien aus der Liste oben>"
 }`;
     const userPrompt = `Bitte generiere die MC-Frage anhand der obigen Vorgaben.`;
     try {
@@ -524,7 +597,7 @@ ANTWORTFORMAT (antworte NUR mit diesem JSON, kein Markdown, keine Backticks):
             },
             body: JSON.stringify({
                 model: 'claude-sonnet-4-20250514',
-                max_tokens: 500,
+                max_tokens: 1500,
                 system: systemPrompt,
                 messages: [
                     {
@@ -540,12 +613,26 @@ ANTWORTFORMAT (antworte NUR mit diesem JSON, kein Markdown, keine Backticks):
         const result = await response.json();
         const content = result.content[0].text;
         const mcData = JSON.parse(content);
+        // Validierung der Distraktoren — sicherstellen dass Format stimmt
+        const validDistractors = Array.isArray(mcData.distractors)
+            ? mcData.distractors.map((d) => {
+                var _a, _b;
+                return ({
+                    text: typeof d === 'string' ? d : ((_a = d === null || d === void 0 ? void 0 : d.text) !== null && _a !== void 0 ? _a : ''),
+                    wrongReason: typeof d === 'object' ? ((_b = d === null || d === void 0 ? void 0 : d.wrongReason) !== null && _b !== void 0 ? _b : '') : '',
+                });
+            }).filter((d) => d.text.length > 0)
+            : [];
         return {
             question: mcData.question,
             correctAnswer: mcData.correctAnswer,
-            distractors: mcData.distractors,
+            correctReason: (_b = mcData.correctReason) !== null && _b !== void 0 ? _b : '',
+            distractors: validDistractors,
+            // Fallback: distractors als string[] bereitstellen für ältere Frontends
+            distractorTexts: validDistractors.map((d) => d.text),
             explanation: mcData.explanation,
             points: typeof mcData.points === 'number' ? mcData.points : 2,
+            topic: (_c = mcData.topic) !== null && _c !== void 0 ? _c : 'Allgemein',
         };
     }
     catch (error) {
@@ -766,19 +853,6 @@ exports.updateMCScore = functions
 // ─────────────────────────────────────────────────────────────────────────────
 // DAILY CHALLENGE PUSH NOTIFICATIONS
 // ─────────────────────────────────────────────────────────────────────────────
-//
-// scheduled function läuft alle 15 Minuten und prüft, welche User gerade
-// (innerhalb der letzten 15 Min) ihre gewünschte notificationTime erreicht
-// haben. Schickt einen Push mit zufälligem Begriff aus der globalen Liste.
-//
-// Datenmodell:
-// - users/{uid}.fcmToken          (string, gesetzt durch FcmService)
-// - users/{uid}.notificationTime  (string "HH:MM", gesetzt durch Settings)
-// - users/{uid}.dailyPushEnabled  (boolean, gesetzt durch Settings, default false)
-// - users/{uid}.lastDailyPushDate (string "YYYY-MM-DD", gesetzt durch diese Function)
-//
-// Begriffsquelle: globale Sammlung "dailyTerms" mit doc {term: "DHCP"} pro Begriff.
-// Falls leer, wird Fallback-Liste verwendet.
 const FALLBACK_DAILY_TERMS = [
     'DHCP', 'IPv6', 'Subnetting', 'PoE', 'DSGVO', 'Firewall', 'VPN', 'NAT',
     'DNS', 'Backup', 'Change Management', 'Ergonomie', '2FA', 'Phishing',
@@ -805,11 +879,8 @@ async function loadDailyTerms() {
         return FALLBACK_DAILY_TERMS;
     }
 }
-// Berechnet die User-Lokalzeit (Berlin-TZ) als "HH:MM"-String, gerundet
-// auf die nächsten 15 Minuten nach unten. Beispiel: 09:23 -> "09:15".
 function currentBerlinTimeSlot() {
     var _a, _b, _c, _d;
-    // Date in Europe/Berlin
     const fmt = new Intl.DateTimeFormat('de-DE', {
         timeZone: 'Europe/Berlin',
         hour: '2-digit',
@@ -819,23 +890,20 @@ function currentBerlinTimeSlot() {
     const parts = fmt.formatToParts(new Date());
     const hour = Number((_b = (_a = parts.find((p) => p.type === 'hour')) === null || _a === void 0 ? void 0 : _a.value) !== null && _b !== void 0 ? _b : 0);
     const minute = Number((_d = (_c = parts.find((p) => p.type === 'minute')) === null || _c === void 0 ? void 0 : _c.value) !== null && _d !== void 0 ? _d : 0);
-    // Slot: 15-Min-Bucket
     const slotMinute = Math.floor(minute / 15) * 15;
     const slotStart = `${String(hour).padStart(2, '0')}:${String(slotMinute).padStart(2, '0')}`;
     const slotEndMinute = slotMinute + 15;
     const slotEndHour = slotEndMinute >= 60 ? (hour + 1) % 24 : hour;
     const slotEnd = `${String(slotEndHour).padStart(2, '0')}:${String(slotEndMinute % 60).padStart(2, '0')}`;
-    // Datums-Key in Berlin-TZ
     const dateFmt = new Intl.DateTimeFormat('en-CA', {
         timeZone: 'Europe/Berlin',
         year: 'numeric',
         month: '2-digit',
         day: '2-digit',
     });
-    const dateKey = dateFmt.format(new Date()); // "YYYY-MM-DD"
+    const dateKey = dateFmt.format(new Date());
     return { slotStart, slotEnd, dateKey };
 }
-// Prüft ob notificationTime in den aktuellen 15-Min-Slot fällt
 function isInCurrentSlot(notificationTime, slotStart, slotEnd) {
     const toMinutes = (t) => {
         const [h, m] = t.split(':').map(Number);
@@ -844,7 +912,6 @@ function isInCurrentSlot(notificationTime, slotStart, slotEnd) {
     const target = toMinutes(notificationTime);
     const start = toMinutes(slotStart);
     const end = toMinutes(slotEnd);
-    // Spezialfall Mitternacht-Sprung
     if (start > end) {
         return target >= start || target < end;
     }
@@ -860,7 +927,6 @@ exports.sendDailyChallenge = functions
     console.log(`sendDailyChallenge: slot=${slotStart}-${slotEnd}, dateKey=${dateKey}`);
     const db = admin.firestore();
     const messaging = admin.messaging();
-    // Kandidaten: User mit dailyPushEnabled=true
     const snap = await db
         .collection('users')
         .where('dailyPushEnabled', '==', true)
@@ -879,7 +945,6 @@ exports.sendDailyChallenge = functions
         const fcmToken = data.fcmToken;
         const notificationTime = data.notificationTime;
         const lastPush = data.lastDailyPushDate;
-        // Skip-Bedingungen
         if (!fcmToken || fcmToken.length === 0) {
             skipped++;
             continue;
@@ -893,7 +958,6 @@ exports.sendDailyChallenge = functions
             continue;
         }
         if (lastPush === dateKey) {
-            // Heute schon gesendet (Idempotenz, falls Funktion zweimal triggert)
             skipped++;
             continue;
         }
@@ -925,7 +989,6 @@ exports.sendDailyChallenge = functions
         catch (err) {
             failed++;
             console.error(`sendDailyChallenge: failed for ${uid}:`, (_a = err === null || err === void 0 ? void 0 : err.code) !== null && _a !== void 0 ? _a : err);
-            // Bei ungültigem Token: Token entfernen
             if ((err === null || err === void 0 ? void 0 : err.code) === 'messaging/registration-token-not-registered' ||
                 (err === null || err === void 0 ? void 0 : err.code) === 'messaging/invalid-registration-token') {
                 await userDoc.ref.update({
@@ -938,9 +1001,6 @@ exports.sendDailyChallenge = functions
     console.log(`sendDailyChallenge: sent=${sent}, skipped=${skipped}, failed=${failed}`);
     return null;
 });
-// Hilfsfunktion für manuelles Testen ohne 24h Wartezeit.
-// Triggert für den aufrufenden User sofort einen Daily-Push.
-// Nur in der App im Settings-Screen verwenden ("Test-Push").
 exports.testDailyChallenge = functions
     .region('europe-west1')
     .https.onCall(async (_data, context) => {
