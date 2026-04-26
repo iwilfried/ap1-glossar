@@ -152,42 +152,64 @@ IHK-OPERATOREN (verwende diese exakt so, wie die IHK sie formuliert):
 - "Vergleichen Sie ... hinsichtlich ..."
 - "Grenzen Sie ... von ... ab"
 - "Stellen Sie ... dar"
+- "Berechnen Sie ... [Rechenweg ist anzugeben]"
+- "Errechnen Sie ..."
 
 ECHTE IHK-FRAGEBEISPIELE (aus AP1-Prüfungen 2021-2025, zum Stil-Lernen):
 
-Beispiel 1 (Sicherheit): "Zur Absicherung des Besprechungsraums soll eine automatische Zutrittskontrolle an der Eingangstür eingerichtet werden. Nennen Sie drei technische Möglichkeiten, um eine automatische Zutrittskontrolle zu gewährleisten. 3 Punkte"
+Beispiel 1 (Begründung): "Der BSI-Grundschutz empfiehlt, den Präsentationsrechner sicher zu konfigurieren. Begründen Sie die Maßnahme: Nutzung einer Minimalkonfiguration mit festgelegter Anwendungssoftware. 2 Punkte"
 
-Beispiel 2 (Begründung): "Der BSI-Grundschutz empfiehlt, den Präsentationsrechner sicher zu konfigurieren. Begründen Sie die Maßnahme: Nutzung einer Minimalkonfiguration mit festgelegter Anwendungssoftware. 2 Punkte"
+Beispiel 2 (Vergleich): "In der Softwareentwicklungsabteilung werden ein Compiler und ein Interpreter als Übersetzungsarten diskutiert. Erläutern Sie den wesentlichen Unterschied zwischen den beiden Übersetzungsarten. 3 Punkte"
 
-Beispiel 3 (Vergleich): "In der Softwareentwicklungsabteilung werden ein Compiler und ein Interpreter als Übersetzungsarten diskutiert. Erläutern Sie den wesentlichen Unterschied zwischen den beiden Übersetzungsarten. 3 Punkte"
+Beispiel 3 (Vor-/Nachteile): "Die Geschäftsleitung prüft die Umstellung auf ein digitales Rechnungsmanagementsystem. Nennen Sie zwei Vorteile und zwei Nachteile der digitalen Rechnung innerhalb eines automatischen Rechnungsmanagementsystems. 4 Punkte"
 
-Beispiel 4 (Vor-/Nachteile): "Die Geschäftsleitung prüft die Umstellung auf ein digitales Rechnungsmanagementsystem. Nennen Sie zwei Vorteile und zwei Nachteile der digitalen Rechnung innerhalb eines automatischen Rechnungsmanagementsystems. 4 Punkte"
+Beispiel 4 (KI — neuer Katalog ab 2025): "Beschreiben Sie zwei Argumente, die für einen möglichen Einsatz einer automatischen Rechnungsprüfung mit KI-Unterstützung sprechen. 4 Punkte"
 
-Beispiel 5 (Kundenberatung): "Ein Abteilungsleiter möchte den Arbeitsspeicher seines Laptops erweitern. Begründen Sie, welchen Arbeitsspeicher Sie dem Abteilungsleiter zur Anschaffung empfehlen. 2 Punkte"
+ECHTE IHK-FRAGEBEISPIELE FRÜHJAHR 2026 (frischeste Prüfung — höchste Stilrelevanz):
 
-Beispiel 6 (Prozess/Vorgehensweise): "Im Besprechungsraum befindet sich eine unbeschriftete Netzwerk-Doppeldose. Ihre Aufgabe besteht darin, die richtige RJ-45-Buchse zu ermitteln. Ihnen steht ein Patchkabel und der PC mit Kommandozeile zur Verfügung. Beschreiben Sie Ihre Vorgehensweise stichpunktartig. 5 Punkte"
+Beispiel F26-1 (Sicherheits-Konsequenzen): "In der Spezifikation finden Sie die folgende Angabe: 'no default passwords'. Beschreiben Sie zwei mögliche Konsequenzen dieser Voreinstellung. 4 Punkte"
 
-Beispiel 7 (KI — neuer Katalog ab 2025): "Beschreiben Sie zwei Argumente, die für einen möglichen Einsatz einer automatischen Rechnungsprüfung mit KI-Unterstützung sprechen. 4 Punkte"
+Beispiel F26-2 (Berechnung mit Rechenweg): "Die Kamera in der Variante 'with heater, with IR' soll über das Netzwerk mit Strom versorgt werden (PoE). Wählen Sie für die spätere Beschaffung eines geeigneten Switches aus der Tabelle den passenden IEEE 802 Standard aus und berechnen Sie die zu erwartende maximale Stromstärke in mA bei einer Spannung von 48V. Formel: P = U · I. 4 Punkte"
 
-Beispiel 8 (Sicherheitsrisiko): "Der Hersteller des Kartenterminals empfiehlt, vor der Inbetriebnahme ein Softwareupdate durchzuführen. Beschreiben Sie einen Grund für diese Maßnahme. 2 Punkte"
+Beispiel F26-3 (Subnetting/Netzwerk): "Ihr Netzwerkadministrator gibt Ihnen für die erste Kamera die IP-Adresse vor 192.168.16.52/25. Errechnen Sie Subnetzmaske, Anzahl nutzbarer IP-Adressen, Netzadresse und Broadcast-Adresse. 4 Punkte"
+
+Beispiel F26-4 (Vergleich Protokolle): "Bei Ihrem Kunden gibt es sowohl Netze, die sowohl IPv4 als auch IPv6-Adressierungen verwenden. Beschreiben Sie zwei Unterschiede zwischen den Protokollen IPv4 und IPv6. 4 Punkte"
+
+Beispiel F26-5 (Datenschutz/DSGVO): "Vor dem Haupttor befindet sich ein Parkplatz mit Kameras zur Steuerung des Lieferverkehrs. Die Verwendung von Kameras mit Aufnahmen unterliegt grundsätzlich rechtlichen Vorgaben. Beschreiben Sie eine damit verbundene Verpflichtung. 2 Punkte"
+
+Beispiel F26-6 (Ergonomie/Soziales): "Aktuell sind einige Arbeitsplätze wie auf dem folgenden Bild ausgestattet. Es soll nun das Arbeiten an den Bildschirmarbeitsplätzen erleichtert werden. Nennen Sie vier Maßnahmen, um den Arbeitsplatz ergonomischer zu gestalten. 4 Punkte"
 
 FRAGETYPEN (variiere zwischen diesen):
-A) NENNEN mit Anzahl: "Nennen Sie ZWEI/DREI..."
+A) NENNEN mit Anzahl: "Nennen Sie ZWEI/DREI/VIER..."
 B) BEGRÜNDEN einer Maßnahme/Empfehlung: "Begründen Sie..."
 C) VERGLEICH/ABGRENZUNG: "Erläutern Sie den Unterschied..." oder "Vergleichen Sie... hinsichtlich..."
 D) VOR-/NACHTEILE: "Nennen Sie zwei Vorteile und zwei Nachteile..."
 E) VORGEHENSWEISE BESCHREIBEN: "Beschreiben Sie Ihre Vorgehensweise..."
-F) SICHERHEITSRISIKO BESCHREIBEN: "Beschreiben Sie das Sicherheitsrisiko..."
+F) SICHERHEITSRISIKO/KONSEQUENZ BESCHREIBEN: "Beschreiben Sie zwei mögliche Konsequenzen..."
 G) BEURTEILUNG: "Beurteilen Sie den Vorschlag..."
+H) BERECHNUNG mit Rechenweg: "Berechnen Sie... Der Rechenweg ist anzugeben."
+I) ERLÄUTERN einer Möglichkeit: "Erläutern Sie eine Möglichkeit, ... zu betreiben."
 
 PRÜFUNGSKATALOG-UPDATE AB 2025 — BEACHTE:
-Neue Themen die abgefragt werden: KI/Künstliche Intelligenz, Change Management, Aktivitätsdiagramm (statt Struktogramm), Schreibtischtest, 2FA, Härtung von Betriebssystemen, Anonymisierung/Pseudonymisierung, ERP/SCM/CRM, Barrierefreiheit, SMART-Prinzip
+Neue Themen die abgefragt werden: KI/Künstliche Intelligenz, Change Management, Aktivitätsdiagramm (statt Struktogramm), Schreibtischtest, 2FA, Härtung von Betriebssystemen, Anonymisierung/Pseudonymisierung, ERP/SCM/CRM, Barrierefreiheit, SMART-Prinzip, Sofortumstellung vs. Parallelbetrieb
 Gestrichene Themen (NICHT mehr abfragen): RAID, SAN, SQL, Struktogramm/Nassi-Shneiderman, SWOT-Analyse, Vererbung, ISO 2700x, LTE/5G
+
+F26-DOMINANTE THEMEN (in der Frühjahr-2026-Prüfung tatsächlich stark gewichtet):
+- Netzwerk: Subnetting (IPv4/Subnetzmaske/Netz-/Broadcast-Adresse), IPv4 vs. IPv6, Dual-Stack, Ping-Analyse, Fehlerdiagnose im Netz (Gateway, Patchkabel, DNS)
+- Berechnungen: PoE-Stromstärke (P=U·I), Datenübertragungsrate mit Komprimierung, Speicherkapazität in TiB
+- Datenschutz: DSGVO-Pflichten bei Videoüberwachung, Hinweisschilder, Löschfristen
+- Wirtschaft: Lieferverzug-Rechte, Imageverlust-Konsequenzen, wirtschaftliche Vorteile von Digitalisierung
+- Soft Skills: Change Management (Beispiele, Sofortumstellung vs. Parallelbetrieb), Ergonomie-Maßnahmen am Arbeitsplatz
+- Hardware: Daisy-Chaining (DisplayPort/Thunderbolt MST), I/O-Panel-Schnittstellen erkennen
+- Programmierung: OOP-Vorteile, UML-Klassendiagramm, Pseudocode-Auswertung, ER-Diagramm n:m-Beziehungen
+- Projektmanagement: Netzplan korrigieren (FAZ/FEZ/SAZ/SEZ/GP/FP)
+
+Wenn du eine Frage zu einem dieser Themen erstellst, orientiere dich besonders eng an den F26-Beispielen oben.
 
 SCHWIERIGKEITSGRADE:
 - "basis" (2-3 Punkte): Ein Operator, eine klare Frage. Z.B. "Nennen Sie zwei..."
 - "mittel" (3-4 Punkte): Operator mit Kontext oder Begründung. Z.B. "Begründen Sie die folgende Maßnahme..."
-- "anspruchsvoll" (4-6 Punkte): Mehrere Aspekte, Vergleich oder Beurteilung. Z.B. "Nennen Sie zwei Vorteile und zwei Nachteile..."
+- "anspruchsvoll" (4-6 Punkte): Mehrere Aspekte, Vergleich, Beurteilung oder Berechnung mit Rechenweg.
 
 Wähle den Schwierigkeitsgrad zufällig, gewichtet: 30% basis, 50% mittel, 20% anspruchsvoll.
 
@@ -370,6 +392,26 @@ IHK-SATZBAUSTEINE für die Musterantwort:
 - "Aus [wirtschaftlicher/technischer/sicherheitstechnischer] Sicht empfiehlt sich..."
 - "Die Maßnahme ist erforderlich, um [Risiko] zu minimieren."
 - "Gemäß den Vorgaben des BSI-Grundschutzes..."
+
+ECHTE IHK-MUSTERANTWORTEN (Frühjahr 2026 — orientiere dich am Niveau und Stil dieser Vollpunkte-Antworten):
+
+Musterantwort 1 — IPv4 vs. IPv6 (4 Punkte):
+"Ein wesentlicher Unterschied besteht in der Adresslänge: IPv4 nutzt 32 Bit (ca. 4,3 Milliarden Adressen), IPv6 hingegen 128 Bit (ca. 340 Sextillionen Adressen). Zudem unterscheidet sich das Adressformat: IPv4 wird dezimal mit Punkten notiert (192.168.1.1), IPv6 hexadezimal mit Doppelpunkten (2001:db8::1)."
+
+Musterantwort 2 — DSGVO bei Videoüberwachung (2 Punkte):
+"Gemäß DSGVO besteht eine Hinweispflicht: Die Videoüberwachung muss durch deutlich sichtbare Hinweisschilder im Erfassungsbereich kenntlich gemacht werden, einschließlich der Angabe des Verantwortlichen und des Zwecks der Verarbeitung."
+
+Musterantwort 3 — Ergonomie-Maßnahmen am Arbeitsplatz (4 Punkte):
+"1. Höhenverstellbarer Schreibtisch zur Vermeidung einseitiger Belastung. 2. Ergonomischer Bürostuhl mit verstellbarer Rückenlehne und Sitzhöhe. 3. Externer Monitor in Augenhöhe (Oberkante auf Augenhöhe, ca. 50-70cm Abstand). 4. Externe Tastatur und Maus zur Vermeidung von Zwangshaltungen."
+
+Musterantwort 4 — IPv4/IPv6 Dual-Stack (3 Punkte):
+"Im Dual-Stack-Betrieb werden auf jedem Netzwerkgerät beide Protokolle parallel implementiert. Jedes Gerät erhält sowohl eine IPv4- als auch eine IPv6-Adresse und kann mit Kommunikationspartnern beider Protokolle kommunizieren. Dies gewährleistet die schrittweise Migration ohne Verlust der Konnektivität zu Legacy-Systemen."
+
+Musterantwort 5 — Konsequenzen "no default passwords" (4 Punkte):
+"1. Sicherheitsrisiko: Bei werkseitig gesetzten Standard-Passwörtern (z.B. admin/admin) besteht die Gefahr, dass Angreifer durch Ausnutzung öffentlich bekannter Default-Credentials unautorisierten Zugriff erlangen. 2. Compliance-Pflicht: Der Administrator muss vor Inbetriebnahme zwingend ein individuelles, starkes Passwort gemäß Passwortrichtlinie konfigurieren, was den Initialaufwand erhöht."
+
+Musterantwort 6 — Change Management Beispiele (3 Punkte):
+"Beispiele für sinnvollen Einsatz von Change Management sind: 1. Restrukturierung der Aufbauorganisation, 2. Migration auf neue Geschäftsprozesse oder IT-Systeme, 3. Einführung digitaler Technologien wie ERP-Systeme oder Cloud-Lösungen."
 
 ANTWORTFORMAT (antworte NUR mit diesem JSON, kein Markdown, keine Backticks):
 {
@@ -567,8 +609,17 @@ C) Es werden alle Dateien bei jeder Sicherung vollständig kopiert
 D) Es werden nur Dateien gesichert, die größer als 1 MB sind
 
 PRÜFUNGSKATALOG AB 2025 — BEACHTE:
-Neue Themen: KI, Change Management, Aktivitätsdiagramm, 2FA, Härtung, Barrierefreiheit, SMART-Prinzip, ERP/SCM/CRM
+Neue Themen: KI, Change Management, Aktivitätsdiagramm, 2FA, Härtung, Barrierefreiheit, SMART-Prinzip, ERP/SCM/CRM, Sofortumstellung vs. Parallelbetrieb
 Gestrichene Themen (NICHT abfragen): RAID, SAN, SQL, Struktogramm, SWOT, Vererbung, ISO 2700x
+
+F26-DOMINANTE THEMEN (in der Frühjahr-2026-Prüfung tatsächlich stark gewichtet — orientiere MC-Fragen besonders an diesen Bereichen):
+- Subnetting, IPv4 vs. IPv6, Dual-Stack, Ping-Analyse
+- PoE-Berechnungen, Datenraten mit Komprimierung
+- DSGVO bei Videoüberwachung
+- Daisy-Chaining, DisplayPort/Thunderbolt MST
+- Change Management, Sofortumstellung vs. Parallelbetrieb
+- Ergonomie am Bildschirmarbeitsplatz
+- OOP-Vorteile, ER-Diagramme, UML-Klassendiagramme
 
 ANTWORTFORMAT (antworte NUR mit diesem JSON, kein Markdown, keine Backticks):
 {
