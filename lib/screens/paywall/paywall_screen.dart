@@ -214,7 +214,7 @@ class _PaywallScreenState extends State<PaywallScreen> {
                     ),
                   ),
                   Text(
-                    'einmalig · kein Abo',
+                    'einmalig · inkl. 19% MwSt.',
                     style: TextStyle(
                       fontSize: 11,
                       color: Color.fromRGBO(255, 255, 255, 0.9),
@@ -399,7 +399,7 @@ class _PaywallScreenState extends State<PaywallScreen> {
             const SizedBox(height: 16),
             _buildGuaranteeRow(
               Icons.schedule_rounded,
-              'Einmalzahlung · kein Abo · keine Verlängerung',
+              'Einmalzahlung · inkl. 19% MwSt. · keine Verlängerung',
             ),
             _buildGuaranteeRow(
               Icons.lock_outline_rounded,
