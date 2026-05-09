@@ -88,6 +88,57 @@ Die Begriffe decken alle prüfungsrelevanten AP1-Bereiche ab:
 
 ---
 
+## Digistore24 IPN-Webhook
+
+Der Webhook für Digistore24-Käufe ist als Cloud Function `digistore24Webhook` in `functions/src/index.ts` implementiert (Region: `europe-west1`).
+
+### Konfiguration in Digistore24
+
+- **IPN-URL:** `https://europe-west1-ap1-coach.cloudfunctions.net/digistore24Webhook`
+- **Methode:** POST
+- **Erfolgserkennung:** Standard (Text: `OK`)
+- **IPN-Kennwort:** muss mit der lokalen Passphrase übereinstimmen (siehe unten)
+
+### Lokale Konfiguration
+
+Die Passphrase wird über `functions/.env` als Environment-Variable gesetzt:
+
+```env
+DIGISTORE24_PASSPHRASE=<Wert aus Digistore-IPN-Settings>
+```
+
+`functions/.env` ist in `.gitignore` und darf NICHT committet werden.
+
+### Signatur-Algorithmus
+
+Der Webhook prüft die `sha_sign` von Digistore nach offizieller Spezifikation:
+
+1. Parameter `sha_sign` aus dem Request entfernen
+2. Restliche Keys alphabetisch (case-insensitive) sortieren, leere Werte überspringen
+3. String aufbauen: `key1=value1{passphrase}key2=value2{passphrase}...`
+4. SHA-512 darüber, hex-encoded, uppercase
+
+### Connection-Test
+
+Digistore sendet beim „Verbindung testen"-Klick ein Event mit `event=connection_test` ohne `custom`-Feld. Der Webhook akzeptiert dieses Event direkt mit HTTP 200 + `OK`.
+
+### Build & Deploy
+
+Da kein `npm run build`-Script in `functions/package.json` existiert, muss TypeScript manuell kompiliert werden:
+
+```powershell
+cd functions
+npx tsc
+cd ..
+firebase deploy --only functions:digistore24Webhook
+```
+
+### Diagnose
+
+Bei IPN-Fehlern: [Logs in der Cloud Console prüfen](https://console.cloud.google.com/functions/details/europe-west1/digistore24Webhook?project=ap1-coach&tab=logs)
+
+---
+
 ## Lokale Entwicklung
 
 ### Voraussetzungen
