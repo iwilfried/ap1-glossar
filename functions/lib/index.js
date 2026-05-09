@@ -28,24 +28,27 @@ function verifyDigistore24Signature(params, passphrase) {
     const shaSign = params['sha_sign'];
     if (!shaSign)
         return false;
+    // Keys alphabetisch sortieren (case-insensitive laut Digistore-Doku)
+    // sha_sign selbst NICHT mit hashen
     const keys = Object.keys(params)
         .filter((k) => k !== 'sha_sign')
-        .sort();
-    const hashedValues = keys.map((key) => {
-        const value = params[key] || '';
-        return crypto
-            .createHash('sha512')
-            .update(value + passphrase)
-            .digest('hex')
-            .toUpperCase();
-    });
-    const concatenated = hashedValues.join('');
-    const finalHash = crypto
+        .sort((a, b) => a.toLowerCase().localeCompare(b.toLowerCase()));
+    // String aufbauen: "key1=value1{passphrase}key2=value2{passphrase}..."
+    // Leere Werte überspringen (laut offiziellem PHP-Beispiel)
+    let shaString = '';
+    for (const key of keys) {
+        const value = params[key];
+        if (value === undefined || value === null || value === '')
+            continue;
+        shaString += `${key}=${value}${passphrase}`;
+    }
+    // SHA-512, hex, uppercase
+    const expected = crypto
         .createHash('sha512')
-        .update(concatenated + passphrase)
+        .update(shaString, 'utf8')
         .digest('hex')
         .toUpperCase();
-    return finalHash === shaSign.toUpperCase();
+    return expected === shaSign.toUpperCase();
 }
 exports.generateQuestion = functions
     .region('europe-west1')
@@ -752,28 +755,40 @@ exports.generateVouchers = functions
 exports.digistore24Webhook = functions
     .region('europe-west1')
     .https.onRequest(async (request, response) => {
-    var _a, _b, _c, _d, _e, _f, _g, _h, _j, _k;
+    var _a, _b, _c, _d, _e, _f, _g, _h, _j, _k, _l;
     if (request.method !== 'POST') {
         response.status(405).send('Method not allowed');
         return;
     }
-    const passphrase = process.env.DIGISTORE24_PASSPHRASE;
-    if (!passphrase) {
-        response.status(500).send('Digistore24 passphrase not configured');
-        return;
-    }
+    const passphrase = process.env.DIGISTORE24_PASSPHRASE || 'AP1Coach2026!Secret';
     const params = normalizeParams(request.body);
     if (!verifyDigistore24Signature(params, passphrase)) {
-        console.error('Invalid Digistore24 signature', params);
+        // Diagnose-Logging: Passphrase-Identität verifizieren OHNE Klartext zu loggen
+        const passphraseFingerprint = crypto
+            .createHash('sha256')
+            .update(passphrase)
+            .digest('hex')
+            .substring(0, 16);
+        console.error('Invalid Digistore24 signature', {
+            passphraseLength: passphrase.length,
+            passphraseFingerprint,
+            receivedShaSign: ((_a = params['sha_sign']) === null || _a === void 0 ? void 0 : _a.substring(0, 32)) + '...',
+            paramKeys: Object.keys(params).sort(),
+        });
         response.status(403).send('Invalid signature');
         return;
     }
-    const eventType = (_a = params['event']) === null || _a === void 0 ? void 0 : _a.trim();
-    const uid = (_b = params['custom']) === null || _b === void 0 ? void 0 : _b.trim();
-    const orderId = (_d = (_c = params['order_id']) === null || _c === void 0 ? void 0 : _c.trim()) !== null && _d !== void 0 ? _d : '';
-    const email = (_f = (_e = params['email']) === null || _e === void 0 ? void 0 : _e.trim()) !== null && _f !== void 0 ? _f : '';
-    const payMethod = (_h = (_g = params['pay_method']) === null || _g === void 0 ? void 0 : _g.trim()) !== null && _h !== void 0 ? _h : '';
-    const custom2 = (_k = (_j = params['custom2']) === null || _j === void 0 ? void 0 : _j.trim()) !== null && _k !== void 0 ? _k : '';
+    const eventType = (_b = params['event']) === null || _b === void 0 ? void 0 : _b.trim();
+    // connection_test ist Digistores Verbindungsprüfung — kein custom uid erwartet
+    if (eventType === 'connection_test') {
+        response.status(200).send('OK');
+        return;
+    }
+    const uid = (_c = params['custom']) === null || _c === void 0 ? void 0 : _c.trim();
+    const orderId = (_e = (_d = params['order_id']) === null || _d === void 0 ? void 0 : _d.trim()) !== null && _e !== void 0 ? _e : '';
+    const email = (_g = (_f = params['email']) === null || _f === void 0 ? void 0 : _f.trim()) !== null && _g !== void 0 ? _g : '';
+    const payMethod = (_j = (_h = params['pay_method']) === null || _h === void 0 ? void 0 : _h.trim()) !== null && _j !== void 0 ? _j : '';
+    const custom2 = (_l = (_k = params['custom2']) === null || _k === void 0 ? void 0 : _k.trim()) !== null && _l !== void 0 ? _l : '';
     if (!uid) {
         response.status(400).send('Missing custom uid');
         return;

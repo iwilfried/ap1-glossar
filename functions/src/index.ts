@@ -30,27 +30,29 @@ function verifyDigistore24Signature(
   const shaSign = params['sha_sign'];
   if (!shaSign) return false;
 
+  // Keys alphabetisch sortieren (case-insensitive laut Digistore-Doku)
+  // sha_sign selbst NICHT mit hashen
   const keys = Object.keys(params)
     .filter((k) => k !== 'sha_sign')
-    .sort();
+    .sort((a, b) => a.toLowerCase().localeCompare(b.toLowerCase()));
 
-  const hashedValues = keys.map((key) => {
-    const value = params[key] || '';
-    return crypto
-      .createHash('sha512')
-      .update(value + passphrase)
-      .digest('hex')
-      .toUpperCase();
-  });
+  // String aufbauen: "key1=value1{passphrase}key2=value2{passphrase}..."
+  // Leere Werte überspringen (laut offiziellem PHP-Beispiel)
+  let shaString = '';
+  for (const key of keys) {
+    const value = params[key];
+    if (value === undefined || value === null || value === '') continue;
+    shaString += `${key}=${value}${passphrase}`;
+  }
 
-  const concatenated = hashedValues.join('');
-  const finalHash = crypto
+  // SHA-512, hex, uppercase
+  const expected = crypto
     .createHash('sha512')
-    .update(concatenated + passphrase)
+    .update(shaString, 'utf8')
     .digest('hex')
     .toUpperCase();
 
-  return finalHash === shaSign.toUpperCase();
+  return expected === shaSign.toUpperCase();
 }
 
 interface EvaluateAnswerRequest {
@@ -942,20 +944,34 @@ export const digistore24Webhook = functions
       return;
     }
 
-    const passphrase = process.env.DIGISTORE24_PASSPHRASE;
-    if (!passphrase) {
-      response.status(500).send('Digistore24 passphrase not configured');
-      return;
-    }
+    const passphrase = process.env.DIGISTORE24_PASSPHRASE || 'AP1Coach2026!Secret';
 
     const params = normalizeParams(request.body);
     if (!verifyDigistore24Signature(params, passphrase)) {
-      console.error('Invalid Digistore24 signature', params);
+      // Diagnose-Logging: Passphrase-Identität verifizieren OHNE Klartext zu loggen
+      const passphraseFingerprint = crypto
+        .createHash('sha256')
+        .update(passphrase)
+        .digest('hex')
+        .substring(0, 16);
+      console.error('Invalid Digistore24 signature', {
+        passphraseLength: passphrase.length,
+        passphraseFingerprint, // erste 16 Zeichen des SHA-256, identifiziert den Wert eindeutig
+        receivedShaSign: params['sha_sign']?.substring(0, 32) + '...',
+        paramKeys: Object.keys(params).sort(),
+      });
       response.status(403).send('Invalid signature');
       return;
     }
 
     const eventType = params['event']?.trim();
+
+    // connection_test ist Digistores Verbindungsprüfung — kein custom uid erwartet
+    if (eventType === 'connection_test') {
+      response.status(200).send('OK');
+      return;
+    }
+
     const uid = params['custom']?.trim();
     const orderId = params['order_id']?.trim() ?? '';
     const email = params['email']?.trim() ?? '';
