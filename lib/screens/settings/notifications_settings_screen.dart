@@ -201,6 +201,9 @@ class _NotificationsSettingsScreenState extends State<NotificationsSettingsScree
   bool get _pushAuthorized =>
       _permissionSettings?.authorizationStatus == AuthorizationStatus.authorized;
 
+  bool get _pushDenied =>
+      _permissionSettings?.authorizationStatus == AuthorizationStatus.denied;
+
   @override
   Widget build(BuildContext context) {
     final themes = ['alle', ...termGroups.keys];
@@ -249,7 +252,55 @@ class _NotificationsSettingsScreenState extends State<NotificationsSettingsScree
                           ? (value) => setState(() => _dailyPushEnabled = value)
                           : null,
                     ),
-                    if (!_pushAuthorized)
+                    if (_pushDenied)
+                      Padding(
+                        padding: const EdgeInsets.only(top: 12),
+                        child: Container(
+                          padding: const EdgeInsets.all(12),
+                          decoration: BoxDecoration(
+                            color: Colors.red.shade50,
+                            border: Border.all(color: Colors.red.shade300),
+                            borderRadius: BorderRadius.circular(8),
+                          ),
+                          child: Column(
+                            crossAxisAlignment: CrossAxisAlignment.start,
+                            children: [
+                              Row(
+                                children: [
+                                  Icon(Icons.notifications_off, color: Colors.red.shade700, size: 20),
+                                  const SizedBox(width: 8),
+                                  Text(
+                                    'Benachrichtigungen sind blockiert',
+                                    style: TextStyle(
+                                      color: Colors.red.shade900,
+                                      fontWeight: FontWeight.bold,
+                                      fontSize: 14,
+                                    ),
+                                  ),
+                                ],
+                              ),
+                              const SizedBox(height: 8),
+                              Text(
+                                'So aktivierst du sie wieder:',
+                                style: TextStyle(color: Colors.red.shade900, fontSize: 13),
+                              ),
+                              const SizedBox(height: 4),
+                              Text(
+                                '1. Klick auf das 🔒-Symbol links in der Adressleiste\n'
+                                '2. Wähle „Website-Einstellungen" oder „Berechtigungen"\n'
+                                '3. Setze „Benachrichtigungen" auf „Zulassen"\n'
+                                '4. Lade diese Seite neu (F5)',
+                                style: TextStyle(
+                                  color: Colors.red.shade900,
+                                  fontSize: 13,
+                                  height: 1.5,
+                                ),
+                              ),
+                            ],
+                          ),
+                        ),
+                      )
+                    else if (!_pushAuthorized)
                       Padding(
                         padding: const EdgeInsets.only(top: 8),
                         child: Text(
@@ -326,9 +377,18 @@ class _NotificationsSettingsScreenState extends State<NotificationsSettingsScree
               onChanged: (value) => setState(() => _weekdaysOnly = value),
             ),
             const SizedBox(height: 16),
-            Text('Push-Berechtigung: ${_permissionLabel()}'),
+            Text(
+              'Push-Berechtigung: ${_permissionLabel()}',
+              style: TextStyle(
+                color: _pushDenied
+                    ? Colors.red.shade700
+                    : (_pushAuthorized ? Colors.green.shade700 : null),
+                fontWeight: _pushDenied ? FontWeight.bold : FontWeight.normal,
+              ),
+            ),
             const SizedBox(height: 10),
-            if (!_pushAuthorized)
+            // Button NUR bei "notDetermined" zeigen — bei "denied" hilft er nicht (Browser blockt Re-Prompt)
+            if (!_pushAuthorized && !_pushDenied)
               ElevatedButton(
                 onPressed: _requestPermission,
                 child: const Text('Benachrichtigungen aktivieren'),
