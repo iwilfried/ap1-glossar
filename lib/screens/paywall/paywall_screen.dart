@@ -7,6 +7,7 @@ import 'package:ap1_glossar/screens/legal/datenschutz_screen.dart';
 import 'package:ap1_glossar/screens/legal/impressum_screen.dart';
 import 'package:ap1_glossar/screens/voucher/redeem_voucher_screen.dart';
 import 'package:ap1_glossar/services/firebase_service.dart';
+import 'package:ap1_glossar/screens/home_page/home_page.dart';
 
 const _digistoreProductId = '685497';
 
@@ -527,32 +528,29 @@ class _PurchaseProcessingScreenState extends State<PurchaseProcessingScreen> {
 
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
-      appBar: AppBar(
-        title: const Text('Zahlung wird verarbeitet'),
-        backgroundColor: _kBrand,
-        foregroundColor: Colors.white,
-        // Verhindere ungewolltes Zurück-Navigieren während aktiver Zahlung
-        automaticallyImplyLeading: true,
-      ),
-      body: StreamBuilder<bool>(
-        stream: FirebaseService.instance.proStatusStream(),
-        builder: (context, snapshot) {
-          final isPro = snapshot.data ?? false;
+    return StreamBuilder<bool>(
+      stream: FirebaseService.instance.proStatusStream(),
+      builder: (context, snapshot) {
+        final isPro = snapshot.data ?? false;
 
-          if (isPro) {
-            // Erfolgsfall: Pro freigeschaltet
-            _timeoutTimer?.cancel();
-            return _buildSuccessView();
-          }
+        if (isPro) {
+          _timeoutTimer?.cancel();
+        }
 
-          if (_isTimedOut) {
-            return _buildTimeoutView();
-          }
-
-          return _buildProcessingView();
-        },
-      ),
+        return Scaffold(
+          appBar: AppBar(
+            title: Text(isPro ? 'Aktivierung erfolgreich 🎉' : 'Zahlung wird verarbeitet'),
+            backgroundColor: _kBrand,
+            foregroundColor: Colors.white,
+            automaticallyImplyLeading: true,
+          ),
+          body: isPro
+              ? _buildSuccessView()
+              : _isTimedOut
+                  ? _buildTimeoutView()
+                  : _buildProcessingView(),
+        );
+      },
     );
   }
 
@@ -654,8 +652,12 @@ class _PurchaseProcessingScreenState extends State<PurchaseProcessingScreen> {
             width: double.infinity,
             child: ElevatedButton.icon(
               onPressed: () {
-                // Pop bis zur Wurzel — User landet wieder auf der Startseite
-                Navigator.of(context).popUntil((route) => route.isFirst);
+                Navigator.of(context).pushAndRemoveUntil(
+                  MaterialPageRoute(
+                    builder: (_) => const HomePage(deepLinkTerm: null),
+                  ),
+                  (route) => false,
+                );
               },
               icon: const Icon(Icons.rocket_launch),
               label: const Text(
