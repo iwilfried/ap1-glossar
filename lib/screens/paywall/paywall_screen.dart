@@ -196,33 +196,26 @@ class _PaywallScreenState extends State<PaywallScreen> {
                   ?.copyWith(fontWeight: FontWeight.bold),
             ),
             const SizedBox(height: 8),
-            Container(
-              padding: const EdgeInsets.symmetric(horizontal: 16, vertical: 10),
-              decoration: BoxDecoration(
-                color: _kAccent,
-                borderRadius: BorderRadius.circular(24),
-              ),
-              child: const Column(
-                mainAxisSize: MainAxisSize.min,
-                crossAxisAlignment: CrossAxisAlignment.start,
-                children: [
-                  Text(
-                    '€17,84',
-                    style: TextStyle(
-                      fontSize: 20,
-                      fontWeight: FontWeight.bold,
-                      color: Colors.white,
-                    ),
+            const Column(
+              crossAxisAlignment: CrossAxisAlignment.start,
+              children: [
+                Text(
+                  '17,84 €',
+                  style: TextStyle(
+                    fontSize: 36,
+                    fontWeight: FontWeight.bold,
+                    color: Color(0xFF1B3A5C),
                   ),
-                  Text(
-                    'einmalig · inkl. 19% MwSt.',
-                    style: TextStyle(
-                      fontSize: 11,
-                      color: Color.fromRGBO(255, 255, 255, 0.9),
-                    ),
+                ),
+                SizedBox(height: 4),
+                Text(
+                  'einmalig · inkl. 19% MwSt.',
+                  style: TextStyle(
+                    fontSize: 14,
+                    color: Colors.black54,
                   ),
-                ],
-              ),
+                ),
+              ],
             ),
             const SizedBox(height: 16),
             Text(
@@ -377,20 +370,23 @@ class _PaywallScreenState extends State<PaywallScreen> {
                 icon: const Icon(Icons.rocket_launch,
                     color: Colors.white, size: 22),
                 label: Text(
-                  _isLaunching ? 'Zur Kasse…' : 'Prüfungspass sichern',
+                  _isLaunching
+                      ? 'Zur Kasse…'
+                      : _selectedExamDateCode == null
+                          ? 'Bitte erst Prüfungstermin wählen ↑'
+                          : 'Prüfungspass für 17,84 € sichern →',
                   style: const TextStyle(
                     color: Colors.white,
-                    fontSize: 18,
+                    fontSize: 16,
                     fontWeight: FontWeight.bold,
                   ),
                 ),
                 style: ElevatedButton.styleFrom(
-                  backgroundColor: _kBrand,
+                  backgroundColor: _kAccent,
                   foregroundColor: Colors.white,
                   padding: const EdgeInsets.all(16),
                   shape: RoundedRectangleBorder(
                     borderRadius: BorderRadius.circular(12),
-                    side: const BorderSide(color: Colors.white, width: 2),
                   ),
                   elevation: 4,
                   minimumSize: const Size(double.infinity, 56),
