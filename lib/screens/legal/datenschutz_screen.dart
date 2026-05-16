@@ -67,7 +67,7 @@ class _DatenschutzContent extends StatelessWidget {
           "a) GitHub Pages (GitHub Inc., San Francisco, USA) unter "
           "iwilfried.github.io/ap1-glossar\n\n"
           "b) IONOS SE (Elgendorfer Str. 57, 56410 Montabaur) unter "
-          "learningfactory.io/glossar\n\n"
+          "ap1.learningfactory.io\n\n"
           "Beim Abruf werden automatisch technische Zugriffsdaten "
           "(z.\u202FB. IP-Adresse, Browsertyp, Zeitpunkt) durch den "
           "Hosting-Anbieter erfasst. Diese dienen ausschließlich der "

@@ -88,7 +88,7 @@ class _WelcomeScreenState extends State<WelcomeScreen> {
 
                 const SizedBox(height: 20),
                 const Text(
-                  'learningfactory.io/coach',
+                  'ap1.learningfactory.io',
                   textAlign: TextAlign.center,
                   style: TextStyle(
                     fontFamily: 'Inter',

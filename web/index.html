@@ -100,7 +100,7 @@
   <script src="flutter_bootstrap.js" async></script>
   <script type="module">
     if ('serviceWorker' in navigator) {
-      navigator.serviceWorker.register('firebase-messaging-sw.js', { scope: '/coach/' })
+      navigator.serviceWorker.register('firebase-messaging-sw.js', { scope: '/' })
         .then((registration) => {
           console.log('Firebase Messaging Service Worker registered:', registration);
         })
