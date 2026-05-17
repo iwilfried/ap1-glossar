@@ -448,6 +448,13 @@ class HomePageState extends State<HomePage> with SingleTickerProviderStateMixin 
                         onPressed: () {
                           _searchController.clear();
                           _applyFilter(search: '');
+                          if (_scrollController.hasClients) {
+                            _scrollController.animateTo(
+                              0,
+                              duration: const Duration(milliseconds: 250),
+                              curve: Curves.easeOut,
+                            );
+                          }
                         },
                       ),
                 border: OutlineInputBorder(
