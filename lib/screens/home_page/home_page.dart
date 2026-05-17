@@ -420,7 +420,16 @@ class HomePageState extends State<HomePage> with SingleTickerProviderStateMixin 
             padding: const EdgeInsets.fromLTRB(16, 14, 16, 8),
             child: TextField(
               controller: _searchController,
-              onChanged: (t) => _applyFilter(search: t),
+              onChanged: (t) {
+                _applyFilter(search: t);
+                if (_scrollController.hasClients) {
+                  _scrollController.animateTo(
+                    0,
+                    duration: const Duration(milliseconds: 250),
+                    curve: Curves.easeOut,
+                  );
+                }
+              },
               decoration: InputDecoration(
                 filled: true,
                 fillColor: Theme.of(context).cardColor,
