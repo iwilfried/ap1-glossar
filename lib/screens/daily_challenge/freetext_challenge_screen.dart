@@ -614,7 +614,7 @@ class _FreetextChallengeScreenState extends State<FreetextChallengeScreen> {
         ),
         icon: const Icon(Icons.rocket_launch, color: Colors.white, size: 22),
         label: const Text(
-          'Prüfungspass holen – €14,99',
+          'Prüfungspass holen – €18',
           style: TextStyle(
             color: Colors.white,
             fontSize: 18,

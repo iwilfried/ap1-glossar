@@ -200,7 +200,7 @@ class _PaywallScreenState extends State<PaywallScreen> {
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
                 Text(
-                  '17,84 €',
+                  '18 €',
                   style: TextStyle(
                     fontSize: 36,
                     fontWeight: FontWeight.bold,
@@ -374,7 +374,7 @@ class _PaywallScreenState extends State<PaywallScreen> {
                       ? 'Zur Kasse…'
                       : _selectedExamDateCode == null
                           ? 'Bitte erst Prüfungstermin wählen ↑'
-                          : 'Prüfungspass für 17,84 € sichern →',
+                          : 'Prüfungspass für 18 € sichern →',
                   style: const TextStyle(
                     color: Colors.white,
                     fontSize: 16,
