@@ -1,9 +1,9 @@
-# AP1 Coach – IHK Prüfungsvorbereitung
+# Learning Factory AP1 Coach – IHK AP1 Prüfungsvorbereitung
 
 > **386 Fachbegriffe** · **817 Tags** · **4 IHK-Bewertungsaspekte** · **Themen-Filter** · **Karteikarten-Lernmodus** · **Multiple-Choice-Quiz**  
 > Der intelligente Lernbegleiter für die IHK Abschlussprüfung Teil 1 – Fachinformatiker (FIAE/FISI), IT-Systemkaufleute & Kaufleute für Digitalisierungsmanagement.
 
-**🔗 Live-App:** [iwilfried.github.io/ap1-glossar](https://iwilfried.github.io/ap1-glossar/)
+**🔗 Live-App:** [ap1.learningfactory.io](https://ap1.learningfactory.io/)
 
 ---
 
@@ -36,10 +36,6 @@ Die 4+1 IHK-Bewertungsaspekte sind das Rückgrat jeder AP1-Prüfungsaufgabe. Das
 | **Berechnung** | 🟣 Violett | Formeln, Kalkulationen, Umrechnungen (AfA, MwSt, Subnetting) |
 
 ---
-
-## Screenshots
-
-## Screenshots
 
 ## Screenshots
 
@@ -83,8 +79,8 @@ Die Begriffe decken alle prüfungsrelevanten AP1-Bereiche ab:
 | Plattformen | Web · Android · iOS |
 | Daten | Hardcoded `lib/data/data.dart` (offline-first) |
 | Schriftart | Google Fonts (Poppins) |
-| Deployment | GitHub Pages |
-| Releases | 19 Releases · [Changelog →](https://github.com/iwilfried/ap1-glossar/releases) |
+| Deployment | IONOS Subdomain (Production) · GitHub Pages (Test-Deploys) |
+| Releases | [Changelog →](https://github.com/iwilfried/ap1-coach/releases) |
 
 ---
 
@@ -149,8 +145,8 @@ Bei IPN-Fehlern: [Logs in der Cloud Console prüfen](https://console.cloud.googl
 ### Setup
 
 ```bash
-git clone https://github.com/iwilfried/ap1-glossar.git
-cd ap1-glossar
+git clone https://github.com/iwilfried/ap1-coach.git
+cd ap1-coach
 flutter pub get
 flutter run -d chrome          # Web (lokal)
 flutter run                    # Android/iOS

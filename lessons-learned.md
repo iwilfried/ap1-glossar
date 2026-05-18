@@ -27,9 +27,33 @@ https://console.cloud.google.com/functions/details/europe-west1/<funcName>?proje
 
 ### Web-App Deploy
 ```powershell
-flutter build web --release --base-href=/coach/
+flutter build web --release --base-href=/
 ```
-Dann per **FileZilla SFTP** nach `/learningfactory/coach/` auf IONOS hochladen. GitHub Push allein reicht NICHT — die App läuft auf IONOS-Webspace, nicht auf GitHub Pages.
+Dann per **FileZilla SFTP** nach `/learningfactory/ap1/` auf IONOS hochladen. GitHub Push allein reicht NICHT — die App läuft auf IONOS-Webspace unter der Subdomain `ap1.learningfactory.io`, nicht auf GitHub Pages.
+
+**Hinweis zur base-href:** Bei Subdomain (eigene Hosting-Root) ist `--base-href=/`. Bei Subdirectory (`/coach/`) entsprechend `--base-href=/coach/`. Häufige Konfliktquelle nach Subdomain-Migration.
+
+---
+
+## 🌐 Subdomain-Migration & Hosting-Architektur
+
+### Subdomain statt Subdirectory
+- Production-App läuft unter `ap1.learningfactory.io` (eigene Subdomain), nicht mehr unter `learningfactory.io/coach/`
+- Konsequenz für Flutter: `--base-href=/` statt `--base-href=/coach/`
+- IONOS-Ziel-Pfad: `/learningfactory/ap1/` statt `/learningfactory/coach/`
+
+### Firebase Authorized Domains erweitern
+Nach Subdomain-Migration müssen neue Hosts in **Firebase Console → Authentication → Settings → Authorized Domains** aufgenommen werden, sonst scheitert Anonymous Sign-In:
+- `ap1.learningfactory.io` (Production)
+- `ai.learningfactory.io` (vorgesehen für zweite App)
+
+### IONOS-Webspace-Verbindung-Bug
+Bei IONOS kann nach Subdomain-Anlage die **Hauptdomain plötzlich 403/404** zeigen — Ursache: Webspace-Verbindung der Hauptdomain wurde verloren („Ziel: Webhosting" generisch statt konkreter Pfad).
+
+**Fix:** Im IONOS-Panel → Domain bearbeiten → „Verwendungsart anpassen" → „Webspace verbinden" → konkreten Pfad eintragen (z. B. `/learningfactory`) → Speichern.
+
+### Redirect /coach/ für alte URL
+Nach Migration unter `learningfactory.io/coach/` einen `index.html` mit 0-sec Meta-Refresh auf `ap1.learningfactory.io` deponieren. Sichert bestehende Bookmarks und Direct-Links.
 
 ---
 
@@ -83,6 +107,31 @@ NICHT: pro Wert separat hashen und Hashes konkatenieren — das ist ein altes/fa
 
 ---
 
+## 💰 Preis-Migration durch alle Säulen
+
+Eine Preisänderung muss durch **drei Säulen** synchron, sonst gibt es Diskrepanzen die Käufer verwirren.
+
+### Drei-Säulen-Modell
+1. **Digistore-Zahlungsplan** — Quelle der Wahrheit für den tatsächlichen Verkaufspreis
+2. **Salespage** (`learningfactory.io/index.html`) — Marketing-Preis vor dem Klick
+3. **Flutter App Paywall** — Preis im App-eigenen Pro-Banner
+
+### Reihenfolge
+**Digistore ZUERST**, dann Salespage und App parallel. Sonst klickt jemand auf „Sichern" und sieht im Checkout einen anderen Preis als auf der Marketing-Seite.
+
+### Versteckte Stellen (oft vergessen)
+- `lib/screens/daily_challenge/freetext_challenge_screen.dart` — Pro-Banner im Daily-Challenge-Screen
+- `lib/screens/paywall/paywall_screen.dart` — sowohl Headline-Preis als auch Button-Text (z. B. „Prüfungspass für 18 € sichern →")
+- AGB / Impressum — meist kein Preis erwähnt, aber zur Sicherheit `findstr` durchlaufen lassen
+
+### findstr scheitert an € und Sonderzeichen
+PowerShell-`findstr` hat Probleme mit Unicode (`€`, Umlaute). Verlässlichste Verifikation: **Inkognito-Browser mit Hard-Refresh** (`Strg+Shift+N` + `Strg+F5`). Alternative: PowerShell-`Select-String` oder `Invoke-WebRequest -UseBasicParsing | Select-String`.
+
+### App-Deploy nicht vergessen
+Salespage + Digistore reichen NICHT — die App muss neu gebaut und nach IONOS deployed werden, sonst zeigt die Paywall den alten Preis. Stille Inkonsistenz, die Käufer beim Klicken sofort sehen.
+
+---
+
 ## 🔔 Push-Notifications & Permission-UX
 
 ### Drei Zustände, drei UI-Reaktionen
@@ -97,6 +146,31 @@ NICHT: pro Wert separat hashen und Hashes konkatenieren — das ist ein altes/fa
 
 ### FCM-Token-Hygiene
 Bei `messaging/registration-token-not-registered` oder `messaging/invalid-registration-token` Token aus Firestore löschen + `dailyPushEnabled: false` setzen. Sonst loopt die Scheduler-Function mit toten Tokens.
+
+---
+
+## 🔁 Cross-Tab-Pro-Aktivierung (kritisches UX-Issue)
+
+### Das Problem
+Der Webhook aktiviert Pro für die **Firebase-UID, die beim Kauf in `custom=...` mitgegeben** wurde. Wenn der Käufer den App-Status in **einem anderen Browser-Tab/Fenster** prüft, sieht er eine **andere UID** und damit endlos „Zahlung wird verarbeitet".
+
+### Wann es passiert
+- Käufer schließt nach Kauf den App-Tab und öffnet die App per **E-Mail-Link** (anderer Browser-Modus → andere UID)
+- Käufer wechselt vom **Desktop aufs Handy** zwischen Kauf und „Zurück zur App"
+- Käufer kauft im **Inkognito**, die App ist aber im **normalen Browser** offen
+- Käufer leert nach Kauf die Browser-Daten
+
+### Aktueller Stand
+Es gibt **keine User-zu-Käufer-Verknüpfung** außer der Firebase-UID. Wenn diese UID verloren geht, ist Pro „im Limbo" — bezahlt, aber unzugänglich.
+
+### Lösungs-Ideen (Backlog)
+- **Magic-Link per E-Mail** nach Kauf, der eine kompatible UID herstellt
+- **Aktivierungscode** in der Digistore-Bestätigungs-E-Mail, der in der App eingegeben wird
+- **E-Mail-Login** als zusätzliche Auth-Option (Anonymous + Email-Linking)
+- **Webhook schreibt Pro-Eintrag mit E-Mail als Key**, App fragt per E-Mail-Eingabe ab
+
+### Warum das jetzt kritisch ist
+Erste echte Kunden werden das Problem haben. Bei Solo-Testkauf konnte im Original-Tab geblieben werden — bei echten Kunden in der Wildbahn ist das nicht garantiert.
 
 ---
 
@@ -142,6 +216,12 @@ Bei „funktioniert nicht in Chrome": **erst** in Firefox / Edge testen, **bevor
 - Wichtigkeit „Fehler" zeigt nur Stack-Traces (oft leer, weil meiste Fehler über `console.error` geloggt werden)
 - Wichtigkeit „Fehlerbehebung" / „Debug" zeigt zusätzlich Container-Boot-Probleme
 
+### web_fetch / API-Cache-Vorsicht
+Bei Verifikationen direkt über LLM-Tools (z. B. web_fetch) kann das Tool selbst eine gecachte Antwort liefern — selbst mit Cache-Busting-Query-Parameter. **Die zuverlässigste Endkunden-Verifikation ist immer ein frisches Inkognito-Fenster mit Strg+F5.**
+
+### IONOS-CDN ignoriert Query-Parameter für HTML
+Statische HTML-Dateien werden bei IONOS gecached, der Cache-Buster `?cb=...` wird ignoriert. Bei direkten Datei-Updates kann es 1–5 Min dauern, bis die neue Version live ist. Hard-Refresh im Browser hilft.
+
 ---
 
 ## 🌐 Browser-Quirks
@@ -171,3 +251,16 @@ Bei „funktioniert nicht in Chrome": **erst** in Firefox / Edge testen, **bevor
 - Atomare Commits: 1 logische Änderung pro Commit
 - Conventional Commits: `fix(scope): …`, `feat(scope): …`, `docs: …`
 - Bei Webhook-Code-Änderungen: BEIDE Dateien (`functions/src/index.ts` und `functions/lib/index.js`) committen, sonst läuft Deploy ohne aktualisierten Build
+
+### Repo-Umbenennung
+Repository `ap1-glossar` wurde am 18.05.2026 auf `ap1-coach` umbenannt (GitHub Settings → Rename).
+
+Nachzieharbeit:
+1. Lokale Klone: `git remote set-url origin https://github.com/iwilfried/ap1-coach.git`
+2. README.md: alle Hardcoded-URLs prüfen
+3. Datenschutzerklärung / Impressum: falls Repo-Link drinsteht
+4. Bookmark-/Link-Sammlungen extern aktualisieren
+
+GitHub leitet die alte URL (`ap1-glossar`) zeitweise um, aber nicht garantiert dauerhaft.
+Lokales Working-Directory bleibt aus Pragmatismus-Gründen weiterhin `C:\Users\wilfr\ap1-glossar`
+(VS Code Workspaces, FileZilla-Pfade etc. bleiben funktional).
