@@ -1,10 +1,19 @@
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.testDailyChallenge = exports.sendDailyChallenge = exports.updateMCScore = exports.digistore24Webhook = exports.generateVouchers = exports.redeemVoucher = exports.generateMCQuestion = exports.evaluateAnswer = exports.generateQuestion = void 0;
+exports.testDailyChallenge = exports.sendDailyChallenge = exports.updateMCScore = exports.getProCodeByOrderId = exports.redeemProCode = exports.digistore24Webhook = exports.generateVouchers = exports.redeemVoucher = exports.generateMCQuestion = exports.evaluateAnswer = exports.generateQuestion = void 0;
 const functions = require("firebase-functions");
 const admin = require("firebase-admin");
 const crypto = require("crypto");
 admin.initializeApp();
+function generateProCode() {
+    // 6 alphanumerische Zeichen ohne verwechselbare (kein O/0/I/1/L)
+    const chars = 'ABCDEFGHJKMNPQRSTUVWXYZ23456789';
+    let code = '';
+    for (let i = 0; i < 6; i++) {
+        code += chars[Math.floor(Math.random() * chars.length)];
+    }
+    return code;
+}
 const examDates = {
     F2026: new Date('2026-03-31'),
     H2026: new Date('2026-10-31'),
@@ -789,38 +798,219 @@ exports.digistore24Webhook = functions
     const email = (_g = (_f = params['email']) === null || _f === void 0 ? void 0 : _f.trim()) !== null && _g !== void 0 ? _g : '';
     const payMethod = (_j = (_h = params['pay_method']) === null || _h === void 0 ? void 0 : _h.trim()) !== null && _j !== void 0 ? _j : '';
     const custom2 = (_l = (_k = params['custom2']) === null || _k === void 0 ? void 0 : _k.trim()) !== null && _l !== void 0 ? _l : '';
-    if (!uid) {
+    // uid optional bei on_payment (Käufer kann später per Code aktivieren).
+    // Für refund/chargeback weiterhin erforderlich.
+    if (!uid && eventType !== 'on_payment') {
         response.status(400).send('Missing custom uid');
         return;
     }
-    const userRef = admin.firestore().collection('users').doc(uid);
+    const userRef = uid ? admin.firestore().collection('users').doc(uid) : null;
     try {
         if (eventType === 'on_payment') {
-            const updateData = {
-                isPro: true,
-                purchaseDate: admin.firestore.FieldValue.serverTimestamp(),
-                digistore24OrderId: orderId,
-                digistore24Email: email,
-                payMethod: payMethod,
-            };
-            if (custom2 && examDates[custom2]) {
-                updateData.examDate = admin.firestore.Timestamp.fromDate(examDates[custom2]);
-                updateData.examDateCode = custom2;
+            // 1. Pro-Code mit Kollisions-Schutz generieren (max 5 Versuche)
+            let proCode = '';
+            for (let attempts = 0; attempts < 5; attempts++) {
+                const candidate = generateProCode();
+                const existing = await admin.firestore()
+                    .collection('proCodes')
+                    .doc(candidate)
+                    .get();
+                if (!existing.exists) {
+                    proCode = candidate;
+                    break;
+                }
             }
-            await userRef.set(updateData, { merge: true });
+            if (!proCode) {
+                console.error('Failed to generate unique proCode after 5 attempts');
+                response.status(500).send('Code generation failed');
+                return;
+            }
+            // 2. examDate ermitteln
+            const examDate = (custom2 && examDates[custom2])
+                ? admin.firestore.Timestamp.fromDate(examDates[custom2])
+                : null;
+            const examDateCode = (custom2 && examDates[custom2]) ? custom2 : null;
+            // 3. proCode-Dokument anlegen (User-unabhängig, abrufbar via Code oder orderId)
+            await admin.firestore().collection('proCodes').doc(proCode).set({
+                email,
+                orderId,
+                examDate,
+                examDateCode,
+                payMethod,
+                intendedUid: uid || null,
+                redeemed: false,
+                createdAt: admin.firestore.FieldValue.serverTimestamp(),
+                expiresAt: admin.firestore.Timestamp.fromDate(new Date(Date.now() + 365 * 24 * 60 * 60 * 1000) // +1 Jahr
+                ),
+            });
+            // 4. Wenn uid vorhanden: User-Doc direkt aktivieren (bestehender Flow)
+            if (userRef) {
+                const updateData = {
+                    isPro: true,
+                    purchaseDate: admin.firestore.FieldValue.serverTimestamp(),
+                    digistore24OrderId: orderId,
+                    digistore24Email: email,
+                    payMethod: payMethod,
+                    proCode,
+                };
+                if (examDate) {
+                    updateData.examDate = examDate;
+                    updateData.examDateCode = examDateCode;
+                }
+                await userRef.set(updateData, { merge: true });
+            }
+            // Falls uid fehlt: Pro wird über redeemProCode aktiviert (kommt im nächsten Schritt)
         }
         else if (eventType === 'on_refund' || eventType === 'on_chargeback') {
-            await userRef.set({
-                isPro: false,
-                refundDate: admin.firestore.FieldValue.serverTimestamp(),
-                refundReason: eventType,
-            }, { merge: true });
+            if (userRef) {
+                await userRef.set({
+                    isPro: false,
+                    refundDate: admin.firestore.FieldValue.serverTimestamp(),
+                    refundReason: eventType,
+                }, { merge: true });
+            }
         }
         response.status(200).send('OK');
     }
     catch (error) {
         console.error('Digistore24 webhook failed:', error);
         response.status(500).send('Internal error');
+    }
+});
+exports.redeemProCode = functions
+    .region('europe-west1')
+    .https.onCall(async (data, context) => {
+    var _a, _b;
+    if (!context.auth) {
+        throw new functions.https.HttpsError('unauthenticated', 'Anmeldung erforderlich.');
+    }
+    const uid = context.auth.uid;
+    // Code-Validierung
+    const code = ((_a = data === null || data === void 0 ? void 0 : data.code) !== null && _a !== void 0 ? _a : '').trim().toUpperCase();
+    if (!code) {
+        throw new functions.https.HttpsError('invalid-argument', 'Code fehlt.');
+    }
+    if (!/^[A-Z0-9]{6}$/.test(code)) {
+        throw new functions.https.HttpsError('invalid-argument', 'Code muss aus 6 Buchstaben und Zahlen bestehen.');
+    }
+    const db = admin.firestore();
+    const proCodeRef = db.collection('proCodes').doc(code);
+    const proCodeDoc = await proCodeRef.get();
+    if (!proCodeDoc.exists) {
+        throw new functions.https.HttpsError('not-found', 'Code nicht gefunden. Prüfe die Schreibweise.');
+    }
+    const proCode = proCodeDoc.data();
+    if (!proCode) {
+        throw new functions.https.HttpsError('not-found', 'Code nicht gefunden.');
+    }
+    if (proCode.redeemed === true) {
+        throw new functions.https.HttpsError('failed-precondition', 'Dieser Code wurde bereits eingelöst.');
+    }
+    const expiresAt = proCode.expiresAt;
+    if (expiresAt && expiresAt.toDate() < new Date()) {
+        throw new functions.https.HttpsError('deadline-exceeded', 'Dieser Code ist abgelaufen.');
+    }
+    // Bestehender Pro-Status: nicht überschreiben wenn noch gültig
+    const userRef = db.collection('users').doc(uid);
+    const userDoc = await userRef.get();
+    const userData = userDoc.data();
+    if ((userData === null || userData === void 0 ? void 0 : userData.isPro) === true) {
+        const userExamDate = userData.examDate;
+        if (!userExamDate || userExamDate.toDate() >= new Date()) {
+            throw new functions.https.HttpsError('already-exists', 'Du hast bereits einen aktiven Prüfungspass.');
+        }
+    }
+    // Batch: proCode als redeemed markieren + User-Doc aktualisieren
+    const batch = db.batch();
+    batch.update(proCodeRef, {
+        redeemed: true,
+        redeemedAt: admin.firestore.FieldValue.serverTimestamp(),
+        redeemedBy: uid,
+    });
+    const updateData = {
+        isPro: true,
+        purchaseDate: admin.firestore.FieldValue.serverTimestamp(),
+        digistore24OrderId: proCode.orderId,
+        digistore24Email: proCode.email,
+        payMethod: proCode.payMethod,
+        proCode: code,
+    };
+    if (proCode.examDate) {
+        updateData.examDate = proCode.examDate;
+        updateData.examDateCode = proCode.examDateCode;
+    }
+    batch.set(userRef, updateData, { merge: true });
+    await batch.commit();
+    const examLabels = {
+        F2026: 'Frühjahr 2026',
+        H2026: 'Herbst 2026',
+        F2027: 'Frühjahr 2027',
+        H2027: 'Herbst 2027',
+    };
+    const label = proCode.examDateCode
+        ? (_b = examLabels[proCode.examDateCode]) !== null && _b !== void 0 ? _b : proCode.examDateCode
+        : null;
+    return {
+        success: true,
+        examDateCode: proCode.examDateCode || null,
+        message: label
+            ? `Prüfungspass aktiviert bis ${label}!`
+            : 'Prüfungspass aktiviert!',
+    };
+});
+exports.getProCodeByOrderId = functions
+    .region('europe-west1')
+    .https.onRequest(async (req, res) => {
+    var _a;
+    // CORS für Salespage-Aufrufe von learningfactory.io
+    res.set('Access-Control-Allow-Origin', '*');
+    res.set('Access-Control-Allow-Methods', 'GET, OPTIONS');
+    res.set('Access-Control-Allow-Headers', 'Content-Type');
+    if (req.method === 'OPTIONS') {
+        res.status(204).send('');
+        return;
+    }
+    if (req.method !== 'GET') {
+        res.status(405).send({ error: 'Method not allowed' });
+        return;
+    }
+    const orderId = (_a = req.query.orderId) === null || _a === void 0 ? void 0 : _a.trim();
+    if (!orderId) {
+        res.status(400).send({ error: 'orderId fehlt' });
+        return;
+    }
+    try {
+        const snap = await admin.firestore()
+            .collection('proCodes')
+            .where('orderId', '==', orderId)
+            .limit(1)
+            .get();
+        if (snap.empty) {
+            res.status(404).send({
+                error: 'Kein Code für diese Bestellung gefunden. Bitte einige Sekunden warten und neu laden.'
+            });
+            return;
+        }
+        const doc = snap.docs[0];
+        const data = doc.data();
+        // Wenn bereits eingelöst: KEINEN Code zurückgeben (Sicherheit)
+        if (data.redeemed === true) {
+            res.status(200).send({
+                redeemed: true,
+                message: 'Code wurde bereits eingelöst.',
+            });
+            return;
+        }
+        // Code zurückgeben (nur wenn noch nicht eingelöst)
+        res.status(200).send({
+            code: doc.id,
+            redeemed: false,
+            examDateCode: data.examDateCode || null,
+        });
+    }
+    catch (err) {
+        console.error('getProCodeByOrderId failed:', err);
+        res.status(500).send({ error: 'Interner Fehler' });
     }
 });
 exports.updateMCScore = functions
