@@ -880,7 +880,7 @@ exports.digistore24Webhook = functions
 exports.redeemProCode = functions
     .region('europe-west1')
     .https.onCall(async (data, context) => {
-    var _a, _b;
+    var _a, _b, _c;
     if (!context.auth) {
         throw new functions.https.HttpsError('unauthenticated', 'Anmeldung erforderlich.');
     }
@@ -920,6 +920,22 @@ exports.redeemProCode = functions
             throw new functions.https.HttpsError('already-exists', 'Du hast bereits einen aktiven Prüfungspass.');
         }
     }
+    // Bestimme effective examDate: vom proCode oder vom User-Input als Fallback
+    let effectiveExamDate = proCode.examDate;
+    let effectiveExamDateCode = proCode.examDateCode;
+    if (!effectiveExamDate || !effectiveExamDateCode) {
+        // proCode enthält keinen Termin — User muss einen wählen
+        const userExamCode = ((_b = data.examDateCode) !== null && _b !== void 0 ? _b : '').trim();
+        if (!userExamCode) {
+            throw new functions.https.HttpsError('invalid-argument', 'Dieser Code enthält keinen Prüfungstermin. Bitte wähle deinen Prüfungstermin.');
+        }
+        const fallbackExamDate = examDates[userExamCode];
+        if (!fallbackExamDate) {
+            throw new functions.https.HttpsError('invalid-argument', `Unbekannter Prüfungstermin: ${userExamCode}`);
+        }
+        effectiveExamDate = admin.firestore.Timestamp.fromDate(fallbackExamDate);
+        effectiveExamDateCode = userExamCode;
+    }
     // Batch: proCode als redeemed markieren + User-Doc aktualisieren
     const batch = db.batch();
     batch.update(proCodeRef, {
@@ -934,11 +950,9 @@ exports.redeemProCode = functions
         digistore24Email: proCode.email,
         payMethod: proCode.payMethod,
         proCode: code,
+        examDate: effectiveExamDate,
+        examDateCode: effectiveExamDateCode,
     };
-    if (proCode.examDate) {
-        updateData.examDate = proCode.examDate;
-        updateData.examDateCode = proCode.examDateCode;
-    }
     batch.set(userRef, updateData, { merge: true });
     await batch.commit();
     const examLabels = {
@@ -947,12 +961,12 @@ exports.redeemProCode = functions
         F2027: 'Frühjahr 2027',
         H2027: 'Herbst 2027',
     };
-    const label = proCode.examDateCode
-        ? (_b = examLabels[proCode.examDateCode]) !== null && _b !== void 0 ? _b : proCode.examDateCode
+    const label = effectiveExamDateCode
+        ? (_c = examLabels[effectiveExamDateCode]) !== null && _c !== void 0 ? _c : effectiveExamDateCode
         : null;
     return {
         success: true,
-        examDateCode: proCode.examDateCode || null,
+        examDateCode: effectiveExamDateCode || null,
         message: label
             ? `Prüfungspass aktiviert bis ${label}!`
             : 'Prüfungspass aktiviert!',

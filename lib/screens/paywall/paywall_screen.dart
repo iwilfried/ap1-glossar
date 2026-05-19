@@ -8,6 +8,7 @@ import 'package:ap1_glossar/screens/legal/impressum_screen.dart';
 import 'package:ap1_glossar/screens/voucher/redeem_voucher_screen.dart';
 import 'package:ap1_glossar/services/firebase_service.dart';
 import 'package:ap1_glossar/screens/home_page/home_page.dart';
+import 'redeem_code_dialog.dart';
 
 const _digistoreProductId = '685497';
 
@@ -596,6 +597,49 @@ class _PurchaseProcessingScreenState extends State<PurchaseProcessingScreen> {
                     height: 1.4,
                   ),
                   textAlign: TextAlign.center,
+                ),
+              ],
+            ),
+          ),
+          const SizedBox(height: 24),
+          Container(
+            padding: const EdgeInsets.symmetric(horizontal: 16, vertical: 12),
+            decoration: BoxDecoration(
+              color: Colors.orange.shade50,
+              borderRadius: BorderRadius.circular(10),
+              border: Border.all(color: Colors.orange.shade200),
+            ),
+            child: Column(
+              children: [
+                Text(
+                  'Auf einem anderen Gerät gekauft?',
+                  style: TextStyle(
+                    fontSize: 13,
+                    color: Colors.orange.shade900,
+                    fontWeight: FontWeight.w600,
+                  ),
+                  textAlign: TextAlign.center,
+                ),
+                const SizedBox(height: 4),
+                Text(
+                  'Du hast einen 6-stelligen Code in deiner Bestellbestätigung erhalten. '
+                  'Hier kannst du ihn einlösen, um auch auf diesem Gerät freizuschalten.',
+                  style: TextStyle(
+                    fontSize: 12,
+                    color: Colors.orange.shade900,
+                    height: 1.4,
+                  ),
+                  textAlign: TextAlign.center,
+                ),
+                const SizedBox(height: 12),
+                OutlinedButton.icon(
+                  onPressed: () => showRedeemCodeDialog(context),
+                  icon: const Icon(Icons.vpn_key_outlined, size: 18),
+                  label: const Text('Code einlösen'),
+                  style: OutlinedButton.styleFrom(
+                    foregroundColor: Colors.orange.shade900,
+                    side: BorderSide(color: Colors.orange.shade400),
+                  ),
                 ),
               ],
             ),

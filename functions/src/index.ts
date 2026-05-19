@@ -1078,6 +1078,7 @@ export const digistore24Webhook = functions
 
 interface RedeemProCodeRequest {
   code: string;
+  examDateCode?: string; // optional, nur nötig wenn proCode kein examDate hat
 }
 
 export const redeemProCode = functions
@@ -1150,6 +1151,30 @@ export const redeemProCode = functions
       }
     }
 
+    // Bestimme effective examDate: vom proCode oder vom User-Input als Fallback
+    let effectiveExamDate = proCode.examDate as admin.firestore.Timestamp | undefined;
+    let effectiveExamDateCode = proCode.examDateCode as string | undefined;
+
+    if (!effectiveExamDate || !effectiveExamDateCode) {
+      // proCode enthält keinen Termin — User muss einen wählen
+      const userExamCode = (data.examDateCode ?? '').trim();
+      if (!userExamCode) {
+        throw new functions.https.HttpsError(
+          'invalid-argument',
+          'Dieser Code enthält keinen Prüfungstermin. Bitte wähle deinen Prüfungstermin.'
+        );
+      }
+      const fallbackExamDate = examDates[userExamCode];
+      if (!fallbackExamDate) {
+        throw new functions.https.HttpsError(
+          'invalid-argument',
+          `Unbekannter Prüfungstermin: ${userExamCode}`
+        );
+      }
+      effectiveExamDate = admin.firestore.Timestamp.fromDate(fallbackExamDate);
+      effectiveExamDateCode = userExamCode;
+    }
+
     // Batch: proCode als redeemed markieren + User-Doc aktualisieren
     const batch = db.batch();
     batch.update(proCodeRef, {
@@ -1165,11 +1190,9 @@ export const redeemProCode = functions
       digistore24Email: proCode.email,
       payMethod: proCode.payMethod,
       proCode: code,
+      examDate: effectiveExamDate,
+      examDateCode: effectiveExamDateCode,
     };
-    if (proCode.examDate) {
-      updateData.examDate = proCode.examDate;
-      updateData.examDateCode = proCode.examDateCode;
-    }
     batch.set(userRef, updateData, { merge: true });
 
     await batch.commit();
@@ -1180,13 +1203,13 @@ export const redeemProCode = functions
       F2027: 'Frühjahr 2027',
       H2027: 'Herbst 2027',
     };
-    const label = proCode.examDateCode
-      ? examLabels[proCode.examDateCode as string] ?? proCode.examDateCode
+    const label = effectiveExamDateCode
+      ? examLabels[effectiveExamDateCode] ?? effectiveExamDateCode
       : null;
 
     return {
       success: true,
-      examDateCode: proCode.examDateCode || null,
+      examDateCode: effectiveExamDateCode || null,
       message: label
         ? `Prüfungspass aktiviert bis ${label}!`
         : 'Prüfungspass aktiviert!',
