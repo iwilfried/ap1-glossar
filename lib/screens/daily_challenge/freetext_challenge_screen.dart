@@ -476,7 +476,7 @@ class _FreetextChallengeScreenState extends State<FreetextChallengeScreen> {
                           ),
                           const SizedBox(height: 8),
                           const Text(
-                              'Mit dem Prüfungspass trainierst du unbegrenzt in allen Modi.'),
+                              'Mit AP1 Coach Pro trainierst du unbegrenzt in allen Modi.'),
                           const SizedBox(height: 16),
                           _buildUpgradeCta(context),
                         ],
@@ -565,12 +565,12 @@ class _FreetextChallengeScreenState extends State<FreetextChallengeScreen> {
                           crossAxisAlignment: CrossAxisAlignment.start,
                           children: [
                             Text(
-                              'Du hast heute ${_evaluationResult!['score']}/10 Punkte erreicht. Mit dem Prüfungspass trainierst du unbegrenzt.',
+                              'Du hast heute ${_evaluationResult!['score']}/10 Punkte erreicht. Mit AP1 Coach Pro trainierst du unbegrenzt.',
                               style: const TextStyle(fontWeight: FontWeight.bold),
                             ),
                             const SizedBox(height: 8),
                             const Text(
-                                'Hol dir den Prüfungspass und nutze Freitext, Quiz und mehr ohne Limit.'),
+                                'Hol dir AP1 Coach Pro und nutze Freitext, Quiz und mehr ohne Limit.'),
                             const SizedBox(height: 16),
                             _buildUpgradeCta(context),
                           ],
@@ -614,7 +614,7 @@ class _FreetextChallengeScreenState extends State<FreetextChallengeScreen> {
         ),
         icon: const Icon(Icons.rocket_launch, color: Colors.white, size: 22),
         label: const Text(
-          'Prüfungspass holen – €18',
+          'AP1 Coach Pro – €24',
           style: TextStyle(
             color: Colors.white,
             fontSize: 18,

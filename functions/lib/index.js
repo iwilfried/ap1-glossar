@@ -764,7 +764,7 @@ exports.generateVouchers = functions
 exports.digistore24Webhook = functions
     .region('europe-west1')
     .https.onRequest(async (request, response) => {
-    var _a, _b, _c, _d, _e, _f, _g, _h, _j, _k, _l;
+    var _a, _b, _c, _d, _e, _f, _g, _h, _j;
     if (request.method !== 'POST') {
         response.status(405).send('Method not allowed');
         return;
@@ -797,7 +797,7 @@ exports.digistore24Webhook = functions
     const orderId = (_e = (_d = params['order_id']) === null || _d === void 0 ? void 0 : _d.trim()) !== null && _e !== void 0 ? _e : '';
     const email = (_g = (_f = params['email']) === null || _f === void 0 ? void 0 : _f.trim()) !== null && _g !== void 0 ? _g : '';
     const payMethod = (_j = (_h = params['pay_method']) === null || _h === void 0 ? void 0 : _h.trim()) !== null && _j !== void 0 ? _j : '';
-    const custom2 = (_l = (_k = params['custom2']) === null || _k === void 0 ? void 0 : _k.trim()) !== null && _l !== void 0 ? _l : '';
+    // Legacy field 'custom2' (examDateCode) wird seit Lifetime-Migration ignoriert
     // uid optional bei on_payment (Käufer kann später per Code aktivieren).
     // Für refund/chargeback weiterhin erforderlich.
     if (!uid && eventType !== 'on_payment') {
@@ -825,17 +825,10 @@ exports.digistore24Webhook = functions
                 response.status(500).send('Code generation failed');
                 return;
             }
-            // 2. examDate ermitteln
-            const examDate = (custom2 && examDates[custom2])
-                ? admin.firestore.Timestamp.fromDate(examDates[custom2])
-                : null;
-            const examDateCode = (custom2 && examDates[custom2]) ? custom2 : null;
-            // 3. proCode-Dokument anlegen (User-unabhängig, abrufbar via Code oder orderId)
+            // 2. proCode-Dokument anlegen (User-unabhängig, abrufbar via Code oder orderId)
             await admin.firestore().collection('proCodes').doc(proCode).set({
                 email,
                 orderId,
-                examDate,
-                examDateCode,
                 payMethod,
                 intendedUid: uid || null,
                 redeemed: false,
@@ -843,7 +836,7 @@ exports.digistore24Webhook = functions
                 expiresAt: admin.firestore.Timestamp.fromDate(new Date(Date.now() + 365 * 24 * 60 * 60 * 1000) // +1 Jahr
                 ),
             });
-            // 4. Wenn uid vorhanden: User-Doc direkt aktivieren (bestehender Flow)
+            // 3. Wenn uid vorhanden: User-Doc direkt aktivieren (bestehender Flow)
             if (userRef) {
                 const updateData = {
                     isPro: true,
@@ -853,10 +846,6 @@ exports.digistore24Webhook = functions
                     payMethod: payMethod,
                     proCode,
                 };
-                if (examDate) {
-                    updateData.examDate = examDate;
-                    updateData.examDateCode = examDateCode;
-                }
                 await userRef.set(updateData, { merge: true });
             }
             // Falls uid fehlt: Pro wird über redeemProCode aktiviert (kommt im nächsten Schritt)
@@ -880,7 +869,7 @@ exports.digistore24Webhook = functions
 exports.redeemProCode = functions
     .region('europe-west1')
     .https.onCall(async (data, context) => {
-    var _a, _b, _c;
+    var _a;
     if (!context.auth) {
         throw new functions.https.HttpsError('unauthenticated', 'Anmeldung erforderlich.');
     }
@@ -915,26 +904,7 @@ exports.redeemProCode = functions
     const userDoc = await userRef.get();
     const userData = userDoc.data();
     if ((userData === null || userData === void 0 ? void 0 : userData.isPro) === true) {
-        const userExamDate = userData.examDate;
-        if (!userExamDate || userExamDate.toDate() >= new Date()) {
-            throw new functions.https.HttpsError('already-exists', 'Du hast bereits einen aktiven Prüfungspass.');
-        }
-    }
-    // Bestimme effective examDate: vom proCode oder vom User-Input als Fallback
-    let effectiveExamDate = proCode.examDate;
-    let effectiveExamDateCode = proCode.examDateCode;
-    if (!effectiveExamDate || !effectiveExamDateCode) {
-        // proCode enthält keinen Termin — User muss einen wählen
-        const userExamCode = ((_b = data.examDateCode) !== null && _b !== void 0 ? _b : '').trim();
-        if (!userExamCode) {
-            throw new functions.https.HttpsError('invalid-argument', 'Dieser Code enthält keinen Prüfungstermin. Bitte wähle deinen Prüfungstermin.');
-        }
-        const fallbackExamDate = examDates[userExamCode];
-        if (!fallbackExamDate) {
-            throw new functions.https.HttpsError('invalid-argument', `Unbekannter Prüfungstermin: ${userExamCode}`);
-        }
-        effectiveExamDate = admin.firestore.Timestamp.fromDate(fallbackExamDate);
-        effectiveExamDateCode = userExamCode;
+        throw new functions.https.HttpsError('failed-precondition', 'Du hast bereits Pro-Zugang. Mehrfache Aktivierung nicht erforderlich.');
     }
     // Batch: proCode als redeemed markieren + User-Doc aktualisieren
     const batch = db.batch();
@@ -950,26 +920,12 @@ exports.redeemProCode = functions
         digistore24Email: proCode.email,
         payMethod: proCode.payMethod,
         proCode: code,
-        examDate: effectiveExamDate,
-        examDateCode: effectiveExamDateCode,
     };
     batch.set(userRef, updateData, { merge: true });
     await batch.commit();
-    const examLabels = {
-        F2026: 'Frühjahr 2026',
-        H2026: 'Herbst 2026',
-        F2027: 'Frühjahr 2027',
-        H2027: 'Herbst 2027',
-    };
-    const label = effectiveExamDateCode
-        ? (_c = examLabels[effectiveExamDateCode]) !== null && _c !== void 0 ? _c : effectiveExamDateCode
-        : null;
     return {
         success: true,
-        examDateCode: effectiveExamDateCode || null,
-        message: label
-            ? `Prüfungspass aktiviert bis ${label}!`
-            : 'Prüfungspass aktiviert!',
+        message: 'AP1 Coach Pro aktiviert!',
     };
 });
 exports.getProCodeByOrderId = functions
@@ -1019,7 +975,6 @@ exports.getProCodeByOrderId = functions
         res.status(200).send({
             code: doc.id,
             redeemed: false,
-            examDateCode: data.examDateCode || null,
         });
     }
     catch (err) {

@@ -1,13 +1,6 @@
 import 'package:cloud_functions/cloud_functions.dart';
 import 'package:flutter/material.dart';
 
-const Map<String, String> _examDateLabels = {
-  'F2026': 'Frühjahr 2026',
-  'H2026': 'Herbst 2026',
-  'F2027': 'Frühjahr 2027',
-  'H2027': 'Herbst 2027',
-};
-
 /// Öffnet das Code-Einlöse-Dialog.
 /// Gibt `true` zurück, wenn erfolgreich eingelöst wurde.
 Future<bool?> showRedeemCodeDialog(BuildContext context) async {
@@ -27,10 +20,8 @@ class RedeemCodeDialog extends StatefulWidget {
 
 class _RedeemCodeDialogState extends State<RedeemCodeDialog> {
   final _codeController = TextEditingController();
-  String? _examDateCode;
   bool _isRedeeming = false;
   String? _errorMessage;
-  bool _needsExamDate = false;
 
   @override
   void dispose() {
@@ -48,13 +39,6 @@ class _RedeemCodeDialogState extends State<RedeemCodeDialog> {
       return;
     }
 
-    if (_needsExamDate && _examDateCode == null) {
-      setState(() {
-        _errorMessage = 'Bitte wähle deinen Prüfungstermin.';
-      });
-      return;
-    }
-
     setState(() {
       _isRedeeming = true;
       _errorMessage = null;
@@ -64,15 +48,10 @@ class _RedeemCodeDialogState extends State<RedeemCodeDialog> {
       final functions = FirebaseFunctions.instanceFor(region: 'europe-west1');
       final callable = functions.httpsCallable('redeemProCode');
 
-      final params = <String, dynamic>{'code': code};
-      if (_examDateCode != null) {
-        params['examDateCode'] = _examDateCode;
-      }
-
-      final result = await callable.call(params);
+      final result = await callable.call(<String, dynamic>{'code': code});
       final message = (result.data is Map && (result.data as Map)['message'] != null)
           ? (result.data as Map)['message'].toString()
-          : 'Prüfungspass aktiviert!';
+          : 'AP1 Coach Pro aktiviert!';
 
       if (mounted) {
         Navigator.of(context).pop(true);
@@ -81,13 +60,8 @@ class _RedeemCodeDialogState extends State<RedeemCodeDialog> {
         );
       }
     } on FirebaseFunctionsException catch (e) {
-      // examDate-Fallback: Cloud Function sagt, dass ein Termin gewählt werden muss
-      final needsExamDate = e.code == 'invalid-argument' &&
-          (e.message?.contains('Prüfungstermin') ?? false);
-
       setState(() {
         _isRedeeming = false;
-        _needsExamDate = needsExamDate;
         _errorMessage = e.message ?? 'Fehler beim Einlösen';
       });
     } catch (e) {
@@ -101,14 +75,14 @@ class _RedeemCodeDialogState extends State<RedeemCodeDialog> {
   @override
   Widget build(BuildContext context) {
     return AlertDialog(
-      title: const Text('Prüfungspass-Code einlösen'),
+      title: const Text('Code einlösen'),
       content: SingleChildScrollView(
         child: Column(
           mainAxisSize: MainAxisSize.min,
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
             const Text(
-              'Du hast deinen Prüfungspass bereits gekauft? Gib hier den '
+              'Du hast AP1 Coach Pro bereits gekauft? Gib hier den '
               '6-stelligen Aktivierungs-Code aus deiner Bestellbestätigung '
               'ein, um deinen Pro-Zugang auf diesem Gerät zu aktivieren.',
               style: TextStyle(fontSize: 14),
@@ -141,26 +115,6 @@ class _RedeemCodeDialogState extends State<RedeemCodeDialog> {
                 }
               },
             ),
-            if (_needsExamDate) ...[
-              const SizedBox(height: 20),
-              const Text(
-                'Prüfungstermin wählen:',
-                style: TextStyle(fontWeight: FontWeight.bold),
-              ),
-              const SizedBox(height: 8),
-              ..._examDateLabels.entries.map((entry) {
-                return RadioListTile<String>(
-                  title: Text(entry.value),
-                  value: entry.key,
-                  groupValue: _examDateCode,
-                  onChanged: _isRedeeming
-                      ? null
-                      : (value) => setState(() => _examDateCode = value),
-                  contentPadding: EdgeInsets.zero,
-                  dense: true,
-                );
-              }),
-            ],
             if (_errorMessage != null) ...[
               const SizedBox(height: 16),
               Container(

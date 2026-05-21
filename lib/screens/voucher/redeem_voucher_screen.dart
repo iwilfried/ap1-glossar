@@ -45,7 +45,7 @@ class _RedeemVoucherScreenState extends State<RedeemVoucherScreen> {
       setState(() {
         _isLoading = false;
         _successMessage = (result['message'] as String?) ??
-            'Prüfungspass aktiviert! Viel Erfolg bei deiner AP1!';
+            'AP1 Coach Pro aktiviert! Viel Erfolg bei deiner AP1!';
       });
       _closeTimer = Timer(const Duration(seconds: 3), () {
         if (mounted) Navigator.of(context).pop();

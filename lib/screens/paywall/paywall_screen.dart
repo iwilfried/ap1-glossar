@@ -16,13 +16,6 @@ const Color _kCard = Color(0xFF1e3a5f);
 const Color _kAccent = Color(0xFFE8813A);
 const Color _kBrand = Color(0xFF1B3A5C);
 
-const Map<String, String> _examDateLabels = {
-  'F2026': 'Frühjahr 2026 (März)',
-  'H2026': 'Herbst 2026 (Oktober)',
-  'F2027': 'Frühjahr 2027 (März)',
-  'H2027': 'Herbst 2027 (Oktober)',
-};
-
 class PaywallScreen extends StatefulWidget {
   const PaywallScreen({super.key});
 
@@ -31,7 +24,6 @@ class PaywallScreen extends StatefulWidget {
 }
 
 class _PaywallScreenState extends State<PaywallScreen> {
-  String? _selectedExamDateCode;
   bool _isLaunching = false;
 
   Future<void> _openCheckout() async {
@@ -45,16 +37,8 @@ class _PaywallScreenState extends State<PaywallScreen> {
       return;
     }
 
-    if (_selectedExamDateCode == null) {
-      ScaffoldMessenger.of(context).showSnackBar(
-        const SnackBar(
-            content: Text('Bitte wähle zuerst dein Prüfungsdatum aus.')),
-      );
-      return;
-    }
-
     final url = Uri.parse(
-      'https://www.checkout-ds24.com/product/$_digistoreProductId?custom=$uid&custom2=$_selectedExamDateCode',
+      'https://www.checkout-ds24.com/product/$_digistoreProductId?custom=$uid',
     );
 
     setState(() {
@@ -185,14 +169,14 @@ class _PaywallScreenState extends State<PaywallScreen> {
   Widget build(BuildContext context) {
     final theme = Theme.of(context);
     return Scaffold(
-      appBar: AppBar(title: const Text('Prüfungspass')),
+      appBar: AppBar(title: const Text('AP1 Coach Pro')),
       body: SingleChildScrollView(
         padding: const EdgeInsets.all(16),
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
             Text(
-              'Prüfungspass',
+              'AP1 Coach Pro',
               style: theme.textTheme.headlineSmall
                   ?.copyWith(fontWeight: FontWeight.bold),
             ),
@@ -201,7 +185,7 @@ class _PaywallScreenState extends State<PaywallScreen> {
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
                 Text(
-                  '18 €',
+                  '24 €',
                   style: TextStyle(
                     fontSize: 36,
                     fontWeight: FontWeight.bold,
@@ -220,7 +204,7 @@ class _PaywallScreenState extends State<PaywallScreen> {
             ),
             const SizedBox(height: 16),
             Text(
-              'Trainiere unbegrenzt mit KI-Feedback im IHK-Stil. Bis zu deiner Prüfung. Einmal bezahlen, dann voller Zugriff auf alle Premium-Features.',
+              'Trainiere unbegrenzt mit KI-Feedback im IHK-Stil. Einmaliger Kauf, kein Abo, voller Zugriff auf alle Premium-Features.',
               style: TextStyle(
                 fontSize: 15,
                 height: 1.4,
@@ -338,31 +322,6 @@ class _PaywallScreenState extends State<PaywallScreen> {
                 ],
               ),
             ),
-            const SizedBox(height: 20),
-            Text('Prüfungsdatum auswählen',
-                style: theme.textTheme.titleMedium
-                    ?.copyWith(fontWeight: FontWeight.bold)),
-            const SizedBox(height: 8),
-            Text(
-                'Wann schreibst du deine AP1? Der Prüfungspass bleibt bis dahin aktiv. Kein Abo, keine Verlängerung.',
-                style: theme.textTheme.bodyMedium),
-            const SizedBox(height: 12),
-            Card(
-              child: Padding(
-                padding: const EdgeInsets.all(16),
-                child: Column(
-                  children: _examDateLabels.entries.map((entry) {
-                    return RadioListTile<String>(
-                      title: Text(entry.value),
-                      value: entry.key,
-                      groupValue: _selectedExamDateCode,
-                      onChanged: (value) =>
-                          setState(() => _selectedExamDateCode = value),
-                    );
-                  }).toList(),
-                ),
-              ),
-            ),
             const SizedBox(height: 16),
             SizedBox(
               width: double.infinity,
@@ -373,9 +332,7 @@ class _PaywallScreenState extends State<PaywallScreen> {
                 label: Text(
                   _isLaunching
                       ? 'Zur Kasse…'
-                      : _selectedExamDateCode == null
-                          ? 'Bitte erst Prüfungstermin wählen ↑'
-                          : 'Prüfungspass für 18 € sichern →',
+                      : 'AP1 Coach Pro für 24 € sichern →',
                   style: const TextStyle(
                     color: Colors.white,
                     fontSize: 16,
@@ -570,7 +527,7 @@ class _PurchaseProcessingScreenState extends State<PurchaseProcessingScreen> {
           Text(
             widget.cameBackFromCheckout
                 ? 'Wir prüfen ob deine Zahlung bei Digistore24 angekommen ist.'
-                : 'Schließe deine Zahlung im Browser ab. Sobald Digistore24 die Zahlung bestätigt, wird dein Prüfungspass automatisch aktiviert — meist innerhalb 1 Minute.',
+                : 'Schließe deine Zahlung im Browser ab. Sobald Digistore24 die Zahlung bestätigt, wird AP1 Coach Pro automatisch aktiviert — meist innerhalb 1 Minute.',
             style: const TextStyle(fontSize: 15, height: 1.5),
             textAlign: TextAlign.center,
           ),
@@ -590,7 +547,7 @@ class _PurchaseProcessingScreenState extends State<PurchaseProcessingScreen> {
                 const SizedBox(height: 8),
                 Text(
                   'Du kannst diese Seite offen lassen. '
-                  'Sobald deine Zahlung verarbeitet ist, wird der Prüfungspass automatisch aktiviert.',
+                  'Sobald deine Zahlung verarbeitet ist, wird AP1 Coach Pro automatisch aktiviert.',
                   style: TextStyle(
                     fontSize: 13,
                     color: Colors.blue.shade900,
@@ -659,13 +616,13 @@ class _PurchaseProcessingScreenState extends State<PurchaseProcessingScreen> {
           const Icon(Icons.celebration_rounded, size: 100, color: Colors.green),
           const SizedBox(height: 24),
           const Text(
-            'Willkommen im Prüfungspass! 🎉',
+            'Willkommen bei AP1 Coach Pro! 🎉',
             style: TextStyle(fontSize: 24, fontWeight: FontWeight.bold),
             textAlign: TextAlign.center,
           ),
           const SizedBox(height: 16),
           const Text(
-            'Dein Prüfungspass ist jetzt aktiv. Viel Erfolg beim Training für deine AP1!',
+            'Dein AP1 Coach Pro Zugang ist jetzt aktiv. Viel Erfolg beim Training für deine AP1!',
             style: TextStyle(fontSize: 15, height: 1.5),
             textAlign: TextAlign.center,
           ),
@@ -753,7 +710,7 @@ class _PurchaseProcessingScreenState extends State<PurchaseProcessingScreen> {
           const SizedBox(height: 16),
           const Text(
             'Manchmal braucht Digistore24 länger, um die Zahlung zu bestätigen. '
-            'In den meisten Fällen wird der Prüfungspass innerhalb weniger Minuten aktiviert.',
+            'In den meisten Fällen wird AP1 Coach Pro innerhalb weniger Minuten aktiviert.',
             style: TextStyle(fontSize: 15, height: 1.5),
             textAlign: TextAlign.center,
           ),

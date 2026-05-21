@@ -986,7 +986,7 @@ export const digistore24Webhook = functions
     const orderId = params['order_id']?.trim() ?? '';
     const email = params['email']?.trim() ?? '';
     const payMethod = params['pay_method']?.trim() ?? '';
-    const custom2 = params['custom2']?.trim() ?? '';
+    // Legacy field 'custom2' (examDateCode) wird seit Lifetime-Migration ignoriert
 
     // uid optional bei on_payment (Käufer kann später per Code aktivieren).
     // Für refund/chargeback weiterhin erforderlich.
@@ -1018,18 +1018,10 @@ export const digistore24Webhook = functions
           return;
         }
 
-        // 2. examDate ermitteln
-        const examDate = (custom2 && examDates[custom2])
-          ? admin.firestore.Timestamp.fromDate(examDates[custom2])
-          : null;
-        const examDateCode = (custom2 && examDates[custom2]) ? custom2 : null;
-
-        // 3. proCode-Dokument anlegen (User-unabhängig, abrufbar via Code oder orderId)
+        // 2. proCode-Dokument anlegen (User-unabhängig, abrufbar via Code oder orderId)
         await admin.firestore().collection('proCodes').doc(proCode).set({
           email,
           orderId,
-          examDate,
-          examDateCode,
           payMethod,
           intendedUid: uid || null,
           redeemed: false,
@@ -1039,7 +1031,7 @@ export const digistore24Webhook = functions
           ),
         });
 
-        // 4. Wenn uid vorhanden: User-Doc direkt aktivieren (bestehender Flow)
+        // 3. Wenn uid vorhanden: User-Doc direkt aktivieren (bestehender Flow)
         if (userRef) {
           const updateData: Record<string, unknown> = {
             isPro: true,
@@ -1049,10 +1041,6 @@ export const digistore24Webhook = functions
             payMethod: payMethod,
             proCode,
           };
-          if (examDate) {
-            updateData.examDate = examDate;
-            updateData.examDateCode = examDateCode;
-          }
           await userRef.set(updateData, { merge: true });
         }
         // Falls uid fehlt: Pro wird über redeemProCode aktiviert (kommt im nächsten Schritt)
@@ -1078,7 +1066,6 @@ export const digistore24Webhook = functions
 
 interface RedeemProCodeRequest {
   code: string;
-  examDateCode?: string; // optional, nur nötig wenn proCode kein examDate hat
 }
 
 export const redeemProCode = functions
@@ -1142,37 +1129,10 @@ export const redeemProCode = functions
     const userDoc = await userRef.get();
     const userData = userDoc.data();
     if (userData?.isPro === true) {
-      const userExamDate = userData.examDate as admin.firestore.Timestamp | undefined;
-      if (!userExamDate || userExamDate.toDate() >= new Date()) {
-        throw new functions.https.HttpsError(
-          'already-exists',
-          'Du hast bereits einen aktiven Prüfungspass.'
-        );
-      }
-    }
-
-    // Bestimme effective examDate: vom proCode oder vom User-Input als Fallback
-    let effectiveExamDate = proCode.examDate as admin.firestore.Timestamp | undefined;
-    let effectiveExamDateCode = proCode.examDateCode as string | undefined;
-
-    if (!effectiveExamDate || !effectiveExamDateCode) {
-      // proCode enthält keinen Termin — User muss einen wählen
-      const userExamCode = (data.examDateCode ?? '').trim();
-      if (!userExamCode) {
-        throw new functions.https.HttpsError(
-          'invalid-argument',
-          'Dieser Code enthält keinen Prüfungstermin. Bitte wähle deinen Prüfungstermin.'
-        );
-      }
-      const fallbackExamDate = examDates[userExamCode];
-      if (!fallbackExamDate) {
-        throw new functions.https.HttpsError(
-          'invalid-argument',
-          `Unbekannter Prüfungstermin: ${userExamCode}`
-        );
-      }
-      effectiveExamDate = admin.firestore.Timestamp.fromDate(fallbackExamDate);
-      effectiveExamDateCode = userExamCode;
+      throw new functions.https.HttpsError(
+        'failed-precondition',
+        'Du hast bereits Pro-Zugang. Mehrfache Aktivierung nicht erforderlich.'
+      );
     }
 
     // Batch: proCode als redeemed markieren + User-Doc aktualisieren
@@ -1190,29 +1150,14 @@ export const redeemProCode = functions
       digistore24Email: proCode.email,
       payMethod: proCode.payMethod,
       proCode: code,
-      examDate: effectiveExamDate,
-      examDateCode: effectiveExamDateCode,
     };
     batch.set(userRef, updateData, { merge: true });
 
     await batch.commit();
 
-    const examLabels: Record<string, string> = {
-      F2026: 'Frühjahr 2026',
-      H2026: 'Herbst 2026',
-      F2027: 'Frühjahr 2027',
-      H2027: 'Herbst 2027',
-    };
-    const label = effectiveExamDateCode
-      ? examLabels[effectiveExamDateCode] ?? effectiveExamDateCode
-      : null;
-
     return {
       success: true,
-      examDateCode: effectiveExamDateCode || null,
-      message: label
-        ? `Prüfungspass aktiviert bis ${label}!`
-        : 'Prüfungspass aktiviert!',
+      message: 'AP1 Coach Pro aktiviert!',
     };
   });
 
@@ -1270,7 +1215,6 @@ export const getProCodeByOrderId = functions
       res.status(200).send({
         code: doc.id,
         redeemed: false,
-        examDateCode: data.examDateCode || null,
       });
     } catch (err) {
       console.error('getProCodeByOrderId failed:', err);
