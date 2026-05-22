@@ -1,0 +1,368 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Datenschutz — Learning Factory</title>
+  <meta name="description" content="Datenschutzerklärung der Learning Factory">
+  <meta name="robots" content="index, follow">
+  <style>
+    :root {
+      --brand: #162447;
+      --accent: #E8813A;
+      --text: #1a1a1a;
+      --muted: #555;
+      --bg: #fafbfc;
+      --border: #e0e4e9;
+    }
+    * { box-sizing: border-box; }
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+      line-height: 1.6;
+      color: var(--text);
+      background: var(--bg);
+      margin: 0;
+      padding: 0;
+    }
+    header {
+      background: var(--brand);
+      color: white;
+      padding: 1.5rem 2rem;
+    }
+    header a {
+      color: white;
+      text-decoration: none;
+      font-weight: bold;
+      font-size: 1.2rem;
+    }
+    header a:hover { color: var(--accent); }
+    main {
+      max-width: 820px;
+      margin: 2rem auto;
+      padding: 2rem;
+      background: white;
+      border-radius: 8px;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.04);
+    }
+    h1 {
+      color: var(--brand);
+      border-bottom: 3px solid var(--accent);
+      padding-bottom: 0.5rem;
+      margin-top: 0;
+    }
+    h2 {
+      color: var(--brand);
+      margin-top: 2rem;
+    }
+    h3 {
+      color: var(--brand);
+      margin-top: 1.5rem;
+      font-size: 1.1rem;
+    }
+    p, ul { color: var(--text); }
+    ul { padding-left: 1.5rem; }
+    li { margin-bottom: 0.4rem; }
+    a { color: var(--accent); }
+    code {
+      background: #f0f0f0;
+      padding: 0.1rem 0.4rem;
+      border-radius: 3px;
+      font-size: 0.9em;
+    }
+    .toc {
+      background: #f0f4f9;
+      padding: 1rem 1.5rem;
+      border-radius: 6px;
+      margin-bottom: 2rem;
+    }
+    .toc ol { margin: 0; padding-left: 1.5rem; }
+    .toc a { color: var(--brand); text-decoration: none; }
+    .toc a:hover { color: var(--accent); text-decoration: underline; }
+    footer {
+      max-width: 820px;
+      margin: 2rem auto;
+      padding: 1rem 2rem;
+      text-align: center;
+      color: var(--muted);
+      font-size: 0.9rem;
+    }
+    footer a {
+      color: var(--brand);
+      margin: 0 0.5rem;
+      text-decoration: none;
+    }
+    footer a:hover { color: var(--accent); }
+    .back-link {
+      display: inline-block;
+      margin-bottom: 1rem;
+      color: var(--accent);
+      text-decoration: none;
+      font-weight: 500;
+    }
+    .back-link:hover { text-decoration: underline; }
+  </style>
+</head>
+<body>
+
+<header>
+  <a href="/">Learning Factory</a>
+</header>
+
+<main>
+  <a href="/" class="back-link">← Zurück zur Startseite</a>
+  <h1>Datenschutzerklärung</h1>
+
+  <p>
+    Wir freuen uns über Ihr Interesse an unseren Lern-Apps. Datenschutz hat einen besonders hohen Stellenwert
+    bei der Learning Factory. Eine Nutzung der Webseiten und Apps ist grundsätzlich ohne jede Angabe personenbezogener
+    Daten möglich. Sofern Sie freiwillig Daten angeben, erfolgt die Verarbeitung stets im Einklang mit der
+    Datenschutz-Grundverordnung (DSGVO) und in Übereinstimmung mit den für die Learning Factory geltenden landesspezifischen Datenschutzbestimmungen.
+  </p>
+
+  <div class="toc">
+    <strong>Inhaltsverzeichnis</strong>
+    <ol>
+      <li><a href="#verantwortlich">Verantwortlicher</a></li>
+      <li><a href="#begriffe">Begriffsbestimmungen</a></li>
+      <li><a href="#allgemein">Allgemeine Datenverarbeitung</a></li>
+      <li><a href="#firebase">Firebase (Google) — Auth, Firestore, Cloud Functions</a></li>
+      <li><a href="#fcm">Firebase Cloud Messaging — Push-Notifications</a></li>
+      <li><a href="#anthropic">Anthropic Claude API — KI-Bewertung</a></li>
+      <li><a href="#digistore">Digistore24 — Zahlungsabwicklung</a></li>
+      <li><a href="#hosting">Hosting (IONOS)</a></li>
+      <li><a href="#cookies">Cookies und lokaler Speicher</a></li>
+      <li><a href="#rechte">Ihre Rechte als Betroffener</a></li>
+      <li><a href="#aufsicht">Aufsichtsbehörde</a></li>
+      <li><a href="#aenderung">Änderung dieser Datenschutzerklärung</a></li>
+    </ol>
+  </div>
+
+  <h2 id="verantwortlich">1. Verantwortlicher</h2>
+  <p>
+    Verantwortlicher im Sinne der DSGVO und anderer datenschutzrechtlicher Vorschriften ist:
+  </p>
+  <p>
+    Wilfried Ifland<br>
+    Learning Factory<br>
+    Werstener Dorfstr. 72<br>
+    40591 Düsseldorf<br>
+    Deutschland
+  </p>
+  <p>
+    E-Mail: <a href="mailto:kontakt@learningfactory.io">kontakt@learningfactory.io</a>
+  </p>
+
+  <h2 id="begriffe">2. Begriffsbestimmungen</h2>
+  <p>
+    Diese Datenschutzerklärung folgt den Begrifflichkeiten der DSGVO. Wir wollen sicherstellen, dass diese Erklärung
+    sowohl für die Öffentlichkeit als auch für unsere Nutzer einfach lesbar und verständlich ist.
+    Personenbezogene Daten sind alle Informationen, die sich auf eine identifizierte oder identifizierbare natürliche Person beziehen.
+  </p>
+
+  <h2 id="allgemein">3. Allgemeine Datenverarbeitung</h2>
+
+  <h3>3.1 Bei jedem Aufruf unserer Web-Apps</h3>
+  <p>
+    Bei jedem Aufruf unserer Web-Apps erfasst der Server automatisch eine Reihe von Daten, die Ihr Browser übermittelt.
+    Diese Daten werden in Logfiles gespeichert. Folgende Informationen werden dabei erhoben:
+  </p>
+  <ul>
+    <li>IP-Adresse (anonymisiert nach 7 Tagen)</li>
+    <li>Datum und Uhrzeit der Anfrage</li>
+    <li>Zeitzonendifferenz zur Greenwich Mean Time (GMT)</li>
+    <li>Inhalt der Anforderung (konkrete Seite)</li>
+    <li>Zugriffsstatus / HTTP-Statuscode</li>
+    <li>Übertragene Datenmenge</li>
+    <li>Webseite, von der die Anforderung kommt (Referrer)</li>
+    <li>Browser, Sprache und Version der Browsersoftware</li>
+    <li>Betriebssystem und dessen Oberfläche</li>
+  </ul>
+  <p>
+    <strong>Rechtsgrundlage:</strong> Art. 6 Abs. 1 lit. f DSGVO (berechtigtes Interesse an stabiler und sicherer Bereitstellung).
+    <strong>Speicherdauer:</strong> 7 Tage.
+  </p>
+
+  <h2 id="firebase">4. Firebase (Google LLC) — Auth, Firestore, Cloud Functions</h2>
+
+  <p>
+    Wir nutzen für die Funktionalität unserer Apps Dienste der Google LLC (Firebase). Konkret sind das:
+  </p>
+  <ul>
+    <li><strong>Firebase Authentication</strong> (Anonymous Sign-In) — zur Erkennung wiederkehrender Nutzer ohne Pflicht zur E-Mail-Angabe</li>
+    <li><strong>Cloud Firestore</strong> — Datenbank in Frankfurt (eur3) zur Speicherung des Lernfortschritts</li>
+    <li><strong>Cloud Functions</strong> in Region europe-west1 (Belgien) für serverseitige Logik (z.B. KI-Aufrufe, Push-Versand)</li>
+  </ul>
+  <p>
+    <strong>Erhobene Daten:</strong>
+  </p>
+  <ul>
+    <li>Anonyme User-ID (UID), automatisch generiert</li>
+    <li>Lernfortschritt (gelöste Aufgaben, Streak, Punkte)</li>
+    <li>Nutzungspräferenzen (z.B. Benachrichtigungszeit)</li>
+    <li>Falls aktiviert: FCM-Token für Push-Notifications</li>
+  </ul>
+  <p>
+    <strong>Rechtsgrundlage:</strong> Art. 6 Abs. 1 lit. b DSGVO (Vertragserfüllung — Bereitstellung der Lern-App)
+    sowie Art. 6 Abs. 1 lit. f DSGVO (berechtigtes Interesse an stabiler Funktion).
+  </p>
+  <p>
+    <strong>Drittland-Übermittlung:</strong> Google LLC hat ihren Sitz in den USA. Die Verarbeitung erfolgt
+    nach den EU-Standardvertragsklauseln und dem EU-US Data Privacy Framework. Die Datenbank-Region ist
+    auf Frankfurt (Deutschland) konfiguriert.
+  </p>
+  <p>
+    Datenschutzerklärung Google: <a href="https://policies.google.com/privacy" target="_blank" rel="noopener">https://policies.google.com/privacy</a><br>
+    Datenschutzerklärung Firebase: <a href="https://firebase.google.com/support/privacy" target="_blank" rel="noopener">https://firebase.google.com/support/privacy</a>
+  </p>
+
+  <h2 id="fcm">5. Firebase Cloud Messaging (FCM) — Push-Notifications</h2>
+  <p>
+    Wenn Sie in unserer App AP1 Coach den täglichen Push („Frage des Tages") aktivieren,
+    sendet Ihr Browser einen FCM-Token, der bei Google in den USA registriert wird.
+    Wir speichern diesen Token zusammen mit Ihrer Wunschuhrzeit in Cloud Firestore.
+  </p>
+  <p>
+    Eine geplante Cloud Function liest täglich die aktiven Tokens und löst Push-Versand aus.
+    Sie können diese Funktion jederzeit in den App-Einstellungen deaktivieren.
+    Beim Deaktivieren wird der FCM-Token aus unserer Datenbank entfernt.
+  </p>
+  <p>
+    <strong>Rechtsgrundlage:</strong> Art. 6 Abs. 1 lit. a DSGVO (Einwilligung beim Aktivieren des Schalters).
+    <strong>Widerrufsrecht:</strong> Sie können die Einwilligung jederzeit in den Einstellungen widerrufen.
+  </p>
+
+  <h2 id="anthropic">6. Anthropic Claude API — KI-gestützte Bewertung</h2>
+  <p>
+    Für die KI-gestützte Bewertung Ihrer Freitext-Antworten in der App AP1 Coach nutzen wir die Claude API
+    von Anthropic, PBC (USA). Wenn Sie eine Freitext-Aufgabe abschicken, werden folgende Daten an Anthropic übertragen:
+  </p>
+  <ul>
+    <li>Der Text Ihrer Antwort</li>
+    <li>Die Aufgabenstellung und der Kontext-Begriff</li>
+    <li>Eine technische Anfrage-ID (kein Personenbezug)</li>
+  </ul>
+  <p>
+    <strong>Was nicht übertragen wird:</strong> Ihre User-ID, Ihre E-Mail-Adresse, sonstige personenbezogene Daten.
+    Anthropic verwendet die Daten ausschließlich zur Bearbeitung der Anfrage und speichert sie laut eigenen
+    Angaben nicht zum Training ihrer Modelle.
+  </p>
+  <p>
+    <strong>Rechtsgrundlage:</strong> Art. 6 Abs. 1 lit. b DSGVO (Vertragserfüllung — Sie haben die KI-Bewertung explizit angefragt).
+  </p>
+  <p>
+    <strong>Drittland-Übermittlung:</strong> Anthropic hat ihren Sitz in den USA. Die Verarbeitung erfolgt nach den EU-Standardvertragsklauseln.
+  </p>
+  <p>
+    Datenschutzerklärung Anthropic: <a href="https://www.anthropic.com/legal/privacy" target="_blank" rel="noopener">https://www.anthropic.com/legal/privacy</a>
+  </p>
+
+  <h2 id="digistore">7. Digistore24 — Zahlungsabwicklung</h2>
+  <p>
+    Für den Verkauf von AP1 Coach Pro nutzen wir den Reseller-Dienst Digistore24 GmbH, St.-Godehard-Straße 32, 31139 Hildesheim, Deutschland.
+    Bei einem Kauf werden Sie auf eine externe Bestellseite von Digistore24 weitergeleitet.
+  </p>
+  <p>
+    Folgende Daten werden dort erhoben (von Digistore24, nicht von uns):
+  </p>
+  <ul>
+    <li>Name, Adresse, E-Mail-Adresse</li>
+    <li>Zahlungsdaten (je nach Zahlart)</li>
+    <li>Bestellinformationen</li>
+  </ul>
+  <p>
+    Wir erhalten von Digistore24 nach erfolgreicher Zahlung über einen Webhook nur folgende Informationen:
+  </p>
+  <ul>
+    <li>Bestellnummer</li>
+    <li>Zahlungsstatus</li>
+    <li>Ihre anonyme User-ID (über den Custom-Parameter)</li>
+    <li>E-Mail-Adresse (für Support)</li>
+    <li>Zahlart</li>
+  </ul>
+  <p>
+    Diese Daten werden mit Ihrem User-Profil verknüpft, um AP1 Coach Pro freizuschalten.
+  </p>
+  <p>
+    <strong>Rechtsgrundlage:</strong> Art. 6 Abs. 1 lit. b DSGVO (Vertragserfüllung).
+  </p>
+  <p>
+    Datenschutzerklärung Digistore24: <a href="https://www.digistore24.com/page/privacy" target="_blank" rel="noopener">https://www.digistore24.com/page/privacy</a>
+  </p>
+
+  <h2 id="hosting">8. Hosting</h2>
+  <p>
+    Sämtliche Webinhalte werden bei der IONOS SE, Elgendorfer Str. 57, 56410 Montabaur, Deutschland gehostet. Dies betrifft die Salespage (learningfactory.io) und die App AP1 Coach (ap1.learningfactory.io).
+    IONOS verarbeitet die in Abschnitt 3.1 genannten Logfile-Daten ausschließlich auf Servern in Deutschland.
+  </p>
+
+  <h2 id="cookies">9. Cookies und lokaler Speicher</h2>
+  <p>
+    Unsere Apps nutzen technisch notwendige Cookies und Browser-Speicher (LocalStorage / IndexedDB) für folgende Zwecke:
+  </p>
+  <ul>
+    <li>Speicherung des Anonymous-Auth-Tokens (Firebase) — damit Sie zwischen Sitzungen erkannt werden</li>
+    <li>Lokale Speicherung von Nutzungspräferenzen (z.B. Dark Mode)</li>
+    <li>Service-Worker-Cache für Offline-Funktionalität</li>
+  </ul>
+  <p>
+    Diese Daten verlassen Ihren Browser nicht. Sie können sie jederzeit über die Browser-Einstellungen löschen.
+  </p>
+  <p>
+    <strong>Rechtsgrundlage:</strong> Art. 6 Abs. 1 lit. f DSGVO (berechtigtes Interesse an Funktionalität)
+    und §25 Abs. 2 Nr. 2 TTDSG (technisch unbedingt erforderlich).
+  </p>
+  <p>
+    Wir setzen <strong>keine Tracking-Cookies, keine Analyse-Tools (z.B. Google Analytics), und keine Marketing-Cookies</strong> ein.
+  </p>
+
+  <h2 id="rechte">10. Ihre Rechte als Betroffener</h2>
+  <p>
+    Sie haben jederzeit folgende Rechte:
+  </p>
+  <ul>
+    <li><strong>Auskunftsrecht</strong> (Art. 15 DSGVO) — wir teilen Ihnen mit, welche Daten zu Ihrer User-ID gespeichert sind</li>
+    <li><strong>Recht auf Berichtigung</strong> (Art. 16 DSGVO)</li>
+    <li><strong>Recht auf Löschung</strong> (Art. 17 DSGVO) — Sie können in der App selbst über „Fortschritt zurücksetzen" Ihre Daten löschen, oder uns per E-Mail kontaktieren</li>
+    <li><strong>Recht auf Einschränkung der Verarbeitung</strong> (Art. 18 DSGVO)</li>
+    <li><strong>Recht auf Datenübertragbarkeit</strong> (Art. 20 DSGVO)</li>
+    <li><strong>Widerspruchsrecht</strong> (Art. 21 DSGVO)</li>
+    <li><strong>Widerruf von Einwilligungen</strong> (Art. 7 Abs. 3 DSGVO) — z.B. für Push-Notifications</li>
+  </ul>
+  <p>
+    Zur Ausübung Ihrer Rechte schreiben Sie uns an:
+    <a href="mailto:kontakt@learningfactory.io">kontakt@learningfactory.io</a>
+  </p>
+
+  <h2 id="aufsicht">11. Aufsichtsbehörde</h2>
+  <p>
+    Wenn Sie sich beschweren möchten, ist die für mich zuständige Aufsichtsbehörde:
+  </p>
+  <p>
+    Landesbeauftragte für Datenschutz und Informationsfreiheit Nordrhein-Westfalen<br>
+    Kavalleriestr. 2-4<br>
+    40213 Düsseldorf<br>
+    Telefon: 0211 / 38424-0<br>
+    E-Mail: poststelle@ldi.nrw.de<br>
+    Web: <a href="https://www.ldi.nrw.de" target="_blank" rel="noopener">www.ldi.nrw.de</a>
+  </p>
+
+  <h2 id="aenderung">12. Änderung dieser Datenschutzerklärung</h2>
+  <p>
+    Wir behalten uns vor, diese Datenschutzerklärung anzupassen, damit sie stets den aktuellen rechtlichen Anforderungen entspricht
+    oder um Änderungen unserer Leistungen umzusetzen. Für Ihren erneuten Besuch gilt dann die neue Datenschutzerklärung.
+  </p>
+
+  <p style="margin-top: 2rem; color: var(--muted); font-size: 0.9rem;">
+    Stand: Mai 2026
+  </p>
+</main>
+
+<footer>
+  <a href="/">Startseite</a> ·
+  <a href="/impressum.html">Impressum</a> ·
+  <a href="/datenschutz.html">Datenschutz</a> ·
+  <a href="/agb.html">AGB</a>
+</footer>
+
+</body>
+</html>

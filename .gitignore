@@ -10,3 +10,7 @@ build/
 tools/
 functions/.env
 functions/node_modules
+
+# Backup files
+*.bak
+

@@ -1,0 +1,686 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Vielen Dank für deinen Kauf — Learning Factory</title>
+  <meta name="description" content="Vielen Dank für deinen Kauf von AP1 Coach Pro.">
+  <meta name="robots" content="noindex, nofollow">
+
+  <style>
+    :root {
+      --brand: #162447;
+      --brand-light: #1e3a5f;
+      --accent: #E8813A;
+      --accent-soft: #fff3eb;
+      --text: #1a1a1a;
+      --text-light: #555;
+      --muted: #888;
+      --bg: #ffffff;
+      --bg-alt: #f5f7fa;
+      --border: #e0e4e9;
+      --success: #2d8a3e;
+      --success-soft: #e8f5ed;
+    }
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+      line-height: 1.6;
+      color: var(--text);
+      background: var(--bg-alt);
+      min-height: 100vh;
+    }
+    a { color: var(--accent); text-decoration: none; }
+    a:hover { text-decoration: underline; }
+
+    .header {
+      background: var(--brand);
+      color: white;
+      padding: 1.2rem 1.5rem;
+      text-align: center;
+    }
+    .header .logo {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.6rem;
+      color: white;
+      font-weight: 700;
+      font-size: 1.05rem;
+    }
+    .header .logo-mark {
+      background: var(--accent);
+      color: white;
+      width: 32px; height: 32px;
+      border-radius: 6px;
+      display: flex; align-items: center; justify-content: center;
+      font-weight: 800;
+      font-size: 0.9rem;
+    }
+
+    .container {
+      max-width: 760px;
+      margin: 2rem auto;
+      padding: 0 1.5rem;
+    }
+
+    .success-card {
+      background: white;
+      border-radius: 14px;
+      padding: 2.5rem 2rem;
+      box-shadow: 0 6px 24px rgba(22, 36, 71, 0.1);
+      text-align: center;
+      margin-bottom: 2rem;
+      border-top: 5px solid var(--success);
+    }
+    .success-icon {
+      width: 70px; height: 70px;
+      background: var(--success-soft);
+      color: var(--success);
+      border-radius: 50%;
+      display: flex; align-items: center; justify-content: center;
+      font-size: 2.2rem;
+      margin: 0 auto 1.2rem;
+      font-weight: 800;
+    }
+    .success-card h1 {
+      color: var(--brand);
+      font-size: clamp(1.6rem, 4vw, 2.2rem);
+      margin-bottom: 0.6rem;
+      font-weight: 800;
+    }
+    .success-card .subtitle {
+      color: var(--text-light);
+      font-size: 1.05rem;
+      max-width: 500px;
+      margin: 0 auto;
+    }
+
+    .info-card {
+      background: white;
+      border-radius: 12px;
+      padding: 2rem;
+      box-shadow: 0 4px 14px rgba(22, 36, 71, 0.06);
+      margin-bottom: 1.2rem;
+    }
+    .info-card h2 {
+      color: var(--brand);
+      font-size: 1.25rem;
+      margin-bottom: 1rem;
+      font-weight: 700;
+    }
+    .info-card p {
+      color: var(--text);
+      margin-bottom: 0.8rem;
+    }
+    .info-card p:last-child { margin-bottom: 0; }
+    .info-card strong { color: var(--brand); }
+
+    .product-summary {
+      background: var(--accent-soft);
+      border: 1px solid var(--accent);
+      padding: 1.2rem 1.5rem;
+      border-radius: 10px;
+      margin-top: 1rem;
+    }
+    .product-summary h3 {
+      color: var(--brand);
+      font-size: 1rem;
+      margin-bottom: 0.5rem;
+    }
+    .product-summary ul {
+      list-style: none;
+      padding: 0;
+      margin: 0.5rem 0 0;
+    }
+    .product-summary li {
+      padding: 0.25rem 0 0.25rem 1.4rem;
+      position: relative;
+      font-size: 0.92rem;
+      color: var(--text);
+    }
+    .product-summary li::before {
+      content: '✓';
+      position: absolute;
+      left: 0;
+      color: var(--success);
+      font-weight: 800;
+    }
+
+    /* === NEU: Code-Anzeige === */
+    .code-display {
+      background: white;
+      border: 2px solid var(--accent);
+      border-radius: 12px;
+      padding: 1.5rem;
+      text-align: center;
+      margin-top: 1rem;
+    }
+    .code-label {
+      font-size: 0.78rem;
+      color: var(--muted);
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      margin-bottom: 0.7rem;
+      font-weight: 600;
+    }
+    .code-value {
+      font-family: 'SFMono-Regular', Consolas, Menlo, monospace;
+      font-size: 2.5rem;
+      font-weight: 800;
+      color: var(--brand);
+      letter-spacing: 0.22em;
+      margin-bottom: 1rem;
+      word-break: break-all;
+      padding-left: 0.22em;
+      line-height: 1.2;
+    }
+    .code-value.loading {
+      font-size: 1rem;
+      letter-spacing: normal;
+      color: var(--text-light);
+      padding-left: 0;
+      font-family: inherit;
+      font-weight: 500;
+    }
+    .code-value.error {
+      font-size: 0.95rem;
+      letter-spacing: normal;
+      color: #c0392b;
+      padding-left: 0;
+      font-family: inherit;
+      font-weight: 500;
+    }
+    .copy-btn {
+      background: var(--bg-alt);
+      color: var(--brand);
+      border: 1.5px solid var(--border);
+      padding: 0.6rem 1.3rem;
+      border-radius: 999px;
+      font-weight: 600;
+      font-size: 0.9rem;
+      cursor: pointer;
+      font-family: inherit;
+      transition: all 0.2s;
+      display: inline-flex;
+      align-items: center;
+      gap: 0.4rem;
+    }
+    .copy-btn:hover:not(:disabled) {
+      border-color: var(--accent);
+      color: var(--accent);
+    }
+    .copy-btn:active:not(:disabled) { transform: scale(0.98); }
+    .copy-btn:disabled { opacity: 0.4; cursor: not-allowed; }
+    .copy-btn.copied {
+      background: var(--success-soft);
+      border-color: var(--success);
+      color: var(--success);
+    }
+
+    .redeemed-state {
+      background: var(--success-soft);
+      border: 2px solid var(--success);
+      border-radius: 12px;
+      padding: 1.8rem 1.5rem;
+      text-align: center;
+      margin-top: 1rem;
+    }
+    .redeemed-state-icon { font-size: 2.5rem; display: block; margin-bottom: 0.5rem; line-height: 1; }
+    .redeemed-state-title {
+      font-size: 1.15rem;
+      font-weight: 700;
+      color: var(--success);
+      margin-bottom: 0.5rem;
+    }
+    .redeemed-state-text { color: var(--text); font-size: 0.95rem; }
+
+    .spinner {
+      display: inline-block;
+      width: 18px; height: 18px;
+      border: 2px solid var(--border);
+      border-top-color: var(--accent);
+      border-radius: 50%;
+      animation: spin 0.8s linear infinite;
+      vertical-align: middle;
+      margin-right: 0.5rem;
+    }
+    @keyframes spin { to { transform: rotate(360deg); } }
+
+    .toast {
+      position: fixed;
+      bottom: 1.5rem;
+      left: 50%;
+      transform: translateX(-50%) translateY(80px);
+      background: var(--brand);
+      color: white;
+      padding: 0.7rem 1.4rem;
+      border-radius: 999px;
+      font-size: 0.85rem;
+      font-weight: 500;
+      opacity: 0;
+      transition: all 0.3s;
+      z-index: 1000;
+      pointer-events: none;
+    }
+    .toast.show {
+      opacity: 1;
+      transform: translateX(-50%) translateY(0);
+    }
+
+    .hidden { display: none !important; }
+    /* === Ende NEU === */
+
+    .steps {
+      counter-reset: step;
+      margin-top: 1rem;
+    }
+    .step {
+      counter-increment: step;
+      display: flex;
+      gap: 1rem;
+      align-items: flex-start;
+      margin-bottom: 1.2rem;
+      padding-bottom: 1.2rem;
+      border-bottom: 1px solid var(--border);
+    }
+    .step:last-child {
+      border-bottom: none;
+      padding-bottom: 0;
+      margin-bottom: 0;
+    }
+    .step-num {
+      flex-shrink: 0;
+      width: 36px; height: 36px;
+      background: var(--accent);
+      color: white;
+      border-radius: 50%;
+      display: flex; align-items: center; justify-content: center;
+      font-weight: 800;
+      font-size: 1rem;
+    }
+    .step-num::before {
+      content: counter(step);
+    }
+    .step-text {
+      flex: 1;
+      padding-top: 0.3rem;
+    }
+    .step-text strong {
+      display: block;
+      color: var(--brand);
+      margin-bottom: 0.2rem;
+    }
+    .step-text span {
+      color: var(--text-light);
+      font-size: 0.93rem;
+    }
+
+    .cta-row {
+      text-align: center;
+      margin: 2rem 0 1rem;
+    }
+    .btn {
+      display: inline-block;
+      background: var(--accent);
+      color: white;
+      padding: 1rem 2rem;
+      border-radius: 8px;
+      font-weight: 700;
+      font-size: 1rem;
+      text-decoration: none;
+      transition: opacity 0.2s, transform 0.1s;
+    }
+    .btn:hover {
+      opacity: 0.9;
+      text-decoration: none;
+      color: white;
+    }
+    .btn:active { transform: scale(0.98); }
+
+    .support-box {
+      background: var(--bg-alt);
+      border: 1px solid var(--border);
+      border-radius: 10px;
+      padding: 1.5rem;
+      margin-top: 1.5rem;
+    }
+    .support-box h3 {
+      color: var(--brand);
+      font-size: 1rem;
+      margin-bottom: 0.5rem;
+    }
+    .support-box p {
+      color: var(--text-light);
+      font-size: 0.92rem;
+      margin-bottom: 0.4rem;
+    }
+    .support-box p:last-child { margin-bottom: 0; }
+    .support-box a {
+      color: var(--brand);
+      font-weight: 600;
+    }
+
+    footer {
+      text-align: center;
+      padding: 2rem 1.5rem;
+      font-size: 0.85rem;
+      color: var(--text-light);
+      border-top: 1px solid var(--border);
+      margin-top: 2rem;
+    }
+    footer a {
+      color: var(--brand);
+      margin: 0 0.5rem;
+    }
+
+    @media (max-width: 600px) {
+      .success-card { padding: 2rem 1.2rem; }
+      .info-card { padding: 1.5rem 1.2rem; }
+      .code-value { font-size: 2rem; letter-spacing: 0.18em; }
+    }
+  </style>
+</head>
+<body>
+
+<header class="header">
+  <a href="/" class="logo">
+    <span class="logo-mark">LF</span>
+    Learning Factory
+  </a>
+</header>
+
+<div class="container">
+
+  <div class="success-card">
+    <div class="success-icon">✓</div>
+    <h1>Vielen Dank für deinen Kauf!</h1>
+    <p class="subtitle">
+      Deine Bestellung wurde erfolgreich abgeschlossen. Du erhältst gleich eine Bestellbestätigung per E-Mail von Digistore24.
+    </p>
+  </div>
+
+  <!-- ═══════════════════════════════════════════
+       NEU: Aktivierungs-Code (Hauptelement)
+       ═══════════════════════════════════════════ -->
+  <div class="info-card">
+    <h2>🎫 Dein Aktivierungs-Code</h2>
+    <p style="margin-bottom: 0.8rem;">
+      Mit diesem Code aktivierst du <strong>AP1 Coach Pro</strong> in der App — auf jedem Gerät, jederzeit:
+    </p>
+
+    <div class="code-display" id="codeDisplay">
+      <div class="code-label">Aktivierungs-Code</div>
+      <div class="code-value loading" id="codeValue">
+        <span class="spinner"></span>Code wird geladen…
+      </div>
+      <button class="copy-btn" id="copyBtn" disabled>
+        <span id="copyIcon">📋</span><span id="copyText">Kopieren</span>
+      </button>
+    </div>
+
+    <div class="redeemed-state hidden" id="redeemedState">
+      <span class="redeemed-state-icon">🎉</span>
+      <div class="redeemed-state-title">Schon aktiviert!</div>
+      <p class="redeemed-state-text">
+        Dieser Code wurde bereits eingelöst. Du bist schon <strong>AP1 Coach Pro</strong> — viel Erfolg beim Lernen!
+      </p>
+    </div>
+
+    <p style="margin-top: 1rem; font-size: 0.9rem; color: var(--text-light);">
+      💡 Den Code findest du auch in deiner <strong>Bestellbestätigung von Digistore24</strong> — falls du diese Seite schließt.
+    </p>
+  </div>
+
+  <div class="info-card">
+    <h2>📦 Was du bekommen hast</h2>
+    <p>
+      Du hast <strong>AP1 Coach Pro</strong> erworben — ein digitales Lernprodukt, kein physisches Material.
+    </p>
+
+    <div class="product-summary">
+      <h3>Im Pro-Zugang enthalten:</h3>
+      <ul>
+        <li>Unbegrenzte KI-Bewertung deiner Freitext-Antworten</li>
+        <li>Zugriff auf alle 386 Fachbegriffe im Glossar</li>
+        <li>Lernmodus mit Spaced-Repetition</li>
+        <li>Quiz-Modus mit Multiple-Choice-Wiederholung</li>
+        <li>Tägliche Push-Erinnerung (Frage des Tages)</li>
+        <li>Lösungshinweise im IHK-Stil zu jeder Aufgabe</li>
+        <li>Lifetime-Zugang — keine feste Gültigkeitsdauer, kein Abo</li>
+      </ul>
+    </div>
+  </div>
+
+  <div class="info-card">
+    <h2>🚀 So aktivierst du AP1 Coach Pro</h2>
+    <p style="margin-bottom: 1.2rem;">
+      In den meisten Fällen wird dein Pro-Status <strong>automatisch in der App</strong> freigeschaltet. Sollte das nicht klappen — z. B. weil du den Kauf in einem anderen Tab abgeschlossen hast — nutze einfach den Aktivierungs-Code oben:
+    </p>
+
+    <div class="steps">
+      <div class="step">
+        <div class="step-num"></div>
+        <div class="step-text">
+          <strong>Code kopieren</strong>
+          <span>Klick auf den Kopieren-Button in der Code-Box oben.</span>
+        </div>
+      </div>
+      <div class="step">
+        <div class="step-num"></div>
+        <div class="step-text">
+          <strong>Zur App wechseln</strong>
+          <span>Über den Button unten oder direkt: <strong>ap1.learningfactory.io</strong></span>
+        </div>
+      </div>
+      <div class="step">
+        <div class="step-num"></div>
+        <div class="step-text">
+          <strong>Code einlösen</strong>
+          <span>Tippe auf „Pro freischalten" → „Code einlösen" und füge den Code ein.</span>
+        </div>
+      </div>
+    </div>
+
+    <div class="cta-row">
+      <a href="https://ap1.learningfactory.io" class="btn">
+        Jetzt zur App →
+      </a>
+    </div>
+  </div>
+
+  <div class="info-card">
+    <h2>📱 Wichtig: Push-Erinnerung aktivieren</h2>
+    <p>
+      Damit du die <strong>tägliche Frage des Tages</strong> als Push-Benachrichtigung bekommst, musst du die App einmalig zum Startbildschirm deines Handys hinzufügen:
+    </p>
+    <p style="margin-top: 0.8rem;">
+      <strong>iPhone:</strong> Im Safari-Menü auf „Zum Home-Bildschirm" tippen (iOS 16.4 oder neuer erforderlich).
+    </p>
+    <p>
+      <strong>Android:</strong> Im Browser-Menü (3 Punkte) auf „App installieren" oder „Zum Startbildschirm hinzufügen" tippen.
+    </p>
+    <p style="margin-top: 0.8rem; font-size: 0.9rem; color: var(--text-light);">
+      Anschließend die App vom Startbildschirm öffnen und Benachrichtigungen erlauben.
+    </p>
+  </div>
+
+  <div class="info-card">
+    <h2>📧 Deine Rechnung</h2>
+    <p>
+      Die Rechnung für deinen Kauf wird automatisch von <strong>Digistore24 GmbH</strong> erstellt und an die im Bestellprozess angegebene E-Mail-Adresse versendet. Sie sollte innerhalb weniger Minuten in deinem Posteingang erscheinen.
+    </p>
+    <p style="margin-top: 0.5rem;">
+      Falls du die Rechnung nicht findest, prüfe bitte deinen Spam-Ordner oder logge dich bei Digistore24 ein.
+    </p>
+  </div>
+
+  <div class="support-box">
+    <h3>💬 Support &amp; Hilfe</h3>
+    <p>
+      Bei Fragen zur App oder Problemen mit der Aktivierung erreichst du mich direkt:
+    </p>
+    <p>
+      ✉️ <a href="mailto:kontakt@learningfactory.io">kontakt@learningfactory.io</a>
+    </p>
+    <p style="margin-top: 0.5rem;">
+      Bei Fragen zur Zahlung oder Rechnung wende dich an Digistore24:
+    </p>
+    <p>
+      🌐 <a href="https://www.digistore24.com/de/help" target="_blank" rel="noopener">digistore24.com/de/help</a>
+    </p>
+  </div>
+
+</div>
+
+<footer>
+  <div>
+    <a href="/">Startseite</a>·
+    <a href="/impressum.html">Impressum</a>·
+    <a href="/datenschutz.html">Datenschutz</a>·
+    <a href="/agb.html">AGB</a>
+  </div>
+  <div style="margin-top: 0.5rem; color: var(--muted);">
+    Learning Factory · Wilfried Ifland · Werstener Dorfstr. 72, 40591 Düsseldorf
+  </div>
+</footer>
+
+<div class="toast" id="toast">Kopiert</div>
+
+<script>
+(function() {
+  'use strict';
+
+  const FUNCTION_URL = 'https://europe-west1-ap1-coach.cloudfunctions.net/getProCodeByOrderId';
+
+  const codeDisplay = document.getElementById('codeDisplay');
+  const codeValue = document.getElementById('codeValue');
+  const copyBtn = document.getElementById('copyBtn');
+  const copyText = document.getElementById('copyText');
+  const copyIcon = document.getElementById('copyIcon');
+  const redeemedState = document.getElementById('redeemedState');
+  const toast = document.getElementById('toast');
+
+  const urlParams = new URLSearchParams(window.location.search);
+  const orderId = urlParams.get('order_id') || urlParams.get('orderId');
+
+  function showError(msg) {
+    codeValue.classList.remove('loading');
+    codeValue.classList.add('error');
+    codeValue.textContent = msg;
+    copyBtn.disabled = true;
+  }
+
+  function showCode(code) {
+    codeValue.classList.remove('loading', 'error');
+    codeValue.textContent = code;
+    copyBtn.disabled = false;
+    copyBtn.dataset.code = code;
+  }
+
+  function showAlreadyRedeemed() {
+    codeDisplay.classList.add('hidden');
+    redeemedState.classList.remove('hidden');
+  }
+
+  function showToast(msg) {
+    toast.textContent = msg;
+    toast.classList.add('show');
+    setTimeout(() => toast.classList.remove('show'), 2200);
+  }
+
+  function setLoadingText(html) {
+    codeValue.classList.remove('error');
+    codeValue.classList.add('loading');
+    codeValue.innerHTML = html;
+  }
+
+  // Retry-Loop: Webhook braucht oft 1-10s nach Kauf — bei 404/5xx/Netzwerkfehler bis zu 8x mit 2s Pause neu versuchen.
+  async function loadCodeWithRetry() {
+    const MAX_ATTEMPTS = 8;
+    const DELAY_MS = 2000;
+    let lastErr = null;
+
+    for (let attempt = 1; attempt <= MAX_ATTEMPTS; attempt++) {
+      if (attempt === 2) {
+        setLoadingText('<span class="spinner"></span>Code wird vorbereitet… (das kann ein paar Sekunden dauern)');
+      }
+
+      try {
+        const r = await fetch(FUNCTION_URL + '?orderId=' + encodeURIComponent(orderId));
+
+        if (r.status === 404 || r.status >= 500) {
+          lastErr = new Error('HTTP ' + r.status);
+        } else if (!r.ok) {
+          throw new Error('HTTP ' + r.status);
+        } else {
+          const data = await r.json();
+          if (data && data.redeemed) {
+            showAlreadyRedeemed();
+            return;
+          }
+          if (data && data.code) {
+            showCode(data.code);
+            return;
+          }
+          throw new Error('Kein Code in der Antwort');
+        }
+      } catch (err) {
+        lastErr = err;
+      }
+
+      if (attempt < MAX_ATTEMPTS) {
+        await new Promise(function(resolve) { setTimeout(resolve, DELAY_MS); });
+      }
+    }
+
+    console.error('Code-Load-Fehler nach ' + MAX_ATTEMPTS + ' Versuchen:', lastErr);
+    showError('Code konnte nicht geladen werden. Den Code findest du auch in deiner E-Mail von Digistore24.');
+  }
+
+  if (!orderId) {
+    showError('Keine Bestellnummer in der URL — schau in deine E-Mail von Digistore24, dort steht der Code.');
+  } else {
+    loadCodeWithRetry();
+  }
+
+  copyBtn.addEventListener('click', function() {
+    const code = copyBtn.dataset.code;
+    if (!code) return;
+
+    if (navigator.clipboard && window.isSecureContext) {
+      navigator.clipboard.writeText(code).then(function() {
+        copyBtn.classList.add('copied');
+        copyText.textContent = 'Kopiert!';
+        copyIcon.textContent = '✓';
+        showToast('Code in die Zwischenablage kopiert');
+        setTimeout(function() {
+          copyBtn.classList.remove('copied');
+          copyText.textContent = 'Kopieren';
+          copyIcon.textContent = '📋';
+        }, 2500);
+      }).catch(function() { fallbackCopy(code); });
+    } else {
+      fallbackCopy(code);
+    }
+  });
+
+  function fallbackCopy(code) {
+    const ta = document.createElement('textarea');
+    ta.value = code;
+    ta.style.position = 'fixed';
+    ta.style.opacity = '0';
+    document.body.appendChild(ta);
+    ta.select();
+    try {
+      document.execCommand('copy');
+      showToast('Code kopiert');
+    } catch (e) {
+      showToast('Kopieren fehlgeschlagen');
+    }
+    document.body.removeChild(ta);
+  }
+})();
+</script>
+
+</body>
+</html>
