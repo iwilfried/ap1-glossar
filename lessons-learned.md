@@ -264,3 +264,169 @@ Nachzieharbeit:
 GitHub leitet die alte URL (`ap1-glossar`) zeitweise um, aber nicht garantiert dauerhaft.
 Lokales Working-Directory bleibt aus Pragmatismus-Gründen weiterhin `C:\Users\wilfr\ap1-glossar`
 (VS Code Workspaces, FileZilla-Pfade etc. bleiben funktional).
+
+---
+
+## 🔄 Lifetime-Migration (Mai 2026)
+
+Migration von termin-basierter Pro-Version („Prüfungspass bis Termin X") zu **AP1 Coach Pro Lifetime** (24 € einmalig, keine Gültigkeitsdauer).
+
+### Strategie: Clean Replace > Feature-Flag (bei Pre-Launch)
+- Bei Pre-Launch **ohne Bestandskunden** ist Feature-Flag-Komplexität nicht nötig
+- **Clean Replace mit Git-Tag als Rollback** ist die einfachste Strategie:
+  ```powershell
+  git tag pre-lifetime-migration
+  git push origin pre-lifetime-migration
+  # → bei Problemen: git reset --hard pre-lifetime-migration
+  ```
+- Vorteil: Code bleibt sauber, kein toter Code, keine `if (lifetimeEnabled)`-Verzweigungen
+
+### Synchron-Pflicht: 7 Stellen müssen gleichzeitig stimmen
+Eine Preis-/Modell-Änderung berührt MEHR Stellen als gedacht — Checkliste:
+
+1. **Frontend Paywall** (`lib/screens/paywall/paywall_screen.dart`) — Preis, Button-Text, Marketing-Texte, Termin-Auswahl entfernen
+2. **Backend Webhook** (`functions/src/index.ts`) — examDate-Logik aus `digistore24Webhook` raus, aus `redeemProCode` raus
+3. **Redeem-Code Dialog** (`lib/screens/paywall/redeem_code_dialog.dart`) — Termin-Auswahl-UI raus
+4. **Weitere Frontend-Stellen** (`freetext_challenge_screen.dart`, `redeem_voucher_screen.dart`) — Pro-Texte und Preise
+5. **Salespage** (`index.html` auf IONOS) — Produkt-Karte, Preis, FAQ
+6. **Rechtliche Seiten** (`agb.html`, `datenschutz.html`, `impressum.html`) — Termine-Listen, Gültigkeitsdauer-Formulierungen
+7. **Digistore24-Produkt** — Name, Beschreibung, Preis im Zahlungsplan
+
+**Lesson:** Vor Migration einmal alle Dateien greppen nach `Prüfungspass`, `examDate`, `Termin`, alten Preisen. Pragmatik: `findstr` mit `-Encoding UTF8` über die alten Preise (z.B. `18 €`, `17,84 €`) findet automatisch alle Stellen.
+
+### Backward-Kompat im Backend bewusst belassen
+- `firebase_service.dart` prüft weiterhin `examDate != null` — das ist GEWOLLT
+- Lifetime-User haben `examDate: null` → fallen durch den Check → bleiben Pro
+- Voucher-User haben weiterhin `examDate: <Datum>` → werden korrekt geprüft
+- **Lesson:** Beim Refactor NICHT alle examDate-Referenzen löschen. Erst prüfen: wer schreibt das Feld noch (Voucher-Funktion!) und wer liest es noch (Service-Layer für Voucher-Validierung).
+
+### `examDates`-Map BLEIBT (Voucher braucht sie)
+Bei Lifetime-Migration der Reflex: alles examDate-bezogene löschen. **FALSCH.**
+- Webhook braucht es nicht mehr → kann raus
+- `redeemProCode` braucht es nicht mehr → kann raus
+- ABER: `redeemVoucher` und `generateVouchers` brauchen die Map weiterhin
+- **Lesson:** Vor dem Löschen einer Datenstruktur erst per `grep` (oder VS Code „Find in Files") alle Referenzen finden
+
+### PowerShell-Replacements für HTML/MD
+Bewährter Workflow für Multi-File-Text-Replacements:
+```powershell
+$file = "C:\Users\wilfr\Downloads\MasterApp\agb.html"
+Copy-Item $file "$file.bak" -Force
+$content = Get-Content $file -Encoding UTF8 -Raw
+$content = $content -replace 'alte Pattern', 'neue Pattern'
+[System.IO.File]::WriteAllText($file, $content, [System.Text.UTF8Encoding]::new($false))
+```
+- `Get-Content -Raw` liest die ganze Datei als String (sonst zeilenweise → kein Multi-Line-Replace)
+- `[System.IO.File]::WriteAllText` mit `UTF8Encoding($false)` = UTF-8 OHNE BOM (wichtig für IONOS-Serving)
+- `.bak`-Datei IMMER vor dem Schreiben anlegen
+
+### Multi-Line-Replace: `(?s)`-Regex bei CRLF/LF-Mismatch
+PowerShell-Here-Strings haben **CRLF**, gelesene Dateien oft **LF** — direkter Replace scheitert dann ohne Fehlermeldung:
+```powershell
+# FUNKTIONIERT NICHT bei CRLF/LF-Mismatch:
+$content = $content -replace $oldBlock, $newBlock
+
+# FUNKTIONIERT IMMER (Singleline-Modus, Regex):
+$content = $content -replace '(?s)Startanker.*?Endanker', $newBlock
+```
+- `(?s)` macht `.` zu „match jedes Zeichen inkl. Newline"
+- `.*?` ist non-greedy (matched kürzestmöglich, wichtig wenn Anker mehrfach vorkommen)
+- **Lesson:** Wenn Replace ohne Fehler durchläuft aber kein Effekt → CRLF/LF-Verdacht → `(?s)`-Variante probieren
+
+### IONOS-Cache vs `web_fetch`-Cache: live im Browser verifizieren
+- IONOS hat einen leichten CDN-Cache (Minuten), refresht aber zuverlässig
+- Anthropics `web_fetch` hat einen aggressiveren Cache, der NICHT durch Query-String-Cache-Buster invalidiert
+- **Bei der Verifikation der live-AGB:** `web_fetch` zeigte 30+ Min nach Upload immer noch die alte Version
+- **Lösung:** Im Browser (Inkognito + Strg+Shift+R) selbst prüfen
+- **Lesson:** Tool-Caches sind manchmal stärker als CDN-Caches — die finale Verifikation immer am echten Browser
+
+### File-Größe als Sanity-Check nach FileZilla-Upload
+- Im FileZilla-Log stehen Byte-Counts: alte Datei (vor Upload) vs. neue (nach Upload)
+- Bei Replacements, die Text RAUSnehmen, MUSS die Datei kleiner werden
+- Beispiel Lifetime-Migration:
+  - `agb.html`: 15.316 → 15.098 Bytes ✓ (Termin-Liste raus)
+  - `datenschutz.html`: 15.276 → 14.517 Bytes ✓ (Termin-Bullet + komplette Sektion raus)
+  - `impressum.html`: 6.214 → 6.212 Bytes ✓ (nur Datum geändert, minimal kleiner)
+- **Lesson:** Vor User-Verifikation kurz im Log die Bytes prüfen — bei unerwarteten Größen früh stoppen.
+
+---
+
+## 🎫 Pro-Code-Recovery (Cross-Tab-Aktivierung)
+
+Problem: Käufer öffnet Kauf-Flow in Tab A, kauft in Tab B (Digistore-Checkout), zurück in Tab A wird die Pro-Version nicht freigeschaltet (anderer Browser-State).
+
+### Lösung: 6-stelliger Pro-Code als Aktivierungs-Brücke
+Webhook generiert beim Kauf einen Code, Käufer kann ihn überall einlösen — auch auf anderem Gerät.
+
+```typescript
+// functions/src/index.ts
+function generateProCode(): string {
+  const chars = 'ABCDEFGHJKMNPQRSTUVWXYZ23456789';  // ohne I/O/0/1 (Verwechslung)
+  let code = '';
+  for (let i = 0; i < 6; i++) {
+    code += chars[Math.floor(Math.random() * chars.length)];
+  }
+  return code;
+}
+```
+**Design-Entscheidungen:**
+- 31 Zeichen × 6 Stellen ≈ 887 Millionen Kombinationen — ausreichend für realistische Käuferzahlen
+- Verwechslungs-Zeichen weggelassen: `I`/`O`/`0`/`1`/`L` (Käufer tippt von E-Mail ab)
+- Großbuchstaben + Zahlen, kein Lowercase (eindeutiger)
+
+### `proCodes/{code}` Firestore-Doc mit `intendedUid`
+```typescript
+await db.collection('proCodes').doc(code).set({
+  email: customerEmail,
+  orderId: orderId,
+  intendedUid: customUid,         // UID aus custom-Parameter (Tab A)
+  redeemed: false,
+  expiresAt: oneYearFromNow,      // Sicherheit gegen ewig herumliegende Codes
+  createdAt: FieldValue.serverTimestamp(),
+});
+```
+- `intendedUid` ermöglicht Vorrang-Aktivierung im richtigen Browser
+- Aber: Code ist **nicht** an Original-Browser gebunden — JEDER eingeloggte User kann einlösen
+- Das ist Feature, nicht Bug: erlaubt Cross-Device-Aktivierung (Käufer kauft am Desktop, lernt am Handy)
+
+### `redeemProCode` als Callable mit Auth-Check
+```typescript
+export const redeemProCode = onCall(
+  { region: 'europe-west1' },
+  async (request) => {
+    if (!request.auth) throw new HttpsError('unauthenticated', '...');
+    const { code } = request.data;
+    // Code validieren, Auf Ablauf prüfen, atomic Batch-Update
+  }
+);
+```
+- **`onCall`**, nicht `onRequest` — Auth-Token kommt automatisch mit
+- Batch-Update: `proCodes/{code}.redeemed = true` UND `users/{uid}.isPro = true` in EINER Transaktion (sonst Race-Condition möglich)
+
+### Modal in der Paywall: UI-Strategie
+Statt eigene Seite → Dialog direkt in der Paywall (Lifecycle einfacher):
+```dart
+// lib/screens/paywall/paywall_screen.dart, _buildProcessingView()
+Container(
+  decoration: BoxDecoration(color: orange.withOpacity(0.1), ...),
+  child: TextButton(
+    onPressed: () => showRedeemCodeDialog(context),
+    child: const Text('Code einlösen'),
+  ),
+),
+```
+- Container ist orange, Action-Button ist orange → klar als Action erkennbar (siehe „Visual Hierarchy" Lessons)
+- Dialog mit 6-stelligem Input, Auto-Uppercase, Validierung beim Klick
+- Bei Erfolg: SnackBar + Navigator zurück zu HomePage (pushAndRemoveUntil)
+
+### Public `getProCodeByOrderId` für danke.html (noch nicht aktiv)
+Geplant für Phase 3: Digistore Success-URL → `danke.html?order_id=XXX` → JavaScript ruft `getProCodeByOrderId` → zeigt Code direkt an.
+- Function ist `onRequest` (public, kein Auth) — Code-Anzeige soll auch ohne Login klappen
+- `orderId` ist nicht erratbar (Digistore-intern) — implizit als Auth-Proxy
+- Phase 1+2 sind live (Webhook + Modal), Phase 3 kommt später
+
+### Testen ohne echten Geldfluss: TESTKAUF2026 Rabattcode
+- Digistore: 100 % Rabatt-Code in Vendor-Settings
+- Voller End-to-End-Test: Checkout → Webhook → proCodes-Doc → Modal-Einlösung → Pro aktiv
+- **Lesson:** Mit echtem User-Flow testen, nicht mit synthetischen Webhook-Aufrufen — Digistore-Signature-Header sind sonst nicht reproduzierbar
+
