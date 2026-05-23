@@ -273,14 +273,34 @@ class HomePageState extends State<HomePage> with SingleTickerProviderStateMixin 
         return matchSearch && matchAspekt && matchThema;
       }).toList();
 
-      // Begriffe mit Buchstaben zuerst, Zahlen/Sonderzeichen ans Ende
-      filtered.sort((a, b) {
-        final aLetter = RegExp(r'^[A-Za-z\u00C0-\u024F]').hasMatch(a);
-        final bLetter = RegExp(r'^[A-Za-z\u00C0-\u024F]').hasMatch(b);
-        if (aLetter && !bLetter) return -1;
-        if (!aLetter && bLetter) return 1;
-        return a.toLowerCase().compareTo(b.toLowerCase());
-      });
+      if (s.isEmpty) {
+        // Begriffe mit Buchstaben zuerst, Zahlen/Sonderzeichen ans Ende
+        filtered.sort((a, b) {
+          final aLetter = RegExp(r'^[A-Za-z\u00C0-\u024F]').hasMatch(a);
+          final bLetter = RegExp(r'^[A-Za-z\u00C0-\u024F]').hasMatch(b);
+          if (aLetter && !bLetter) return -1;
+          if (!aLetter && bLetter) return 1;
+          return a.toLowerCase().compareTo(b.toLowerCase());
+        });
+      } else {
+        // Relevanz: exakter Match \u2192 startsWith \u2192 contains \u2192 nur Definition;
+        // innerhalb gleicher Rank alphabetisch.
+        int rank(String name) {
+          if (name == s) return 0;
+          if (name.startsWith(s)) return 1;
+          if (name.contains(s)) return 2;
+          return 3;
+        }
+
+        filtered.sort((a, b) {
+          final aName = a.toLowerCase();
+          final bName = b.toLowerCase();
+          final aRank = rank(aName);
+          final bRank = rank(bName);
+          if (aRank != bRank) return aRank.compareTo(bRank);
+          return aName.compareTo(bName);
+        });
+      }
 
       _visibleKeys = filtered;
     });
