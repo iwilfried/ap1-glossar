@@ -28,9 +28,9 @@ class _QuizScreenState extends State<QuizScreen> {
   String? _feedbackText;
   int _correctAnswers = 0;
   int _currentStreak = 0;
-  List<bool> _results = [];
+  final List<bool> _results = [];
   List<String> _options = [];
-  List<Map<String, String>> _wrongAnswers = [];
+  final List<Map<String, String>> _wrongAnswers = [];
   String _selectedAspekt = 'Alle';
   String? _selectedThema;
 
@@ -261,7 +261,7 @@ class _QuizScreenState extends State<QuizScreen> {
             padding: const EdgeInsets.only(right: 14),
             child: Center(
               child: Text(
-                '${_correctAnswers} / ${_results.length + (_showSummary ? 0 : 1)} richtig',
+                '$_correctAnswers / ${_results.length + (_showSummary ? 0 : 1)} richtig',
                 style: const TextStyle(color: Colors.white70, fontSize: 14),
               ),
             ),

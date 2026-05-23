@@ -26,13 +26,9 @@ class _DailyChallengeScreenState extends State<DailyChallengeScreen> {
   bool _completedToday = false;
   bool _questionAnswered = false;
   bool _correctAnswer = false;
-  bool _useFallback = false;
-  bool _showAllReasons = false;
   String? _selectedOptionText;
   String? _currentTerm;
-  String? _currentDefinition;
   List<_MCOption> _mcOptions = [];
-  String _theme = 'alle';
   String _selectedThema = 'Alle Themen';
   int _streak = 0;
   String _statusMessage = '';
@@ -68,7 +64,6 @@ class _DailyChallengeScreenState extends State<DailyChallengeScreen> {
     final completed = lastKey == todayKey;
 
     setState(() {
-      _theme = theme;
       _streak = streak;
       _completedToday = completed;
     });
@@ -106,7 +101,6 @@ class _DailyChallengeScreenState extends State<DailyChallengeScreen> {
     try {
       setState(() {
         _isGeneratingQuestion = true;
-        _showAllReasons = false;
       });
 
       final mcData = await FirebaseService.instance.generateMCQuestion(
@@ -145,7 +139,6 @@ class _DailyChallengeScreenState extends State<DailyChallengeScreen> {
 
       setState(() {
         _currentTerm = term;
-        _currentDefinition = definition;
         _mcOptions = allOptions;
         _questionText = mcData['question']?.toString() ?? 'Was bedeutet "$term"?';
         _explanation = mcData['explanation']?.toString() ?? definition;
@@ -155,7 +148,6 @@ class _DailyChallengeScreenState extends State<DailyChallengeScreen> {
         _questionAnswered = false;
         _correctAnswer = false;
         _statusMessage = '';
-        _useFallback = false;
         _isGeneratingQuestion = false;
       });
     } catch (e) {
@@ -163,7 +155,6 @@ class _DailyChallengeScreenState extends State<DailyChallengeScreen> {
       final fallbackOpts = _buildFallbackOptions(term, availableTerms);
       setState(() {
         _currentTerm = term;
-        _currentDefinition = definition;
         _mcOptions = fallbackOpts;
         _questionText = 'Was bedeutet "$term"?';
         _explanation = definition;
@@ -173,7 +164,6 @@ class _DailyChallengeScreenState extends State<DailyChallengeScreen> {
         _questionAnswered = false;
         _correctAnswer = false;
         _statusMessage = '';
-        _useFallback = true;
         _isGeneratingQuestion = false;
       });
     }
@@ -720,7 +710,6 @@ class _DailyChallengeScreenState extends State<DailyChallengeScreen> {
             ),
           ],
         ),
-        onExpansionChanged: (v) => setState(() => _showAllReasons = v),
         children: wrongWithReasons.map((o) {
           return Padding(
             padding: const EdgeInsets.only(top: 8),

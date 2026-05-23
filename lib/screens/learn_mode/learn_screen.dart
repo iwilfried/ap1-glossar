@@ -595,7 +595,6 @@ class _LearnScreenState extends State<LearnScreen> {
 
   // ── Alles gemeistert ─────────────────────────────────────────
   Widget _buildAllDone() {
-    final filteredCount = _filteredRemainingCount;
     final hasFilter = _selectedAspekt != 'Alle' || _selectedThema != null;
     final title = _selectedThema != null
         ? 'Alle $_selectedThema Begriffe gemeistert!'
@@ -713,6 +712,7 @@ class _LearnScreenState extends State<LearnScreen> {
           TextButton(
             onPressed: () async {
               await _leitner.reset();
+              if (!ctx.mounted) return;
               Navigator.pop(ctx);
               _loadNext();
               setState(() {

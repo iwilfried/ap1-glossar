@@ -473,16 +473,16 @@ class _NotificationsSettingsScreenState extends State<NotificationsSettingsScree
       ),
     );
 
-    if (confirmed == true && mounted) {
+    if (confirmed == true && context.mounted) {
       try {
         await FirebaseService.instance.resetProgress();
-        if (mounted) {
+        if (context.mounted) {
           ScaffoldMessenger.of(context).showSnackBar(
             const SnackBar(content: Text('Fortschritt wurde zurückgesetzt.')),
           );
         }
       } catch (e) {
-        if (mounted) {
+        if (context.mounted) {
           ScaffoldMessenger.of(context).showSnackBar(
             const SnackBar(content: Text('Fehler beim Zurücksetzen.')),
           );

@@ -27,7 +27,6 @@ class _FreetextChallengeScreenState extends State<FreetextChallengeScreen> {
   String? _currentDefinition;
   String? _currentQuestion;
   String? _questionDifficulty;
-  List<String> _currentRelatedTerms = [];
   String _selectedAspect = 'alle';
   String _selectedTheme = 'alle';
   final TextEditingController _answerController = TextEditingController();
@@ -73,7 +72,6 @@ class _FreetextChallengeScreenState extends State<FreetextChallengeScreen> {
       _currentDefinition = definition;
       _currentQuestion = null;
       _questionDifficulty = null;
-      _currentRelatedTerms = relatedTerms;
       _questionAnswered = false;
       _evaluationResult = null;
       _answerController.clear();
@@ -103,6 +101,7 @@ class _FreetextChallengeScreenState extends State<FreetextChallengeScreen> {
         _isGenerating = false;
       });
     } catch (e) {
+      if (!mounted) return;
       final fallback = _generateQuestion(term);
       setState(() {
         _currentQuestion = fallback;
@@ -123,30 +122,6 @@ class _FreetextChallengeScreenState extends State<FreetextChallengeScreen> {
   void dispose() {
     _answerController.dispose();
     super.dispose();
-  }
-
-  Future<void> _loadQuestion() async {
-    final availableTerms = _buildTermPool();
-    if (availableTerms.isEmpty) {
-      setState(() {
-        _isLoading = false;
-      });
-      return;
-    }
-
-    final term = availableTerms[_random.nextInt(availableTerms.length)];
-    final definition = abbreviations[term]!;
-    final question = _generateQuestion(term);
-
-    setState(() {
-      _currentTerm = term;
-      _currentDefinition = definition;
-      _currentQuestion = question;
-      _questionAnswered = false;
-      _evaluationResult = null;
-      _answerController.clear();
-      _isLoading = false;
-    });
   }
 
   List<String> _buildTermPool() {
@@ -198,12 +173,13 @@ class _FreetextChallengeScreenState extends State<FreetextChallengeScreen> {
         _isEvaluating = false;
       });
     } catch (e) {
+      if (!mounted) return;
       setState(() {
         _isEvaluating = false;
       });
-      
+
       // Check for specific resource-exhausted error (daily limit reached)
-      if (e.toString().contains('resource-exhausted') || 
+      if (e.toString().contains('resource-exhausted') ||
           e.toString().contains('Tageslimit erreicht')) {
         // Show paywall teaser for Free users who reached daily limit
         setState(() {
@@ -273,7 +249,7 @@ class _FreetextChallengeScreenState extends State<FreetextChallengeScreen> {
                       children: [
                         Expanded(
                           child: DropdownButtonFormField<String>(
-                            value: _selectedAspect,
+                            initialValue: _selectedAspect,
                             decoration:
                                 const InputDecoration(labelText: 'Aspekt'),
                             items: const [
@@ -308,7 +284,7 @@ class _FreetextChallengeScreenState extends State<FreetextChallengeScreen> {
                         const SizedBox(width: 16),
                         Expanded(
                           child: DropdownButtonFormField<String>(
-                            value: _selectedTheme,
+                            initialValue: _selectedTheme,
                             decoration:
                                 const InputDecoration(labelText: 'Thema'),
                             items: [
@@ -365,7 +341,7 @@ class _FreetextChallengeScreenState extends State<FreetextChallengeScreen> {
             ],
             if (_isGenerating) ...[
               Card(
-                color: Theme.of(context).colorScheme.surfaceVariant,
+                color: Theme.of(context).colorScheme.surfaceContainerHighest,
                 child: Padding(
                   padding: const EdgeInsets.all(16),
                   child: Row(
