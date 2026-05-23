@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
-import 'dart:html' as html;
-import 'dart:js' as js;
+import 'package:web/web.dart' as web;
+import 'dart:js_interop';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:firebase_core/firebase_core.dart';
 import 'package:shared_preferences/shared_preferences.dart';
@@ -12,6 +12,10 @@ import 'package:ap1_glossar/screens/paywall/paywall_screen.dart';
 import 'package:ap1_glossar/services/firebase_service.dart';
 import 'package:ap1_glossar/services/fcm_service.dart';
 import 'firebase_options.dart';
+
+// JS-Bridge: external function for the setThemeColor JS helper in index.html
+@JS('setThemeColor')
+external void _setThemeColorJs(String color);
 
 // ── Theme-Color Helper für PWA-Browser-Statusleiste ──────────────────────────
 // Hex-Farben für Browser-/PWA-Statusleiste je nach Theme-Modus.
@@ -32,12 +36,12 @@ void updateBrowserThemeColor(ThemeMode mode) {
     case ThemeMode.system:
       // System-Setting auslesen
       final isSystemDark =
-          html.window.matchMedia('(prefers-color-scheme: dark)').matches;
+          web.window.matchMedia('(prefers-color-scheme: dark)').matches;
       color = isSystemDark ? _themeColorDark : _themeColorLight;
       break;
   }
   try {
-    js.context.callMethod('setThemeColor', [color]);
+    _setThemeColorJs(color);
   } catch (_) {
     // Stummes Fail-Safe: falls JS-Bridge nicht erreichbar (z.B. in Test-Umgebung)
   }
@@ -49,7 +53,7 @@ void main() async {
   await FirebaseAuth.instance.signInAnonymously();
   await FirebaseService.instance.initUserProfile();
 
-  final uri = Uri.parse(html.window.location.href);
+  final uri = Uri.parse(web.window.location.href);
   final deepLinkTerm = uri.queryParameters['term'];
   final purchaseSuccess = uri.queryParameters['purchase'] == 'success';
   final prefs = await SharedPreferences.getInstance();
