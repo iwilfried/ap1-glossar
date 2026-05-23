@@ -1,7 +1,7 @@
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
 exports.testDailyChallenge = exports.sendDailyChallenge = exports.updateMCScore = exports.getProCodeByOrderId = exports.redeemProCode = exports.digistore24Webhook = exports.generateVouchers = exports.redeemVoucher = exports.generateMCQuestion = exports.evaluateAnswer = exports.generateQuestion = void 0;
-const functions = require("firebase-functions");
+const functions = require("firebase-functions/v1");
 const admin = require("firebase-admin");
 const crypto = require("crypto");
 admin.initializeApp();
@@ -62,7 +62,6 @@ function verifyDigistore24Signature(params, passphrase) {
 exports.generateQuestion = functions
     .region('europe-west1')
     .https.onCall(async (data, context) => {
-    var _a;
     if (!context.auth) {
         throw new functions.https.HttpsError('unauthenticated', 'User must be authenticated');
     }
@@ -82,7 +81,7 @@ exports.generateQuestion = functions
             throw new functions.https.HttpsError('resource-exhausted', 'Tageslimit erreicht. Mit dem Prüfungspass trainierst du unbegrenzt.');
         }
     }
-    const apiKey = ((_a = functions.config().claude) === null || _a === void 0 ? void 0 : _a.api_key) || process.env.CLAUDE_API_KEY;
+    const apiKey = process.env.CLAUDE_API_KEY;
     if (!apiKey) {
         throw new functions.https.HttpsError('internal', 'API key not configured');
     }
@@ -233,7 +232,6 @@ ANTWORTFORMAT (antworte NUR mit diesem JSON, kein Markdown, keine Backticks):
 exports.evaluateAnswer = functions
     .region('europe-west1')
     .https.onCall(async (data, context) => {
-    var _a;
     // Auth check
     if (!context.auth) {
         throw new functions.https.HttpsError('unauthenticated', 'User must be authenticated');
@@ -256,7 +254,7 @@ exports.evaluateAnswer = functions
         }
     }
     // Claude API call
-    const apiKey = ((_a = functions.config().claude) === null || _a === void 0 ? void 0 : _a.api_key) || process.env.CLAUDE_API_KEY;
+    const apiKey = process.env.CLAUDE_API_KEY;
     if (!apiKey) {
         throw new functions.https.HttpsError('internal', 'API key not configured');
     }
@@ -456,11 +454,11 @@ ANTWORTFORMAT (antworte NUR mit diesem JSON, kein Markdown, keine Backticks):
 exports.generateMCQuestion = functions
     .region('europe-west1')
     .https.onCall(async (data, context) => {
-    var _a, _b, _c;
+    var _a, _b;
     if (!context.auth) {
         throw new functions.https.HttpsError('unauthenticated', 'User must be authenticated');
     }
-    const apiKey = ((_a = functions.config().claude) === null || _a === void 0 ? void 0 : _a.api_key) || process.env.CLAUDE_API_KEY;
+    const apiKey = process.env.CLAUDE_API_KEY;
     if (!apiKey) {
         throw new functions.https.HttpsError('internal', 'API key not configured');
     }
@@ -638,13 +636,13 @@ ANTWORTFORMAT (antworte NUR mit diesem JSON, kein Markdown, keine Backticks):
         return {
             question: mcData.question,
             correctAnswer: mcData.correctAnswer,
-            correctReason: (_b = mcData.correctReason) !== null && _b !== void 0 ? _b : '',
+            correctReason: (_a = mcData.correctReason) !== null && _a !== void 0 ? _a : '',
             distractors: validDistractors,
             // Fallback: distractors als string[] bereitstellen für ältere Frontends
             distractorTexts: validDistractors.map((d) => d.text),
             explanation: mcData.explanation,
             points: typeof mcData.points === 'number' ? mcData.points : 2,
-            topic: (_c = mcData.topic) !== null && _c !== void 0 ? _c : 'Allgemein',
+            topic: (_b = mcData.topic) !== null && _b !== void 0 ? _b : 'Allgemein',
         };
     }
     catch (error) {
