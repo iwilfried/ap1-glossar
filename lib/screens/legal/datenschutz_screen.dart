@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 
 class DatenschutzScreen extends StatelessWidget {
-  const DatenschutzScreen({Key? key}) : super(key: key);
+  const DatenschutzScreen({super.key});
 
   @override
   Widget build(BuildContext context) {

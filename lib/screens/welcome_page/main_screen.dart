@@ -9,7 +9,7 @@ const Color kAccentColor = Color(0xFFE8813A);
 const Color kCardColor = Color(0xFF1e3a5f);
 
 class WelcomeScreen extends StatefulWidget {
-  const WelcomeScreen({Key? key}) : super(key: key);
+  const WelcomeScreen({super.key});
 
   @override
   State<WelcomeScreen> createState() => _WelcomeScreenState();

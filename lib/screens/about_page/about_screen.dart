@@ -3,7 +3,7 @@ import '../../data/data.dart';
 import '../../widgets/lf_logo.dart';
 
 class AboutScreen extends StatelessWidget {
-  const AboutScreen({Key? key}) : super(key: key);
+  const AboutScreen({super.key});
 
   @override
   Widget build(BuildContext context) {

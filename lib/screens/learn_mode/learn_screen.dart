@@ -6,7 +6,7 @@ import 'package:ap1_glossar/data/related.dart';
 import 'package:url_launcher/url_launcher.dart';
 
 class LearnScreen extends StatefulWidget {
-  const LearnScreen({Key? key}) : super(key: key);
+  const LearnScreen({super.key});
 
   @override
   State<LearnScreen> createState() => _LearnScreenState();
@@ -195,7 +195,7 @@ class _LearnScreenState extends State<LearnScreen> {
                         boxShadow: selected
                             ? [
                                 BoxShadow(
-                                  color: _aspektColor(aspekt).withOpacity(0.25),
+                                  color: _aspektColor(aspekt).withValues(alpha: 0.25),
                                   blurRadius: 6,
                                   offset: const Offset(0, 2),
                                 )
@@ -318,7 +318,7 @@ class _LearnScreenState extends State<LearnScreen> {
                               ? [
                                   BoxShadow(
                                     color: const Color(0xFF1B3A5C)
-                                        .withOpacity(0.25),
+                                        .withValues(alpha: 0.25),
                                     blurRadius: 6,
                                     offset: const Offset(0, 2),
                                   )
@@ -338,7 +338,7 @@ class _LearnScreenState extends State<LearnScreen> {
                       ),
                     ),
                   );
-                }).toList(),
+                }),
               ],
             ),
           ),
@@ -443,7 +443,7 @@ class _LearnScreenState extends State<LearnScreen> {
                 padding:
                     const EdgeInsets.symmetric(horizontal: 10, vertical: 4),
                 decoration: BoxDecoration(
-                  color: _aspektColor(aspekt).withOpacity(0.15),
+                  color: _aspektColor(aspekt).withValues(alpha: 0.15),
                   borderRadius: BorderRadius.circular(12),
                 ),
                 child: Text(
@@ -484,12 +484,12 @@ class _LearnScreenState extends State<LearnScreen> {
                   decoration: BoxDecoration(
                     color: _showAnswer
                         ? Colors.white
-                        : AppColors.color.withOpacity(0.05),
+                        : AppColors.color.withValues(alpha: 0.05),
                     borderRadius: BorderRadius.circular(16),
                     border: Border.all(
                       color: _showAnswer
-                          ? AppColors.color.withOpacity(0.3)
-                          : AppColors.color.withOpacity(0.15),
+                          ? AppColors.color.withValues(alpha: 0.3)
+                          : AppColors.color.withValues(alpha: 0.15),
                       width: 1,
                     ),
                   ),

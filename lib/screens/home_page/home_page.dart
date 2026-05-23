@@ -178,7 +178,7 @@ class _NavigationEntry {
 // ── HomePage ──────────────────────────────────────────────────────────────────
 class HomePage extends StatefulWidget {
   final String? deepLinkTerm;
-  const HomePage({Key? key, this.deepLinkTerm}) : super(key: key);
+  const HomePage({super.key, this.deepLinkTerm});
 
   @override
   HomePageState createState() => HomePageState();
@@ -190,7 +190,6 @@ class HomePageState extends State<HomePage> with SingleTickerProviderStateMixin 
   final _scrollController = ScrollController();
   Aspekt _selectedAspekt = Aspekt.alle;
   String? _selectedThema; // null = alle Themen
-  String? _activeDeepLinkTerm;
   String? _expandedTermId;
   bool _showScrollTopButton = false;
   final List<_NavigationEntry> _navigationStack = [];
@@ -321,7 +320,6 @@ class HomePageState extends State<HomePage> with SingleTickerProviderStateMixin 
     // Set search to exact term name
     _searchController.text = term;
     _applyFilter(search: term, aspekt: Aspekt.alle, clearThema: true);
-    _activeDeepLinkTerm = term;
 
     // Reorder: put exact match first, but keep it COLLAPSED (Nutzer entscheidet)
     setState(() {
@@ -525,7 +523,7 @@ class HomePageState extends State<HomePage> with SingleTickerProviderStateMixin 
                         boxShadow: selected
                             ? [
                                 BoxShadow(
-                                  color: a.bgColor.withOpacity(0.25),
+                                  color: a.bgColor.withValues(alpha: 0.25),
                                   blurRadius: 6,
                                   offset: const Offset(0, 2),
                                 )
@@ -646,7 +644,7 @@ class HomePageState extends State<HomePage> with SingleTickerProviderStateMixin 
                               ? [
                                   BoxShadow(
                                     color: const Color(0xFF1B3A5C)
-                                        .withOpacity(0.25),
+                                        .withValues(alpha: 0.25),
                                     blurRadius: 6,
                                     offset: const Offset(0, 2),
                                   )
@@ -680,8 +678,8 @@ class HomePageState extends State<HomePage> with SingleTickerProviderStateMixin 
                                   horizontal: 5, vertical: 1),
                               decoration: BoxDecoration(
                                 color: selected
-                                    ? Colors.white.withOpacity(0.25)
-                                    : const Color(0xFF1B3A5C).withOpacity(0.1),
+                                    ? Colors.white.withValues(alpha: 0.25)
+                                    : const Color(0xFF1B3A5C).withValues(alpha: 0.1),
                                 borderRadius: BorderRadius.circular(8),
                               ),
                               child: Text(
@@ -700,7 +698,7 @@ class HomePageState extends State<HomePage> with SingleTickerProviderStateMixin 
                       ),
                     ),
                   );
-                }).toList(),
+                }),
               ],
             ),
           ),
@@ -936,7 +934,7 @@ class _GlossarCardState extends State<_GlossarCard>
         border: Border(left: BorderSide(color: color, width: 4)),
         boxShadow: [
           BoxShadow(
-            color: Colors.black.withOpacity(0.06),
+            color: Colors.black.withValues(alpha: 0.06),
             blurRadius: 8,
             offset: const Offset(0, 2),
           ),
@@ -1078,12 +1076,12 @@ class _GlossarCardState extends State<_GlossarCard>
                               color: Colors.white,
                               borderRadius: BorderRadius.circular(20),
                               border: Border.all(
-                                color: relAspekt.bgColor.withOpacity(0.5),
+                                color: relAspekt.bgColor.withValues(alpha: 0.5),
                                 width: 1.2,
                               ),
                               boxShadow: [
                                 BoxShadow(
-                                  color: relAspekt.bgColor.withOpacity(0.08),
+                                  color: relAspekt.bgColor.withValues(alpha: 0.08),
                                   blurRadius: 4,
                                   offset: const Offset(0, 1),
                                 ),
@@ -1153,7 +1151,7 @@ class _AspektBadge extends StatelessWidget {
         color: aspekt.lightColor,
         borderRadius: BorderRadius.circular(6),
         border: Border.all(
-          color: aspekt.bgColor.withOpacity(0.4),
+          color: aspekt.bgColor.withValues(alpha: 0.4),
           width: 0.8,
         ),
       ),

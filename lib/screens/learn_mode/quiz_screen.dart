@@ -9,7 +9,7 @@ import 'package:ap1_glossar/screens/paywall/paywall_screen.dart';
 import 'package:ap1_glossar/services/firebase_service.dart';
 
 class QuizScreen extends StatefulWidget {
-  const QuizScreen({Key? key}) : super(key: key);
+  const QuizScreen({super.key});
 
   @override
   State<QuizScreen> createState() => _QuizScreenState();
@@ -349,7 +349,7 @@ class _QuizScreenState extends State<QuizScreen> {
                           ),
                           boxShadow: [
                             BoxShadow(
-                              color: Colors.black.withOpacity(0.02),
+                              color: Colors.black.withValues(alpha: 0.02),
                               blurRadius: 8,
                               offset: const Offset(0, 3),
                             ),
@@ -427,7 +427,7 @@ class _QuizScreenState extends State<QuizScreen> {
                         boxShadow: selected
                             ? [
                                 BoxShadow(
-                                  color: _aspektColor(aspekt).withOpacity(0.25),
+                                  color: _aspektColor(aspekt).withValues(alpha: 0.25),
                                   blurRadius: 6,
                                   offset: const Offset(0, 2),
                                 )
@@ -550,7 +550,7 @@ class _QuizScreenState extends State<QuizScreen> {
                               ? [
                                   BoxShadow(
                                     color: const Color(0xFF1B3A5C)
-                                        .withOpacity(0.25),
+                                        .withValues(alpha: 0.25),
                                     blurRadius: 6,
                                     offset: const Offset(0, 2),
                                   )
@@ -570,7 +570,7 @@ class _QuizScreenState extends State<QuizScreen> {
                       ),
                     ),
                   );
-                }).toList(),
+                }),
               ],
             ),
           ),
@@ -827,11 +827,11 @@ class CircularProgressWithText extends StatelessWidget {
   final String text;
 
   const CircularProgressWithText({
-    Key? key,
+    super.key,
     required this.progress,
     required this.color,
     required this.text,
-  }) : super(key: key);
+  });
 
   @override
   Widget build(BuildContext context) {
@@ -844,7 +844,7 @@ class CircularProgressWithText extends StatelessWidget {
           CircularProgressIndicator(
             value: progress / 100,
             strokeWidth: 8,
-            backgroundColor: color.withOpacity(0.2),
+            backgroundColor: color.withValues(alpha: 0.2),
             valueColor: AlwaysStoppedAnimation<Color>(color),
           ),
           Text(

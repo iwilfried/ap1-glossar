@@ -487,7 +487,7 @@ class _FreetextChallengeScreenState extends State<FreetextChallengeScreen> {
                   // Show normal evaluation result
                   Card(
                     color: _getScoreColor(_evaluationResult!['score'] as int)
-                        .withOpacity(0.1),
+                        .withValues(alpha: 0.1),
                     child: Padding(
                       padding: const EdgeInsets.all(16),
                       child: Column(
