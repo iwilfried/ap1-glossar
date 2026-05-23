@@ -1,4 +1,4 @@
-import * as functions from 'firebase-functions';
+import * as functions from 'firebase-functions/v1';
 import * as admin from 'firebase-admin';
 import * as crypto from 'crypto';
 
@@ -132,7 +132,7 @@ export const generateQuestion = functions
       }
     }
 
-    const apiKey = functions.config().claude?.api_key || process.env.CLAUDE_API_KEY;
+    const apiKey = process.env.CLAUDE_API_KEY;
     if (!apiKey) {
       throw new functions.https.HttpsError(
         'internal',
@@ -329,7 +329,7 @@ export const evaluateAnswer = functions
     }
 
     // Claude API call
-    const apiKey = functions.config().claude?.api_key || process.env.CLAUDE_API_KEY;
+    const apiKey = process.env.CLAUDE_API_KEY;
     if (!apiKey) {
       throw new functions.https.HttpsError(
         'internal',
@@ -579,7 +579,7 @@ export const generateMCQuestion = functions
       );
     }
 
-    const apiKey = functions.config().claude?.api_key || process.env.CLAUDE_API_KEY;
+    const apiKey = process.env.CLAUDE_API_KEY;
     if (!apiKey) {
       throw new functions.https.HttpsError(
         'internal',
