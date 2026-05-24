@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:web/web.dart' as web;
 import 'dart:js_interop';
 import 'package:firebase_auth/firebase_auth.dart';
-import 'package:firebase_core/firebase_core.dart';
+import 'package:firebase_core/firebase_core.dart' hide FirebaseService;
 import 'package:shared_preferences/shared_preferences.dart';
 import 'package:ap1_glossar/constants/colors.dart';
 import 'package:ap1_glossar/constants/theme.dart';
