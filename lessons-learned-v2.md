@@ -28,9 +28,184 @@ https://console.cloud.google.com/functions/details/europe-west1/<funcName>?proje
 
 ### Web-App Deploy
 ```powershell
-flutter build web --release --base-href=/coach/
+flutter build web --release --base-href=/
 ```
-Dann per **FileZilla SFTP** nach `/learningfactory/coach/` auf IONOS hochladen. GitHub Push allein reicht NICHT — die App läuft auf IONOS-Webspace, nicht auf GitHub Pages.
+Dann per **FileZilla SFTP** nach `/learningfactory/ap1/` auf IONOS hochladen. GitHub Push allein reicht NICHT — die App läuft auf IONOS-Webspace, nicht auf GitHub Pages.
+
+### base-href Stolperfalle bei Subdomain vs Subpath
+
+**Größter Production-Fail des Projekts** — Production hing 5 Min im Splash-Screen mit 404 bei ALLEN Assets.
+
+| Hosting-Setup | Korrekter base-href |
+|---|---|
+| Subpath: `learningfactory.io/coach/` (alt, vor Tag 1) | `--base-href=/coach/` |
+| Subdomain: `ap1.learningfactory.io` (seit Tag 1) | `--base-href=/` |
+
+Symptom bei falschem base-href: ALLE Assets 404 (splash.js, lf_logo.png, flutter_bootstrap.js, style.css, manifest.json, firebase-messaging-sw.js). Browser sucht `ap1.learningfactory.io/ap1/main.dart.js` statt `ap1.learningfactory.io/main.dart.js`.
+
+### Firebase-Functions SDK Major-Upgrade Pattern
+
+Beim Wechsel firebase-functions@v4 → v7 (und firebase-admin v12 → v13):
+
+1. **Explizites `/v1`-Subpath im Import** — sonst trifft Code-Defaults der neuen Major-Version, was Gen 1 Functions bricht:
+   ```typescript
+   // Vorher (v4 Default)
+   import * as functions from 'firebase-functions';
+   
+   // Nachher (v7, Gen 1 Compat)
+   import * as functions from 'firebase-functions/v1';
+   ```
+2. **`functions.config()` ist in v7 entfernt** — Migration zu `process.env`:
+   ```typescript
+   // Vorher
+   const apiKey = functions.config().claude?.api_key || process.env.CLAUDE_API_KEY;
+   
+   // Nachher (nur noch .env)
+   const apiKey = process.env.CLAUDE_API_KEY;
+   ```
+3. **Rollback-Anker setzen**, BEVOR upgegradet wird:
+   ```bash
+   git tag pre-sdk-upgrade
+   git push origin pre-sdk-upgrade
+   ```
+4. **Smoke-Test direkt nach Deploy** mit curl auf bekannte Functions (siehe Diagnose-Abschnitt unten).
+
+### `npm audit fix --force` ist regelmäßig gefährlich
+
+Niemals blind ausführen. Beispiel: npm schlug vor `firebase-admin@10.3.0` zu installieren, um eine uuid-CVE zu fixen — drei Major-Versionen RÜCKWÄRTS von v13.10.0. Wäre Sabotage gewesen.
+
+Stattdessen den Vorschlag lesen und prüfen, ob er sinnvoll ist. Bei Major-Downgrades: niemals.
+
+### `package.json` overrides für transitive CVEs
+
+Wenn eine vulnerable Sub-Dep über mehrere Pfade reinkommt (z.B. uuid via storage/gaxios/google-gax/teeny-request):
+
+```json
+{
+  "overrides": {
+    "uuid": "^11.1.1"
+  }
+}
+```
+
+Zwingt alle transitive deps auf eine sichere Version. Sauberer als Major-Bump der Hauptdep. **Test-Plan dazu:**
+1. `npm install` (entfernt alte uuid-Versionen, fügt sichere ein)
+2. `npm audit` (Erwartung: 0 vulnerabilities)
+3. `npx tsc` (Build-Verifikation)
+4. Deploy + Smoke-Test mit Live-Function
+
+Bei Cloud-Libraries (uuid, lodash etc.) ist das risikoarm, weil meist nur Basic-Methoden (`v4()`) benutzt werden, die zwischen Major-Versionen kompatibel sind.
+
+### Lint Cleanup in Phasen mit klarer Trennung
+
+53 Issues nicht in einem Rutsch fixen — in Phasen mit klaren Kategorien:
+
+- **Phase 1 (bulk wins):** repetitive Auto-Fixes via Claude Code (53 → 22)
+- **Phase 2 (kategorisiert):** B = unused, C = deprecated APIs, D = BuildContext async, E = code style (22 → 4)
+- **Phase 3 (API-Migration):** dart:html / dart:js zu package:web / dart:js_interop separat (4 → 0)
+
+Jede Phase eigener Branch + Commit. Phase 3 braucht eigene Sicherheitsanker (Build + Browser-Test), weil API-Migration kein Search-Replace ist.
+
+### Cluster-Strategie für Major-Dependency-Updates (Flutter pub)
+
+Analog zur Lint-Cleanup-Phasen-Strategie. Bei 29 Outdated-Packages, davon 5+ Firebase-Major-Bumps:
+
+1. **Cluster 1 — Patches/Minors** (`flutter pub upgrade` ohne Flags): 8 Packages, ~5 Min, niedrig Risiko, kein Code-Fix
+2. **Cluster 2 — Core-Major-Cluster** (`flutter pub upgrade --major-versions` für ausgewählte): App-kritische Bumps zusammen
+3. **Cluster 3 — Periphere Majors** (web, xml etc.): Manchmal **in Cluster 2 mit eingeschlossen**, weil Constraint-Locks (siehe nächster Abschnitt)
+
+Jedes Cluster eigener Build + Smoke-Test + Commit. Pro Cluster atomare Rollback-Möglichkeit (`git restore pubspec.yaml pubspec.lock`).
+
+**Realität bei AP1 Coach (Tag 6):** 17 Packages mit nur **einem** Code-Fix (`hide FirebaseService`) — Cluster-Strategie funktioniert sehr gut, wenn man die Abhängigkeits-Tabu-Zonen kennt.
+
+### Web/Firebase sind ein Abhängigkeits-Paket
+
+**Lehre aus dem Cluster-3-Fehlversuch:** `web` und die Firebase-Web-Packages sind über firebase_messaging_web technisch verkettet.
+
+Bei dem Versuch, nur `web` von 0.5.1 auf 1.1.x hochzuziehen (während Firebase auf alter v2/v4-Major blieb):
+
+```
+firebase_messaging ^14.7.19 -> firebase_messaging_web ^3.8.7 -> web ^0.5.1  (lock!)
+```
+
+Höhere `firebase_messaging_web`-Versionen würden `web 1.x` erlauben, brauchen aber `firebase_core ^3.4.1` (= neue Major).
+
+**Konsequenz:** Plan "Cluster 3 vor Cluster 2" funktioniert nicht. `web` wird automatisch mit dem Firebase-Core-Update mitgezogen. Reihenfolge muss sein: erst Firebase-Core-Cluster, dann ist `web 1.x` als Bonus dabei.
+
+**Generelles Pattern:** Bei "X war ein Paket": `flutter pub upgrade --major-versions` für die ganze Familie statt einzelne Constraint-Edits.
+
+### `hide`-Import als 1-Zeilen-Fix bei ambiguous_import
+
+Wenn ein SDK-Major-Bump eine neue Klasse exportiert, die mit einer lokalen Klasse kollidiert (`ambiguous_import`-Error):
+
+```dart
+// Eigene Klasse: lib/services/firebase_service.dart -> FirebaseService
+// firebase_core 4.x exportiert AUCH eine Klasse "FirebaseService"
+// -> Konflikt in main.dart
+
+// Vorher
+import 'package:firebase_core/firebase_core.dart';
+
+// Nachher (1 Zeile, blendet nur den kollidierenden Namen aus)
+import 'package:firebase_core/firebase_core.dart' hide FirebaseService;
+```
+
+**Vorteile gegenüber Alternativen:**
+- **Saubere Lösung** (anders als `as`-Prefix, das ALLE Verwendungen anpassen würde)
+- **Minimal-invasiv** (eine Zeile vs. Rename in 20 Files)
+- **Code bleibt lesbar** (kein `firebase_core.Firebase.initializeApp()`)
+
+Bei Migration zu neuer SDK-Major: immer zuerst nach `ambiguous_import` im `flutter analyze` Ausschau halten — meist mit `hide` in 30 Sekunden zu fixen.
+
+### dart:html → package:web Migration (3 Call-Sites)
+
+Drei Stellen in main.dart waren betroffen, alle 1:1-Mapping bis auf den JS-Call:
+
+```dart
+// Imports
+- import 'dart:html' as html;
+- import 'dart:js' as js;
++ import 'package:web/web.dart' as web;
++ import 'dart:js_interop';
+
+// External-Function für JS-Bridge (top-level, nach Imports)
+@JS('setThemeColor')
+external void _setThemeColorJs(String color);
+
+// matchMedia
+- html.window.matchMedia('(prefers-color-scheme: dark)').matches
++ web.window.matchMedia('(prefers-color-scheme: dark)').matches
+
+// location
+- Uri.parse(html.window.location.href)
++ Uri.parse(web.window.location.href)
+
+// JS callMethod -> external function call
+- js.context.callMethod('setThemeColor', [color]);
++ _setThemeColorJs(color);
+```
+
+`pubspec.yaml`: `web` von transitive zur direkten Dependency (`flutter pub add web` macht das automatisch).
+
+**Test-Plan vor Production-Deploy:**
+1. `flutter analyze` → 0 Issues für main.dart
+2. `flutter build web` → keine Compile-Errors
+3. **Lokaler Browser-Test** in Chrome — wirklich klicken: Theme-Switch, Deep-Link-URL, Purchase-URL
+4. **Erst dann** FileZilla-Deploy
+
+### Flutter SDK Multi-Minor-Update geht glatt — wenn der Code modern ist
+
+3 Minor-Sprünge auf einmal (3.41.6 → 3.44.0) liefen problemlos, weil das Repo schon den modernen Stack benutzt (`package:web`, `dart:js_interop`, neue FormField-API, surfaceContainerHighest). Bei alter Code-Base wäre der Sprung viel schmerzhafter geworden.
+
+**Lehre:** Lint-Aufräum-Phasen vor SDK-Updates erleichtern die SDK-Updates.
+
+### Tooling-Updates vs Code-Dependency-Updates trennen
+
+Klare Trennung beim Solo-Builder:
+- **Tooling** (Flutter SDK, Firebase CLI, Node.js): lokale Werkzeuge, niedrig Risiko, jederzeit machbar
+- **Code-Dependencies** (firebase_auth, cloud_firestore Major-Bumps): App-Code-Risiko, eigene Session mit Test-Plan
+
+Bei Cluster-Strategie (siehe oben): Tooling-Updates können zwischen Code-Cluster-Sessions laufen — kein Risiko-Mix.
 
 ---
 
@@ -58,7 +233,7 @@ cd functions
 npx tsc
 cd ..
 firebase deploy --only functions
-# 4. App-Funktion testen (z.B. MC-Frage generieren) → wenn klappt: alter Key war nur Backup
+# 4. App-Funktion testen (z.B. MC-Frage generieren) -> wenn klappt: alter Key war nur Backup
 # 5. Alten Key in Anthropic Console löschen
 ```
 
@@ -129,6 +304,21 @@ final url = Uri.parse(
 - Push-Notifications funktionieren nur, wenn die App **vom Startbildschirm** gestartet wird, nicht im Browser-Tab
 - iOS braucht **iOS 16.4+** und Hinzufügen via Safari
 - Android: Chrome / Edge / Samsung Internet — alle möglich
+
+### Two-Step-Push-Opt-In ist eine UX-Falle
+
+User berichtete "Push funktioniert nicht auf Android PWA". Echte Ursache:
+1. Browser-Permission war granted ✓
+2. **App-internes Toggle in Settings → Benachrichtigungen war NICHT geklickt** ✗
+
+Diese zweistufige Logik ist zwar technisch sauber (Browser-Perm + App-Persist getrennt), aber für User unklar:
+
+| Variante | Pro | Contra |
+|---|---|---|
+| Aktuell (zweistufig) | Klare Trennung, User kann pausieren ohne Browser-Perm zurückzuziehen | User glaubt "Permission erteilt = Push aktiv" |
+| Einfach (Toggle aktiviert auch Browser-Perm) | Klar | Verlust der Pause-Möglichkeit, Mismatch wenn Browser blockt |
+
+**Pragmatischer Fix für später:** App-internes Toggle prominenter machen + Hint-Text "Du hast Push erlaubt — aktiviere jetzt den Benachrichtigungs-Schalter unten" wenn Permission granted, aber Toggle off.
 
 ### FCM-Token-Hygiene
 Bei `messaging/registration-token-not-registered` oder `messaging/invalid-registration-token` Token aus Firestore löschen + `dailyPushEnabled: false` setzen. Sonst loopt die Scheduler-Function mit toten Tokens.
@@ -222,6 +412,23 @@ Drei häufige Antworten und ihre Bedeutung:
 - `Invalid signature` → Function läuft, lehnt aber Test-Daten ab (= guter Zustand bei `digistore24Webhook`)
 - `Digistore24 passphrase not configured` → `process.env.DIGISTORE24_PASSPHRASE` fehlt im Container
 
+### Cloud-Function-Smoke-Test als Standard nach Deploys
+
+Nach jedem `firebase deploy --only functions` zwei Curl-Tests fahren:
+
+```powershell
+# Test 1: Getter mit bekannter ID (sollte echte Daten liefern)
+Invoke-RestMethod -Uri "https://europe-west1-ap1-coach.cloudfunctions.net/getProCodeByOrderId?orderId=FH49MERV" -Method Get
+# Erwartet: { redeemed: true, message: "Code wurde bereits eingelöst." }
+
+# Test 2: Webhook ohne Signature (sollte abgelehnt werden = Function läuft korrekt)
+try { Invoke-RestMethod -Uri "https://europe-west1-ap1-coach.cloudfunctions.net/digistore24Webhook" -Method Post -Body "test=1" -ContentType "application/x-www-form-urlencoded" }
+catch { "HTTP: $($_.Exception.Response.StatusCode.value__)" }
+# Erwartet: HTTP 403 + "Invalid signature"
+```
+
+Wenn Test 1 unerwartet `redeemed: false` oder leer kommt — Function läuft falsch. Wenn Test 2 keine 401/403 kommt — Auth-Check ist kaputt.
+
 ### Lokaler Hash-Vergleich (Node.js)
 Bei Signature-Bugs: nicht raten, nachrechnen.
 ```powershell
@@ -230,6 +437,43 @@ node -e "const c=require('crypto'); console.log(c.createHash('sha512').update('k
 
 ### Browser-Probleme isolieren
 Bei „funktioniert nicht in Chrome": **erst** in Firefox / Edge testen, **bevor** Stunden in Chrome-Diagnose investiert werden. Wenn es in einem anderen Browser läuft, ist das Problem **lokal beim User**, nicht in der App. Echte Nutzer sind davon nicht betroffen.
+
+### Production-404-Diagnose immer mit F12 Console + Network
+
+Bei "App startet nicht / weißer Screen / Endlos-Spinner": SOFORT F12 → Console + Network Tab. 99% der Fälle zeigt die Console klar die Ursache.
+
+Beispiel-Symptom-Mapping:
+- Mehrere 404 auf statische Assets (splash.js, lf_logo.png, manifest.json) → falscher `base-href` oder Files nicht hochgeladen
+- 1 spezifischer 404 auf `/firebase-messaging-sw.js` → Service-Worker-Pfad-Problem
+- "TypeError: Failed to register a ServiceWorker" → Subdomain-Pfad-Setup, prüfen wo SW liegt
+- 500/503 von Cloud Function → Cloud Logs in der Konsole prüfen
+
+### Browser-Extensions verwirren beim Smoke-Test
+
+Bei lokalem Browser-Test (besonders nach SDK-Major-Bumps) sind oft viele rote Errors in der F12-Console — die meisten kommen aber von Browser-Extensions, NICHT von der App. Typische Indikatoren:
+
+- `chrome-extension://...` Pfade in der Source-URL
+- Extension-Namen wie `[Fluensa]`, `content_script.js`, `content.js`, `VM118`
+- "AV keywords found" (Antivirus-/Content-Filter)
+- "handleHistoryStateUpdate" oder ähnliche Extension-Internas
+
+**Wenn ein Error nicht zu deinem App-Code zeigt → ignorieren.** Pragmatisch besser: Tests in einem Inkognito-Fenster ohne Extensions.
+
+### Bei Production-Bug: Rollback first, Debug after
+
+Wenn Production echt kaputt ist (nicht nur ein einzelner User mit Browser-Quirk):
+
+1. **30 Sekunden** für Schnell-Diagnose (F12 Console screenshot)
+2. **Wenn nicht in 2 Min Klarheit:** ROLLBACK
+   ```powershell
+   git stash               # uncommitted changes wegparken
+   git checkout main       # alten Stand
+   flutter build web --release --base-href=/
+   # FileZilla -> IONOS
+   ```
+3. **Erst nach grünem Production-Test:** Forensik und gezielter Fix
+
+Käufer warten nicht 30 Min auf Diagnose. Production-Uptime > Code-Eleganz.
 
 ### Cloud-Function-Logs richtig lesen
 - Wichtigkeit „Standard" zeigt `console.error`-Inhalte und Param-Dumps
@@ -256,6 +500,13 @@ Bei „funktioniert nicht in Chrome": **erst** in Firefox / Edge testen, **bevor
 - Bei `firebase functions:secrets:set` mit masked input: blind eintippen ist okay, Strg+V geht oft auch
 - Verifikation: `firebase functions:secrets:access NAME` zeigt den gespeicherten Wert
 
+### PowerShell + Unicode-Pfeile aus Markdown-Erklärungen
+Beim Copy-Paste von Markdown-Tree-Erklärungen (mit `→` oder `└──` etc.) in PowerShell interpretiert die Shell die Pfeile als Befehle. Symptom:
+```
+The term 'arrow-character' is not recognized as a name of a cmdlet, function, script file, or executable program.
+```
+Pragmatik: Klar trennen zwischen Erklärungstext (Markdown-Editor) und auszuführenden Code-Blöcken (in Code-Fences).
+
 ### Chrome-Reset bei AVG-Reste-Problemen
 Wenn `chrome://settings/content/notifications` ausgegraut ist trotz fehlender Policies/Extensions:
 1. Alle Chrome-Prozesse im Task-Manager beenden (Strg+Shift+Esc)
@@ -274,26 +525,68 @@ Wenn `chrome://settings/content/notifications` ausgegraut ist trotz fehlender Po
 - `node_modules/`
 - `build/` (Flutter-Build-Output)
 - `.dart_tool/`
+- `*.bak` (Backup-Files aus manuellen Migrations-Schritten)
+- `lib/main.dart.bak`, `package.json.bak` (spezifische Backup-Pfade)
+
+### Commit-Naming-Pattern für Major-Operations
+
+Klare Präfixe je nach Art:
+- `feat(deps):` für SDK-Upgrades (verändert Funktionalität potentiell)
+- `fix(deps):` für CVE-Fixes ohne neue Features
+- `chore(deps):` für Patch/Minor-Updates ohne API-Brüche
+- `chore(lint):` für Lint-Cleanup
+- `refactor(main):` für API-Migrationen ohne Funktionalitätsänderung
+- `build(functions):` für Build-Output-Commits (lib/ rebuild)
+- `feat(<scope>):` für neue Features
+- `fix(<scope>):` für Bug-Fixes
+- `docs:` für Dokumentations-Updates
+
+Macht das `git log --oneline` selbsterklärend.
 
 ### Commit-Hygiene
 - Atomare Commits: 1 logische Änderung pro Commit
-- Conventional Commits: `fix(scope): …`, `feat(scope): …`, `docs: …`
+- Conventional Commits (siehe oben)
 - Bei Webhook-Code-Änderungen: BEIDE Dateien (`functions/src/index.ts` und `functions/lib/index.js`) committen, sonst läuft Deploy ohne aktualisierten Build
+- Bei Cluster-Strategie: pro Cluster ein Commit, Tag-Anker VOR Cluster 1 als Rollback für die ganze Session
 
 ---
 
-## 🧠 Persönliche Lektionen aus dem Wochenende
+## 🧠 Persönliche Lektionen aus dem Aufbau
 
 ### Wann Pause besser ist als „noch ein Versuch"
 - **Indikator:** Wenn dasselbe Symptom 3+ mal hintereinander auftritt, ist die Diagnose-Methode falsch — nicht nochmal probieren, sondern einen Schritt zurück
 - **Indikator:** Wenn der Webhook-Bug nicht in 30 Min lösbar ist, gehört das Problem ans nächste-Mal-Liste, nicht in die aktuelle Session
-- **Beispiel heute:** API-Key war 3 Stunden lang nervig, weil wir Symptome gejagt haben statt die Wurzel anzuschauen (process.env vs. .env vs. Secret Manager). Nach Pause + Neuanfang in 15 Min gelöst
+- **Beispiel:** API-Key war 3 Stunden lang nervig, weil wir Symptome gejagt haben statt die Wurzel anzuschauen (process.env vs. .env vs. Secret Manager). Nach Pause + Neuanfang in 15 Min gelöst
+- **Beispiel Tag 5:** Production-Splash-Bug — Claude tippte erst auf dart:html-Migration. Erst F12-Console-Output mit 404 auf ALLE Assets brachte die echte Ursache (base-href). Lehre: bei "Migration kaputt"-Verdacht zuerst NICHT-migrationsbezogene Erklärungen prüfen (Build-Config, Deploy-Path, Cache)
 
 ### Pragmatik schlägt Perfektion bei Solo-Builds
 - Hardcoded Fallback statt Secret Manager: ✅ pragmatisch, funktioniert
 - Inkognito-Test statt Firestore-Console-Check: ✅ schneller
 - 100%-Rabattcode statt Vendor-Sandbox-Suche: ✅ kreative Lösung
 - Solo-Builders haben kein QA-Team — Vertrauen in eigene Tests + Iteration ist die richtige Strategie
+
+### Pragmatik-Entscheidungen aus dem Update-Marathon
+
+| Entscheidung | Begründung |
+|---|---|
+| package.json overrides statt firebase-admin Major-Bump | 5 Min vs 1 Stunde |
+| web@0.5.1 belassen statt 1.1.1 (Tag 5) — später automatisch mitgezogen (Tag 6) | spart isolierte Migration |
+| Tag setzen statt Backup-Branch | git ist persistent genug |
+| Lokaler Browser-Test vor Production-Deploy | spart die Panik |
+| Smoke-Test Curl nach jedem Deploy | 30 Sek statt 30 Min Debugging |
+| Lint Cleanup in Phasen statt Big Bang | jede Phase ist atomar revertibar |
+| Tooling-Updates JETZT, Code-Dep-Updates SPÄTER | Risiko-Profile klar trennen |
+| Cluster-Strategie für 29 Outdated-Packages | 17 Updates mit 1 Code-Fix in einer Vormittags-Session |
+
+### Rollback-Anker für JEDE Major-Migration
+
+Vor jedem riskanten Eingriff Git-Tag setzen:
+- `pre-lifetime-migration`
+- `pre-sdk-upgrade`
+- `pre-dart-html-migration`
+- `pre-pubspec-major-updates`
+
+Kostet 5 Sekunden, rettet Stunden bei einem Bug. Diese Tags müssen NIE wieder gelöscht werden — sie sind die Geschichte der App.
 
 ### Sicherheit ist NICHT-VERHANDELBAR
 - Wenn ein API-Key in einem Screenshot war, **muss** er rotiert werden — egal wie nervig der Workflow ist
