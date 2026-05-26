@@ -1435,7 +1435,6 @@ export const sendDailyChallenge = functions
         ) {
           await userDoc.ref.update({
             fcmToken: admin.firestore.FieldValue.delete(),
-            dailyPushEnabled: false,
           });
         }
       }

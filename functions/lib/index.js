@@ -1165,7 +1165,6 @@ exports.sendDailyChallenge = functions
                 (err === null || err === void 0 ? void 0 : err.code) === 'messaging/invalid-registration-token') {
                 await userDoc.ref.update({
                     fcmToken: admin.firestore.FieldValue.delete(),
-                    dailyPushEnabled: false,
                 });
             }
         }
