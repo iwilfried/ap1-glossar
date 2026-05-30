@@ -1161,12 +1161,12 @@ exports.sendDailyChallenge = functions
         catch (err) {
             failed++;
             console.error(`sendDailyChallenge: failed for ${uid}:`, (_a = err === null || err === void 0 ? void 0 : err.code) !== null && _a !== void 0 ? _a : err);
-            if ((err === null || err === void 0 ? void 0 : err.code) === 'messaging/registration-token-not-registered' ||
-                (err === null || err === void 0 ? void 0 : err.code) === 'messaging/invalid-registration-token') {
-                await userDoc.ref.update({
-                    fcmToken: admin.firestore.FieldValue.delete(),
-                });
-            }
+            // Token-Errors werden NICHT automatisch geloescht.
+            // Begruendung: Auf Android-PWA wird der FCM-Token nachts oft rotiert,
+            // ohne dass die App es mitbekommt. Wenn die Cloud Function ihn loescht,
+            // schaltet sich das Toggle visuell aus. Stattdessen lassen wir ihn
+            // stehen — die App holt beim naechsten Start via getTokenAndSave()
+            // automatisch einen frischen Token und ueberschreibt den invaliden Wert.
         }
     }
     console.log(`sendDailyChallenge: sent=${sent}, skipped=${skipped}, failed=${failed}`);
