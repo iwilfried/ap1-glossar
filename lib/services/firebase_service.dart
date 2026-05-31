@@ -9,6 +9,23 @@ class FirebaseService {
   final FirebaseFirestore _firestore = FirebaseFirestore.instance;
   final FirebaseAuth _auth = FirebaseAuth.instance;
 
+  /// Stellt sicher, dass ein (anonymer) User angemeldet ist – OHNE bei jedem
+  /// App-Start einen neuen Sub-User anzulegen.
+  ///
+  /// Wichtig (Web/PWA): Direkt nach `Firebase.initializeApp` ist
+  /// `currentUser` noch `null`, weil die persistierte Session erst
+  /// asynchron aus IndexedDB wiederhergestellt wird. Würde man jetzt sofort
+  /// `currentUser == null` prüfen, legt `signInAnonymously()` jedes Mal einen
+  /// neuen anonymen User an (→ Karteileichen in Firestore, Toggle-Reset).
+  /// Deshalb warten wir zuerst auf das erste `authStateChanges`-Event, das
+  /// nach abgeschlossener Wiederherstellung ausgelöst wird.
+  Future<void> ensureSignedIn() async {
+    await _auth.authStateChanges().first;
+    if (_auth.currentUser == null) {
+      await _auth.signInAnonymously();
+    }
+  }
+
   Future<String> getUserId() async {
     final user = _auth.currentUser;
     if (user == null) {

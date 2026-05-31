@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter/foundation.dart' show kIsWeb;
 import 'package:web/web.dart' as web;
 import 'dart:js_interop';
 import 'package:firebase_auth/firebase_auth.dart';
@@ -50,7 +51,12 @@ void updateBrowserThemeColor(ThemeMode mode) {
 void main() async {
   WidgetsFlutterBinding.ensureInitialized();
   await Firebase.initializeApp(options: DefaultFirebaseOptions.currentPlatform);
-  await FirebaseAuth.instance.signInAnonymously();
+  // Persistenz vor dem Login erzwingen, damit die anonyme UID einen
+  // App-Neustart (auch PWA vom Startbildschirm) übersteht.
+  if (kIsWeb) {
+    await FirebaseAuth.instance.setPersistence(Persistence.LOCAL);
+  }
+  await FirebaseService.instance.ensureSignedIn();
   await FirebaseService.instance.initUserProfile();
 
   final uri = Uri.parse(web.window.location.href);
