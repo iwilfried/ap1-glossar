@@ -333,7 +333,7 @@ Bei `messaging/registration-token-not-registered` oder `messaging/invalid-regist
 - Nicht: „14,99 € + MwSt" — das ist nicht konform
 
 ### Aktive Stellen in dieser App
-- **Salespage** (`learningfactory.io/index.html`, NICHT im Repo): unter `<p class="price-note">`
+- **Salespage** (`landing/index.html` IM Repo, live deployed auf IONOS unter `learningfactory.io/index.html`): unter `<p class="price-note">`
 - **Flutter-Paywall** (`lib/screens/paywall/paywall_screen.dart`): zwei Stellen — unter dem Preis und im Feature-Vergleich
 - Bei Preisänderungen: BEIDE Stellen anpassen + Digistore-Konfiguration
 
