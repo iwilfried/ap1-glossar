@@ -12,13 +12,61 @@ firebase.initializeApp({
 
 const messaging = firebase.messaging();
 
+const DEFAULT_LINK = 'https://ap1.learningfactory.io';
+
+// Neuen Service Worker sofort aktiv schalten, damit der alte (mit kaputtem/
+// fehlendem notificationclick-Handler) nicht haengen bleibt.
+self.addEventListener('install', (e) => self.skipWaiting());
+self.addEventListener('activate', (e) => e.waitUntil(self.clients.claim()));
+
 messaging.onBackgroundMessage(function(payload) {
   console.log('[firebase-messaging-sw.js] Received background message ', payload);
   const notificationTitle = payload.notification?.title || 'AP1 Coach';
+  // Link zum Oeffnen beim Klick: bevorzugt fcmOptions.link, sonst data.link.
+  const link = payload.fcmOptions?.link || payload.data?.link || DEFAULT_LINK;
   const notificationOptions = {
     body: payload.notification?.body || 'Deine tägliche Challenge wartet.',
     icon: '/icons/Icon-192.png',
+    badge: '/icons/Icon-maskable-192.png',
+    // tag + renotify: false -> ein erneuter Daily-Push ersetzt eine noch
+    // offene Benachrichtigung still, statt eine zweite zu stapeln.
+    tag: 'daily-challenge',
+    renotify: false,
+    // Link fuer den notificationclick-Handler mitgeben.
+    data: { ...(payload.data || {}), link },
   };
 
   self.registration.showNotification(notificationTitle, notificationOptions);
+});
+
+// Klick auf die Benachrichtigung: schliessen, bestehendes Fenster fokussieren
+// (sonst neues oeffnen). Ohne diesen Handler bleibt die Notification auf
+// Android haengen und laesst sich nicht oeffnen.
+self.addEventListener('notificationclick', function(event) {
+  event.notification.close();
+  const link = event.notification.data?.link || DEFAULT_LINK;
+
+  event.waitUntil(
+    clients
+      .matchAll({ type: 'window', includeUncontrolled: true })
+      .then(function(windowClients) {
+        for (const client of windowClients) {
+          // Bereits offenes App-Fenster fokussieren.
+          if (client.url.startsWith(DEFAULT_LINK) && 'focus' in client) {
+            if ('navigate' in client) {
+              try {
+                client.navigate(link);
+              } catch (e) {
+                // navigate kann je nach Browser fehlschlagen — Fokus reicht.
+              }
+            }
+            return client.focus();
+          }
+        }
+        // Kein passendes Fenster offen -> neues oeffnen.
+        if (clients.openWindow) {
+          return clients.openWindow(link);
+        }
+      })
+  );
 });
