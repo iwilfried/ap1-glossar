@@ -1436,23 +1436,19 @@ export const sendDailyChallenge = functions
       const link = `${APP_URL}/?term=${encodeURIComponent(term)}`;
       return {
         token,
-        notification: {
-          title,
-          body: `Heute lernst du: ${term} — Tippe für die Challenge!`,
-        },
+        // Data-only: KEIN top-level `notification` und kein `webpush.notification`,
+        // sonst zeigt das FCM-SDK automatisch eine Notification UND der SW eine
+        // zweite via showNotification -> Doppel-Push. Titel/Body wandern in data,
+        // der SW baut daraus genau eine Notification.
         data: {
           type: 'daily_challenge',
           term,
           dateKey,
           link,
+          title,
+          body: `Heute lernst du: ${term} — Tippe für die Challenge!`,
         },
         webpush: {
-          notification: {
-            icon: '/icons/Icon-192.png',
-            badge: '/icons/Icon-maskable-192.png',
-            tag: 'daily-challenge',
-            renotify: false,
-          },
           fcmOptions: {
             link,
           },
@@ -1526,21 +1522,22 @@ export const testDailyChallenge = functions
     const terms = await loadDailyTerms();
     const term = pickRandomTerm(terms);
 
+    const link = `/?term=${encodeURIComponent(term)}`;
     try {
+      // Data-only (gleiche Begruendung wie sendDailyChallenge): sonst doppelt.
       await admin.messaging().send({
         token: fcmToken,
-        notification: {
+        data: {
+          type: 'daily_challenge',
+          term,
+          test: 'true',
+          link,
           title: '🎯 Test-Push',
           body: `So sieht deine Tagesfrage aus: ${term}`,
         },
-        data: { type: 'daily_challenge', term, test: 'true' },
         webpush: {
-          notification: {
-            icon: '/icons/Icon-192.png',
-            badge: '/icons/Icon-maskable-192.png',
-          },
           fcmOptions: {
-            link: `/?term=${encodeURIComponent(term)}`,
+            link,
           },
         },
       });

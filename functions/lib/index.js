@@ -1094,7 +1094,6 @@ exports.sendDailyChallenge = functions
     .pubsub.schedule('every 15 minutes')
     .timeZone('Europe/Berlin')
     .onRun(async () => {
-    var _a;
     const { slotStart, slotEnd, dateKey } = currentBerlinTimeSlot();
     console.log(`sendDailyChallenge: slot=${slotStart}-${slotEnd}, dateKey=${dateKey}`);
     const db = admin.firestore();
@@ -1108,11 +1107,17 @@ exports.sendDailyChallenge = functions
         return null;
     }
     const terms = await loadDailyTerms();
-    let sent = 0;
+    const APP_URL = 'https://ap1.learningfactory.io';
+    // Token-Dedup: Mehrere User-Docs koennen (z.B. durch fruehere Ghost-User)
+    // auf dasselbe Geraet / denselben FCM-Token zeigen. Jedes Doc hat ein
+    // eigenes lastDailyPushDate, deshalb passieren beide den Guard und es
+    // wurde frueher pro Doc einzeln gesendet -> doppelter Push aufs Geraet.
+    // Wir gruppieren pro Token und senden je Token genau EINE Message.
+    // Bei Token-Kollision behalten wir den zuerst gewaehlten term, damit jeder
+    // User weiterhin einen eigenen zufaelligen term bekommt.
+    const tokenMap = new Map();
     let skipped = 0;
-    let failed = 0;
     for (const userDoc of snap.docs) {
-        const uid = userDoc.id;
         const data = userDoc.data();
         const fcmToken = data.fcmToken;
         const notificationTime = data.notificationTime;
@@ -1133,43 +1138,78 @@ exports.sendDailyChallenge = functions
             skipped++;
             continue;
         }
-        const term = pickRandomTerm(terms);
-        const title = '🎯 Frage des Tages';
-        const body = `Heute lernst du: ${term} — Tippe für die Challenge!`;
-        try {
-            await messaging.send({
-                token: fcmToken,
-                notification: { title, body },
-                data: {
-                    type: 'daily_challenge',
-                    term,
-                    dateKey,
-                },
-                webpush: {
-                    notification: {
-                        icon: '/icons/Icon-192.png',
-                        badge: '/icons/Icon-maskable-192.png',
-                    },
-                    fcmOptions: {
-                        link: `/coach/?term=${encodeURIComponent(term)}`,
-                    },
-                },
-            });
-            await userDoc.ref.update({ lastDailyPushDate: dateKey });
-            sent++;
+        const existing = tokenMap.get(fcmToken);
+        if (existing) {
+            // Token-Kollision (Ghost- + echter User): term behalten, nur weiteres
+            // Doc anhaengen, damit lastDailyPushDate ueberall gesetzt wird.
+            existing.docs.push(userDoc);
         }
-        catch (err) {
-            failed++;
-            console.error(`sendDailyChallenge: failed for ${uid}:`, (_a = err === null || err === void 0 ? void 0 : err.code) !== null && _a !== void 0 ? _a : err);
-            // Token-Errors werden NICHT automatisch geloescht.
-            // Begruendung: Auf Android-PWA wird der FCM-Token nachts oft rotiert,
-            // ohne dass die App es mitbekommt. Wenn die Cloud Function ihn loescht,
-            // schaltet sich das Toggle visuell aus. Stattdessen lassen wir ihn
-            // stehen — die App holt beim naechsten Start via getTokenAndSave()
-            // automatisch einen frischen Token und ueberschreibt den invaliden Wert.
+        else {
+            tokenMap.set(fcmToken, {
+                term: pickRandomTerm(terms),
+                docs: [userDoc],
+            });
         }
     }
-    console.log(`sendDailyChallenge: sent=${sent}, skipped=${skipped}, failed=${failed}`);
+    const tokens = Array.from(tokenMap.keys());
+    if (tokens.length === 0) {
+        console.log(`sendDailyChallenge: nichts zu senden (skipped=${skipped})`);
+        return null;
+    }
+    const title = '🎯 Frage des Tages';
+    const messages = tokens.map((token) => {
+        const { term } = tokenMap.get(token);
+        const link = `${APP_URL}/?term=${encodeURIComponent(term)}`;
+        return {
+            token,
+            // Data-only: KEIN top-level `notification` und kein `webpush.notification`,
+            // sonst zeigt das FCM-SDK automatisch eine Notification UND der SW eine
+            // zweite via showNotification -> Doppel-Push. Titel/Body wandern in data,
+            // der SW baut daraus genau eine Notification.
+            data: {
+                type: 'daily_challenge',
+                term,
+                dateKey,
+                link,
+                title,
+                body: `Heute lernst du: ${term} — Tippe für die Challenge!`,
+            },
+            webpush: {
+                fcmOptions: {
+                    link,
+                },
+            },
+        };
+    });
+    // Pro eindeutigem Token genau eine Message.
+    const response = await messaging.sendEach(messages);
+    let sent = 0;
+    let failed = 0;
+    const cleanups = [];
+    response.responses.forEach((res, idx) => {
+        var _a, _b, _c, _d;
+        const token = tokens[idx];
+        const docs = (_b = (_a = tokenMap.get(token)) === null || _a === void 0 ? void 0 : _a.docs) !== null && _b !== void 0 ? _b : [];
+        if (res.success) {
+            sent++;
+            // lastDailyPushDate auf ALLEN Docs setzen, die diesen Token teilen.
+            for (const d of docs) {
+                cleanups.push(d.ref.update({ lastDailyPushDate: dateKey }));
+            }
+            return;
+        }
+        failed++;
+        // Token-Errors werden NICHT automatisch geloescht.
+        // Begruendung: Auf Android-PWA wird der FCM-Token nachts oft rotiert,
+        // ohne dass die App es mitbekommt. Das Settings-Toggle erkennt Push am
+        // Token — ein Loeschen wuerde das Toggle visuell ausschalten. Stattdessen
+        // lassen wir ihn stehen; die App holt beim naechsten Start via
+        // getTokenAndSave() automatisch einen frischen Token. Die Dedup ueber die
+        // Map behebt die Doppelung bereits.
+        console.error(`sendDailyChallenge: failed for token ${token.slice(0, 12)}…:`, (_d = (_c = res.error) === null || _c === void 0 ? void 0 : _c.code) !== null && _d !== void 0 ? _d : res.error);
+    });
+    await Promise.allSettled(cleanups);
+    console.log(`sendDailyChallenge: sent=${sent}, skipped=${skipped}, failed=${failed}, tokens=${tokens.length}`);
     return null;
 });
 exports.testDailyChallenge = functions
@@ -1189,21 +1229,22 @@ exports.testDailyChallenge = functions
     }
     const terms = await loadDailyTerms();
     const term = pickRandomTerm(terms);
+    const link = `/?term=${encodeURIComponent(term)}`;
     try {
+        // Data-only (gleiche Begruendung wie sendDailyChallenge): sonst doppelt.
         await admin.messaging().send({
             token: fcmToken,
-            notification: {
+            data: {
+                type: 'daily_challenge',
+                term,
+                test: 'true',
+                link,
                 title: '🎯 Test-Push',
                 body: `So sieht deine Tagesfrage aus: ${term}`,
             },
-            data: { type: 'daily_challenge', term, test: 'true' },
             webpush: {
-                notification: {
-                    icon: '/icons/Icon-192.png',
-                    badge: '/icons/Icon-maskable-192.png',
-                },
                 fcmOptions: {
-                    link: `/coach/?term=${encodeURIComponent(term)}`,
+                    link,
                 },
             },
         });
