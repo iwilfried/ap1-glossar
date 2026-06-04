@@ -1,3 +1,4 @@
+import 'dart:async';
 import 'package:flutter/material.dart';
 import 'package:flutter/foundation.dart' show kIsWeb;
 import 'package:web/web.dart' as web;
@@ -50,14 +51,26 @@ void updateBrowserThemeColor(ThemeMode mode) {
 
 void main() async {
   WidgetsFlutterBinding.ensureInitialized();
-  await Firebase.initializeApp(options: DefaultFirebaseOptions.currentPlatform);
-  // Persistenz vor dem Login erzwingen, damit die anonyme UID einen
-  // App-Neustart (auch PWA vom Startbildschirm) übersteht.
-  if (kIsWeb) {
-    await FirebaseAuth.instance.setPersistence(Persistence.LOCAL);
+
+  // Firebase-Init darf den App-Start NICHT blockieren: scheitert sie (z.B.
+  // blockierter Storage / kein Cookie-Consent im In-App-Browser), soll die UI
+  // trotzdem hochkommen — die Glossar-Inhalte sind client-seitig.
+  try {
+    await Firebase.initializeApp(
+        options: DefaultFirebaseOptions.currentPlatform);
+  } catch (e) {
+    debugPrint('Firebase.initializeApp fehlgeschlagen: $e');
   }
-  await FirebaseService.instance.ensureSignedIn();
-  await FirebaseService.instance.initUserProfile();
+
+  // Persistenz separat absichern: bei blockiertem Storage einfach weiterlaufen,
+  // statt zu werfen (sonst weißer Screen).
+  if (kIsWeb) {
+    try {
+      await FirebaseAuth.instance.setPersistence(Persistence.LOCAL);
+    } catch (e) {
+      debugPrint('setPersistence(LOCAL) fehlgeschlagen: $e');
+    }
+  }
 
   final uri = Uri.parse(web.window.location.href);
   final deepLinkTerm = uri.queryParameters['term'];
@@ -71,11 +84,23 @@ void main() async {
   // Initiale Browser-Statusleisten-Farbe setzen
   updateBrowserThemeColor(themeMode);
 
+  // UI IMMER starten — unabhaengig vom Auth-/Storage-Status. Die Anmeldung und
+  // das Profil-Setup laufen danach fire-and-forget; scheitern sie, bleibt die
+  // App nutzbar (Glossar ist client-seitig).
   runApp(MyApp(
     showWelcome: !seenWelcome && !purchaseSuccess && deepLinkTerm == null,
     deepLinkTerm: deepLinkTerm,
     purchaseSuccess: purchaseSuccess,
   ));
+
+  unawaited(() async {
+    try {
+      await FirebaseService.instance.ensureSignedIn();
+      await FirebaseService.instance.initUserProfile();
+    } catch (e) {
+      debugPrint('Auth/Profil-Init fehlgeschlagen: $e');
+    }
+  }());
 }
 
 ThemeMode _stringToThemeMode(String value) {

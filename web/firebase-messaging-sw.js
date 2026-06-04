@@ -21,11 +21,13 @@ self.addEventListener('activate', (e) => e.waitUntil(self.clients.claim()));
 
 messaging.onBackgroundMessage(function(payload) {
   console.log('[firebase-messaging-sw.js] Received background message ', payload);
-  const notificationTitle = payload.notification?.title || 'AP1 Coach';
-  // Link zum Oeffnen beim Klick: bevorzugt fcmOptions.link, sonst data.link.
-  const link = payload.fcmOptions?.link || payload.data?.link || DEFAULT_LINK;
+  // Data-only Messages: Titel/Body kommen jetzt aus payload.data (nicht mehr
+  // aus payload.notification), damit nur EINE Notification entsteht.
+  const notificationTitle = payload.data?.title || 'AP1 Coach';
+  // Link zum Oeffnen beim Klick: bevorzugt data.link, sonst fcmOptions.link.
+  const link = payload.data?.link || payload.fcmOptions?.link || DEFAULT_LINK;
   const notificationOptions = {
-    body: payload.notification?.body || 'Deine tägliche Challenge wartet.',
+    body: payload.data?.body || 'Deine tägliche Challenge wartet.',
     icon: '/icons/Icon-192.png',
     badge: '/icons/Icon-maskable-192.png',
     // tag + renotify: false -> ein erneuter Daily-Push ersetzt eine noch
