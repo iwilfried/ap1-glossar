@@ -1433,7 +1433,7 @@ export const sendDailyChallenge = functions
     const title = '🎯 Frage des Tages';
     const messages = tokens.map((token) => {
       const { term } = tokenMap.get(token)!;
-      const link = `${APP_URL}/coach/?term=${encodeURIComponent(term)}`;
+      const link = `${APP_URL}/?term=${encodeURIComponent(term)}`;
       return {
         token,
         notification: {
@@ -1540,7 +1540,7 @@ export const testDailyChallenge = functions
             badge: '/icons/Icon-maskable-192.png',
           },
           fcmOptions: {
-            link: `/coach/?term=${encodeURIComponent(term)}`,
+            link: `/?term=${encodeURIComponent(term)}`,
           },
         },
       });
