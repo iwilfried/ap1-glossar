@@ -46,7 +46,9 @@ messaging.onBackgroundMessage(function(payload) {
 // Android haengen und laesst sich nicht oeffnen.
 self.addEventListener('notificationclick', function(event) {
   event.notification.close();
-  const link = event.notification.data?.link || DEFAULT_LINK;
+  const data = event.notification.data || {};
+  const link = data.link || DEFAULT_LINK;
+  const term = data.term;
 
   event.waitUntil(
     clients
@@ -55,6 +57,12 @@ self.addEventListener('notificationclick', function(event) {
         for (const client of windowClients) {
           // Bereits offenes App-Fenster fokussieren.
           if (client.url.startsWith(DEFAULT_LINK) && 'focus' in client) {
+            // Laufende App ohne Reload auf den Term springen lassen.
+            if (term) {
+              try {
+                client.postMessage({ type: 'deeplink-term', term: term });
+              } catch (e) {}
+            }
             if ('navigate' in client) {
               try {
                 client.navigate(link);

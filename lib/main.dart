@@ -13,6 +13,7 @@ import 'package:ap1_glossar/screens/home_page/home_page.dart';
 import 'package:ap1_glossar/screens/paywall/paywall_screen.dart';
 import 'package:ap1_glossar/services/firebase_service.dart';
 import 'package:ap1_glossar/services/fcm_service.dart';
+import 'package:ap1_glossar/services/deeplink_bus.dart';
 import 'firebase_options.dart';
 
 // JS-Bridge: external function for the setThemeColor JS helper in index.html
@@ -84,6 +85,8 @@ void main() async {
   // Initiale Browser-Statusleisten-Farbe setzen
   updateBrowserThemeColor(themeMode);
 
+  _listenForServiceWorkerMessages();
+
   // UI IMMER starten — unabhaengig vom Auth-/Storage-Status. Die Anmeldung und
   // das Profil-Setup laufen danach fire-and-forget; scheitern sie, bleibt die
   // App nutzbar (Glossar ist client-seitig).
@@ -101,6 +104,29 @@ void main() async {
       debugPrint('Auth/Profil-Init fehlgeschlagen: $e');
     }
   }());
+}
+
+// Laufzeit-Deeplinks: der Service Worker schickt bei Notification-Klick auf eine
+// bereits offene App { type:'deeplink-term', term } -> an den Bus weiterreichen.
+void _listenForServiceWorkerMessages() {
+  try {
+    web.window.navigator.serviceWorker.addEventListener(
+      'message',
+      ((web.Event event) {
+        final data = (event as web.MessageEvent).data;
+        if (data == null) return;
+        final decoded = data.dartify();
+        if (decoded is Map && decoded['type'] == 'deeplink-term') {
+          final term = decoded['term'];
+          if (term is String && term.isNotEmpty) {
+            deepLinkTermBus.add(term);
+          }
+        }
+      }).toJS,
+    );
+  } catch (e) {
+    debugPrint('SW-Message-Listener nicht registriert: $e');
+  }
 }
 
 ThemeMode _stringToThemeMode(String value) {
