@@ -1026,10 +1026,15 @@ exports.updateMCScore = functions
 // DAILY CHALLENGE PUSH NOTIFICATIONS
 // ─────────────────────────────────────────────────────────────────────────────
 const FALLBACK_DAILY_TERMS = [
-    'DHCP', 'IPv6', 'Subnetting', 'PoE', 'DSGVO', 'Firewall', 'VPN', 'NAT',
-    'DNS', 'Backup', 'Change Management', 'Ergonomie', '2FA', 'Phishing',
-    'KI', 'ERP', 'Härtung', 'Aktivitätsdiagramm', 'UML', 'ER-Diagramm',
-    'Daisy-Chaining', 'TCO', 'CAPEX', 'OPEX', 'Barrierefreiheit',
+    // Jeder Eintrag MUSS exakt ein Key in lib/data/data.dart (abbreviations) sein,
+    // sonst springt der Deeplink nicht auf die Karte. (dailyTerms in Firestore ist
+    // derzeit leer -> diese Liste ist die einzige Quelle.)
+    'DHCP', 'IPv6', 'Subnetting', 'DSGVO', 'Firewall', 'VPN', 'NAT', 'DNS',
+    'Backup-Strategien', 'Change Management', 'Ergonomierichtlinien (ArbStättV)',
+    'Zwei-Faktor-Authentisierung', 'Phishing', 'KI / Künstliche Intelligenz',
+    'ERP (Enterprise Resource Planning)', 'Härtung', 'UML Aktivitätsdiagramm',
+    'UML Use-Case-Diagramm', 'ER-Diagramm', 'Daisy Chaining', 'TCO',
+    'CAPEX vs. OPEX', 'Barrierefreiheit (IT)',
 ];
 function pickRandomTerm(terms) {
     if (terms.length === 0)
