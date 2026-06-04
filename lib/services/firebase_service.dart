@@ -20,7 +20,23 @@ class FirebaseService {
   /// Deshalb warten wir zuerst auf das erste `authStateChanges`-Event, das
   /// nach abgeschlossener Wiederherstellung ausgelöst wird.
   Future<void> ensureSignedIn() async {
-    await _auth.authStateChanges().first;
+    // Falls die Session bereits wiederhergestellt ist: sofort übernehmen.
+    if (_auth.currentUser != null) return;
+
+    // Auf das erste NON-NULL authState-Event warten. Der aus IndexedDB
+    // wiederhergestellte User trifft erst asynchron ein; ein blindes `.first`
+    // würde oft das initiale null-Event abgreifen und über signInAnonymously()
+    // einen neuen Ghost-User anlegen (→ neue UID pro Session).
+    try {
+      await _auth
+          .authStateChanges()
+          .firstWhere((user) => user != null)
+          .timeout(const Duration(seconds: 3));
+    } catch (_) {
+      // Timeout (oder Stream-Ende): keine persistierte Session vorhanden.
+    }
+
+    // Nur wenn nach dem Timeout wirklich kein User da ist: anonym anmelden.
     if (_auth.currentUser == null) {
       await _auth.signInAnonymously();
     }
