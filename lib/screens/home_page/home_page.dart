@@ -1,7 +1,5 @@
-import 'dart:async';
 import 'package:flutter/material.dart';
 import 'package:shared_preferences/shared_preferences.dart';
-import 'package:ap1_glossar/services/deeplink_bus.dart';
 import 'package:ap1_glossar/constants/colors.dart';
 import 'package:ap1_glossar/data/data.dart';
 import 'package:ap1_glossar/data/related.dart';
@@ -179,8 +177,7 @@ class _NavigationEntry {
 
 // ── HomePage ──────────────────────────────────────────────────────────────────
 class HomePage extends StatefulWidget {
-  final String? deepLinkTerm;
-  const HomePage({super.key, this.deepLinkTerm});
+  const HomePage({super.key});
 
   @override
   HomePageState createState() => HomePageState();
@@ -195,7 +192,6 @@ class HomePageState extends State<HomePage> with SingleTickerProviderStateMixin 
   String? _expandedTermId;
   bool _showScrollTopButton = false;
   final List<_NavigationEntry> _navigationStack = [];
-  StreamSubscription<String>? _deepLinkSub;
 
   late AnimationController _fadeController;
   late Animation<double> _fadeAnimation;
@@ -221,20 +217,6 @@ class HomePageState extends State<HomePage> with SingleTickerProviderStateMixin 
     });
 
     _applyFilter();
-
-    // Kaltstart: Term aus der URL (?term=) – normalisiert aufgelöst.
-    final coldKey = _resolveTermKey(widget.deepLinkTerm);
-    if (coldKey != null) {
-      WidgetsBinding.instance.addPostFrameCallback((_) {
-        navigateToTerm(coldKey);
-      });
-    }
-
-    // Warm: App bereits offen -> Term kommt per Service-Worker-Nachricht.
-    _deepLinkSub = deepLinkTermBus.stream.listen((term) {
-      final key = _resolveTermKey(term);
-      if (key != null && mounted) navigateToTerm(key);
-    });
   }
 
   @override
@@ -242,22 +224,7 @@ class HomePageState extends State<HomePage> with SingleTickerProviderStateMixin 
     _fadeController.dispose();
     _searchController.dispose();
     _scrollController.dispose();
-    _deepLinkSub?.cancel();
     super.dispose();
-  }
-
-  /// Löst einen (evtl. ungenau formatierten) Deeplink-Term auf den echten
-  /// abbreviations-Key auf: exakt, sonst getrimmt + case-insensitiv.
-  String? _resolveTermKey(String? term) {
-    if (term == null) return null;
-    final t = term.trim();
-    if (t.isEmpty) return null;
-    if (abbreviations.containsKey(t)) return t;
-    final lower = t.toLowerCase();
-    for (final key in abbreviations.keys) {
-      if (key.toLowerCase() == lower) return key;
-    }
-    return null;
   }
 
   // Alle Themencluster-Namen aus related.dart (nur die die Begriffe enthalten)

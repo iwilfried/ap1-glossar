@@ -1168,3 +1168,18 @@ Map<String, String> termAspect = <String, String>{
   "Wasserfallmodell": "Funktional",
   "Whitebox-Test": "Funktional",
 };
+
+/// Löst einen (evtl. ungenau formatierten) Deeplink-Term auf den echten
+/// [abbreviations]-Key auf: exakt, sonst getrimmt + case-insensitiv.
+/// Gibt null zurück, wenn kein Key passt.
+String? resolveTermKey(String? term) {
+  if (term == null) return null;
+  final t = term.trim();
+  if (t.isEmpty) return null;
+  if (abbreviations.containsKey(t)) return t;
+  final lower = t.toLowerCase();
+  for (final key in abbreviations.keys) {
+    if (key.toLowerCase() == lower) return key;
+  }
+  return null;
+}

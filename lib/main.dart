@@ -14,7 +14,13 @@ import 'package:ap1_glossar/screens/paywall/paywall_screen.dart';
 import 'package:ap1_glossar/services/firebase_service.dart';
 import 'package:ap1_glossar/services/fcm_service.dart';
 import 'package:ap1_glossar/services/deeplink_bus.dart';
+import 'package:ap1_glossar/data/data.dart';
+import 'package:ap1_glossar/screens/daily_challenge/daily_challenge_screen.dart';
 import 'firebase_options.dart';
+
+/// Globaler Navigator-Key: wird von MaterialApp genutzt und erlaubt das Öffnen
+/// der Challenge per Deeplink (Kaltstart + Warm) unabhängig vom aktiven Screen.
+final GlobalKey<NavigatorState> rootNavigatorKey = GlobalKey<NavigatorState>();
 
 // JS-Bridge: external function for the setThemeColor JS helper in index.html
 @JS('setThemeColor')
@@ -87,14 +93,23 @@ void main() async {
 
   _listenForServiceWorkerMessages();
 
+  // Warm-Pfad: Notification-Klick auf eine offene App -> Term über den Bus ->
+  // Challenge zu diesem Begriff öffnen.
+  deepLinkTermBus.stream.listen(openChallengeForTerm);
+
   // UI IMMER starten — unabhaengig vom Auth-/Storage-Status. Die Anmeldung und
   // das Profil-Setup laufen danach fire-and-forget; scheitern sie, bleibt die
   // App nutzbar (Glossar ist client-seitig).
   runApp(MyApp(
     showWelcome: !seenWelcome && !purchaseSuccess && deepLinkTerm == null,
-    deepLinkTerm: deepLinkTerm,
     purchaseSuccess: purchaseSuccess,
   ));
+
+  // Kaltstart: kam die App über einen Push-Deeplink (?term=), direkt die
+  // Challenge zu diesem Begriff öffnen (über die Glossar-/HomePage hinweg).
+  if (deepLinkTerm != null) {
+    openChallengeForTerm(deepLinkTerm);
+  }
 
   unawaited(() async {
     try {
@@ -129,6 +144,21 @@ void _listenForServiceWorkerMessages() {
   }
 }
 
+/// Öffnet die Tages-Challenge zu [term]: ist es ein gültiger abbreviations-Key,
+/// wird die Frage zu DIESEM Begriff erzeugt (Übungsmodus); sonst startet eine
+/// normale Zufalls-Challenge. Genutzt vom Kaltstart (URL ?term=) und vom
+/// Warm-Pfad (Service-Worker-postMessage). NICHT mehr die Glossar-Karte.
+void openChallengeForTerm(String? term) {
+  final key = resolveTermKey(term);
+  WidgetsBinding.instance.addPostFrameCallback((_) {
+    final nav = rootNavigatorKey.currentState;
+    if (nav == null) return;
+    nav.push(
+      MaterialPageRoute(builder: (_) => DailyChallengeScreen(initialTerm: key)),
+    );
+  });
+}
+
 ThemeMode _stringToThemeMode(String value) {
   switch (value) {
     case 'light':
@@ -142,7 +172,6 @@ ThemeMode _stringToThemeMode(String value) {
 
 class MyApp extends StatefulWidget {
   final bool showWelcome;
-  final String? deepLinkTerm;
   final bool purchaseSuccess;
   static final ValueNotifier<ThemeMode> themeNotifier =
       ValueNotifier(ThemeMode.system);
@@ -150,7 +179,6 @@ class MyApp extends StatefulWidget {
   const MyApp({
     super.key,
     required this.showWelcome,
-    this.deepLinkTerm,
     this.purchaseSuccess = false,
   });
 
@@ -159,7 +187,6 @@ class MyApp extends StatefulWidget {
 }
 
 class _MyAppState extends State<MyApp> {
-  final GlobalKey<NavigatorState> _navigatorKey = GlobalKey<NavigatorState>();
   final GlobalKey<ScaffoldMessengerState> _scaffoldMessengerKey =
       GlobalKey<ScaffoldMessengerState>();
 
@@ -167,7 +194,7 @@ class _MyAppState extends State<MyApp> {
   void initState() {
     super.initState();
     WidgetsBinding.instance.addPostFrameCallback((_) {
-      FcmService.instance.init(_navigatorKey, _scaffoldMessengerKey);
+      FcmService.instance.init(rootNavigatorKey, _scaffoldMessengerKey);
     });
   }
 
@@ -181,7 +208,7 @@ class _MyAppState extends State<MyApp> {
 
         return MaterialApp(
           title: 'AP1 Coach – IHK Prüfungsvorbereitung',
-          navigatorKey: _navigatorKey,
+          navigatorKey: rootNavigatorKey,
           scaffoldMessengerKey: _scaffoldMessengerKey,
           theme: AppTheme.lightTheme,
           darkTheme: AppTheme.darkTheme,
@@ -190,7 +217,7 @@ class _MyAppState extends State<MyApp> {
               ? const WelcomeScreen()
               : widget.purchaseSuccess
                   ? const PurchaseProcessingScreen()
-                  : HomePage(deepLinkTerm: widget.deepLinkTerm),
+                  : const HomePage(),
           color: AppColors.color,
         );
       },

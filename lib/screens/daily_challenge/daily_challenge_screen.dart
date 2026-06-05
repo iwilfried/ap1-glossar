@@ -7,7 +7,12 @@ import 'package:ap1_glossar/data/related.dart';
 import 'package:ap1_glossar/services/firebase_service.dart';
 
 class DailyChallengeScreen extends StatefulWidget {
-  const DailyChallengeScreen({super.key});
+  const DailyChallengeScreen({super.key, this.initialTerm});
+
+  /// Optionaler Deeplink-Begriff: ist er ein gültiger abbreviations-Key, wird
+  /// die erste Frage zu DIESEM Begriff erzeugt (Übungsmodus) – auch wenn die
+  /// Tages-Challenge heute schon erledigt ist.
+  final String? initialTerm;
 
   @override
   State<DailyChallengeScreen> createState() => _DailyChallengeScreenState();
@@ -42,6 +47,10 @@ class _DailyChallengeScreenState extends State<DailyChallengeScreen> {
 
   final Random _random = Random();
 
+  /// Übungsmodus: gültiger Deeplink-Begriff -> Frage immer zeigen, auch wenn
+  /// heute bereits erledigt.
+  late final bool _isPracticeMode = resolveTermKey(widget.initialTerm) != null;
+
   List<String> get _availableThemen {
     final known = termGroups.keys.toSet();
     return ['Alle Themen', ...known.toList()..sort()];
@@ -68,7 +77,7 @@ class _DailyChallengeScreenState extends State<DailyChallengeScreen> {
       _completedToday = completed;
     });
 
-    if (!completed) {
+    if (!completed || _isPracticeMode) {
       await _loadQuestion(theme);
     }
 
@@ -94,7 +103,9 @@ class _DailyChallengeScreenState extends State<DailyChallengeScreen> {
       return;
     }
 
-    final term = availableTerms[_random.nextInt(availableTerms.length)];
+    // Übungsmodus: den Deeplink-Begriff nehmen, sonst zufällig aus dem Pool.
+    final term = resolveTermKey(widget.initialTerm) ??
+        availableTerms[_random.nextInt(availableTerms.length)];
     final definition = abbreviations[term] ?? '';
     final relatedTerms = getRelatedTerms(term, count: 3);
 
@@ -276,7 +287,7 @@ class _DailyChallengeScreenState extends State<DailyChallengeScreen> {
       ),
       body: _isLoading
           ? const Center(child: CircularProgressIndicator())
-          : _completedToday
+          : (_completedToday && !_isPracticeMode)
               ? _buildCompletedView()
               : _buildChallengeView(),
     );
