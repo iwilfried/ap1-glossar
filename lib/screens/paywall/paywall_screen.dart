@@ -651,7 +651,7 @@ class _PurchaseProcessingScreenState extends State<PurchaseProcessingScreen> {
               onPressed: () {
                 Navigator.of(context).pushAndRemoveUntil(
                   MaterialPageRoute(
-                    builder: (_) => const HomePage(deepLinkTerm: null),
+                    builder: (_) => const HomePage(),
                   ),
                   (route) => false,
                 );
