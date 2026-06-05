@@ -35,6 +35,19 @@ jobs:
       - name: Build web
         run: flutter build web --release --base-href=/
 
+      # Live-Deploy: build/web per SFTP auf den IONOS-Webspace (Ordner /ap1,
+      # bedient ap1.learningfactory.io). Nur Upload, kein Loeschen.
+      - name: Deploy to IONOS (SFTP)
+        uses: wlixcc/SFTP-Deploy-Action@v1.2.5
+        with:
+          server: ${{ secrets.IONOS_SFTP_HOST }}
+          port: 22
+          username: ${{ secrets.IONOS_SFTP_USER }}
+          password: ${{ secrets.IONOS_SFTP_PASSWORD }}
+          local_path: './build/web/*'
+          remote_path: '/ap1'
+          sftp_only: true
+
       - name: Setup Pages
         uses: actions/configure-pages@v4
 
